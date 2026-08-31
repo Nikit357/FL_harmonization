@@ -1,0 +1,1065 @@
+root@fl-metrics:/app/harmonization-metrics-calculation# cat /workspace/metrics_lmn_260823.log
+Failed-jobs log: /app/harmonization-metrics-calculation/failed_jobs_metrics.txt (26 entries)
+[dispatcher] 3835 attempts already have a metrics sidecar.
+[dispatcher] Found 2323 expression files matching filters.
+Skipping 5 previously failed jobs.
+Metrics jobs to run: 2318  |  Workers: 20  |  Timeout: 3600s  |  Memory guard: 8.0 GB
+[13:17:17] START A_confirmed_bad__knn__01_raw__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__01_raw__post1 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__02_median_scaling__post1 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__02_median_scaling__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__03_limma__post1 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__03_limma__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__04_sva__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__04_sva__post1 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__06_combat_seq__post1 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__06_combat_seq__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__05_combat__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__05_combat__post1 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__07_pycombat__post0 | free=271.8GB
+[13:17:17] START A_confirmed_bad__knn__08_inmoose_combatseq__post1 | free=271.7GB
+[13:17:17] START A_confirmed_bad__knn__07_pycombat__post1 | free=271.7GB
+[13:17:17] START A_confirmed_bad__knn__10_mnn__post0 | free=271.7GB
+[13:17:17] START A_confirmed_bad__knn__08_inmoose_combatseq__post0 | free=271.7GB
+[13:17:17] START A_confirmed_bad__knn__09_ruv__post1 | free=271.7GB
+[13:17:17] START A_confirmed_bad__knn__10_mnn__post1 | free=271.7GB
+[13:17:17] START A_confirmed_bad__knn__09_ruv__post0 | free=271.7GB
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:17:26][A_confirmed_bad×knn×07_pycombat×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:17:26][A_confirmed_bad×knn×07_pycombat×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__03_limma__post1] [13:17:26][A_confirmed_bad×knn×03_limma×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__03_limma__post1] [13:17:26][A_confirmed_bad×knn×03_limma×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:17:26][A_confirmed_bad×knn×07_pycombat×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__07_pycombat__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__09_ruv__post0] [13:17:26][A_confirmed_bad×knn×09_ruv×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__09_ruv__post0] [13:17:26][A_confirmed_bad×knn×09_ruv×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:17:26][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:17:26][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:17:26][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:17:26][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__03_limma__post1] [13:17:26][A_confirmed_bad×knn×03_limma×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__03_limma__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__04_sva__post0] [13:17:26][A_confirmed_bad×knn×04_sva×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__04_sva__post0] [13:17:26][A_confirmed_bad×knn×04_sva×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:17:26][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__08_inmoose_combatseq__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:17:26][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__02_median_scaling__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:17:26][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:17:26][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__09_ruv__post0] [13:17:26][A_confirmed_bad×knn×09_ruv×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__09_ruv__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__04_sva__post0] [13:17:26][A_confirmed_bad×knn×04_sva×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__04_sva__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:17:26][A_confirmed_bad×knn×07_pycombat×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:17:26][A_confirmed_bad×knn×07_pycombat×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__04_sva__post1] [13:17:26][A_confirmed_bad×knn×04_sva×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__04_sva__post1] [13:17:26][A_confirmed_bad×knn×04_sva×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__10_mnn__post0] [13:17:26][A_confirmed_bad×knn×10_mnn×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__10_mnn__post0] [13:17:26][A_confirmed_bad×knn×10_mnn×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__01_raw__post1] [13:17:26][A_confirmed_bad×knn×01_raw×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__01_raw__post1] [13:17:26][A_confirmed_bad×knn×01_raw×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__10_mnn__post1] [13:17:26][A_confirmed_bad×knn×10_mnn×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__10_mnn__post1] [13:17:26][A_confirmed_bad×knn×10_mnn×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:17:26][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__06_combat_seq__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:17:26][A_confirmed_bad×knn×07_pycombat×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__07_pycombat__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__10_mnn__post0] [13:17:26][A_confirmed_bad×knn×10_mnn×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__10_mnn__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__05_combat__post0] [13:17:26][A_confirmed_bad×knn×05_combat×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__05_combat__post0] [13:17:26][A_confirmed_bad×knn×05_combat×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__10_mnn__post1] [13:17:26][A_confirmed_bad×knn×10_mnn×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__10_mnn__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:17:26][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:17:26][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__05_combat__post1] [13:17:26][A_confirmed_bad×knn×05_combat×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__05_combat__post1] [13:17:26][A_confirmed_bad×knn×05_combat×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__01_raw__post1] [13:17:26][A_confirmed_bad×knn×01_raw×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__03_limma__post0] [13:17:26][A_confirmed_bad×knn×03_limma×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__03_limma__post0] [13:17:26][A_confirmed_bad×knn×03_limma×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:17:26][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:17:26][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__04_sva__post1] [13:17:26][A_confirmed_bad×knn×04_sva×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__04_sva__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:17:27][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:17:27][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__01_raw__post0] [13:17:27][A_confirmed_bad×knn×01_raw×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__01_raw__post0] [13:17:27][A_confirmed_bad×knn×01_raw×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__05_combat__post0] [13:17:27][A_confirmed_bad×knn×05_combat×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__05_combat__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:17:27][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__06_combat_seq__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__03_limma__post0] [13:17:27][A_confirmed_bad×knn×03_limma×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__03_limma__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__05_combat__post1] [13:17:27][A_confirmed_bad×knn×05_combat×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__05_combat__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:17:27][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__08_inmoose_combatseq__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__01_raw__post0] [13:17:27][A_confirmed_bad×knn×01_raw×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:17:27][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__02_median_scaling__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__09_ruv__post1] [13:17:27][A_confirmed_bad×knn×09_ruv×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__09_ruv__post1] [13:17:27][A_confirmed_bad×knn×09_ruv×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__09_ruv__post1] [13:17:27][A_confirmed_bad×knn×09_ruv×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__09_ruv__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:17:33][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Downloaded (7s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:17:34][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Downloaded (7s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__09_ruv__post1] [13:17:34][A_confirmed_bad×knn×09_ruv×post_rm=True] Downloaded (7s): 5404 samples × 15195 genes
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:17:34][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Downloaded (7s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__09_ruv__post0] [13:17:34][A_confirmed_bad×knn×09_ruv×post_rm=False] Downloaded (8s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:17:34][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:17:34][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:17:34][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:17:35][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__09_ruv__post1] [13:17:35][A_confirmed_bad×knn×09_ruv×post_rm=True] Aligned: 5404 samples
+  [A_confirmed_bad__knn__09_ruv__post1] [13:17:35][A_confirmed_bad×knn×09_ruv×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:17:35][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:17:35][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Downloaded (8s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:17:35][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__09_ruv__post0] [13:17:35][A_confirmed_bad×knn×09_ruv×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__09_ruv__post0] [13:17:35][A_confirmed_bad×knn×09_ruv×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:17:36][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:17:36][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__10_mnn__post1] [13:17:52][A_confirmed_bad×knn×10_mnn×post_rm=True] Downloaded (26s): 4644 samples × 15195 genes
+  [A_confirmed_bad__knn__10_mnn__post1] [13:17:53][A_confirmed_bad×knn×10_mnn×post_rm=True] Aligned: 4644 samples
+  [A_confirmed_bad__knn__10_mnn__post1] [13:17:53][A_confirmed_bad×knn×10_mnn×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__03_limma__post1] [13:17:54][A_confirmed_bad×knn×03_limma×post_rm=True] Downloaded (28s): 4644 samples × 15195 genes
+  [A_confirmed_bad__knn__01_raw__post1] [13:17:54][A_confirmed_bad×knn×01_raw×post_rm=True] Downloaded (28s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__03_limma__post1] [13:17:55][A_confirmed_bad×knn×03_limma×post_rm=True] Aligned: 4644 samples
+  [A_confirmed_bad__knn__03_limma__post1] [13:17:55][A_confirmed_bad×knn×03_limma×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__01_raw__post1] [13:17:55][A_confirmed_bad×knn×01_raw×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__01_raw__post1] [13:17:55][A_confirmed_bad×knn×01_raw×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__01_raw__post0] [13:17:55][A_confirmed_bad×knn×01_raw×post_rm=False] Downloaded (29s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__05_combat__post0] [13:17:56][A_confirmed_bad×knn×05_combat×post_rm=False] Downloaded (29s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__05_combat__post1] [13:17:56][A_confirmed_bad×knn×05_combat×post_rm=True] Downloaded (29s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__01_raw__post0] [13:17:56][A_confirmed_bad×knn×01_raw×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__01_raw__post0] [13:17:56][A_confirmed_bad×knn×01_raw×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:17:56][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Downloaded (30s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__05_combat__post0] [13:17:57][A_confirmed_bad×knn×05_combat×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__05_combat__post0] [13:17:57][A_confirmed_bad×knn×05_combat×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__05_combat__post1] [13:17:57][A_confirmed_bad×knn×05_combat×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__05_combat__post1] [13:17:57][A_confirmed_bad×knn×05_combat×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:17:57][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:17:57][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__04_sva__post1] [13:17:58][A_confirmed_bad×knn×04_sva×post_rm=True] Downloaded (31s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:17:58][A_confirmed_bad×knn×07_pycombat×post_rm=False] Downloaded (31s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__04_sva__post0] [13:17:58][A_confirmed_bad×knn×04_sva×post_rm=False] Downloaded (31s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__10_mnn__post0] [13:17:58][A_confirmed_bad×knn×10_mnn×post_rm=False] Downloaded (32s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:17:58][A_confirmed_bad×knn×07_pycombat×post_rm=True] Downloaded (32s): 5412 samples × 15195 genes
+  [A_confirmed_bad__knn__03_limma__post0] [13:17:58][A_confirmed_bad×knn×03_limma×post_rm=False] Downloaded (32s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__04_sva__post1] [13:17:58][A_confirmed_bad×knn×04_sva×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__04_sva__post1] [13:17:59][A_confirmed_bad×knn×04_sva×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:17:59][A_confirmed_bad×knn×07_pycombat×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:17:59][A_confirmed_bad×knn×07_pycombat×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__04_sva__post0] [13:17:59][A_confirmed_bad×knn×04_sva×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__04_sva__post0] [13:17:59][A_confirmed_bad×knn×04_sva×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__10_mnn__post0] [13:17:59][A_confirmed_bad×knn×10_mnn×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__10_mnn__post0] [13:17:59][A_confirmed_bad×knn×10_mnn×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:17:59][A_confirmed_bad×knn×07_pycombat×post_rm=True] Aligned: 5412 samples
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:17:59][A_confirmed_bad×knn×07_pycombat×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__03_limma__post0] [13:17:59][A_confirmed_bad×knn×03_limma×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__03_limma__post0] [13:17:59][A_confirmed_bad×knn×03_limma×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:18:03][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Downloaded (37s): 5311 samples × 15195 genes
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:18:04][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Aligned: 5311 samples
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:18:04][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__knn__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:19:46][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__06_combat_seq__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__06_combat_seq__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__06_combat_seq__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__06_combat_seq__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__06_combat_seq__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__06_combat_seq__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__06_combat_seq__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__06_combat_seq__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__06_combat_seq__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__06_combat_seq__post1] 
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:19:46][A_confirmed_bad×knn×06_combat_seq×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:19:46][metrics] Starting group M ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:19:46][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] 
+  [A_confirmed_bad__knn__09_ruv__post1] [13:19:46][A_confirmed_bad×knn×09_ruv×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__09_ruv__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__09_ruv__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__09_ruv__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__09_ruv__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__09_ruv__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__09_ruv__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__09_ruv__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__09_ruv__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__09_ruv__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__09_ruv__post1] 
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:19:46][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:19:46][metrics] Starting group M ...
+  [A_confirmed_bad__knn__09_ruv__post1] [13:19:46][A_confirmed_bad×knn×09_ruv×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__09_ruv__post1] [13:19:46][metrics] Starting group M ...
+  [A_confirmed_bad__knn__09_ruv__post0] [13:19:47][A_confirmed_bad×knn×09_ruv×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__09_ruv__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__09_ruv__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__09_ruv__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__09_ruv__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__09_ruv__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__09_ruv__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__09_ruv__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__09_ruv__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__09_ruv__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__09_ruv__post0] 
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:19:47][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__06_combat_seq__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__06_combat_seq__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__06_combat_seq__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__06_combat_seq__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__06_combat_seq__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__06_combat_seq__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__06_combat_seq__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__06_combat_seq__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__06_combat_seq__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__06_combat_seq__post0] 
+  [A_confirmed_bad__knn__09_ruv__post0] [13:19:47][A_confirmed_bad×knn×09_ruv×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__09_ruv__post0] [13:19:47][metrics] Starting group M ...
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:19:48][A_confirmed_bad×knn×06_combat_seq×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:19:48][metrics] Starting group M ...
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:19:53][metrics] Group M done (7.6s)
+  [A_confirmed_bad__knn__06_combat_seq__post1] [13:19:53][metrics] Starting group N ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:19:54][metrics] Group M done (8.3s)
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post0] [13:19:54][metrics] Starting group N ...
+  [A_confirmed_bad__knn__09_ruv__post1] [13:19:55][metrics] Group M done (8.9s)
+  [A_confirmed_bad__knn__09_ruv__post1] [13:19:55][metrics] Starting group N ...
+  [A_confirmed_bad__knn__09_ruv__post0] [13:19:56][metrics] Group M done (8.2s)
+  [A_confirmed_bad__knn__09_ruv__post0] [13:19:56][metrics] Starting group N ...
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:19:56][metrics] Group M done (8.4s)
+  [A_confirmed_bad__knn__06_combat_seq__post0] [13:19:56][metrics] Starting group N ...
+  [A_confirmed_bad__knn__01_raw__post1] [13:20:39][A_confirmed_bad×knn×01_raw×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__01_raw__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__01_raw__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__01_raw__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__01_raw__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__01_raw__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__01_raw__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__01_raw__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__01_raw__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__01_raw__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__01_raw__post1] 
+  [A_confirmed_bad__knn__01_raw__post1] [13:20:39][A_confirmed_bad×knn×01_raw×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__01_raw__post1] [13:20:39][metrics] Starting group M ...
+  [A_confirmed_bad__knn__03_limma__post1] [13:20:44][A_confirmed_bad×knn×03_limma×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__03_limma__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__03_limma__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__03_limma__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__03_limma__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__03_limma__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__03_limma__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__03_limma__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__03_limma__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__03_limma__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__03_limma__post1] 
+  [A_confirmed_bad__knn__03_limma__post1] [13:20:45][A_confirmed_bad×knn×03_limma×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__03_limma__post1] [13:20:45][metrics] Starting group M ...
+  [A_confirmed_bad__knn__01_raw__post1] [13:20:52][metrics] Group M done (12.6s)
+  [A_confirmed_bad__knn__01_raw__post1] [13:20:52][metrics] Starting group N ...
+  [A_confirmed_bad__knn__03_limma__post1] [13:20:59][metrics] Group M done (14.0s)
+  [A_confirmed_bad__knn__03_limma__post1] [13:20:59][metrics] Starting group N ...
+  [A_confirmed_bad__knn__01_raw__post0] [13:20:59][A_confirmed_bad×knn×01_raw×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__01_raw__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__01_raw__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__01_raw__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__01_raw__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__01_raw__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__01_raw__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__01_raw__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__01_raw__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__01_raw__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__01_raw__post0] 
+  [A_confirmed_bad__knn__01_raw__post0] [13:21:00][A_confirmed_bad×knn×01_raw×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__01_raw__post0] [13:21:00][metrics] Starting group M ...
+  [A_confirmed_bad__knn__10_mnn__post1] [13:21:00][A_confirmed_bad×knn×10_mnn×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__10_mnn__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__10_mnn__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__10_mnn__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__10_mnn__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__10_mnn__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__10_mnn__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__10_mnn__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__10_mnn__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__10_mnn__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__10_mnn__post1] 
+  [A_confirmed_bad__knn__03_limma__post0] [13:21:00][A_confirmed_bad×knn×03_limma×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__03_limma__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__03_limma__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__03_limma__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__03_limma__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__03_limma__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__03_limma__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__03_limma__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__03_limma__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__03_limma__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__03_limma__post0] 
+  [A_confirmed_bad__knn__03_limma__post0] [13:21:01][A_confirmed_bad×knn×03_limma×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__03_limma__post0] [13:21:01][metrics] Starting group M ...
+  [A_confirmed_bad__knn__10_mnn__post1] [13:21:01][A_confirmed_bad×knn×10_mnn×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__10_mnn__post1] [13:21:01][metrics] Starting group M ...
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:21:03][A_confirmed_bad×knn×07_pycombat×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__07_pycombat__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__07_pycombat__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__07_pycombat__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__07_pycombat__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__07_pycombat__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__07_pycombat__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__07_pycombat__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__07_pycombat__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__07_pycombat__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__07_pycombat__post0] 
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:21:04][A_confirmed_bad×knn×07_pycombat×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:21:04][metrics] Starting group M ...
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:10][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:11][A_confirmed_bad×knn×08_inmoose_combatseq×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:11][metrics] Starting group L ...
+  [A_confirmed_bad__knn__04_sva__post1] [13:21:15][A_confirmed_bad×knn×04_sva×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__04_sva__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__04_sva__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__04_sva__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__04_sva__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__04_sva__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__04_sva__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__04_sva__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__04_sva__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__04_sva__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__04_sva__post1] 
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:15][metrics] Group L done (4.0s)
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:15][metrics] Starting group M ...
+  [A_confirmed_bad__knn__04_sva__post1] [13:21:17][A_confirmed_bad×knn×04_sva×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__04_sva__post1] [13:21:17][metrics] Starting group M ...
+  [A_confirmed_bad__knn__04_sva__post0] [13:21:21][A_confirmed_bad×knn×04_sva×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__04_sva__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__04_sva__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__04_sva__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__04_sva__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__04_sva__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__04_sva__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__04_sva__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__04_sva__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__04_sva__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__04_sva__post0] 
+  [A_confirmed_bad__knn__03_limma__post0] [13:21:21][metrics] Group M done (20.2s)
+  [A_confirmed_bad__knn__03_limma__post0] [13:21:21][metrics] Starting group N ...
+  [A_confirmed_bad__knn__10_mnn__post1] [13:21:21][metrics] Group M done (20.0s)
+  [A_confirmed_bad__knn__10_mnn__post1] [13:21:21][metrics] Starting group N ...
+  [A_confirmed_bad__knn__04_sva__post0] [13:21:22][A_confirmed_bad×knn×04_sva×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__04_sva__post0] [13:21:22][metrics] Starting group M ...
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:21:28][metrics] Group M done (24.3s)
+  [A_confirmed_bad__knn__07_pycombat__post0] [13:21:28][metrics] Starting group N ...
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:21:34][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__02_median_scaling__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__02_median_scaling__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__02_median_scaling__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__02_median_scaling__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__02_median_scaling__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__02_median_scaling__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__02_median_scaling__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__02_median_scaling__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__02_median_scaling__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__02_median_scaling__post1] 
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:34][metrics] Group M done (19.4s)
+  [A_confirmed_bad__knn__08_inmoose_combatseq__post1] [13:21:34][metrics] Starting group N ...
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:21:35][A_confirmed_bad×knn×02_median_scaling×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:21:35][metrics] Starting group M ...
+  [A_confirmed_bad__knn__05_combat__post1] [13:21:36][A_confirmed_bad×knn×05_combat×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__05_combat__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__05_combat__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__05_combat__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__05_combat__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__05_combat__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__05_combat__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__05_combat__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__05_combat__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__05_combat__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__05_combat__post1] 
+  [A_confirmed_bad__knn__01_raw__post0] [13:21:36][metrics] Group M done (36.1s)
+  [A_confirmed_bad__knn__01_raw__post0] [13:21:36][metrics] Starting group N ...
+  [A_confirmed_bad__knn__05_combat__post1] [13:21:37][A_confirmed_bad×knn×05_combat×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__05_combat__post1] [13:21:37][metrics] Starting group M ...
+  [A_confirmed_bad__knn__10_mnn__post0] [13:21:39][A_confirmed_bad×knn×10_mnn×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__10_mnn__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__10_mnn__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__10_mnn__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__10_mnn__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__10_mnn__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__10_mnn__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__10_mnn__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__10_mnn__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__10_mnn__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__10_mnn__post0] 
+  [A_confirmed_bad__knn__10_mnn__post0] [13:21:41][A_confirmed_bad×knn×10_mnn×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__10_mnn__post0] [13:21:41][metrics] Starting group M ...
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:21:48][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__02_median_scaling__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__02_median_scaling__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__02_median_scaling__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__02_median_scaling__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__02_median_scaling__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__02_median_scaling__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__02_median_scaling__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__02_median_scaling__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__02_median_scaling__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__02_median_scaling__post0] 
+  [A_confirmed_bad__knn__04_sva__post0] [13:21:49][metrics] Group M done (27.1s)
+  [A_confirmed_bad__knn__04_sva__post0] [13:21:49][metrics] Starting group N ...
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:21:51][A_confirmed_bad×knn×02_median_scaling×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:21:51][metrics] Starting group M ...
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:21:51][metrics] Group M done (16.8s)
+  [A_confirmed_bad__knn__02_median_scaling__post1] [13:21:51][metrics] Starting group N ...
+  [A_confirmed_bad__knn__04_sva__post1] [13:21:53][metrics] Group M done (36.0s)
+  [A_confirmed_bad__knn__04_sva__post1] [13:21:53][metrics] Starting group N ...
+  [A_confirmed_bad__knn__05_combat__post1] [13:21:56][metrics] Group M done (18.8s)
+  [A_confirmed_bad__knn__05_combat__post1] [13:21:56][metrics] Starting group N ...
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:21:59][A_confirmed_bad×knn×07_pycombat×post_rm=True] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__07_pycombat__post1] Traceback (most recent call last):
+  [A_confirmed_bad__knn__07_pycombat__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__07_pycombat__post1]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__07_pycombat__post1]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__07_pycombat__post1]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__07_pycombat__post1]     tmp_path.replace(
+  [A_confirmed_bad__knn__07_pycombat__post1]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__07_pycombat__post1]     os.replace(self, target)
+  [A_confirmed_bad__knn__07_pycombat__post1] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__07_pycombat__post1] 
+  [A_confirmed_bad__knn__05_combat__post0] [13:22:00][A_confirmed_bad×knn×05_combat×post_rm=False] Reference load failed, Group L will be skipped:
+  [A_confirmed_bad__knn__05_combat__post0] Traceback (most recent call last):
+  [A_confirmed_bad__knn__05_combat__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 433, in main
+  [A_confirmed_bad__knn__05_combat__post0]     ref_raw = _load_reference_cached(
+  [A_confirmed_bad__knn__05_combat__post0]               ^^^^^^^^^^^^^^^^^^^^^^^
+  [A_confirmed_bad__knn__05_combat__post0]   File "/app/harmonization-metrics-calculation/run_metrics_job.py", line 211, in _load_reference_cached
+  [A_confirmed_bad__knn__05_combat__post0]     tmp_path.replace(
+  [A_confirmed_bad__knn__05_combat__post0]   File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+  [A_confirmed_bad__knn__05_combat__post0]     os.replace(self, target)
+  [A_confirmed_bad__knn__05_combat__post0] FileNotFoundError: [Errno 2] No such file or directory: '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.partial' -> '/workspace/ref_cache/A_confirmed_bad__knn__01_raw__post0.tsv.gz'
+  [A_confirmed_bad__knn__05_combat__post0] 
+  [A_confirmed_bad__knn__10_mnn__post0] [13:22:00][metrics] Group M done (19.1s)
+  [A_confirmed_bad__knn__10_mnn__post0] [13:22:00][metrics] Starting group N ...
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:22:04][A_confirmed_bad×knn×07_pycombat×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:22:04][metrics] Starting group M ...
+  [A_confirmed_bad__knn__05_combat__post0] [13:22:04][A_confirmed_bad×knn×05_combat×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__05_combat__post0] [13:22:04][metrics] Starting group M ...
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:22:11][metrics] Group M done (19.8s)
+  [A_confirmed_bad__knn__02_median_scaling__post0] [13:22:11][metrics] Starting group N ...
+  [A_confirmed_bad__knn__05_combat__post0] [13:22:31][metrics] Group M done (27.2s)
+  [A_confirmed_bad__knn__05_combat__post0] [13:22:31][metrics] Starting group N ...
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:22:52][metrics] Group M done (48.1s)
+  [A_confirmed_bad__knn__07_pycombat__post1] [13:22:52][metrics] Starting group N ...
+[14:17:17] TIMEOUT A_confirmed_bad__knn__03_limma__post1 after 3600s
+  [1/2318] FAILED A_confirmed_bad__knn__03_limma__post1 rc=-9 (3600s)
+[14:17:17] START A_confirmed_bad__knn__11_harmony__post0 | free=250.3GB
+[14:17:17] TIMEOUT A_confirmed_bad__knn__10_mnn__post1 after 3600s
+  [2/2318] FAILED A_confirmed_bad__knn__10_mnn__post1 rc=-9 (3600s)
+[14:17:17] START A_confirmed_bad__knn__11_harmony__post1 | free=256.2GB
+[14:17:17] TIMEOUT A_confirmed_bad__knn__04_sva__post1 after 3600s
+  [3/2318] FAILED A_confirmed_bad__knn__04_sva__post1 rc=-9 (3600s)
+[14:17:17] START A_confirmed_bad__knn__12_scanorama__post0 | free=257.9GB
+[14:17:17] TIMEOUT A_confirmed_bad__knn__08_inmoose_combatseq__post1 after 3600s
+[14:17:17] START A_confirmed_bad__knn__12_scanorama__post1 | free=260.6GB
+  [4/2318] FAILED A_confirmed_bad__knn__08_inmoose_combatseq__post1 rc=-9 (3600s)
+[14:17:17] TIMEOUT A_confirmed_bad__knn__01_raw__post0 after 3600s
+[14:17:17] START A_confirmed_bad__knn__13_fsmvn__post0 | free=260.9GB
+  [5/2318] FAILED A_confirmed_bad__knn__01_raw__post0 rc=-9 (3600s)
+[14:17:18] TIMEOUT A_confirmed_bad__knn__03_limma__post0 after 3601s
+  [6/2318] FAILED A_confirmed_bad__knn__03_limma__post0 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__13_fsmvn__post1 | free=264.5GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__09_ruv__post0 after 3601s
+  [7/2318] FAILED A_confirmed_bad__knn__09_ruv__post0 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__14_qsmooth__post0 | free=265.7GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__06_combat_seq__post1 after 3601s
+  [8/2318] FAILED A_confirmed_bad__knn__06_combat_seq__post1 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__14_qsmooth__post1 | free=267.1GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__09_ruv__post1 after 3601s
+  [9/2318] FAILED A_confirmed_bad__knn__09_ruv__post1 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__15_fsqn_py__post0 | free=268.1GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__05_combat__post1 after 3601s
+[14:17:18] TIMEOUT A_confirmed_bad__knn__01_raw__post1 after 3601s
+  [10/2318] FAILED A_confirmed_bad__knn__05_combat__post1 rc=-9 (3601s)
+  [11/2318] FAILED A_confirmed_bad__knn__01_raw__post1 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__15_fsqn_py__post1 | free=268.5GB
+[14:17:18] START A_confirmed_bad__knn__16_fsqn_r__post0 | free=268.5GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__07_pycombat__post0 after 3601s
+  [12/2318] FAILED A_confirmed_bad__knn__07_pycombat__post0 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__16_fsqn_r__post1 | free=268.5GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__06_combat_seq__post0 after 3601s
+  [13/2318] FAILED A_confirmed_bad__knn__06_combat_seq__post0 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__17_quantile__post0 | free=268.7GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__05_combat__post0 after 3601s
+  [14/2318] FAILED A_confirmed_bad__knn__05_combat__post0 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__17_quantile__post1 | free=269.5GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__10_mnn__post0 after 3601s
+[14:17:18] START A_confirmed_bad__knn__18_rank__post0 | free=269.8GB
+  [15/2318] FAILED A_confirmed_bad__knn__10_mnn__post0 rc=-9 (3601s)
+[14:17:18] TIMEOUT A_confirmed_bad__knn__02_median_scaling__post0 after 3601s
+[14:17:18] START A_confirmed_bad__knn__18_rank__post1 | free=270.1GB
+  [16/2318] FAILED A_confirmed_bad__knn__02_median_scaling__post0 rc=-9 (3601s)
+[14:17:18] TIMEOUT A_confirmed_bad__knn__04_sva__post0 after 3601s
+[14:17:18] START A_confirmed_bad__knn__19_tdm__post0 | free=270.3GB
+  [17/2318] FAILED A_confirmed_bad__knn__04_sva__post0 rc=-9 (3601s)
+[14:17:18] TIMEOUT A_confirmed_bad__knn__08_inmoose_combatseq__post0 after 3601s
+  [18/2318] FAILED A_confirmed_bad__knn__08_inmoose_combatseq__post0 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__19_tdm__post1 | free=270.6GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__02_median_scaling__post1 after 3601s
+  [19/2318] FAILED A_confirmed_bad__knn__02_median_scaling__post1 rc=-9 (3601s)
+[14:17:18] START A_confirmed_bad__knn__21_harmonizr__post0 | free=270.7GB
+[14:17:18] TIMEOUT A_confirmed_bad__knn__07_pycombat__post1 after 3601s
+[14:17:18] START A_confirmed_bad__knn__21_harmonizr__post1 | free=270.8GB
+  [20/2318] FAILED A_confirmed_bad__knn__07_pycombat__post1 rc=-9 (3601s)
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:17:27][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:17:27][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:17:27][A_confirmed_bad×knn×12_scanorama×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:17:27][A_confirmed_bad×knn×12_scanorama×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:17:27][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:17:27][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:17:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:17:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:17:27][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__13_fsmvn__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:17:27][A_confirmed_bad×knn×12_scanorama×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:17:27][A_confirmed_bad×knn×12_scanorama×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__11_harmony__post1] [14:17:27][A_confirmed_bad×knn×11_harmony×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__11_harmony__post1] [14:17:27][A_confirmed_bad×knn×11_harmony×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:17:27][A_confirmed_bad×knn×12_scanorama×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__12_scanorama__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:17:27][A_confirmed_bad×knn×12_scanorama×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__12_scanorama__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__18_rank__post0] [14:17:27][A_confirmed_bad×knn×18_rank×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__18_rank__post0] [14:17:27][A_confirmed_bad×knn×18_rank×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__11_harmony__post1] [14:17:27][A_confirmed_bad×knn×11_harmony×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__11_harmony__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:17:27][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__13_fsmvn__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:17:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__16_fsqn_r__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__11_harmony__post0] [14:17:27][A_confirmed_bad×knn×11_harmony×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__11_harmony__post0] [14:17:27][A_confirmed_bad×knn×11_harmony×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:17:27][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:17:27][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__19_tdm__post1] [14:17:27][A_confirmed_bad×knn×19_tdm×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__19_tdm__post1] [14:17:27][A_confirmed_bad×knn×19_tdm×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:17:27][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:17:27][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:17:27][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:17:27][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:17:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:17:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__11_harmony__post0] [14:17:27][A_confirmed_bad×knn×11_harmony×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__11_harmony__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:17:27][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:17:27][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:17:27][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__14_qsmooth__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__18_rank__post0] [14:17:27][A_confirmed_bad×knn×18_rank×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__18_rank__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:17:27][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__15_fsqn_py__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__19_tdm__post1] [14:17:27][A_confirmed_bad×knn×19_tdm×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__19_tdm__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:17:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__16_fsqn_r__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__17_quantile__post1] [14:17:27][A_confirmed_bad×knn×17_quantile×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__17_quantile__post1] [14:17:27][A_confirmed_bad×knn×17_quantile×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:17:27][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__15_fsqn_py__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:17:27][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__21_harmonizr__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:17:27][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:17:27][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__17_quantile__post0] [14:17:27][A_confirmed_bad×knn×17_quantile×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__17_quantile__post0] [14:17:27][A_confirmed_bad×knn×17_quantile×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__18_rank__post1] [14:17:27][A_confirmed_bad×knn×18_rank×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__18_rank__post1] [14:17:27][A_confirmed_bad×knn×18_rank×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:17:28][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__14_qsmooth__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__18_rank__post1] [14:17:28][A_confirmed_bad×knn×18_rank×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__18_rank__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__17_quantile__post1] [14:17:28][A_confirmed_bad×knn×17_quantile×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__17_quantile__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__17_quantile__post0] [14:17:28][A_confirmed_bad×knn×17_quantile×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__17_quantile__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__19_tdm__post0] [14:17:28][A_confirmed_bad×knn×19_tdm×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__19_tdm__post0] [14:17:28][A_confirmed_bad×knn×19_tdm×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:17:28][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:17:28][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:17:28][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__21_harmonizr__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__19_tdm__post0] [14:17:28][A_confirmed_bad×knn×19_tdm×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__19_tdm__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__19_tdm__post1] [14:17:52][A_confirmed_bad×knn×19_tdm×post_rm=True] Downloaded (24s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__18_rank__post1] [14:17:52][A_confirmed_bad×knn×18_rank×post_rm=True] Downloaded (25s): 5411 samples × 15195 genes
+  [A_confirmed_bad__knn__19_tdm__post0] [14:17:52][A_confirmed_bad×knn×19_tdm×post_rm=False] Downloaded (25s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__19_tdm__post1] [14:17:53][A_confirmed_bad×knn×19_tdm×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__19_tdm__post1] [14:17:53][A_confirmed_bad×knn×19_tdm×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__18_rank__post1] [14:17:53][A_confirmed_bad×knn×18_rank×post_rm=True] Aligned: 5411 samples
+  [A_confirmed_bad__knn__18_rank__post1] [14:17:53][A_confirmed_bad×knn×18_rank×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__19_tdm__post0] [14:17:53][A_confirmed_bad×knn×19_tdm×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__19_tdm__post0] [14:17:53][A_confirmed_bad×knn×19_tdm×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:17:55][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Downloaded (27s): 5313 samples × 15194 genes
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:17:56][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Downloaded (28s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:17:56][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:17:56][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:17:56][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Downloaded (29s): 5444 samples × 15194 genes
+  [A_confirmed_bad__knn__18_rank__post0] [14:17:57][A_confirmed_bad×knn×18_rank×post_rm=False] Downloaded (29s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:17:57][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Downloaded (29s): 5420 samples × 15195 genes
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:17:57][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:17:57][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:17:57][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:17:57][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:17:57][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Downloaded (30s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__18_rank__post0] [14:17:57][A_confirmed_bad×knn×18_rank×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__18_rank__post0] [14:17:58][A_confirmed_bad×knn×18_rank×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:17:58][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Aligned: 5420 samples
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:17:58][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:17:58][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Downloaded (31s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:17:58][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:17:58][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:17:59][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:17:59][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__11_harmony__post1] [14:17:59][A_confirmed_bad×knn×11_harmony×post_rm=True] Downloaded (32s): 5420 samples × 15195 genes
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:17:59][A_confirmed_bad×knn×12_scanorama×post_rm=False] Downloaded (32s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:00][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Downloaded (32s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:00][A_confirmed_bad×knn×17_quantile×post_rm=False] Downloaded (32s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:00][A_confirmed_bad×knn×11_harmony×post_rm=False] Downloaded (32s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:00][A_confirmed_bad×knn×11_harmony×post_rm=True] Aligned: 5420 samples
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:00][A_confirmed_bad×knn×11_harmony×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:18:00][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Downloaded (33s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:18:00][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Downloaded (33s): 5411 samples × 15195 genes
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:00][A_confirmed_bad×knn×12_scanorama×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:00][A_confirmed_bad×knn×12_scanorama×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:01][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:01][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:01][A_confirmed_bad×knn×17_quantile×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:01][A_confirmed_bad×knn×17_quantile×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:01][A_confirmed_bad×knn×11_harmony×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:01][A_confirmed_bad×knn×11_harmony×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:18:01][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:18:01][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:18:01][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Aligned: 5411 samples
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:18:01][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:18:05][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Downloaded (37s): 5404 samples × 15195 genes
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:18:05][A_confirmed_bad×knn×12_scanorama×post_rm=True] Downloaded (37s): 5411 samples × 15195 genes
+  [A_confirmed_bad__knn__17_quantile__post1] [14:18:05][A_confirmed_bad×knn×17_quantile×post_rm=True] Downloaded (38s): 5411 samples × 15195 genes
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:18:05][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Aligned: 5404 samples
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:18:06][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:18:06][A_confirmed_bad×knn×12_scanorama×post_rm=True] Aligned: 5411 samples
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:18:06][A_confirmed_bad×knn×12_scanorama×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__17_quantile__post1] [14:18:06][A_confirmed_bad×knn×17_quantile×post_rm=True] Aligned: 5411 samples
+  [A_confirmed_bad__knn__17_quantile__post1] [14:18:06][A_confirmed_bad×knn×17_quantile×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:11][A_confirmed_bad×knn×19_tdm×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:11][A_confirmed_bad×knn×19_tdm×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:11][metrics] Starting group L ...
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:12][metrics] Group L done (0.4s)
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:12][metrics] Starting group M ...
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:12][A_confirmed_bad×knn×18_rank×post_rm=True] Reference aligned: 5411 samples x 15195 genes
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:12][A_confirmed_bad×knn×18_rank×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:12][metrics] Starting group L ...
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:13][metrics] Group L done (0.6s)
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:13][A_confirmed_bad×knn×19_tdm×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:13][metrics] Starting group M ...
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:13][A_confirmed_bad×knn×19_tdm×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:13][metrics] Starting group L ...
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:14][metrics] Group L done (1.2s)
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:14][metrics] Starting group M ...
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:17][metrics] Group M done (4.8s)
+  [A_confirmed_bad__knn__19_tdm__post1] [14:18:17][metrics] Starting group N ...
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:18][metrics] Group M done (5.3s)
+  [A_confirmed_bad__knn__18_rank__post1] [14:18:18][metrics] Starting group N ...
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:18][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:18][A_confirmed_bad×knn×21_harmonizr×post_rm=True] Gene list uploaded (15194 genes).
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:18][metrics] Starting group L ...
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:19][metrics] Group M done (5.0s)
+  [A_confirmed_bad__knn__19_tdm__post0] [14:18:19][metrics] Starting group N ...
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:19][metrics] Group L done (0.5s)
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:19][metrics] Starting group M ...
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:21][A_confirmed_bad×knn×18_rank×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:21][A_confirmed_bad×knn×18_rank×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:21][metrics] Starting group L ...
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:22][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:22][A_confirmed_bad×knn×14_qsmooth×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:22][metrics] Starting group L ...
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:23][metrics] Group L done (1.6s)
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:23][metrics] Starting group M ...
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:24][metrics] Group L done (1.5s)
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:24][metrics] Starting group M ...
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:24][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:24][A_confirmed_bad×knn×21_harmonizr×post_rm=False] Gene list uploaded (15194 genes).
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:24][metrics] Starting group L ...
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:26][metrics] Group M done (6.6s)
+  [A_confirmed_bad__knn__21_harmonizr__post1] [14:18:26][metrics] Starting group N ...
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:26][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Reference aligned: 5420 samples x 15195 genes
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:26][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:26][metrics] Starting group L ...
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:27][metrics] Group L done (2.8s)
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:27][metrics] Starting group M ...
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:29][metrics] Group L done (2.5s)
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:29][metrics] Starting group M ...
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:34][metrics] Group M done (10.8s)
+  [A_confirmed_bad__knn__18_rank__post0] [14:18:34][metrics] Starting group N ...
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:35][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:35][A_confirmed_bad×knn×14_qsmooth×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:35][metrics] Starting group L ...
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:36][metrics] Group M done (12.2s)
+  [A_confirmed_bad__knn__14_qsmooth__post1] [14:18:36][metrics] Starting group N ...
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:37][metrics] Group L done (1.7s)
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:37][metrics] Starting group M ...
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:18:38][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:18:39][A_confirmed_bad×knn×13_fsmvn×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:18:39][metrics] Starting group L ...
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:40][metrics] Group M done (12.9s)
+  [A_confirmed_bad__knn__21_harmonizr__post0] [14:18:40][metrics] Starting group N ...
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:18:40][metrics] Group L done (1.9s)
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:18:40][metrics] Starting group M ...
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:41][metrics] Group M done (12.4s)
+  [A_confirmed_bad__knn__16_fsqn_r__post1] [14:18:41][metrics] Starting group N ...
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:42][A_confirmed_bad×knn×17_quantile×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:42][A_confirmed_bad×knn×17_quantile×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:42][metrics] Starting group L ...
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:43][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:43][A_confirmed_bad×knn×15_fsqn_py×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:43][metrics] Starting group L ...
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:44][A_confirmed_bad×knn×12_scanorama×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:44][A_confirmed_bad×knn×12_scanorama×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:44][metrics] Starting group L ...
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:45][metrics] Group L done (2.5s)
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:45][A_confirmed_bad×knn×11_harmony×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__17_quantile__post0] [14:18:45][metrics] Starting group M ...
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:45][metrics] Group L done (1.7s)
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:18:45][metrics] Starting group M ...
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:45][A_confirmed_bad×knn×11_harmony×post_rm=True] Reference aligned: 5420 samples x 15195 genes
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:45][A_confirmed_bad×knn×11_harmony×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:45][metrics] Starting group L ...
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:45][A_confirmed_bad×knn×11_harmony×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:45][metrics] Starting group L ...
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:47][metrics] Group L done (3.2s)
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:18:47][metrics] Starting group M ...
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:49][metrics] Group L done (3.3s)
+  [A_confirmed_bad__knn__11_harmony__post1] [14:18:49][metrics] Starting group M ...
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:49][metrics] Group L done (4.0s)
+  [A_confirmed_bad__knn__11_harmony__post0] [14:18:49][metrics] Starting group M ...
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:51][metrics] Group M done (14.8s)
+  [A_confirmed_bad__knn__14_qsmooth__post0] [14:18:51][metrics] Starting group N ...
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:00][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:01][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:01][metrics] Starting group L ...
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:19:04][metrics] Group M done (19.0s)
+  [A_confirmed_bad__knn__15_fsqn_py__post0] [14:19:04][metrics] Starting group N ...
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:05][metrics] Group L done (4.5s)
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:05][metrics] Starting group M ...
+  [A_confirmed_bad__knn__17_quantile__post0] [14:19:05][metrics] Group M done (20.8s)
+  [A_confirmed_bad__knn__17_quantile__post0] [14:19:05][metrics] Starting group N ...
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:19:07][metrics] Group M done (26.7s)
+  [A_confirmed_bad__knn__13_fsmvn__post0] [14:19:07][metrics] Starting group N ...
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:09][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Reference aligned: 5411 samples x 15195 genes
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:10][A_confirmed_bad×knn×15_fsqn_py×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:10][metrics] Starting group L ...
+  [A_confirmed_bad__knn__11_harmony__post1] [14:19:10][metrics] Group M done (21.4s)
+  [A_confirmed_bad__knn__11_harmony__post1] [14:19:10][metrics] Starting group N ...
+  [A_confirmed_bad__knn__11_harmony__post0] [14:19:11][metrics] Group M done (21.7s)
+  [A_confirmed_bad__knn__11_harmony__post0] [14:19:11][metrics] Starting group N ...
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:19:11][metrics] Group M done (23.8s)
+  [A_confirmed_bad__knn__12_scanorama__post0] [14:19:11][metrics] Starting group N ...
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:12][metrics] Group L done (2.5s)
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:12][metrics] Starting group M ...
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:19:29][A_confirmed_bad×knn×12_scanorama×post_rm=True] Reference aligned: 5411 samples x 15195 genes
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:19:30][A_confirmed_bad×knn×12_scanorama×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:19:30][metrics] Starting group L ...
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:32][metrics] Group M done (20.4s)
+  [A_confirmed_bad__knn__15_fsqn_py__post1] [14:19:32][metrics] Starting group N ...
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:19:33][metrics] Group L done (3.4s)
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:19:33][metrics] Starting group M ...
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:38][metrics] Group M done (32.8s)
+  [A_confirmed_bad__knn__16_fsqn_r__post0] [14:19:38][metrics] Starting group N ...
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:19:50][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Reference aligned: 5404 samples x 15195 genes
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:19:50][A_confirmed_bad×knn×13_fsmvn×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:19:50][metrics] Starting group L ...
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:19:53][metrics] Group L done (2.6s)
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:19:53][metrics] Starting group M ...
+  [A_confirmed_bad__knn__17_quantile__post1] [14:19:57][A_confirmed_bad×knn×17_quantile×post_rm=True] Reference aligned: 5411 samples x 15195 genes
+  [A_confirmed_bad__knn__17_quantile__post1] [14:19:58][A_confirmed_bad×knn×17_quantile×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__17_quantile__post1] [14:19:58][metrics] Starting group L ...
+  [A_confirmed_bad__knn__17_quantile__post1] [14:20:02][metrics] Group L done (4.3s)
+  [A_confirmed_bad__knn__17_quantile__post1] [14:20:02][metrics] Starting group M ...
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:20:12][metrics] Group M done (38.3s)
+  [A_confirmed_bad__knn__12_scanorama__post1] [14:20:12][metrics] Starting group N ...
+  [A_confirmed_bad__knn__17_quantile__post1] [14:20:25][metrics] Group M done (23.4s)
+  [A_confirmed_bad__knn__17_quantile__post1] [14:20:25][metrics] Starting group N ...
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:20:29][metrics] Group M done (35.8s)
+  [A_confirmed_bad__knn__13_fsmvn__post1] [14:20:29][metrics] Starting group N ...
+[15:17:18] TIMEOUT A_confirmed_bad__knn__11_harmony__post0 after 3601s
+  [21/2318] FAILED A_confirmed_bad__knn__11_harmony__post0 rc=-9 (3601s)
+[15:17:18] START A_confirmed_bad__knn__25_angel__post0 | free=249.4GB
+[15:17:18] TIMEOUT A_confirmed_bad__knn__11_harmony__post1 after 3601s
+  [22/2318] FAILED A_confirmed_bad__knn__11_harmony__post1 rc=-9 (3601s)
+[15:17:18] START A_confirmed_bad__knn__25_angel__post1 | free=251.7GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__19_tdm__post0 after 3601s
+  [23/2318] FAILED A_confirmed_bad__knn__19_tdm__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__26_xpn__post0 | free=262.3GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__17_quantile__post1 after 3601s
+  [24/2318] FAILED A_confirmed_bad__knn__17_quantile__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__26_xpn__post1 | free=263.4GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__14_qsmooth__post1 after 3601s
+  [25/2318] FAILED A_confirmed_bad__knn__14_qsmooth__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__27_dwd__post0 | free=265.8GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__12_scanorama__post1 after 3601s
+  [26/2318] FAILED A_confirmed_bad__knn__12_scanorama__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__27_dwd__post1 | free=266.2GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__13_fsmvn__post0 after 3601s
+  [27/2318] FAILED A_confirmed_bad__knn__13_fsmvn__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__28_npn__post0 | free=266.2GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__13_fsmvn__post1 after 3601s
+  [28/2318] FAILED A_confirmed_bad__knn__13_fsmvn__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__28_npn__post1 | free=266.3GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__12_scanorama__post0 after 3601s
+  [29/2318] FAILED A_confirmed_bad__knn__12_scanorama__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__29_combat_ref__post0 | free=266.6GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__18_rank__post0 after 3601s
+  [30/2318] FAILED A_confirmed_bad__knn__18_rank__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__29_combat_ref__post1 | free=268.4GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__18_rank__post1 after 3601s
+  [31/2318] FAILED A_confirmed_bad__knn__18_rank__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__31_ruv3prps__post0 | free=268.9GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__14_qsmooth__post0 after 3601s
+  [32/2318] FAILED A_confirmed_bad__knn__14_qsmooth__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__31_ruv3prps__post1 | free=269.4GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__16_fsqn_r__post0 after 3601s
+  [33/2318] FAILED A_confirmed_bad__knn__16_fsqn_r__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__34_arsyn__post0 | free=269.8GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__15_fsqn_py__post1 after 3601s
+  [34/2318] FAILED A_confirmed_bad__knn__15_fsqn_py__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__34_arsyn__post1 | free=270.0GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__21_harmonizr__post1 after 3601s
+  [35/2318] FAILED A_confirmed_bad__knn__21_harmonizr__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__36_explobatch__post0 | free=270.4GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__19_tdm__post1 after 3601s
+  [36/2318] FAILED A_confirmed_bad__knn__19_tdm__post1 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__36_explobatch__post1 | free=270.6GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__17_quantile__post0 after 3601s
+[15:17:19] START A_confirmed_bad__knn__38_harman__post0 | free=270.7GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__21_harmonizr__post0 after 3601s
+  [37/2318] FAILED A_confirmed_bad__knn__17_quantile__post0 rc=-9 (3601s)
+  [38/2318] FAILED A_confirmed_bad__knn__21_harmonizr__post0 rc=-9 (3601s)
+[15:17:19] START A_confirmed_bad__knn__38_harman__post1 | free=270.7GB
+[15:17:19] TIMEOUT A_confirmed_bad__knn__15_fsqn_py__post0 after 3601s
+[15:17:19] START A_confirmed_bad__softimpute__01_raw__post0 | free=270.7GB
+  [39/2318] FAILED A_confirmed_bad__knn__15_fsqn_py__post0 rc=-9 (3601s)
+[15:17:19] TIMEOUT A_confirmed_bad__knn__16_fsqn_r__post1 after 3601s
+[15:17:19] START A_confirmed_bad__softimpute__01_raw__post1 | free=270.7GB
+  [40/2318] FAILED A_confirmed_bad__knn__16_fsqn_r__post1 rc=-9 (3601s)
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:28][A_confirmed_bad×knn×25_angel×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:28][A_confirmed_bad×knn×25_angel×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:28][A_confirmed_bad×knn×25_angel×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__25_angel__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:28][A_confirmed_bad×knn×25_angel×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:28][A_confirmed_bad×knn×25_angel×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__28_npn__post1] [15:17:28][A_confirmed_bad×knn×28_npn×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__28_npn__post1] [15:17:28][A_confirmed_bad×knn×28_npn×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__28_npn__post1] [15:17:28][A_confirmed_bad×knn×28_npn×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__28_npn__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:28][A_confirmed_bad×knn×25_angel×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__25_angel__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:17:28][A_confirmed_bad×knn×34_arsyn×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:17:28][A_confirmed_bad×knn×34_arsyn×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__27_dwd__post0] [15:17:29][A_confirmed_bad×knn×27_dwd×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__27_dwd__post0] [15:17:29][A_confirmed_bad×knn×27_dwd×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:17:29][A_confirmed_bad×knn×34_arsyn×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__34_arsyn__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:17:29][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:17:29][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__26_xpn__post0] [15:17:29][A_confirmed_bad×knn×26_xpn×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__26_xpn__post0] [15:17:29][A_confirmed_bad×knn×26_xpn×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__28_npn__post0] [15:17:29][A_confirmed_bad×knn×28_npn×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__28_npn__post0] [15:17:29][A_confirmed_bad×knn×28_npn×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:17:29][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:17:29][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__27_dwd__post1] [15:17:29][A_confirmed_bad×knn×27_dwd×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__27_dwd__post1] [15:17:29][A_confirmed_bad×knn×27_dwd×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:17:29][A_confirmed_bad×knn×36_explobatch×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:17:29][A_confirmed_bad×knn×36_explobatch×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__38_harman__post1] [15:17:29][A_confirmed_bad×knn×38_harman×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__38_harman__post1] [15:17:29][A_confirmed_bad×knn×38_harman×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__26_xpn__post1] [15:17:29][A_confirmed_bad×knn×26_xpn×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__26_xpn__post1] [15:17:29][A_confirmed_bad×knn×26_xpn×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__26_xpn__post0] [15:17:29][A_confirmed_bad×knn×26_xpn×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__26_xpn__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__27_dwd__post0] [15:17:29][A_confirmed_bad×knn×27_dwd×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__27_dwd__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:17:29][A_confirmed_bad×knn×36_explobatch×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:17:29][A_confirmed_bad×knn×36_explobatch×post_rm=True] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:17:29][A_confirmed_bad×knn×36_explobatch×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__36_explobatch__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:17:29][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__29_combat_ref__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__38_harman__post1] [15:17:29][A_confirmed_bad×knn×38_harman×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__38_harman__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__26_xpn__post1] [15:17:29][A_confirmed_bad×knn×26_xpn×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__26_xpn__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:17:29][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__29_combat_ref__post1.tsv.gz) ...
+  [A_confirmed_bad__softimpute__01_raw__post1] [15:17:29][A_confirmed_bad×softimpute×01_raw×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__softimpute__01_raw__post1] [15:17:29][A_confirmed_bad×softimpute×01_raw×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:17:29][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:17:29][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:17:29][A_confirmed_bad×knn×36_explobatch×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__36_explobatch__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__28_npn__post0] [15:17:29][A_confirmed_bad×knn×28_npn×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__28_npn__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__27_dwd__post1] [15:17:29][A_confirmed_bad×knn×27_dwd×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__27_dwd__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:17:29][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:17:29][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:17:29][A_confirmed_bad×knn×34_arsyn×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:17:29][A_confirmed_bad×knn×34_arsyn×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:17:29][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__31_ruv3prps__post0.tsv.gz) ...
+  [A_confirmed_bad__softimpute__01_raw__post1] [15:17:29][A_confirmed_bad×softimpute×01_raw×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__softimpute__01_raw__post1.tsv.gz) ...
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:17:29][A_confirmed_bad×knn×34_arsyn×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__34_arsyn__post0.tsv.gz) ...
+  [A_confirmed_bad__softimpute__01_raw__post0] [15:17:29][A_confirmed_bad×softimpute×01_raw×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__softimpute__01_raw__post0] [15:17:29][A_confirmed_bad×softimpute×01_raw×post_rm=False] Incremental: reusing 228 existing keys from S3.
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:17:29][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__31_ruv3prps__post1.tsv.gz) ...
+  [A_confirmed_bad__softimpute__01_raw__post0] [15:17:29][A_confirmed_bad×softimpute×01_raw×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__softimpute__01_raw__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__38_harman__post0] [15:17:29][A_confirmed_bad×knn×38_harman×post_rm=False] Requested groups: ['I', 'L', 'M', 'N'] | WM: enabled | Need to compute: ['L', 'M', 'N']
+  [A_confirmed_bad__knn__38_harman__post0] [15:17:29][A_confirmed_bad×knn×38_harman×post_rm=False] Incremental: reusing 227 existing keys from S3.
+  [A_confirmed_bad__knn__38_harman__post0] [15:17:29][A_confirmed_bad×knn×38_harman×post_rm=False] Downloading expression (FL_batch_correction/exp/A_confirmed_bad__knn__38_harman__post0.tsv.gz) ...
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:30][A_confirmed_bad×knn×25_angel×post_rm=True] Downloaded (1s): 5420 samples × 550 genes
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:30][A_confirmed_bad×knn×25_angel×post_rm=True] Aligned: 5420 samples
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:30][A_confirmed_bad×knn×25_angel×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:30][A_confirmed_bad×knn×25_angel×post_rm=False] Downloaded (1s): 5444 samples × 550 genes
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:30][A_confirmed_bad×knn×25_angel×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:30][A_confirmed_bad×knn×25_angel×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:17:37][A_confirmed_bad×knn×34_arsyn×post_rm=False] Downloaded (9s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__38_harman__post0] [15:17:38][A_confirmed_bad×knn×38_harman×post_rm=False] Downloaded (9s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__38_harman__post1] [15:17:38][A_confirmed_bad×knn×38_harman×post_rm=True] Downloaded (9s): 5411 samples × 15195 genes
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:17:38][A_confirmed_bad×knn×34_arsyn×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:17:38][A_confirmed_bad×knn×34_arsyn×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__38_harman__post0] [15:17:39][A_confirmed_bad×knn×38_harman×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__38_harman__post0] [15:17:39][A_confirmed_bad×knn×38_harman×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:17:39][A_confirmed_bad×knn×34_arsyn×post_rm=True] Downloaded (10s): 5411 samples × 15195 genes
+  [A_confirmed_bad__knn__38_harman__post1] [15:17:39][A_confirmed_bad×knn×38_harman×post_rm=True] Aligned: 5411 samples
+  [A_confirmed_bad__knn__38_harman__post1] [15:17:39][A_confirmed_bad×knn×38_harman×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:17:40][A_confirmed_bad×knn×34_arsyn×post_rm=True] Aligned: 5411 samples
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:17:40][A_confirmed_bad×knn×34_arsyn×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:48][A_confirmed_bad×knn×25_angel×post_rm=True] Reference aligned: 5420 samples x 15195 genes
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:48][A_confirmed_bad×knn×25_angel×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:48][A_confirmed_bad×knn×25_angel×post_rm=True] Gene list uploaded (550 genes).
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:48][metrics] Starting group L ...
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:48][A_confirmed_bad×knn×25_angel×post_rm=False] Gene list uploaded (550 genes).
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:48][metrics] Starting group L ...
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:48][metrics] Group L done (0.1s)
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:48][metrics] Starting group M ...
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:48][metrics] Group L done (0.1s)
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:48][metrics] Starting group M ...
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:52][metrics] Group M done (3.5s)
+  [A_confirmed_bad__knn__25_angel__post1] [15:17:52][metrics] Starting group N ...
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:52][metrics] Group M done (3.8s)
+  [A_confirmed_bad__knn__25_angel__post0] [15:17:52][metrics] Starting group N ...
+  [A_confirmed_bad__knn__27_dwd__post0] [15:18:09][A_confirmed_bad×knn×27_dwd×post_rm=False] Downloaded (40s): 5444 samples × 15195 genes
+  [A_confirmed_bad__softimpute__01_raw__post1] [15:18:12][A_confirmed_bad×softimpute×01_raw×post_rm=True] Downloaded (44s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__27_dwd__post0] [15:18:13][A_confirmed_bad×knn×27_dwd×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:18:13][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Downloaded (44s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__27_dwd__post0] [15:18:13][A_confirmed_bad×knn×27_dwd×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__26_xpn__post0] [15:18:14][A_confirmed_bad×knn×26_xpn×post_rm=False] Downloaded (46s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:18:15][A_confirmed_bad×knn×36_explobatch×post_rm=True] Downloaded (46s): 5313 samples × 15195 genes
+  [A_confirmed_bad__softimpute__01_raw__post1] [15:18:15][A_confirmed_bad×softimpute×01_raw×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__softimpute__01_raw__post1] [15:18:15][A_confirmed_bad×softimpute×01_raw×post_rm=True] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__softimpute__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:18:15][A_confirmed_bad×knn×36_explobatch×post_rm=False] Downloaded (47s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:18:16][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:18:16][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__softimpute__01_raw__post0] [15:18:16][A_confirmed_bad×softimpute×01_raw×post_rm=False] Downloaded (48s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:17][A_confirmed_bad×knn×34_arsyn×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:17][A_confirmed_bad×knn×38_harman×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:17][A_confirmed_bad×knn×34_arsyn×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:17][metrics] Starting group L ...
+  [A_confirmed_bad__knn__26_xpn__post0] [15:18:17][A_confirmed_bad×knn×26_xpn×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__26_xpn__post0] [15:18:17][A_confirmed_bad×knn×26_xpn×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:17][A_confirmed_bad×knn×38_harman×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:17][metrics] Starting group L ...
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:18][A_confirmed_bad×knn×38_harman×post_rm=True] Reference aligned: 5411 samples x 15195 genes
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:18:18][A_confirmed_bad×knn×36_explobatch×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:18:18][A_confirmed_bad×knn×36_explobatch×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:18][A_confirmed_bad×knn×38_harman×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:18][metrics] Starting group L ...
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:18][metrics] Group L done (0.8s)
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:18][metrics] Starting group M ...
+  [A_confirmed_bad__softimpute__01_raw__post0] [15:18:18][A_confirmed_bad×softimpute×01_raw×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__softimpute__01_raw__post0] [15:18:19][A_confirmed_bad×softimpute×01_raw×post_rm=False] Reference cache miss — downloading FL_batch_correction/exp/A_confirmed_bad__softimpute__01_raw__post0.tsv.gz ...
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:19][metrics] Group L done (1.5s)
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:19][metrics] Starting group M ...
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:19][metrics] Group L done (1.0s)
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:19][metrics] Starting group M ...
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:18:20][A_confirmed_bad×knn×36_explobatch×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:18:21][A_confirmed_bad×knn×36_explobatch×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:18:21][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Downloaded (52s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:18:21][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Downloaded (53s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__28_npn__post1] [15:18:25][A_confirmed_bad×knn×28_npn×post_rm=True] Downloaded (56s): 5420 samples × 15195 genes
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:18:25][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:18:26][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:18:26][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:18:26][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:27][A_confirmed_bad×knn×34_arsyn×post_rm=True] Reference aligned: 5411 samples x 15195 genes
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:27][A_confirmed_bad×knn×34_arsyn×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:27][metrics] Starting group L ...
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:28][metrics] Group M done (9.9s)
+  [A_confirmed_bad__knn__38_harman__post0] [15:18:28][metrics] Starting group N ...
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:28][metrics] Group L done (0.8s)
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:28][metrics] Starting group M ...
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:28][metrics] Group M done (9.6s)
+  [A_confirmed_bad__knn__34_arsyn__post0] [15:18:28][metrics] Starting group N ...
+  [A_confirmed_bad__knn__28_npn__post1] [15:18:29][A_confirmed_bad×knn×28_npn×post_rm=True] Aligned: 5420 samples
+  [A_confirmed_bad__knn__28_npn__post1] [15:18:29][A_confirmed_bad×knn×28_npn×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:30][metrics] Group M done (11.0s)
+  [A_confirmed_bad__knn__38_harman__post1] [15:18:30][metrics] Starting group N ...
+  [A_confirmed_bad__knn__27_dwd__post1] [15:18:34][A_confirmed_bad×knn×27_dwd×post_rm=True] Downloaded (65s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__26_xpn__post1] [15:18:35][A_confirmed_bad×knn×26_xpn×post_rm=True] Downloaded (66s): 5404 samples × 15195 genes
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:38][metrics] Group M done (9.8s)
+  [A_confirmed_bad__knn__34_arsyn__post1] [15:18:38][metrics] Starting group N ...
+  [A_confirmed_bad__knn__27_dwd__post1] [15:18:39][A_confirmed_bad×knn×27_dwd×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__27_dwd__post1] [15:18:40][A_confirmed_bad×knn×27_dwd×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__26_xpn__post1] [15:18:40][A_confirmed_bad×knn×26_xpn×post_rm=True] Aligned: 5404 samples
+  [A_confirmed_bad__knn__26_xpn__post1] [15:18:41][A_confirmed_bad×knn×26_xpn×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__28_npn__post0] [15:18:56][A_confirmed_bad×knn×28_npn×post_rm=False] Downloaded (87s): 5444 samples × 15195 genes
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:19:00][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Downloaded (92s): 5313 samples × 15195 genes
+  [A_confirmed_bad__knn__28_npn__post0] [15:19:05][A_confirmed_bad×knn×28_npn×post_rm=False] Aligned: 5444 samples
+  [A_confirmed_bad__knn__28_npn__post0] [15:19:05][A_confirmed_bad×knn×28_npn×post_rm=False] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:19:08][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Aligned: 5313 samples
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:19:08][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Reference cache hit: A_confirmed_bad__knn__01_raw__post0.tsv.gz (S3 ETag "39b45363b8f1ab974381fc7fb8147965-74")
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:19:47][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:19:47][A_confirmed_bad×knn×31_ruv3prps×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:19:47][metrics] Starting group L ...
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:19:49][metrics] Group L done (1.5s)
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:19:49][metrics] Starting group M ...
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:09][A_confirmed_bad×knn×27_dwd×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:09][A_confirmed_bad×knn×27_dwd×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:09][metrics] Starting group L ...
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:10][metrics] Group L done (1.6s)
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:10][metrics] Starting group M ...
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:20:12][metrics] Group M done (23.2s)
+  [A_confirmed_bad__knn__31_ruv3prps__post0] [15:20:12][metrics] Starting group N ...
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:23][A_confirmed_bad×knn×28_npn×post_rm=True] Reference aligned: 5420 samples x 15195 genes
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:23][A_confirmed_bad×knn×28_npn×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:23][metrics] Starting group L ...
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:23][metrics] Group M done (12.7s)
+  [A_confirmed_bad__knn__27_dwd__post1] [15:20:23][metrics] Starting group N ...
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:24][metrics] Group L done (1.2s)
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:24][metrics] Starting group M ...
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:24][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:25][A_confirmed_bad×knn×31_ruv3prps×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:25][metrics] Starting group L ...
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:27][metrics] Group L done (2.4s)
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:27][metrics] Starting group M ...
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:35][A_confirmed_bad×knn×36_explobatch×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:35][A_confirmed_bad×knn×36_explobatch×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:35][metrics] Starting group L ...
+  [A_confirmed_bad__knn__28_npn__post0] [15:20:37][A_confirmed_bad×knn×28_npn×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__28_npn__post0] [15:20:37][A_confirmed_bad×knn×28_npn×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__28_npn__post0] [15:20:37][metrics] Starting group L ...
+  [A_confirmed_bad__knn__27_dwd__post0] [15:20:39][A_confirmed_bad×knn×27_dwd×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:39][metrics] Group L done (3.3s)
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:39][metrics] Starting group M ...
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:39][metrics] Group M done (14.6s)
+  [A_confirmed_bad__knn__28_npn__post1] [15:20:39][metrics] Starting group N ...
+  [A_confirmed_bad__knn__27_dwd__post0] [15:20:39][A_confirmed_bad×knn×27_dwd×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__27_dwd__post0] [15:20:39][metrics] Starting group L ...
+  [A_confirmed_bad__knn__27_dwd__post0] [15:20:41][metrics] Group L done (2.0s)
+  [A_confirmed_bad__knn__27_dwd__post0] [15:20:41][metrics] Starting group M ...
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:45][metrics] Group M done (17.8s)
+  [A_confirmed_bad__knn__31_ruv3prps__post1] [15:20:45][metrics] Starting group N ...
+  [A_confirmed_bad__knn__28_npn__post0] [15:20:45][metrics] Group L done (7.8s)
+  [A_confirmed_bad__knn__28_npn__post0] [15:20:45][metrics] Starting group M ...
+  [A_confirmed_bad__knn__26_xpn__post1] [15:20:52][A_confirmed_bad×knn×26_xpn×post_rm=True] Reference aligned: 5404 samples x 15195 genes
+  [A_confirmed_bad__knn__26_xpn__post1] [15:20:53][A_confirmed_bad×knn×26_xpn×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__26_xpn__post1] [15:20:53][metrics] Starting group L ...
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:56][metrics] Group M done (17.0s)
+  [A_confirmed_bad__knn__36_explobatch__post0] [15:20:56][metrics] Starting group N ...
+  [A_confirmed_bad__knn__26_xpn__post1] [15:20:57][metrics] Group L done (4.0s)
+  [A_confirmed_bad__knn__26_xpn__post1] [15:20:57][metrics] Starting group M ...
+  [A_confirmed_bad__knn__27_dwd__post0] [15:21:00][metrics] Group M done (19.1s)
+  [A_confirmed_bad__knn__27_dwd__post0] [15:21:00][metrics] Starting group N ...
+  [A_confirmed_bad__knn__28_npn__post0] [15:21:06][metrics] Group M done (20.2s)
+  [A_confirmed_bad__knn__28_npn__post0] [15:21:06][metrics] Starting group N ...
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:13][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:14][A_confirmed_bad×knn×29_combat_ref×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:14][metrics] Starting group L ...
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:21:19][A_confirmed_bad×knn×36_explobatch×post_rm=True] Reference aligned: 5313 samples x 15195 genes
+  [A_confirmed_bad__knn__26_xpn__post1] [15:21:19][metrics] Group M done (22.3s)
+  [A_confirmed_bad__knn__26_xpn__post1] [15:21:19][metrics] Starting group N ...
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:21:19][A_confirmed_bad×knn×36_explobatch×post_rm=True] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:21:19][metrics] Starting group L ...
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:25][A_confirmed_bad×knn×26_xpn×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:25][A_confirmed_bad×knn×26_xpn×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:25][metrics] Starting group L ...
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:28][metrics] Group L done (2.7s)
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:28][metrics] Starting group M ...
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:28][metrics] Group L done (13.8s)
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:28][metrics] Starting group M ...
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:21:31][metrics] Group L done (11.7s)
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:21:31][metrics] Starting group M ...
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:21:37][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Reference aligned: 5444 samples x 15195 genes
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:21:38][A_confirmed_bad×knn×29_combat_ref×post_rm=False] Gene list uploaded (15195 genes).
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:21:38][metrics] Starting group L ...
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:21:51][metrics] Group L done (12.8s)
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:21:51][metrics] Starting group M ...
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:52][metrics] Group M done (24.0s)
+  [A_confirmed_bad__knn__26_xpn__post0] [15:21:52][metrics] Starting group N ...
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:58][metrics] Group M done (30.3s)
+  [A_confirmed_bad__knn__29_combat_ref__post1] [15:21:58][metrics] Starting group N ...
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:22:01][metrics] Group M done (29.2s)
+  [A_confirmed_bad__knn__36_explobatch__post1] [15:22:01][metrics] Starting group N ...
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:22:14][metrics] Group M done (22.9s)
+  [A_confirmed_bad__knn__29_combat_ref__post0] [15:22:14][metrics] Starting group N ...
+

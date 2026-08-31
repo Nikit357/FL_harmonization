@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="288pt" height="180pt" viewBox="0 0 288 180" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-06-10T15:42:14.500720</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 180 
+L 288 180 
+L 288 0 
+L 0 0 
+L 0 180 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="legend_1">
+    <g id="text_1">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="129.329297" y="77.549766" transform="rotate(-0 129.329297 77.549766)">imp_pal</text>
+    </g>
+    <g id="patch_2">
+     <path d="M 107.157656 87.056719 
+L 125.157656 87.056719 
+L 125.157656 80.756719 
+L 107.157656 80.756719 
+z
+" style="fill: #2979ae; stroke: #2979ae; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-size: 9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="132.357656" y="87.056719" transform="rotate(-0 132.357656 87.056719)">strict</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 107.157656 96.667031 
+L 125.157656 96.667031 
+L 125.157656 90.367031 
+L 107.157656 90.367031 
+z
+" style="fill: #982d22; stroke: #982d22; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-size: 9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="132.357656" y="96.667031" transform="rotate(-0 132.357656 96.667031)">knn</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 107.157656 106.277344 
+L 125.157656 106.277344 
+L 125.157656 99.977344 
+L 107.157656 99.977344 
+z
+" style="fill: #713689; stroke: #713689; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="132.357656" y="106.277344" transform="rotate(-0 132.357656 106.277344)">softimpute</text>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

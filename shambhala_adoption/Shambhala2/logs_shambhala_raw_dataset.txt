@@ -1,0 +1,30 @@
+
+======================================================
+🪲 STARTING SHAMBHALA2 DIAGNOSTIC RUN
+======================================================
+
+1. 📥 INPUT DATA ( comb_exp_log_dedup_strict_subset.csv ):
+   - Rows: 3447  Cols: 101 
+   - NS (Number of Input Samples): 100 
+
+2. 📥 P REFERENCE ( P0.csv ):
+   - Rows: 11769  Cols: 40 
+
+3. 🔄 POOL AFTER MERGE (MAS + P):
+   - Rows: 3332  Cols: 140 
+
+4. 🚀 EXECUTING OCTAVE ENGINE...
+5. 📥 OCTAVE OUTPUT (Cu_bis.txt):
+   - Rows: 3332  Cols: 101 
+
+6. 📥 Q REFERENCE ( Q0.csv ):
+   - Rows: 11888  Cols: 101 
+
+7. 🔄 MAS1 AFTER MERGE (Octave Output + Q):
+   - Rows: 2293  Cols: 201 
+
+8. ✂️ SUBSETTING MAS3 (The crash point):
+   - Target Start Column (NS + 2): 102 
+   - Target End Column (ncol(MAS1)): 201 
+
+✅ HARMONIZATION COMPLETE!

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="288pt" height="180pt" viewBox="0 0 288 180" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-06-10T18:44:03.766732</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 180 
+L 288 180 
+L 288 0 
+L 0 0 
+L 0 180 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="legend_1">
+    <g id="text_1">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="125.588672" y="59.200781" transform="rotate(-0 125.588672 59.200781)">annot_pal</text>
+    </g>
+    <g id="patch_2">
+     <path d="M 81.971484 67.417969 
+L 96.971484 67.417969 
+L 96.971484 62.167969 
+L 81.971484 62.167969 
+z
+" style="fill: #8b4513; stroke: #8b4513; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="67.417969" transform="rotate(-0 102.971484 67.417969)">RNA_BATCH</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 81.971484 75.635156 
+L 96.971484 75.635156 
+L 96.971484 70.385156 
+L 81.971484 70.385156 
+z
+" style="fill: #cd853f; stroke: #cd853f; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="75.635156" transform="rotate(-0 102.971484 75.635156)">PLATFORM_RNA</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 81.971484 83.852344 
+L 96.971484 83.852344 
+L 96.971484 78.602344 
+L 81.971484 78.602344 
+z
+" style="fill: #deb887; stroke: #deb887; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="83.852344" transform="rotate(-0 102.971484 83.852344)">RNASEQ_SOURCE</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 81.971484 92.069531 
+L 96.971484 92.069531 
+L 96.971484 86.819531 
+L 81.971484 86.819531 
+z
+" style="fill: #f5deb3; stroke: #f5deb3; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="92.069531" transform="rotate(-0 102.971484 92.069531)">COHORT_LABEL</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 81.971484 100.286719 
+L 96.971484 100.286719 
+L 96.971484 95.036719 
+L 81.971484 95.036719 
+z
+" style="fill: #2f4f4f; stroke: #2f4f4f; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="100.286719" transform="rotate(-0 102.971484 100.286719)">Major_group</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 81.971484 108.503906 
+L 96.971484 108.503906 
+L 96.971484 103.253906 
+L 81.971484 103.253906 
+z
+" style="fill: #5f9ea0; stroke: #5f9ea0; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="108.503906" transform="rotate(-0 102.971484 108.503906)">Diagnosis_cell_type_unified</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 81.971484 116.721094 
+L 96.971484 116.721094 
+L 96.971484 111.471094 
+L 81.971484 111.471094 
+z
+" style="fill: #b0c4de; stroke: #b0c4de; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="116.721094" transform="rotate(-0 102.971484 116.721094)">TUMOR_NORMAL</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 81.971484 124.938281 
+L 96.971484 124.938281 
+L 96.971484 119.688281 
+L 81.971484 119.688281 
+z
+" style="fill: #808080; stroke: #808080; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="102.971484" y="124.938281" transform="rotate(-0 102.971484 124.938281)">global/all</text>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

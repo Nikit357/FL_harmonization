@@ -1,0 +1,367 @@
+root@fl-metrics:/app/harmonization-metrics-calculation# python test_mock_metrics.py
+
+--- test_all_keys_present ---
+[11:40:22][metrics] Computing PCA ...
+[11:40:22][metrics] Computing UMAP ...
+[11:40:31][metrics] Computing tSNE ...
+[11:40:32][metrics] Starting group E ...
+[11:40:32][metrics] Group E done (0.0s)
+[11:40:32][metrics] Starting group K ...
+[11:40:32][metrics] Group K done (0.0s)
+[11:40:32][metrics] Starting group A ...
+[11:40:32][metrics] Group A done (0.5s)
+[11:40:32][metrics] Starting group J ...
+[11:40:32][metrics] Group J done (0.0s)
+[11:40:32][metrics] Starting group B ...
+[11:40:32][metrics] Group B done (0.1s)
+[11:40:32][metrics] Starting group C ...
+[11:40:32][metrics] Group C done (0.2s)
+[11:40:32][metrics] Starting group D ...
+[11:40:35][metrics] Group D done (2.2s)
+[11:40:35][metrics] Starting group G ...
+[11:40:35][metrics] Group G done (0.0s)
+[11:40:35][metrics] Starting group H ...
+[11:40:35][metrics] Group H done (0.0s)
+[11:40:35][metrics] Starting group I ...
+[11:40:37][metrics] Group I done (2.1s)
+[11:40:37][metrics] Starting group M ...
+[11:40:37][metrics] Group M done (0.0s)
+[11:40:37][metrics] Starting group N ...
+[11:40:40][metrics] Group N done (3.4s)
+  PASS  key_present:n_samples
+  PASS  key_present:n_genes
+  PASS  key_present:n_batches
+  PASS  key_present:n_cohorts
+  PASS  key_present:n_samples_per_batch_min
+  PASS  key_present:n_samples_per_batch_max
+  PASS  key_present:zero_fraction_global
+  PASS  key_present:fraction_genes_below_1
+  PASS  key_present:below_1_fraction_by_batch_max
+  PASS  key_present:below_1_fraction_by_batch_min
+  PASS  key_present:exp_min
+  PASS  key_present:exp_max
+  PASS  key_present:exp_median
+  PASS  key_present:exp_std
+  PASS  key_present:exp_p01
+  PASS  key_present:exp_p99
+  PASS  key_present:per_batch_median_cv
+  PASS  key_present:n_cohorts_bimodal
+  PASS  key_present:fraction_cohorts_bimodal
+  PASS  key_present:r2_RNA_BATCH
+  PASS  key_present:r2_Major_group
+  PASS  key_present:r2_pc1_RNA_BATCH
+  PASS  key_present:pcr_RNA_BATCH
+  PASS  key_present:pcr_Major_group
+  PASS  key_present:dsc_RNA_BATCH
+  PASS  key_present:dsc_pvalue_RNA_BATCH
+  PASS  key_present:kbet_acceptance_rate_RNA_BATCH
+  PASS  key_present:ilisi_mean_RNA_BATCH
+  PASS  key_present:ilisi_norm_RNA_BATCH
+  PASS  key_present:clisi_mean_Major_group
+  PASS  key_present:asw_batch_RNA_BATCH
+  PASS  key_present:asw_batch_norm_RNA_BATCH
+  PASS  key_present:asw_bio_Major_group
+  PASS  key_present:asw_bio_norm_Major_group
+  PASS  key_present:cms_mean_RNA_BATCH
+  PASS  key_present:umap_centroid_disp_RNA_BATCH
+  PASS  key_present:umap_entropy_mean_RNA_BATCH
+  PASS  key_present:umap_entropy_norm_RNA_BATCH
+  PASS  key_present:tsne_centroid_disp_RNA_BATCH
+  PASS  key_present:tsne_entropy_mean_RNA_BATCH
+  PASS  key_present:ks_mean_D_RNA_BATCH
+  PASS  key_present:ks_frac_sig_RNA_BATCH
+  PASS  key_present:ks_cohort_within_batch_mean_D
+  PASS  key_present:per_gene_batch_mean_cv_RNA_BATCH
+  PASS  key_present:per_gene_batch_mean_cv_COHORT_LABEL
+  PASS  key_present:per_gene_batch_mean_cv_PLATFORM_RNA
+  PASS  key_present:graph_connectivity_Major_group
+  PASS  key_present:avg_intra_dist_RNA_BATCH
+  PASS  key_present:avg_inter_dist_RNA_BATCH
+  PASS  key_present:dist_ratio_RNA_BATCH
+
+--- test_random_batch_low_r2 ---
+[11:40:40][metrics] Computing PCA ...
+[11:40:40][metrics] Computing UMAP ...
+[11:40:40][metrics] Computing tSNE ...
+[11:40:40][metrics] Starting group E ...
+[11:40:40][metrics] Group E done (0.0s)
+[11:40:40][metrics] Starting group K ...
+[11:40:40][metrics] Group K done (0.0s)
+[11:40:40][metrics] Starting group A ...
+[11:40:41][metrics] Group A done (0.5s)
+[11:40:41][metrics] Starting group J ...
+[11:40:41][metrics] Group J done (0.0s)
+[11:40:41][metrics] Starting group B ...
+[11:40:41][metrics] Group B done (0.1s)
+[11:40:41][metrics] Starting group C ...
+[11:40:41][metrics] Group C done (0.2s)
+[11:40:41][metrics] Starting group D ...
+[11:40:44][metrics] Group D done (2.2s)
+[11:40:44][metrics] Starting group G ...
+[11:40:44][metrics] Group G done (0.0s)
+[11:40:44][metrics] Starting group H ...
+[11:40:44][metrics] Group H done (0.0s)
+[11:40:44][metrics] Starting group I ...
+[11:40:46][metrics] Group I done (2.1s)
+[11:40:46][metrics] Starting group M ...
+[11:40:46][metrics] Group M done (0.0s)
+[11:40:46][metrics] Starting group N ...
+[11:40:49][metrics] Group N done (3.5s)
+  PASS  r2_RNA_BATCH<0.30_for_random
+
+--- test_strong_batch_high_r2 ---
+[11:40:49][metrics] Computing PCA ...
+[11:40:49][metrics] Computing UMAP ...
+[11:40:50][metrics] Computing tSNE ...
+[11:40:50][metrics] Starting group E ...
+[11:40:50][metrics] Group E done (0.0s)
+[11:40:50][metrics] Starting group K ...
+[11:40:50][metrics] Group K done (0.0s)
+[11:40:50][metrics] Starting group A ...
+[11:40:51][metrics] Group A done (0.8s)
+[11:40:51][metrics] Starting group J ...
+[11:40:51][metrics] Group J done (0.0s)
+[11:40:51][metrics] Starting group B ...
+[11:40:51][metrics] Group B done (0.3s)
+[11:40:51][metrics] Starting group C ...
+[11:40:51][metrics] Group C done (0.2s)
+[11:40:51][metrics] Starting group D ...
+[11:41:05][metrics] Group D done (13.3s)
+[11:41:05][metrics] Starting group G ...
+[11:41:05][metrics] Group G done (0.0s)
+[11:41:05][metrics] Starting group H ...
+[11:41:05][metrics] Group H done (0.0s)
+[11:41:05][metrics] Starting group I ...
+[11:41:10][metrics] Group I done (5.3s)
+[11:41:10][metrics] Starting group M ...
+[11:41:10][metrics] Group M done (0.0s)
+[11:41:10][metrics] Starting group N ...
+[11:41:15][metrics] Group N done (5.0s)
+  PASS  r2_RNA_BATCH>0.50_for_strong_batch
+
+--- test_group_failure_isolation ---
+[11:41:15][metrics] Computing PCA ...
+[11:41:15][metrics] Computing UMAP ...
+[11:41:15][metrics] Computing tSNE ...
+[11:41:15][metrics] Starting group E ...
+[11:41:15][metrics] Group E done (0.0s)
+[11:41:15][metrics] Starting group K ...
+[11:41:15][metrics] Group K done (0.0s)
+[11:41:15][metrics] Starting group A ...
+[11:41:15][metrics] Group A FAILED:
+Traceback (most recent call last):
+  File "/app/harmonization-metrics-calculation/compute_batch_metrics.py", line 2278, in _run_group
+    group_result = fn(*args)  # type: ignore[operator]
+                   ^^^^^^^^^
+  File "/app/harmonization-metrics-calculation/test_mock_metrics.py", line 222, in _bad_group_a
+    raise RuntimeError("Simulated group A failure")
+RuntimeError: Simulated group A failure
+
+[11:41:15][metrics] Starting group J ...
+[11:41:15][metrics] Group J done (0.0s)
+[11:41:15][metrics] Starting group B ...
+[11:41:16][metrics] Group B done (0.1s)
+[11:41:16][metrics] Starting group C ...
+[11:41:16][metrics] Group C done (0.2s)
+[11:41:16][metrics] Starting group D ...
+[11:41:18][metrics] Group D done (2.2s)
+[11:41:18][metrics] Starting group G ...
+[11:41:18][metrics] Group G done (0.0s)
+[11:41:18][metrics] Starting group H ...
+[11:41:18][metrics] Group H done (0.0s)
+[11:41:18][metrics] Starting group I ...
+[11:41:20][metrics] Group I done (2.1s)
+[11:41:20][metrics] Starting group M ...
+[11:41:20][metrics] Group M done (0.0s)
+[11:41:20][metrics] Starting group N ...
+[11:41:23][metrics] Group N done (3.3s)
+  PASS  error_A_recorded_on_failure
+  PASS  group_E_ran_despite_A_failure
+  PASS  group_G_ran_despite_A_failure
+
+--- test_degenerate_single_batch ---
+[11:41:23][metrics] Computing PCA ...
+[11:41:23][metrics] Computing UMAP ...
+[11:41:24][metrics] Computing tSNE ...
+[11:41:24][metrics] Starting group E ...
+[11:41:24][metrics] Group E done (0.0s)
+[11:41:24][metrics] Starting group K ...
+[11:41:24][metrics] Group K done (0.0s)
+[11:41:24][metrics] Starting group A ...
+[11:41:24][metrics] Group A done (0.3s)
+[11:41:24][metrics] Starting group J ...
+[11:41:24][metrics] Group J done (0.0s)
+[11:41:24][metrics] Starting group B ...
+[11:41:24][metrics] Group B done (0.1s)
+[11:41:24][metrics] Starting group C ...
+[11:41:25][metrics] Group C done (0.1s)
+[11:41:25][metrics] Starting group D ...
+[11:41:25][metrics] Group D done (0.8s)
+[11:41:25][metrics] Starting group G ...
+[11:41:25][metrics] Group G done (0.0s)
+[11:41:25][metrics] Starting group H ...
+[11:41:25][metrics] Group H done (0.0s)
+[11:41:25][metrics] Starting group I ...
+[11:41:27][metrics] Group I done (1.8s)
+[11:41:27][metrics] Starting group M ...
+[11:41:27][metrics] Group M done (0.0s)
+[11:41:27][metrics] Starting group N ...
+[11:41:27][metrics] Group N done (0.0s)
+  PASS  r2_RNA_BATCH_nan_for_single_batch
+  PASS  descriptive_stats_present_despite_degenerate_batch
+
+--- test_incremental_groups_to_recompute ---
+  PASS  only_J_missing_when_E_present
+  PASS  empty_when_both_present
+  PASS  all_returned_when_no_prior
+  PASS  recompute_when_sentinel_is_None
+  PASS  sentinel_E_defined
+  PASS  sentinel_J_defined
+  PASS  sentinel_K_defined
+  PASS  sentinel_I_defined
+
+--- test_group_j_pc_variance ---
+  PASS  key_pct_var_pc1_present
+  PASS  key_pct_var_cum_top10_present
+  PASS  all_pc_values_not_none
+  PASS  pc_variance_descending_order
+  PASS  cum_top10_equals_sum
+  PASS  cum_top10_le_100
+
+--- test_group_k_dropna_metrics ---
+  PASS  clean_pct_genes_noNA_100
+  PASS  clean_pct_samples_noNA_100
+  PASS  clean_n_genes_allNA_0
+  PASS  clean_n_samples_allNA_0
+  PASS  clean_n_na_cells_0
+  PASS  one_gene_all_na_detected
+  PASS  pct_genes_noNA_drops_when_gene_all_na
+  PASS  one_sample_all_na_detected
+  PASS  pct_samples_noNA_drops_when_sample_all_na
+  PASS  n_na_cells_correct_for_partial_na
+
+--- test_group_i_wm_score ---
+  PASS  wm_bio_high_for_separated
+  PASS  wm_batch_near_zero_for_random
+  PASS  wm_subsampled_True_when_N_exceeds_limit
+  PASS  wm_RNA_BATCH_present_after_subsampling
+  PASS  wm_ratio_bio_batch_present
+  PASS  key_wm_RNA_BATCH_present
+  PASS  key_wm_PLATFORM_RNA_present
+  PASS  key_wm_RNASEQ_SOURCE_present
+  PASS  key_wm_COHORT_LABEL_present
+  PASS  key_wm_Major_group_present
+  PASS  key_wm_Diagnosis_cell_type_unified_present
+  PASS  key_wm_TUMOR_NORMAL_present
+  PASS  key_wm_mean_batch_present
+  PASS  key_wm_mean_bio_present
+
+--- test_new_keys_in_compute_all ---
+[11:41:29][metrics] Computing PCA ...
+[11:41:29][metrics] Computing UMAP ...
+[11:41:29][metrics] Computing tSNE ...
+[11:41:29][metrics] Starting group E ...
+[11:41:29][metrics] Group E done (0.0s)
+[11:41:29][metrics] Starting group K ...
+[11:41:29][metrics] Group K done (0.0s)
+[11:41:29][metrics] Starting group A ...
+[11:41:29][metrics] Group A done (0.4s)
+[11:41:29][metrics] Starting group J ...
+[11:41:29][metrics] Group J done (0.0s)
+[11:41:29][metrics] Starting group B ...
+[11:41:30][metrics] Group B done (0.1s)
+[11:41:30][metrics] Starting group C ...
+[11:41:30][metrics] Group C done (0.0s)
+[11:41:30][metrics] Starting group D ...
+[11:41:30][metrics] Group D done (0.9s)
+[11:41:30][metrics] Starting group G ...
+[11:41:30][metrics] Group G done (0.0s)
+[11:41:30][metrics] Starting group H ...
+[11:41:30][metrics] Group H done (0.0s)
+[11:41:30][metrics] Starting group I ...
+[11:41:32][metrics] Group I done (1.6s)
+[11:41:32][metrics] Starting group M ...
+[11:41:32][metrics] Group M done (0.0s)
+[11:41:32][metrics] Starting group N ...
+[11:41:33][metrics] Group N done (1.1s)
+  PASS  key_in_compute_all:pct_var_pc1
+  PASS  key_in_compute_all:pct_var_pc10
+  PASS  key_in_compute_all:pct_var_cum_top10
+  PASS  key_in_compute_all:n_genes_noNA
+  PASS  key_in_compute_all:pct_genes_noNA
+  PASS  key_in_compute_all:n_samples_noNA
+  PASS  key_in_compute_all:pct_samples_noNA
+  PASS  key_in_compute_all:n_genes_allNA
+  PASS  key_in_compute_all:n_samples_allNA
+  PASS  key_in_compute_all:n_na_cells
+  PASS  key_in_compute_all:pct_na_cells
+  PASS  wm_in_default_compute_all
+[11:41:33][metrics] Computing PCA ...
+[11:41:33][metrics] Computing UMAP ...
+[11:41:33][metrics] Computing tSNE ...
+[11:41:34][metrics] Starting group E ...
+[11:41:34][metrics] Group E done (0.0s)
+[11:41:34][metrics] Starting group K ...
+[11:41:34][metrics] Group K done (0.0s)
+[11:41:34][metrics] Starting group A ...
+[11:41:34][metrics] Group A done (0.4s)
+[11:41:34][metrics] Starting group J ...
+[11:41:34][metrics] Group J done (0.0s)
+[11:41:34][metrics] Starting group B ...
+[11:41:34][metrics] Group B done (0.1s)
+[11:41:34][metrics] Starting group C ...
+[11:41:34][metrics] Group C done (0.0s)
+[11:41:34][metrics] Starting group D ...
+[11:41:35][metrics] Group D done (0.9s)
+[11:41:35][metrics] Starting group G ...
+[11:41:35][metrics] Group G done (0.0s)
+[11:41:35][metrics] Starting group H ...
+[11:41:35][metrics] Group H done (0.0s)
+  PASS  wm_absent_when_I_excluded_from_groups
+
+--- test_group_l_correlation_preservation ---
+  PASS  identity_rho_is_1
+  PASS  self_reference_flagged
+  PASS  panel_genes_resolved
+  PASS  per_batch_shift_preserves_rho
+  PASS  shuffle_destroys_rho
+
+--- test_group_l_per_gene_keys ---
+  PASS  mk_rho_by_gene_is_dict
+  PASS  one_entry_per_resolved_gene
+  PASS  gene_keys_are_matrix_columns
+  PASS  cohort_counts_match_gene_keys
+  PASS  mk_rho_by_cohort_is_dict
+  PASS  housekeeping_mean_present_iff_hk_genes_resolved
+  PASS  detail_present_when_requested
+  PASS  detail_absent_by_default
+
+--- test_group_l_missing_panel_genes ---
+  PASS  three_genes_used
+  PASS  missing_genes_counted
+  PASS  coverage_frac_between_0_and_1
+  PASS  zero_genes_handled
+  PASS  keys_present_even_with_zero_genes
+
+--- test_group_m_rank_agreement ---
+Traceback (most recent call last):
+  File "/app/harmonization-metrics-calculation/test_mock_metrics.py", line 887, in <module>
+    main()
+  File "/app/harmonization-metrics-calculation/test_mock_metrics.py", line 872, in main
+    test_group_m_rank_agreement()
+  File "/app/harmonization-metrics-calculation/test_mock_metrics.py", line 640, in test_group_m_rank_agreement
+    clean = compute_group_m(clean_df, ann_df)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/harmonization-metrics-calculation/compute_batch_metrics.py", line 1855, in compute_group_m
+    diff_batch = batches[rows][:, None] != batches[None, :]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/pandas/core/ops/common.py", line 85, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/pandas/core/arraylike.py", line 46, in __ne__
+    return self._cmp_method(other, operator.ne)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/pandas/core/arrays/string_.py", line 1211, in _cmp_method
+    raise ValueError(
+ValueError: Lengths of operands do not match: 240 != 1
+

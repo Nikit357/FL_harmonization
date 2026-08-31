@@ -1,0 +1,53 @@
+# Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Daniil Nikitin
+
+## What this file covers
+
+Everything in this repository that is **not software**:
+
+- the figures under `figures/`, `plots/` and `figures_for_article/`
+- the supplementary tables (`Supplementary File 1–5`, in every dated directory)
+- the computed metric tables (`metrics_comprehensive_*.csv`, the long-format
+  marker/prediction tables, `Supplementary File 3.csv.gz`)
+- the manuscript drafts under `figures_for_article/FL_manuscript_versions/`
+- the slide decks under `slides_for_project/`
+- the plan, research and documentation Markdown files
+
+The source code is licensed separately under the MIT License; see `LICENSE`.
+
+## The licence
+
+This material is licensed under the Creative Commons Attribution 4.0
+International License. You are free to **share** (copy and redistribute in any
+medium or format) and **adapt** (remix, transform, and build upon the material)
+for any purpose, including commercially, provided you give appropriate credit,
+link to the licence, and indicate if changes were made.
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+## How to give credit
+
+Cite the article (see `CITATION.cff`) and link back to this repository.
+
+## Third-party material NOT covered by this licence
+
+Some files redistributed here originate elsewhere and remain under their own terms.
+Attribute them to their original sources, not to this repository:
+
+- `shambhala_adoption/Calibration_datasets/OncoboxCancer.csv.gz` and `ANTE.csv.gz` —
+  published Oncobox reference datasets; cite the originating publication.
+- `shambhala_adoption/Shambhala2/*.pdf` — the Shambhala2 papers, © their publishers.
+- `harmonization-metrics-calculation/{Dybkaer_et_al_2015,Holmes_et_al_2020,
+  Kotlov_et_al_2021}_supplementary/` — supplementary files from those publications.
+- `figures_for_article/nar-word-template November 2025.docx` — Oxford University
+  Press / *Nucleic Acids Research* manuscript template.
+- Gene set definitions (HALLMARK, KEGG, PROGENy, the DLBCL signature GMT) — their
+  respective databases' terms.
+
+## A note on the software dependencies
+
+The R packages this pipeline calls through `rpy2` (`sva`, `limma`, `FSQN`, `oposSOM`
+and others) are GPL-licensed. That affects redistribution of a built Docker *image*
+containing them, not the MIT-licensed code in this repository that calls them.

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="288pt" height="180pt" viewBox="0 0 288 180" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-27T20:10:28.360343</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 180 
+L 288 180 
+L 288 0 
+L 0 0 
+L 0 180 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="legend_1">
+    <g id="text_1">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="127.671094" y="34.444922" transform="rotate(-0 127.671094 34.444922)">strat_pal</text>
+    </g>
+    <g id="patch_2">
+     <path d="M 87.69668 42.662109 
+L 102.69668 42.662109 
+L 102.69668 37.412109 
+L 87.69668 37.412109 
+z
+" style="fill: #a1c9f4; stroke: #a1c9f4; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="42.662109" transform="rotate(-0 108.69668 42.662109)">S0_no_removal</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 87.69668 50.879297 
+L 102.69668 50.879297 
+L 102.69668 45.629297 
+L 87.69668 45.629297 
+z
+" style="fill: #ffb482; stroke: #ffb482; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="50.879297" transform="rotate(-0 108.69668 50.879297)">A_confirmed_bad</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 87.69668 59.096484 
+L 102.69668 59.096484 
+L 102.69668 53.846484 
+L 87.69668 53.846484 
+z
+" style="fill: #8de5a1; stroke: #8de5a1; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="59.096484" transform="rotate(-0 108.69668 59.096484)">B_extended_bad</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 87.69668 67.313672 
+L 102.69668 67.313672 
+L 102.69668 62.063672 
+L 87.69668 62.063672 
+z
+" style="fill: #ff9f9b; stroke: #ff9f9b; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="67.313672" transform="rotate(-0 108.69668 67.313672)">C_rnaseq_only</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 87.69668 75.530859 
+L 102.69668 75.530859 
+L 102.69668 70.280859 
+L 87.69668 70.280859 
+z
+" style="fill: #d0bbff; stroke: #d0bbff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="75.530859" transform="rotate(-0 108.69668 75.530859)">D_malignant_only</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 87.69668 83.748047 
+L 102.69668 83.748047 
+L 102.69668 78.498047 
+L 87.69668 78.498047 
+z
+" style="fill: #debb9b; stroke: #debb9b; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="83.748047" transform="rotate(-0 108.69668 83.748047)">E1_iterative_r1</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 87.69668 91.965234 
+L 102.69668 91.965234 
+L 102.69668 86.715234 
+L 87.69668 86.715234 
+z
+" style="fill: #fab0e4; stroke: #fab0e4; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="91.965234" transform="rotate(-0 108.69668 91.965234)">E2_iterative_r2</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 87.69668 100.182422 
+L 102.69668 100.182422 
+L 102.69668 94.932422 
+L 87.69668 94.932422 
+z
+" style="fill: #cfcfcf; stroke: #cfcfcf; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="100.182422" transform="rotate(-0 108.69668 100.182422)">E3_iterative_r3</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 87.69668 108.399609 
+L 102.69668 108.399609 
+L 102.69668 103.149609 
+L 87.69668 103.149609 
+z
+" style="fill: #fffea3; stroke: #fffea3; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="108.399609" transform="rotate(-0 108.69668 108.399609)">F_microarray_only</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 87.69668 116.616797 
+L 102.69668 116.616797 
+L 102.69668 111.366797 
+L 87.69668 111.366797 
+z
+" style="fill: #b9f2f0; stroke: #b9f2f0; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="116.616797" transform="rotate(-0 108.69668 116.616797)">G_affymetrix_only</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 87.69668 124.833984 
+L 102.69668 124.833984 
+L 102.69668 119.583984 
+L 87.69668 119.583984 
+z
+" style="fill: #bdb76b; stroke: #bdb76b; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="124.833984" transform="rotate(-0 108.69668 124.833984)">H_affymetrix_extended</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 87.69668 133.051172 
+L 102.69668 133.051172 
+L 102.69668 127.801172 
+L 87.69668 127.801172 
+z
+" style="fill: #b095c5; stroke: #b095c5; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="133.051172" transform="rotate(-0 108.69668 133.051172)">I_rare_batches_removed</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 87.69668 141.268359 
+L 102.69668 141.268359 
+L 102.69668 136.018359 
+L 87.69668 136.018359 
+z
+" style="fill: #7ecbc4; stroke: #7ecbc4; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="141.268359" transform="rotate(-0 108.69668 141.268359)">J_ff_only</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 87.69668 149.485547 
+L 102.69668 149.485547 
+L 102.69668 144.235547 
+L 87.69668 144.235547 
+z
+" style="fill: #f2c27f; stroke: #f2c27f; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="108.69668" y="149.485547" transform="rotate(-0 108.69668 149.485547)">K_ffpe_only</text>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,45 @@
+# ── OS / editor ───────────────────────────────────────────────────────────────
+.DS_Store
+._*
+Thumbs.db
+
+# ── Office owner-lock stubs ───────────────────────────────────────────────────
+~$*
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+# Checkpoints shadow every notebook with an unstripped copy -- the easiest way to
+# leak outputs past the nbstripout filter configured in .gitattributes.
+.ipynb_checkpoints/
+
+# ── R ─────────────────────────────────────────────────────────────────────────
+.RData
+.Rhistory
+.Rproj.user/
+
+# ── Octave (CuBlock step of the Shambhala port) ────────────────────────────────
+octave-workspace
+octave_debug.log
+
+# ── Run artifacts ─────────────────────────────────────────────────────────────
+# The .log and pod-log files already in the tree are part of the reproducibility
+# record and are tracked; only name what a *fresh* run would drop here.
+nohup.out
+prep_run.log
+norm_run.log
+metrics_fast.log
+metrics_lmn.log
+
+# ── Local agent configuration ─────────────────────────────────────────────────
+# Excluded on the authoring machine by a *global* gitignore, which a fresh clone
+# elsewhere would not have. Name it here so the exclusion is portable.
+.claude/settings.local.json

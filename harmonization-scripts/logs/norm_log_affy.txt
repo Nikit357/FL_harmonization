@@ -1,0 +1,1129 @@
+root@fl-batch-correction:/app/harmonization-scripts# cat norm_affy.log 
+[norm] 3 prepared pair(s) available for normalization.
+Norm jobs to run: 72  |  Workers: 2  |  Skip-if-exists: True  |  Timeout: 218000s  |  Memory guard: 20.0 GB
+[17:40:24] START G_affymetrix_only×strict×01_raw | free=111.8GB
+[17:40:24] START G_affymetrix_only×strict×02_median_scaling | free=111.8GB
+  [1/72] G_affymetrix_only×strict×02_median_scaling (5s) → ['cached', 'cached']
+[17:40:30] START G_affymetrix_only×strict×03_limma | free=112.1GB
+  [2/72] G_affymetrix_only×strict×01_raw (5s) → ['cached', 'cached']
+[17:40:30] START G_affymetrix_only×strict×04_sva | free=112.1GB
+  [G_affymetrix_only×strict×04_sva] [17:40:35][G_affymetrix_only×strict×04_sva] Downloading prepared dataset (free=111.5GB) ...
+  [3/72] G_affymetrix_only×strict×03_limma (6s) → ['cached', 'cached']
+[17:40:35] START G_affymetrix_only×strict×05_combat | free=111.5GB
+  [4/72] G_affymetrix_only×strict×05_combat (5s) → ['cached', 'cached']
+[17:40:41] START G_affymetrix_only×strict×06_combat_seq | free=111.5GB
+  [G_affymetrix_only×strict×06_combat_seq] [17:40:46][G_affymetrix_only×strict×06_combat_seq] Downloading prepared dataset (free=111.5GB) ...
+  [G_affymetrix_only×strict×04_sva] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×04_sva]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×04_sva] [17:40:48][G_affymetrix_only×strict×04_sva] Dataset ready: 2801 samples × 6710 genes (13s)
+  [G_affymetrix_only×strict×04_sva] [17:40:48][G_affymetrix_only×strict×04_sva] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×06_combat_seq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×06_combat_seq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×06_combat_seq] [17:40:58][G_affymetrix_only×strict×06_combat_seq] Dataset ready: 2801 samples × 6710 genes (13s)
+  [G_affymetrix_only×strict×06_combat_seq] [17:40:58][G_affymetrix_only×strict×06_combat_seq] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×06_combat_seq] Found 3 batches
+  [G_affymetrix_only×strict×06_combat_seq] Using full model in ComBat-seq.
+  [G_affymetrix_only×strict×06_combat_seq] Adjusting for 13 covariate(s) or covariate level(s)
+  [G_affymetrix_only×strict×06_combat_seq] Estimating dispersions
+  [G_affymetrix_only×strict×06_combat_seq] Fitting the GLM model
+  [G_affymetrix_only×strict×04_sva] Number of significant surrogate variables is:  11 
+  [G_affymetrix_only×strict×04_sva] Iteration (out of 5 ):1  R callback write-console: Error in solve.default(t(mod) %*% mod) : 
+  [G_affymetrix_only×strict×04_sva]   system is computationally singular: reciprocal condition number = 1.66302e-56
+  [G_affymetrix_only×strict×04_sva]   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: In addition:   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: Warning messages:
+  [G_affymetrix_only×strict×04_sva]   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: 1:   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×04_sva] R callback write-console: 
+  [G_affymetrix_only×strict×04_sva]    
+  [G_affymetrix_only×strict×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×04_sva]   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: 2:   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×04_sva] R callback write-console: 
+  [G_affymetrix_only×strict×04_sva]    
+  [G_affymetrix_only×strict×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×04_sva]   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: 3:   
+  [G_affymetrix_only×strict×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×04_sva] R callback write-console: 
+  [G_affymetrix_only×strict×04_sva]    
+  [G_affymetrix_only×strict×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×04_sva]   
+  [G_affymetrix_only×strict×04_sva] SVA: sva() failed (Error in solve.default(t(mod) %*% mod) : 
+  [G_affymetrix_only×strict×04_sva]   system is computationally singular: reciprocal condition number = 1.66302e-56
+  [G_affymetrix_only×strict×04_sva] ) — returning uncorrected data
+  [G_affymetrix_only×strict×04_sva] [19:04:45][G_affymetrix_only×strict×04_sva] Normalization done (5037s)
+  [G_affymetrix_only×strict×04_sva] [19:04:58][G_affymetrix_only×strict×04_sva×post_rm=False] r2_batch=0.158 r2_diag=0.226 — uploading ...
+  [G_affymetrix_only×strict×04_sva] [19:07:26][G_affymetrix_only×strict×04_sva×post_rm=False] Upload complete.
+  [G_affymetrix_only×strict×04_sva] [19:07:27][G_affymetrix_only×strict×04_sva×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×strict×04_sva] [19:07:31][G_affymetrix_only×strict×04_sva×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×strict×04_sva] [19:07:45][G_affymetrix_only×strict×04_sva×post_rm=True] r2_batch=0.090 r2_diag=0.066 — uploading ...
+  [G_affymetrix_only×strict×04_sva] [19:09:18][G_affymetrix_only×strict×04_sva×post_rm=True] Upload complete.
+  [G_affymetrix_only×strict×04_sva] [19:09:18][G_affymetrix_only×strict×04_sva] Done: ['ok', 'ok'] total=5323s
+  [5/72] G_affymetrix_only×strict×04_sva (5331s) → ['ok', 'ok']
+[19:09:20] START G_affymetrix_only×strict×07_pycombat | free=90.5GB
+  [6/72] G_affymetrix_only×strict×07_pycombat (6s) → ['cached', 'cached']
+[19:09:26] START G_affymetrix_only×strict×08_inmoose_combatseq | free=109.5GB
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:09:31][G_affymetrix_only×strict×08_inmoose_combatseq] Downloading prepared dataset (free=109.9GB) ...
+  [G_affymetrix_only×strict×08_inmoose_combatseq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×08_inmoose_combatseq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:09:45][G_affymetrix_only×strict×08_inmoose_combatseq] Dataset ready: 2801 samples × 6710 genes (14s)
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:09:45][G_affymetrix_only×strict×08_inmoose_combatseq] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×06_combat_seq] Shrinkage off - using GLM estimates for parameters
+  [G_affymetrix_only×strict×06_combat_seq] Adjusting the data
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:23:03][G_affymetrix_only×strict×08_inmoose_combatseq] Normalization done (798s)
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:23:09][G_affymetrix_only×strict×08_inmoose_combatseq×post_rm=False] r2_batch=0.074 r2_diag=0.324 — uploading ...
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: In addition:   
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: Warning messages:
+  [G_affymetrix_only×strict×06_combat_seq]   
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: 1:   
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: 
+  [G_affymetrix_only×strict×06_combat_seq]    
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×06_combat_seq]   
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: 2:   
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console: 
+  [G_affymetrix_only×strict×06_combat_seq]    
+  [G_affymetrix_only×strict×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×06_combat_seq]   
+  [G_affymetrix_only×strict×06_combat_seq] [19:23:25][G_affymetrix_only×strict×06_combat_seq] Normalization done (6146s)
+  [G_affymetrix_only×strict×06_combat_seq] [19:23:34][G_affymetrix_only×strict×06_combat_seq×post_rm=False] r2_batch=0.074 r2_diag=0.323 — uploading ...
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:24:13][G_affymetrix_only×strict×08_inmoose_combatseq×post_rm=False] Upload complete.
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:24:13][G_affymetrix_only×strict×08_inmoose_combatseq×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:24:15][G_affymetrix_only×strict×08_inmoose_combatseq×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:24:23][G_affymetrix_only×strict×08_inmoose_combatseq×post_rm=True] r2_batch=0.096 r2_diag=0.056 — uploading ...
+  [G_affymetrix_only×strict×06_combat_seq] [19:24:40][G_affymetrix_only×strict×06_combat_seq×post_rm=False] Upload complete.
+  [G_affymetrix_only×strict×06_combat_seq] [19:24:40][G_affymetrix_only×strict×06_combat_seq×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×strict×06_combat_seq] [19:24:43][G_affymetrix_only×strict×06_combat_seq×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×strict×06_combat_seq] [19:24:49][G_affymetrix_only×strict×06_combat_seq×post_rm=True] r2_batch=0.096 r2_diag=0.056 — uploading ...
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:25:00][G_affymetrix_only×strict×08_inmoose_combatseq×post_rm=True] Upload complete.
+  [G_affymetrix_only×strict×08_inmoose_combatseq] [19:25:01][G_affymetrix_only×strict×08_inmoose_combatseq] Done: ['ok', 'ok'] total=930s
+  [7/72] G_affymetrix_only×strict×08_inmoose_combatseq (935s) → ['ok', 'ok']
+[19:25:01] START G_affymetrix_only×strict×09_ruv | free=109.5GB
+  [G_affymetrix_only×strict×09_ruv] [19:25:03][G_affymetrix_only×strict×09_ruv] Downloading prepared dataset (free=109.1GB) ...
+  [G_affymetrix_only×strict×09_ruv] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×09_ruv]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×09_ruv] [19:25:09][G_affymetrix_only×strict×09_ruv] Dataset ready: 2801 samples × 6710 genes (5s)
+  [G_affymetrix_only×strict×09_ruv] [19:25:09][G_affymetrix_only×strict×09_ruv] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×06_combat_seq] [19:25:22][G_affymetrix_only×strict×06_combat_seq×post_rm=True] Upload complete.
+  [G_affymetrix_only×strict×06_combat_seq] [19:25:22][G_affymetrix_only×strict×06_combat_seq] Done: ['ok', 'ok'] total=6277s
+  [8/72] G_affymetrix_only×strict×06_combat_seq (6282s) → ['ok', 'ok']
+[19:25:23] START G_affymetrix_only×strict×10_mnn | free=89.9GB
+  [9/72] G_affymetrix_only×strict×10_mnn (3s) → ['cached', 'cached']
+[19:25:26] START G_affymetrix_only×strict×11_harmony | free=89.7GB
+  [10/72] G_affymetrix_only×strict×11_harmony (3s) → ['cached', 'cached']
+[19:25:28] START G_affymetrix_only×strict×12_scanorama | free=109.7GB
+  [11/72] G_affymetrix_only×strict×12_scanorama (2s) → ['cached', 'cached']
+[19:25:31] START G_affymetrix_only×strict×13_fsmvn | free=101.4GB
+  [12/72] G_affymetrix_only×strict×13_fsmvn (3s) → ['cached', 'cached']
+[19:25:34] START G_affymetrix_only×strict×14_qsmooth | free=89.7GB
+[19:25:36] START G_affymetrix_only×strict×15_fsqn_py | free=109.7GB
+  [13/72] G_affymetrix_only×strict×14_qsmooth (3s) → ['cached', 'cached']
+  [14/72] G_affymetrix_only×strict×15_fsqn_py (2s) → ['cached', 'cached']
+[19:25:39] START G_affymetrix_only×strict×16_fsqn_r | free=110.2GB
+  [15/72] G_affymetrix_only×strict×16_fsqn_r (2s) → ['cached', 'cached']
+[19:25:41] START G_affymetrix_only×strict×17_quantile | free=100.4GB
+  [16/72] G_affymetrix_only×strict×17_quantile (3s) → ['cached', 'cached']
+[19:25:44] START G_affymetrix_only×strict×18_rank | free=90.1GB
+  [17/72] G_affymetrix_only×strict×18_rank (3s) → ['cached', 'cached']
+[19:25:46] START G_affymetrix_only×strict×19_tdm | free=110.2GB
+  [18/72] G_affymetrix_only×strict×19_tdm (3s) → ['cached', 'cached']
+[19:25:49] START G_affymetrix_only×strict×20_shambhala | free=108.9GB
+  [G_affymetrix_only×strict×20_shambhala] [19:25:51][G_affymetrix_only×strict×20_shambhala] Downloading prepared dataset (free=109.5GB) ...
+  [G_affymetrix_only×strict×20_shambhala] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×20_shambhala]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×20_shambhala] [19:25:57][G_affymetrix_only×strict×20_shambhala] Dataset ready: 2801 samples × 6710 genes (5s)
+  [G_affymetrix_only×strict×20_shambhala] [19:25:57][G_affymetrix_only×strict×20_shambhala] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: In addition:   
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: Warning messages:
+  [G_affymetrix_only×strict×09_ruv]   
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: 1:   
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: 
+  [G_affymetrix_only×strict×09_ruv]    
+  [G_affymetrix_only×strict×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×09_ruv]   
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: 2:   
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×strict×09_ruv] R callback write-console: 
+  [G_affymetrix_only×strict×09_ruv]    
+  [G_affymetrix_only×strict×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×strict×09_ruv]   
+  [G_affymetrix_only×strict×09_ruv] [19:26:08][G_affymetrix_only×strict×09_ruv] Normalization done (59s)
+  [G_affymetrix_only×strict×09_ruv] [19:26:15][G_affymetrix_only×strict×09_ruv×post_rm=False] r2_batch=0.109 r2_diag=0.219 — uploading ...
+  [G_affymetrix_only×strict×20_shambhala] R callback write-console: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [G_affymetrix_only×strict×20_shambhala]   
+  [G_affymetrix_only×strict×20_shambhala] [19:27:03][G_affymetrix_only×strict×20_shambhala] Normalization FAILED after 66s:
+  [G_affymetrix_only×strict×20_shambhala] Traceback (most recent call last):
+  [G_affymetrix_only×strict×20_shambhala]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×strict×20_shambhala]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×strict×20_shambhala]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×strict×20_shambhala]   File "/app/harmonization-scripts/bench_shared.py", line 1418, in normalize_shambhala
+  [G_affymetrix_only×strict×20_shambhala]     ro.r(f"""
+  [G_affymetrix_only×strict×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [G_affymetrix_only×strict×20_shambhala]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [G_affymetrix_only×strict×20_shambhala]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×strict×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [G_affymetrix_only×strict×20_shambhala]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×strict×20_shambhala] rpy2.rinterface_lib.embedded.RRuntimeError: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [G_affymetrix_only×strict×20_shambhala] 
+  [G_affymetrix_only×strict×20_shambhala] 
+  [G_affymetrix_only×strict×20_shambhala] [19:27:03][G_affymetrix_only×strict×20_shambhala] Done: ['failed', 'failed'] total=72s
+[19:27:03] START G_affymetrix_only×strict×21_harmonizr | free=114.0GB
+  [G_affymetrix_only×strict×21_harmonizr] [19:27:06][G_affymetrix_only×strict×21_harmonizr] Downloading prepared dataset (free=94.5GB) ...
+  [G_affymetrix_only×strict×21_harmonizr] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×21_harmonizr]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×21_harmonizr] [19:27:11][G_affymetrix_only×strict×21_harmonizr] Dataset ready: 2801 samples × 6710 genes (5s)
+  [G_affymetrix_only×strict×21_harmonizr] [19:27:11][G_affymetrix_only×strict×21_harmonizr] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×09_ruv] [19:27:24][G_affymetrix_only×strict×09_ruv×post_rm=False] Upload complete.
+  [G_affymetrix_only×strict×09_ruv] [19:27:24][G_affymetrix_only×strict×09_ruv×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×strict×09_ruv] [19:27:26][G_affymetrix_only×strict×09_ruv×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×strict×09_ruv] [19:27:32][G_affymetrix_only×strict×09_ruv×post_rm=True] r2_batch=0.078 r2_diag=0.279 — uploading ...
+  [G_affymetrix_only×strict×09_ruv] [19:28:19][G_affymetrix_only×strict×09_ruv×post_rm=True] Upload complete.
+  [G_affymetrix_only×strict×09_ruv] [19:28:19][G_affymetrix_only×strict×09_ruv] Done: ['ok', 'ok'] total=195s
+  [20/72] G_affymetrix_only×strict×09_ruv (199s) → ['ok', 'ok']
+[19:28:20] START G_affymetrix_only×strict×22_tmm | free=94.2GB
+  [G_affymetrix_only×strict×22_tmm] [19:28:22][G_affymetrix_only×strict×22_tmm] Downloading prepared dataset (free=93.9GB) ...
+  [G_affymetrix_only×strict×22_tmm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×22_tmm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×22_tmm] [19:28:27][G_affymetrix_only×strict×22_tmm] Dataset ready: 2801 samples × 6710 genes (5s)
+  [G_affymetrix_only×strict×22_tmm] [19:28:27][G_affymetrix_only×strict×22_tmm] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×22_tmm] [19:28:27][G_affymetrix_only×strict×22_tmm] Skipped (NotImplementedError): TMM is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [G_affymetrix_only×strict×22_tmm] [19:28:27][G_affymetrix_only×strict×22_tmm] Done: ['skipped', 'skipped'] total=5s
+  [21/72] SKIP G_affymetrix_only×strict×22_tmm (8s)
+[19:28:28] START G_affymetrix_only×strict×23_vst | free=93.8GB
+  [G_affymetrix_only×strict×23_vst] [19:28:30][G_affymetrix_only×strict×23_vst] Downloading prepared dataset (free=93.5GB) ...
+  [G_affymetrix_only×strict×23_vst] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×23_vst]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×23_vst] [19:28:35][G_affymetrix_only×strict×23_vst] Dataset ready: 2801 samples × 6710 genes (5s)
+  [G_affymetrix_only×strict×23_vst] [19:28:35][G_affymetrix_only×strict×23_vst] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×23_vst] [19:28:35][G_affymetrix_only×strict×23_vst] Skipped (NotImplementedError): DESeq2 VST is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [G_affymetrix_only×strict×23_vst] [19:28:35][G_affymetrix_only×strict×23_vst] Done: ['skipped', 'skipped'] total=5s
+  [22/72] SKIP G_affymetrix_only×strict×23_vst (8s)
+[19:28:36] START G_affymetrix_only×strict×24_peer_k10 | free=94.9GB
+  [G_affymetrix_only×strict×24_peer_k10] [19:28:38][G_affymetrix_only×strict×24_peer_k10] Downloading prepared dataset (free=94.6GB) ...
+  [G_affymetrix_only×strict×24_peer_k10] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×24_peer_k10]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×24_peer_k10] [19:28:59][G_affymetrix_only×strict×24_peer_k10] Dataset ready: 2801 samples × 6710 genes (22s)
+  [G_affymetrix_only×strict×24_peer_k10] [19:28:59][G_affymetrix_only×strict×24_peer_k10] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×24_peer_k10] [19:28:59][G_affymetrix_only×strict×24_peer_k10] Skipped (NotImplementedError): PEER R package not available for R 4.5: not on CRAN, Bioconductor, or GitHub.
+  [G_affymetrix_only×strict×24_peer_k10] [19:29:00][G_affymetrix_only×strict×24_peer_k10] Done: ['skipped', 'skipped'] total=22s
+[19:29:01] START G_affymetrix_only×knn×01_raw | free=113.2GB
+  [23/72] SKIP G_affymetrix_only×strict×24_peer_k10 (26s)
+  [24/72] G_affymetrix_only×knn×01_raw (12s) → ['cached', 'cached']
+[19:29:14] START G_affymetrix_only×knn×02_median_scaling | free=112.6GB
+  [25/72] G_affymetrix_only×knn×02_median_scaling (8s) → ['cached', 'cached']
+[19:29:21] START G_affymetrix_only×knn×03_limma | free=112.3GB
+[19:29:28] START G_affymetrix_only×knn×04_sva | free=112.0GB
+  [26/72] G_affymetrix_only×knn×03_limma (6s) → ['cached', 'cached']
+  [G_affymetrix_only×knn×04_sva] [19:29:34][G_affymetrix_only×knn×04_sva] Downloading prepared dataset (free=111.6GB) ...
+  [G_affymetrix_only×knn×04_sva] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×04_sva]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×04_sva] [19:30:07][G_affymetrix_only×knn×04_sva] Dataset ready: 2801 samples × 11207 genes (32s)
+  [G_affymetrix_only×knn×04_sva] [19:30:07][G_affymetrix_only×knn×04_sva] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Found3batches
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Adjusting for0covariate(s) or covariate level(s)
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Standardizing Data across genes
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Fitting L/S model and finding priors
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Finding parametric adjustments
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Adjusting the Data
+  [G_affymetrix_only×strict×21_harmonizr] 
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] R callback write-console: Writing file...
+  [G_affymetrix_only×strict×21_harmonizr]   
+  [G_affymetrix_only×strict×21_harmonizr] [19:44:56][G_affymetrix_only×strict×21_harmonizr] Normalization done (1065s)
+  [G_affymetrix_only×strict×21_harmonizr] [19:45:14][G_affymetrix_only×strict×21_harmonizr×post_rm=False] r2_batch=0.000 r2_diag=0.159 — uploading ...
+  [G_affymetrix_only×strict×21_harmonizr] [19:46:55][G_affymetrix_only×strict×21_harmonizr×post_rm=False] Upload complete.
+  [G_affymetrix_only×strict×21_harmonizr] [19:46:55][G_affymetrix_only×strict×21_harmonizr×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×strict×21_harmonizr] [19:46:58][G_affymetrix_only×strict×21_harmonizr×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×strict×21_harmonizr] [19:47:04][G_affymetrix_only×strict×21_harmonizr×post_rm=True] r2_batch=0.000 r2_diag=0.280 — uploading ...
+  [G_affymetrix_only×strict×21_harmonizr] [19:47:38][G_affymetrix_only×strict×21_harmonizr×post_rm=True] Upload complete.
+  [G_affymetrix_only×strict×21_harmonizr] [19:47:38][G_affymetrix_only×strict×21_harmonizr] Done: ['ok', 'ok'] total=1233s
+  [27/72] G_affymetrix_only×strict×21_harmonizr (1236s) → ['ok', 'ok']
+[19:47:39] START G_affymetrix_only×knn×05_combat | free=110.6GB
+  [28/72] G_affymetrix_only×knn×05_combat (2s) → ['cached', 'cached']
+[19:47:41] START G_affymetrix_only×knn×06_combat_seq | free=110.6GB
+  [29/72] G_affymetrix_only×knn×06_combat_seq (2s) → ['cached', 'cached']
+[19:47:43] START G_affymetrix_only×knn×07_pycombat | free=110.6GB
+  [G_affymetrix_only×knn×07_pycombat] [19:47:45][G_affymetrix_only×knn×07_pycombat] Downloading prepared dataset (free=110.4GB) ...
+  [G_affymetrix_only×knn×07_pycombat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×07_pycombat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×07_pycombat] [19:47:55][G_affymetrix_only×knn×07_pycombat] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×knn×07_pycombat] [19:47:55][G_affymetrix_only×knn×07_pycombat] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×07_pycombat] Found 3 batches.
+  [G_affymetrix_only×knn×07_pycombat] Adjusting for 0 covariate(s) or covariate level(s).
+  [G_affymetrix_only×knn×07_pycombat] Found missing data values. Please remove all missing values before proceeding with pyComBat.
+  [G_affymetrix_only×knn×07_pycombat] [19:47:55][G_affymetrix_only×knn×07_pycombat] Normalization FAILED after 0s:
+  [G_affymetrix_only×knn×07_pycombat] Traceback (most recent call last):
+  [G_affymetrix_only×knn×07_pycombat]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×07_pycombat]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×07_pycombat]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×07_pycombat]   File "/app/harmonization-scripts/bench_shared.py", line 822, in normalize_pycombat
+  [G_affymetrix_only×knn×07_pycombat]     result  = pycombat(exp_df.T, batches)
+  [G_affymetrix_only×knn×07_pycombat]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×07_pycombat]   File "/usr/local/lib/python3.12/dist-packages/combat/pycombat.py", line 668, in pycombat
+  [G_affymetrix_only×knn×07_pycombat]     raise ValueError("NaN value is not accepted")
+  [G_affymetrix_only×knn×07_pycombat] ValueError: NaN value is not accepted
+  [G_affymetrix_only×knn×07_pycombat] 
+  [G_affymetrix_only×knn×07_pycombat] [19:47:55][G_affymetrix_only×knn×07_pycombat] Done: ['failed', 'failed'] total=10s
+[19:47:55] START G_affymetrix_only×knn×08_inmoose_combatseq | free=111.6GB
+  [31/72] G_affymetrix_only×knn×08_inmoose_combatseq (2s) → ['cached', 'cached']
+[19:47:58] START G_affymetrix_only×knn×09_ruv | free=111.6GB
+  [G_affymetrix_only×knn×09_ruv] [19:48:00][G_affymetrix_only×knn×09_ruv] Downloading prepared dataset (free=111.4GB) ...
+  [G_affymetrix_only×knn×09_ruv] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×09_ruv]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×09_ruv] [19:48:09][G_affymetrix_only×knn×09_ruv] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×knn×09_ruv] [19:48:09][G_affymetrix_only×knn×09_ruv] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×04_sva] R callback write-console: Error in svd(res) : infinite or missing values in 'x'
+  [G_affymetrix_only×knn×04_sva]   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: In addition:   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: Warning messages:
+  [G_affymetrix_only×knn×04_sva]   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: 1:   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×04_sva] R callback write-console: 
+  [G_affymetrix_only×knn×04_sva]    
+  [G_affymetrix_only×knn×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×04_sva]   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: 2:   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×04_sva] R callback write-console: 
+  [G_affymetrix_only×knn×04_sva]    
+  [G_affymetrix_only×knn×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×04_sva]   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: 3:   
+  [G_affymetrix_only×knn×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×04_sva] R callback write-console: 
+  [G_affymetrix_only×knn×04_sva]    
+  [G_affymetrix_only×knn×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×04_sva]   
+  [G_affymetrix_only×knn×04_sva] [19:48:16][G_affymetrix_only×knn×04_sva] Normalization FAILED after 1090s:
+  [G_affymetrix_only×knn×04_sva] Traceback (most recent call last):
+  [G_affymetrix_only×knn×04_sva]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×04_sva]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×04_sva]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×04_sva]   File "/app/harmonization-scripts/bench_shared.py", line 692, in normalize_sva
+  [G_affymetrix_only×knn×04_sva]     n_sv = sva_r.num_sv(r_mat, mod)
+  [G_affymetrix_only×knn×04_sva]            ^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [G_affymetrix_only×knn×04_sva]     return (super(SignatureTranslatedFunction, self)
+  [G_affymetrix_only×knn×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [G_affymetrix_only×knn×04_sva]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [G_affymetrix_only×knn×04_sva]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [G_affymetrix_only×knn×04_sva]     cdata = function(*args, **kwargs)
+  [G_affymetrix_only×knn×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [G_affymetrix_only×knn×04_sva]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×knn×04_sva] rpy2.rinterface_lib.embedded.RRuntimeError: Error in svd(res) : infinite or missing values in 'x'
+  [G_affymetrix_only×knn×04_sva] 
+  [G_affymetrix_only×knn×04_sva] 
+  [G_affymetrix_only×knn×04_sva] [19:48:16][G_affymetrix_only×knn×04_sva] Done: ['failed', 'failed'] total=1122s
+[19:48:17] START G_affymetrix_only×knn×10_mnn | free=113.0GB
+  [G_affymetrix_only×knn×09_ruv] /app/harmonization-scripts/bench_shared.py:891: RuntimeWarning: invalid value encountered in cast
+  [G_affymetrix_only×knn×09_ruv]   counts   = np.round(exp_df.values).astype(int).clip(0)
+  [G_affymetrix_only×knn×10_mnn] [19:48:19][G_affymetrix_only×knn×10_mnn] Downloading prepared dataset (free=112.5GB) ...
+  [G_affymetrix_only×knn×10_mnn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×10_mnn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×10_mnn] [19:48:29][G_affymetrix_only×knn×10_mnn] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×knn×10_mnn] [19:48:29][G_affymetrix_only×knn×10_mnn] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: Error in .local(x, ...) : size factors should be positive
+  [G_affymetrix_only×knn×10_mnn]   
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: In addition:   
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: Warning messages:
+  [G_affymetrix_only×knn×10_mnn]   
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: 1:   
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: 
+  [G_affymetrix_only×knn×10_mnn]    
+  [G_affymetrix_only×knn×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×10_mnn]   
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: 2:   
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×10_mnn] R callback write-console: 
+  [G_affymetrix_only×knn×10_mnn]    
+  [G_affymetrix_only×knn×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×10_mnn]   
+  [G_affymetrix_only×knn×10_mnn] [19:49:29][G_affymetrix_only×knn×10_mnn] Normalization FAILED after 60s:
+  [G_affymetrix_only×knn×10_mnn] Traceback (most recent call last):
+  [G_affymetrix_only×knn×10_mnn]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×10_mnn]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×10_mnn]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×10_mnn]   File "/app/harmonization-scripts/bench_shared.py", line 928, in normalize_mnn
+  [G_affymetrix_only×knn×10_mnn]     result  = batchelor_r.fastMNN(r_mat, batch=ro.StrVector(batches.values), k=k)
+  [G_affymetrix_only×knn×10_mnn]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [G_affymetrix_only×knn×10_mnn]     return (super(SignatureTranslatedFunction, self)
+  [G_affymetrix_only×knn×10_mnn]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [G_affymetrix_only×knn×10_mnn]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [G_affymetrix_only×knn×10_mnn]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [G_affymetrix_only×knn×10_mnn]     cdata = function(*args, **kwargs)
+  [G_affymetrix_only×knn×10_mnn]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [G_affymetrix_only×knn×10_mnn]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×knn×10_mnn] rpy2.rinterface_lib.embedded.RRuntimeError: Error in .local(x, ...) : size factors should be positive
+  [G_affymetrix_only×knn×10_mnn] 
+  [G_affymetrix_only×knn×10_mnn] 
+  [G_affymetrix_only×knn×10_mnn] [19:49:30][G_affymetrix_only×knn×10_mnn] Done: ['failed', 'failed'] total=70s
+[19:49:31] START G_affymetrix_only×knn×11_harmony | free=118.8GB
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: In addition:   
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: Warning messages:
+  [G_affymetrix_only×knn×09_ruv]   
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: 1:   
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: 
+  [G_affymetrix_only×knn×09_ruv]    
+  [G_affymetrix_only×knn×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×09_ruv]   
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: 2:   
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×09_ruv] R callback write-console: 
+  [G_affymetrix_only×knn×09_ruv]    
+  [G_affymetrix_only×knn×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×09_ruv]   
+  [G_affymetrix_only×knn×09_ruv] [19:49:32][G_affymetrix_only×knn×09_ruv] Normalization done (83s)
+[19:49:36] START G_affymetrix_only×knn×12_scanorama | free=118.7GB
+  [34/72] G_affymetrix_only×knn×11_harmony (5s) → ['cached', 'cached']
+  [G_affymetrix_only×knn×09_ruv] [19:49:41][G_affymetrix_only×knn×09_ruv×post_rm=False] r2_batch=0.140 r2_diag=0.144 — uploading ...
+  [G_affymetrix_only×knn×12_scanorama] [19:49:41][G_affymetrix_only×knn×12_scanorama] Downloading prepared dataset (free=119.1GB) ...
+  [G_affymetrix_only×knn×12_scanorama] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×12_scanorama]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×12_scanorama] [19:50:01][G_affymetrix_only×knn×12_scanorama] Dataset ready: 2801 samples × 11207 genes (20s)
+  [G_affymetrix_only×knn×12_scanorama] [19:50:01][G_affymetrix_only×knn×12_scanorama] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×12_scanorama] Found 11207 genes among all datasets
+  [G_affymetrix_only×knn×12_scanorama] [19:50:05][G_affymetrix_only×knn×12_scanorama] Normalization FAILED after 4s:
+  [G_affymetrix_only×knn×12_scanorama] Traceback (most recent call last):
+  [G_affymetrix_only×knn×12_scanorama]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×12_scanorama]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×12_scanorama]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/app/harmonization-scripts/bench_shared.py", line 1002, in normalize_scanorama
+  [G_affymetrix_only×knn×12_scanorama]     integrated, _ = scanorama.integrate(datasets_s, genes_list, dimred=50)
+  [G_affymetrix_only×knn×12_scanorama]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/scanorama/scanorama.py", line 172, in integrate
+  [G_affymetrix_only×knn×12_scanorama]     datasets_dimred, genes = process_data(datasets, genes, hvg=hvg,
+  [G_affymetrix_only×knn×12_scanorama]                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/scanorama/scanorama.py", line 418, in process_data
+  [G_affymetrix_only×knn×12_scanorama]     datasets[i] = normalize(ds, axis=1)
+  [G_affymetrix_only×knn×12_scanorama]                   ^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/_param_validation.py", line 218, in wrapper
+  [G_affymetrix_only×knn×12_scanorama]     return func(*args, **kwargs)
+  [G_affymetrix_only×knn×12_scanorama]            ^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/preprocessing/_data.py", line 2028, in normalize
+  [G_affymetrix_only×knn×12_scanorama]     X = check_array(
+  [G_affymetrix_only×knn×12_scanorama]         ^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 981, in check_array
+  [G_affymetrix_only×knn×12_scanorama]     array = _ensure_sparse_format(
+  [G_affymetrix_only×knn×12_scanorama]             ^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 638, in _ensure_sparse_format
+  [G_affymetrix_only×knn×12_scanorama]     _assert_all_finite(
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 133, in _assert_all_finite
+  [G_affymetrix_only×knn×12_scanorama]     _assert_all_finite_element_wise(
+  [G_affymetrix_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 182, in _assert_all_finite_element_wise
+  [G_affymetrix_only×knn×12_scanorama]     raise ValueError(msg_err)
+  [G_affymetrix_only×knn×12_scanorama] ValueError: Input contains NaN.
+  [G_affymetrix_only×knn×12_scanorama] 
+  [G_affymetrix_only×knn×12_scanorama] [19:50:06][G_affymetrix_only×knn×12_scanorama] Done: ['failed', 'failed'] total=25s
+[19:50:07] START G_affymetrix_only×knn×13_fsmvn | free=117.9GB
+  [36/72] G_affymetrix_only×knn×13_fsmvn (2s) → ['cached', 'cached']
+[19:50:09] START G_affymetrix_only×knn×14_qsmooth | free=117.9GB
+  [G_affymetrix_only×knn×14_qsmooth] [19:50:11][G_affymetrix_only×knn×14_qsmooth] Downloading prepared dataset (free=117.7GB) ...
+  [G_affymetrix_only×knn×14_qsmooth] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×14_qsmooth]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×14_qsmooth] [19:50:21][G_affymetrix_only×knn×14_qsmooth] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×knn×14_qsmooth] [19:50:21][G_affymetrix_only×knn×14_qsmooth] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: Error in (function (object, group_factor, batch = NULL, norm_factors = NULL,  : 
+  [G_affymetrix_only×knn×14_qsmooth]   Object must not contains NAs.
+  [G_affymetrix_only×knn×14_qsmooth]   
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: In addition:   
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: Warning messages:
+  [G_affymetrix_only×knn×14_qsmooth]   
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: 1:   
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: 
+  [G_affymetrix_only×knn×14_qsmooth]    
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×14_qsmooth]   
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: 2:   
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console: 
+  [G_affymetrix_only×knn×14_qsmooth]    
+  [G_affymetrix_only×knn×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×knn×14_qsmooth]   
+  [G_affymetrix_only×knn×14_qsmooth] [19:51:16][G_affymetrix_only×knn×14_qsmooth] Normalization FAILED after 56s:
+  [G_affymetrix_only×knn×14_qsmooth] Traceback (most recent call last):
+  [G_affymetrix_only×knn×14_qsmooth]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×14_qsmooth]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×14_qsmooth]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×14_qsmooth]   File "/app/harmonization-scripts/bench_shared.py", line 1072, in normalize_qsmooth
+  [G_affymetrix_only×knn×14_qsmooth]     qs_obj = qsmooth_r.qsmooth(r_mat, group_factor=ro.StrVector(groups))
+  [G_affymetrix_only×knn×14_qsmooth]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [G_affymetrix_only×knn×14_qsmooth]     return (super(SignatureTranslatedFunction, self)
+  [G_affymetrix_only×knn×14_qsmooth]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [G_affymetrix_only×knn×14_qsmooth]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [G_affymetrix_only×knn×14_qsmooth]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [G_affymetrix_only×knn×14_qsmooth]     cdata = function(*args, **kwargs)
+  [G_affymetrix_only×knn×14_qsmooth]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [G_affymetrix_only×knn×14_qsmooth]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×knn×14_qsmooth] rpy2.rinterface_lib.embedded.RRuntimeError: Error in (function (object, group_factor, batch = NULL, norm_factors = NULL,  : 
+  [G_affymetrix_only×knn×14_qsmooth]   Object must not contains NAs.
+  [G_affymetrix_only×knn×14_qsmooth] 
+  [G_affymetrix_only×knn×14_qsmooth] 
+  [G_affymetrix_only×knn×14_qsmooth] [19:51:17][G_affymetrix_only×knn×14_qsmooth] Done: ['failed', 'failed'] total=65s
+[19:51:17] START G_affymetrix_only×knn×15_fsqn_py | free=117.7GB
+  [38/72] G_affymetrix_only×knn×15_fsqn_py (2s) → ['cached', 'cached']
+[19:51:20] START G_affymetrix_only×knn×16_fsqn_r | free=117.6GB
+  [39/72] G_affymetrix_only×knn×16_fsqn_r (2s) → ['cached', 'cached']
+[19:51:22] START G_affymetrix_only×knn×17_quantile | free=117.6GB
+  [40/72] G_affymetrix_only×knn×17_quantile (2s) → ['cached', 'cached']
+[19:51:24] START G_affymetrix_only×knn×18_rank | free=117.6GB
+  [41/72] G_affymetrix_only×knn×18_rank (2s) → ['cached', 'cached']
+[19:51:26] START G_affymetrix_only×knn×19_tdm | free=117.6GB
+  [G_affymetrix_only×knn×19_tdm] [19:51:28][G_affymetrix_only×knn×19_tdm] Downloading prepared dataset (free=117.4GB) ...
+  [G_affymetrix_only×knn×19_tdm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×19_tdm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×19_tdm] [19:51:38][G_affymetrix_only×knn×19_tdm] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×knn×19_tdm] [19:51:38][G_affymetrix_only×knn×19_tdm] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×09_ruv] [19:52:04][G_affymetrix_only×knn×09_ruv×post_rm=False] Upload complete.
+  [G_affymetrix_only×knn×09_ruv] [19:52:04][G_affymetrix_only×knn×09_ruv×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×knn×09_ruv] [19:52:07][G_affymetrix_only×knn×09_ruv×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×knn×09_ruv] [19:52:15][G_affymetrix_only×knn×09_ruv×post_rm=True] r2_batch=0.082 r2_diag=0.254 — uploading ...
+  [G_affymetrix_only×knn×19_tdm] R callback write-console: data.table 1.18.2.1 using 16 threads (see ?getDTthreads).    
+  [G_affymetrix_only×knn×19_tdm] R callback write-console: Latest news: r-datatable.com
+  [G_affymetrix_only×knn×19_tdm]   
+  [G_affymetrix_only×knn×19_tdm] R callback write-console: Error in if (downandout < old_min) { : 
+  [G_affymetrix_only×knn×19_tdm]   missing value where TRUE/FALSE needed
+  [G_affymetrix_only×knn×19_tdm]   
+  [G_affymetrix_only×knn×19_tdm] [19:52:59][G_affymetrix_only×knn×19_tdm] Normalization FAILED after 81s:
+  [G_affymetrix_only×knn×19_tdm] Traceback (most recent call last):
+  [G_affymetrix_only×knn×19_tdm]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×19_tdm]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×19_tdm]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×19_tdm]   File "/app/harmonization-scripts/bench_shared.py", line 1347, in normalize_tdm
+  [G_affymetrix_only×knn×19_tdm]     ro.r(f"""
+  [G_affymetrix_only×knn×19_tdm]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [G_affymetrix_only×knn×19_tdm]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [G_affymetrix_only×knn×19_tdm]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×19_tdm]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [G_affymetrix_only×knn×19_tdm]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×knn×19_tdm] rpy2.rinterface_lib.embedded.RRuntimeError: Error in if (downandout < old_min) { : 
+  [G_affymetrix_only×knn×19_tdm]   missing value where TRUE/FALSE needed
+  [G_affymetrix_only×knn×19_tdm] 
+  [G_affymetrix_only×knn×19_tdm] 
+  [G_affymetrix_only×knn×19_tdm] [19:52:59][G_affymetrix_only×knn×19_tdm] Done: ['failed', 'failed'] total=91s
+[19:53:00] START G_affymetrix_only×knn×20_shambhala | free=117.4GB
+  [G_affymetrix_only×knn×20_shambhala] [19:53:02][G_affymetrix_only×knn×20_shambhala] Downloading prepared dataset (free=117.2GB) ...
+  [G_affymetrix_only×knn×20_shambhala] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×20_shambhala]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×20_shambhala] [19:53:11][G_affymetrix_only×knn×20_shambhala] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×knn×20_shambhala] [19:53:11][G_affymetrix_only×knn×20_shambhala] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×09_ruv] [19:53:49][G_affymetrix_only×knn×09_ruv×post_rm=True] Upload complete.
+  [G_affymetrix_only×knn×09_ruv] [19:53:49][G_affymetrix_only×knn×09_ruv] Done: ['ok', 'ok'] total=349s
+  [43/72] G_affymetrix_only×knn×09_ruv (353s) → ['ok', 'ok']
+[19:53:50] START G_affymetrix_only×knn×21_harmonizr | free=118.4GB
+  [44/72] G_affymetrix_only×knn×21_harmonizr (2s) → ['cached', 'cached']
+[19:53:53] START G_affymetrix_only×knn×22_tmm | free=118.2GB
+  [G_affymetrix_only×knn×22_tmm] [19:53:55][G_affymetrix_only×knn×22_tmm] Downloading prepared dataset (free=119.4GB) ...
+  [G_affymetrix_only×knn×22_tmm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×22_tmm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×22_tmm] [19:54:12][G_affymetrix_only×knn×22_tmm] Dataset ready: 2801 samples × 11207 genes (18s)
+  [G_affymetrix_only×knn×22_tmm] [19:54:12][G_affymetrix_only×knn×22_tmm] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×22_tmm] [19:54:12][G_affymetrix_only×knn×22_tmm] Skipped (NotImplementedError): TMM is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [G_affymetrix_only×knn×22_tmm] [19:54:13][G_affymetrix_only×knn×22_tmm] Done: ['skipped', 'skipped'] total=18s
+  [45/72] SKIP G_affymetrix_only×knn×22_tmm (20s)
+[19:54:13] START G_affymetrix_only×knn×23_vst | free=118.8GB
+  [G_affymetrix_only×knn×23_vst] [19:54:15][G_affymetrix_only×knn×23_vst] Downloading prepared dataset (free=118.6GB) ...
+  [G_affymetrix_only×knn×23_vst] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×23_vst]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×23_vst] [19:54:24][G_affymetrix_only×knn×23_vst] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×knn×23_vst] [19:54:24][G_affymetrix_only×knn×23_vst] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×23_vst] [19:54:24][G_affymetrix_only×knn×23_vst] Skipped (NotImplementedError): DESeq2 VST is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [G_affymetrix_only×knn×23_vst] [19:54:25][G_affymetrix_only×knn×23_vst] Done: ['skipped', 'skipped'] total=10s
+  [46/72] SKIP G_affymetrix_only×knn×23_vst (12s)
+[19:54:25] START G_affymetrix_only×knn×24_peer_k10 | free=118.6GB
+  [G_affymetrix_only×knn×24_peer_k10] [19:54:27][G_affymetrix_only×knn×24_peer_k10] Downloading prepared dataset (free=118.4GB) ...
+  [G_affymetrix_only×knn×24_peer_k10] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×24_peer_k10]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×24_peer_k10] [19:54:36][G_affymetrix_only×knn×24_peer_k10] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×knn×24_peer_k10] [19:54:36][G_affymetrix_only×knn×24_peer_k10] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×knn×24_peer_k10] [19:54:36][G_affymetrix_only×knn×24_peer_k10] Skipped (NotImplementedError): PEER R package not available for R 4.5: not on CRAN, Bioconductor, or GitHub.
+  [G_affymetrix_only×knn×24_peer_k10] [19:54:36][G_affymetrix_only×knn×24_peer_k10] Done: ['skipped', 'skipped'] total=10s
+  [47/72] SKIP G_affymetrix_only×knn×24_peer_k10 (12s)
+[19:54:37] START G_affymetrix_only×softimpute×01_raw | free=118.3GB
+  [G_affymetrix_only×softimpute×01_raw] [19:54:39][G_affymetrix_only×softimpute×01_raw] Downloading prepared dataset (free=118.1GB) ...
+  [G_affymetrix_only×softimpute×01_raw] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×01_raw]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×01_raw] [19:54:49][G_affymetrix_only×softimpute×01_raw] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×01_raw] [19:54:49][G_affymetrix_only×softimpute×01_raw] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×01_raw] [19:54:49][G_affymetrix_only×softimpute×01_raw] Normalization done (0s)
+  [G_affymetrix_only×softimpute×01_raw] [19:54:57][G_affymetrix_only×softimpute×01_raw×post_rm=False] r2_batch=0.162 r2_diag=0.212 — uploading ...
+  [G_affymetrix_only×knn×20_shambhala] R callback write-console: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [G_affymetrix_only×knn×20_shambhala]   
+  [G_affymetrix_only×knn×20_shambhala] [19:55:05][G_affymetrix_only×knn×20_shambhala] Normalization FAILED after 113s:
+  [G_affymetrix_only×knn×20_shambhala] Traceback (most recent call last):
+  [G_affymetrix_only×knn×20_shambhala]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×knn×20_shambhala]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×knn×20_shambhala]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×20_shambhala]   File "/app/harmonization-scripts/bench_shared.py", line 1418, in normalize_shambhala
+  [G_affymetrix_only×knn×20_shambhala]     ro.r(f"""
+  [G_affymetrix_only×knn×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [G_affymetrix_only×knn×20_shambhala]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [G_affymetrix_only×knn×20_shambhala]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×knn×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [G_affymetrix_only×knn×20_shambhala]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×knn×20_shambhala] rpy2.rinterface_lib.embedded.RRuntimeError: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [G_affymetrix_only×knn×20_shambhala] 
+  [G_affymetrix_only×knn×20_shambhala] 
+  [G_affymetrix_only×knn×20_shambhala] [19:55:05][G_affymetrix_only×knn×20_shambhala] Done: ['failed', 'failed'] total=123s
+[19:55:05] START G_affymetrix_only×softimpute×02_median_scaling | free=119.5GB
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:55:07][G_affymetrix_only×softimpute×02_median_scaling] Downloading prepared dataset (free=119.3GB) ...
+  [G_affymetrix_only×softimpute×02_median_scaling] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×02_median_scaling]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:55:17][G_affymetrix_only×softimpute×02_median_scaling] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:55:17][G_affymetrix_only×softimpute×02_median_scaling] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:55:18][G_affymetrix_only×softimpute×02_median_scaling] Normalization done (2s)
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:55:27][G_affymetrix_only×softimpute×02_median_scaling×post_rm=False] r2_batch=0.097 r2_diag=0.195 — uploading ...
+  [G_affymetrix_only×softimpute×01_raw] [19:56:36][G_affymetrix_only×softimpute×01_raw×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×01_raw] [19:56:37][G_affymetrix_only×softimpute×01_raw×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×01_raw] [19:56:39][G_affymetrix_only×softimpute×01_raw×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×01_raw] [19:56:47][G_affymetrix_only×softimpute×01_raw×post_rm=True] r2_batch=0.092 r2_diag=0.064 — uploading ...
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:57:03][G_affymetrix_only×softimpute×02_median_scaling×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:57:03][G_affymetrix_only×softimpute×02_median_scaling×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:57:06][G_affymetrix_only×softimpute×02_median_scaling×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:57:14][G_affymetrix_only×softimpute×02_median_scaling×post_rm=True] r2_batch=0.092 r2_diag=0.261 — uploading ...
+  [G_affymetrix_only×softimpute×01_raw] [19:57:52][G_affymetrix_only×softimpute×01_raw×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×01_raw] [19:57:52][G_affymetrix_only×softimpute×01_raw] Done: ['ok', 'ok'] total=194s
+  [49/72] G_affymetrix_only×softimpute×01_raw (196s) → ['ok', 'ok']
+[19:57:53] START G_affymetrix_only×softimpute×03_limma | free=119.6GB
+  [G_affymetrix_only×softimpute×03_limma] [19:57:55][G_affymetrix_only×softimpute×03_limma] Downloading prepared dataset (free=119.4GB) ...
+  [G_affymetrix_only×softimpute×03_limma] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×03_limma]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×03_limma] [19:58:04][G_affymetrix_only×softimpute×03_limma] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×03_limma] [19:58:04][G_affymetrix_only×softimpute×03_limma] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:58:06][G_affymetrix_only×softimpute×02_median_scaling×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×02_median_scaling] [19:58:06][G_affymetrix_only×softimpute×02_median_scaling] Done: ['ok', 'ok'] total=179s
+  [50/72] G_affymetrix_only×softimpute×02_median_scaling (181s) → ['ok', 'ok']
+[19:58:06] START G_affymetrix_only×softimpute×04_sva | free=120.2GB
+  [G_affymetrix_only×softimpute×04_sva] [19:58:08][G_affymetrix_only×softimpute×04_sva] Downloading prepared dataset (free=120.0GB) ...
+  [G_affymetrix_only×softimpute×04_sva] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×04_sva]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×04_sva] [19:58:17][G_affymetrix_only×softimpute×04_sva] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×04_sva] [19:58:17][G_affymetrix_only×softimpute×04_sva] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: design matrix of interest not specified. Assuming a one-group experiment.
+  [G_affymetrix_only×softimpute×03_limma]   
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×03_limma]   
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: 
+  [G_affymetrix_only×softimpute×03_limma]    
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×03_limma]   
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console: 
+  [G_affymetrix_only×softimpute×03_limma]    
+  [G_affymetrix_only×softimpute×03_limma] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×03_limma]   
+  [G_affymetrix_only×softimpute×03_limma] [19:58:51][G_affymetrix_only×softimpute×03_limma] Normalization done (47s)
+  [G_affymetrix_only×softimpute×03_limma] [19:59:00][G_affymetrix_only×softimpute×03_limma×post_rm=False] r2_batch=0.000 r2_diag=0.175 — uploading ...
+  [G_affymetrix_only×softimpute×03_limma] [20:01:39][G_affymetrix_only×softimpute×03_limma×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×03_limma] [20:01:39][G_affymetrix_only×softimpute×03_limma×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×03_limma] [20:01:42][G_affymetrix_only×softimpute×03_limma×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×softimpute×03_limma] [20:01:50][G_affymetrix_only×softimpute×03_limma×post_rm=True] r2_batch=0.000 r2_diag=0.245 — uploading ...
+  [G_affymetrix_only×softimpute×03_limma] [20:03:53][G_affymetrix_only×softimpute×03_limma×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×03_limma] [20:03:54][G_affymetrix_only×softimpute×03_limma] Done: ['ok', 'ok'] total=359s
+[20:03:55] START G_affymetrix_only×softimpute×05_combat | free=114.6GB
+  [51/72] G_affymetrix_only×softimpute×03_limma (363s) → ['ok', 'ok']
+  [G_affymetrix_only×softimpute×05_combat] [20:04:01][G_affymetrix_only×softimpute×05_combat] Downloading prepared dataset (free=115.6GB) ...
+  [G_affymetrix_only×softimpute×05_combat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×05_combat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×05_combat] [20:04:19][G_affymetrix_only×softimpute×05_combat] Dataset ready: 2801 samples × 11207 genes (18s)
+  [G_affymetrix_only×softimpute×05_combat] [20:04:19][G_affymetrix_only×softimpute×05_combat] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Found3batches
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Adjusting for13covariate(s) or covariate level(s)
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Standardizing Data across genes
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Fitting L/S model and finding priors
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Finding parametric adjustments
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Adjusting the Data
+  [G_affymetrix_only×softimpute×05_combat] 
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: 
+  [G_affymetrix_only×softimpute×05_combat]    
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console: 
+  [G_affymetrix_only×softimpute×05_combat]    
+  [G_affymetrix_only×softimpute×05_combat] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×05_combat]   
+  [G_affymetrix_only×softimpute×05_combat] [20:06:23][G_affymetrix_only×softimpute×05_combat] Normalization done (124s)
+  [G_affymetrix_only×softimpute×05_combat] [20:06:38][G_affymetrix_only×softimpute×05_combat×post_rm=False] r2_batch=0.032 r2_diag=0.190 — uploading ...
+  [G_affymetrix_only×softimpute×04_sva] Number of significant surrogate variables is:  13 
+  [G_affymetrix_only×softimpute×04_sva] Iteration (out of 5 ):1  R callback write-console: Error in solve.default(t(mod) %*% mod) : 
+  [G_affymetrix_only×softimpute×04_sva]   system is computationally singular: reciprocal condition number = 4.80159e-45
+  [G_affymetrix_only×softimpute×04_sva]   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×04_sva]   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: 
+  [G_affymetrix_only×softimpute×04_sva]    
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×04_sva]   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: 
+  [G_affymetrix_only×softimpute×04_sva]    
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×04_sva]   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: 3:   
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console: 
+  [G_affymetrix_only×softimpute×04_sva]    
+  [G_affymetrix_only×softimpute×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×04_sva]   
+  [G_affymetrix_only×softimpute×04_sva] SVA: sva() failed (Error in solve.default(t(mod) %*% mod) : 
+  [G_affymetrix_only×softimpute×04_sva]   system is computationally singular: reciprocal condition number = 4.80159e-45
+  [G_affymetrix_only×softimpute×04_sva] ) — returning uncorrected data
+  [G_affymetrix_only×softimpute×04_sva] [20:07:47][G_affymetrix_only×softimpute×04_sva] Normalization done (570s)
+  [G_affymetrix_only×softimpute×04_sva] [20:07:55][G_affymetrix_only×softimpute×04_sva×post_rm=False] r2_batch=0.162 r2_diag=0.212 — uploading ...
+  [G_affymetrix_only×softimpute×05_combat] [20:08:44][G_affymetrix_only×softimpute×05_combat×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×05_combat] [20:08:44][G_affymetrix_only×softimpute×05_combat×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×05_combat] [20:08:47][G_affymetrix_only×softimpute×05_combat×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×05_combat] [20:08:54][G_affymetrix_only×softimpute×05_combat×post_rm=True] r2_batch=0.015 r2_diag=0.073 — uploading ...
+  [G_affymetrix_only×softimpute×04_sva] [20:09:29][G_affymetrix_only×softimpute×04_sva×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×04_sva] [20:09:29][G_affymetrix_only×softimpute×04_sva×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×04_sva] [20:09:32][G_affymetrix_only×softimpute×04_sva×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×04_sva] [20:09:39][G_affymetrix_only×softimpute×04_sva×post_rm=True] r2_batch=0.092 r2_diag=0.064 — uploading ...
+  [G_affymetrix_only×softimpute×05_combat] [20:10:04][G_affymetrix_only×softimpute×05_combat×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×05_combat] [20:10:04][G_affymetrix_only×softimpute×05_combat] Done: ['ok', 'ok'] total=363s
+  [52/72] G_affymetrix_only×softimpute×05_combat (371s) → ['ok', 'ok']
+[20:10:06] START G_affymetrix_only×softimpute×06_combat_seq | free=117.3GB
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:10:08][G_affymetrix_only×softimpute×06_combat_seq] Downloading prepared dataset (free=117.2GB) ...
+  [G_affymetrix_only×softimpute×06_combat_seq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×06_combat_seq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:10:18][G_affymetrix_only×softimpute×06_combat_seq] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:10:18][G_affymetrix_only×softimpute×06_combat_seq] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×04_sva] [20:10:48][G_affymetrix_only×softimpute×04_sva×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×04_sva] [20:10:48][G_affymetrix_only×softimpute×04_sva] Done: ['ok', 'ok'] total=760s
+  [53/72] G_affymetrix_only×softimpute×04_sva (763s) → ['ok', 'ok']
+[20:10:49] START G_affymetrix_only×softimpute×07_pycombat | free=119.7GB
+  [G_affymetrix_only×softimpute×07_pycombat] [20:10:51][G_affymetrix_only×softimpute×07_pycombat] Downloading prepared dataset (free=119.5GB) ...
+  [G_affymetrix_only×softimpute×07_pycombat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×07_pycombat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×07_pycombat] [20:11:00][G_affymetrix_only×softimpute×07_pycombat] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×07_pycombat] [20:11:00][G_affymetrix_only×softimpute×07_pycombat] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×07_pycombat] Found 3 batches.
+  [G_affymetrix_only×softimpute×07_pycombat] Adjusting for 0 covariate(s) or covariate level(s).
+  [G_affymetrix_only×softimpute×07_pycombat] Standardizing Data across genes.
+  [G_affymetrix_only×softimpute×07_pycombat] Fitting L/S model and finding priors.
+  [G_affymetrix_only×softimpute×07_pycombat] Finding parametric adjustments.
+  [G_affymetrix_only×softimpute×07_pycombat] Adjusting the Data
+  [G_affymetrix_only×softimpute×07_pycombat] [20:11:03][G_affymetrix_only×softimpute×07_pycombat] Normalization done (3s)
+  [G_affymetrix_only×softimpute×07_pycombat] [20:11:12][G_affymetrix_only×softimpute×07_pycombat×post_rm=False] r2_batch=0.000 r2_diag=0.166 — uploading ...
+  [G_affymetrix_only×softimpute×06_combat_seq] Found 3 batches
+  [G_affymetrix_only×softimpute×06_combat_seq] Using full model in ComBat-seq.
+  [G_affymetrix_only×softimpute×06_combat_seq] Adjusting for 13 covariate(s) or covariate level(s)
+  [G_affymetrix_only×softimpute×06_combat_seq] Estimating dispersions
+  [G_affymetrix_only×softimpute×07_pycombat] [20:12:35][G_affymetrix_only×softimpute×07_pycombat×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×07_pycombat] [20:12:35][G_affymetrix_only×softimpute×07_pycombat×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×07_pycombat] [20:12:38][G_affymetrix_only×softimpute×07_pycombat×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×07_pycombat] [20:12:47][G_affymetrix_only×softimpute×07_pycombat×post_rm=True] r2_batch=0.000 r2_diag=0.210 — uploading ...
+  [G_affymetrix_only×softimpute×07_pycombat] [20:13:40][G_affymetrix_only×softimpute×07_pycombat×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×07_pycombat] [20:13:40][G_affymetrix_only×softimpute×07_pycombat] Done: ['ok', 'ok'] total=169s
+  [54/72] G_affymetrix_only×softimpute×07_pycombat (172s) → ['ok', 'ok']
+[20:13:41] START G_affymetrix_only×softimpute×08_inmoose_combatseq | free=118.6GB
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq] [20:13:43][G_affymetrix_only×softimpute×08_inmoose_combatseq] Downloading prepared dataset (free=118.6GB) ...
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq] [20:13:52][G_affymetrix_only×softimpute×08_inmoose_combatseq] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq] [20:13:52][G_affymetrix_only×softimpute×08_inmoose_combatseq] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×06_combat_seq] Fitting the GLM model
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq] terminate called after throwing an instance of 'std::domain_error'
+  [G_affymetrix_only×softimpute×08_inmoose_combatseq]   what():  Error in function float_next<double>(double): Argument must be finite, but got nan
+  [G_affymetrix_only×softimpute×06_combat_seq] Shrinkage off - using GLM estimates for parameters
+  [G_affymetrix_only×softimpute×06_combat_seq] Adjusting the data
+[20:38:05] FAILED G_affymetrix_only×softimpute×08_inmoose_combatseq exit=-6 (1464s)
+[20:38:05] START G_affymetrix_only×softimpute×09_ruv | free=117.8GB
+  [G_affymetrix_only×softimpute×09_ruv] [20:38:07][G_affymetrix_only×softimpute×09_ruv] Downloading prepared dataset (free=117.5GB) ...
+  [G_affymetrix_only×softimpute×09_ruv] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×09_ruv]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×09_ruv] [20:38:17][G_affymetrix_only×softimpute×09_ruv] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×09_ruv] [20:38:17][G_affymetrix_only×softimpute×09_ruv] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×09_ruv]   
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: 
+  [G_affymetrix_only×softimpute×09_ruv]    
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×09_ruv]   
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console: 
+  [G_affymetrix_only×softimpute×09_ruv]    
+  [G_affymetrix_only×softimpute×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×09_ruv]   
+  [G_affymetrix_only×softimpute×09_ruv] [20:39:34][G_affymetrix_only×softimpute×09_ruv] Normalization done (77s)
+  [G_affymetrix_only×softimpute×09_ruv] [20:39:44][G_affymetrix_only×softimpute×09_ruv×post_rm=False] r2_batch=0.147 r2_diag=0.165 — uploading ...
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×06_combat_seq]   
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: 
+  [G_affymetrix_only×softimpute×06_combat_seq]    
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×06_combat_seq]   
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console: 
+  [G_affymetrix_only×softimpute×06_combat_seq]    
+  [G_affymetrix_only×softimpute×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×06_combat_seq]   
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:40:03][G_affymetrix_only×softimpute×06_combat_seq] Normalization done (1786s)
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:40:12][G_affymetrix_only×softimpute×06_combat_seq×post_rm=False] r2_batch=0.074 r2_diag=0.254 — uploading ...
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:41:59][G_affymetrix_only×softimpute×06_combat_seq×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:42:00][G_affymetrix_only×softimpute×06_combat_seq×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:42:03][G_affymetrix_only×softimpute×06_combat_seq×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:42:11][G_affymetrix_only×softimpute×06_combat_seq×post_rm=True] r2_batch=0.096 r2_diag=0.055 — uploading ...
+  [G_affymetrix_only×softimpute×09_ruv] [20:42:11][G_affymetrix_only×softimpute×09_ruv×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×09_ruv] [20:42:12][G_affymetrix_only×softimpute×09_ruv×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×09_ruv] [20:42:14][G_affymetrix_only×softimpute×09_ruv×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×softimpute×09_ruv] [20:42:23][G_affymetrix_only×softimpute×09_ruv×post_rm=True] r2_batch=0.079 r2_diag=0.210 — uploading ...
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:43:14][G_affymetrix_only×softimpute×06_combat_seq×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×06_combat_seq] [20:43:14][G_affymetrix_only×softimpute×06_combat_seq] Done: ['ok', 'ok'] total=1986s
+  [56/72] G_affymetrix_only×softimpute×06_combat_seq (1989s) → ['ok', 'ok']
+[20:43:15] START G_affymetrix_only×softimpute×10_mnn | free=112.0GB
+  [G_affymetrix_only×softimpute×10_mnn] [20:43:17][G_affymetrix_only×softimpute×10_mnn] Downloading prepared dataset (free=111.9GB) ...
+  [G_affymetrix_only×softimpute×10_mnn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×10_mnn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×10_mnn] [20:43:27][G_affymetrix_only×softimpute×10_mnn] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×10_mnn] [20:43:27][G_affymetrix_only×softimpute×10_mnn] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×09_ruv] [20:43:57][G_affymetrix_only×softimpute×09_ruv×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×09_ruv] [20:43:57][G_affymetrix_only×softimpute×09_ruv] Done: ['ok', 'ok'] total=350s
+  [57/72] G_affymetrix_only×softimpute×09_ruv (356s) → ['ok', 'ok']
+[20:44:01] START G_affymetrix_only×softimpute×11_harmony | free=118.7GB
+  [G_affymetrix_only×softimpute×11_harmony] [20:44:06][G_affymetrix_only×softimpute×11_harmony] Downloading prepared dataset (free=118.4GB) ...
+  [G_affymetrix_only×softimpute×11_harmony] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×11_harmony]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×11_harmony] [20:44:16][G_affymetrix_only×softimpute×11_harmony] Dataset ready: 2801 samples × 11207 genes (11s)
+  [G_affymetrix_only×softimpute×11_harmony] [20:44:16][G_affymetrix_only×softimpute×11_harmony] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,036 - harmonypy - INFO - Running Harmony (PyTorch on cpu)
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,036 - harmonypy - INFO -   Parameters:
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,036 - harmonypy - INFO -     max_iter_harmony: 20
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     max_iter_kmeans: 20
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     epsilon_cluster: 1e-05
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     epsilon_harmony: 0.0001
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     nclust: 93
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     block_size: 0.05
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     lamb: [1. 1. 1.]
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     theta: [2. 2. 2.]
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     sigma: [0.1 0.1 0.1 0.1 0.1]...
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     verbose: True
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -     random_state: 0
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -   Data: 50 PCs × 2801 cells
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,037 - harmonypy - INFO -   Batch variables: ['RNA_BATCH']
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,042 - harmonypy - INFO - Computing initial centroids with sklearn.KMeans...
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,122 - harmonypy - INFO - KMeans initialization complete.
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,126 - harmonypy - INFO - Iteration 1 of 20
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,325 - harmonypy - INFO - Iteration 2 of 20
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,516 - harmonypy - INFO - Iteration 3 of 20
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,745 - harmonypy - INFO - Iteration 4 of 20
+  [G_affymetrix_only×softimpute×11_harmony] 2026-04-26 20:44:26,986 - harmonypy - INFO - Converged after 4 iterations
+  [G_affymetrix_only×softimpute×11_harmony] [20:44:27][G_affymetrix_only×softimpute×11_harmony] Normalization done (10s)
+  [G_affymetrix_only×softimpute×11_harmony] [20:44:35][G_affymetrix_only×softimpute×11_harmony×post_rm=False] r2_batch=0.103 r2_diag=0.192 — uploading ...
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×10_mnn]   
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: 
+  [G_affymetrix_only×softimpute×10_mnn]    
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×10_mnn]   
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console: 
+  [G_affymetrix_only×softimpute×10_mnn]    
+  [G_affymetrix_only×softimpute×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×10_mnn]   
+  [G_affymetrix_only×softimpute×10_mnn] [20:45:09][G_affymetrix_only×softimpute×10_mnn] Normalization done (103s)
+  [G_affymetrix_only×softimpute×10_mnn] [20:45:18][G_affymetrix_only×softimpute×10_mnn×post_rm=False] r2_batch=0.109 r2_diag=0.245 — uploading ...
+  [G_affymetrix_only×softimpute×11_harmony] [20:46:24][G_affymetrix_only×softimpute×11_harmony×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×11_harmony] [20:46:24][G_affymetrix_only×softimpute×11_harmony×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×11_harmony] [20:46:28][G_affymetrix_only×softimpute×11_harmony×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×11_harmony] [20:46:37][G_affymetrix_only×softimpute×11_harmony×post_rm=True] r2_batch=0.058 r2_diag=0.279 — uploading ...
+  [G_affymetrix_only×softimpute×10_mnn] [20:46:49][G_affymetrix_only×softimpute×10_mnn×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×10_mnn] [20:46:49][G_affymetrix_only×softimpute×10_mnn×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×10_mnn] [20:46:52][G_affymetrix_only×softimpute×10_mnn×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×10_mnn] [20:47:00][G_affymetrix_only×softimpute×10_mnn×post_rm=True] r2_batch=0.069 r2_diag=0.278 — uploading ...
+  [G_affymetrix_only×softimpute×11_harmony] [20:47:38][G_affymetrix_only×softimpute×11_harmony×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×11_harmony] [20:47:39][G_affymetrix_only×softimpute×11_harmony] Done: ['ok', 'ok'] total=213s
+  [58/72] G_affymetrix_only×softimpute×11_harmony (219s) → ['ok', 'ok']
+[20:47:40] START G_affymetrix_only×softimpute×12_scanorama | free=117.6GB
+  [G_affymetrix_only×softimpute×12_scanorama] [20:47:42][G_affymetrix_only×softimpute×12_scanorama] Downloading prepared dataset (free=117.4GB) ...
+  [G_affymetrix_only×softimpute×12_scanorama] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×12_scanorama]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×12_scanorama] [20:47:51][G_affymetrix_only×softimpute×12_scanorama] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×12_scanorama] [20:47:51][G_affymetrix_only×softimpute×12_scanorama] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×10_mnn] [20:47:53][G_affymetrix_only×softimpute×10_mnn×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×10_mnn] [20:47:53][G_affymetrix_only×softimpute×10_mnn] Done: ['ok', 'ok'] total=277s
+  [59/72] G_affymetrix_only×softimpute×10_mnn (280s) → ['ok', 'ok']
+[20:47:55] START G_affymetrix_only×softimpute×13_fsmvn | free=118.4GB
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:47:59][G_affymetrix_only×softimpute×13_fsmvn] Downloading prepared dataset (free=118.5GB) ...
+  [G_affymetrix_only×softimpute×12_scanorama] Found 11207 genes among all datasets
+  [G_affymetrix_only×softimpute×12_scanorama] [[0.         0.28125    0.44366197]
+  [G_affymetrix_only×softimpute×12_scanorama]  [0.         0.         0.23375   ]
+  [G_affymetrix_only×softimpute×12_scanorama]  [0.         0.         0.        ]]
+  [G_affymetrix_only×softimpute×12_scanorama] Processing datasets (0, 2)
+  [G_affymetrix_only×softimpute×12_scanorama] Processing datasets (0, 1)
+  [G_affymetrix_only×softimpute×12_scanorama] Processing datasets (1, 2)
+  [G_affymetrix_only×softimpute×12_scanorama] [20:48:04][G_affymetrix_only×softimpute×12_scanorama] Normalization done (13s)
+  [G_affymetrix_only×softimpute×12_scanorama] [20:48:14][G_affymetrix_only×softimpute×12_scanorama×post_rm=False] r2_batch=0.100 r2_diag=0.205 — uploading ...
+  [G_affymetrix_only×softimpute×13_fsmvn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×13_fsmvn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:48:18][G_affymetrix_only×softimpute×13_fsmvn] Dataset ready: 2801 samples × 11207 genes (19s)
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:48:18][G_affymetrix_only×softimpute×13_fsmvn] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:48:19][G_affymetrix_only×softimpute×13_fsmvn] Normalization done (1s)
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:48:28][G_affymetrix_only×softimpute×13_fsmvn×post_rm=False] r2_batch=0.000 r2_diag=0.136 — uploading ...
+  [G_affymetrix_only×softimpute×12_scanorama] [20:49:43][G_affymetrix_only×softimpute×12_scanorama×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×12_scanorama] [20:49:43][G_affymetrix_only×softimpute×12_scanorama×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×12_scanorama] [20:49:45][G_affymetrix_only×softimpute×12_scanorama×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×softimpute×12_scanorama] [20:49:53][G_affymetrix_only×softimpute×12_scanorama×post_rm=True] r2_batch=0.037 r2_diag=0.206 — uploading ...
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:49:58][G_affymetrix_only×softimpute×13_fsmvn×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:49:58][G_affymetrix_only×softimpute×13_fsmvn×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:50:00][G_affymetrix_only×softimpute×13_fsmvn×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:50:08][G_affymetrix_only×softimpute×13_fsmvn×post_rm=True] r2_batch=0.000 r2_diag=0.177 — uploading ...
+  [G_affymetrix_only×softimpute×12_scanorama] [20:51:07][G_affymetrix_only×softimpute×12_scanorama×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×12_scanorama] [20:51:07][G_affymetrix_only×softimpute×12_scanorama] Done: ['ok', 'ok'] total=206s
+  [60/72] G_affymetrix_only×softimpute×12_scanorama (208s) → ['ok', 'ok']
+[20:51:08] START G_affymetrix_only×softimpute×14_qsmooth | free=116.7GB
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:51:10][G_affymetrix_only×softimpute×14_qsmooth] Downloading prepared dataset (free=116.4GB) ...
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:51:11][G_affymetrix_only×softimpute×13_fsmvn×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×13_fsmvn] [20:51:11][G_affymetrix_only×softimpute×13_fsmvn] Done: ['ok', 'ok'] total=192s
+  [61/72] G_affymetrix_only×softimpute×13_fsmvn (197s) → ['ok', 'ok']
+[20:51:11] START G_affymetrix_only×softimpute×15_fsqn_py | free=117.8GB
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:51:13][G_affymetrix_only×softimpute×15_fsqn_py] Downloading prepared dataset (free=117.5GB) ...
+  [G_affymetrix_only×softimpute×14_qsmooth] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×14_qsmooth]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:51:20][G_affymetrix_only×softimpute×14_qsmooth] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:51:20][G_affymetrix_only×softimpute×14_qsmooth] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×15_fsqn_py] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×15_fsqn_py]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:51:23][G_affymetrix_only×softimpute×15_fsqn_py] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:51:23][G_affymetrix_only×softimpute×15_fsqn_py] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×15_fsqn_py] /app/harmonization-scripts/bench_shared.py:1114: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+  [G_affymetrix_only×softimpute×15_fsqn_py] You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+  [G_affymetrix_only×softimpute×15_fsqn_py] A typical example is when you are setting values in a column of a DataFrame, like:
+  [G_affymetrix_only×softimpute×15_fsqn_py] 
+  [G_affymetrix_only×softimpute×15_fsqn_py] df["col"][row_indexer] = value
+  [G_affymetrix_only×softimpute×15_fsqn_py] 
+  [G_affymetrix_only×softimpute×15_fsqn_py] Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+  [G_affymetrix_only×softimpute×15_fsqn_py] 
+  [G_affymetrix_only×softimpute×15_fsqn_py] See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  [G_affymetrix_only×softimpute×15_fsqn_py] 
+  [G_affymetrix_only×softimpute×15_fsqn_py]   out.loc[sample].iloc[order] = target_dist
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:51:24][G_affymetrix_only×softimpute×15_fsqn_py] Normalization done (1s)
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:51:32][G_affymetrix_only×softimpute×15_fsqn_py×post_rm=False] r2_batch=0.126 r2_diag=0.247 — uploading ...
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: In addition:   
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: Warning messages:
+  [G_affymetrix_only×softimpute×14_qsmooth]   
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: 1:   
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: 
+  [G_affymetrix_only×softimpute×14_qsmooth]    
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×14_qsmooth]   
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: 2:   
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console: 
+  [G_affymetrix_only×softimpute×14_qsmooth]    
+  [G_affymetrix_only×softimpute×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [G_affymetrix_only×softimpute×14_qsmooth]   
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:52:45][G_affymetrix_only×softimpute×14_qsmooth] Normalization done (86s)
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:52:56][G_affymetrix_only×softimpute×14_qsmooth×post_rm=False] r2_batch=0.164 r2_diag=0.253 — uploading ...
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:53:00][G_affymetrix_only×softimpute×15_fsqn_py×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:53:00][G_affymetrix_only×softimpute×15_fsqn_py×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:53:03][G_affymetrix_only×softimpute×15_fsqn_py×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:53:12][G_affymetrix_only×softimpute×15_fsqn_py×post_rm=True] r2_batch=0.087 r2_diag=0.213 — uploading ...
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:54:04][G_affymetrix_only×softimpute×15_fsqn_py×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×15_fsqn_py] [20:54:04][G_affymetrix_only×softimpute×15_fsqn_py] Done: ['ok', 'ok'] total=171s
+  [62/72] G_affymetrix_only×softimpute×15_fsqn_py (173s) → ['ok', 'ok']
+[20:54:05] START G_affymetrix_only×softimpute×16_fsqn_r | free=114.8GB
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:54:07][G_affymetrix_only×softimpute×16_fsqn_r] Downloading prepared dataset (free=114.6GB) ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:54:16][G_affymetrix_only×softimpute×16_fsqn_r] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:54:16][G_affymetrix_only×softimpute×16_fsqn_r] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:54:24][G_affymetrix_only×softimpute×14_qsmooth×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:54:24][G_affymetrix_only×softimpute×14_qsmooth×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:54:28][G_affymetrix_only×softimpute×14_qsmooth×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:54:37][G_affymetrix_only×softimpute×14_qsmooth×post_rm=True] r2_batch=0.096 r2_diag=0.148 — uploading ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [G_affymetrix_only×softimpute×16_fsqn_r]   
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:55:30][G_affymetrix_only×softimpute×14_qsmooth×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×14_qsmooth] [20:55:30][G_affymetrix_only×softimpute×14_qsmooth] Done: ['ok', 'ok'] total=260s
+  [63/72] G_affymetrix_only×softimpute×14_qsmooth (263s) → ['ok', 'ok']
+[20:55:31] START G_affymetrix_only×softimpute×17_quantile | free=115.8GB
+  [G_affymetrix_only×softimpute×17_quantile] [20:55:33][G_affymetrix_only×softimpute×17_quantile] Downloading prepared dataset (free=115.6GB) ...
+  [G_affymetrix_only×softimpute×17_quantile] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×17_quantile]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×17_quantile] [20:55:43][G_affymetrix_only×softimpute×17_quantile] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×17_quantile] [20:55:43][G_affymetrix_only×softimpute×17_quantile] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×17_quantile] [20:55:45][G_affymetrix_only×softimpute×17_quantile] Normalization done (2s)
+  [G_affymetrix_only×softimpute×17_quantile] [20:55:53][G_affymetrix_only×softimpute×17_quantile×post_rm=False] r2_batch=0.126 r2_diag=0.247 — uploading ...
+  [G_affymetrix_only×softimpute×17_quantile] [20:57:16][G_affymetrix_only×softimpute×17_quantile×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×17_quantile] [20:57:16][G_affymetrix_only×softimpute×17_quantile×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×17_quantile] [20:57:19][G_affymetrix_only×softimpute×17_quantile×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [G_affymetrix_only×softimpute×17_quantile] [20:57:26][G_affymetrix_only×softimpute×17_quantile×post_rm=True] r2_batch=0.087 r2_diag=0.213 — uploading ...
+  [G_affymetrix_only×softimpute×17_quantile] [20:58:19][G_affymetrix_only×softimpute×17_quantile×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×17_quantile] [20:58:19][G_affymetrix_only×softimpute×17_quantile] Done: ['ok', 'ok'] total=166s
+  [64/72] G_affymetrix_only×softimpute×17_quantile (168s) → ['ok', 'ok']
+[20:58:19] START G_affymetrix_only×softimpute×18_rank | free=108.5GB
+  [65/72] G_affymetrix_only×softimpute×18_rank (2s) → ['cached', 'cached']
+[20:58:21] START G_affymetrix_only×softimpute×19_tdm | free=108.3GB
+  [G_affymetrix_only×softimpute×19_tdm] [20:58:23][G_affymetrix_only×softimpute×19_tdm] Downloading prepared dataset (free=108.0GB) ...
+  [G_affymetrix_only×softimpute×19_tdm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×19_tdm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×19_tdm] [20:58:33][G_affymetrix_only×softimpute×19_tdm] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×19_tdm] [20:58:33][G_affymetrix_only×softimpute×19_tdm] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:58:34][G_affymetrix_only×softimpute×16_fsqn_r] Normalization done (258s)
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:58:43][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.018 r2_diag=0.348 — uploading ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:58:59][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:58:59][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:59:02][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×16_fsqn_r] /usr/local/lib/python3.12/dist-packages/sklearn/decomposition/_pca.py:779: RuntimeWarning: invalid value encountered in divide
+  [G_affymetrix_only×softimpute×16_fsqn_r]   self.explained_variance_ratio_ = self.explained_variance_ / total_var
+  [G_affymetrix_only×softimpute×16_fsqn_r] /usr/local/lib/python3.12/dist-packages/sklearn/decomposition/_pca.py:779: RuntimeWarning: invalid value encountered in divide
+  [G_affymetrix_only×softimpute×16_fsqn_r]   self.explained_variance_ratio_ = self.explained_variance_ / total_var
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:59:08][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.000 r2_diag=0.000 — uploading ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:59:15][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×16_fsqn_r] [20:59:15][G_affymetrix_only×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=308s
+  [66/72] G_affymetrix_only×softimpute×16_fsqn_r (311s) → ['ok', 'ok']
+[20:59:16] START G_affymetrix_only×softimpute×20_shambhala | free=109.8GB
+  [G_affymetrix_only×softimpute×20_shambhala] [20:59:18][G_affymetrix_only×softimpute×20_shambhala] Downloading prepared dataset (free=109.5GB) ...
+  [G_affymetrix_only×softimpute×20_shambhala] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×20_shambhala]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×20_shambhala] [20:59:27][G_affymetrix_only×softimpute×20_shambhala] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×20_shambhala] [20:59:27][G_affymetrix_only×softimpute×20_shambhala] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×19_tdm] R callback write-console: data.table 1.18.2.1 using 16 threads (see ?getDTthreads).    
+  [G_affymetrix_only×softimpute×19_tdm] R callback write-console: Latest news: r-datatable.com
+  [G_affymetrix_only×softimpute×19_tdm]   
+  [G_affymetrix_only×softimpute×20_shambhala] R callback write-console: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [G_affymetrix_only×softimpute×20_shambhala]   
+  [G_affymetrix_only×softimpute×20_shambhala] [21:01:07][G_affymetrix_only×softimpute×20_shambhala] Normalization FAILED after 100s:
+  [G_affymetrix_only×softimpute×20_shambhala] Traceback (most recent call last):
+  [G_affymetrix_only×softimpute×20_shambhala]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [G_affymetrix_only×softimpute×20_shambhala]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [G_affymetrix_only×softimpute×20_shambhala]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×softimpute×20_shambhala]   File "/app/harmonization-scripts/bench_shared.py", line 1418, in normalize_shambhala
+  [G_affymetrix_only×softimpute×20_shambhala]     ro.r(f"""
+  [G_affymetrix_only×softimpute×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [G_affymetrix_only×softimpute×20_shambhala]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [G_affymetrix_only×softimpute×20_shambhala]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [G_affymetrix_only×softimpute×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [G_affymetrix_only×softimpute×20_shambhala]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [G_affymetrix_only×softimpute×20_shambhala] rpy2.rinterface_lib.embedded.RRuntimeError: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [G_affymetrix_only×softimpute×20_shambhala] 
+  [G_affymetrix_only×softimpute×20_shambhala] 
+  [G_affymetrix_only×softimpute×20_shambhala] [21:01:07][G_affymetrix_only×softimpute×20_shambhala] Done: ['failed', 'failed'] total=110s
+[21:01:08] START G_affymetrix_only×softimpute×21_harmonizr | free=107.7GB
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:01:10][G_affymetrix_only×softimpute×21_harmonizr] Downloading prepared dataset (free=108.9GB) ...
+  [G_affymetrix_only×softimpute×21_harmonizr] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×21_harmonizr]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:01:26][G_affymetrix_only×softimpute×21_harmonizr] Dataset ready: 2801 samples × 11207 genes (16s)
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:01:26][G_affymetrix_only×softimpute×21_harmonizr] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×19_tdm] [21:04:04][G_affymetrix_only×softimpute×19_tdm] Normalization done (331s)
+  [G_affymetrix_only×softimpute×19_tdm] [21:04:12][G_affymetrix_only×softimpute×19_tdm×post_rm=False] r2_batch=0.160 r2_diag=0.204 — uploading ...
+  [G_affymetrix_only×softimpute×19_tdm] [21:05:21][G_affymetrix_only×softimpute×19_tdm×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×19_tdm] [21:05:21][G_affymetrix_only×softimpute×19_tdm×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×19_tdm] [21:05:24][G_affymetrix_only×softimpute×19_tdm×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×19_tdm] [21:05:32][G_affymetrix_only×softimpute×19_tdm×post_rm=True] r2_batch=0.093 r2_diag=0.052 — uploading ...
+  [G_affymetrix_only×softimpute×19_tdm] [21:06:11][G_affymetrix_only×softimpute×19_tdm×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×19_tdm] [21:06:11][G_affymetrix_only×softimpute×19_tdm] Done: ['ok', 'ok'] total=468s
+  [68/72] G_affymetrix_only×softimpute×19_tdm (471s) → ['ok', 'ok']
+[21:06:12] START G_affymetrix_only×softimpute×22_tmm | free=102.7GB
+  [G_affymetrix_only×softimpute×22_tmm] [21:06:14][G_affymetrix_only×softimpute×22_tmm] Downloading prepared dataset (free=102.5GB) ...
+  [G_affymetrix_only×softimpute×22_tmm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×22_tmm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×22_tmm] [21:06:24][G_affymetrix_only×softimpute×22_tmm] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×22_tmm] [21:06:24][G_affymetrix_only×softimpute×22_tmm] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×22_tmm] [21:06:24][G_affymetrix_only×softimpute×22_tmm] Skipped (NotImplementedError): TMM is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [G_affymetrix_only×softimpute×22_tmm] [21:06:24][G_affymetrix_only×softimpute×22_tmm] Done: ['skipped', 'skipped'] total=10s
+  [69/72] SKIP G_affymetrix_only×softimpute×22_tmm (12s)
+[21:06:24] START G_affymetrix_only×softimpute×23_vst | free=102.7GB
+  [G_affymetrix_only×softimpute×23_vst] [21:06:26][G_affymetrix_only×softimpute×23_vst] Downloading prepared dataset (free=102.5GB) ...
+  [G_affymetrix_only×softimpute×23_vst] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×23_vst]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×23_vst] [21:06:36][G_affymetrix_only×softimpute×23_vst] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×23_vst] [21:06:36][G_affymetrix_only×softimpute×23_vst] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×23_vst] [21:06:36][G_affymetrix_only×softimpute×23_vst] Skipped (NotImplementedError): DESeq2 VST is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [G_affymetrix_only×softimpute×23_vst] [21:06:36][G_affymetrix_only×softimpute×23_vst] Done: ['skipped', 'skipped'] total=10s
+  [70/72] SKIP G_affymetrix_only×softimpute×23_vst (12s)
+[21:06:36] START G_affymetrix_only×softimpute×24_peer_k10 | free=101.7GB
+  [G_affymetrix_only×softimpute×24_peer_k10] [21:06:39][G_affymetrix_only×softimpute×24_peer_k10] Downloading prepared dataset (free=101.1GB) ...
+  [G_affymetrix_only×softimpute×24_peer_k10] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×24_peer_k10]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×24_peer_k10] [21:06:48][G_affymetrix_only×softimpute×24_peer_k10] Dataset ready: 2801 samples × 11207 genes (9s)
+  [G_affymetrix_only×softimpute×24_peer_k10] [21:06:48][G_affymetrix_only×softimpute×24_peer_k10] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×24_peer_k10] [21:06:48][G_affymetrix_only×softimpute×24_peer_k10] Skipped (NotImplementedError): PEER R package not available for R 4.5: not on CRAN, Bioconductor, or GitHub.
+  [G_affymetrix_only×softimpute×24_peer_k10] [21:06:48][G_affymetrix_only×softimpute×24_peer_k10] Done: ['skipped', 'skipped'] total=10s
+  [71/72] SKIP G_affymetrix_only×softimpute×24_peer_k10 (12s)
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Found3batches
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Adjusting for0covariate(s) or covariate level(s)
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Standardizing Data across genes
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Fitting L/S model and finding priors
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Finding parametric adjustments
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Adjusting the Data
+  [G_affymetrix_only×softimpute×21_harmonizr] 
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] R callback write-console: Writing file...
+  [G_affymetrix_only×softimpute×21_harmonizr]   
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:12:14][G_affymetrix_only×softimpute×21_harmonizr] Normalization done (648s)
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:12:22][G_affymetrix_only×softimpute×21_harmonizr×post_rm=False] r2_batch=0.000 r2_diag=0.138 — uploading ...
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:13:50][G_affymetrix_only×softimpute×21_harmonizr×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:13:50][G_affymetrix_only×softimpute×21_harmonizr×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:13:53][G_affymetrix_only×softimpute×21_harmonizr×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:14:01][G_affymetrix_only×softimpute×21_harmonizr×post_rm=True] r2_batch=0.000 r2_diag=0.258 — uploading ...
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:14:57][G_affymetrix_only×softimpute×21_harmonizr×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×21_harmonizr] [21:14:57][G_affymetrix_only×softimpute×21_harmonizr] Done: ['ok', 'ok'] total=827s
+  [72/72] G_affymetrix_only×softimpute×21_harmonizr (831s) → ['ok', 'ok']
+Norm failed-jobs log written: /app/harmonization-scripts/failed_jobs_norm.txt (10 entries)
+[S3 sync] Uploaded 10 norm failed keys to s3://$FL_S3_BUCKET/FL_batch_correction/failed_norm_fl-batch-correction.txt
+Metrics uploaded: s3://$FL_S3_BUCKET/FL_batch_correction/metrics.csv (124 rows)

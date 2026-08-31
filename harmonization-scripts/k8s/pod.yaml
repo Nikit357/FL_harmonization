@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fl-batch-correction
+  namespace: ${K8S_NAMESPACE}
+spec:
+  restartPolicy: Never
+  shareProcessNamespace: true
+  containers:
+  - name: worker
+    # Fill in account ID and region after ECR repo is created (Phase 9):
+    #   ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/fl-batch-correction:latest
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/fl-batch-correction:latest
+    imagePullPolicy: Always
+
+    # No command/args — default CMD (sleep infinity) keeps the pod alive.
+    # Attach via VSCode Kubernetes extension or:
+    #   kubectl exec -it fl-batch-correction -n ${K8S_NAMESPACE} -- bash
+    # then inside the pod run any script, e.g.:
+    #   python run_cross_product_parallel.py --n-workers 6 --skip-if-exists
+    #   python test_mock.py
+    #   python run_one_job.py --strat A_confirmed_bad --imp strict --method 16_fsqn_r
+    #
+    # For an unattended batch run uncomment and fill in:
+    # command: ["python", "run_cross_product_parallel.py"]
+    # args:
+    #   - "--n-workers"
+    #   - "6"
+    #   - "--skip-if-exists"
+    #   - "--memory-limit-gb"
+    #   - "12.0"
+    #   - "--timeout-s"
+    #   - "3600"
+
+    env:
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name
+    # Uncomment if the S3 input files have non-default names or are compressed:
+    # - name: BENCH_EXP_S3_KEY
+    #   value: "FL_batch_correction/exp/comb_exp.tsv.gz"
+    # - name: BENCH_ANN_S3_KEY
+    #   value: "FL_batch_correction/exp/comb_ann_unified.csv"
+
+    resources:
+      requests:
+        cpu: "8"
+        memory: "16Gi"
+      limits:
+        cpu: "8"
+        memory: "16Gi"
+
+    volumeMounts:
+    - name: work
+      mountPath: /workspace
+    - name: aws-credentials
+      mountPath: /root/.aws
+      readOnly: true
+
+  volumes:
+  - name: work
+    persistentVolumeClaim:
+      claimName: fl-workspace
+  - name: aws-credentials
+    secret:
+      secretName: aws-credentials
+
+  tolerations:
+    - key: node-group
+      operator: Equal
+      value: ${K8S_NODE_GROUP}
+      effect: NoSchedule
+  nodeSelector:
+    karpenter.k8s.aws/instance-family: c6a

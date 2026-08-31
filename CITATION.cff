@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, the benchmark results, or the deposited tables,
+  please cite both the article and this repository.
+title: "ComboBatch: a benchmark of transcriptomic harmonization methods for follicular lymphoma and DLBCL"
+abstract: >-
+  Code, metric tables and figures accompanying a systematic benchmark of
+  transcriptomic batch-effect harmonization across 7,174 samples from 88
+  follicular lymphoma, DLBCL and normal B-cell cohorts spanning 19 platforms.
+  39 harmonization methods were implemented and 31 evaluated across 14
+  sample-removal strategies, 3 imputation modes and 2 post-removal variants,
+  scored on 87 metrics in 14 groups, yielding a biomaterial- and
+  platform-conditional decision tree for choosing a harmonization method.
+type: software
+authors:
+  - family-names: Nikitin
+    given-names: Daniil
+    affiliation: "BostonGene, Corp., Waltham, MA, USA"
+repository-code: "https://github.com/Nikit357/FL_harmonization"
+license: MIT
+license-url: "https://github.com/Nikit357/FL_harmonization/blob/main/LICENSE"
+keywords:
+  - batch effect
+  - data harmonization
+  - transcriptomics
+  - follicular lymphoma
+  - diffuse large B-cell lymphoma
+  - benchmark
+  - reproducibility

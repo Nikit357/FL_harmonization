@@ -1,0 +1,1531 @@
+root@fl-batch-correction:/app/harmonization-scripts# cat norm_microarray_only.log
+[norm] 3 prepared pair(s) available for normalization.
+Norm jobs to run: 72  |  Workers: 2  |  Skip-if-exists: True  |  Timeout: 218000s  |  Memory guard: 20.0 GB
+[06:06:29] START F_microarray_only×strict×01_raw | free=114.9GB
+[06:06:29] START F_microarray_only×strict×02_median_scaling | free=114.9GB
+  [1/72] F_microarray_only×strict×02_median_scaling (3s) → ['cached', 'cached']
+[06:06:31] START F_microarray_only×strict×03_limma | free=114.7GB
+  [2/72] F_microarray_only×strict×01_raw (3s) → ['cached', 'cached']
+[06:06:31] START F_microarray_only×strict×04_sva | free=114.7GB
+  [F_microarray_only×strict×04_sva] [06:06:34][F_microarray_only×strict×04_sva] Downloading prepared dataset (free=112.9GB) ...
+  [3/72] F_microarray_only×strict×03_limma (3s) → ['cached', 'cached']
+[06:06:34] START F_microarray_only×strict×05_combat | free=112.9GB
+  [4/72] F_microarray_only×strict×05_combat (3s) → ['cached', 'cached']
+[06:06:37] START F_microarray_only×strict×06_combat_seq | free=114.4GB
+  [F_microarray_only×strict×04_sva] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×04_sva]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×06_combat_seq] [06:06:39][F_microarray_only×strict×06_combat_seq] Downloading prepared dataset (free=114.1GB) ...
+  [F_microarray_only×strict×04_sva] [06:06:39][F_microarray_only×strict×04_sva] Dataset ready: 4931 samples × 3447 genes (5s)
+  [F_microarray_only×strict×04_sva] [06:06:39][F_microarray_only×strict×04_sva] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×06_combat_seq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×06_combat_seq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×06_combat_seq] [06:06:43][F_microarray_only×strict×06_combat_seq] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×06_combat_seq] [06:06:43][F_microarray_only×strict×06_combat_seq] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×06_combat_seq] Found 22 batches
+  [F_microarray_only×strict×06_combat_seq] Using full model in ComBat-seq.
+  [F_microarray_only×strict×06_combat_seq] Adjusting for 13 covariate(s) or covariate level(s)
+  [F_microarray_only×strict×06_combat_seq] Estimating dispersions
+  [F_microarray_only×strict×06_combat_seq] Fitting the GLM model
+  [F_microarray_only×strict×04_sva] Number of significant surrogate variables is:  13 
+  [F_microarray_only×strict×06_combat_seq] Shrinkage off - using GLM estimates for parameters
+  [F_microarray_only×strict×06_combat_seq] Adjusting the data
+  [F_microarray_only×strict×04_sva] Iteration (out of 5 ):1  2  3  4  5  R callback write-console: design matrix of interest not specified. Assuming a one-group experiment.
+  [F_microarray_only×strict×04_sva]   
+  [F_microarray_only×strict×04_sva] R callback write-console: Error in cbind(design, X.batch) : 
+  [F_microarray_only×strict×04_sva]   number of rows of matrices must match (see arg 2)
+  [F_microarray_only×strict×04_sva]   
+  [F_microarray_only×strict×04_sva] R callback write-console: In addition:   
+  [F_microarray_only×strict×04_sva] R callback write-console: Warning messages:
+  [F_microarray_only×strict×04_sva]   
+  [F_microarray_only×strict×04_sva] R callback write-console: 1:   
+  [F_microarray_only×strict×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×04_sva] R callback write-console: 
+  [F_microarray_only×strict×04_sva]    
+  [F_microarray_only×strict×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×04_sva]   
+  [F_microarray_only×strict×04_sva] R callback write-console: 2:   
+  [F_microarray_only×strict×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×04_sva] R callback write-console: 
+  [F_microarray_only×strict×04_sva]    
+  [F_microarray_only×strict×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×04_sva]   
+  [F_microarray_only×strict×04_sva] R callback write-console: 3:   
+  [F_microarray_only×strict×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×04_sva] R callback write-console: 
+  [F_microarray_only×strict×04_sva]    
+  [F_microarray_only×strict×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×04_sva]   
+  [F_microarray_only×strict×04_sva] [06:44:06][F_microarray_only×strict×04_sva] Normalization FAILED after 2247s:
+  [F_microarray_only×strict×04_sva] Traceback (most recent call last):
+  [F_microarray_only×strict×04_sva]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×strict×04_sva]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×strict×04_sva]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×04_sva]   File "/app/harmonization-scripts/bench_shared.py", line 703, in normalize_sva
+  [F_microarray_only×strict×04_sva]     result = limma_r.removeBatchEffect(
+  [F_microarray_only×strict×04_sva]              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×strict×04_sva]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×strict×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×strict×04_sva]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×strict×04_sva]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×strict×04_sva]     cdata = function(*args, **kwargs)
+  [F_microarray_only×strict×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×strict×04_sva]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×strict×04_sva] rpy2.rinterface_lib.embedded.RRuntimeError: Error in cbind(design, X.batch) : 
+  [F_microarray_only×strict×04_sva]   number of rows of matrices must match (see arg 2)
+  [F_microarray_only×strict×04_sva] 
+  [F_microarray_only×strict×04_sva] 
+  [F_microarray_only×strict×04_sva] [06:44:07][F_microarray_only×strict×04_sva] Done: ['failed', 'failed'] total=2252s
+[06:44:07] START F_microarray_only×strict×07_pycombat | free=112.6GB
+  [6/72] F_microarray_only×strict×07_pycombat (2s) → ['cached', 'cached']
+[06:44:10] START F_microarray_only×strict×08_inmoose_combatseq | free=112.6GB
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:44:12][F_microarray_only×strict×08_inmoose_combatseq] Downloading prepared dataset (free=112.4GB) ...
+  [F_microarray_only×strict×08_inmoose_combatseq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×08_inmoose_combatseq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:44:16][F_microarray_only×strict×08_inmoose_combatseq] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:44:16][F_microarray_only×strict×08_inmoose_combatseq] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: In addition:   
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: Warning messages:
+  [F_microarray_only×strict×06_combat_seq]   
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: 1:   
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: 
+  [F_microarray_only×strict×06_combat_seq]    
+  [F_microarray_only×strict×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×06_combat_seq]   
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: 2:   
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×06_combat_seq] R callback write-console: 
+  [F_microarray_only×strict×06_combat_seq]    
+  [F_microarray_only×strict×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×06_combat_seq]   
+  [F_microarray_only×strict×06_combat_seq] [06:45:34][F_microarray_only×strict×06_combat_seq] Normalization done (2330s)
+  [F_microarray_only×strict×06_combat_seq] [06:45:41][F_microarray_only×strict×06_combat_seq×post_rm=False] r2_batch=0.265 r2_diag=0.229 — uploading ...
+  [F_microarray_only×strict×06_combat_seq] [06:46:42][F_microarray_only×strict×06_combat_seq×post_rm=False] Upload complete.
+  [F_microarray_only×strict×06_combat_seq] [06:46:42][F_microarray_only×strict×06_combat_seq×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×strict×06_combat_seq] [06:46:44][F_microarray_only×strict×06_combat_seq×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×strict×06_combat_seq] [06:46:53][F_microarray_only×strict×06_combat_seq×post_rm=True] r2_batch=0.247 r2_diag=0.231 — uploading ...
+  [F_microarray_only×strict×06_combat_seq] [06:47:48][F_microarray_only×strict×06_combat_seq×post_rm=True] Upload complete.
+  [F_microarray_only×strict×06_combat_seq] [06:47:48][F_microarray_only×strict×06_combat_seq] Done: ['ok', 'ok'] total=2469s
+  [7/72] F_microarray_only×strict×06_combat_seq (2472s) → ['ok', 'ok']
+[06:47:49] START F_microarray_only×strict×09_ruv | free=105.0GB
+  [F_microarray_only×strict×09_ruv] [06:47:51][F_microarray_only×strict×09_ruv] Downloading prepared dataset (free=104.7GB) ...
+  [F_microarray_only×strict×09_ruv] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×09_ruv]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×09_ruv] [06:47:56][F_microarray_only×strict×09_ruv] Dataset ready: 4931 samples × 3447 genes (5s)
+  [F_microarray_only×strict×09_ruv] [06:47:56][F_microarray_only×strict×09_ruv] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×09_ruv] R callback write-console: In addition:   
+  [F_microarray_only×strict×09_ruv] R callback write-console: Warning messages:
+  [F_microarray_only×strict×09_ruv]   
+  [F_microarray_only×strict×09_ruv] R callback write-console: 1:   
+  [F_microarray_only×strict×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×09_ruv] R callback write-console: 
+  [F_microarray_only×strict×09_ruv]    
+  [F_microarray_only×strict×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×09_ruv]   
+  [F_microarray_only×strict×09_ruv] R callback write-console: 2:   
+  [F_microarray_only×strict×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×strict×09_ruv] R callback write-console: 
+  [F_microarray_only×strict×09_ruv]    
+  [F_microarray_only×strict×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×strict×09_ruv]   
+  [F_microarray_only×strict×09_ruv] [06:49:00][F_microarray_only×strict×09_ruv] Normalization done (64s)
+  [F_microarray_only×strict×09_ruv] [06:49:16][F_microarray_only×strict×09_ruv×post_rm=False] r2_batch=0.420 r2_diag=0.162 — uploading ...
+  [F_microarray_only×strict×09_ruv] [06:50:20][F_microarray_only×strict×09_ruv×post_rm=False] Upload complete.
+  [F_microarray_only×strict×09_ruv] [06:50:21][F_microarray_only×strict×09_ruv×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×strict×09_ruv] [06:50:25][F_microarray_only×strict×09_ruv×post_rm=True] Removing 1 outlier batch(es): ['GPL96+97_FF_Unknown']
+  [F_microarray_only×strict×09_ruv] [06:50:37][F_microarray_only×strict×09_ruv×post_rm=True] r2_batch=0.440 r2_diag=0.166 — uploading ...
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:51:18][F_microarray_only×strict×08_inmoose_combatseq] Normalization done (422s)
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:51:24][F_microarray_only×strict×08_inmoose_combatseq×post_rm=False] r2_batch=0.265 r2_diag=0.229 — uploading ...
+  [F_microarray_only×strict×09_ruv] [06:51:42][F_microarray_only×strict×09_ruv×post_rm=True] Upload complete.
+  [F_microarray_only×strict×09_ruv] [06:51:43][F_microarray_only×strict×09_ruv] Done: ['ok', 'ok'] total=231s
+  [8/72] F_microarray_only×strict×09_ruv (236s) → ['ok', 'ok']
+[06:51:45] START F_microarray_only×strict×10_mnn | free=114.5GB
+  [9/72] F_microarray_only×strict×10_mnn (2s) → ['cached', 'cached']
+[06:51:47] START F_microarray_only×strict×11_harmony | free=114.5GB
+  [10/72] F_microarray_only×strict×11_harmony (2s) → ['cached', 'cached']
+[06:51:49] START F_microarray_only×strict×12_scanorama | free=114.5GB
+  [11/72] F_microarray_only×strict×12_scanorama (2s) → ['cached', 'cached']
+[06:51:52] START F_microarray_only×strict×13_fsmvn | free=114.4GB
+  [12/72] F_microarray_only×strict×13_fsmvn (2s) → ['cached', 'cached']
+[06:51:54] START F_microarray_only×strict×14_qsmooth | free=114.4GB
+  [13/72] F_microarray_only×strict×14_qsmooth (2s) → ['cached', 'cached']
+[06:51:56] START F_microarray_only×strict×15_fsqn_py | free=114.4GB
+  [14/72] F_microarray_only×strict×15_fsqn_py (2s) → ['cached', 'cached']
+[06:51:58] START F_microarray_only×strict×16_fsqn_r | free=114.4GB
+  [15/72] F_microarray_only×strict×16_fsqn_r (2s) → ['cached', 'cached']
+[06:52:01] START F_microarray_only×strict×17_quantile | free=114.4GB
+  [16/72] F_microarray_only×strict×17_quantile (2s) → ['cached', 'cached']
+[06:52:03] START F_microarray_only×strict×18_rank | free=114.4GB
+  [17/72] F_microarray_only×strict×18_rank (2s) → ['cached', 'cached']
+[06:52:05] START F_microarray_only×strict×19_tdm | free=114.4GB
+  [F_microarray_only×strict×19_tdm] [06:52:07][F_microarray_only×strict×19_tdm] Downloading prepared dataset (free=114.2GB) ...
+  [F_microarray_only×strict×19_tdm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×19_tdm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×19_tdm] [06:52:11][F_microarray_only×strict×19_tdm] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×19_tdm] [06:52:11][F_microarray_only×strict×19_tdm] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:52:24][F_microarray_only×strict×08_inmoose_combatseq×post_rm=False] Upload complete.
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:52:24][F_microarray_only×strict×08_inmoose_combatseq×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:52:26][F_microarray_only×strict×08_inmoose_combatseq×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:52:33][F_microarray_only×strict×08_inmoose_combatseq×post_rm=True] r2_batch=0.247 r2_diag=0.231 — uploading ...
+  [F_microarray_only×strict×19_tdm] R callback write-console: data.table 1.18.2.1 using 16 threads (see ?getDTthreads).    
+  [F_microarray_only×strict×19_tdm] R callback write-console: Latest news: r-datatable.com
+  [F_microarray_only×strict×19_tdm]   
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:53:28][F_microarray_only×strict×08_inmoose_combatseq×post_rm=True] Upload complete.
+  [F_microarray_only×strict×08_inmoose_combatseq] [06:53:28][F_microarray_only×strict×08_inmoose_combatseq] Done: ['ok', 'ok'] total=556s
+  [18/72] F_microarray_only×strict×08_inmoose_combatseq (559s) → ['ok', 'ok']
+[06:53:29] START F_microarray_only×strict×20_shambhala | free=112.5GB
+  [F_microarray_only×strict×20_shambhala] [06:53:31][F_microarray_only×strict×20_shambhala] Downloading prepared dataset (free=112.3GB) ...
+  [F_microarray_only×strict×20_shambhala] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×20_shambhala]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×20_shambhala] [06:53:35][F_microarray_only×strict×20_shambhala] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×20_shambhala] [06:53:35][F_microarray_only×strict×20_shambhala] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×20_shambhala] R callback write-console: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [F_microarray_only×strict×20_shambhala]   
+  [F_microarray_only×strict×20_shambhala] [06:54:30][F_microarray_only×strict×20_shambhala] Normalization FAILED after 55s:
+  [F_microarray_only×strict×20_shambhala] Traceback (most recent call last):
+  [F_microarray_only×strict×20_shambhala]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×strict×20_shambhala]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×strict×20_shambhala]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×20_shambhala]   File "/app/harmonization-scripts/bench_shared.py", line 1418, in normalize_shambhala
+  [F_microarray_only×strict×20_shambhala]     ro.r(f"""
+  [F_microarray_only×strict×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [F_microarray_only×strict×20_shambhala]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [F_microarray_only×strict×20_shambhala]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×strict×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [F_microarray_only×strict×20_shambhala]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×strict×20_shambhala] rpy2.rinterface_lib.embedded.RRuntimeError: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [F_microarray_only×strict×20_shambhala] 
+  [F_microarray_only×strict×20_shambhala] 
+  [F_microarray_only×strict×20_shambhala] [06:54:30][F_microarray_only×strict×20_shambhala] Done: ['failed', 'failed'] total=59s
+[06:54:30] START F_microarray_only×strict×21_harmonizr | free=112.5GB
+  [F_microarray_only×strict×21_harmonizr] [06:54:33][F_microarray_only×strict×21_harmonizr] Downloading prepared dataset (free=112.3GB) ...
+  [F_microarray_only×strict×21_harmonizr] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×21_harmonizr]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×21_harmonizr] [06:54:37][F_microarray_only×strict×21_harmonizr] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×21_harmonizr] [06:54:37][F_microarray_only×strict×21_harmonizr] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×19_tdm] [06:55:16][F_microarray_only×strict×19_tdm] Normalization done (184s)
+  [F_microarray_only×strict×19_tdm] [06:55:16][F_microarray_only×strict×19_tdm×post_rm=False] Already on S3 — skipping.
+  [F_microarray_only×strict×19_tdm] [06:55:16][F_microarray_only×strict×19_tdm×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×strict×19_tdm] [06:55:18][F_microarray_only×strict×19_tdm×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×strict×19_tdm] [06:55:25][F_microarray_only×strict×19_tdm×post_rm=True] r2_batch=0.535 r2_diag=0.185 — uploading ...
+  [F_microarray_only×strict×19_tdm] [06:55:57][F_microarray_only×strict×19_tdm×post_rm=True] Upload complete.
+  [F_microarray_only×strict×19_tdm] [06:55:57][F_microarray_only×strict×19_tdm] Done: ['cached', 'ok'] total=230s
+  [20/72] F_microarray_only×strict×19_tdm (232s) → ['cached', 'ok']
+[06:55:58] START F_microarray_only×strict×22_tmm | free=113.4GB
+  [F_microarray_only×strict×22_tmm] [06:56:00][F_microarray_only×strict×22_tmm] Downloading prepared dataset (free=113.4GB) ...
+  [F_microarray_only×strict×22_tmm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×22_tmm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×22_tmm] [06:56:04][F_microarray_only×strict×22_tmm] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×22_tmm] [06:56:04][F_microarray_only×strict×22_tmm] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×22_tmm] [06:56:04][F_microarray_only×strict×22_tmm] Skipped (NotImplementedError): TMM is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [F_microarray_only×strict×22_tmm] [06:56:04][F_microarray_only×strict×22_tmm] Done: ['skipped', 'skipped'] total=4s
+  [21/72] SKIP F_microarray_only×strict×22_tmm (7s)
+[06:56:04] START F_microarray_only×strict×23_vst | free=113.5GB
+  [F_microarray_only×strict×23_vst] [06:56:06][F_microarray_only×strict×23_vst] Downloading prepared dataset (free=113.3GB) ...
+  [F_microarray_only×strict×23_vst] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×23_vst]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×23_vst] [06:56:10][F_microarray_only×strict×23_vst] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×23_vst] [06:56:10][F_microarray_only×strict×23_vst] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×23_vst] [06:56:10][F_microarray_only×strict×23_vst] Skipped (NotImplementedError): DESeq2 VST is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [F_microarray_only×strict×23_vst] [06:56:10][F_microarray_only×strict×23_vst] Done: ['skipped', 'skipped'] total=4s
+  [22/72] SKIP F_microarray_only×strict×23_vst (6s)
+[06:56:11] START F_microarray_only×strict×24_peer_k10 | free=113.4GB
+  [F_microarray_only×strict×24_peer_k10] [06:56:13][F_microarray_only×strict×24_peer_k10] Downloading prepared dataset (free=113.2GB) ...
+  [F_microarray_only×strict×24_peer_k10] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×24_peer_k10]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×24_peer_k10] [06:56:17][F_microarray_only×strict×24_peer_k10] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×24_peer_k10] [06:56:17][F_microarray_only×strict×24_peer_k10] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×24_peer_k10] [06:56:17][F_microarray_only×strict×24_peer_k10] Skipped (NotImplementedError): PEER R package not available for R 4.5: not on CRAN, Bioconductor, or GitHub.
+  [F_microarray_only×strict×24_peer_k10] [06:56:17][F_microarray_only×strict×24_peer_k10] Done: ['skipped', 'skipped'] total=4s
+  [23/72] SKIP F_microarray_only×strict×24_peer_k10 (7s)
+[06:56:17] START F_microarray_only×knn×01_raw | free=113.4GB
+  [F_microarray_only×knn×01_raw] [06:56:19][F_microarray_only×knn×01_raw] Downloading prepared dataset (free=113.1GB) ...
+  [F_microarray_only×knn×01_raw] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×01_raw]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×01_raw] [06:56:36][F_microarray_only×knn×01_raw] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×01_raw] [06:56:36][F_microarray_only×knn×01_raw] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×01_raw] [06:56:36][F_microarray_only×knn×01_raw] Normalization done (0s)
+  [F_microarray_only×knn×01_raw] [06:56:46][F_microarray_only×knn×01_raw×post_rm=False] r2_batch=0.617 r2_diag=0.191 — uploading ...
+  [F_microarray_only×knn×01_raw] [07:00:53][F_microarray_only×knn×01_raw×post_rm=False] Upload complete.
+  [F_microarray_only×knn×01_raw] [07:00:53][F_microarray_only×knn×01_raw×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×01_raw] [07:00:57][F_microarray_only×knn×01_raw×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×01_raw] [07:01:11][F_microarray_only×knn×01_raw×post_rm=True] r2_batch=0.584 r2_diag=0.195 — uploading ...
+  [F_microarray_only×strict×21_harmonizr] Found 210 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Found22batches
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Adjusting for0covariate(s) or covariate level(s)
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Standardizing Data across genes
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Fitting L/S model and finding priors
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Finding parametric adjustments
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Adjusting the Data
+  [F_microarray_only×strict×21_harmonizr] 
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] R callback write-console: Writing file...
+  [F_microarray_only×strict×21_harmonizr]   
+  [F_microarray_only×strict×21_harmonizr] [07:04:44][F_microarray_only×strict×21_harmonizr] Normalization done (608s)
+  [F_microarray_only×strict×21_harmonizr] [07:04:51][F_microarray_only×strict×21_harmonizr×post_rm=False] r2_batch=0.099 r2_diag=0.064 — uploading ...
+  [F_microarray_only×knn×01_raw] [07:05:12][F_microarray_only×knn×01_raw×post_rm=True] Upload complete.
+  [F_microarray_only×knn×01_raw] [07:05:12][F_microarray_only×knn×01_raw] Done: ['ok', 'ok'] total=533s
+  [24/72] F_microarray_only×knn×01_raw (535s) → ['ok', 'ok']
+[07:05:12] START F_microarray_only×knn×02_median_scaling | free=120.6GB
+  [F_microarray_only×knn×02_median_scaling] [07:05:15][F_microarray_only×knn×02_median_scaling] Downloading prepared dataset (free=120.4GB) ...
+  [F_microarray_only×knn×02_median_scaling] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×02_median_scaling]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×02_median_scaling] [07:05:31][F_microarray_only×knn×02_median_scaling] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×02_median_scaling] [07:05:31][F_microarray_only×knn×02_median_scaling] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×strict×21_harmonizr] [07:05:33][F_microarray_only×strict×21_harmonizr×post_rm=False] Upload complete.
+  [F_microarray_only×strict×21_harmonizr] [07:05:33][F_microarray_only×strict×21_harmonizr×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×strict×21_harmonizr] [07:05:35][F_microarray_only×strict×21_harmonizr×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×02_median_scaling] [07:05:35][F_microarray_only×knn×02_median_scaling] Normalization done (4s)
+  [F_microarray_only×strict×21_harmonizr] [07:05:45][F_microarray_only×strict×21_harmonizr×post_rm=True] r2_batch=0.099 r2_diag=0.074 — uploading ...
+  [F_microarray_only×knn×02_median_scaling] [07:05:53][F_microarray_only×knn×02_median_scaling×post_rm=False] r2_batch=0.125 r2_diag=0.109 — uploading ...
+  [F_microarray_only×strict×21_harmonizr] [07:06:35][F_microarray_only×strict×21_harmonizr×post_rm=True] Upload complete.
+  [F_microarray_only×strict×21_harmonizr] [07:06:35][F_microarray_only×strict×21_harmonizr] Done: ['ok', 'ok'] total=723s
+  [25/72] F_microarray_only×strict×21_harmonizr (726s) → ['ok', 'ok']
+[07:06:36] START F_microarray_only×knn×03_limma | free=121.7GB
+  [F_microarray_only×knn×03_limma] [07:06:39][F_microarray_only×knn×03_limma] Downloading prepared dataset (free=121.1GB) ...
+  [F_microarray_only×knn×03_limma] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×03_limma]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×03_limma] [07:06:55][F_microarray_only×knn×03_limma] Dataset ready: 4931 samples × 11274 genes (17s)
+  [F_microarray_only×knn×03_limma] [07:06:55][F_microarray_only×knn×03_limma] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×03_limma] R callback write-console: design matrix of interest not specified. Assuming a one-group experiment.
+  [F_microarray_only×knn×03_limma]   
+  [F_microarray_only×knn×02_median_scaling] [07:08:28][F_microarray_only×knn×02_median_scaling×post_rm=False] Upload complete.
+  [F_microarray_only×knn×02_median_scaling] [07:08:28][F_microarray_only×knn×02_median_scaling×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×02_median_scaling] [07:08:34][F_microarray_only×knn×02_median_scaling×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [F_microarray_only×knn×02_median_scaling] [07:08:54][F_microarray_only×knn×02_median_scaling×post_rm=True] r2_batch=0.122 r2_diag=0.123 — uploading ...
+  [F_microarray_only×knn×03_limma] R callback write-console: In addition:   
+  [F_microarray_only×knn×03_limma] R callback write-console: Warning messages:
+  [F_microarray_only×knn×03_limma]   
+  [F_microarray_only×knn×03_limma] R callback write-console: 1:   
+  [F_microarray_only×knn×03_limma] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×03_limma] R callback write-console: 
+  [F_microarray_only×knn×03_limma]    
+  [F_microarray_only×knn×03_limma] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×03_limma]   
+  [F_microarray_only×knn×03_limma] R callback write-console: 2:   
+  [F_microarray_only×knn×03_limma] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×03_limma] R callback write-console: 
+  [F_microarray_only×knn×03_limma]    
+  [F_microarray_only×knn×03_limma] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×03_limma]   
+  [F_microarray_only×knn×03_limma] [07:09:31][F_microarray_only×knn×03_limma] Normalization done (156s)
+  [F_microarray_only×knn×03_limma] [07:09:50][F_microarray_only×knn×03_limma×post_rm=False] r2_batch=0.000 r2_diag=0.097 — uploading ...
+  [F_microarray_only×knn×02_median_scaling] [07:13:35][F_microarray_only×knn×02_median_scaling×post_rm=True] Upload complete.
+  [F_microarray_only×knn×02_median_scaling] [07:13:35][F_microarray_only×knn×02_median_scaling] Done: ['ok', 'ok'] total=500s
+[07:13:36] START F_microarray_only×knn×04_sva | free=117.9GB
+  [26/72] F_microarray_only×knn×02_median_scaling (503s) → ['ok', 'ok']
+  [F_microarray_only×knn×04_sva] [07:13:40][F_microarray_only×knn×04_sva] Downloading prepared dataset (free=117.6GB) ...
+  [F_microarray_only×knn×04_sva] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×04_sva]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×04_sva] [07:14:24][F_microarray_only×knn×04_sva] Dataset ready: 4931 samples × 11274 genes (43s)
+  [F_microarray_only×knn×04_sva] [07:14:24][F_microarray_only×knn×04_sva] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×03_limma] [07:15:40][F_microarray_only×knn×03_limma×post_rm=False] Upload complete.
+  [F_microarray_only×knn×03_limma] [07:15:40][F_microarray_only×knn×03_limma×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×03_limma] [07:15:47][F_microarray_only×knn×03_limma×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [F_microarray_only×knn×03_limma] [07:16:02][F_microarray_only×knn×03_limma×post_rm=True] r2_batch=0.000 r2_diag=0.053 — uploading ...
+  [F_microarray_only×knn×03_limma] [07:20:11][F_microarray_only×knn×03_limma×post_rm=True] Upload complete.
+  [F_microarray_only×knn×03_limma] [07:20:11][F_microarray_only×knn×03_limma] Done: ['ok', 'ok'] total=813s
+  [27/72] F_microarray_only×knn×03_limma (816s) → ['ok', 'ok']
+[07:20:12] START F_microarray_only×knn×05_combat | free=116.3GB
+  [F_microarray_only×knn×05_combat] [07:20:14][F_microarray_only×knn×05_combat] Downloading prepared dataset (free=116.2GB) ...
+  [F_microarray_only×knn×05_combat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×05_combat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×05_combat] [07:20:30][F_microarray_only×knn×05_combat] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×05_combat] [07:20:30][F_microarray_only×knn×05_combat] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×05_combat] Found 642 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+  [F_microarray_only×knn×05_combat] R callback write-console: Found22batches
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: Adjusting for13covariate(s) or covariate level(s)
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: Found55Missing Data Values 
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: Standardizing Data across genes
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: Fitting L/S model and finding priors
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: Finding parametric adjustments
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: Adjusting the Data
+  [F_microarray_only×knn×05_combat] 
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: In addition:   
+  [F_microarray_only×knn×05_combat] R callback write-console: Warning messages:
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: 1:   
+  [F_microarray_only×knn×05_combat] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×05_combat] R callback write-console: 
+  [F_microarray_only×knn×05_combat]    
+  [F_microarray_only×knn×05_combat] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] R callback write-console: 2:   
+  [F_microarray_only×knn×05_combat] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×05_combat] R callback write-console: 
+  [F_microarray_only×knn×05_combat]    
+  [F_microarray_only×knn×05_combat] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×05_combat]   
+  [F_microarray_only×knn×05_combat] [07:22:54][F_microarray_only×knn×05_combat] Normalization done (144s)
+  [F_microarray_only×knn×05_combat] [07:23:05][F_microarray_only×knn×05_combat×post_rm=False] r2_batch=0.168 r2_diag=0.164 — uploading ...
+  [F_microarray_only×knn×05_combat] [07:25:42][F_microarray_only×knn×05_combat×post_rm=False] Upload complete.
+  [F_microarray_only×knn×05_combat] [07:25:42][F_microarray_only×knn×05_combat×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×05_combat] [07:25:45][F_microarray_only×knn×05_combat×post_rm=True] Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [F_microarray_only×knn×05_combat] [07:25:55][F_microarray_only×knn×05_combat×post_rm=True] r2_batch=0.165 r2_diag=0.164 — uploading ...
+  [F_microarray_only×knn×05_combat] [07:28:24][F_microarray_only×knn×05_combat×post_rm=True] Upload complete.
+  [F_microarray_only×knn×05_combat] [07:28:25][F_microarray_only×knn×05_combat] Done: ['ok', 'ok'] total=490s
+  [28/72] F_microarray_only×knn×05_combat (494s) → ['ok', 'ok']
+[07:28:26] START F_microarray_only×knn×06_combat_seq | free=120.7GB
+  [F_microarray_only×knn×06_combat_seq] [07:28:28][F_microarray_only×knn×06_combat_seq] Downloading prepared dataset (free=120.5GB) ...
+  [F_microarray_only×knn×06_combat_seq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×06_combat_seq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×06_combat_seq] [07:28:44][F_microarray_only×knn×06_combat_seq] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×06_combat_seq] [07:28:44][F_microarray_only×knn×06_combat_seq] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×06_combat_seq] /app/harmonization-scripts/bench_shared.py:783: RuntimeWarning: invalid value encountered in cast
+  [F_microarray_only×knn×06_combat_seq]   counts   = np.round(exp_df.values).astype(int).clip(0)
+  [F_microarray_only×knn×06_combat_seq] Found 22 batches
+  [F_microarray_only×knn×06_combat_seq] Using full model in ComBat-seq.
+  [F_microarray_only×knn×06_combat_seq] Adjusting for 13 covariate(s) or covariate level(s)
+  [F_microarray_only×knn×06_combat_seq] Estimating dispersions
+  [F_microarray_only×knn×06_combat_seq] Fitting the GLM model
+  [F_microarray_only×knn×04_sva] R callback write-console: Error in svd(res) : infinite or missing values in 'x'
+  [F_microarray_only×knn×04_sva]   
+  [F_microarray_only×knn×04_sva] R callback write-console: In addition:   
+  [F_microarray_only×knn×04_sva] R callback write-console: Warning messages:
+  [F_microarray_only×knn×04_sva]   
+  [F_microarray_only×knn×04_sva] R callback write-console: 1:   
+  [F_microarray_only×knn×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×04_sva] R callback write-console: 
+  [F_microarray_only×knn×04_sva]    
+  [F_microarray_only×knn×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×04_sva]   
+  [F_microarray_only×knn×04_sva] R callback write-console: 2:   
+  [F_microarray_only×knn×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×04_sva] R callback write-console: 
+  [F_microarray_only×knn×04_sva]    
+  [F_microarray_only×knn×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×04_sva]   
+  [F_microarray_only×knn×04_sva] R callback write-console: 3:   
+  [F_microarray_only×knn×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×04_sva] R callback write-console: 
+  [F_microarray_only×knn×04_sva]    
+  [F_microarray_only×knn×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×04_sva]   
+  [F_microarray_only×knn×04_sva] [08:15:58][F_microarray_only×knn×04_sva] Normalization FAILED after 3694s:
+  [F_microarray_only×knn×04_sva] Traceback (most recent call last):
+  [F_microarray_only×knn×04_sva]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×04_sva]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×04_sva]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×04_sva]   File "/app/harmonization-scripts/bench_shared.py", line 692, in normalize_sva
+  [F_microarray_only×knn×04_sva]     n_sv = sva_r.num_sv(r_mat, mod)
+  [F_microarray_only×knn×04_sva]            ^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×knn×04_sva]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×knn×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×knn×04_sva]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×knn×04_sva]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×knn×04_sva]     cdata = function(*args, **kwargs)
+  [F_microarray_only×knn×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×knn×04_sva]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×knn×04_sva] rpy2.rinterface_lib.embedded.RRuntimeError: Error in svd(res) : infinite or missing values in 'x'
+  [F_microarray_only×knn×04_sva] 
+  [F_microarray_only×knn×04_sva] 
+  [F_microarray_only×knn×04_sva] [08:15:58][F_microarray_only×knn×04_sva] Done: ['failed', 'failed'] total=3738s
+[08:16:00] START F_microarray_only×knn×07_pycombat | free=119.2GB
+  [F_microarray_only×knn×07_pycombat] [08:16:06][F_microarray_only×knn×07_pycombat] Downloading prepared dataset (free=118.9GB) ...
+  [F_microarray_only×knn×07_pycombat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×07_pycombat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×07_pycombat] [08:16:49][F_microarray_only×knn×07_pycombat] Dataset ready: 4931 samples × 11274 genes (44s)
+  [F_microarray_only×knn×07_pycombat] [08:16:49][F_microarray_only×knn×07_pycombat] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×07_pycombat] Found 22 batches.
+  [F_microarray_only×knn×07_pycombat] Adjusting for 0 covariate(s) or covariate level(s).
+  [F_microarray_only×knn×07_pycombat] Found missing data values. Please remove all missing values before proceeding with pyComBat.
+  [F_microarray_only×knn×07_pycombat] [08:16:50][F_microarray_only×knn×07_pycombat] Normalization FAILED after 1s:
+  [F_microarray_only×knn×07_pycombat] Traceback (most recent call last):
+  [F_microarray_only×knn×07_pycombat]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×07_pycombat]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×07_pycombat]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×07_pycombat]   File "/app/harmonization-scripts/bench_shared.py", line 822, in normalize_pycombat
+  [F_microarray_only×knn×07_pycombat]     result  = pycombat(exp_df.T, batches)
+  [F_microarray_only×knn×07_pycombat]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×07_pycombat]   File "/usr/local/lib/python3.12/dist-packages/combat/pycombat.py", line 668, in pycombat
+  [F_microarray_only×knn×07_pycombat]     raise ValueError("NaN value is not accepted")
+  [F_microarray_only×knn×07_pycombat] ValueError: NaN value is not accepted
+  [F_microarray_only×knn×07_pycombat] 
+  [F_microarray_only×knn×07_pycombat] [08:16:50][F_microarray_only×knn×07_pycombat] Done: ['failed', 'failed'] total=44s
+[08:16:51] START F_microarray_only×knn×08_inmoose_combatseq | free=118.7GB
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:16:55][F_microarray_only×knn×08_inmoose_combatseq] Downloading prepared dataset (free=118.4GB) ...
+  [F_microarray_only×knn×08_inmoose_combatseq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×08_inmoose_combatseq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:17:29][F_microarray_only×knn×08_inmoose_combatseq] Dataset ready: 4931 samples × 11274 genes (34s)
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:17:29][F_microarray_only×knn×08_inmoose_combatseq] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×06_combat_seq] Shrinkage off - using GLM estimates for parameters
+  [F_microarray_only×knn×06_combat_seq] Adjusting the data
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: In addition:   
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: Warning messages:
+  [F_microarray_only×knn×06_combat_seq]   
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: 1:   
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: 
+  [F_microarray_only×knn×06_combat_seq]    
+  [F_microarray_only×knn×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×06_combat_seq]   
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: 2:   
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×06_combat_seq] R callback write-console: 
+  [F_microarray_only×knn×06_combat_seq]    
+  [F_microarray_only×knn×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×06_combat_seq]   
+  [F_microarray_only×knn×06_combat_seq] [08:32:09][F_microarray_only×knn×06_combat_seq] Normalization done (3805s)
+  [F_microarray_only×knn×06_combat_seq] [08:32:22][F_microarray_only×knn×06_combat_seq×post_rm=False] r2_batch=0.451 r2_diag=0.194 — uploading ...
+  [F_microarray_only×knn×06_combat_seq] [08:35:51][F_microarray_only×knn×06_combat_seq×post_rm=False] Upload complete.
+  [F_microarray_only×knn×06_combat_seq] [08:35:51][F_microarray_only×knn×06_combat_seq×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×06_combat_seq] [08:35:54][F_microarray_only×knn×06_combat_seq×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×06_combat_seq] [08:36:04][F_microarray_only×knn×06_combat_seq×post_rm=True] r2_batch=0.391 r2_diag=0.197 — uploading ...
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:36:22][F_microarray_only×knn×08_inmoose_combatseq] Normalization done (1133s)
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:36:32][F_microarray_only×knn×08_inmoose_combatseq×post_rm=False] r2_batch=0.450 r2_diag=0.193 — uploading ...
+  [F_microarray_only×knn×06_combat_seq] [08:39:28][F_microarray_only×knn×06_combat_seq×post_rm=True] Upload complete.
+  [F_microarray_only×knn×06_combat_seq] [08:39:29][F_microarray_only×knn×06_combat_seq] Done: ['ok', 'ok'] total=4261s
+  [31/72] F_microarray_only×knn×06_combat_seq (4264s) → ['ok', 'ok']
+[08:39:29] START F_microarray_only×knn×09_ruv | free=117.3GB
+  [F_microarray_only×knn×09_ruv] [08:39:32][F_microarray_only×knn×09_ruv] Downloading prepared dataset (free=117.1GB) ...
+  [F_microarray_only×knn×09_ruv] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×09_ruv]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×09_ruv] [08:39:55][F_microarray_only×knn×09_ruv] Dataset ready: 4931 samples × 11274 genes (24s)
+  [F_microarray_only×knn×09_ruv] [08:39:55][F_microarray_only×knn×09_ruv] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:40:00][F_microarray_only×knn×08_inmoose_combatseq×post_rm=False] Upload complete.
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:40:01][F_microarray_only×knn×08_inmoose_combatseq×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:40:04][F_microarray_only×knn×08_inmoose_combatseq×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×09_ruv] /app/harmonization-scripts/bench_shared.py:891: RuntimeWarning: invalid value encountered in cast
+  [F_microarray_only×knn×09_ruv]   counts   = np.round(exp_df.values).astype(int).clip(0)
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:40:14][F_microarray_only×knn×08_inmoose_combatseq×post_rm=True] r2_batch=0.393 r2_diag=0.197 — uploading ...
+  [F_microarray_only×knn×09_ruv] R callback write-console: In addition:   
+  [F_microarray_only×knn×09_ruv] R callback write-console: Warning messages:
+  [F_microarray_only×knn×09_ruv]   
+  [F_microarray_only×knn×09_ruv] R callback write-console: 1:   
+  [F_microarray_only×knn×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×09_ruv] R callback write-console: 
+  [F_microarray_only×knn×09_ruv]    
+  [F_microarray_only×knn×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×09_ruv]   
+  [F_microarray_only×knn×09_ruv] R callback write-console: 2:   
+  [F_microarray_only×knn×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×09_ruv] R callback write-console: 
+  [F_microarray_only×knn×09_ruv]    
+  [F_microarray_only×knn×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×09_ruv]   
+  [F_microarray_only×knn×09_ruv] [08:42:16][F_microarray_only×knn×09_ruv] Normalization done (141s)
+  [F_microarray_only×knn×09_ruv] [08:42:27][F_microarray_only×knn×09_ruv×post_rm=False] r2_batch=0.538 r2_diag=0.121 — uploading ...
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:43:38][F_microarray_only×knn×08_inmoose_combatseq×post_rm=True] Upload complete.
+  [F_microarray_only×knn×08_inmoose_combatseq] [08:43:38][F_microarray_only×knn×08_inmoose_combatseq] Done: ['ok', 'ok'] total=1603s
+  [32/72] F_microarray_only×knn×08_inmoose_combatseq (1608s) → ['ok', 'ok']
+[08:43:39] START F_microarray_only×knn×10_mnn | free=120.3GB
+  [F_microarray_only×knn×10_mnn] [08:43:41][F_microarray_only×knn×10_mnn] Downloading prepared dataset (free=120.1GB) ...
+  [F_microarray_only×knn×10_mnn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×10_mnn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×10_mnn] [08:43:57][F_microarray_only×knn×10_mnn] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×10_mnn] [08:43:57][F_microarray_only×knn×10_mnn] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×10_mnn] R callback write-console: Error in .local(x, ...) : size factors should be positive
+  [F_microarray_only×knn×10_mnn]   
+  [F_microarray_only×knn×10_mnn] R callback write-console: In addition:   
+  [F_microarray_only×knn×10_mnn] R callback write-console: Warning messages:
+  [F_microarray_only×knn×10_mnn]   
+  [F_microarray_only×knn×10_mnn] R callback write-console: 1:   
+  [F_microarray_only×knn×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×10_mnn] R callback write-console: 
+  [F_microarray_only×knn×10_mnn]    
+  [F_microarray_only×knn×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×10_mnn]   
+  [F_microarray_only×knn×10_mnn] R callback write-console: 2:   
+  [F_microarray_only×knn×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×10_mnn] R callback write-console: 
+  [F_microarray_only×knn×10_mnn]    
+  [F_microarray_only×knn×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×10_mnn]   
+  [F_microarray_only×knn×10_mnn] [08:45:35][F_microarray_only×knn×10_mnn] Normalization FAILED after 98s:
+  [F_microarray_only×knn×10_mnn] Traceback (most recent call last):
+  [F_microarray_only×knn×10_mnn]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×10_mnn]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×10_mnn]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×10_mnn]   File "/app/harmonization-scripts/bench_shared.py", line 928, in normalize_mnn
+  [F_microarray_only×knn×10_mnn]     result  = batchelor_r.fastMNN(r_mat, batch=ro.StrVector(batches.values), k=k)
+  [F_microarray_only×knn×10_mnn]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×knn×10_mnn]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×knn×10_mnn]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×knn×10_mnn]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×knn×10_mnn]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×knn×10_mnn]     cdata = function(*args, **kwargs)
+  [F_microarray_only×knn×10_mnn]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×knn×10_mnn]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×knn×10_mnn] rpy2.rinterface_lib.embedded.RRuntimeError: Error in .local(x, ...) : size factors should be positive
+  [F_microarray_only×knn×10_mnn] 
+  [F_microarray_only×knn×10_mnn] 
+  [F_microarray_only×knn×10_mnn] [08:45:35][F_microarray_only×knn×10_mnn] Done: ['failed', 'failed'] total=114s
+[08:45:36] START F_microarray_only×knn×11_harmony | free=119.3GB
+  [F_microarray_only×knn×11_harmony] [08:45:38][F_microarray_only×knn×11_harmony] Downloading prepared dataset (free=119.1GB) ...
+  [F_microarray_only×knn×11_harmony] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×11_harmony]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×11_harmony] [08:45:54][F_microarray_only×knn×11_harmony] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×11_harmony] [08:45:54][F_microarray_only×knn×11_harmony] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,426 - harmonypy - INFO - Running Harmony (PyTorch on cpu)
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -   Parameters:
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     max_iter_harmony: 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     max_iter_kmeans: 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     epsilon_cluster: 1e-05
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     epsilon_harmony: 0.0001
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     nclust: 100
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     block_size: 0.05
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     lamb: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     theta: [2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2.]
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     sigma: [0.1 0.1 0.1 0.1 0.1]...
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     verbose: True
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -     random_state: 0
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,427 - harmonypy - INFO -   Data: 50 PCs × 4931 cells
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,428 - harmonypy - INFO -   Batch variables: ['RNA_BATCH']
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,464 - harmonypy - INFO - Computing initial centroids with sklearn.KMeans...
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,563 - harmonypy - INFO - KMeans initialization complete.
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:04,568 - harmonypy - INFO - Iteration 1 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:05,180 - harmonypy - INFO - Iteration 2 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:05,823 - harmonypy - INFO - Iteration 3 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:06,407 - harmonypy - INFO - Iteration 4 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:07,040 - harmonypy - INFO - Iteration 5 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:07,546 - harmonypy - INFO - Iteration 6 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:08,020 - harmonypy - INFO - Iteration 7 of 20
+  [F_microarray_only×knn×11_harmony] 2026-04-27 08:46:08,410 - harmonypy - INFO - Converged after 7 iterations
+  [F_microarray_only×knn×11_harmony] [08:46:08][F_microarray_only×knn×11_harmony] Normalization done (14s)
+  [F_microarray_only×knn×11_harmony] [08:46:18][F_microarray_only×knn×11_harmony×post_rm=False] r2_batch=0.156 r2_diag=0.097 — uploading ...
+  [F_microarray_only×knn×09_ruv] [08:46:40][F_microarray_only×knn×09_ruv×post_rm=False] Upload complete.
+  [F_microarray_only×knn×09_ruv] [08:46:40][F_microarray_only×knn×09_ruv×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×09_ruv] [08:46:43][F_microarray_only×knn×09_ruv×post_rm=True] Removing 1 outlier batch(es): ['GPL8432_FFPE_Unknown']
+  [F_microarray_only×knn×09_ruv] [08:46:54][F_microarray_only×knn×09_ruv×post_rm=True] r2_batch=0.538 r2_diag=0.121 — uploading ...
+  [F_microarray_only×knn×11_harmony] [08:49:00][F_microarray_only×knn×11_harmony×post_rm=False] Upload complete.
+  [F_microarray_only×knn×11_harmony] [08:49:00][F_microarray_only×knn×11_harmony×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×11_harmony] [08:49:04][F_microarray_only×knn×11_harmony×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×11_harmony] [08:49:14][F_microarray_only×knn×11_harmony×post_rm=True] r2_batch=0.158 r2_diag=0.103 — uploading ...
+  [F_microarray_only×knn×09_ruv] [08:50:51][F_microarray_only×knn×09_ruv×post_rm=True] Upload complete.
+  [F_microarray_only×knn×09_ruv] [08:50:51][F_microarray_only×knn×09_ruv] Done: ['ok', 'ok'] total=680s
+  [34/72] F_microarray_only×knn×09_ruv (683s) → ['ok', 'ok']
+[08:50:53] START F_microarray_only×knn×12_scanorama | free=119.5GB
+  [F_microarray_only×knn×12_scanorama] [08:50:55][F_microarray_only×knn×12_scanorama] Downloading prepared dataset (free=119.3GB) ...
+  [F_microarray_only×knn×12_scanorama] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×12_scanorama]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×12_scanorama] [08:51:10][F_microarray_only×knn×12_scanorama] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×12_scanorama] [08:51:10][F_microarray_only×knn×12_scanorama] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×12_scanorama] Found 11274 genes among all datasets
+  [F_microarray_only×knn×12_scanorama] [08:51:13][F_microarray_only×knn×12_scanorama] Normalization FAILED after 2s:
+  [F_microarray_only×knn×12_scanorama] Traceback (most recent call last):
+  [F_microarray_only×knn×12_scanorama]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×12_scanorama]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×12_scanorama]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/app/harmonization-scripts/bench_shared.py", line 1002, in normalize_scanorama
+  [F_microarray_only×knn×12_scanorama]     integrated, _ = scanorama.integrate(datasets_s, genes_list, dimred=50)
+  [F_microarray_only×knn×12_scanorama]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/scanorama/scanorama.py", line 172, in integrate
+  [F_microarray_only×knn×12_scanorama]     datasets_dimred, genes = process_data(datasets, genes, hvg=hvg,
+  [F_microarray_only×knn×12_scanorama]                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/scanorama/scanorama.py", line 418, in process_data
+  [F_microarray_only×knn×12_scanorama]     datasets[i] = normalize(ds, axis=1)
+  [F_microarray_only×knn×12_scanorama]                   ^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/_param_validation.py", line 218, in wrapper
+  [F_microarray_only×knn×12_scanorama]     return func(*args, **kwargs)
+  [F_microarray_only×knn×12_scanorama]            ^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/preprocessing/_data.py", line 2028, in normalize
+  [F_microarray_only×knn×12_scanorama]     X = check_array(
+  [F_microarray_only×knn×12_scanorama]         ^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 981, in check_array
+  [F_microarray_only×knn×12_scanorama]     array = _ensure_sparse_format(
+  [F_microarray_only×knn×12_scanorama]             ^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 638, in _ensure_sparse_format
+  [F_microarray_only×knn×12_scanorama]     _assert_all_finite(
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 133, in _assert_all_finite
+  [F_microarray_only×knn×12_scanorama]     _assert_all_finite_element_wise(
+  [F_microarray_only×knn×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 182, in _assert_all_finite_element_wise
+  [F_microarray_only×knn×12_scanorama]     raise ValueError(msg_err)
+  [F_microarray_only×knn×12_scanorama] ValueError: Input contains NaN.
+  [F_microarray_only×knn×12_scanorama] 
+  [F_microarray_only×knn×12_scanorama] [08:51:13][F_microarray_only×knn×12_scanorama] Done: ['failed', 'failed'] total=18s
+[08:51:13] START F_microarray_only×knn×13_fsmvn | free=119.4GB
+  [F_microarray_only×knn×13_fsmvn] [08:51:15][F_microarray_only×knn×13_fsmvn] Downloading prepared dataset (free=119.2GB) ...
+  [F_microarray_only×knn×13_fsmvn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×13_fsmvn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×13_fsmvn] [08:51:31][F_microarray_only×knn×13_fsmvn] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×13_fsmvn] [08:51:31][F_microarray_only×knn×13_fsmvn] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×13_fsmvn] [08:51:32][F_microarray_only×knn×13_fsmvn] Normalization done (2s)
+  [F_microarray_only×knn×13_fsmvn] [08:51:42][F_microarray_only×knn×13_fsmvn×post_rm=False] r2_batch=0.000 r2_diag=0.067 — uploading ...
+  [F_microarray_only×knn×11_harmony] [08:51:48][F_microarray_only×knn×11_harmony×post_rm=True] Upload complete.
+  [F_microarray_only×knn×11_harmony] [08:51:49][F_microarray_only×knn×11_harmony] Done: ['ok', 'ok'] total=371s
+[08:51:51] START F_microarray_only×knn×14_qsmooth | free=119.5GB
+  [36/72] F_microarray_only×knn×11_harmony (375s) → ['ok', 'ok']
+  [F_microarray_only×knn×14_qsmooth] [08:51:58][F_microarray_only×knn×14_qsmooth] Downloading prepared dataset (free=119.3GB) ...
+  [F_microarray_only×knn×14_qsmooth] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×14_qsmooth]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×14_qsmooth] [08:52:14][F_microarray_only×knn×14_qsmooth] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×14_qsmooth] [08:52:14][F_microarray_only×knn×14_qsmooth] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: Error in (function (object, group_factor, batch = NULL, norm_factors = NULL,  : 
+  [F_microarray_only×knn×14_qsmooth]   Object must not contains NAs.
+  [F_microarray_only×knn×14_qsmooth]   
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: In addition:   
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: Warning messages:
+  [F_microarray_only×knn×14_qsmooth]   
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: 1:   
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: 
+  [F_microarray_only×knn×14_qsmooth]    
+  [F_microarray_only×knn×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×14_qsmooth]   
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: 2:   
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×knn×14_qsmooth] R callback write-console: 
+  [F_microarray_only×knn×14_qsmooth]    
+  [F_microarray_only×knn×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×knn×14_qsmooth]   
+  [F_microarray_only×knn×14_qsmooth] [08:53:48][F_microarray_only×knn×14_qsmooth] Normalization FAILED after 94s:
+  [F_microarray_only×knn×14_qsmooth] Traceback (most recent call last):
+  [F_microarray_only×knn×14_qsmooth]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×14_qsmooth]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×14_qsmooth]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×14_qsmooth]   File "/app/harmonization-scripts/bench_shared.py", line 1072, in normalize_qsmooth
+  [F_microarray_only×knn×14_qsmooth]     qs_obj = qsmooth_r.qsmooth(r_mat, group_factor=ro.StrVector(groups))
+  [F_microarray_only×knn×14_qsmooth]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×knn×14_qsmooth]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×knn×14_qsmooth]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×knn×14_qsmooth]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×knn×14_qsmooth]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×knn×14_qsmooth]     cdata = function(*args, **kwargs)
+  [F_microarray_only×knn×14_qsmooth]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×knn×14_qsmooth]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×knn×14_qsmooth] rpy2.rinterface_lib.embedded.RRuntimeError: Error in (function (object, group_factor, batch = NULL, norm_factors = NULL,  : 
+  [F_microarray_only×knn×14_qsmooth]   Object must not contains NAs.
+  [F_microarray_only×knn×14_qsmooth] 
+  [F_microarray_only×knn×14_qsmooth] 
+  [F_microarray_only×knn×14_qsmooth] [08:53:48][F_microarray_only×knn×14_qsmooth] Done: ['failed', 'failed'] total=110s
+[08:53:49] START F_microarray_only×knn×15_fsqn_py | free=123.3GB
+  [F_microarray_only×knn×15_fsqn_py] [08:53:51][F_microarray_only×knn×15_fsqn_py] Downloading prepared dataset (free=123.0GB) ...
+  [F_microarray_only×knn×15_fsqn_py] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×15_fsqn_py]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×15_fsqn_py] [08:54:06][F_microarray_only×knn×15_fsqn_py] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×15_fsqn_py] [08:54:06][F_microarray_only×knn×15_fsqn_py] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×15_fsqn_py] /app/harmonization-scripts/bench_shared.py:1114: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+  [F_microarray_only×knn×15_fsqn_py] You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+  [F_microarray_only×knn×15_fsqn_py] A typical example is when you are setting values in a column of a DataFrame, like:
+  [F_microarray_only×knn×15_fsqn_py] 
+  [F_microarray_only×knn×15_fsqn_py] df["col"][row_indexer] = value
+  [F_microarray_only×knn×15_fsqn_py] 
+  [F_microarray_only×knn×15_fsqn_py] Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+  [F_microarray_only×knn×15_fsqn_py] 
+  [F_microarray_only×knn×15_fsqn_py] See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  [F_microarray_only×knn×15_fsqn_py] 
+  [F_microarray_only×knn×15_fsqn_py]   out.loc[sample].iloc[order] = target_dist
+  [F_microarray_only×knn×15_fsqn_py] [08:54:09][F_microarray_only×knn×15_fsqn_py] Normalization done (2s)
+  [F_microarray_only×knn×13_fsmvn] [08:54:13][F_microarray_only×knn×13_fsmvn×post_rm=False] Upload complete.
+  [F_microarray_only×knn×13_fsmvn] [08:54:14][F_microarray_only×knn×13_fsmvn×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×13_fsmvn] [08:54:19][F_microarray_only×knn×13_fsmvn×post_rm=True] Removing 1 outlier batch(es): ['GPL17586_FF_Unknown']
+  [F_microarray_only×knn×15_fsqn_py] [08:54:20][F_microarray_only×knn×15_fsqn_py×post_rm=False] r2_batch=0.498 r2_diag=0.224 — uploading ...
+  [F_microarray_only×knn×13_fsmvn] [08:54:31][F_microarray_only×knn×13_fsmvn×post_rm=True] r2_batch=0.000 r2_diag=0.068 — uploading ...
+  [F_microarray_only×knn×15_fsqn_py] [08:57:22][F_microarray_only×knn×15_fsqn_py×post_rm=False] Upload complete.
+  [F_microarray_only×knn×15_fsqn_py] [08:57:22][F_microarray_only×knn×15_fsqn_py×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×15_fsqn_py] [08:57:29][F_microarray_only×knn×15_fsqn_py×post_rm=True] Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [F_microarray_only×knn×13_fsmvn] [08:57:31][F_microarray_only×knn×13_fsmvn×post_rm=True] Upload complete.
+  [F_microarray_only×knn×13_fsmvn] [08:57:32][F_microarray_only×knn×13_fsmvn] Done: ['ok', 'ok'] total=376s
+[08:57:33] START F_microarray_only×knn×16_fsqn_r | free=118.9GB
+  [38/72] F_microarray_only×knn×13_fsmvn (380s) → ['ok', 'ok']
+  [F_microarray_only×knn×16_fsqn_r] [08:57:39][F_microarray_only×knn×16_fsqn_r] Downloading prepared dataset (free=119.0GB) ...
+  [F_microarray_only×knn×15_fsqn_py] [08:57:52][F_microarray_only×knn×15_fsqn_py×post_rm=True] r2_batch=0.492 r2_diag=0.223 — uploading ...
+  [F_microarray_only×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×16_fsqn_r] [08:58:22][F_microarray_only×knn×16_fsqn_r] Dataset ready: 4931 samples × 11274 genes (42s)
+  [F_microarray_only×knn×16_fsqn_r] [08:58:22][F_microarray_only×knn×16_fsqn_r] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [F_microarray_only×knn×16_fsqn_r]   
+  [F_microarray_only×knn×15_fsqn_py] [09:03:49][F_microarray_only×knn×15_fsqn_py×post_rm=True] Upload complete.
+  [F_microarray_only×knn×15_fsqn_py] [09:03:50][F_microarray_only×knn×15_fsqn_py] Done: ['ok', 'ok'] total=599s
+  [39/72] F_microarray_only×knn×15_fsqn_py (602s) → ['ok', 'ok']
+[09:03:51] START F_microarray_only×knn×17_quantile | free=117.7GB
+  [F_microarray_only×knn×17_quantile] [09:03:56][F_microarray_only×knn×17_quantile] Downloading prepared dataset (free=117.6GB) ...
+  [F_microarray_only×knn×17_quantile] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×17_quantile]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×17_quantile] [09:04:34][F_microarray_only×knn×17_quantile] Dataset ready: 4931 samples × 11274 genes (38s)
+  [F_microarray_only×knn×17_quantile] [09:04:34][F_microarray_only×knn×17_quantile] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×17_quantile] [09:04:41][F_microarray_only×knn×17_quantile] Normalization done (7s)
+  [F_microarray_only×knn×17_quantile] [09:05:03][F_microarray_only×knn×17_quantile×post_rm=False] r2_batch=0.498 r2_diag=0.224 — uploading ...
+  [F_microarray_only×knn×17_quantile] [09:08:38][F_microarray_only×knn×17_quantile×post_rm=False] Upload complete.
+  [F_microarray_only×knn×17_quantile] [09:08:38][F_microarray_only×knn×17_quantile×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×17_quantile] [09:08:42][F_microarray_only×knn×17_quantile×post_rm=True] Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [F_microarray_only×knn×17_quantile] [09:08:53][F_microarray_only×knn×17_quantile×post_rm=True] r2_batch=0.492 r2_diag=0.223 — uploading ...
+  [F_microarray_only×knn×16_fsqn_r] [09:10:03][F_microarray_only×knn×16_fsqn_r] Normalization done (701s)
+  [F_microarray_only×knn×16_fsqn_r] [09:10:15][F_microarray_only×knn×16_fsqn_r×post_rm=False] r2_batch=0.452 r2_diag=0.305 — uploading ...
+  [F_microarray_only×knn×16_fsqn_r] [09:10:46][F_microarray_only×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [F_microarray_only×knn×16_fsqn_r] [09:10:46][F_microarray_only×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×16_fsqn_r] [09:10:49][F_microarray_only×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [F_microarray_only×knn×16_fsqn_r] [09:10:59][F_microarray_only×knn×16_fsqn_r×post_rm=True] r2_batch=0.445 r2_diag=0.301 — uploading ...
+  [F_microarray_only×knn×16_fsqn_r] [09:11:28][F_microarray_only×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [F_microarray_only×knn×16_fsqn_r] [09:11:28][F_microarray_only×knn×16_fsqn_r] Done: ['ok', 'ok'] total=829s
+  [40/72] F_microarray_only×knn×16_fsqn_r (836s) → ['ok', 'ok']
+[09:11:29] START F_microarray_only×knn×18_rank | free=118.0GB
+  [41/72] F_microarray_only×knn×18_rank (2s) → ['cached', 'cached']
+[09:11:31] START F_microarray_only×knn×19_tdm | free=118.0GB
+  [F_microarray_only×knn×19_tdm] [09:11:33][F_microarray_only×knn×19_tdm] Downloading prepared dataset (free=117.8GB) ...
+  [F_microarray_only×knn×17_quantile] [09:11:37][F_microarray_only×knn×17_quantile×post_rm=True] Upload complete.
+  [F_microarray_only×knn×17_quantile] [09:11:37][F_microarray_only×knn×17_quantile] Done: ['ok', 'ok'] total=461s
+  [42/72] F_microarray_only×knn×17_quantile (466s) → ['ok', 'ok']
+[09:11:37] START F_microarray_only×knn×20_shambhala | free=121.4GB
+  [F_microarray_only×knn×20_shambhala] [09:11:39][F_microarray_only×knn×20_shambhala] Downloading prepared dataset (free=121.1GB) ...
+  [F_microarray_only×knn×19_tdm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×19_tdm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×19_tdm] [09:11:56][F_microarray_only×knn×19_tdm] Dataset ready: 4931 samples × 11274 genes (23s)
+  [F_microarray_only×knn×19_tdm] [09:11:56][F_microarray_only×knn×19_tdm] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×20_shambhala] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×20_shambhala]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×20_shambhala] [09:12:01][F_microarray_only×knn×20_shambhala] Dataset ready: 4931 samples × 11274 genes (21s)
+  [F_microarray_only×knn×20_shambhala] [09:12:01][F_microarray_only×knn×20_shambhala] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×19_tdm] R callback write-console: data.table 1.18.2.1 using 16 threads (see ?getDTthreads).    
+  [F_microarray_only×knn×19_tdm] R callback write-console: Latest news: r-datatable.com
+  [F_microarray_only×knn×19_tdm]   
+  [F_microarray_only×knn×19_tdm] R callback write-console: Error in if (downandout < old_min) { : 
+  [F_microarray_only×knn×19_tdm]   missing value where TRUE/FALSE needed
+  [F_microarray_only×knn×19_tdm]   
+  [F_microarray_only×knn×19_tdm] [09:14:07][F_microarray_only×knn×19_tdm] Normalization FAILED after 131s:
+  [F_microarray_only×knn×19_tdm] Traceback (most recent call last):
+  [F_microarray_only×knn×19_tdm]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×19_tdm]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×19_tdm]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×19_tdm]   File "/app/harmonization-scripts/bench_shared.py", line 1347, in normalize_tdm
+  [F_microarray_only×knn×19_tdm]     ro.r(f"""
+  [F_microarray_only×knn×19_tdm]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [F_microarray_only×knn×19_tdm]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [F_microarray_only×knn×19_tdm]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×19_tdm]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [F_microarray_only×knn×19_tdm]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×knn×19_tdm] rpy2.rinterface_lib.embedded.RRuntimeError: Error in if (downandout < old_min) { : 
+  [F_microarray_only×knn×19_tdm]   missing value where TRUE/FALSE needed
+  [F_microarray_only×knn×19_tdm] 
+  [F_microarray_only×knn×19_tdm] 
+  [F_microarray_only×knn×19_tdm] [09:14:07][F_microarray_only×knn×19_tdm] Done: ['failed', 'failed'] total=154s
+[09:14:08] START F_microarray_only×knn×21_harmonizr | free=119.8GB
+  [F_microarray_only×knn×21_harmonizr] [09:14:10][F_microarray_only×knn×21_harmonizr] Downloading prepared dataset (free=119.5GB) ...
+  [F_microarray_only×knn×21_harmonizr] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×21_harmonizr]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×21_harmonizr] [09:14:33][F_microarray_only×knn×21_harmonizr] Dataset ready: 4931 samples × 11274 genes (23s)
+  [F_microarray_only×knn×21_harmonizr] [09:14:33][F_microarray_only×knn×21_harmonizr] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×20_shambhala] R callback write-console: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [F_microarray_only×knn×20_shambhala]   
+  [F_microarray_only×knn×20_shambhala] [09:14:58][F_microarray_only×knn×20_shambhala] Normalization FAILED after 177s:
+  [F_microarray_only×knn×20_shambhala] Traceback (most recent call last):
+  [F_microarray_only×knn×20_shambhala]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×knn×20_shambhala]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×knn×20_shambhala]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×20_shambhala]   File "/app/harmonization-scripts/bench_shared.py", line 1418, in normalize_shambhala
+  [F_microarray_only×knn×20_shambhala]     ro.r(f"""
+  [F_microarray_only×knn×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [F_microarray_only×knn×20_shambhala]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [F_microarray_only×knn×20_shambhala]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×knn×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [F_microarray_only×knn×20_shambhala]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×knn×20_shambhala] rpy2.rinterface_lib.embedded.RRuntimeError: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [F_microarray_only×knn×20_shambhala] 
+  [F_microarray_only×knn×20_shambhala] 
+  [F_microarray_only×knn×20_shambhala] [09:14:58][F_microarray_only×knn×20_shambhala] Done: ['failed', 'failed'] total=199s
+[09:14:58] START F_microarray_only×knn×22_tmm | free=122.1GB
+  [F_microarray_only×knn×22_tmm] [09:15:00][F_microarray_only×knn×22_tmm] Downloading prepared dataset (free=121.9GB) ...
+  [F_microarray_only×knn×22_tmm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×22_tmm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×22_tmm] [09:15:16][F_microarray_only×knn×22_tmm] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×22_tmm] [09:15:16][F_microarray_only×knn×22_tmm] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×22_tmm] [09:15:16][F_microarray_only×knn×22_tmm] Skipped (NotImplementedError): TMM is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [F_microarray_only×knn×22_tmm] [09:15:16][F_microarray_only×knn×22_tmm] Done: ['skipped', 'skipped'] total=16s
+  [45/72] SKIP F_microarray_only×knn×22_tmm (18s)
+[09:15:17] START F_microarray_only×knn×23_vst | free=123.7GB
+  [F_microarray_only×knn×23_vst] [09:15:19][F_microarray_only×knn×23_vst] Downloading prepared dataset (free=123.3GB) ...
+  [F_microarray_only×knn×23_vst] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×23_vst]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×23_vst] [09:15:35][F_microarray_only×knn×23_vst] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×23_vst] [09:15:35][F_microarray_only×knn×23_vst] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×23_vst] [09:15:35][F_microarray_only×knn×23_vst] Skipped (NotImplementedError): DESeq2 VST is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [F_microarray_only×knn×23_vst] [09:15:35][F_microarray_only×knn×23_vst] Done: ['skipped', 'skipped'] total=16s
+  [46/72] SKIP F_microarray_only×knn×23_vst (18s)
+[09:15:35] START F_microarray_only×knn×24_peer_k10 | free=122.7GB
+  [F_microarray_only×knn×24_peer_k10] [09:15:37][F_microarray_only×knn×24_peer_k10] Downloading prepared dataset (free=122.4GB) ...
+  [F_microarray_only×knn×24_peer_k10] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×24_peer_k10]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×24_peer_k10] [09:15:53][F_microarray_only×knn×24_peer_k10] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×24_peer_k10] [09:15:53][F_microarray_only×knn×24_peer_k10] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×24_peer_k10] [09:15:53][F_microarray_only×knn×24_peer_k10] Skipped (NotImplementedError): PEER R package not available for R 4.5: not on CRAN, Bioconductor, or GitHub.
+  [F_microarray_only×knn×24_peer_k10] [09:15:53][F_microarray_only×knn×24_peer_k10] Done: ['skipped', 'skipped'] total=16s
+  [47/72] SKIP F_microarray_only×knn×24_peer_k10 (19s)
+[09:15:54] START F_microarray_only×softimpute×01_raw | free=121.9GB
+  [F_microarray_only×softimpute×01_raw] [09:15:56][F_microarray_only×softimpute×01_raw] Downloading prepared dataset (free=121.6GB) ...
+  [F_microarray_only×softimpute×01_raw] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×01_raw]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×01_raw] [09:16:12][F_microarray_only×softimpute×01_raw] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×softimpute×01_raw] [09:16:12][F_microarray_only×softimpute×01_raw] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×01_raw] [09:16:12][F_microarray_only×softimpute×01_raw] Normalization done (0s)
+  [F_microarray_only×softimpute×01_raw] [09:16:23][F_microarray_only×softimpute×01_raw×post_rm=False] r2_batch=0.680 r2_diag=0.178 — uploading ...
+  [F_microarray_only×softimpute×01_raw] [09:19:09][F_microarray_only×softimpute×01_raw×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×01_raw] [09:19:09][F_microarray_only×softimpute×01_raw×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×01_raw] [09:19:12][F_microarray_only×softimpute×01_raw×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×softimpute×01_raw] [09:19:22][F_microarray_only×softimpute×01_raw×post_rm=True] r2_batch=0.670 r2_diag=0.177 — uploading ...
+  [F_microarray_only×softimpute×01_raw] [09:22:02][F_microarray_only×softimpute×01_raw×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×01_raw] [09:22:03][F_microarray_only×softimpute×01_raw] Done: ['ok', 'ok'] total=367s
+  [48/72] F_microarray_only×softimpute×01_raw (369s) → ['ok', 'ok']
+[09:22:03] START F_microarray_only×softimpute×02_median_scaling | free=118.1GB
+  [F_microarray_only×softimpute×02_median_scaling] [09:22:05][F_microarray_only×softimpute×02_median_scaling] Downloading prepared dataset (free=118.7GB) ...
+  [F_microarray_only×softimpute×02_median_scaling] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×02_median_scaling]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×02_median_scaling] [09:22:27][F_microarray_only×softimpute×02_median_scaling] Dataset ready: 4931 samples × 11274 genes (22s)
+  [F_microarray_only×softimpute×02_median_scaling] [09:22:27][F_microarray_only×softimpute×02_median_scaling] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×02_median_scaling] [09:22:30][F_microarray_only×softimpute×02_median_scaling] Normalization done (3s)
+  [F_microarray_only×softimpute×02_median_scaling] [09:22:41][F_microarray_only×softimpute×02_median_scaling×post_rm=False] r2_batch=0.125 r2_diag=0.093 — uploading ...
+  [F_microarray_only×softimpute×02_median_scaling] [09:25:18][F_microarray_only×softimpute×02_median_scaling×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×02_median_scaling] [09:25:18][F_microarray_only×softimpute×02_median_scaling×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×02_median_scaling] [09:25:22][F_microarray_only×softimpute×02_median_scaling×post_rm=True] Removing 1 outlier batch(es): ['GPL570_Unknown_Unknown']
+  [F_microarray_only×softimpute×02_median_scaling] [09:25:37][F_microarray_only×softimpute×02_median_scaling×post_rm=True] r2_batch=0.127 r2_diag=0.104 — uploading ...
+  [F_microarray_only×softimpute×02_median_scaling] [09:27:42][F_microarray_only×softimpute×02_median_scaling×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×02_median_scaling] [09:27:42][F_microarray_only×softimpute×02_median_scaling] Done: ['ok', 'ok'] total=337s
+  [49/72] F_microarray_only×softimpute×02_median_scaling (339s) → ['ok', 'ok']
+[09:27:42] START F_microarray_only×softimpute×03_limma | free=114.7GB
+  [F_microarray_only×softimpute×03_limma] [09:27:44][F_microarray_only×softimpute×03_limma] Downloading prepared dataset (free=114.6GB) ...
+  [F_microarray_only×softimpute×03_limma] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×03_limma]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×03_limma] [09:28:00][F_microarray_only×softimpute×03_limma] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×softimpute×03_limma] [09:28:00][F_microarray_only×softimpute×03_limma] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×03_limma] R callback write-console: design matrix of interest not specified. Assuming a one-group experiment.
+  [F_microarray_only×softimpute×03_limma]   
+  [F_microarray_only×softimpute×03_limma] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×03_limma] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×03_limma]   
+  [F_microarray_only×softimpute×03_limma] R callback write-console: 1:   
+  [F_microarray_only×softimpute×03_limma] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×03_limma] R callback write-console: 
+  [F_microarray_only×softimpute×03_limma]    
+  [F_microarray_only×softimpute×03_limma] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×03_limma]   
+  [F_microarray_only×softimpute×03_limma] R callback write-console: 2:   
+  [F_microarray_only×softimpute×03_limma] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×03_limma] R callback write-console: 
+  [F_microarray_only×softimpute×03_limma]    
+  [F_microarray_only×softimpute×03_limma] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×03_limma]   
+  [F_microarray_only×softimpute×03_limma] [09:30:00][F_microarray_only×softimpute×03_limma] Normalization done (119s)
+  [F_microarray_only×softimpute×03_limma] [09:30:10][F_microarray_only×softimpute×03_limma×post_rm=False] r2_batch=0.000 r2_diag=0.088 — uploading ...
+  [F_microarray_only×softimpute×03_limma] [09:32:46][F_microarray_only×softimpute×03_limma×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×03_limma] [09:32:46][F_microarray_only×softimpute×03_limma×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×03_limma] [09:32:49][F_microarray_only×softimpute×03_limma×post_rm=True] Removing 1 outlier batch(es): ['GPL96_FF_Unknown']
+  [F_microarray_only×softimpute×03_limma] [09:33:00][F_microarray_only×softimpute×03_limma×post_rm=True] r2_batch=0.000 r2_diag=0.086 — uploading ...
+  [F_microarray_only×softimpute×03_limma] [09:35:26][F_microarray_only×softimpute×03_limma×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×03_limma] [09:35:27][F_microarray_only×softimpute×03_limma] Done: ['ok', 'ok'] total=462s
+  [50/72] F_microarray_only×softimpute×03_limma (465s) → ['ok', 'ok']
+[09:35:27] START F_microarray_only×softimpute×04_sva | free=111.2GB
+  [F_microarray_only×softimpute×04_sva] [09:35:29][F_microarray_only×softimpute×04_sva] Downloading prepared dataset (free=111.0GB) ...
+  [F_microarray_only×softimpute×04_sva] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×04_sva]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×04_sva] [09:35:47][F_microarray_only×softimpute×04_sva] Dataset ready: 4931 samples × 11274 genes (17s)
+  [F_microarray_only×softimpute×04_sva] [09:35:47][F_microarray_only×softimpute×04_sva] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×21_harmonizr] Found 642 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Found22batches
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Adjusting for0covariate(s) or covariate level(s)
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Found55Missing Data Values 
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Standardizing Data across genes
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Fitting L/S model and finding priors
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Finding parametric adjustments
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Adjusting the Data
+  [F_microarray_only×knn×21_harmonizr] 
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] R callback write-console: Writing file...
+  [F_microarray_only×knn×21_harmonizr]   
+  [F_microarray_only×knn×21_harmonizr] [09:38:14][F_microarray_only×knn×21_harmonizr] Normalization done (1420s)
+  [F_microarray_only×knn×21_harmonizr] [09:38:24][F_microarray_only×knn×21_harmonizr×post_rm=False] r2_batch=0.100 r2_diag=0.072 — uploading ...
+  [F_microarray_only×knn×21_harmonizr] [09:40:45][F_microarray_only×knn×21_harmonizr×post_rm=False] Upload complete.
+  [F_microarray_only×knn×21_harmonizr] [09:40:45][F_microarray_only×knn×21_harmonizr×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×21_harmonizr] [09:40:48][F_microarray_only×knn×21_harmonizr×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×21_harmonizr] [09:40:58][F_microarray_only×knn×21_harmonizr×post_rm=True] r2_batch=0.100 r2_diag=0.082 — uploading ...
+  [F_microarray_only×knn×21_harmonizr] [09:43:29][F_microarray_only×knn×21_harmonizr×post_rm=True] Upload complete.
+  [F_microarray_only×knn×21_harmonizr] [09:43:30][F_microarray_only×knn×21_harmonizr] Done: ['ok', 'ok'] total=1760s
+  [51/72] F_microarray_only×knn×21_harmonizr (1765s) → ['ok', 'ok']
+[09:43:33] START F_microarray_only×softimpute×05_combat | free=115.8GB
+  [F_microarray_only×softimpute×05_combat] [09:43:41][F_microarray_only×softimpute×05_combat] Downloading prepared dataset (free=115.6GB) ...
+  [F_microarray_only×softimpute×05_combat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×05_combat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×05_combat] [09:44:30][F_microarray_only×softimpute×05_combat] Dataset ready: 4931 samples × 11274 genes (50s)
+  [F_microarray_only×softimpute×05_combat] [09:44:30][F_microarray_only×softimpute×05_combat] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×05_combat] Found 641 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Found22batches
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Adjusting for13covariate(s) or covariate level(s)
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Found1284Missing Data Values 
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Standardizing Data across genes
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Fitting L/S model and finding priors
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Finding parametric adjustments
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Adjusting the Data
+  [F_microarray_only×softimpute×05_combat] 
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: 1:   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×05_combat] R callback write-console: 
+  [F_microarray_only×softimpute×05_combat]    
+  [F_microarray_only×softimpute×05_combat] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: 2:   
+  [F_microarray_only×softimpute×05_combat] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×05_combat] R callback write-console: 
+  [F_microarray_only×softimpute×05_combat]    
+  [F_microarray_only×softimpute×05_combat] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×05_combat]   
+  [F_microarray_only×softimpute×05_combat] [09:51:38][F_microarray_only×softimpute×05_combat] Normalization done (427s)
+  [F_microarray_only×softimpute×05_combat] [09:51:50][F_microarray_only×softimpute×05_combat×post_rm=False] r2_batch=0.175 r2_diag=0.167 — uploading ...
+  [F_microarray_only×softimpute×05_combat] [09:58:44][F_microarray_only×softimpute×05_combat×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×05_combat] [09:58:45][F_microarray_only×softimpute×05_combat×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×05_combat] [09:58:51][F_microarray_only×softimpute×05_combat×post_rm=True] Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [F_microarray_only×softimpute×05_combat] [09:59:17][F_microarray_only×softimpute×05_combat×post_rm=True] r2_batch=0.173 r2_diag=0.167 — uploading ...
+  [F_microarray_only×softimpute×05_combat] [10:05:40][F_microarray_only×softimpute×05_combat×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×05_combat] [10:05:41][F_microarray_only×softimpute×05_combat] Done: ['ok', 'ok'] total=1321s
+[10:05:45] START F_microarray_only×softimpute×06_combat_seq | free=116.4GB
+  [52/72] F_microarray_only×softimpute×05_combat (1332s) → ['ok', 'ok']
+  [F_microarray_only×softimpute×06_combat_seq] [10:05:50][F_microarray_only×softimpute×06_combat_seq] Downloading prepared dataset (free=115.9GB) ...
+  [F_microarray_only×softimpute×06_combat_seq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×06_combat_seq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×06_combat_seq] [10:06:32][F_microarray_only×softimpute×06_combat_seq] Dataset ready: 4931 samples × 11274 genes (42s)
+  [F_microarray_only×softimpute×06_combat_seq] [10:06:32][F_microarray_only×softimpute×06_combat_seq] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×06_combat_seq] /app/harmonization-scripts/bench_shared.py:783: RuntimeWarning: invalid value encountered in cast
+  [F_microarray_only×softimpute×06_combat_seq]   counts   = np.round(exp_df.values).astype(int).clip(0)
+  [F_microarray_only×softimpute×06_combat_seq] Found 22 batches
+  [F_microarray_only×softimpute×06_combat_seq] Using full model in ComBat-seq.
+  [F_microarray_only×softimpute×06_combat_seq] Adjusting for 13 covariate(s) or covariate level(s)
+  [F_microarray_only×softimpute×06_combat_seq] Estimating dispersions
+  [F_microarray_only×softimpute×06_combat_seq] Fitting the GLM model
+  [F_microarray_only×softimpute×04_sva] R callback write-console: Error in svd(res) : infinite or missing values in 'x'
+  [F_microarray_only×softimpute×04_sva]   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×04_sva]   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: 1:   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×04_sva] R callback write-console: 
+  [F_microarray_only×softimpute×04_sva]    
+  [F_microarray_only×softimpute×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×04_sva]   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: 2:   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×04_sva] R callback write-console: 
+  [F_microarray_only×softimpute×04_sva]    
+  [F_microarray_only×softimpute×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×04_sva]   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: 3:   
+  [F_microarray_only×softimpute×04_sva] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×04_sva] R callback write-console: 
+  [F_microarray_only×softimpute×04_sva]    
+  [F_microarray_only×softimpute×04_sva] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×04_sva]   
+  [F_microarray_only×softimpute×04_sva] [10:44:31][F_microarray_only×softimpute×04_sva] Normalization FAILED after 4124s:
+  [F_microarray_only×softimpute×04_sva] Traceback (most recent call last):
+  [F_microarray_only×softimpute×04_sva]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×04_sva]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×04_sva]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×04_sva]   File "/app/harmonization-scripts/bench_shared.py", line 692, in normalize_sva
+  [F_microarray_only×softimpute×04_sva]     n_sv = sva_r.num_sv(r_mat, mod)
+  [F_microarray_only×softimpute×04_sva]            ^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×softimpute×04_sva]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×softimpute×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×softimpute×04_sva]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×softimpute×04_sva]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×softimpute×04_sva]     cdata = function(*args, **kwargs)
+  [F_microarray_only×softimpute×04_sva]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×04_sva]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×softimpute×04_sva]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×softimpute×04_sva] rpy2.rinterface_lib.embedded.RRuntimeError: Error in svd(res) : infinite or missing values in 'x'
+  [F_microarray_only×softimpute×04_sva] 
+  [F_microarray_only×softimpute×04_sva] 
+  [F_microarray_only×softimpute×04_sva] [10:44:31][F_microarray_only×softimpute×04_sva] Done: ['failed', 'failed'] total=4142s
+[10:44:33] START F_microarray_only×softimpute×07_pycombat | free=117.7GB
+  [F_microarray_only×softimpute×07_pycombat] [10:44:37][F_microarray_only×softimpute×07_pycombat] Downloading prepared dataset (free=117.4GB) ...
+  [F_microarray_only×softimpute×07_pycombat] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×07_pycombat]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×07_pycombat] [10:45:28][F_microarray_only×softimpute×07_pycombat] Dataset ready: 4931 samples × 11274 genes (51s)
+  [F_microarray_only×softimpute×07_pycombat] [10:45:28][F_microarray_only×softimpute×07_pycombat] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×07_pycombat] Found 22 batches.
+  [F_microarray_only×softimpute×07_pycombat] Adjusting for 0 covariate(s) or covariate level(s).
+  [F_microarray_only×softimpute×07_pycombat] Found missing data values. Please remove all missing values before proceeding with pyComBat.
+  [F_microarray_only×softimpute×07_pycombat] [10:45:29][F_microarray_only×softimpute×07_pycombat] Normalization FAILED after 1s:
+  [F_microarray_only×softimpute×07_pycombat] Traceback (most recent call last):
+  [F_microarray_only×softimpute×07_pycombat]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×07_pycombat]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×07_pycombat]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×07_pycombat]   File "/app/harmonization-scripts/bench_shared.py", line 822, in normalize_pycombat
+  [F_microarray_only×softimpute×07_pycombat]     result  = pycombat(exp_df.T, batches)
+  [F_microarray_only×softimpute×07_pycombat]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×07_pycombat]   File "/usr/local/lib/python3.12/dist-packages/combat/pycombat.py", line 668, in pycombat
+  [F_microarray_only×softimpute×07_pycombat]     raise ValueError("NaN value is not accepted")
+  [F_microarray_only×softimpute×07_pycombat] ValueError: NaN value is not accepted
+  [F_microarray_only×softimpute×07_pycombat] 
+  [F_microarray_only×softimpute×07_pycombat] [10:45:29][F_microarray_only×softimpute×07_pycombat] Done: ['failed', 'failed'] total=51s
+[10:45:29] START F_microarray_only×softimpute×08_inmoose_combatseq | free=116.0GB
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [10:45:34][F_microarray_only×softimpute×08_inmoose_combatseq] Downloading prepared dataset (free=115.8GB) ...
+  [F_microarray_only×softimpute×08_inmoose_combatseq] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×08_inmoose_combatseq]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [10:46:14][F_microarray_only×softimpute×08_inmoose_combatseq] Dataset ready: 4931 samples × 11274 genes (40s)
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [10:46:14][F_microarray_only×softimpute×08_inmoose_combatseq] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×06_combat_seq] Shrinkage off - using GLM estimates for parameters
+  [F_microarray_only×softimpute×06_combat_seq] Adjusting the data
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×06_combat_seq]   
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: 1:   
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: 
+  [F_microarray_only×softimpute×06_combat_seq]    
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×06_combat_seq]   
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: 2:   
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console: 
+  [F_microarray_only×softimpute×06_combat_seq]    
+  [F_microarray_only×softimpute×06_combat_seq] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×06_combat_seq]   
+  [F_microarray_only×softimpute×06_combat_seq] [11:24:03][F_microarray_only×softimpute×06_combat_seq] Normalization done (4651s)
+  [F_microarray_only×softimpute×06_combat_seq] [11:24:15][F_microarray_only×softimpute×06_combat_seq×post_rm=False] r2_batch=0.488 r2_diag=0.182 — uploading ...
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:26:14][F_microarray_only×softimpute×08_inmoose_combatseq] Normalization done (2400s)
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:26:25][F_microarray_only×softimpute×08_inmoose_combatseq×post_rm=False] r2_batch=0.488 r2_diag=0.182 — uploading ...
+  [F_microarray_only×softimpute×06_combat_seq] [11:27:49][F_microarray_only×softimpute×06_combat_seq×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×06_combat_seq] [11:27:50][F_microarray_only×softimpute×06_combat_seq×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×06_combat_seq] [11:27:55][F_microarray_only×softimpute×06_combat_seq×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×softimpute×06_combat_seq] [11:28:13][F_microarray_only×softimpute×06_combat_seq×post_rm=True] r2_batch=0.416 r2_diag=0.183 — uploading ...
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:31:58][F_microarray_only×softimpute×08_inmoose_combatseq×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:31:59][F_microarray_only×softimpute×08_inmoose_combatseq×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:32:05][F_microarray_only×softimpute×08_inmoose_combatseq×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:32:31][F_microarray_only×softimpute×08_inmoose_combatseq×post_rm=True] r2_batch=0.416 r2_diag=0.183 — uploading ...
+  [F_microarray_only×softimpute×06_combat_seq] [11:35:08][F_microarray_only×softimpute×06_combat_seq×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×06_combat_seq] [11:35:08][F_microarray_only×softimpute×06_combat_seq] Done: ['ok', 'ok'] total=5358s
+  [55/72] F_microarray_only×softimpute×06_combat_seq (5364s) → ['ok', 'ok']
+[11:35:09] START F_microarray_only×softimpute×09_ruv | free=110.7GB
+  [F_microarray_only×softimpute×09_ruv] [11:35:15][F_microarray_only×softimpute×09_ruv] Downloading prepared dataset (free=110.5GB) ...
+  [F_microarray_only×softimpute×09_ruv] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×09_ruv]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×09_ruv] [11:36:23][F_microarray_only×softimpute×09_ruv] Dataset ready: 4931 samples × 11274 genes (68s)
+  [F_microarray_only×softimpute×09_ruv] [11:36:23][F_microarray_only×softimpute×09_ruv] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×09_ruv] /app/harmonization-scripts/bench_shared.py:891: RuntimeWarning: invalid value encountered in cast
+  [F_microarray_only×softimpute×09_ruv]   counts   = np.round(exp_df.values).astype(int).clip(0)
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:39:17][F_microarray_only×softimpute×08_inmoose_combatseq×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×08_inmoose_combatseq] [11:39:18][F_microarray_only×softimpute×08_inmoose_combatseq] Done: ['ok', 'ok'] total=3224s
+  [56/72] F_microarray_only×softimpute×08_inmoose_combatseq (3230s) → ['ok', 'ok']
+[11:39:20] START F_microarray_only×softimpute×10_mnn | free=106.5GB
+  [F_microarray_only×softimpute×10_mnn] [11:39:26][F_microarray_only×softimpute×10_mnn] Downloading prepared dataset (free=106.3GB) ...
+  [F_microarray_only×softimpute×10_mnn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×10_mnn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×10_mnn] [11:40:16][F_microarray_only×softimpute×10_mnn] Dataset ready: 4931 samples × 11274 genes (51s)
+  [F_microarray_only×softimpute×10_mnn] [11:40:16][F_microarray_only×softimpute×10_mnn] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×09_ruv]   
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: 1:   
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: 
+  [F_microarray_only×softimpute×09_ruv]    
+  [F_microarray_only×softimpute×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×09_ruv]   
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: 2:   
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×09_ruv] R callback write-console: 
+  [F_microarray_only×softimpute×09_ruv]    
+  [F_microarray_only×softimpute×09_ruv] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×09_ruv]   
+  [F_microarray_only×softimpute×09_ruv] [11:42:58][F_microarray_only×softimpute×09_ruv] Normalization done (395s)
+  [F_microarray_only×softimpute×09_ruv] [11:43:14][F_microarray_only×softimpute×09_ruv×post_rm=False] r2_batch=0.579 r2_diag=0.149 — uploading ...
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: Error in .local(x, ...) : size factors should be positive
+  [F_microarray_only×softimpute×10_mnn]   
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×10_mnn]   
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: 1:   
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: 
+  [F_microarray_only×softimpute×10_mnn]    
+  [F_microarray_only×softimpute×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×10_mnn]   
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: 2:   
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×10_mnn] R callback write-console: 
+  [F_microarray_only×softimpute×10_mnn]    
+  [F_microarray_only×softimpute×10_mnn] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×10_mnn]   
+  [F_microarray_only×softimpute×10_mnn] [11:44:30][F_microarray_only×softimpute×10_mnn] Normalization FAILED after 254s:
+  [F_microarray_only×softimpute×10_mnn] Traceback (most recent call last):
+  [F_microarray_only×softimpute×10_mnn]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×10_mnn]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×10_mnn]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×10_mnn]   File "/app/harmonization-scripts/bench_shared.py", line 928, in normalize_mnn
+  [F_microarray_only×softimpute×10_mnn]     result  = batchelor_r.fastMNN(r_mat, batch=ro.StrVector(batches.values), k=k)
+  [F_microarray_only×softimpute×10_mnn]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×softimpute×10_mnn]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×softimpute×10_mnn]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×softimpute×10_mnn]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×softimpute×10_mnn]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×softimpute×10_mnn]     cdata = function(*args, **kwargs)
+  [F_microarray_only×softimpute×10_mnn]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×10_mnn]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×softimpute×10_mnn]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×softimpute×10_mnn] rpy2.rinterface_lib.embedded.RRuntimeError: Error in .local(x, ...) : size factors should be positive
+  [F_microarray_only×softimpute×10_mnn] 
+  [F_microarray_only×softimpute×10_mnn] 
+  [F_microarray_only×softimpute×10_mnn] [11:44:30][F_microarray_only×softimpute×10_mnn] Done: ['failed', 'failed'] total=304s
+[11:44:33] START F_microarray_only×softimpute×11_harmony | free=99.6GB
+  [F_microarray_only×softimpute×11_harmony] [11:44:42][F_microarray_only×softimpute×11_harmony] Downloading prepared dataset (free=99.4GB) ...
+  [F_microarray_only×softimpute×11_harmony] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×11_harmony]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×11_harmony] [11:45:49][F_microarray_only×softimpute×11_harmony] Dataset ready: 4931 samples × 11274 genes (68s)
+  [F_microarray_only×softimpute×11_harmony] [11:45:49][F_microarray_only×softimpute×11_harmony] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,335 - harmonypy - INFO - Running Harmony (PyTorch on cpu)
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -   Parameters:
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -     max_iter_harmony: 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -     max_iter_kmeans: 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -     epsilon_cluster: 1e-05
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -     epsilon_harmony: 0.0001
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -     nclust: 100
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,337 - harmonypy - INFO -     block_size: 0.05
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,339 - harmonypy - INFO -     lamb: [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,340 - harmonypy - INFO -     theta: [2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2. 2.]
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,340 - harmonypy - INFO -     sigma: [0.1 0.1 0.1 0.1 0.1]...
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,340 - harmonypy - INFO -     verbose: True
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,340 - harmonypy - INFO -     random_state: 0
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,340 - harmonypy - INFO -   Data: 50 PCs × 4931 cells
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:21,340 - harmonypy - INFO -   Batch variables: ['RNA_BATCH']
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:23,836 - harmonypy - INFO - Computing initial centroids with sklearn.KMeans...
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:31,005 - harmonypy - INFO - KMeans initialization complete.
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:46:35,034 - harmonypy - INFO - Iteration 1 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:29,624 - harmonypy - INFO - Iteration 2 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:30,323 - harmonypy - INFO - Iteration 3 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:31,242 - harmonypy - INFO - Iteration 4 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:35,635 - harmonypy - INFO - Iteration 5 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:36,528 - harmonypy - INFO - Iteration 6 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:37,131 - harmonypy - INFO - Iteration 7 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:37,378 - harmonypy - INFO - Iteration 8 of 20
+  [F_microarray_only×softimpute×11_harmony] 2026-04-27 11:48:38,528 - harmonypy - INFO - Converged after 8 iterations
+  [F_microarray_only×softimpute×11_harmony] [11:48:38][F_microarray_only×softimpute×11_harmony] Normalization done (169s)
+  [F_microarray_only×softimpute×11_harmony] [11:48:53][F_microarray_only×softimpute×11_harmony×post_rm=False] r2_batch=0.235 r2_diag=0.059 — uploading ...
+  [F_microarray_only×softimpute×09_ruv] [11:51:53][F_microarray_only×softimpute×09_ruv×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×09_ruv] [11:51:54][F_microarray_only×softimpute×09_ruv×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×09_ruv] [11:51:59][F_microarray_only×softimpute×09_ruv×post_rm=True] Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [F_microarray_only×softimpute×09_ruv] [11:52:19][F_microarray_only×softimpute×09_ruv×post_rm=True] r2_batch=0.575 r2_diag=0.146 — uploading ...
+  [F_microarray_only×softimpute×11_harmony] [11:55:20][F_microarray_only×softimpute×11_harmony×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×11_harmony] [11:55:21][F_microarray_only×softimpute×11_harmony×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×11_harmony] [11:55:27][F_microarray_only×softimpute×11_harmony×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×softimpute×11_harmony] [11:55:51][F_microarray_only×softimpute×11_harmony×post_rm=True] r2_batch=0.238 r2_diag=0.062 — uploading ...
+  [F_microarray_only×softimpute×09_ruv] [12:00:33][F_microarray_only×softimpute×09_ruv×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×09_ruv] [12:00:34][F_microarray_only×softimpute×09_ruv] Done: ['ok', 'ok'] total=1518s
+  [58/72] F_microarray_only×softimpute×09_ruv (1530s) → ['ok', 'ok']
+[12:00:39] START F_microarray_only×softimpute×12_scanorama | free=105.5GB
+  [F_microarray_only×softimpute×12_scanorama] [12:00:52][F_microarray_only×softimpute×12_scanorama] Downloading prepared dataset (free=105.3GB) ...
+  [F_microarray_only×softimpute×11_harmony] [12:01:42][F_microarray_only×softimpute×11_harmony×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×11_harmony] [12:01:42][F_microarray_only×softimpute×11_harmony] Done: ['ok', 'ok'] total=1020s
+  [59/72] F_microarray_only×softimpute×11_harmony (1031s) → ['ok', 'ok']
+[12:01:43] START F_microarray_only×softimpute×13_fsmvn | free=106.7GB
+  [F_microarray_only×softimpute×13_fsmvn] [12:01:46][F_microarray_only×softimpute×13_fsmvn] Downloading prepared dataset (free=105.8GB) ...
+  [F_microarray_only×softimpute×12_scanorama] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×12_scanorama]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×12_scanorama] [12:01:48][F_microarray_only×softimpute×12_scanorama] Dataset ready: 4931 samples × 11274 genes (56s)
+  [F_microarray_only×softimpute×12_scanorama] [12:01:48][F_microarray_only×softimpute×12_scanorama] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×12_scanorama] Found 11274 genes among all datasets
+  [F_microarray_only×softimpute×12_scanorama] [12:01:54][F_microarray_only×softimpute×12_scanorama] Normalization FAILED after 7s:
+  [F_microarray_only×softimpute×12_scanorama] Traceback (most recent call last):
+  [F_microarray_only×softimpute×12_scanorama]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×12_scanorama]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×12_scanorama]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/app/harmonization-scripts/bench_shared.py", line 1002, in normalize_scanorama
+  [F_microarray_only×softimpute×12_scanorama]     integrated, _ = scanorama.integrate(datasets_s, genes_list, dimred=50)
+  [F_microarray_only×softimpute×12_scanorama]                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/scanorama/scanorama.py", line 172, in integrate
+  [F_microarray_only×softimpute×12_scanorama]     datasets_dimred, genes = process_data(datasets, genes, hvg=hvg,
+  [F_microarray_only×softimpute×12_scanorama]                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/scanorama/scanorama.py", line 418, in process_data
+  [F_microarray_only×softimpute×12_scanorama]     datasets[i] = normalize(ds, axis=1)
+  [F_microarray_only×softimpute×12_scanorama]                   ^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/_param_validation.py", line 218, in wrapper
+  [F_microarray_only×softimpute×12_scanorama]     return func(*args, **kwargs)
+  [F_microarray_only×softimpute×12_scanorama]            ^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/preprocessing/_data.py", line 2028, in normalize
+  [F_microarray_only×softimpute×12_scanorama]     X = check_array(
+  [F_microarray_only×softimpute×12_scanorama]         ^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 981, in check_array
+  [F_microarray_only×softimpute×12_scanorama]     array = _ensure_sparse_format(
+  [F_microarray_only×softimpute×12_scanorama]             ^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 638, in _ensure_sparse_format
+  [F_microarray_only×softimpute×12_scanorama]     _assert_all_finite(
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 133, in _assert_all_finite
+  [F_microarray_only×softimpute×12_scanorama]     _assert_all_finite_element_wise(
+  [F_microarray_only×softimpute×12_scanorama]   File "/usr/local/lib/python3.12/dist-packages/sklearn/utils/validation.py", line 182, in _assert_all_finite_element_wise
+  [F_microarray_only×softimpute×12_scanorama]     raise ValueError(msg_err)
+  [F_microarray_only×softimpute×12_scanorama] ValueError: Input contains NaN.
+  [F_microarray_only×softimpute×12_scanorama] 
+  [F_microarray_only×softimpute×12_scanorama] [12:01:55][F_microarray_only×softimpute×12_scanorama] Done: ['failed', 'failed'] total=63s
+[12:01:57] START F_microarray_only×softimpute×14_qsmooth | free=106.6GB
+  [F_microarray_only×softimpute×14_qsmooth] [12:02:02][F_microarray_only×softimpute×14_qsmooth] Downloading prepared dataset (free=106.3GB) ...
+  [F_microarray_only×softimpute×13_fsmvn] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×13_fsmvn]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×13_fsmvn] [12:02:21][F_microarray_only×softimpute×13_fsmvn] Dataset ready: 4931 samples × 11274 genes (36s)
+  [F_microarray_only×softimpute×13_fsmvn] [12:02:21][F_microarray_only×softimpute×13_fsmvn] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×13_fsmvn] [12:02:23][F_microarray_only×softimpute×13_fsmvn] Normalization done (2s)
+  [F_microarray_only×softimpute×14_qsmooth] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×14_qsmooth]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×14_qsmooth] [12:02:32][F_microarray_only×softimpute×14_qsmooth] Dataset ready: 4931 samples × 11274 genes (30s)
+  [F_microarray_only×softimpute×14_qsmooth] [12:02:32][F_microarray_only×softimpute×14_qsmooth] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×13_fsmvn] [12:02:34][F_microarray_only×softimpute×13_fsmvn×post_rm=False] r2_batch=0.000 r2_diag=0.051 — uploading ...
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: Error in (function (object, group_factor, batch = NULL, norm_factors = NULL,  : 
+  [F_microarray_only×softimpute×14_qsmooth]   Object must not contains NAs.
+  [F_microarray_only×softimpute×14_qsmooth]   
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: In addition:   
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: Warning messages:
+  [F_microarray_only×softimpute×14_qsmooth]   
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: 1:   
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: 
+  [F_microarray_only×softimpute×14_qsmooth]    
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×14_qsmooth]   
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: 2:   
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: In (function (package, help, pos = 2, lib.loc = NULL, character.only = FALSE,  :  
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console: 
+  [F_microarray_only×softimpute×14_qsmooth]    
+  [F_microarray_only×softimpute×14_qsmooth] R callback write-console:  library ‘/usr/lib/R/site-library’ contains no packages
+  [F_microarray_only×softimpute×14_qsmooth]   
+  [F_microarray_only×softimpute×14_qsmooth] [12:07:45][F_microarray_only×softimpute×14_qsmooth] Normalization FAILED after 313s:
+  [F_microarray_only×softimpute×14_qsmooth] Traceback (most recent call last):
+  [F_microarray_only×softimpute×14_qsmooth]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×14_qsmooth]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×14_qsmooth]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×14_qsmooth]   File "/app/harmonization-scripts/bench_shared.py", line 1072, in normalize_qsmooth
+  [F_microarray_only×softimpute×14_qsmooth]     qs_obj = qsmooth_r.qsmooth(r_mat, group_factor=ro.StrVector(groups))
+  [F_microarray_only×softimpute×14_qsmooth]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 208, in __call__
+  [F_microarray_only×softimpute×14_qsmooth]     return (super(SignatureTranslatedFunction, self)
+  [F_microarray_only×softimpute×14_qsmooth]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/functions.py", line 131, in __call__
+  [F_microarray_only×softimpute×14_qsmooth]     res = super(Function, self).__call__(*new_args, **new_kwargs)
+  [F_microarray_only×softimpute×14_qsmooth]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface_lib/conversion.py", line 46, in _
+  [F_microarray_only×softimpute×14_qsmooth]     cdata = function(*args, **kwargs)
+  [F_microarray_only×softimpute×14_qsmooth]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×14_qsmooth]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 930, in __call__
+  [F_microarray_only×softimpute×14_qsmooth]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×softimpute×14_qsmooth] rpy2.rinterface_lib.embedded.RRuntimeError: Error in (function (object, group_factor, batch = NULL, norm_factors = NULL,  : 
+  [F_microarray_only×softimpute×14_qsmooth]   Object must not contains NAs.
+  [F_microarray_only×softimpute×14_qsmooth] 
+  [F_microarray_only×softimpute×14_qsmooth] 
+  [F_microarray_only×softimpute×14_qsmooth] [12:07:45][F_microarray_only×softimpute×14_qsmooth] Done: ['failed', 'failed'] total=343s
+[12:07:49] START F_microarray_only×softimpute×15_fsqn_py | free=106.2GB
+  [F_microarray_only×softimpute×15_fsqn_py] [12:07:55][F_microarray_only×softimpute×15_fsqn_py] Downloading prepared dataset (free=108.7GB) ...
+  [F_microarray_only×softimpute×15_fsqn_py] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×15_fsqn_py]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×15_fsqn_py] [12:08:11][F_microarray_only×softimpute×15_fsqn_py] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×softimpute×15_fsqn_py] [12:08:11][F_microarray_only×softimpute×15_fsqn_py] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×15_fsqn_py] /app/harmonization-scripts/bench_shared.py:1114: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+  [F_microarray_only×softimpute×15_fsqn_py] You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+  [F_microarray_only×softimpute×15_fsqn_py] A typical example is when you are setting values in a column of a DataFrame, like:
+  [F_microarray_only×softimpute×15_fsqn_py] 
+  [F_microarray_only×softimpute×15_fsqn_py] df["col"][row_indexer] = value
+  [F_microarray_only×softimpute×15_fsqn_py] 
+  [F_microarray_only×softimpute×15_fsqn_py] Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+  [F_microarray_only×softimpute×15_fsqn_py] 
+  [F_microarray_only×softimpute×15_fsqn_py] See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  [F_microarray_only×softimpute×15_fsqn_py] 
+  [F_microarray_only×softimpute×15_fsqn_py]   out.loc[sample].iloc[order] = target_dist
+  [F_microarray_only×softimpute×15_fsqn_py] [12:08:17][F_microarray_only×softimpute×15_fsqn_py] Normalization done (6s)
+  [F_microarray_only×softimpute×15_fsqn_py] [12:08:26][F_microarray_only×softimpute×15_fsqn_py×post_rm=False] r2_batch=0.511 r2_diag=0.225 — uploading ...
+  [F_microarray_only×softimpute×13_fsmvn] [12:08:50][F_microarray_only×softimpute×13_fsmvn×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×13_fsmvn] [12:08:51][F_microarray_only×softimpute×13_fsmvn×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×13_fsmvn] [12:08:57][F_microarray_only×softimpute×13_fsmvn×post_rm=True] Removing 1 outlier batch(es): ['GPL96_FF_Unknown']
+  [F_microarray_only×softimpute×13_fsmvn] [12:09:21][F_microarray_only×softimpute×13_fsmvn×post_rm=True] r2_batch=0.000 r2_diag=0.049 — uploading ...
+  [F_microarray_only×softimpute×15_fsqn_py] [12:14:29][F_microarray_only×softimpute×15_fsqn_py×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×15_fsqn_py] [12:14:29][F_microarray_only×softimpute×15_fsqn_py×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×15_fsqn_py] [12:14:34][F_microarray_only×softimpute×15_fsqn_py×post_rm=True] Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [F_microarray_only×softimpute×15_fsqn_py] [12:14:47][F_microarray_only×softimpute×15_fsqn_py×post_rm=True] r2_batch=0.506 r2_diag=0.225 — uploading ...
+  [F_microarray_only×softimpute×13_fsmvn] [12:15:11][F_microarray_only×softimpute×13_fsmvn×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×13_fsmvn] [12:15:14][F_microarray_only×softimpute×13_fsmvn] Done: ['ok', 'ok'] total=808s
+  [62/72] F_microarray_only×softimpute×13_fsmvn (816s) → ['ok', 'ok']
+[12:15:19] START F_microarray_only×softimpute×16_fsqn_r | free=106.3GB
+  [F_microarray_only×softimpute×16_fsqn_r] [12:15:32][F_microarray_only×softimpute×16_fsqn_r] Downloading prepared dataset (free=106.1GB) ...
+  [F_microarray_only×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×16_fsqn_r] [12:16:36][F_microarray_only×softimpute×16_fsqn_r] Dataset ready: 4931 samples × 11274 genes (64s)
+  [F_microarray_only×softimpute×16_fsqn_r] [12:16:36][F_microarray_only×softimpute×16_fsqn_r] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×15_fsqn_py] [12:21:08][F_microarray_only×softimpute×15_fsqn_py×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×15_fsqn_py] [12:21:09][F_microarray_only×softimpute×15_fsqn_py] Done: ['ok', 'ok'] total=794s
+  [63/72] F_microarray_only×softimpute×15_fsqn_py (801s) → ['ok', 'ok']
+[12:21:10] START F_microarray_only×softimpute×17_quantile | free=102.9GB
+  [F_microarray_only×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [F_microarray_only×softimpute×16_fsqn_r]   
+  [F_microarray_only×softimpute×17_quantile] [12:21:16][F_microarray_only×softimpute×17_quantile] Downloading prepared dataset (free=102.7GB) ...
+  [F_microarray_only×softimpute×17_quantile] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×17_quantile]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×17_quantile] [12:22:20][F_microarray_only×softimpute×17_quantile] Dataset ready: 4931 samples × 11274 genes (63s)
+  [F_microarray_only×softimpute×17_quantile] [12:22:20][F_microarray_only×softimpute×17_quantile] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×17_quantile] [12:22:28][F_microarray_only×softimpute×17_quantile] Normalization done (9s)
+  [F_microarray_only×softimpute×17_quantile] [12:22:48][F_microarray_only×softimpute×17_quantile×post_rm=False] r2_batch=0.511 r2_diag=0.225 — uploading ...
+  [F_microarray_only×softimpute×17_quantile] [12:28:43][F_microarray_only×softimpute×17_quantile×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×17_quantile] [12:28:43][F_microarray_only×softimpute×17_quantile×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×17_quantile] [12:28:50][F_microarray_only×softimpute×17_quantile×post_rm=True] Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [F_microarray_only×softimpute×17_quantile] [12:29:02][F_microarray_only×softimpute×17_quantile×post_rm=True] r2_batch=0.506 r2_diag=0.225 — uploading ...
+  [F_microarray_only×softimpute×17_quantile] [12:35:45][F_microarray_only×softimpute×17_quantile×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×17_quantile] [12:35:46][F_microarray_only×softimpute×17_quantile] Done: ['ok', 'ok'] total=869s
+[12:35:47] START F_microarray_only×softimpute×18_rank | free=96.4GB
+  [64/72] F_microarray_only×softimpute×17_quantile (877s) → ['ok', 'ok']
+  [65/72] F_microarray_only×softimpute×18_rank (5s) → ['cached', 'cached']
+[12:35:52] START F_microarray_only×softimpute×19_tdm | free=99.2GB
+  [F_microarray_only×softimpute×19_tdm] [12:35:59][F_microarray_only×softimpute×19_tdm] Downloading prepared dataset (free=98.1GB) ...
+  [F_microarray_only×softimpute×19_tdm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×19_tdm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×19_tdm] [12:36:54][F_microarray_only×softimpute×19_tdm] Dataset ready: 4931 samples × 11274 genes (55s)
+  [F_microarray_only×softimpute×19_tdm] [12:36:54][F_microarray_only×softimpute×19_tdm] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×16_fsqn_r] [12:37:43][F_microarray_only×softimpute×16_fsqn_r] Normalization done (1267s)
+  [F_microarray_only×softimpute×16_fsqn_r] [12:38:18][F_microarray_only×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.496 r2_diag=0.266 — uploading ...
+  [F_microarray_only×softimpute×16_fsqn_r] [12:40:02][F_microarray_only×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×16_fsqn_r] [12:40:03][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×16_fsqn_r] [12:40:10][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [F_microarray_only×softimpute×16_fsqn_r] [12:40:38][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.480 r2_diag=0.257 — uploading ...
+  [F_microarray_only×softimpute×16_fsqn_r] [12:42:13][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×16_fsqn_r] [12:42:17][F_microarray_only×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=1605s
+  [66/72] F_microarray_only×softimpute×16_fsqn_r (1625s) → ['ok', 'ok']
+[12:42:25] START F_microarray_only×softimpute×20_shambhala | free=103.2GB
+  [F_microarray_only×softimpute×20_shambhala] [12:42:29][F_microarray_only×softimpute×20_shambhala] Downloading prepared dataset (free=102.6GB) ...
+  [F_microarray_only×softimpute×20_shambhala] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×20_shambhala]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×20_shambhala] [12:43:13][F_microarray_only×softimpute×20_shambhala] Dataset ready: 4931 samples × 11274 genes (43s)
+  [F_microarray_only×softimpute×20_shambhala] [12:43:13][F_microarray_only×softimpute×20_shambhala] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×19_tdm] R callback write-console: data.table 1.18.2.1 using 16 threads (see ?getDTthreads).    
+  [F_microarray_only×softimpute×19_tdm] R callback write-console: Latest news: r-datatable.com
+  [F_microarray_only×softimpute×19_tdm]   
+  [F_microarray_only×softimpute×19_tdm] R callback write-console: Error in if (downandout < old_min) { : 
+  [F_microarray_only×softimpute×19_tdm]   missing value where TRUE/FALSE needed
+  [F_microarray_only×softimpute×19_tdm]   
+  [F_microarray_only×softimpute×19_tdm] [12:44:27][F_microarray_only×softimpute×19_tdm] Normalization FAILED after 453s:
+  [F_microarray_only×softimpute×19_tdm] Traceback (most recent call last):
+  [F_microarray_only×softimpute×19_tdm]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×19_tdm]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×19_tdm]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×19_tdm]   File "/app/harmonization-scripts/bench_shared.py", line 1347, in normalize_tdm
+  [F_microarray_only×softimpute×19_tdm]     ro.r(f"""
+  [F_microarray_only×softimpute×19_tdm]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [F_microarray_only×softimpute×19_tdm]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [F_microarray_only×softimpute×19_tdm]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×19_tdm]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [F_microarray_only×softimpute×19_tdm]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×softimpute×19_tdm] rpy2.rinterface_lib.embedded.RRuntimeError: Error in if (downandout < old_min) { : 
+  [F_microarray_only×softimpute×19_tdm]   missing value where TRUE/FALSE needed
+  [F_microarray_only×softimpute×19_tdm] 
+  [F_microarray_only×softimpute×19_tdm] 
+  [F_microarray_only×softimpute×19_tdm] [12:44:27][F_microarray_only×softimpute×19_tdm] Done: ['failed', 'failed'] total=508s
+[12:44:29] START F_microarray_only×softimpute×21_harmonizr | free=102.7GB
+  [F_microarray_only×softimpute×21_harmonizr] [12:44:34][F_microarray_only×softimpute×21_harmonizr] Downloading prepared dataset (free=102.5GB) ...
+  [F_microarray_only×softimpute×21_harmonizr] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×21_harmonizr]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×21_harmonizr] [12:45:22][F_microarray_only×softimpute×21_harmonizr] Dataset ready: 4931 samples × 11274 genes (48s)
+  [F_microarray_only×softimpute×21_harmonizr] [12:45:22][F_microarray_only×softimpute×21_harmonizr] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×20_shambhala] R callback write-console: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [F_microarray_only×softimpute×20_shambhala]   
+  [F_microarray_only×softimpute×20_shambhala] [12:52:08][F_microarray_only×softimpute×20_shambhala] Normalization FAILED after 535s:
+  [F_microarray_only×softimpute×20_shambhala] Traceback (most recent call last):
+  [F_microarray_only×softimpute×20_shambhala]   File "/app/harmonization-scripts/run_norm_job.py", line 126, in run_norm
+  [F_microarray_only×softimpute×20_shambhala]     exp_norm = fn(exp_s, ann_s, batch_col=BATCH_COL, bio_col=BIO_COL)
+  [F_microarray_only×softimpute×20_shambhala]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×20_shambhala]   File "/app/harmonization-scripts/bench_shared.py", line 1418, in normalize_shambhala
+  [F_microarray_only×softimpute×20_shambhala]     ro.r(f"""
+  [F_microarray_only×softimpute×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/robjects/__init__.py", line 552, in __call__
+  [F_microarray_only×softimpute×20_shambhala]     res, visible = rinterface.evalr_expr_with_visible(   # type: ignore
+  [F_microarray_only×softimpute×20_shambhala]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [F_microarray_only×softimpute×20_shambhala]   File "/usr/local/lib/python3.12/dist-packages/rpy2/rinterface/__init__.py", line 204, in evalr_expr_with_visible
+  [F_microarray_only×softimpute×20_shambhala]     raise embedded.RRuntimeError(_rinterface._geterrmessage())
+  [F_microarray_only×softimpute×20_shambhala] rpy2.rinterface_lib.embedded.RRuntimeError: Error in library(Shambhala2) : there is no package called ‘Shambhala2’
+  [F_microarray_only×softimpute×20_shambhala] 
+  [F_microarray_only×softimpute×20_shambhala] 
+  [F_microarray_only×softimpute×20_shambhala] [12:52:08][F_microarray_only×softimpute×20_shambhala] Done: ['failed', 'failed'] total=579s
+[12:52:09] START F_microarray_only×softimpute×22_tmm | free=101.3GB
+  [F_microarray_only×softimpute×22_tmm] [12:52:14][F_microarray_only×softimpute×22_tmm] Downloading prepared dataset (free=100.9GB) ...
+  [F_microarray_only×softimpute×22_tmm] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×22_tmm]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×22_tmm] [12:52:56][F_microarray_only×softimpute×22_tmm] Dataset ready: 4931 samples × 11274 genes (42s)
+  [F_microarray_only×softimpute×22_tmm] [12:52:56][F_microarray_only×softimpute×22_tmm] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×22_tmm] [12:52:56][F_microarray_only×softimpute×22_tmm] Skipped (NotImplementedError): TMM is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [F_microarray_only×softimpute×22_tmm] [12:52:56][F_microarray_only×softimpute×22_tmm] Done: ['skipped', 'skipped'] total=42s
+  [69/72] SKIP F_microarray_only×softimpute×22_tmm (47s)
+[12:52:57] START F_microarray_only×softimpute×23_vst | free=113.2GB
+  [F_microarray_only×softimpute×23_vst] [12:53:01][F_microarray_only×softimpute×23_vst] Downloading prepared dataset (free=112.9GB) ...
+  [F_microarray_only×softimpute×23_vst] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×23_vst]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×23_vst] [12:53:43][F_microarray_only×softimpute×23_vst] Dataset ready: 4931 samples × 11274 genes (42s)
+  [F_microarray_only×softimpute×23_vst] [12:53:43][F_microarray_only×softimpute×23_vst] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×23_vst] [12:53:43][F_microarray_only×softimpute×23_vst] Skipped (NotImplementedError): DESeq2 VST is RNA-seq only. Use strategy C_rnaseq_only or filter to RNA-seq samples before calling.
+  [F_microarray_only×softimpute×23_vst] [12:53:43][F_microarray_only×softimpute×23_vst] Done: ['skipped', 'skipped'] total=42s
+  [70/72] SKIP F_microarray_only×softimpute×23_vst (48s)
+[12:53:44] START F_microarray_only×softimpute×24_peer_k10 | free=111.2GB
+  [F_microarray_only×softimpute×24_peer_k10] [12:53:51][F_microarray_only×softimpute×24_peer_k10] Downloading prepared dataset (free=110.1GB) ...
+  [F_microarray_only×softimpute×24_peer_k10] /app/harmonization-scripts/bench_shared.py:549: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×24_peer_k10]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×24_peer_k10] [12:54:35][F_microarray_only×softimpute×24_peer_k10] Dataset ready: 4931 samples × 11274 genes (44s)
+  [F_microarray_only×softimpute×24_peer_k10] [12:54:35][F_microarray_only×softimpute×24_peer_k10] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×softimpute×24_peer_k10] [12:54:35][F_microarray_only×softimpute×24_peer_k10] Skipped (NotImplementedError): PEER R package not available for R 4.5: not on CRAN, Bioconductor, or GitHub.
+  [F_microarray_only×softimpute×24_peer_k10] [12:54:35][F_microarray_only×softimpute×24_peer_k10] Done: ['skipped', 'skipped'] total=44s
+  [71/72] SKIP F_microarray_only×softimpute×24_peer_k10 (51s)
+  [F_microarray_only×softimpute×21_harmonizr] Found 641 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Found22batches
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Adjusting for0covariate(s) or covariate level(s)
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Found1284Missing Data Values 
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Standardizing Data across genes
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Fitting L/S model and finding priors
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Finding parametric adjustments
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Adjusting the Data
+  [F_microarray_only×softimpute×21_harmonizr] 
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] R callback write-console: Writing file...
+  [F_microarray_only×softimpute×21_harmonizr]   
+  [F_microarray_only×softimpute×21_harmonizr] [13:26:04][F_microarray_only×softimpute×21_harmonizr] Normalization done (2441s)
+  [F_microarray_only×softimpute×21_harmonizr] [13:26:15][F_microarray_only×softimpute×21_harmonizr×post_rm=False] r2_batch=0.100 r2_diag=0.064 — uploading ...
+  [F_microarray_only×softimpute×21_harmonizr] [13:28:33][F_microarray_only×softimpute×21_harmonizr×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×21_harmonizr] [13:28:34][F_microarray_only×softimpute×21_harmonizr×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×21_harmonizr] [13:28:37][F_microarray_only×softimpute×21_harmonizr×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×softimpute×21_harmonizr] [13:28:47][F_microarray_only×softimpute×21_harmonizr×post_rm=True] r2_batch=0.100 r2_diag=0.074 — uploading ...
+  [F_microarray_only×softimpute×21_harmonizr] [13:31:02][F_microarray_only×softimpute×21_harmonizr×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×21_harmonizr] [13:31:02][F_microarray_only×softimpute×21_harmonizr] Done: ['ok', 'ok'] total=2788s
+  [72/72] F_microarray_only×softimpute×21_harmonizr (2795s) → ['ok', 'ok']
+Norm failed-jobs log written: /app/harmonization-scripts/failed_jobs_norm.txt (26 entries)
+[S3 sync] Uploaded 26 norm failed keys to s3://$FL_S3_BUCKET/FL_batch_correction/failed_norm_fl-batch-correction.txt
+Metrics uploaded: s3://$FL_S3_BUCKET/FL_batch_correction/metrics.csv (112 rows)

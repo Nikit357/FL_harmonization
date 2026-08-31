@@ -1,0 +1,3 @@
+# Strip notebook outputs on commit. Enable once per clone with:
+#   pip install nbstripout && nbstripout --install --attributes .gitattributes
+*.ipynb filter=nbstripout diff=ipynb

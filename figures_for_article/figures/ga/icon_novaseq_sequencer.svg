@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26">
+  <!--
+    Iconic NovaSeq-style Illumina sequencer, monochrome black.
+    Drawn for the NAR graphical abstract, to sit beside the "RNA-seq" label.
+
+    Geometry notes (viewBox 32 x 26 user units, y pointing down):
+      - body           : main instrument enclosure, rounded rectangle
+      - lid seam       : split between upper panel and instrument front
+      - branding block : solid bar on the upper-left panel
+      - flow cell door : large solid-black compartment on the left, with handle
+      - touchscreen    : control panel outline on the right, with two UI lines
+      - status light   : single indicator dot beside the screen
+      - base plinth    : slim dark foot that grounds the unit on the bench
+
+    All geometry is vector (no rasters) and all ink is #000000, except the door
+    handle, which is reversed out in white so it reads against the solid door.
+
+    Stroke weights are in user units, so they scale with the icon. At the
+    intended 7 mm final height the 0.95 u body stroke is 0.26 mm (0.73 pt) --
+    just above the ~0.25 mm print minimum. If the icon is placed much smaller
+    than 7 mm, scale the stroke widths up rather than letting them thin out.
+  -->
+  <g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- main enclosure -->
+    <rect x="2" y="3.6" width="28" height="16.6" rx="2" stroke-width="0.95"/>
+
+    <!-- lid seam across the upper panel -->
+    <path d="M2.9 8.1 H29.1" stroke-width="0.75"/>
+
+    <!-- control touchscreen (right) -->
+    <rect x="19.6" y="10.2" width="7.6" height="5.6" rx="0.8" stroke-width="0.8"/>
+
+    <!-- touchscreen UI lines -->
+    <path d="M21.3 12.1 H25.5" stroke-width="0.7"/>
+    <path d="M21.3 14.0 H23.9" stroke-width="0.7"/>
+  </g>
+
+  <!-- branding / label block on the upper panel -->
+  <rect x="5" y="5.1" width="7" height="1.6" rx="0.8" fill="#000000"/>
+
+  <!-- flow cell compartment door (left), solid -->
+  <rect x="5" y="10.2" width="11.6" height="7" rx="1" fill="#000000"/>
+
+  <!-- door handle, reversed out of the solid door -->
+  <path d="M6.9 13.7 H11.1" fill="none" stroke="#FFFFFF" stroke-width="1"
+        stroke-linecap="round"/>
+
+  <!-- status indicator -->
+  <circle cx="18" cy="17.9" r="0.85" fill="#000000"/>
+
+  <!-- base plinth -->
+  <rect x="6.8" y="20.2" width="18.4" height="1.9" rx="0.85" fill="#000000"/>
+</svg>

@@ -1,0 +1,518 @@
+Norm failed-jobs log written: /app/harmonization-scripts/failed_jobs_norm.txt (181 entries)
+[S3 sync] Merged 181 norm S3 keys → 181 total.
+[norm] 3 prepared pair(s) not yet on S3 — will be skipped (run run_prep_parallel.py first):
+  H_affymetrix_extended×strict, H_affymetrix_extended×knn, H_affymetrix_extended×softimpute
+[norm] 30 prepared pair(s) available for normalization.
+Norm jobs to run: 30  |  Workers: 2  |  Skip-if-exists: False  |  Timeout: 218000s  |  Memory guard: 20.0 GB
+[19:50:17] START S0_no_removal×strict×16_fsqn_r | free=133.1GB
+[19:50:17] START S0_no_removal×knn×16_fsqn_r | free=133.1GB
+  [S0_no_removal×knn×16_fsqn_r] [19:50:19][S0_no_removal×knn×16_fsqn_r] Downloading prepared dataset (free=132.7GB) ...
+  [S0_no_removal×strict×16_fsqn_r] [19:50:19][S0_no_removal×strict×16_fsqn_r] Downloading prepared dataset (free=132.7GB) ...
+  [S0_no_removal×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,142,144,145,146,147,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,300,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,437,438,439,440,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [S0_no_removal×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [S0_no_removal×strict×16_fsqn_r] [19:50:24][S0_no_removal×strict×16_fsqn_r] Dataset ready: 7174 samples × 3447 genes (6s)
+  [S0_no_removal×strict×16_fsqn_r] [19:50:24][S0_no_removal×strict×16_fsqn_r] Running normalization (7174 samples × 3447 genes) ...
+  [S0_no_removal×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,142,144,145,146,147,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,300,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,437,438,439,440,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [S0_no_removal×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [S0_no_removal×knn×16_fsqn_r] [19:50:42][S0_no_removal×knn×16_fsqn_r] Dataset ready: 7174 samples × 11768 genes (24s)
+  [S0_no_removal×knn×16_fsqn_r] [19:50:42][S0_no_removal×knn×16_fsqn_r] Running normalization (7174 samples × 11768 genes) ...
+  [S0_no_removal×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [S0_no_removal×strict×16_fsqn_r]   
+  [S0_no_removal×strict×16_fsqn_r] [19:52:13][S0_no_removal×strict×16_fsqn_r] Normalization done (109s)
+  [S0_no_removal×strict×16_fsqn_r] [19:52:22][S0_no_removal×strict×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.094 — uploading ...
+  [S0_no_removal×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [S0_no_removal×knn×16_fsqn_r]   
+  [S0_no_removal×strict×16_fsqn_r] [19:53:23][S0_no_removal×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [S0_no_removal×strict×16_fsqn_r] [19:53:23][S0_no_removal×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [S0_no_removal×strict×16_fsqn_r] [19:53:26][S0_no_removal×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [S0_no_removal×strict×16_fsqn_r] [19:53:33][S0_no_removal×strict×16_fsqn_r×post_rm=True] r2_batch=0.006 r2_diag=0.094 — uploading ...
+  [S0_no_removal×strict×16_fsqn_r] [19:54:43][S0_no_removal×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [S0_no_removal×strict×16_fsqn_r] [19:54:44][S0_no_removal×strict×16_fsqn_r] Done: ['ok', 'ok'] total=265s
+  [1/30] S0_no_removal×strict×16_fsqn_r (267s) → ['ok', 'ok']
+[19:54:44] START S0_no_removal×softimpute×16_fsqn_r | free=117.5GB
+  [S0_no_removal×softimpute×16_fsqn_r] [19:54:46][S0_no_removal×softimpute×16_fsqn_r] Downloading prepared dataset (free=117.3GB) ...
+  [S0_no_removal×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,142,144,145,146,147,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,300,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,437,438,439,440,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [S0_no_removal×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [S0_no_removal×softimpute×16_fsqn_r] [19:55:17][S0_no_removal×softimpute×16_fsqn_r] Dataset ready: 7174 samples × 11768 genes (31s)
+  [S0_no_removal×softimpute×16_fsqn_r] [19:55:17][S0_no_removal×softimpute×16_fsqn_r] Running normalization (7174 samples × 11768 genes) ...
+  [S0_no_removal×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [S0_no_removal×softimpute×16_fsqn_r]   
+  [S0_no_removal×knn×16_fsqn_r] [19:58:36][S0_no_removal×knn×16_fsqn_r] Normalization done (474s)
+  [S0_no_removal×knn×16_fsqn_r] [19:58:48][S0_no_removal×knn×16_fsqn_r×post_rm=False] r2_batch=0.004 r2_diag=0.084 — uploading ...
+  [S0_no_removal×softimpute×16_fsqn_r] [20:02:06][S0_no_removal×softimpute×16_fsqn_r] Normalization done (409s)
+  [S0_no_removal×softimpute×16_fsqn_r] [20:02:19][S0_no_removal×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.086 — uploading ...
+  [S0_no_removal×knn×16_fsqn_r] [20:02:30][S0_no_removal×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [S0_no_removal×knn×16_fsqn_r] [20:02:31][S0_no_removal×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [S0_no_removal×knn×16_fsqn_r] [20:02:35][S0_no_removal×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [S0_no_removal×knn×16_fsqn_r] [20:02:46][S0_no_removal×knn×16_fsqn_r×post_rm=True] r2_batch=0.004 r2_diag=0.084 — uploading ...
+  [S0_no_removal×softimpute×16_fsqn_r] [20:05:53][S0_no_removal×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [S0_no_removal×softimpute×16_fsqn_r] [20:05:53][S0_no_removal×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [S0_no_removal×softimpute×16_fsqn_r] [20:05:57][S0_no_removal×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [S0_no_removal×softimpute×16_fsqn_r] [20:06:08][S0_no_removal×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.006 r2_diag=0.086 — uploading ...
+  [S0_no_removal×knn×16_fsqn_r] [20:06:33][S0_no_removal×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [S0_no_removal×knn×16_fsqn_r] [20:06:34][S0_no_removal×knn×16_fsqn_r] Done: ['ok', 'ok'] total=975s
+  [2/30] S0_no_removal×knn×16_fsqn_r (978s) → ['ok', 'ok']
+[20:06:34] START A_confirmed_bad×strict×16_fsqn_r | free=103.5GB
+  [A_confirmed_bad×strict×16_fsqn_r] [20:06:36][A_confirmed_bad×strict×16_fsqn_r] Downloading prepared dataset (free=101.2GB) ...
+  [A_confirmed_bad×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [A_confirmed_bad×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [A_confirmed_bad×strict×16_fsqn_r] [20:06:47][A_confirmed_bad×strict×16_fsqn_r] Dataset ready: 5444 samples × 3520 genes (11s)
+  [A_confirmed_bad×strict×16_fsqn_r] [20:06:47][A_confirmed_bad×strict×16_fsqn_r] Running normalization (5444 samples × 3520 genes) ...
+  [A_confirmed_bad×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [A_confirmed_bad×strict×16_fsqn_r]   
+  [A_confirmed_bad×strict×16_fsqn_r] [20:08:10][A_confirmed_bad×strict×16_fsqn_r] Normalization done (83s)
+  [A_confirmed_bad×strict×16_fsqn_r] [20:08:18][A_confirmed_bad×strict×16_fsqn_r×post_rm=False] r2_batch=0.007 r2_diag=0.118 — uploading ...
+  [A_confirmed_bad×strict×16_fsqn_r] [20:09:06][A_confirmed_bad×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [A_confirmed_bad×strict×16_fsqn_r] [20:09:06][A_confirmed_bad×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [A_confirmed_bad×strict×16_fsqn_r] [20:09:07][A_confirmed_bad×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [A_confirmed_bad×strict×16_fsqn_r] [20:09:14][A_confirmed_bad×strict×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.119 — uploading ...
+  [S0_no_removal×softimpute×16_fsqn_r] [20:09:49][S0_no_removal×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [S0_no_removal×softimpute×16_fsqn_r] [20:09:50][S0_no_removal×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=904s
+[20:09:54] START A_confirmed_bad×knn×16_fsqn_r | free=103.6GB
+  [3/30] S0_no_removal×softimpute×16_fsqn_r (910s) → ['ok', 'ok']
+  [A_confirmed_bad×knn×16_fsqn_r] [20:09:56][A_confirmed_bad×knn×16_fsqn_r] Downloading prepared dataset (free=104.8GB) ...
+  [A_confirmed_bad×strict×16_fsqn_r] [20:10:11][A_confirmed_bad×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [A_confirmed_bad×strict×16_fsqn_r] [20:10:11][A_confirmed_bad×strict×16_fsqn_r] Done: ['ok', 'ok'] total=214s
+  [4/30] A_confirmed_bad×strict×16_fsqn_r (217s) → ['ok', 'ok']
+[20:10:11] START A_confirmed_bad×softimpute×16_fsqn_r | free=104.9GB
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:10:13][A_confirmed_bad×softimpute×16_fsqn_r] Downloading prepared dataset (free=104.6GB) ...
+  [A_confirmed_bad×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [A_confirmed_bad×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [A_confirmed_bad×knn×16_fsqn_r] [20:10:22][A_confirmed_bad×knn×16_fsqn_r] Dataset ready: 5444 samples × 15195 genes (26s)
+  [A_confirmed_bad×knn×16_fsqn_r] [20:10:22][A_confirmed_bad×knn×16_fsqn_r] Running normalization (5444 samples × 15195 genes) ...
+  [A_confirmed_bad×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [A_confirmed_bad×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:10:48][A_confirmed_bad×softimpute×16_fsqn_r] Dataset ready: 5444 samples × 15195 genes (35s)
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:10:48][A_confirmed_bad×softimpute×16_fsqn_r] Running normalization (5444 samples × 15195 genes) ...
+  [A_confirmed_bad×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [A_confirmed_bad×knn×16_fsqn_r]   
+  [A_confirmed_bad×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [A_confirmed_bad×softimpute×16_fsqn_r]   
+  [A_confirmed_bad×knn×16_fsqn_r] [20:18:41][A_confirmed_bad×knn×16_fsqn_r] Normalization done (499s)
+  [A_confirmed_bad×knn×16_fsqn_r] [20:18:53][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] r2_batch=0.004 r2_diag=0.106 — uploading ...
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:19:13][A_confirmed_bad×softimpute×16_fsqn_r] Normalization done (505s)
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:19:25][A_confirmed_bad×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.007 r2_diag=0.113 — uploading ...
+  [A_confirmed_bad×knn×16_fsqn_r] [20:22:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [A_confirmed_bad×knn×16_fsqn_r] [20:22:27][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [A_confirmed_bad×knn×16_fsqn_r] [20:22:33][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [A_confirmed_bad×knn×16_fsqn_r] [20:22:46][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] r2_batch=0.004 r2_diag=0.107 — uploading ...
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:23:00][A_confirmed_bad×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:23:02][A_confirmed_bad×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:23:07][A_confirmed_bad×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:23:18][A_confirmed_bad×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.114 — uploading ...
+  [A_confirmed_bad×knn×16_fsqn_r] [20:26:30][A_confirmed_bad×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [A_confirmed_bad×knn×16_fsqn_r] [20:26:30][A_confirmed_bad×knn×16_fsqn_r] Done: ['ok', 'ok'] total=994s
+  [5/30] A_confirmed_bad×knn×16_fsqn_r (997s) → ['ok', 'ok']
+[20:26:31] START B_extended_bad×strict×16_fsqn_r | free=102.3GB
+  [B_extended_bad×strict×16_fsqn_r] [20:26:33][B_extended_bad×strict×16_fsqn_r] Downloading prepared dataset (free=102.1GB) ...
+  [B_extended_bad×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,168,170,171,180,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [B_extended_bad×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [B_extended_bad×strict×16_fsqn_r] [20:26:41][B_extended_bad×strict×16_fsqn_r] Dataset ready: 5108 samples × 5658 genes (8s)
+  [B_extended_bad×strict×16_fsqn_r] [20:26:41][B_extended_bad×strict×16_fsqn_r] Running normalization (5108 samples × 5658 genes) ...
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:26:48][A_confirmed_bad×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [A_confirmed_bad×softimpute×16_fsqn_r] [20:26:49][A_confirmed_bad×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=995s
+  [6/30] A_confirmed_bad×softimpute×16_fsqn_r (998s) → ['ok', 'ok']
+[20:26:49] START B_extended_bad×knn×16_fsqn_r | free=106.0GB
+  [B_extended_bad×knn×16_fsqn_r] [20:26:51][B_extended_bad×knn×16_fsqn_r] Downloading prepared dataset (free=105.8GB) ...
+  [B_extended_bad×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [B_extended_bad×strict×16_fsqn_r]   
+  [B_extended_bad×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,168,170,171,180,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [B_extended_bad×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [B_extended_bad×knn×16_fsqn_r] [20:27:14][B_extended_bad×knn×16_fsqn_r] Dataset ready: 5108 samples × 15248 genes (23s)
+  [B_extended_bad×knn×16_fsqn_r] [20:27:14][B_extended_bad×knn×16_fsqn_r] Running normalization (5108 samples × 15248 genes) ...
+  [B_extended_bad×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [B_extended_bad×knn×16_fsqn_r]   
+  [B_extended_bad×strict×16_fsqn_r] [20:28:42][B_extended_bad×strict×16_fsqn_r] Normalization done (121s)
+  [B_extended_bad×strict×16_fsqn_r] [20:28:49][B_extended_bad×strict×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.125 — uploading ...
+  [B_extended_bad×strict×16_fsqn_r] [20:30:09][B_extended_bad×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [B_extended_bad×strict×16_fsqn_r] [20:30:09][B_extended_bad×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [B_extended_bad×strict×16_fsqn_r] [20:30:11][B_extended_bad×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [B_extended_bad×strict×16_fsqn_r] [20:30:18][B_extended_bad×strict×16_fsqn_r×post_rm=True] r2_batch=0.006 r2_diag=0.125 — uploading ...
+  [B_extended_bad×strict×16_fsqn_r] [20:31:30][B_extended_bad×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [B_extended_bad×strict×16_fsqn_r] [20:31:30][B_extended_bad×strict×16_fsqn_r] Done: ['ok', 'ok'] total=297s
+  [7/30] B_extended_bad×strict×16_fsqn_r (299s) → ['ok', 'ok']
+[20:31:30] START B_extended_bad×softimpute×16_fsqn_r | free=102.2GB
+  [B_extended_bad×softimpute×16_fsqn_r] [20:31:32][B_extended_bad×softimpute×16_fsqn_r] Downloading prepared dataset (free=102.0GB) ...
+  [B_extended_bad×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,168,170,171,180,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [B_extended_bad×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [B_extended_bad×softimpute×16_fsqn_r] [20:31:55][B_extended_bad×softimpute×16_fsqn_r] Dataset ready: 5108 samples × 15248 genes (23s)
+  [B_extended_bad×softimpute×16_fsqn_r] [20:31:55][B_extended_bad×softimpute×16_fsqn_r] Running normalization (5108 samples × 15248 genes) ...
+  [B_extended_bad×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [B_extended_bad×softimpute×16_fsqn_r]   
+  [B_extended_bad×knn×16_fsqn_r] [20:34:21][B_extended_bad×knn×16_fsqn_r] Normalization done (427s)
+  [B_extended_bad×knn×16_fsqn_r] [20:34:34][B_extended_bad×knn×16_fsqn_r×post_rm=False] r2_batch=0.005 r2_diag=0.116 — uploading ...
+  [B_extended_bad×knn×16_fsqn_r] [20:38:01][B_extended_bad×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [B_extended_bad×knn×16_fsqn_r] [20:38:01][B_extended_bad×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [B_extended_bad×knn×16_fsqn_r] [20:38:06][B_extended_bad×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [B_extended_bad×knn×16_fsqn_r] [20:38:19][B_extended_bad×knn×16_fsqn_r×post_rm=True] r2_batch=0.004 r2_diag=0.119 — uploading ...
+  [B_extended_bad×softimpute×16_fsqn_r] [20:38:48][B_extended_bad×softimpute×16_fsqn_r] Normalization done (413s)
+  [B_extended_bad×softimpute×16_fsqn_r] [20:39:02][B_extended_bad×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.007 r2_diag=0.123 — uploading ...
+  [B_extended_bad×knn×16_fsqn_r] [20:42:00][B_extended_bad×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [B_extended_bad×knn×16_fsqn_r] [20:42:01][B_extended_bad×knn×16_fsqn_r] Done: ['ok', 'ok'] total=910s
+  [8/30] B_extended_bad×knn×16_fsqn_r (912s) → ['ok', 'ok']
+[20:42:01] START C_rnaseq_only×strict×16_fsqn_r | free=101.5GB
+  [C_rnaseq_only×strict×16_fsqn_r] [20:42:04][C_rnaseq_only×strict×16_fsqn_r] Downloading prepared dataset (free=101.3GB) ...
+  [C_rnaseq_only×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,144,147,152,153,154,155,156,157,158,161,162,171,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,237,239,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,306,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,424,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [C_rnaseq_only×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [C_rnaseq_only×strict×16_fsqn_r] [20:42:08][C_rnaseq_only×strict×16_fsqn_r] Dataset ready: 2243 samples × 6797 genes (4s)
+  [C_rnaseq_only×strict×16_fsqn_r] [20:42:08][C_rnaseq_only×strict×16_fsqn_r] Running normalization (2243 samples × 6797 genes) ...
+  [C_rnaseq_only×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [C_rnaseq_only×strict×16_fsqn_r]   
+  [B_extended_bad×softimpute×16_fsqn_r] [20:42:28][B_extended_bad×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [B_extended_bad×softimpute×16_fsqn_r] [20:42:29][B_extended_bad×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [B_extended_bad×softimpute×16_fsqn_r] [20:42:33][B_extended_bad×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [B_extended_bad×softimpute×16_fsqn_r] [20:42:43][B_extended_bad×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.123 — uploading ...
+  [C_rnaseq_only×strict×16_fsqn_r] [20:43:21][C_rnaseq_only×strict×16_fsqn_r] Normalization done (73s)
+  [C_rnaseq_only×strict×16_fsqn_r] [20:43:29][C_rnaseq_only×strict×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.159 — uploading ...
+  [C_rnaseq_only×strict×16_fsqn_r] [20:44:08][C_rnaseq_only×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [C_rnaseq_only×strict×16_fsqn_r] [20:44:08][C_rnaseq_only×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [C_rnaseq_only×strict×16_fsqn_r] [20:44:10][C_rnaseq_only×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [C_rnaseq_only×strict×16_fsqn_r] [20:44:15][C_rnaseq_only×strict×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.160 — uploading ...
+  [C_rnaseq_only×strict×16_fsqn_r] [20:44:55][C_rnaseq_only×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [C_rnaseq_only×strict×16_fsqn_r] [20:44:56][C_rnaseq_only×strict×16_fsqn_r] Done: ['ok', 'ok'] total=173s
+  [9/30] C_rnaseq_only×strict×16_fsqn_r (175s) → ['ok', 'ok']
+[20:44:57] START C_rnaseq_only×knn×16_fsqn_r | free=100.3GB
+  [C_rnaseq_only×knn×16_fsqn_r] [20:45:02][C_rnaseq_only×knn×16_fsqn_r] Downloading prepared dataset (free=101.4GB) ...
+  [C_rnaseq_only×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,144,147,152,153,154,155,156,157,158,161,162,171,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,237,239,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,306,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,424,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [C_rnaseq_only×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [C_rnaseq_only×knn×16_fsqn_r] [20:45:16][C_rnaseq_only×knn×16_fsqn_r] Dataset ready: 2243 samples × 15885 genes (15s)
+  [C_rnaseq_only×knn×16_fsqn_r] [20:45:16][C_rnaseq_only×knn×16_fsqn_r] Running normalization (2243 samples × 15885 genes) ...
+  [C_rnaseq_only×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [C_rnaseq_only×knn×16_fsqn_r]   
+  [B_extended_bad×softimpute×16_fsqn_r] [20:46:15][B_extended_bad×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [B_extended_bad×softimpute×16_fsqn_r] [20:46:15][B_extended_bad×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=883s
+  [10/30] B_extended_bad×softimpute×16_fsqn_r (886s) → ['ok', 'ok']
+[20:46:16] START C_rnaseq_only×softimpute×16_fsqn_r | free=103.8GB
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:46:18][C_rnaseq_only×softimpute×16_fsqn_r] Downloading prepared dataset (free=103.6GB) ...
+  [C_rnaseq_only×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,144,147,152,153,154,155,156,157,158,161,162,171,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,237,239,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,306,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,424,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [C_rnaseq_only×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:46:29][C_rnaseq_only×softimpute×16_fsqn_r] Dataset ready: 2243 samples × 15885 genes (11s)
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:46:29][C_rnaseq_only×softimpute×16_fsqn_r] Running normalization (2243 samples × 15885 genes) ...
+  [C_rnaseq_only×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [C_rnaseq_only×softimpute×16_fsqn_r]   
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:48:12][C_rnaseq_only×softimpute×16_fsqn_r] Normalization done (103s)
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:48:20][C_rnaseq_only×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.005 r2_diag=0.165 — uploading ...
+  [C_rnaseq_only×knn×16_fsqn_r] [20:48:20][C_rnaseq_only×knn×16_fsqn_r] Normalization done (184s)
+  [C_rnaseq_only×knn×16_fsqn_r] [20:48:30][C_rnaseq_only×knn×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.154 — uploading ...
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:49:22][C_rnaseq_only×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:49:22][C_rnaseq_only×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:49:25][C_rnaseq_only×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:49:33][C_rnaseq_only×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.006 r2_diag=0.165 — uploading ...
+  [C_rnaseq_only×knn×16_fsqn_r] [20:50:10][C_rnaseq_only×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [C_rnaseq_only×knn×16_fsqn_r] [20:50:10][C_rnaseq_only×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [C_rnaseq_only×knn×16_fsqn_r] [20:50:14][C_rnaseq_only×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [C_rnaseq_only×knn×16_fsqn_r] [20:50:25][C_rnaseq_only×knn×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.154 — uploading ...
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:50:36][C_rnaseq_only×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [C_rnaseq_only×softimpute×16_fsqn_r] [20:50:36][C_rnaseq_only×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=258s
+  [11/30] C_rnaseq_only×softimpute×16_fsqn_r (260s) → ['ok', 'ok']
+[20:50:37] START D_malignant_only×strict×16_fsqn_r | free=110.7GB
+  [D_malignant_only×strict×16_fsqn_r] [20:50:39][D_malignant_only×strict×16_fsqn_r] Downloading prepared dataset (free=110.5GB) ...
+  [D_malignant_only×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,142,144,145,146,147,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,300,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,437,438,439,440,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [D_malignant_only×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [D_malignant_only×strict×16_fsqn_r] [20:50:44][D_malignant_only×strict×16_fsqn_r] Dataset ready: 6285 samples × 3447 genes (6s)
+  [D_malignant_only×strict×16_fsqn_r] [20:50:44][D_malignant_only×strict×16_fsqn_r] Running normalization (6285 samples × 3447 genes) ...
+  [D_malignant_only×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [D_malignant_only×strict×16_fsqn_r]   
+  [C_rnaseq_only×knn×16_fsqn_r] [20:51:57][C_rnaseq_only×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [C_rnaseq_only×knn×16_fsqn_r] [20:51:58][C_rnaseq_only×knn×16_fsqn_r] Done: ['ok', 'ok'] total=416s
+  [12/30] C_rnaseq_only×knn×16_fsqn_r (422s) → ['ok', 'ok']
+[20:51:58] START D_malignant_only×knn×16_fsqn_r | free=110.7GB
+  [D_malignant_only×knn×16_fsqn_r] [20:52:00][D_malignant_only×knn×16_fsqn_r] Downloading prepared dataset (free=110.5GB) ...
+  [D_malignant_only×strict×16_fsqn_r] [20:52:04][D_malignant_only×strict×16_fsqn_r] Normalization done (80s)
+  [D_malignant_only×strict×16_fsqn_r] [20:52:12][D_malignant_only×strict×16_fsqn_r×post_rm=False] r2_batch=0.002 r2_diag=0.039 — uploading ...
+  [D_malignant_only×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,142,144,145,146,147,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,300,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,437,438,439,440,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [D_malignant_only×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [D_malignant_only×knn×16_fsqn_r] [20:52:35][D_malignant_only×knn×16_fsqn_r] Dataset ready: 6285 samples × 15818 genes (34s)
+  [D_malignant_only×knn×16_fsqn_r] [20:52:35][D_malignant_only×knn×16_fsqn_r] Running normalization (6285 samples × 15818 genes) ...
+  [D_malignant_only×strict×16_fsqn_r] [20:53:06][D_malignant_only×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [D_malignant_only×strict×16_fsqn_r] [20:53:06][D_malignant_only×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [D_malignant_only×strict×16_fsqn_r] [20:53:08][D_malignant_only×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [D_malignant_only×strict×16_fsqn_r] [20:53:16][D_malignant_only×strict×16_fsqn_r×post_rm=True] r2_batch=0.001 r2_diag=0.039 — uploading ...
+  [D_malignant_only×strict×16_fsqn_r] [20:54:09][D_malignant_only×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [D_malignant_only×strict×16_fsqn_r] [20:54:09][D_malignant_only×strict×16_fsqn_r] Done: ['ok', 'ok'] total=210s
+  [13/30] D_malignant_only×strict×16_fsqn_r (213s) → ['ok', 'ok']
+[20:54:09] START D_malignant_only×softimpute×16_fsqn_r | free=105.2GB
+  [D_malignant_only×softimpute×16_fsqn_r] [20:54:11][D_malignant_only×softimpute×16_fsqn_r] Downloading prepared dataset (free=104.9GB) ...
+  [D_malignant_only×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [D_malignant_only×knn×16_fsqn_r]   
+  [D_malignant_only×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (5,6,8,9,12,14,15,16,17,18,21,22,23,24,25,27,28,29,30,33,35,36,37,38,41,42,43,45,47,48,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,68,69,70,71,74,75,76,77,79,82,84,86,88,90,91,92,93,94,97,98,100,101,103,104,106,111,113,114,117,118,119,121,122,127,129,130,131,132,133,134,141,142,144,145,146,147,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,300,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,437,438,439,440,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [D_malignant_only×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [D_malignant_only×softimpute×16_fsqn_r] [20:54:40][D_malignant_only×softimpute×16_fsqn_r] Dataset ready: 6285 samples × 15818 genes (29s)
+  [D_malignant_only×softimpute×16_fsqn_r] [20:54:40][D_malignant_only×softimpute×16_fsqn_r] Running normalization (6285 samples × 15818 genes) ...
+  [D_malignant_only×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [D_malignant_only×softimpute×16_fsqn_r]   
+  [D_malignant_only×knn×16_fsqn_r] [21:00:30][D_malignant_only×knn×16_fsqn_r] Normalization done (475s)
+  [D_malignant_only×knn×16_fsqn_r] [21:00:44][D_malignant_only×knn×16_fsqn_r×post_rm=False] r2_batch=0.002 r2_diag=0.039 — uploading ...
+  [D_malignant_only×softimpute×16_fsqn_r] [21:01:44][D_malignant_only×softimpute×16_fsqn_r] Normalization done (424s)
+  [D_malignant_only×softimpute×16_fsqn_r] [21:01:55][D_malignant_only×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.002 r2_diag=0.039 — uploading ...
+  [D_malignant_only×knn×16_fsqn_r] [21:05:06][D_malignant_only×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [D_malignant_only×knn×16_fsqn_r] [21:05:07][D_malignant_only×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [D_malignant_only×knn×16_fsqn_r] [21:05:12][D_malignant_only×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [D_malignant_only×knn×16_fsqn_r] [21:05:27][D_malignant_only×knn×16_fsqn_r×post_rm=True] r2_batch=0.001 r2_diag=0.039 — uploading ...
+  [D_malignant_only×softimpute×16_fsqn_r] [21:05:49][D_malignant_only×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [D_malignant_only×softimpute×16_fsqn_r] [21:05:50][D_malignant_only×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [D_malignant_only×softimpute×16_fsqn_r] [21:05:55][D_malignant_only×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL887_FFPE_Unknown']
+  [D_malignant_only×softimpute×16_fsqn_r] [21:06:08][D_malignant_only×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.001 r2_diag=0.039 — uploading ...
+  [D_malignant_only×softimpute×16_fsqn_r] [21:09:50][D_malignant_only×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [D_malignant_only×softimpute×16_fsqn_r] [21:09:50][D_malignant_only×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=939s
+  [14/30] D_malignant_only×softimpute×16_fsqn_r (943s) → ['ok', 'ok']
+[21:09:52] START E1_iterative_r1×strict×16_fsqn_r | free=96.0GB
+  [D_malignant_only×knn×16_fsqn_r] [21:09:53][D_malignant_only×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [D_malignant_only×knn×16_fsqn_r] [21:09:54][D_malignant_only×knn×16_fsqn_r] Done: ['ok', 'ok'] total=1074s
+  [E1_iterative_r1×strict×16_fsqn_r] [21:09:54][E1_iterative_r1×strict×16_fsqn_r] Downloading prepared dataset (free=99.3GB) ...
+  [15/30] D_malignant_only×knn×16_fsqn_r (1076s) → ['ok', 'ok']
+[21:09:54] START E1_iterative_r1×knn×16_fsqn_r | free=101.6GB
+  [E1_iterative_r1×knn×16_fsqn_r] [21:09:57][E1_iterative_r1×knn×16_fsqn_r] Downloading prepared dataset (free=101.2GB) ...
+  [E1_iterative_r1×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E1_iterative_r1×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E1_iterative_r1×strict×16_fsqn_r] [21:10:02][E1_iterative_r1×strict×16_fsqn_r] Dataset ready: 5420 samples × 5175 genes (8s)
+  [E1_iterative_r1×strict×16_fsqn_r] [21:10:02][E1_iterative_r1×strict×16_fsqn_r] Running normalization (5420 samples × 5175 genes) ...
+  [E1_iterative_r1×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E1_iterative_r1×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E1_iterative_r1×knn×16_fsqn_r] [21:10:21][E1_iterative_r1×knn×16_fsqn_r] Dataset ready: 5420 samples × 15196 genes (24s)
+  [E1_iterative_r1×knn×16_fsqn_r] [21:10:21][E1_iterative_r1×knn×16_fsqn_r] Running normalization (5420 samples × 15196 genes) ...
+  [E1_iterative_r1×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E1_iterative_r1×strict×16_fsqn_r]   
+  [E1_iterative_r1×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E1_iterative_r1×knn×16_fsqn_r]   
+  [E1_iterative_r1×strict×16_fsqn_r] [21:12:12][E1_iterative_r1×strict×16_fsqn_r] Normalization done (130s)
+  [E1_iterative_r1×strict×16_fsqn_r] [21:12:21][E1_iterative_r1×strict×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.119 — uploading ...
+  [E1_iterative_r1×strict×16_fsqn_r] [21:13:31][E1_iterative_r1×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [E1_iterative_r1×strict×16_fsqn_r] [21:13:31][E1_iterative_r1×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E1_iterative_r1×strict×16_fsqn_r] [21:13:33][E1_iterative_r1×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E1_iterative_r1×strict×16_fsqn_r] [21:13:39][E1_iterative_r1×strict×16_fsqn_r×post_rm=True] r2_batch=0.006 r2_diag=0.119 — uploading ...
+  [E1_iterative_r1×strict×16_fsqn_r] [21:14:49][E1_iterative_r1×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [E1_iterative_r1×strict×16_fsqn_r] [21:14:50][E1_iterative_r1×strict×16_fsqn_r] Done: ['ok', 'ok'] total=296s
+  [16/30] E1_iterative_r1×strict×16_fsqn_r (298s) → ['ok', 'ok']
+[21:14:50] START E1_iterative_r1×softimpute×16_fsqn_r | free=96.6GB
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:14:52][E1_iterative_r1×softimpute×16_fsqn_r] Downloading prepared dataset (free=96.4GB) ...
+  [E1_iterative_r1×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E1_iterative_r1×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:15:17][E1_iterative_r1×softimpute×16_fsqn_r] Dataset ready: 5420 samples × 15196 genes (25s)
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:15:17][E1_iterative_r1×softimpute×16_fsqn_r] Running normalization (5420 samples × 15196 genes) ...
+  [E1_iterative_r1×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E1_iterative_r1×softimpute×16_fsqn_r]   
+  [E1_iterative_r1×knn×16_fsqn_r] [21:18:23][E1_iterative_r1×knn×16_fsqn_r] Normalization done (482s)
+  [E1_iterative_r1×knn×16_fsqn_r] [21:18:34][E1_iterative_r1×knn×16_fsqn_r×post_rm=False] r2_batch=0.004 r2_diag=0.107 — uploading ...
+  [E1_iterative_r1×knn×16_fsqn_r] [21:22:09][E1_iterative_r1×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [E1_iterative_r1×knn×16_fsqn_r] [21:22:10][E1_iterative_r1×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E1_iterative_r1×knn×16_fsqn_r] [21:22:14][E1_iterative_r1×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E1_iterative_r1×knn×16_fsqn_r] [21:22:25][E1_iterative_r1×knn×16_fsqn_r×post_rm=True] r2_batch=0.004 r2_diag=0.107 — uploading ...
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:23:21][E1_iterative_r1×softimpute×16_fsqn_r] Normalization done (484s)
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:23:34][E1_iterative_r1×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.007 r2_diag=0.114 — uploading ...
+  [E1_iterative_r1×knn×16_fsqn_r] [21:26:07][E1_iterative_r1×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [E1_iterative_r1×knn×16_fsqn_r] [21:26:07][E1_iterative_r1×knn×16_fsqn_r] Done: ['ok', 'ok'] total=971s
+  [17/30] E1_iterative_r1×knn×16_fsqn_r (973s) → ['ok', 'ok']
+[21:26:08] START E2_iterative_r2×strict×16_fsqn_r | free=97.5GB
+  [E2_iterative_r2×strict×16_fsqn_r] [21:26:10][E2_iterative_r2×strict×16_fsqn_r] Downloading prepared dataset (free=97.3GB) ...
+  [E2_iterative_r2×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E2_iterative_r2×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E2_iterative_r2×strict×16_fsqn_r] [21:26:18][E2_iterative_r2×strict×16_fsqn_r] Dataset ready: 5387 samples × 5175 genes (8s)
+  [E2_iterative_r2×strict×16_fsqn_r] [21:26:18][E2_iterative_r2×strict×16_fsqn_r] Running normalization (5387 samples × 5175 genes) ...
+  [E2_iterative_r2×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E2_iterative_r2×strict×16_fsqn_r]   
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:27:00][E1_iterative_r1×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:27:01][E1_iterative_r1×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:27:05][E1_iterative_r1×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:27:17][E1_iterative_r1×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.113 — uploading ...
+  [E2_iterative_r2×strict×16_fsqn_r] [21:28:36][E2_iterative_r2×strict×16_fsqn_r] Normalization done (138s)
+  [E2_iterative_r2×strict×16_fsqn_r] [21:28:44][E2_iterative_r2×strict×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.120 — uploading ...
+  [E2_iterative_r2×strict×16_fsqn_r] [21:29:53][E2_iterative_r2×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [E2_iterative_r2×strict×16_fsqn_r] [21:29:53][E2_iterative_r2×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E2_iterative_r2×strict×16_fsqn_r] [21:29:55][E2_iterative_r2×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E2_iterative_r2×strict×16_fsqn_r] [21:30:03][E2_iterative_r2×strict×16_fsqn_r×post_rm=True] r2_batch=0.006 r2_diag=0.120 — uploading ...
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:30:52][E1_iterative_r1×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [E1_iterative_r1×softimpute×16_fsqn_r] [21:30:52][E1_iterative_r1×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=960s
+  [18/30] E1_iterative_r1×softimpute×16_fsqn_r (962s) → ['ok', 'ok']
+[21:30:52] START E2_iterative_r2×knn×16_fsqn_r | free=100.1GB
+  [E2_iterative_r2×knn×16_fsqn_r] [21:30:55][E2_iterative_r2×knn×16_fsqn_r] Downloading prepared dataset (free=99.9GB) ...
+  [E2_iterative_r2×strict×16_fsqn_r] [21:31:13][E2_iterative_r2×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [E2_iterative_r2×strict×16_fsqn_r] [21:31:14][E2_iterative_r2×strict×16_fsqn_r] Done: ['ok', 'ok'] total=304s
+  [19/30] E2_iterative_r2×strict×16_fsqn_r (306s) → ['ok', 'ok']
+[21:31:14] START E2_iterative_r2×softimpute×16_fsqn_r | free=100.3GB
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:31:16][E2_iterative_r2×softimpute×16_fsqn_r] Downloading prepared dataset (free=100.0GB) ...
+  [E2_iterative_r2×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E2_iterative_r2×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E2_iterative_r2×knn×16_fsqn_r] [21:31:19][E2_iterative_r2×knn×16_fsqn_r] Dataset ready: 5387 samples × 15196 genes (25s)
+  [E2_iterative_r2×knn×16_fsqn_r] [21:31:19][E2_iterative_r2×knn×16_fsqn_r] Running normalization (5387 samples × 15196 genes) ...
+  [E2_iterative_r2×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,301,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E2_iterative_r2×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:31:41][E2_iterative_r2×softimpute×16_fsqn_r] Dataset ready: 5387 samples × 15196 genes (25s)
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:31:41][E2_iterative_r2×softimpute×16_fsqn_r] Running normalization (5387 samples × 15196 genes) ...
+  [E2_iterative_r2×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E2_iterative_r2×knn×16_fsqn_r]   
+  [E2_iterative_r2×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E2_iterative_r2×softimpute×16_fsqn_r]   
+  [E2_iterative_r2×knn×16_fsqn_r] [21:39:04][E2_iterative_r2×knn×16_fsqn_r] Normalization done (465s)
+  [E2_iterative_r2×knn×16_fsqn_r] [21:39:18][E2_iterative_r2×knn×16_fsqn_r×post_rm=False] r2_batch=0.004 r2_diag=0.108 — uploading ...
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:39:28][E2_iterative_r2×softimpute×16_fsqn_r] Normalization done (467s)
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:39:40][E2_iterative_r2×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.007 r2_diag=0.112 — uploading ...
+  [E2_iterative_r2×knn×16_fsqn_r] [21:43:00][E2_iterative_r2×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [E2_iterative_r2×knn×16_fsqn_r] [21:43:01][E2_iterative_r2×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E2_iterative_r2×knn×16_fsqn_r] [21:43:06][E2_iterative_r2×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:43:08][E2_iterative_r2×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:43:10][E2_iterative_r2×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:43:18][E2_iterative_r2×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E2_iterative_r2×knn×16_fsqn_r] [21:43:22][E2_iterative_r2×knn×16_fsqn_r×post_rm=True] r2_batch=0.004 r2_diag=0.108 — uploading ...
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:43:32][E2_iterative_r2×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.111 — uploading ...
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:46:57][E2_iterative_r2×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [E2_iterative_r2×softimpute×16_fsqn_r] [21:46:57][E2_iterative_r2×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=941s
+  [20/30] E2_iterative_r2×softimpute×16_fsqn_r (944s) → ['ok', 'ok']
+[21:46:58] START E3_iterative_r3×strict×16_fsqn_r | free=97.0GB
+  [E3_iterative_r3×strict×16_fsqn_r] [21:47:00][E3_iterative_r3×strict×16_fsqn_r] Downloading prepared dataset (free=96.8GB) ...
+  [E2_iterative_r2×knn×16_fsqn_r] [21:47:01][E2_iterative_r2×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [E2_iterative_r2×knn×16_fsqn_r] [21:47:02][E2_iterative_r2×knn×16_fsqn_r] Done: ['ok', 'ok'] total=967s
+  [21/30] E2_iterative_r2×knn×16_fsqn_r (970s) → ['ok', 'ok']
+[21:47:03] START E3_iterative_r3×knn×16_fsqn_r | free=101.5GB
+  [E3_iterative_r3×knn×16_fsqn_r] [21:47:05][E3_iterative_r3×knn×16_fsqn_r] Downloading prepared dataset (free=101.3GB) ...
+  [E3_iterative_r3×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E3_iterative_r3×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E3_iterative_r3×strict×16_fsqn_r] [21:47:08][E3_iterative_r3×strict×16_fsqn_r] Dataset ready: 5256 samples × 5175 genes (8s)
+  [E3_iterative_r3×strict×16_fsqn_r] [21:47:08][E3_iterative_r3×strict×16_fsqn_r] Running normalization (5256 samples × 5175 genes) ...
+  [E3_iterative_r3×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E3_iterative_r3×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E3_iterative_r3×knn×16_fsqn_r] [21:47:28][E3_iterative_r3×knn×16_fsqn_r] Dataset ready: 5256 samples × 15227 genes (24s)
+  [E3_iterative_r3×knn×16_fsqn_r] [21:47:28][E3_iterative_r3×knn×16_fsqn_r] Running normalization (5256 samples × 15227 genes) ...
+  [E3_iterative_r3×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E3_iterative_r3×strict×16_fsqn_r]   
+  [E3_iterative_r3×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E3_iterative_r3×knn×16_fsqn_r]   
+  [E3_iterative_r3×strict×16_fsqn_r] [21:49:12][E3_iterative_r3×strict×16_fsqn_r] Normalization done (125s)
+  [E3_iterative_r3×strict×16_fsqn_r] [21:49:20][E3_iterative_r3×strict×16_fsqn_r×post_rm=False] r2_batch=0.006 r2_diag=0.121 — uploading ...
+  [E3_iterative_r3×strict×16_fsqn_r] [21:50:29][E3_iterative_r3×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [E3_iterative_r3×strict×16_fsqn_r] [21:50:29][E3_iterative_r3×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E3_iterative_r3×strict×16_fsqn_r] [21:50:30][E3_iterative_r3×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E3_iterative_r3×strict×16_fsqn_r] [21:50:37][E3_iterative_r3×strict×16_fsqn_r×post_rm=True] r2_batch=0.007 r2_diag=0.121 — uploading ...
+  [E3_iterative_r3×strict×16_fsqn_r] [21:51:45][E3_iterative_r3×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [E3_iterative_r3×strict×16_fsqn_r] [21:51:46][E3_iterative_r3×strict×16_fsqn_r] Done: ['ok', 'ok'] total=286s
+  [22/30] E3_iterative_r3×strict×16_fsqn_r (288s) → ['ok', 'ok']
+[21:51:46] START E3_iterative_r3×softimpute×16_fsqn_r | free=96.6GB
+  [E3_iterative_r3×softimpute×16_fsqn_r] [21:51:48][E3_iterative_r3×softimpute×16_fsqn_r] Downloading prepared dataset (free=96.5GB) ...
+  [E3_iterative_r3×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (6,9,23,28,36,41,42,43,45,48,54,55,58,59,62,63,70,74,75,77,82,84,88,90,92,94,98,100,101,104,113,114,127,130,131,132,133,134,141,142,144,145,146,149,150,151,152,153,154,155,156,157,158,161,162,163,164,165,166,168,170,171,180,182,183,184,185,186,193,194,196,199,201,202,206,207,211,213,214,218,221,222,223,226,227,231,232,235,236,237,238,239,240,241,242,243,244,246,247,249,251,253,254,257,258,259,261,262,263,264,266,267,268,269,271,272,273,274,275,276,277,278,279,280,281,282,283,285,287,288,289,291,294,295,299,304,305,306,307,308,309,310,311,315,317,319,322,323,325,327,330,332,334,336,338,342,344,346,348,349,355,356,357,358,360,361,362,363,368,370,371,372,375,377,383,384,388,389,393,394,395,396,397,398,399,400,401,402,403,404,405,406,408,409,410,411,412,413,414,415,416,418,419,420,421,422,423,424,425,426,427,428,429,430,431,441,442,443,444,445,447,448,451,452,453,455,456,457,460,461,462,463,465,466,467,468,469,470,472,473,474,477,478,479,482,483) have mixed types. Specify dtype option on import or set low_memory=False.
+  [E3_iterative_r3×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [E3_iterative_r3×softimpute×16_fsqn_r] [21:52:12][E3_iterative_r3×softimpute×16_fsqn_r] Dataset ready: 5256 samples × 15227 genes (24s)
+  [E3_iterative_r3×softimpute×16_fsqn_r] [21:52:12][E3_iterative_r3×softimpute×16_fsqn_r] Running normalization (5256 samples × 15227 genes) ...
+  [E3_iterative_r3×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [E3_iterative_r3×softimpute×16_fsqn_r]   
+  [E3_iterative_r3×knn×16_fsqn_r] [21:55:00][E3_iterative_r3×knn×16_fsqn_r] Normalization done (452s)
+  [E3_iterative_r3×knn×16_fsqn_r] [21:55:13][E3_iterative_r3×knn×16_fsqn_r×post_rm=False] r2_batch=0.004 r2_diag=0.110 — uploading ...
+  [E3_iterative_r3×knn×16_fsqn_r] [21:58:38][E3_iterative_r3×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [E3_iterative_r3×knn×16_fsqn_r] [21:58:39][E3_iterative_r3×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E3_iterative_r3×knn×16_fsqn_r] [21:58:43][E3_iterative_r3×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E3_iterative_r3×knn×16_fsqn_r] [21:58:55][E3_iterative_r3×knn×16_fsqn_r×post_rm=True] r2_batch=0.004 r2_diag=0.110 — uploading ...
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:00:03][E3_iterative_r3×softimpute×16_fsqn_r] Normalization done (470s)
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:00:15][E3_iterative_r3×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.007 r2_diag=0.113 — uploading ...
+  [E3_iterative_r3×knn×16_fsqn_r] [22:02:28][E3_iterative_r3×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [E3_iterative_r3×knn×16_fsqn_r] [22:02:28][E3_iterative_r3×knn×16_fsqn_r] Done: ['ok', 'ok'] total=924s
+  [23/30] E3_iterative_r3×knn×16_fsqn_r (926s) → ['ok', 'ok']
+[22:02:29] START F_microarray_only×strict×16_fsqn_r | free=97.0GB
+  [F_microarray_only×strict×16_fsqn_r] [22:02:31][F_microarray_only×strict×16_fsqn_r] Downloading prepared dataset (free=96.9GB) ...
+  [F_microarray_only×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×strict×16_fsqn_r] [22:02:35][F_microarray_only×strict×16_fsqn_r] Dataset ready: 4931 samples × 3447 genes (4s)
+  [F_microarray_only×strict×16_fsqn_r] [22:02:35][F_microarray_only×strict×16_fsqn_r] Running normalization (4931 samples × 3447 genes) ...
+  [F_microarray_only×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [F_microarray_only×strict×16_fsqn_r]   
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:03:38][E3_iterative_r3×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:03:39][E3_iterative_r3×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:03:43][E3_iterative_r3×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['RNASeq_FF_Total']
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:03:55][E3_iterative_r3×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.008 r2_diag=0.112 — uploading ...
+  [F_microarray_only×strict×16_fsqn_r] [22:04:36][F_microarray_only×strict×16_fsqn_r] Normalization done (121s)
+  [F_microarray_only×strict×16_fsqn_r] [22:04:42][F_microarray_only×strict×16_fsqn_r×post_rm=False] r2_batch=0.561 r2_diag=0.186 — uploading ...
+  [F_microarray_only×strict×16_fsqn_r] [22:05:23][F_microarray_only×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [F_microarray_only×strict×16_fsqn_r] [22:05:23][F_microarray_only×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×strict×16_fsqn_r] [22:05:25][F_microarray_only×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×strict×16_fsqn_r] [22:05:31][F_microarray_only×strict×16_fsqn_r×post_rm=True] r2_batch=0.536 r2_diag=0.187 — uploading ...
+  [F_microarray_only×strict×16_fsqn_r] [22:06:13][F_microarray_only×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [F_microarray_only×strict×16_fsqn_r] [22:06:13][F_microarray_only×strict×16_fsqn_r] Done: ['ok', 'ok'] total=222s
+  [24/30] F_microarray_only×strict×16_fsqn_r (225s) → ['ok', 'ok']
+[22:06:13] START F_microarray_only×knn×16_fsqn_r | free=97.0GB
+  [F_microarray_only×knn×16_fsqn_r] [22:06:15][F_microarray_only×knn×16_fsqn_r] Downloading prepared dataset (free=96.8GB) ...
+  [F_microarray_only×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×knn×16_fsqn_r] [22:06:31][F_microarray_only×knn×16_fsqn_r] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×knn×16_fsqn_r] [22:06:31][F_microarray_only×knn×16_fsqn_r] Running normalization (4931 samples × 11274 genes) ...
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:07:24][E3_iterative_r3×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [E3_iterative_r3×softimpute×16_fsqn_r] [22:07:25][E3_iterative_r3×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=937s
+  [25/30] E3_iterative_r3×softimpute×16_fsqn_r (940s) → ['ok', 'ok']
+[22:07:26] START F_microarray_only×softimpute×16_fsqn_r | free=99.5GB
+  [F_microarray_only×softimpute×16_fsqn_r] [22:07:28][F_microarray_only×softimpute×16_fsqn_r] Downloading prepared dataset (free=99.3GB) ...
+  [F_microarray_only×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,45,47,50,51,52,53,56,60,61,64,65,68,69,76,79,86,88,90,91,93,97,101,103,106,111,113,117,118,121,122,129,142,144,145,146,147,149,150,151,162,163,164,165,166,168,170,171,173,174,176,178,179,180,182,235,236,237,238,239,240,241,242,243,249,251,253,254,258,295,299,300,301,304,305,306,307,308,309,310,311,419,420,421,422,423,424,425,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [F_microarray_only×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [F_microarray_only×softimpute×16_fsqn_r] [22:07:44][F_microarray_only×softimpute×16_fsqn_r] Dataset ready: 4931 samples × 11274 genes (16s)
+  [F_microarray_only×softimpute×16_fsqn_r] [22:07:44][F_microarray_only×softimpute×16_fsqn_r] Running normalization (4931 samples × 11274 genes) ...
+  [F_microarray_only×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [F_microarray_only×knn×16_fsqn_r]   
+  [F_microarray_only×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [F_microarray_only×softimpute×16_fsqn_r]   
+  [F_microarray_only×knn×16_fsqn_r] [22:12:57][F_microarray_only×knn×16_fsqn_r] Normalization done (385s)
+  [F_microarray_only×knn×16_fsqn_r] [22:13:08][F_microarray_only×knn×16_fsqn_r×post_rm=False] r2_batch=0.619 r2_diag=0.191 — uploading ...
+  [F_microarray_only×softimpute×16_fsqn_r] [22:14:49][F_microarray_only×softimpute×16_fsqn_r] Normalization done (425s)
+  [F_microarray_only×softimpute×16_fsqn_r] [22:15:00][F_microarray_only×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.681 r2_diag=0.178 — uploading ...
+  [F_microarray_only×knn×16_fsqn_r] [22:15:33][F_microarray_only×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [F_microarray_only×knn×16_fsqn_r] [22:15:33][F_microarray_only×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×knn×16_fsqn_r] [22:15:36][F_microarray_only×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×knn×16_fsqn_r] [22:15:46][F_microarray_only×knn×16_fsqn_r×post_rm=True] r2_batch=0.584 r2_diag=0.195 — uploading ...
+  [F_microarray_only×softimpute×16_fsqn_r] [22:17:28][F_microarray_only×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [F_microarray_only×softimpute×16_fsqn_r] [22:17:28][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [F_microarray_only×softimpute×16_fsqn_r] [22:17:32][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [F_microarray_only×softimpute×16_fsqn_r] [22:17:43][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.670 r2_diag=0.177 — uploading ...
+  [F_microarray_only×knn×16_fsqn_r] [22:18:10][F_microarray_only×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [F_microarray_only×knn×16_fsqn_r] [22:18:10][F_microarray_only×knn×16_fsqn_r] Done: ['ok', 'ok'] total=714s
+  [26/30] F_microarray_only×knn×16_fsqn_r (717s) → ['ok', 'ok']
+[22:18:11] START G_affymetrix_only×strict×16_fsqn_r | free=95.1GB
+  [G_affymetrix_only×strict×16_fsqn_r] [22:18:13][G_affymetrix_only×strict×16_fsqn_r] Downloading prepared dataset (free=94.9GB) ...
+  [G_affymetrix_only×strict×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×strict×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×strict×16_fsqn_r] [22:18:18][G_affymetrix_only×strict×16_fsqn_r] Dataset ready: 2801 samples × 6710 genes (5s)
+  [G_affymetrix_only×strict×16_fsqn_r] [22:18:18][G_affymetrix_only×strict×16_fsqn_r] Running normalization (2801 samples × 6710 genes) ...
+  [G_affymetrix_only×strict×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [G_affymetrix_only×strict×16_fsqn_r]   
+  [F_microarray_only×softimpute×16_fsqn_r] [22:20:00][F_microarray_only×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [F_microarray_only×softimpute×16_fsqn_r] [22:20:01][F_microarray_only×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=753s
+  [27/30] F_microarray_only×softimpute×16_fsqn_r (756s) → ['ok', 'ok']
+[22:20:01] START G_affymetrix_only×knn×16_fsqn_r | free=99.2GB
+  [G_affymetrix_only×knn×16_fsqn_r] [22:20:03][G_affymetrix_only×knn×16_fsqn_r] Downloading prepared dataset (free=99.0GB) ...
+  [G_affymetrix_only×knn×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×knn×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×knn×16_fsqn_r] [22:20:13][G_affymetrix_only×knn×16_fsqn_r] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×knn×16_fsqn_r] [22:20:13][G_affymetrix_only×knn×16_fsqn_r] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×strict×16_fsqn_r] [22:20:45][G_affymetrix_only×strict×16_fsqn_r] Normalization done (147s)
+  [G_affymetrix_only×strict×16_fsqn_r] [22:20:52][G_affymetrix_only×strict×16_fsqn_r×post_rm=False] r2_batch=0.158 r2_diag=0.226 — uploading ...
+  [G_affymetrix_only×knn×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [G_affymetrix_only×knn×16_fsqn_r]   
+  [G_affymetrix_only×strict×16_fsqn_r] [22:21:41][G_affymetrix_only×strict×16_fsqn_r×post_rm=False] Upload complete.
+  [G_affymetrix_only×strict×16_fsqn_r] [22:21:42][G_affymetrix_only×strict×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×strict×16_fsqn_r] [22:21:43][G_affymetrix_only×strict×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×strict×16_fsqn_r] [22:21:50][G_affymetrix_only×strict×16_fsqn_r×post_rm=True] r2_batch=0.090 r2_diag=0.066 — uploading ...
+  [G_affymetrix_only×strict×16_fsqn_r] [22:22:25][G_affymetrix_only×strict×16_fsqn_r×post_rm=True] Upload complete.
+  [G_affymetrix_only×strict×16_fsqn_r] [22:22:25][G_affymetrix_only×strict×16_fsqn_r] Done: ['ok', 'ok'] total=252s
+  [28/30] G_affymetrix_only×strict×16_fsqn_r (255s) → ['ok', 'ok']
+[22:22:25] START G_affymetrix_only×softimpute×16_fsqn_r | free=98.3GB
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:22:27][G_affymetrix_only×softimpute×16_fsqn_r] Downloading prepared dataset (free=98.1GB) ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] /app/harmonization-scripts/bench_shared.py:563: DtypeWarning: Columns (8,9,12,14,16,17,18,21,22,25,27,29,30,33,35,37,38,41,43,47,50,51,52,53,56,60,61,64,65,69,76,79,86,91,93,97,103,106,111,117,118,122,129,142,144,145,146,147,149,150,151,162,163,164,165,168,235,236,237,238,239,240,241,242,243,249,251,253,295,299,304,305,306,307,308,310,311,424,437,438,439,440) have mixed types. Specify dtype option on import or set low_memory=False.
+  [G_affymetrix_only×softimpute×16_fsqn_r]   return pd.read_csv(gz, sep="\t", index_col=0)
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:22:37][G_affymetrix_only×softimpute×16_fsqn_r] Dataset ready: 2801 samples × 11207 genes (10s)
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:22:37][G_affymetrix_only×softimpute×16_fsqn_r] Running normalization (2801 samples × 11207 genes) ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] R callback write-console: Loading required package: preprocessCore
+  [G_affymetrix_only×softimpute×16_fsqn_r]   
+  [G_affymetrix_only×knn×16_fsqn_r] [22:24:28][G_affymetrix_only×knn×16_fsqn_r] Normalization done (255s)
+  [G_affymetrix_only×knn×16_fsqn_r] [22:24:38][G_affymetrix_only×knn×16_fsqn_r×post_rm=False] r2_batch=0.162 r2_diag=0.219 — uploading ...
+  [G_affymetrix_only×knn×16_fsqn_r] [22:26:01][G_affymetrix_only×knn×16_fsqn_r×post_rm=False] Upload complete.
+  [G_affymetrix_only×knn×16_fsqn_r] [22:26:02][G_affymetrix_only×knn×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×knn×16_fsqn_r] [22:26:04][G_affymetrix_only×knn×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×knn×16_fsqn_r] [22:26:13][G_affymetrix_only×knn×16_fsqn_r×post_rm=True] r2_batch=0.092 r2_diag=0.064 — uploading ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:26:58][G_affymetrix_only×softimpute×16_fsqn_r] Normalization done (261s)
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:27:08][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=False] r2_batch=0.162 r2_diag=0.212 — uploading ...
+  [G_affymetrix_only×knn×16_fsqn_r] [22:27:16][G_affymetrix_only×knn×16_fsqn_r×post_rm=True] Upload complete.
+  [G_affymetrix_only×knn×16_fsqn_r] [22:27:16][G_affymetrix_only×knn×16_fsqn_r] Done: ['ok', 'ok'] total=433s
+  [29/30] G_affymetrix_only×knn×16_fsqn_r (436s) → ['ok', 'ok']
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:28:31][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=False] Upload complete.
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:28:31][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] Identifying outlier batches ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:28:34][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] Removing 1 outlier batch(es): ['GPL570_FF_Unknown']
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:28:42][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] r2_batch=0.092 r2_diag=0.064 — uploading ...
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:29:40][G_affymetrix_only×softimpute×16_fsqn_r×post_rm=True] Upload complete.
+  [G_affymetrix_only×softimpute×16_fsqn_r] [22:29:40][G_affymetrix_only×softimpute×16_fsqn_r] Done: ['ok', 'ok'] total=433s
+  [30/30] G_affymetrix_only×softimpute×16_fsqn_r (435s) → ['ok', 'ok']
+[S3 sync] Uploaded 181 norm failed keys to s3://$FL_S3_BUCKET/FL_batch_correction/failed_norm_local.txt
+Metrics uploaded: s3://$FL_S3_BUCKET/FL_batch_correction/metrics.csv (60 rows)

@@ -1,0 +1,11 @@
+strat,imp,n_samples,n_genes,status
+S0_no_removal,softimpute,,,cached
+A_confirmed_bad,softimpute,,,cached
+B_extended_bad,softimpute,,,cached
+C_rnaseq_only,softimpute,2243.0,15885.0,ok
+D_malignant_only,softimpute,6285.0,15818.0,ok
+E1_iterative_r1,softimpute,5420.0,15196.0,ok
+E2_iterative_r2,softimpute,5387.0,15196.0,ok
+E3_iterative_r3,softimpute,5256.0,15227.0,ok
+F_microarray_only,softimpute,4931.0,11274.0,ok
+G_affymetrix_only,softimpute,,,cached
