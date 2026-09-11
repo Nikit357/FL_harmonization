@@ -37,6 +37,14 @@ python run_metrics_job.py \\
     --strat C_rnaseq_only --imp softimpute --method 04_sva --post-rm False \\
     --out-json /tmp/metrics.json --out-genes-json /tmp/genes.json \\
     --groups N --force-groups N --n-perm 200
+
+# Add the Group L `_narrow_set` aggregates to a sidecar that already has Group L. No
+# --force-groups is needed: Group L's second sentinel key is missing, so the incremental
+# check schedules it on its own.
+python run_metrics_job.py \\
+    --strat C_rnaseq_only --imp softimpute --method 04_sva --post-rm False \\
+    --out-json /tmp/metrics.json --out-genes-json /tmp/genes.json \\
+    --groups L --skip-wm True --ref-cache-dir /workspace/ref_cache
 """
 
 from __future__ import annotations
@@ -80,7 +88,11 @@ from marker_panels import panel_genes
 
 # ── Incremental computation ────────────────────────────────────────────────────
 
-GROUP_SENTINEL_KEYS: dict[str, str] = {
+# One sentinel key per group, or a tuple when a group has gained a new metric family: a
+# group counts as complete only when EVERY listed key is populated. Listing the new key
+# is what makes every already-finished sidecar resume that group automatically on the
+# next run — no --force-groups, and no way to end up with a half-populated group.
+GROUP_SENTINEL_KEYS: dict[str, str | tuple[str, ...]] = {
     "E": "n_samples",
     "A": "r2_RNA_BATCH",
     "B": "kbet_acceptance_rate_RNA_BATCH",
@@ -92,7 +104,7 @@ GROUP_SENTINEL_KEYS: dict[str, str] = {
     "I": "wm_RNA_BATCH",
     "J": "pct_var_pc1",
     "K": "n_genes_noNA",
-    "L": "mk_rho_mean_all_genes",
+    "L": ("mk_rho_mean_all_genes", "mk_rho_mean_all_genes_narrow_set"),
     "M": "xb_rank_agree",
     "N": "pv_lobo3_f1_macro_mean",
 }
@@ -129,7 +141,11 @@ def _groups_to_recompute(
             missing.add(g)
             continue
         sentinel = GROUP_SENTINEL_KEYS.get(g)
-        if sentinel is None or prior.get(sentinel) is None:
+        if sentinel is None:
+            missing.add(g)
+            continue
+        keys = (sentinel,) if isinstance(sentinel, str) else sentinel
+        if any(prior.get(k) is None for k in keys):
             missing.add(g)
     return missing
 

@@ -10,7 +10,9 @@ Two rules are implemented:
 
 R2  No expression and no annotation from a proprietary cohort may be published, including
     sample names. Redaction is row-wise: every column survives, the 1,996 proprietary rows
-    do not.
+    do not. `comb_ann_public.csv` is the exception that proves the rule — it arrives
+    already row-filtered, yet 76 of its surviving rows still named a proprietary sample in
+    a *column*, so that table is redacted column-wise as well.
 R3  An internal, unpublished label is removed from `Major_group` and `Diagnosis_with_coo`.
     It is a *label rename only*; no sample changes group, so no published count moves.
     The label itself is not written here — the public tables no longer contain it, and
@@ -48,6 +50,8 @@ SUPP = ROOT / "figures_for_article"
 SOT_DIR = Path("figures_for_article") / "supplementary_260824"
 SHORT_NAME = "Supplementary File 1 short.csv"
 FULL_NAME = "Supplementary File 1.csv"
+
+COMB_ANN_NAME = "comb_ann_public.csv"
 
 EXPECTED_COHORTS = 15
 EXPECTED_PROP_IDS = 1996
@@ -227,6 +231,130 @@ def redact_supp_file_1(
     return f"{len(rows)} → {len(kept)} rows, {renames} legacy-label renames"
 
 
+def parse_column_renames(spec: str | None) -> dict[str, str]:
+    """
+    Parses a ``old=new,old=new`` command-line spec into a rename mapping.
+
+    Parameters
+    ----------
+    spec:
+        Comma-separated ``old=new`` pairs, or None.
+
+    Returns
+    -------
+    dict[str, str]
+        Empty when no spec is given, which makes the rename a no-op.
+    """
+    if not spec:
+        return {}
+    pairs = {}
+    for item in spec.split(","):
+        old, _, new = item.partition("=")
+        if not old.strip() or not new.strip():
+            raise ValueError(f"bad --legacy-columns entry: {item!r}")
+        pairs[old.strip()] = new.strip()
+    return pairs
+
+
+def redact_comb_ann_public(
+    path: Path,
+    prop_ids: set[str],
+    legacy_label: str | None,
+    column_renames: dict[str, str],
+    check: bool,
+) -> str:
+    """
+    Redacts the deposited annotation table in place.
+
+    Five edits, all idempotent, so a second run against an already-redacted file
+    reports zeros and writes an identical table:
+
+    1. R2 — blanks `PUBLIC_SAMPLE_LABEL` wherever it holds a proprietary sample name.
+       The table is already row-filtered to the open cohorts, but that filter keys on
+       the index; open-cohort rows can still carry a proprietary label in this column.
+    2. R3 — the same `Major_group` / `Diagnosis_with_coo` rename applied to
+       Supplementary File 1, via `scrub_legacy_label`, then a sweep of *every*
+       remaining column for the same label. The sweep is what makes this table safe:
+       it carries the label in a third column, `Diagnosis_cell_type_general`, that
+       Supplementary File 1 does not have, so naming columns explicitly misses 710
+       cells here.
+    3. Drops `AUTHOR`, which holds a colleague's work address in every populated row.
+    4. Drops every column empty across all rows — internal-schema names with no
+       content, two of which also carry the internal product name in the header.
+    5. Renames the columns named in `column_renames`, supplied on the command line for
+       the same reason as `legacy_label`.
+
+    Parameters
+    ----------
+    path:
+        The annotation CSV, rewritten in place unless `check`.
+    prop_ids:
+        The proprietary sample-ID set used for edit 1.
+    legacy_label:
+        Internal group label for edit 2; None makes it a no-op.
+    column_renames:
+        Header mapping for edit 5; empty makes it a no-op.
+    check:
+        Report only; write nothing.
+
+    Returns
+    -------
+    str
+        One-line summary of what changed.
+    """
+    rows = list(csv.DictReader(path.open(encoding="utf-8")))
+    fields = list(rows[0])
+
+    blanked = 0
+    for row in rows:
+        if row.get("PUBLIC_SAMPLE_LABEL") in prop_ids:
+            row["PUBLIC_SAMPLE_LABEL"] = ""
+            blanked += 1
+
+    renames = sum(scrub_legacy_label(r, legacy_label) for r in rows)
+    swept = 0
+    if legacy_label:
+        for row in rows:
+            for col, value in row.items():
+                if value == legacy_label:
+                    row[col] = LEGACY_LABEL_REPLACEMENT
+                    swept += 1
+                elif value.startswith(legacy_label + "_"):
+                    row[col] = (
+                        LEGACY_LABEL_REPLACEMENT + value[len(legacy_label) + 1:]
+                    )
+                    swept += 1
+
+    dropped_pii = [c for c in ("AUTHOR",) if c in fields]
+    # A column counts as empty only if no row holds a non-blank value. Testing the
+    # raw strings is what makes this correct here: every value arrives from csv as a
+    # str, so "" is the only empty, and a pandas-style truthiness test on a coerced
+    # column would keep all 486.
+    dropped_empty = [
+        c for c in fields
+        if c not in dropped_pii and not any(r[c].strip() for r in rows)
+    ]
+    drop = set(dropped_pii) | set(dropped_empty)
+    kept_fields = [c for c in fields if c not in drop]
+
+    renamed = {o: n for o, n in column_renames.items() if o in kept_fields}
+    out_fields = [renamed.get(c, c) for c in kept_fields]
+
+    if not check:
+        with path.open("w", newline="", encoding="utf-8") as fh:
+            w = csv.writer(fh)
+            w.writerow(out_fields)
+            for row in rows:
+                w.writerow([row[c] for c in kept_fields])
+
+    return (
+        f"{len(rows)} rows kept; {len(fields)} → {len(kept_fields)} columns "
+        f"({len(dropped_empty)} empty, {len(dropped_pii)} PII); "
+        f"{blanked} sample labels blanked, {renames} legacy-label renames "
+        f"(+{swept} swept from other columns), {len(renamed)} columns renamed"
+    )
+
+
 def redact_supp_file_2_csv(path: Path, is_public, check: bool) -> str:
     with path.open(encoding="utf-8") as fh:
         reader = csv.reader(fh)
@@ -306,10 +434,14 @@ def main() -> int:
     ap.add_argument("--legacy-label", default=None,
                     help="internal Major_group label to rename to "
                          f"{LEGACY_LABEL_REPLACEMENT!r}; omit against a redacted tree")
+    ap.add_argument("--legacy-columns", default=None,
+                    help="comma-separated old=new column headers to rename in "
+                         f"{COMB_ANN_NAME}; omit against a redacted tree")
     ap.add_argument("--source-root", type=Path, default=ROOT,
                     help="repository holding the unredacted source-of-truth tables "
                          "(default: this repository)")
     args = ap.parse_args()
+    column_renames = parse_column_renames(args.legacy_columns)
 
     try:
         loaded = load_cohort_tables(args.source_root.resolve())
@@ -338,6 +470,11 @@ def main() -> int:
         print(f"[SF2 ] {path.relative_to(ROOT)}\n       {redact_supp_file_2_csv(path, is_public, args.check)}")
     for path in sorted(SUPP.rglob("Supplementary File 2.xlsx")):
         print(f"[SF2x] {path.relative_to(ROOT)}\n       {redact_supp_file_2_xlsx(path, is_public, args.check)}")
+
+    comb_ann = ROOT / COMB_ANN_NAME
+    if comb_ann.exists():
+        print(f"[ANN ] {comb_ann.relative_to(ROOT)}\n       "
+              f"{redact_comb_ann_public(comb_ann, prop_ids, args.legacy_label, column_renames, args.check)}")
 
     log_dir = ROOT / "shambhala_adoption" / "Shambhala_containerized" / "logs"
     for name in ("shambhala_pod_logs_260516.txt", "shambhala_pod_logs_260517.txt"):

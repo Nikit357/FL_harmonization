@@ -112,10 +112,11 @@ Hierarchy: **strategy > method > post-removal > imputation**. Full details in `p
 | `harmonization-scripts/run_norm_parallel.py` | Stage 2 dispatcher: normalization jobs |
 | `harmonization-scripts/run_norm_job.py` | Stage 2 worker: download prepared → normalize → upload two post_rm variants |
 | `harmonization-metrics-calculation/compute_batch_metrics.py` | Core library: 14 metric group functions (A–N) + `compute_all_metrics()`; groups L/M/N are the blind check and are excluded from the clustermap |
-| `harmonization-metrics-calculation/marker_gene_annotation.csv` | Gene panel source of truth for groups L/M: 633 genes, 63 signatures, cell type / pathway / TME subtype / prognosis / source per gene |
-| `harmonization-metrics-calculation/marker_panels.py` | Loader over the gene annotation CSV (`panel_genes()`, `resolve_panel()`, `panel_summary()`) |
+| `harmonization-metrics-calculation/marker_gene_annotation.csv` | Gene panel source of truth for groups L/M: 633 genes, 63 signatures, cell type / pathway / TME subtype / prognosis / source per gene, plus the 56-gene `in_narrow_set` QC-filtered subset behind the Group L `_narrow_set` metrics |
+| `harmonization-metrics-calculation/marker_panels.py` | Loader over the gene annotation CSV (`panel_genes()`, `housekeeping_genes()`, `narrow_set_genes()`, `resolve_panel()`, `panel_summary()`) |
 | `harmonization-metrics-calculation/k8s/pod-metrics.yaml` | Metrics pod manifest; `README.md` in the same folder is the step-by-step launch guide |
 | `harmonization-metrics/correlation_prediction_metrics_analysis.ipynb` | Blind-check analysis: groups L/M/N, best-vs-rest, permutation control, Supplementary File 5 |
+| `harmonization-metrics/correlation_prediction_metrics_analysis_narrow_set.ipynb` | Same analysis on the 56-gene narrow panel (`mk_*_narrow_set`), plus §3b comparing the two housekeeping controls for noise |
 | `harmonization-metrics/marker_gene_deep_analysis.ipynb` | Marker panel deep-dive: gene-level correlation structure, coverage/QC/saturation gates, minimal orthogonal panel selection |
 | `harmonization-metrics-calculation/gene_panel_analysis/` | Sub-pipeline for the above: gene × gene correlation + per-gene QC (1,204 jobs); own README |
 | `harmonization-metrics/harmonization_metrics_analysis.ipynb` | Loads `metrics_comprehensive.csv`, visualizes rankings |
@@ -191,6 +192,7 @@ sns.set_style("ticks")
 
 - [ ] **Blind final check compute run**: metric groups L/M/N over the 2,323 non-Shambhala attempts (plan: `harmonization-metrics/marker_and_predictive_validation_plan_260819.md`)
 - [ ] **Blind check figures**: run `correlation_prediction_metrics_analysis.ipynb` once the metrics land; export Supplementary File 5
+- [ ] **Narrow marker panel metrics** (code done 2026-09-04, plan: `harmonization-metrics-calculation/implementation_plans/narrow_marker_panel_metrics_plan_260904.md`): run `run_metrics_parallel.py --groups L --skip-wm` on the pod to populate the 15 `mk_*_narrow_set` columns, re-concat, then regenerate `correlation_prediction_metrics_analysis_narrow_set.ipynb` with the new `--date-tag` and read §3b for which housekeeping control to quote
 - [ ] **Marker panel reduction**: run `harmonization-metrics-calculation/gene_panel_analysis/run_gene_corr_parallel.py`, then `marker_gene_deep_analysis.ipynb` → recommended minimal orthogonal gene panel for the Group L metric (plan: `harmonization-metrics/marker_gene_deep_analysis_plan_260827.md`)
 - [ ] Manuscript sub-chapters for the blind check — **deferred until the results exist** (see `project_manuscript_lmn_sections_deferred.md` in project memory)
 - [ ] **Figure 2C/2D**: NA genes per batch barplot; imputation gene-overlap Sankey (see `article_figures_status_260625.md`)

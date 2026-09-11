@@ -301,7 +301,8 @@ S3 expression files → compute_batch_metrics.py
     prediction_folds_long.csv
 → A–K visualized in harmonization_metrics_analysis_v3.ipynb (353 cells; supersedes the
   older harmonization_metrics_analysis.ipynb)
-→ L–N visualized in correlation_prediction_metrics_analysis.ipynb (29 cells)
+→ L–N visualized in correlation_prediction_metrics_analysis.ipynb, plus its
+  _narrow_set variant for the 56-gene QC-filtered panel
 ```
 
 ### 4b. Blind final check — metric groups L, M, N (August 2026)
@@ -312,7 +313,7 @@ approaches the clustermap had already selected. Plan:
 
 | Group | Prefix | What it measures |
 |---|---|---|
-| **L** | `mk_` | For each marker gene and each cohort, the Spearman correlation between the gene's expression across that cohort's samples before and after harmonization. Reported per gene, per cohort, and as a grand mean, plus a marker-versus-housekeeping contrast. |
+| **L** | `mk_` | For each marker gene and each cohort, the Spearman correlation between the gene's expression across that cohort's samples before and after harmonization. Reported per gene, per cohort, and as a grand mean, plus a marker-versus-housekeeping contrast. Since 2026-09-04 the integrative aggregates are reported **twice**: over the full 633-gene panel, and over the 56-gene QC-filtered narrow panel with every key suffixed `_narrow_set` (both from one correlation pass). |
 | **M** | `xb_` | Mean Spearman correlation between sample pairs from *different* `RNA_BATCH` levels, split by whether they share `Diagnosis_cell_type_unified`. `xb_rank_agree_ratio` is the same-biology minus different-biology margin. |
 | **N** | `pv_` | Leave-one-`RNA_BATCH`-out logistic regression on 10 PCs (PCA fitted on training batches only), for a 3-class (FL / DLBCL / Normal_B) and a 2-class (FL vs DLBCL) target, with a 100-permutation label-shuffle control. |
 
@@ -321,7 +322,7 @@ attempts by default (S3 holds 3,835 sidecars in total, 1,512 of them Shambhala, 
 excluded from Article 1). Added to completed jobs via the existing incremental sentinel
 mechanism, so A–K are never recomputed.
 
-**Excluded from the clustermap and the composite score.** The ~65 new scalar columns live in
+**Excluded from the clustermap and the composite score.** The ~80 new scalar columns live in
 the same `metrics_comprehensive.csv` as A–K but are stripped from `metric_cols` by
 `_BLIND_CHECK_PREFIXES = ("mk_", "xb_", "pv_")` in `figures_helpers.load_metrics_data()`, with
 an assertion that fails if one ever leaks. `scoring_cols` stays at **87** and the analysis set
@@ -357,6 +358,19 @@ Tables S2/S3 (cell-of-origin and double-hit classifier panels), Holmes Table S2 
 single-cell GC B-cell clusters, top 20 up-regulated genes per cluster by log2 fold change), and
 Dybkaer Data Supplement 1 (nonzero-weight genes from the Centroblast and Centrocyte columns of
 the normal B-cell subset classifier).
+**Narrow panel (2026-09-04).** A `in_narrow_set` flag in the same CSV marks the **56 genes**
+that both resolve in all 42 `01_raw__post0` matrices (193 genes pass that alone) and sit out of
+the log2 noise band (mean `frac_lt_1` < 0.20 on those references). Group L reports its integrative
+aggregates over this subset as well, suffixed `_narrow_set`, so a panel mean is available that
+does not mix reliably measured genes with barely detected ones. Exactly one of the 56 (`PGK1`) is
+a housekeeping control, and only **6 of the 15** housekeeping genes clear the same all-42-pairs
+coverage bar (`ACTB`, `GAPDH`, `PSMB4`, `RPL13A`, `RPLP0`, `SDHA`, `TUBB`, `UBC`, `YWHAZ` do not,
+resolving in 26–33 pairs). The marker-versus-housekeeping margin is therefore reported against
+both controls — the full panel (`mk_rho_marker_minus_hk_narrow_set`, a variable-composition
+control set) and `PGK1` alone (`mk_rho_marker_minus_PGK1_only_narrow_set`, coverage-matched but
+n = 1) — and which is less noisy is settled empirically in §3b of
+`correlation_prediction_metrics_analysis_narrow_set.ipynb`, not by argument.
+
 Coverage audited across all 42 `(strat, imp)` pairs: **178 genes present in every pair** (the
 set used for cross-attempt averages), 325 in some, 45 in none. CD20 (`MS4A1`), CD3
 (`CD3D`/`CD3E`), CD10 (`MME`), CD23 (`FCER2`), CD79A/B, PD-1 and even `ACTB`/`GAPDH` are absent

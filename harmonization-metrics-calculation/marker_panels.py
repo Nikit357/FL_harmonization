@@ -8,6 +8,11 @@ build_marker_gene_annotation.py; never hardcode gene lists here.
 
 The table key is (gene, gene_group): a gene may belong to several signatures, so the
 CSV has one row per membership. panel_genes() de-duplicates on gene.
+
+The table also carries two gene-level boolean flags that are orthogonal to signature
+membership: `is_housekeeping` (the invariant-expression control panel) and
+`in_narrow_set` (the QC-filtered 56-gene subset behind the Group L `_narrow_set`
+aggregates). Read them with housekeeping_genes() and narrow_set_genes().
 """
 
 from __future__ import annotations
@@ -55,10 +60,16 @@ def load_marker_annotation() -> pd.DataFrame:
     pd.DataFrame
         One row per (gene, gene_group) with columns: gene, alias, gene_group,
         cell_type, pathway, tme_subtype, prognostic_significance, source_article,
-        provenance, is_housekeeping.
+        provenance, is_housekeeping, in_narrow_set.
     """
     df = pd.read_csv(ANNOTATION_CSV)
     df["is_housekeeping"] = df["is_housekeeping"].astype(bool)
+    # Tolerate a pre-2026-09-04 CSV (e.g. a pod that has not been rsynced yet): the
+    # narrow-set metrics then resolve to zero genes and report NaN, which is visible in
+    # mk_n_panel_genes_used_narrow_set, rather than raising and taking all of Group L
+    # down with it.
+    if "in_narrow_set" in df.columns:
+        df["in_narrow_set"] = df["in_narrow_set"].astype(bool)
     return df
 
 
@@ -94,6 +105,27 @@ def housekeeping_genes() -> list[str]:
     """Return the sorted housekeeping control gene symbols."""
     df = load_marker_annotation()
     return sorted(df.loc[df["is_housekeeping"], "gene"].unique().tolist())
+
+
+def narrow_set_genes() -> list[str]:
+    """
+    Return the sorted gene symbols of the QC-filtered narrow panel.
+
+    The narrow panel is the subset of the marker table that resolves in all 42
+    `01_raw__post0` matrices and whose mean `frac_lt_1` on those references is below
+    0.20 - 56 genes, one of them (PGK1) a housekeeping control. Group L reports a
+    second family of integrative aggregates over this subset, suffixed `_narrow_set`.
+
+    Returns
+    -------
+    list of str
+        Empty if the annotation CSV predates the `in_narrow_set` column, in which case
+        the `_narrow_set` metrics are reported as NaN rather than raising.
+    """
+    df = load_marker_annotation()
+    if "in_narrow_set" not in df.columns:
+        return []
+    return sorted(df.loc[df["in_narrow_set"], "gene"].unique().tolist())
 
 
 def gene_to_groups() -> dict[str, list[str]]:

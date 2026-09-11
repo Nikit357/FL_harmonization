@@ -1,0 +1,64 @@
+gene_group,n_genes,source_article,cell_type,max_jaccard_other,closest_other_set
+kotlov_FGES_interferon,9,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.6153846153846154,FL2025_C3_inflammatory
+FL2025_C3_inflammatory,12,"Xochelli et al. 2025 Leukemia, doi:10.1038/s41375-025-02603-9",none,0.6153846153846154,kotlov_FGES_interferon
+holmes_PBL_b,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",plasma cell,0.48148148148148145,holmes_PBL_a
+holmes_PBL_a,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",plasma cell,0.48148148148148145,holmes_PBL_b
+kotlov_FGES_B_cells,13,"Kotlov et al. 2021 Cancer Discov, PMC8178179",B cell,0.46153846153846156,clinical_IHC_B_cell
+clinical_IHC_B_cell,6,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),B cell,0.46153846153846156,kotlov_FGES_B_cells
+holmes_double_hit_signature,2,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centroblast (DZ),0.3333333333333333,clinical_IHC_proliferation
+clinical_IHC_proliferation,2,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),none,0.3333333333333333,holmes_double_hit_signature
+kotlov_curated_alterations,13,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.3125,FL_POD24_markers
+FL_POD24_markers,8,"Pastore et al. 2019, PMID 29475724",none,0.3125,kotlov_curated_alterations
+clinical_IHC_checkpoint,6,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),CD8 T,0.2727272727272727,kotlov_FGES_IS_checkpoints
+kotlov_FGES_IS_checkpoints,8,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.2727272727272727,clinical_IHC_checkpoint
+FL_PFS_signature_2019,9,"Pastore et al. 2019, PMID 29475724",none,0.2727272727272727,clinical_IHC_GC_B_cell
+clinical_IHC_GC_B_cell,5,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),germinal centre B,0.2727272727272727,FL_PFS_signature_2019
+kotlov_FGES_TIL,10,"Kotlov et al. 2021 Cancer Discov, PMC8178179",CD4 T,0.21428571428571427,clinical_IHC_T_cell
+clinical_IHC_T_cell,7,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),CD4 T,0.21428571428571427,kotlov_FGES_TIL
+kotlov_FGES_cytolytic,8,"Kotlov et al. 2021 Cancer Discov, PMC8178179",CD8 T,0.19047619047619047,kotlov_FGES_NK
+kotlov_FGES_NK,17,"Kotlov et al. 2021 Cancer Discov, PMC8178179",NK,0.19047619047619047,kotlov_FGES_cytolytic
+kotlov_FGES_T_cells_traffic,7,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.1875,FL2025_C3_inflammatory
+holmes_DZ_c,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centroblast (DZ),0.17647058823529413,holmes_DZ_b
+holmes_DZ_b,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centroblast (DZ),0.17647058823529413,holmes_DZ_c
+clinical_IHC_post_GC,4,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),plasma cell,0.16666666666666666,FL2025_C2_LZ_anergy
+FL2025_C2_LZ_anergy,10,"Xochelli et al. 2025 Leukemia, doi:10.1038/s41375-025-02603-9",centrocyte (LZ),0.16666666666666666,clinical_IHC_post_GC
+holmes_DZ_a,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centroblast (DZ),0.14285714285714285,holmes_DZ_b
+kotlov_FGES_VEC,15,"Kotlov et al. 2021 Cancer Discov, PMC8178179",endothelial,0.13636363636363635,kotlov_FGES_granulocyte_traffic
+kotlov_FGES_granulocyte_traffic,10,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.13636363636363635,kotlov_FGES_VEC
+dybkaer_centrocyte_LZ,55,"Dybkaer et al. 2015 J Clin Oncol 33(12):1379-1388, PMC4397280",centrocyte (LZ),0.12727272727272726,dybkaer_centroblast_DZ
+dybkaer_centroblast_DZ,69,"Dybkaer et al. 2015 J Clin Oncol 33(12):1379-1388, PMC4397280",centroblast (DZ),0.12727272727272726,dybkaer_centrocyte_LZ
+kotlov_FGES_FDC,7,"Kotlov et al. 2021 Cancer Discov, PMC8178179",follicular dendritic,0.125,kotlov_FGES_FRC
+kotlov_FGES_FRC,11,"Kotlov et al. 2021 Cancer Discov, PMC8178179",stromal/fibroblast,0.125,kotlov_FGES_FDC
+holmes_INT_e,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.12,kotlov_FGES_MHC_II
+kotlov_FGES_MHC_II,8,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.12,holmes_INT_e
+kotlov_FGES_cell_proliferation,15,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.11538461538461539,FL2025_C1_DZ_proliferative
+kotlov_FGES_NFkB,9,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.11538461538461539,holmes_LZ_a
+FL2025_C1_DZ_proliferative,14,"Xochelli et al. 2025 Leukemia, doi:10.1038/s41375-025-02603-9",centroblast (DZ),0.11538461538461539,kotlov_FGES_cell_proliferation
+holmes_LZ_a,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.11538461538461539,kotlov_FGES_NFkB
+kotlov_FGES_CAF,34,"Kotlov et al. 2021 Cancer Discov, PMC8178179",stromal/fibroblast,0.11428571428571428,kotlov_FGES_ECM_remodeling
+kotlov_FGES_ECM_remodeling,5,"Kotlov et al. 2021 Cancer Discov, PMC8178179",stromal/fibroblast,0.11428571428571428,kotlov_FGES_CAF
+holmes_LZ_b,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.1111111111111111,holmes_LZ_a
+kotlov_FGES_macrophages,7,"Kotlov et al. 2021 Cancer Discov, PMC8178179",macrophage,0.1111111111111111,clinical_IHC_myeloid
+kotlov_FGES_hypoxia,5,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.1111111111111111,kotlov_FGES_ECM_remodeling
+clinical_IHC_myeloid,3,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),macrophage,0.1111111111111111,kotlov_FGES_macrophages
+kotlov_FGES_ECM,7,"Kotlov et al. 2021 Cancer Discov, PMC8178179",stromal/fibroblast,0.10810810810810811,kotlov_FGES_CAF
+kotlov_COO_classifier,32,"Kotlov et al. 2021 Cancer Discov, PMC8178179",germinal centre B,0.10810810810810811,FL_PFS_signature_2019
+clinical_IHC_follicular_stroma,2,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),follicular dendritic,0.09090909090909091,FL2025_C2_LZ_anergy
+kotlov_FGES_Treg,7,"Kotlov et al. 2021 Cancer Discov, PMC8178179",Treg,0.08333333333333333,clinical_IHC_checkpoint
+holmes_INT_c,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.08108108108108109,holmes_LZ_a
+kotlov_FGES_B_cells_traffic,4,"Kotlov et al. 2021 Cancer Discov, PMC8178179",B cell,0.07692307692307693,kotlov_FGES_TFH
+kotlov_FGES_TFH,10,"Kotlov et al. 2021 Cancer Discov, PMC8178179",CD4 T,0.07692307692307693,kotlov_FGES_B_cells_traffic
+kotlov_FGES_IS_cytokines,7,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.07692307692307693,kotlov_FGES_macrophages
+holmes_INT_b,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.05263157894736842,holmes_INT_e
+kotlov_FGES_LEC,13,"Kotlov et al. 2021 Cancer Discov, PMC8178179",endothelial,0.05263157894736842,kotlov_FGES_FDC
+holmes_INT_d,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.05263157894736842,holmes_INT_a
+holmes_INT_a,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",centrocyte (LZ),0.05263157894736842,holmes_DZ_b
+kotlov_FGES_MHC_I,6,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.05,housekeeping
+housekeeping,15,Standard RT-qPCR reference gene panel,none,0.05,kotlov_FGES_MHC_I
+kotlov_DHIT_classifier,20,"Kotlov et al. 2021 Cancer Discov, PMC8178179",centroblast (DZ),0.043478260869565216,clinical_IHC_post_GC
+holmes_PreM,20,"Holmes et al. 2020 J Exp Med 217(10):e20200483, PMC7537389",memory precursor,0.043478260869565216,kotlov_FGES_B_cells_traffic
+kotlov_FGES_TGFB,8,"Kotlov et al. 2021 Cancer Discov, PMC8178179",stromal/fibroblast,0.024390243902439025,kotlov_FGES_CAF
+kotlov_FGES_dendritic_cells,5,"Kotlov et al. 2021 Cancer Discov, PMC8178179",macrophage,0.0,FL2025_C1_DZ_proliferative
+kotlov_FGES_activated_M1,4,"Kotlov et al. 2021 Cancer Discov, PMC8178179",macrophage,0.0,FL2025_C1_DZ_proliferative
+clinical_IHC_T_cell_cytotoxic,2,Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria),CD8 T,0.0,FL2025_C1_DZ_proliferative
+kotlov_FGES_PI3K,9,"Kotlov et al. 2021 Cancer Discov, PMC8178179",none,0.0,FL2025_C1_DZ_proliferative

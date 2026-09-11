@@ -62,7 +62,7 @@ All files are in `s3://$FL_S3_BUCKET/FL_batch_correction/calibration_datasets/`.
 | `P0_standard.csv` | `P0std` | Original Shambhala2 P reference (39 Affymetrix GPL570 healthy tissue samples) |
 | `ANTE.csv` | `ANTE` | ANTE calibration set |
 | `GTExAffymetrix.csv` | `GTExAffy` | GTEx samples profiled on Affymetrix |
-| `Normal_B_legacy.csv` | `NBlegacy` | Normal B cells from BG-BAGS classifier dataset |
+| `Normal_B_legacy.csv` | `NBlegacy` | Normal B cells from the legacy internal classifier dataset |
 | `Normal_B_GPL570.csv` | `NBGPL570` | Normal B cells on GPL570 platform |
 | `Normal_B_Kassandra.csv` | `NBKass` | Normal B cells from BG Kassandra project |
 | `Normal_B_RNASeq.csv` | `NBRNAseq` | Normal B cells from RNA-seq cohorts |

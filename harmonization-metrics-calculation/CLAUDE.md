@@ -75,12 +75,21 @@ python run_metrics_parallel.py --n-workers 4 --skip-slow --retry-failed --post-r
 # n_perm=20 (not 100): n_perm=100 timed out every job at 3600s on 2026-08-23 — diagnosed as
 # BLAS/OpenMP thread fan-out (declared-but-not-inherited env vars), now pinned inside
 # run_metrics_job.py itself; n_perm=20 is kept as a belt-and-suspenders margin. See
-# harmonization-metrics-calculation/group_n_timeout_and_reference_race_fix_plan_260823.md.
+# harmonization-metrics-calculation/implementation_plans/group_n_timeout_and_reference_race_fix_plan_260823.md.
 nohup python run_metrics_parallel.py \
     --groups L,M,N --only-with-metrics --skip-shambhala \
     --n-workers 20 --memory-limit-gb 8.0 --timeout-s 3600 \
     --n-perm 20 --ref-cache-dir /workspace/ref_cache \
     > /workspace/metrics_lmn.log 2>&1 &
+
+# ── Add the Group L `_narrow_set` aggregates to sidecars that already have Group L ──
+# No --force-groups: Group L's second sentinel key is absent, so the incremental check
+# schedules it on its own. Pass --skip-wm, or the worker adds Group I to the requested set.
+nohup python run_metrics_parallel.py \
+    --groups L --skip-wm --only-with-metrics --skip-shambhala \
+    --n-workers 20 --memory-limit-gb 8.0 --timeout-s 1800 \
+    --ref-cache-dir /workspace/ref_cache \
+    > /workspace/metrics_l_narrow.log 2>&1 &
 
 # Groups M and N only — no reference download at all
 python run_metrics_job.py --strat C_rnaseq_only --imp softimpute --method 10_mnn \
@@ -131,9 +140,9 @@ python run_metrics_job.py \
 | `run_metrics_parallel.py` | Dispatcher: enumerates expression files on S3, launches worker subprocesses via `ThreadPoolExecutor` |
 | `run_metrics_concat.py` | Aggregator: downloads all `*_metrics.json` sidecars from S3, builds `metrics_comprehensive.csv` + 3 long-format detail tables |
 | `test_mock_metrics.py` | Smoke tests: synthetic data, correctness checks (no S3 access needed); 169 assertions |
-| `marker_gene_annotation.csv` | **Gene panel source of truth** for groups L and M: 834 rows (gene × gene_group), 633 unique genes, 63 groups, 15 housekeeping. Columns include `cell_type`, `pathway`, `tme_subtype`, `prognostic_significance`, `source_article`, `provenance` |
+| `marker_gene_annotation.csv` | **Gene panel source of truth** for groups L and M: 834 rows (gene × gene_group), 633 unique genes, 63 groups, 15 housekeeping, **56 `in_narrow_set`** (86 rows). Columns include `cell_type`, `pathway`, `tme_subtype`, `prognostic_significance`, `source_article`, `provenance`, `is_housekeeping`, `in_narrow_set` |
 | `build_marker_gene_annotation.py` | Regenerates `marker_gene_annotation.csv`; edit gene lists here, never in the CSV. Reads the published signature lists out of `Kotlov_et_al_2021_supplementary/` (Table S1 FGES, Tables S2/S3 classifiers) and `Holmes_et_al_2020_supplementary/` (Table S2, top `HOLMES_TOP_N_UP` up-genes per GC B-cell cluster) |
-| `marker_panels.py` | Loader over the CSV: `load_marker_annotation()`, `panel_genes()`, `housekeeping_genes()`, `resolve_panel()` (alias fallback), `panel_summary()` |
+| `marker_panels.py` | Loader over the CSV: `load_marker_annotation()`, `panel_genes()`, `housekeeping_genes()`, `narrow_set_genes()`, `resolve_panel()` (alias fallback), `panel_summary()` |
 | `Kotlov_et_al_2021_supplementary/` | Published supplementary tables (1 `.xlsx`) read by `build_marker_gene_annotation.py` |
 | `Holmes_et_al_2020_supplementary/` | Published supplementary tables (3 `.xlsx`) read by `build_marker_gene_annotation.py` |
 | `Dybkaer_et_al_2015_supplementary/` | Published Data Supplement (1 `.xls`, DS1) read by `build_marker_gene_annotation.py` |
@@ -200,7 +209,7 @@ points here rather than duplicating it.
 | H — Pairwise distances | Intra/inter group Euclidean distance ratios | Moderate | Yes |
 | I — WaterMelon score | `wm_{col}`, `wm_mean_batch`, `wm_mean_bio`, `wm_ratio_bio_batch` — entropy-based clustering quality | 2–5 min | **Yes** (opt-out via `--skip-wm`) |
 | K — NA retention | `n_genes_noNA`, `pct_genes_noNA`, `n_samples_noNA`, `pct_samples_noNA`, `n_genes_allNA`, `n_samples_allNA`, `n_na_cells`, `pct_na_cells` | Fast | Yes |
-| L — Marker correlation | `mk_rho_mean_all_genes`, `mk_rho_by_gene`, `mk_rho_marker_minus_hk`, `mk_n_panel_genes_used` | Fast; **needs the raw reference** | Yes |
+| L — Marker correlation | `mk_rho_mean_all_genes`, `mk_rho_by_gene`, `mk_rho_marker_minus_hk`, `mk_n_panel_genes_used`, plus the same aggregates over the 56-gene narrow panel suffixed `_narrow_set` (13 more columns) | Fast; **needs the raw reference** | Yes |
 | M — Cross-batch rank agreement | `xb_rank_agree`, `xb_rank_disagree_diffbio`, `xb_rank_agree_ratio` | Moderate; single matrix | Yes |
 | N — Predictive validation | `pv_lobo3_f1_macro_mean`, `pv_lobo2_auc_macro_mean`, `pv_*_perm_*`, `pv_*_n_folds` | Slow (~5–6 min/job) | Yes |
 
@@ -226,6 +235,25 @@ an assertion that fails loudly if one ever leaks. Do **not** add L/M/N to `_GROU
 the job's own index gives an exact sample match, which is also what restricts a `post1` job to the
 post-removal-surviving samples.
 
+**Group L reports two gene-set families.** The unsuffixed keys cover the full 633-gene
+annotation panel; the `_narrow_set` keys cover the 56-gene QC-filtered subset
+(`in_narrow_set` in the annotation CSV: present in all 42 `01_raw__post0` matrices and mean
+`frac_lt_1` < 0.20). Per-gene rho is independent of the rest of the panel, so both families
+are reductions over **one** correlation pass — `_mk_rho_aggregates()` is called twice with
+different masks — which costs one extra masked mean per cohort and makes the two families
+exactly comparable. The narrow family is integrative only: no per-gene or per-cohort dicts,
+so it adds no long-format table. Its per-gene values are already in
+`marker_gene_correlations_long.csv`, being a subset of the full panel.
+
+**Two housekeeping controls in the narrow family.** Only `PGK1` of the 56 narrow genes is a
+housekeeping gene, and only 6 of the 15 housekeeping genes clear the same all-42-pairs
+coverage bar the narrow markers had to clear (`ACTB` and `GAPDH` are among the nine that do
+not). So `mk_rho_marker_minus_hk_narrow_set` subtracts a *variable-composition* control set
+(6–15 genes depending on the attempt) while `mk_rho_marker_minus_PGK1_only_narrow_set`
+subtracts a coverage-matched control of n = 1. Both are computed;
+`mk_n_hk_genes_used_narrow_set` is the audit column for the first, and §3b of
+`correlation_prediction_metrics_analysis_narrow_set.ipynb` decides which is less noisy.
+
 **Groups M and N need no reference** and do no extra I/O — `--groups M,N` skips the cache entirely.
 `01_raw` is itself an attempt in the benchmark, so the unharmonized baseline for M and N is obtained
 in the notebook via `figures_helpers.attach_raw_baseline()`, joining on `(strat, imp)`. Computing it
@@ -246,7 +274,10 @@ inside each job would repeat the identical number ~60 times per pair.
 
 **Selective group computation** — `compute_all_metrics(..., groups={"A", "B"})` and the worker's `--groups A,B` flag skip all other groups. The dispatcher `run_metrics_parallel.py` exposes `--groups` and `--skip-wm` (to opt out of Group I) and forwards both to worker subprocesses.
 
-**Incremental computation** — `run_metrics_job.py` loads any existing metrics JSON sidecar from S3 at startup and checks which groups have their sentinel key already set (non-null). Only missing/incomplete groups are recomputed. The new and old results are merged before re-upload. This enables adding new groups (J, K, I, then L, M, N) to already-completed jobs without full recomputation. Sentinel keys are defined in `GROUP_SENTINEL_KEYS` in `run_metrics_job.py`. The `--skip-if-exists` flag bypasses the entire job; incremental logic applies when it is not set — which is why an L/M/N run must **not** pass `--skip-if-exists`. `GROUPS_NEEDING_REFERENCE` in the same file gates the reference download so `--groups M,N` performs no extra I/O.
+**Incremental computation** — `run_metrics_job.py` loads any existing metrics JSON sidecar from S3 at startup and checks which groups have their sentinel key already set (non-null). Only missing/incomplete groups are recomputed. The new and old results are merged before re-upload. This enables adding new groups (J, K, I, then L, M, N) to already-completed jobs without full recomputation. Sentinel keys are defined in `GROUP_SENTINEL_KEYS` in `run_metrics_job.py`; a value may be a
+**tuple**, in which case the group counts as complete only when every listed key is populated.
+Group L carries two (`mk_rho_mean_all_genes`, `mk_rho_mean_all_genes_narrow_set`), which is what
+makes every pre-2026-09-04 sidecar resume Group L automatically — no `--force-groups` needed. The `--skip-if-exists` flag bypasses the entire job; incremental logic applies when it is not set — which is why an L/M/N run must **not** pass `--skip-if-exists`. `GROUPS_NEEDING_REFERENCE` in the same file gates the reference download so `--groups M,N` performs no extra I/O.
 
 **Incremental persistence** — every group's result is uploaded to S3 as soon as it finishes (`on_group_done` callback threaded through `compute_all_metrics()` → `_upload_partial()` in `run_metrics_job.py`), not just once at the very end. A timeout or crash during a later group (e.g. Group N) no longer discards groups that already completed in the same attempt.
 

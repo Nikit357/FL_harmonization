@@ -8,7 +8,10 @@ Groups A-K measure batch removal and biology preservation and feed the Figure 3
 clustermap. Groups L, M and N are the blind final check and are excluded from the
 clustermap and the composite score by a prefix filter in figures_helpers.py:
 
-    L (mk_*) marker gene correlation preservation — needs a raw reference matrix
+    L (mk_*) marker gene correlation preservation — needs a raw reference matrix.
+             Reported twice: over the full annotation panel, and over the QC-filtered
+             56-gene narrow panel with every key suffixed `_narrow_set`. Both families
+             are reductions over one correlation pass, so they are exactly comparable.
     M (xb_*) cross-batch rank agreement          — single matrix
     N (pv_*) predictive validation               — single matrix
 
@@ -52,7 +55,12 @@ from sklearn.preprocessing import StandardScaler
 from statsmodels.stats.multitest import multipletests
 import umap as umap_lib
 
-from marker_panels import housekeeping_genes, panel_genes, resolve_panel
+from marker_panels import (
+    housekeeping_genes,
+    narrow_set_genes,
+    panel_genes,
+    resolve_panel,
+)
 
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", "All-NaN slice encountered", category=RuntimeWarning)
@@ -93,6 +101,34 @@ ALL_COLS: list[str] = [
 RANDOM_SEED: int = 260819
 N_PERM: int = 20
 MIN_COHORT_N: int = 20
+
+# Suffix for the Group L aggregates restricted to the QC-filtered narrow panel. The two
+# families share one correlation pass, so the suffix marks a different gene subset,
+# never a different computation.
+NARROW_SET_SUFFIX: str = "_narrow_set"
+
+# The nine Group L rho aggregates. Named once so the full-panel family, the narrow-set
+# family and the zero-gene fallback can never drift apart.
+_MK_AGG_KEYS: tuple[str, ...] = (
+    "mk_rho_mean_all_genes",
+    "mk_rho_median_all_genes",
+    "mk_rho_p10_all_genes",
+    "mk_rho_min_all_genes",
+    "mk_rho_frac_genes_above_0.9",
+    "mk_rho_mean_markers",
+    "mk_rho_mean_housekeeping",
+    "mk_rho_marker_minus_hk",
+    "mk_rho_mean_by_cohort_mean",
+)
+
+# Aggregates that exist only in the narrow family: the coverage-matched housekeeping
+# control. `narrow ∩ housekeeping == {PGK1}` is asserted in
+# build_marker_gene_annotation.py, so the gene symbol in these names cannot go stale
+# silently.
+_MK_NARROW_ONLY_KEYS: tuple[str, ...] = (
+    "mk_rho_mean_PGK1_only",
+    "mk_rho_marker_minus_PGK1_only",
+)
 MIN_TEST_N: int = 20
 N_PCS: int = 10
 XB_MAX_SAMPLES: int = 8000
@@ -1612,6 +1648,77 @@ def _stratified_subsample_idx(
 # ── Group L — Marker Gene Correlation Preservation ────────────────────────────
 
 
+def _mk_rho_aggregates(
+    rho_by_gene: np.ndarray,
+    all_mask: np.ndarray,
+    marker_mask: np.ndarray,
+    hk_mask: np.ndarray,
+    per_cohort: dict[str, float],
+    suffix: str = "",
+) -> dict:
+    """
+    Reduce a per-gene rho vector to the nine Group L aggregates.
+
+    Called twice per job with different masks over the same rho vector: once for the
+    full annotation panel and once for the narrow panel. Sharing the reduction is what
+    guarantees `mk_rho_mean_all_genes` and `mk_rho_mean_all_genes_narrow_set` differ
+    only by gene set.
+
+    Parameters
+    ----------
+    rho_by_gene : np.ndarray
+        Per-gene mean Spearman rho, NaN where no cohort produced a value.
+    all_mask : np.ndarray of bool
+        Genes forming the "all genes" population for this family.
+    marker_mask, hk_mask : np.ndarray of bool
+        Genes forming the marker and housekeeping populations. For the narrow family
+        hk_mask is the full housekeeping control panel rather than the single
+        housekeeping gene inside the narrow panel; the coverage-matched one-gene variant
+        of the margin is emitted separately by compute_group_l as
+        mk_rho_marker_minus_PGK1_only_narrow_set, and mk_n_hk_genes_used_narrow_set
+        records how many controls this mask actually resolved.
+    per_cohort : dict
+        Per-cohort mean rho already restricted to this family's genes.
+    suffix : str
+        Appended to every key; "" for the full panel, "_narrow_set" for the narrow one.
+
+    Returns
+    -------
+    dict of nine mk_*{suffix} keys.
+    """
+    result: dict = {}
+    ok = ~np.isnan(rho_by_gene)
+    vals = rho_by_gene[all_mask & ok]
+
+    if vals.size:
+        result[f"mk_rho_mean_all_genes{suffix}"] = float(np.mean(vals))
+        result[f"mk_rho_median_all_genes{suffix}"] = float(np.median(vals))
+        result[f"mk_rho_p10_all_genes{suffix}"] = float(np.percentile(vals, 10))
+        result[f"mk_rho_min_all_genes{suffix}"] = float(np.min(vals))
+        result[f"mk_rho_frac_genes_above_0.9{suffix}"] = float(np.mean(vals > 0.9))
+    else:
+        for key in _MK_AGG_KEYS[:5]:
+            result[f"{key}{suffix}"] = np.nan
+
+    marker_vals = rho_by_gene[marker_mask & ok]
+    hk_vals = rho_by_gene[hk_mask & ok]
+    result[f"mk_rho_mean_markers{suffix}"] = (
+        float(np.mean(marker_vals)) if marker_vals.size else np.nan
+    )
+    result[f"mk_rho_mean_housekeeping{suffix}"] = (
+        float(np.mean(hk_vals)) if hk_vals.size else np.nan
+    )
+    result[f"mk_rho_marker_minus_hk{suffix}"] = (
+        float(np.mean(marker_vals) - np.mean(hk_vals))
+        if marker_vals.size and hk_vals.size
+        else np.nan
+    )
+    result[f"mk_rho_mean_by_cohort_mean{suffix}"] = (
+        float(np.mean(list(per_cohort.values()))) if per_cohort else np.nan
+    )
+    return result
+
+
 def compute_group_l(
     exp_df: pd.DataFrame,
     ref_df: pd.DataFrame,
@@ -1619,6 +1726,7 @@ def compute_group_l(
     panel: Optional[list[str]] = None,
     min_cohort_n: int = MIN_COHORT_N,
     collect_detail: bool = False,
+    narrow_panel: Optional[list[str]] = None,
 ) -> dict:
     """
     Compute Group L metrics: per-gene expression profile preservation.
@@ -1632,6 +1740,22 @@ def compute_group_l(
     Any harmonizer applying a per-batch monotone transform of each gene leaves
     within-cohort ranks unchanged and therefore scores ~1.0 here by construction;
     see the plan for why Group M carries the discriminative conclusion.
+
+    Reported twice. The full annotation panel yields the unsuffixed keys; the
+    QC-filtered narrow panel yields the same nine aggregates, four coverage counters and
+    a second marker-minus-housekeeping margin taken against PGK1 alone, every key
+    suffixed `_narrow_set`. Both families are reductions over one correlation pass -
+    per-gene rho is independent of the other genes in the panel - so they cost one extra
+    masked mean per cohort and nothing else, and any difference between them is a
+    property of the gene set alone. Only the full panel produces the per-gene and
+    per-cohort dicts; the narrow family is integrative only.
+
+    Two housekeeping controls, deliberately. `mk_rho_marker_minus_hk_narrow_set` uses
+    the full housekeeping panel, of which only 6 of 15 genes clear the coverage bar the
+    narrow markers had to clear, so its control set varies in composition across
+    attempts. `mk_rho_marker_minus_PGK1_only_narrow_set` uses the one housekeeping gene
+    inside the narrow panel: coverage-matched, but n = 1. Which is less noisy is an
+    empirical question the blind-check notebook answers.
 
     Parameters
     ----------
@@ -1650,6 +1774,9 @@ def compute_group_l(
         "mk_gene_cohort_detail". The caller must strip that key before writing the
         metrics sidecar — at ~300 KB per job it would add over a gigabyte across the
         benchmark, which is why it is off by default.
+    narrow_panel : list of str, optional
+        Genes for the `_narrow_set` family. Default: narrow_set_genes(). Pass [] to
+        disable it (every `_narrow_set` key is then NaN / 0).
 
     Returns
     -------
@@ -1657,9 +1784,20 @@ def compute_group_l(
     """
     result: dict = {}
     full_panel = panel if panel is not None else panel_genes(include_housekeeping=True)
+    narrow_full = narrow_set_genes() if narrow_panel is None else list(narrow_panel)
+    hk_full = housekeeping_genes()
 
     shared = exp_df.columns.intersection(ref_df.columns)
-    genes, missing = resolve_panel(set(shared), full_panel)
+    avail = set(shared)
+    genes, missing = resolve_panel(avail, full_panel)
+    # The narrow family must not depend on a --panel-groups filter, and its
+    # housekeeping control must not depend on whether housekeeping genes are inside the
+    # requested signatures, so both are resolved independently and unioned into the one
+    # correlation pass below. With the default panel the union is a no-op: all 56 narrow
+    # genes and all 15 housekeeping genes are already in the annotation table.
+    narrow_genes, narrow_missing = resolve_panel(avail, narrow_full)
+    hk_genes, _ = resolve_panel(avail, hk_full)
+    genes_all = sorted(set(genes) | set(narrow_genes) | set(hk_genes))
 
     result["mk_n_panel_genes_used"] = len(genes)
     result["mk_n_genes_null"] = len(missing)
@@ -1667,20 +1805,26 @@ def compute_group_l(
         float(len(genes) / len(full_panel)) if full_panel else np.nan
     )
     result["mk_is_self_reference"] = bool(exp_df is ref_df)
+    result[f"mk_n_panel_genes_used{NARROW_SET_SUFFIX}"] = len(narrow_genes)
+    result[f"mk_n_genes_null{NARROW_SET_SUFFIX}"] = len(narrow_missing)
+    result[f"mk_panel_coverage_frac{NARROW_SET_SUFFIX}"] = (
+        float(len(narrow_genes) / len(narrow_full)) if narrow_full else np.nan
+    )
+    result[f"mk_n_hk_genes_used{NARROW_SET_SUFFIX}"] = len(hk_genes)
+    if not narrow_full:
+        print(
+            f"[{_ts()}][metrics] Group L: narrow panel is empty — every "
+            f"{NARROW_SET_SUFFIX} key will be NaN. Is marker_gene_annotation.csv "
+            f"missing the in_narrow_set column?",
+            flush=True,
+        )
 
-    if not genes:
-        for key in (
-            "mk_rho_mean_all_genes",
-            "mk_rho_median_all_genes",
-            "mk_rho_p10_all_genes",
-            "mk_rho_min_all_genes",
-            "mk_rho_frac_genes_above_0.9",
-            "mk_rho_mean_markers",
-            "mk_rho_mean_housekeeping",
-            "mk_rho_marker_minus_hk",
-            "mk_rho_mean_by_cohort_mean",
-        ):
+    if not genes_all:
+        for key in _MK_AGG_KEYS:
             result[key] = np.nan
+            result[f"{key}{NARROW_SET_SUFFIX}"] = np.nan
+        for key in _MK_NARROW_ONLY_KEYS:
+            result[f"{key}{NARROW_SET_SUFFIX}"] = np.nan
         result["mk_rho_by_gene"] = {}
         result["mk_rho_n_cohorts_by_gene"] = {}
         result["mk_rho_by_cohort"] = {}
@@ -1688,17 +1832,23 @@ def compute_group_l(
         result["mk_n_cohorts_skipped_small"] = 0
         return result
 
-    A = exp_df[genes].values.astype(float)
-    B = ref_df[genes].values.astype(float)
+    A = exp_df[genes_all].values.astype(float)
+    B = ref_df[genes_all].values.astype(float)
+
+    panel_set, narrow_set, hk_set = set(genes), set(narrow_genes), set(hk_genes)
+    panel_mask = np.array([g in panel_set for g in genes_all])
+    narrow_mask = np.array([g in narrow_set for g in genes_all])
+    hk_mask = np.array([g in hk_set for g in genes_all])
 
     cohort_col = "COHORT_LABEL" if "COHORT_LABEL" in ann_df.columns else "RNA_BATCH"
     cohorts = ann_df[cohort_col].astype(str).values
 
     # rho_sums / rho_counts accumulate per gene across cohorts so a gene absent from
     # one cohort (constant expression there) still contributes from the others.
-    rho_sums = np.zeros(len(genes))
-    rho_counts = np.zeros(len(genes))
+    rho_sums = np.zeros(len(genes_all))
+    rho_counts = np.zeros(len(genes_all))
     per_cohort: dict[str, float] = {}
+    per_cohort_narrow: dict[str, float] = {}
     detail: dict[str, dict[str, float]] = {}
     n_skipped = 0
 
@@ -1711,58 +1861,77 @@ def compute_group_l(
         valid = ~np.isnan(rho)
         rho_sums[valid] += rho[valid]
         rho_counts[valid] += 1
-        if valid.any():
-            per_cohort[str(level)] = float(np.mean(rho[valid]))
+        # Per-cohort means are the one aggregate that cannot be recovered from
+        # rho_by_gene afterwards, so both families accumulate theirs here.
+        v_panel = valid & panel_mask
+        if v_panel.any():
+            per_cohort[str(level)] = float(np.mean(rho[v_panel]))
+        v_narrow = valid & narrow_mask
+        if v_narrow.any():
+            per_cohort_narrow[str(level)] = float(np.mean(rho[v_narrow]))
         if collect_detail:
+            # Detail stays on the requested panel only, so the marker_corr/ payload and
+            # the long-format tables are unchanged by the union above.
             detail[str(level)] = {
-                g: (float(v) if not np.isnan(v) else None) for g, v in zip(genes, rho)
+                g: (float(v) if not np.isnan(v) else None)
+                for g, v, keep in zip(genes_all, rho, panel_mask)
+                if keep
             }
 
     with np.errstate(invalid="ignore", divide="ignore"):
         rho_by_gene = np.where(rho_counts > 0, rho_sums / rho_counts, np.nan)
 
     result["mk_rho_by_gene"] = {
-        g: (float(v) if not np.isnan(v) else None) for g, v in zip(genes, rho_by_gene)
+        g: (float(v) if not np.isnan(v) else None)
+        for g, v, keep in zip(genes_all, rho_by_gene, panel_mask)
+        if keep
     }
-    result["mk_rho_n_cohorts_by_gene"] = {g: int(c) for g, c in zip(genes, rho_counts)}
+    result["mk_rho_n_cohorts_by_gene"] = {
+        g: int(c) for g, c, keep in zip(genes_all, rho_counts, panel_mask) if keep
+    }
     result["mk_rho_by_cohort"] = per_cohort
     result["mk_n_cohorts_used"] = len(per_cohort)
     result["mk_n_cohorts_skipped_small"] = n_skipped
 
-    finite = rho_by_gene[~np.isnan(rho_by_gene)]
-    if finite.size:
-        result["mk_rho_mean_all_genes"] = float(np.mean(finite))
-        result["mk_rho_median_all_genes"] = float(np.median(finite))
-        result["mk_rho_p10_all_genes"] = float(np.percentile(finite, 10))
-        result["mk_rho_min_all_genes"] = float(np.min(finite))
-        result["mk_rho_frac_genes_above_0.9"] = float(np.mean(finite > 0.9))
-    else:
-        for key in (
-            "mk_rho_mean_all_genes",
-            "mk_rho_median_all_genes",
-            "mk_rho_p10_all_genes",
-            "mk_rho_min_all_genes",
-            "mk_rho_frac_genes_above_0.9",
-        ):
-            result[key] = np.nan
-
-    hk = set(housekeeping_genes())
-    is_hk = np.array([g in hk for g in genes])
-    marker_vals = rho_by_gene[~is_hk & ~np.isnan(rho_by_gene)]
-    hk_vals = rho_by_gene[is_hk & ~np.isnan(rho_by_gene)]
-    result["mk_rho_mean_markers"] = (
-        float(np.mean(marker_vals)) if marker_vals.size else np.nan
+    # Full annotation panel. hk is intersected with the panel so a --panel-groups run
+    # that excludes housekeeping keeps today's behaviour exactly.
+    result.update(
+        _mk_rho_aggregates(
+            rho_by_gene,
+            all_mask=panel_mask,
+            marker_mask=panel_mask & ~hk_mask,
+            hk_mask=panel_mask & hk_mask,
+            per_cohort=per_cohort,
+            suffix="",
+        )
     )
-    result["mk_rho_mean_housekeeping"] = (
-        float(np.mean(hk_vals)) if hk_vals.size else np.nan
+    # QC-filtered narrow panel. Primary margin: the full housekeeping control panel.
+    result.update(
+        _mk_rho_aggregates(
+            rho_by_gene,
+            all_mask=narrow_mask,
+            marker_mask=narrow_mask & ~hk_mask,
+            hk_mask=hk_mask,
+            per_cohort=per_cohort_narrow,
+            suffix=NARROW_SET_SUFFIX,
+        )
     )
-    result["mk_rho_marker_minus_hk"] = (
-        float(np.mean(marker_vals) - np.mean(hk_vals))
-        if marker_vals.size and hk_vals.size
+    # Second, coverage-matched margin for the narrow panel: the housekeeping genes that
+    # are themselves inside the narrow panel — today exactly PGK1. Only 6 of the 15
+    # housekeeping controls clear the all-42-pairs coverage bar the narrow markers had
+    # to clear, so the full-panel control above is a variable-composition set while this
+    # one is coverage-matched but n = 1. Both are reported so the noisier of the two can
+    # be identified from the data rather than argued about.
+    ok = ~np.isnan(rho_by_gene)
+    narrow_marker_vals = rho_by_gene[(narrow_mask & ~hk_mask) & ok]
+    pgk1_vals = rho_by_gene[(narrow_mask & hk_mask) & ok]
+    result[f"mk_rho_mean_PGK1_only{NARROW_SET_SUFFIX}"] = (
+        float(np.mean(pgk1_vals)) if pgk1_vals.size else np.nan
+    )
+    result[f"mk_rho_marker_minus_PGK1_only{NARROW_SET_SUFFIX}"] = (
+        float(np.mean(narrow_marker_vals) - np.mean(pgk1_vals))
+        if narrow_marker_vals.size and pgk1_vals.size
         else np.nan
-    )
-    result["mk_rho_mean_by_cohort_mean"] = (
-        float(np.mean(list(per_cohort.values()))) if per_cohort else np.nan
     )
     if collect_detail:
         result["mk_gene_cohort_detail"] = detail
@@ -2223,6 +2392,7 @@ def compute_all_metrics(
     ref_df: Optional[pd.DataFrame] = None,
     n_perm: int = N_PERM,
     panel: Optional[list[str]] = None,
+    narrow_panel: Optional[list[str]] = None,
     collect_gene_cohort_detail: bool = False,
     on_group_done: Optional[Callable[[dict], None]] = None,
 ) -> dict:
@@ -2258,6 +2428,9 @@ def compute_all_metrics(
         Label permutations for the Group N negative control.
     panel : list of str, optional
         Marker gene panel for Groups L and M. Default: the full annotation table.
+    narrow_panel : list of str, optional
+        Gene panel for the Group L `_narrow_set` aggregates; Group L only. Default:
+        marker_panels.narrow_set_genes(). Pass [] to disable that family.
     collect_gene_cohort_detail : bool
         Pass through to Group L; see compute_group_l.
     on_group_done : callable, optional
@@ -2389,6 +2562,7 @@ def compute_all_metrics(
         panel,
         MIN_COHORT_N,
         collect_gene_cohort_detail,
+        narrow_panel,
     )
     _run_group("M", compute_group_m, exp_df, ann_df, panel)
     _run_group("N", compute_group_n, exp_df, ann_df, N_PCS, n_perm)

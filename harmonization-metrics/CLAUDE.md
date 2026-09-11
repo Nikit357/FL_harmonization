@@ -19,6 +19,9 @@ pod.
 # Rebuild the blind-check analysis notebook (groups L/M/N)
 python create_correlation_prediction_notebook.py
 
+# Rebuild its narrow-panel variant (Group L from the mk_*_narrow_set columns)
+python create_correlation_prediction_notebook.py --narrow-set --date-tag <YYMMDD>
+
 # Rebuild the primary v3 analysis notebook
 python create_v3_notebook.py
 
@@ -43,15 +46,16 @@ instead of importing `marker_panels`. To point it at a new metrics run, change `
 | `harmonization_metrics_analysis_v3.ipynb` | **Primary analysis notebook** (353 cells): quantitative comparison of 2,234 attempts × 87 metrics; clustermaps, per-group plots, composite scoring, gene set analysis |
 | `create_v3_notebook.py` | Generator for the notebook above |
 | `harmonization_metrics_visual_inspection.ipynb` | **Visual inspection notebook** (338 cells): PCA/UMAP/tSNE grids per strategy; interactive decision tool; uses `plot_embedding_grid()` + S3 expression downloads |
-| `correlation_prediction_metrics_analysis.ipynb` | **Blind-check notebook** (29 cells): groups L/M/N, best-vs-rest comparison, per-gene and per-cell-type views, permutation control, Supplementary File 5 export |
-| `create_correlation_prediction_notebook.py` | Generator for the notebook above; regenerate rather than hand-edit |
+| `correlation_prediction_metrics_analysis.ipynb` | **Blind-check notebook**: groups L/M/N, best-vs-rest comparison, per-gene and per-cell-type views, permutation control, Supplementary File 5 export. **The committed file (40 cells) has diverged from its generator (32 cells)** — it carries 8 hand-added cells, hand-written working notes among them. Port those into the generator before ever regenerating this file |
+| `correlation_prediction_metrics_analysis_narrow_set.ipynb` | **Narrow-panel variant** (32 cells, generated 2026-09-04): identical analysis with Group L read from the `mk_*_narrow_set` columns and every gene-level view restricted to the 56 `in_narrow_set` genes. Adds §3b, the housekeeping-control noise comparison (`fig5f_hk_control_comparison_narrow_set`, `T5f_hk_control_noise_comparison_narrow_set.csv`), and writes its own `supplementary_file_5_narrow_set/` folder |
+| `create_correlation_prediction_notebook.py` | Generator for both notebooks above; `--narrow-set` selects the variant and `--date-tag` picks the metric-table snapshot. Regenerate rather than hand-edit |
 | `marker_gene_deep_analysis.ipynb` | **Marker panel deep-dive notebook**: gene-set overlap (Venn/supervenn), raw-coverage and expression-quality gates, saturation split, gene × gene consensus correlation, minimal orthogonal panel selection, noise/coherence analysis |
 | `create_marker_gene_deep_analysis_notebook.py` | Generator for the notebook above; regenerate rather than hand-edit |
 | `marker_gene_deep_analysis_plan_260827.md` | Plan document for the marker panel deep analysis |
 | `harmonization_metrics_analysis.ipynb` | Older notebook (superseded by v3); do not use for new figures |
 | `insert_cells.py` | One-time helper: programmatically inserts §5–§11 analysis cells into the notebook |
 | `strip_and_reorganize.py` | Strips cell outputs from the analysis notebooks and reorganizes them |
-| `metric_tables/metrics_comprehensive_260824.csv` | Latest local metrics copy (August 24 2026); the first that carries the blind-check groups L/M/N (15 `mk_`, 24 `xb_`, 38 `pv_` columns). Read by the blind-check notebook |
+| `metric_tables/metrics_comprehensive_260824.csv` | Latest local metrics copy (August 24 2026); the first that carries the blind-check groups L/M/N (15 `mk_`, 24 `xb_`, 38 `pv_` columns). Read by the blind-check notebook. Snapshots taken after the 2026-09-04 Group L narrow-panel run carry **30** `mk_` columns (15 full-panel + 15 `_narrow_set`) |
 | `metric_tables/metrics_comprehensive_260609.csv` | June 9 2026 copy; still the input of the v3 notebook. No L/M/N columns. Earlier dated copies in the same directory |
 | `metric_tables/{marker_gene,marker_cohort}_correlations_long_260824.csv`, `prediction_folds_long_260824.csv` | Long-format Group L/N detail tables from `run_metrics_concat.py` |
 | `metric_tables/gene_qc_long_260827.csv.gz` | Per-attempt per-gene expression QC from `gene_panel_analysis/run_gene_corr_concat.py` |

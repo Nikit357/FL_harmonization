@@ -13,13 +13,17 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from typing import Optional
 
 import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 from compute_batch_metrics import (
+    NARROW_SET_SUFFIX,
     XB_MAX_SAMPLES,
+    _MK_AGG_KEYS,
+    _MK_NARROW_ONLY_KEYS,
     compute_all_metrics,
     compute_group_i,
     compute_group_j,
@@ -28,7 +32,7 @@ from compute_batch_metrics import (
     compute_group_m,
     compute_group_n,
 )
-from marker_panels import housekeeping_genes, panel_genes
+from marker_panels import housekeeping_genes, narrow_set_genes, panel_genes
 from run_metrics_job import GROUP_SENTINEL_KEYS, _groups_to_recompute
 
 RNG = np.random.default_rng(42)
@@ -295,6 +299,18 @@ def test_incremental_groups_to_recompute() -> None:
         f"got {result}",
     )
 
+    # Group L gained a second sentinel with the `_narrow_set` family: a sidecar carrying
+    # only the old key must schedule L for recompute, and only stop once both are there.
+    prior_old_l = {"mk_rho_mean_all_genes": 0.99, "status": "ok"}
+    result = _groups_to_recompute(prior_old_l, {"L"})
+    _check(
+        result == {"L"}, "L_recomputed_when_narrow_sentinel_missing", f"got {result}"
+    )
+
+    prior_both_l = dict(prior_old_l, mk_rho_mean_all_genes_narrow_set=0.98)
+    result = _groups_to_recompute(prior_both_l, {"L"})
+    _check(result == set(), "L_complete_with_both_sentinels", f"got {result}")
+
     _check("E" in GROUP_SENTINEL_KEYS, "sentinel_E_defined")
     _check("J" in GROUP_SENTINEL_KEYS, "sentinel_J_defined")
     _check("K" in GROUP_SENTINEL_KEYS, "sentinel_K_defined")
@@ -506,14 +522,20 @@ def _make_panel_data(
     n_genes: int = 80,
     bio_strength: float = 1.5,
     batch_strength: float = 0.0,
+    panel: Optional[list[str]] = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Synthetic data whose gene names come from the real marker panel.
 
     Groups L and M intersect the panel with the matrix columns, so the columns must
-    be real marker symbols or the panel resolves to nothing.
+    be real marker symbols or the panel resolves to nothing. Pass `panel` to use an
+    explicit gene list instead of the first n_genes of the annotation table.
     """
-    genes = panel_genes(include_housekeeping=True)[:n_genes]
+    genes = (
+        panel
+        if panel is not None
+        else panel_genes(include_housekeeping=True)[:n_genes]
+    )
     n = n_per_batch * n_batches
     idx = [f"S{i:04d}" for i in range(n)]
 
@@ -644,6 +666,133 @@ def test_group_l_missing_panel_genes() -> None:
     )
     _check(empty["mk_n_panel_genes_used"] == 0, "zero_genes_handled")
     _check("mk_rho_mean_all_genes" in empty, "keys_present_even_with_zero_genes")
+    _check(
+        f"mk_rho_mean_all_genes{NARROW_SET_SUFFIX}" in empty,
+        "narrow_keys_present_even_with_zero_genes",
+    )
+
+
+def test_group_l_narrow_set() -> None:
+    print("\n--- test_group_l_narrow_set ---")
+    narrow = narrow_set_genes()
+    _check(len(narrow) == 56, "narrow_panel_has_56_genes", f"got {len(narrow)}")
+    # mk_rho_*_PGK1_only_narrow_set names this gene, so the identity behind the name is
+    # asserted here as well as in build_marker_gene_annotation.py.
+    hk_in_narrow = set(narrow) & set(housekeeping_genes())
+    _check(
+        hk_in_narrow == {"PGK1"},
+        "pgk1_is_the_only_narrow_housekeeping_gene",
+        f"got {sorted(hk_in_narrow)}",
+    )
+
+    # Build data whose columns are the narrow panel plus the housekeeping controls, so
+    # both families resolve fully.
+    genes = sorted(set(narrow) | set(housekeeping_genes()))
+    exp_df, ann_df = _make_panel_data(panel=genes)
+    res = compute_group_l(exp_df, exp_df, ann_df)
+
+    for key in _MK_AGG_KEYS:
+        _check(f"{key}{NARROW_SET_SUFFIX}" in res, f"narrow_key_present:{key}")
+    for key in (
+        "mk_n_panel_genes_used",
+        "mk_n_genes_null",
+        "mk_panel_coverage_frac",
+    ):
+        _check(f"{key}{NARROW_SET_SUFFIX}" in res, f"narrow_key_present:{key}")
+    _check(f"mk_n_hk_genes_used{NARROW_SET_SUFFIX}" in res, "narrow_hk_count_present")
+    for key in _MK_NARROW_ONLY_KEYS:
+        _check(f"{key}{NARROW_SET_SUFFIX}" in res, f"narrow_only_key_present:{key}")
+
+    # No dict-valued narrow keys: the family is integrative only, so nothing new can
+    # reach the wide CSV as a stringified container.
+    containers = [
+        k
+        for k, v in res.items()
+        if k.endswith(NARROW_SET_SUFFIX) and isinstance(v, (dict, list))
+    ]
+    _check(not containers, "narrow_family_is_scalar_only", f"got {containers}")
+
+    _check(
+        res[f"mk_n_panel_genes_used{NARROW_SET_SUFFIX}"] == 56,
+        "all_56_narrow_genes_resolved",
+        f"got {res[f'mk_n_panel_genes_used{NARROW_SET_SUFFIX}']}",
+    )
+    _check(
+        abs(res[f"mk_panel_coverage_frac{NARROW_SET_SUFFIX}"] - 1.0) < 1e-9,
+        "narrow_coverage_frac_is_one",
+    )
+
+    # Identity reference: rho == 1 everywhere, so both families sit at 1.0.
+    _check(
+        abs(res[f"mk_rho_mean_all_genes{NARROW_SET_SUFFIX}"] - 1.0) < 1e-6,
+        "narrow_identity_rho_is_one",
+        f"got {res[f'mk_rho_mean_all_genes{NARROW_SET_SUFFIX}']}",
+    )
+
+    # The decisive property: the narrow family is a re-aggregation of the same rho
+    # values, so it must equal the mean over the narrow subset of mk_rho_by_gene.
+    by_gene = {g: v for g, v in res["mk_rho_by_gene"].items() if v is not None}
+    sub = [v for g, v in by_gene.items() if g in set(narrow)]
+    _check(
+        abs(float(np.mean(sub)) - res[f"mk_rho_mean_all_genes{NARROW_SET_SUFFIX}"])
+        < 1e-9,
+        "narrow_mean_matches_per_gene_subset",
+    )
+
+    # The two housekeeping controls: the PGK1-only variant must equal PGK1's own rho,
+    # and its margin must be the marker mean minus exactly that value.
+    _check(
+        abs(res[f"mk_rho_mean_PGK1_only{NARROW_SET_SUFFIX}"] - by_gene["PGK1"]) < 1e-12,
+        "pgk1_only_control_equals_pgk1_rho",
+    )
+    _check(
+        abs(
+            res[f"mk_rho_marker_minus_PGK1_only{NARROW_SET_SUFFIX}"]
+            - (
+                res[f"mk_rho_mean_markers{NARROW_SET_SUFFIX}"]
+                - res[f"mk_rho_mean_PGK1_only{NARROW_SET_SUFFIX}"]
+            )
+        )
+        < 1e-12,
+        "pgk1_only_margin_decomposes",
+    )
+    # Dropping PGK1 must NaN out the coverage-matched margin while leaving the
+    # full-housekeeping margin intact — that asymmetry is the whole point of shipping
+    # both.
+    no_pgk1 = [g for g in genes if g != "PGK1"]
+    res_no = compute_group_l(exp_df[no_pgk1], exp_df[no_pgk1], ann_df)
+    _check(
+        np.isnan(res_no[f"mk_rho_marker_minus_PGK1_only{NARROW_SET_SUFFIX}"]),
+        "pgk1_only_margin_is_nan_without_pgk1",
+    )
+    _check(
+        not np.isnan(res_no[f"mk_rho_marker_minus_hk{NARROW_SET_SUFFIX}"]),
+        "full_hk_margin_survives_without_pgk1",
+    )
+
+    # Partial coverage must be counted, not silently absorbed.
+    keep = genes[:20]
+    part = compute_group_l(exp_df[keep], exp_df[keep], ann_df)
+    _check(
+        part[f"mk_n_panel_genes_used{NARROW_SET_SUFFIX}"]
+        == len(set(keep) & set(narrow)),
+        "narrow_partial_coverage_counted",
+    )
+    _check(
+        part[f"mk_n_genes_null{NARROW_SET_SUFFIX}"] > 0,
+        "narrow_missing_genes_counted",
+    )
+
+    # Disabling the family must leave the full-panel family untouched.
+    off = compute_group_l(exp_df, exp_df, ann_df, narrow_panel=[])
+    _check(
+        off[f"mk_n_panel_genes_used{NARROW_SET_SUFFIX}"] == 0,
+        "narrow_family_disabled_by_empty_panel",
+    )
+    _check(
+        abs(off["mk_rho_mean_all_genes"] - res["mk_rho_mean_all_genes"]) < 1e-12,
+        "full_panel_unaffected_by_narrow_family",
+    )
 
 
 def test_group_m_rank_agreement() -> None:
@@ -808,6 +957,9 @@ def test_lmn_in_compute_all() -> None:
     )
     for k in [
         "mk_rho_mean_all_genes",
+        "mk_rho_mean_all_genes_narrow_set",
+        "mk_rho_marker_minus_hk_narrow_set",
+        "mk_rho_marker_minus_PGK1_only_narrow_set",
         "xb_rank_agree",
         "xb_rank_agree_ratio",
         "pv_lobo3_f1_macro_mean",
@@ -883,6 +1035,7 @@ def main() -> None:
     test_group_l_correlation_preservation()
     test_group_l_per_gene_keys()
     test_group_l_missing_panel_genes()
+    test_group_l_narrow_set()
     test_group_m_rank_agreement()
     test_group_m_subsampling()
     test_group_n_prediction()

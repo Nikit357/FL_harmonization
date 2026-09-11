@@ -40,6 +40,13 @@ housekeeping
 
 A gene may appear in several signatures, so (gene, gene_group) is the table key,
 not gene alone. panel_genes() in marker_panels.py de-duplicates on gene.
+
+The `in_narrow_set` column is orthogonal to signature membership: it flags the
+QC-filtered subset used by the Group L `_narrow_set` aggregates (see
+NARROW_SET_GENES below and implementation_plans/
+narrow_marker_panel_metrics_plan_260904.md). It is a data-derived flag, not a
+literature annotation, so it changes only when the gene QC is rerun - never as a
+side effect of editing a signature block.
 """
 
 from __future__ import annotations
@@ -62,6 +69,26 @@ DYBKAER = "Dybkaer et al. 2015 J Clin Oncol 33(12):1379-1388, PMC4397280"
 PASTORE = "Pastore et al. 2019, PMID 29475724"
 IHC = "Routine diagnostic immunohistochemistry panel (WHO B-cell lymphoma criteria)"
 HK = "Standard RT-qPCR reference gene panel"
+
+# QC-filtered narrow panel (selected 2026-09-04). Two criteria, both evaluated on the
+# unharmonized references only:
+#   1. the gene resolves in all 42 `01_raw__post0` matrices (14 strategies x 3
+#      imputations), per marker_gene_coverage_by_attempt_260828.csv - 193 genes pass;
+#   2. mean `frac_lt_1` < 0.20 on those references, per gene_panel_analysis/ QC - i.e.
+#      fewer than 20% of samples sit in the log2 noise band.
+# 56 genes survive both, one of which (PGK1) is a housekeeping control. Group L reports
+# a second family of integrative aggregates over this subset, suffixed `_narrow_set`.
+NARROW_SET_GENES: frozenset[str] = frozenset(
+    {
+        "AKT1", "ANXA6", "BCL2", "BCL2A1", "BIRC3", "CAMK1", "CCNB1", "CCND1",
+        "CCND2", "CCNE1", "CD22", "CD44", "CD5", "CD53", "CD72", "CD83", "CDK2",
+        "CDK4", "CHPT1", "CNN2", "CSTB", "DDX21", "EGR3", "ENTPD1", "EZH2",
+        "FBLN1", "FEZ1", "FHIT", "FXYD5", "ICAM1", "IFI44", "IFIT1", "IFITM2",
+        "IFNGR1", "IMPDH2", "ITPKB", "JAM3", "LIMD1", "LMO2", "MCM6", "METAP2",
+        "PCNA", "PGK1", "PLEK", "POU2F2", "PRELP", "RGS1", "SKI", "SLA", "SNX2",
+        "SP140", "STMN1", "TPD52", "VCL", "VIM", "ZNF277",
+    }
+)
 
 # Signatures whose gene lists are not read from a supplementary spreadsheet.
 # alias is filled from ALIAS_MAP below.
@@ -727,6 +754,7 @@ def build() -> pd.DataFrame:
                     "source_article": source,
                     "provenance": provenance,
                     "is_housekeeping": provenance == "housekeeping",
+                    "in_narrow_set": gene in NARROW_SET_GENES,
                 }
             )
     df = pd.DataFrame(rows)
@@ -737,12 +765,28 @@ def build() -> pd.DataFrame:
 
 def main() -> None:
     df = build()
+    # A narrow-set gene that is not in the panel would silently shrink the
+    # `_narrow_set` denominator instead of failing, so check it here.
+    absent = sorted(NARROW_SET_GENES - set(df["gene"]))
+    assert not absent, f"narrow-set genes absent from the panel: {absent}"
+    # Group L names this gene in a metric key
+    # (mk_rho_marker_minus_PGK1_only_narrow_set), so the column name stays truthful only
+    # while it is the sole housekeeping gene in the narrow panel. Fail here rather than
+    # let the name quietly become wrong.
+    hk_in_narrow = set(df.loc[df["in_narrow_set"] & df["is_housekeeping"], "gene"])
+    assert hk_in_narrow == {"PGK1"}, (
+        f"housekeeping genes inside the narrow set changed: {sorted(hk_in_narrow)}. "
+        f"Rename mk_rho_*_PGK1_only_narrow_set in compute_batch_metrics.py to match."
+    )
     df.to_csv(OUT_CSV, index=False)
     print(f"Wrote {OUT_CSV}")
     print(f"  rows (gene x gene_group): {len(df)}")
     print(f"  unique genes:             {df['gene'].nunique()}")
     print(f"  gene groups:              {df['gene_group'].nunique()}")
     print(f"  housekeeping genes:       {int(df['is_housekeeping'].sum())}")
+    n_narrow = df.loc[df["in_narrow_set"], "gene"].nunique()
+    print(f"  narrow-set genes:         {n_narrow}")
+    print(f"  housekeeping in narrow:   {sorted(hk_in_narrow)}")
     print("\nprovenance:")
     print(df["provenance"].value_counts().to_string())
     print("\ncell_type:")

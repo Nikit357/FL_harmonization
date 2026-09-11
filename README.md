@@ -53,11 +53,14 @@ harmonization-scripts/            the benchmark itself
 harmonization-metrics-calculation/  scoring
   compute_batch_metrics.py        14 metric groups (A–N); L/M/N are the blind check
   marker_gene_annotation.csv      633 genes · 63 signatures · 7 cited sources
+                                  plus in_narrow_set, the 56-gene QC-filtered subset
   run_metrics_parallel.py         dispatcher; run_metrics_concat.py aggregates
 
 harmonization-metrics/            analysis and figures
   harmonization_metrics_analysis*.ipynb   rankings over the metric tables
   correlation_prediction_metrics_analysis.ipynb   the blind marker/prediction check
+  correlation_prediction_metrics_analysis_narrow_set.ipynb
+                                  the same check on the 56-gene narrow panel
   marker_gene_deep_analysis.ipynb          minimal orthogonal panel selection
   metric_tables/                  the published per-run metric tables
 
@@ -130,6 +133,14 @@ faithful, and are labelled as such in the shim**:
   `decoupler` with PROGENy and re-derive any figure that depends on it.
 
 Do not treat output from those three as reproducing published values.
+
+Five figures in `figures_for_article/current_figures_tables_for_article_260819/` are
+deposited as **PDF and PNG only**, with no `.svg` sibling:
+`l5_clustermap_reference_set`, `l5_clustermap_genes_by_attempts`,
+`l7_consensus_clustermap_global`, `l7_consensus_clustermap_within` and
+`l7_consensus_sd_clustermap`. Their SVGs are 64–92 MB each — 375 MB between them, more
+than half of everything this directory holds — and at that scale the vector layers are
+not usefully editable. The PDF carries the same content. Nothing else is abridged.
 
 ## Licence
 

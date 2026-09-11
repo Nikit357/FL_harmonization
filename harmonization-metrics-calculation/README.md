@@ -300,6 +300,43 @@ nohup python run_metrics_parallel.py \
 Do not pass `--skip-if-exists` here either, for the same reason as Step 10e: every target job
 already has a sidecar, so it would skip the job before `--force-groups` ever gets a chance to act.
 
+### Step 10g — Add the Group L narrow-panel aggregates
+
+Group L reports a second family of integrative aggregates over the 56-gene QC-filtered narrow
+panel (`in_narrow_set` in `marker_gene_annotation.csv`), every key suffixed `_narrow_set`. It is
+computed from the same correlation pass as the full-panel family, so this run costs no more than
+a plain Group L run. Sidecars written before 2026-09-04 have the full-panel keys only.
+
+```bash
+nohup python run_metrics_parallel.py \
+    --groups L --skip-wm --only-with-metrics --skip-shambhala \
+    --n-workers 20 --memory-limit-gb 8.0 --timeout-s 1800 \
+    --ref-cache-dir /workspace/ref_cache \
+    > /workspace/metrics_l_narrow.log 2>&1 &
+```
+
+Three flag notes, all of which matter:
+
+- **No `--skip-if-exists`**, for the same reason as Steps 10e and 10f — every target job already
+  has a sidecar and would be skipped whole.
+- **No `--force-groups`** either. Group L's sentinel is now the *pair*
+  (`mk_rho_mean_all_genes`, `mk_rho_mean_all_genes_narrow_set`), and a group counts as complete
+  only when both keys are populated, so the incremental check schedules Group L on its own and
+  stops scheduling it once the narrow keys land. Forcing would re-run finished jobs on a restart.
+- **Pass `--skip-wm`.** Without it the worker adds Group I to the requested set
+  (`if not args.skip_wm: requested_groups.add("I")`); harmless where `wm_RNA_BATCH` already
+  exists, but it would spend 2–5 min computing a WaterMelon score on any job that lacks it.
+
+The reference cache is needed exactly as in Step 10e (~12.8 GB at `--ref-cache-dir`). Runtime is
+dominated by downloading each harmonized matrix, roughly 1–3 min per job, so about 2–4 h at
+20 workers over the 2,323 non-Shambhala attempts.
+
+After Step 11, `metrics_comprehensive.csv` carries **30** `mk_` columns (15 full-panel + 15
+narrow). The long tables must come out unchanged — the narrow family is integrative only, and
+`mk_rho_by_gene` / `mk_rho_by_cohort` stay restricted to the requested panel. Diff the
+regenerated `marker_gene_correlations_long_*.csv` against the previous snapshot and stop to
+investigate if it moved.
+
 ### Step 11 — Aggregate results
 
 After all (or most) jobs complete, aggregate all JSON sidecars into a single CSV:
