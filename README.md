@@ -1,5 +1,7 @@
 # ComboBatch — harmonizing transcriptomes across 88 lymphoma cohorts
 
+DOI: [10.5281/zenodo.22755764](https://zenodo.org/records/22755764)
+
 Code, metric tables and figures for a systematic benchmark of transcriptomic
 batch-effect harmonization in follicular lymphoma (FL), diffuse large B-cell lymphoma
 (DLBCL) and normal germinal-centre B cells.
