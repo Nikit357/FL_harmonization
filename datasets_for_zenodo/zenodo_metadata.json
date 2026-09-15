@@ -1,0 +1,34 @@
+{
+  "title": "ComboBatch: harmonized transcriptomic matrices and benchmark metrics for 73 public germinal-centre B-cell lymphoma cohorts",
+  "upload_type": "dataset",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "description": "<p>Expression layer accompanying the ComboBatch harmonization study: the public-cohort raw expression matrix, all 42 imputed input matrices (14 sample-removal strategies x 3 imputation approaches), and 911 harmonized matrices - including the complete 33-method x 14-strategy x 2-post-removal grid at the strict imputation - together with the full metric tables for all 2,407 harmonization attempts.</p><p><strong>5,178 samples from 73 open cohorts.</strong> Fifteen further cohorts (1,996 samples) are proprietary or under controlled access and are withheld; they are named, with their sample counts, in cohorts.csv. Every statistic in the article was computed on the full 7,174 samples - the deposited matrices are those same matrices with the withheld rows removed, not a re-harmonization of the open subset.</p><p>See README.md for the file layout, the naming convention, and the per-strategy withheld fractions. manifest.csv indexes every deposited matrix.</p>",
+  "keywords": [
+    "batch effect",
+    "data harmonization",
+    "transcriptomics",
+    "follicular lymphoma",
+    "diffuse large B-cell lymphoma",
+    "germinal centre B cells",
+    "RNA-seq",
+    "microarray",
+    "benchmark"
+  ],
+  "creators": [
+    {
+      "name": "Nikitin, Daniil",
+      "affiliation": "Institute of Molecular Biology, National Academy of Sciences of Republic of Armenia",
+      "orcid": "0000-0003-1029-1174"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isDerivedFrom",
+      "identifier": "https://github.com/Nikit357/FL_harmonization",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Rounded to 4 decimal places (maximum absolute error 5e-5). Matrices are samples x genes, log2(x+1)-transformed per cohort, HGNC symbols."
+}

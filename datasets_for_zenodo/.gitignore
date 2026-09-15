@@ -1,0 +1,8 @@
+# Build scratch — one bundle at a time, never committed
+work/
+
+# Re-derived on every run from Supplementary File 1; never cached into git
+prop_ids.txt
+
+# Run logs
+*.log
