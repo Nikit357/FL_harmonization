@@ -1,0 +1,38 @@
+article2_generalizability · snapshot 260905
+  global class: 11 metrics
+  analysis set: 2234 rows | 31 methods | 14 strategies | 3 imputations
+  A2_T0: 84 keys matched, 78/79 numeric columns identical (differing: ['compute_time_s'])
+  folds: 32,746 3-class folds; 1-class 15,436 (median F1 0.903), 2-class 9,821 (median F1 0.629), 3-class 7,489 (median F1 0.804)
+  joint L/M gate (rho > 0.75 and margin > 0): 1686 of 2234
+  Spearman(full F1, multiclass-only F1) = 0.810 over all 2174 approaches carrying both; 0.815 over the 2058 with >= 3 multiclass folds
+  agreement-specific: 61 of 2150 non-raw approaches (2.8%)
+NA filter: 2407 → 2234 rows (removed 173 invalid approaches)
+df_ok: (2234, 331)  |  scoring_cols: 87  |  groups: ['?', 'A', 'B', 'C', 'D', 'E', 'G', 'H', 'I', 'J', 'K']
+  agreement-specific: 61 of 2150 non-raw approaches (2.8%)
+  A2_T10: 349 tests; 220 at p < 0.05
+  A2_T11: 97 Spearman correlations
+  A2_T12: 344 registry metrics, 334 non-metadata, 87 scoring, 329 recoverable from the snapshot
+  A2_T15: class scores for 2234 approaches; metrics per class {'global': 11, 'local': 25, 'distributional': 11, 'structural': 33, 'L': 22, 'M': 19, 'N': 23}
+  wrote tables/A2_T0_shambhala_identity_260924.csv  (79 rows x 6 cols)
+  wrote tables/A2_T1_analysis_set_census_260924.csv  (2,234 rows x 296 cols)
+  wrote tables/A2_T2_generalizability_ranking_260924.csv  (2,234 rows x 27 cols)
+  wrote tables/A2_T3_cross_election_matrix_260924.csv  (9 rows x 9 cols)
+  wrote tables/A2_T4_method_census_by_class_260924.csv  (127 rows x 4 cols)
+  wrote tables/A2_T5_per_batch_folds_260924.csv  (3,521 rows x 9 cols)
+  wrote tables/A2_T6_agreement_specific_260924.csv  (61 rows x 15 cols)
+  wrote tables/A2_T7_harshness_by_lmn_260924.csv  (7 rows x 9 cols)
+  wrote tables/A2_T8_fold_composition_260924.csv  (33 rows x 6 cols)
+  wrote tables/A2_T2b_generalizability_top_eligible_260924.csv  (15 rows x 27 cols)
+  wrote tables/A2_T3b_cross_election_pairs_260924.csv  (36 rows x 12 cols)
+  wrote tables/A2_T9_harshness_table1_260924.csv  (11 rows x 26 cols)
+  wrote tables/A2_T9b_harshness_full_260924.csv  (186 rows x 23 cols)
+  wrote tables/A2_T10_paired_tests_260924.csv  (349 rows x 38 cols)
+  wrote tables/A2_T11_scatter_correlations_260924.csv  (97 rows x 10 cols)
+  wrote tables/A2_T12_metric_census_260924.csv  (344 rows x 12 cols)
+  wrote tables/A2_T13_lobo_summary_260924.csv  (14 rows x 15 cols)
+  wrote tables/A2_T14_dispersion_260924.csv  (34 rows x 12 cols)
+  wrote tables/A2_T3c_threshold_sensitivity_260924.csv  (108 rows x 11 cols)
+  wrote tables/A2_T16_pca_component_means_260924.csv  (47 rows x 25 cols)
+  wrote tables/A2_T15_class_percentile_scores_260924.csv  (2,234 rows x 23 cols)
+  wrote A2_table_registry_260924.csv  (4 main-text tables)
+  E1 rank churn: {"spearman_index_260917_vs_260924": 0.9517543988627658, "median_abs_rank_change": 111.5, "max_abs_rank_change": 750.0, "top15_overlap_all": 15, "top40_overlap_all": 26, "top15_overlap_eligible": 6, "eligible_leader_260917": "S0_no_removal__strict__29_combat_ref__post1", "eligible_leader_260924": "S0_no_removal__strict__29_combat_ref__post1", "eligible_leader_index_260924": 0.8861621838448367, "clustermap_rank_range_260917": [323, 2038], "clustermap_rank_range_260924": [433, 2022], "top15_all_are_affy_post1_zero_mc_260924": true}

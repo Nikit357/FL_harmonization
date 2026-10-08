@@ -1,0 +1,804 @@
+{
+  "_README": "Phase 3 deliverable (plan \u00a76.2, agent literature-scout), produced interactively 2026-09-19. Every entry was resolved through the NCBI E-utilities from a DOI or a PubMed query; nothing is recalled from memory. `quote` is copied verbatim out of the paper's own PMC full text where the article is open access, and out of its PubMed abstract otherwise -- `quote_source` says which, so an abstract is never passed off as a full-text passage. A paper that could not be opened is not here.",
+  "gap_statement": "Cross-platform transcriptomic harmonization has been benchmarked repeatedly, and each benchmark states a criterion: correlation with a reference, classifier accuracy, cluster separation, or a composite of single-cell integration metrics. No published study asks whether those criteria elect the same approaches. Article 2 measures that on 2,234 harmonization approaches and reports the overlap between the sets each metric class elects.",
+  "reading_list_completed": {
+    "borisov_reviews_read_in_full": [
+      {
+        "pmid": "36140419",
+        "note": "Section 3, 'Evaluation of the Quality of Harmonization', is the field's own list of harmonization criteria and the anchor for Article 2's thesis"
+      },
+      {
+        "pmid": "30727942",
+        "note": "Shambhala, the method behind 20_shambhala"
+      },
+      {
+        "pmid": "35617464",
+        "note": "Shambhala-2 protocol"
+      }
+    ],
+    "analysis_notebooks_read_for_convention": [
+      {
+        "notebook": "harmonization_metrics_analysis.ipynb",
+        "cells": 161,
+        "convention": "sns.set_style('ticks'); strat_pal, method_pal, imp_pal, group_pal, post_rm_pal"
+      },
+      {
+        "notebook": "harmonization_metrics_analysis_v2.ipynb",
+        "cells": 321,
+        "convention": "same palette set; metric taxonomy and polarity table"
+      },
+      {
+        "notebook": "harmonization_metrics_analysis_v3.ipynb",
+        "cells": 571,
+        "convention": "same palette set; best-approach selection and the 'best bars' helpers; the source of CLUSTERMAP_BEST"
+      },
+      {
+        "notebook": "marker_gene_deep_analysis.ipynb",
+        "cells": 103,
+        "convention": "FONT_SIZE = 7.5; sns.set_style('ticks'); strat_pal, imp_pal, post_rm_pal"
+      }
+    ],
+    "note": "Read for method and plotting convention only. Every number in Article 2 is recomputed by analysis/article2_generalizability.py."
+  },
+  "references": [
+    {
+      "pmid": "36140419",
+      "title": "Transcriptomic Harmonization as the Way for Suppressing Cross-Platform Bias and Batch Effect",
+      "year": "2022",
+      "journal": "Biomedicines",
+      "doi": "10.3390/biomedicines10092318",
+      "pmcid": "PMC9496268",
+      "authors": [
+        "Borisov N",
+        "Buzdin A"
+      ],
+      "theme": "harmonization_field",
+      "supports_claim": "Harmonization quality is judged by a heterogeneous set of criteria \u2014 correlation, PCA inspection, clustering metrics \u2014 with no single agreed standard; this review is the field's own statement of that, and Article 2 measures what follows from it.",
+      "quote": "The following quantitative metrics and methods may be applied to estimate the effect of harmonization: (1) First, different statistical criteria may be used to estimate the following endpoints: (a) Correlation analysis for the gene expression profiles before and after harmonization [29,30,31,33,34];",
+      "quote_section": "3. Evaluation of the Quality of Harmonization",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "36140419",
+      "title": "Transcriptomic Harmonization as the Way for Suppressing Cross-Platform Bias and Batch Effect",
+      "year": "2022",
+      "journal": "Biomedicines",
+      "doi": "10.3390/biomedicines10092318",
+      "pmcid": "PMC9496268",
+      "authors": [
+        "Borisov N",
+        "Buzdin A"
+      ],
+      "theme": "harmonization_field",
+      "supports_claim": "Early cross-platform harmonization benchmarks judged success by eye, which is the practice Article 2's recipe replaces with a stated metric per class.",
+      "quote": "Thus, early approaches used visual inspection of the principal component analysis (PCA) plots and/or cluster dendrograms to assess the cross-platform harmonization benchmarks [30,31,32,33,34].",
+      "quote_section": "3. Evaluation of the Quality of Harmonization",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "30727942",
+      "title": "Shambhala: a platform-agnostic data harmonizer for gene expression data",
+      "year": "2019",
+      "journal": "BMC bioinformatics",
+      "doi": "10.1186/s12859-019-2641-8",
+      "pmcid": "PMC6366102",
+      "authors": [
+        "Borisov N",
+        "Shabalina I",
+        "Tkachev V",
+        "Sorokin M",
+        "Garazha A",
+        "Pulin A"
+      ],
+      "theme": "harmonization_field",
+      "supports_claim": "Shambhala is the platform-agnostic harmonizer whose canonical variant is method 20_shambhala in this benchmark; cited for the method, not for a finding.",
+      "quote": "In this study, we developed a new method termed Shambhala suitable for the universal, platform-agnostic harmonization.",
+      "quote_section": "Discussion",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "35617464",
+      "title": "Shambhala-2: A Protocol for Uniformly Shaped Harmonization of Gene Expression Profiles of Various Formats",
+      "year": "2022",
+      "journal": "Current protocols",
+      "doi": "10.1002/cpz1.444",
+      "pmcid": null,
+      "authors": [
+        "Borisov N",
+        "Sorokin M",
+        "Zolotovskaya M",
+        "Borisov C",
+        "Buzdin A"
+      ],
+      "theme": "harmonization_field",
+      "supports_claim": "Shambhala-2 is the protocol form of the same harmonizer, and the reference for the uniformly shaped output the benchmark's Shambhala runs produce.",
+      "quote": "Uniformly shaped harmonization of gene expression profiles is central for the simultaneous comparison of multiple gene expression datasets.",
+      "quote_section": "Abstract",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "20838408",
+      "title": "Tackling the widespread and critical impact of batch effects in high-throughput data",
+      "year": "2010",
+      "journal": "Nature reviews. Genetics",
+      "doi": "10.1038/nrg2825",
+      "pmcid": "PMC3880143",
+      "authors": [
+        "Leek JT",
+        "Scharpf RB",
+        "Bravo HC",
+        "Simcha D",
+        "Langmead B",
+        "Johnson WE"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "Batch effects are widespread and become a major problem when correlated with the outcome of interest \u2014 the general framing of the Introduction.",
+      "quote": "This becomes a major problem when batch effects are correlated with an outcome of interest and lead to incorrect conclusions.",
+      "quote_section": "Body",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "26272994",
+      "title": "Methods that remove batch effects while retaining group differences may lead to exaggerated confidence in downstream analyses",
+      "year": "2016",
+      "journal": "Biostatistics (Oxford, England)",
+      "doi": "10.1093/biostatistics/kxv027",
+      "pmcid": "PMC4679072",
+      "authors": [
+        "Nygaard V",
+        "R\u00f8dland EA",
+        "Hovig E"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "When study groups are not evenly distributed across batches, batch adjustment biases group differences and inflates confidence downstream. This is the theoretical backing for trap 3 and for reporting A_confirmed_bad with its confound stated.",
+      "quote": "Thirdly, instead of ComBat, analyses of the real data with limma blocking by batch.",
+      "quote_section": "Experiment 1",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "22851511",
+      "title": "Batch effect removal methods for microarray gene expression data integration: a survey",
+      "year": "2013",
+      "journal": "Briefings in bioinformatics",
+      "doi": "10.1093/bib/bbs037",
+      "pmcid": null,
+      "authors": [
+        "Lazar C",
+        "Meganck S",
+        "Taminau J",
+        "Steenhoff D",
+        "Coletta A",
+        "Molter C"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "A survey of batch-effect removal methods for expression data integration, cited once for the size of the method space Article 1 sampled.",
+      "quote": "It has been acknowledged that the main source of variation between different MAGE datasets is due to the so-called 'batch effects'.",
+      "quote_section": "Abstract",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "16632515",
+      "title": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
+      "year": "2007",
+      "journal": "Biostatistics (Oxford, England)",
+      "doi": "10.1093/biostatistics/kxj037",
+      "pmcid": null,
+      "authors": [
+        "Johnson WE",
+        "Li C",
+        "Rabinovic A"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "ComBat, the empirical-Bayes location-scale adjustment behind the ComBat family that Article 2's prediction ranking elects.",
+      "quote": "We propose parametric and non-parametric empirical Bayes frameworks for adjusting data for batch effects that is robust to outliers in small sample sizes and performs comparable to existing methods for large samples.",
+      "quote_section": "Abstract",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "33015620",
+      "title": "ComBat-seq: batch effect adjustment for RNA-seq count data",
+      "year": "2020",
+      "journal": "NAR genomics and bioinformatics",
+      "doi": "10.1093/nargab/lqaa078",
+      "pmcid": "PMC7518324",
+      "authors": [
+        "Zhang Y",
+        "Parmigiani G",
+        "Johnson WE"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "ComBat-seq, the count-based variant; one of the two implementations that tie exactly on the Group M margin.",
+      "quote": "ComBat-seq is able to preserve the integer nature of count data, making the analysis pipeline more compatible for RNA-seq studies.",
+      "quote_section": "DISCUSSION",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "29360996",
+      "title": "Feature specific quantile normalization enables cross-platform classification of molecular subtypes using gene expression data",
+      "year": "2018",
+      "journal": "Bioinformatics (Oxford, England)",
+      "doi": "10.1093/bioinformatics/bty026",
+      "pmcid": "PMC5972664",
+      "authors": [
+        "Franks JM",
+        "Cai G",
+        "Whitfield ML"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "Feature-specific quantile normalization, the method Article 1 selected for the SOM and one of the clustermap best approaches.",
+      "quote": "We achieve up to 98% accuracy for BRCA data and 97% accuracy for CRC data in assigning molecular subtypes to RNA-seq data normalized using FSQN and a support vector machine trained exclusively on DNA microarray data.",
+      "quote_section": "Results",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "26844019",
+      "title": "Cross-platform normalization of microarray and RNA-seq data for machine learning applications",
+      "year": "2016",
+      "journal": "PeerJ",
+      "doi": "10.7717/peerj.1621",
+      "pmcid": "PMC4736986",
+      "authors": [
+        "Thompson JA",
+        "Tan J",
+        "Greene CS"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "Cross-platform normalization of microarray and RNA-seq data judged by downstream classifier accuracy \u2014 a benchmark that used one criterion, which is the practice Article 2 questions.",
+      "quote": "Nonparanormal transformation resulted in the best classification of Basal and LumA.",
+      "quote_section": "Results for Dataset 1.",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "16504092",
+      "title": "Bias in error estimation when using cross-validation for model selection",
+      "year": "2006",
+      "journal": "BMC bioinformatics",
+      "doi": "10.1186/1471-2105-7-91",
+      "pmcid": "PMC1397873",
+      "authors": [
+        "Varma S",
+        "Simon R"
+      ],
+      "theme": "validation",
+      "supports_claim": "Cross-validation used for model selection gives an optimistically biased error estimate unless the selection is inside the loop \u2014 the reason Article 2 reports the worst multiclass fold beside the mean.",
+      "quote": "In this article, we investigate the effect on the bias when using this nested CV approach.",
+      "quote_section": "Background",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "34949812",
+      "title": "Benchmarking atlas-level data integration in single-cell genomics",
+      "year": "2022",
+      "journal": "Nature methods",
+      "doi": "10.1038/s41592-021-01336-8",
+      "pmcid": "PMC8748196",
+      "authors": [
+        "Luecken MD",
+        "B\u00fcttner M",
+        "Chaichoompu K",
+        "Danese A",
+        "Interlandi M",
+        "Mueller MF"
+      ],
+      "theme": "integration_metrics",
+      "supports_claim": "The scIB benchmark defines the composite of batch-correction and bio-conservation metrics that Article 1's local metrics descend from, and states that metrics disagree about which integration method wins.",
+      "quote": "The x axis shows the overall batch correction score and the y axis shows the overall bio-conservation score.",
+      "quote_section": "scATAC-seq integration performance depends on feature space",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "30573817",
+      "title": "A test metric for assessing single-cell RNA-seq batch correction",
+      "year": "2019",
+      "journal": "Nature methods",
+      "doi": "10.1038/s41592-018-0254-1",
+      "pmcid": null,
+      "authors": [
+        "B\u00fcttner M",
+        "Miao Z",
+        "Wolf FA",
+        "Teichmann SA",
+        "Theis FJ"
+      ],
+      "theme": "integration_metrics",
+      "supports_claim": "kBET is a test for whether batches are locally well mixed; it was designed for single-cell data, which is the point Article 2 makes about borrowing it.",
+      "quote": "Here we present a user-friendly, robust and sensitive k-nearest-neighbor batch-effect test (kBET; https://github.com/theislab/kBET ) for quantification of batch effects.",
+      "quote_section": "Abstract",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "31740819",
+      "title": "Fast, sensitive and accurate integration of single-cell data with Harmony",
+      "year": "2019",
+      "journal": "Nature methods",
+      "doi": "10.1038/s41592-019-0619-0",
+      "pmcid": "PMC6884693",
+      "authors": [
+        "Korsunsky I",
+        "Millard N",
+        "Fan J",
+        "Slowikowski K",
+        "Zhang F",
+        "Wei K"
+      ],
+      "theme": "integration_metrics",
+      "supports_claim": "Harmony introduced the LISI family used as a local mixing metric in this benchmark.",
+      "quote": "Accurate integration should maintain a cLISI of 1, reflecting a separation of unique cell types throughout the embedding.",
+      "quote_section": "Quantifying Performance in Cell Line Data",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "31948481",
+      "title": "A benchmark of batch-effect correction methods for single-cell RNA sequencing data",
+      "year": "2020",
+      "journal": "Genome biology",
+      "doi": "10.1186/s13059-019-1850-9",
+      "pmcid": "PMC6964114",
+      "authors": [
+        "Tran HTN",
+        "Ang KS",
+        "Chevrier M",
+        "Zhang X",
+        "Lee NYS",
+        "Goh M"
+      ],
+      "theme": "integration_metrics",
+      "supports_claim": "A single-cell batch-correction benchmark whose ranking depends on which metric is used \u2014 the same phenomenon Article 2 quantifies for bulk cross-platform data.",
+      "quote": "The computed values of benchmarking metrics can be found in Additional file 5: Table S4, while the statistical tests for significance are in Additional file 6: Table S5.",
+      "quote_section": "Comprehensive benchmarking of 14 methods on ten datasets using five evaluation metrics",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "29608177",
+      "title": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
+      "year": "2018",
+      "journal": "Nature biotechnology",
+      "doi": "10.1038/nbt.4091",
+      "pmcid": "PMC6152897",
+      "authors": [
+        "Haghverdi L",
+        "Lun ATL",
+        "Morgan MD",
+        "Marioni JC"
+      ],
+      "theme": "integration_metrics",
+      "supports_claim": "Mutual nearest neighbours, the MNN method Article 1's clustermap elected.",
+      "quote": "We present a strategy for batch correction that is based on the detection of mutual nearest neighbours (MNN) in the high-dimensional expression space.",
+      "quote_section": "Body",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "10676951",
+      "title": "Distinct types of diffuse large B-cell lymphoma identified by gene expression profiling",
+      "year": "2000",
+      "journal": "Nature",
+      "doi": "10.1038/35000501",
+      "pmcid": null,
+      "authors": [
+        "Alizadeh AA",
+        "Eisen MB",
+        "Davis RE",
+        "Ma C",
+        "Lossos IS",
+        "Rosenwald A"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "Expression profiling splits DLBCL into germinal-centre and activated B-cell types \u2014 the biology the marker panel and the LOBO class labels encode.",
+      "quote": "One type expressed genes characteristic of germinal centre B cells ('germinal centre B-like DLBCL'); the second type expressed genes normally induced during in vitro activation of peripheral blood B cells ('activated B-like DLBCL').",
+      "quote_section": "Abstract",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "12075054",
+      "title": "The use of molecular profiling to predict survival after chemotherapy for diffuse large-B-cell lymphoma",
+      "year": "2002",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa012914",
+      "pmcid": null,
+      "authors": [
+        "Rosenwald A",
+        "Wright G",
+        "Chan WC",
+        "Connors JM",
+        "Campo E",
+        "Fisher RI"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "Molecular profiling predicts survival after chemotherapy in DLBCL, the clinical motivation for signatures that must transfer across cohorts.",
+      "quote": "We used the gene-expression profiles of these lymphomas to develop a molecular predictor of survival.",
+      "quote_section": "Abstract \u2014 BACKGROUND",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "24398326",
+      "title": "Determining cell-of-origin subtypes of diffuse large B-cell lymphoma using gene expression in formalin-fixed paraffin-embedded tissue",
+      "year": "2014",
+      "journal": "Blood",
+      "doi": "10.1182/blood-2013-11-536433",
+      "pmcid": "PMC3931191",
+      "authors": [
+        "Scott DW",
+        "Wright GW",
+        "Williams PM",
+        "Lih CJ",
+        "Walsh W",
+        "Jaffe ES"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "Lymph2Cx assigns DLBCL cell-of-origin from FFPE material, the platform-transfer problem in its clinical form.",
+      "quote": "In the validation cohort, the assay was accurate, with only 1 case with definitive COO being incorrectly assigned, and robust, with &gt;95% concordance of COO assignment between 2 independent laboratories.",
+      "quote_section": "Body",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "15548776",
+      "title": "Prediction of survival in follicular lymphoma based on molecular features of tumor-infiltrating immune cells",
+      "year": "2004",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa041869",
+      "pmcid": null,
+      "authors": [
+        "Dave SS",
+        "Wright G",
+        "Tan B",
+        "Rosenwald A",
+        "Gascoyne RD",
+        "Chan WC"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "Survival in follicular lymphoma is predicted by immune-cell signatures of the microenvironment, which is why the marker panel carries TME signatures.",
+      "quote": "The length of survival among patients with follicular lymphoma correlates with the molecular features of nonmalignant immune cells present in the tumor at diagnosis.",
+      "quote_section": "Abstract \u2014 CONCLUSIONS",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "29475724",
+      "title": "A gene-expression profiling score for prediction of outcome in patients with follicular lymphoma: a retrospective training and validation analysis in three international cohorts",
+      "year": "2018",
+      "journal": "The Lancet. Oncology",
+      "doi": "10.1016/S1470-2045(18)30102-5",
+      "pmcid": "PMC5882539",
+      "authors": [
+        "Huet S",
+        "Tesson B",
+        "Jais JP",
+        "Feldman AL",
+        "Magnano L",
+        "Thomas E"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "A 23-gene expression score predicts outcome in follicular lymphoma \u2014 a signature whose portability across platforms is exactly what harmonization decides.",
+      "quote": "It is uncertain whether the same limitation would be observed with gene-expression profiling of the tumors.",
+      "quote_section": "Discussion",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "29713087",
+      "title": "Molecular subtypes of diffuse large B cell lymphoma are associated with distinct pathogenic mechanisms and outcomes",
+      "year": "2018",
+      "journal": "Nature medicine",
+      "doi": "10.1038/s41591-018-0016-8",
+      "pmcid": "PMC6613387",
+      "authors": [
+        "Chapuy B",
+        "Stewart C",
+        "Dunford AJ",
+        "Kim J",
+        "Kamburov A",
+        "Redd RA"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "Genetic subtypes of DLBCL with distinct outcomes, cited for disease heterogeneity.",
+      "quote": "Patients with C2 DLBCLs had a distinct trajectory and a steady rate of progression over time (Fig. 6k,l and Supplementary Fig. 16a).",
+      "quote_section": "Outcome associations of DLBCL clusters.",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "29641966",
+      "title": "Genetics and Pathogenesis of Diffuse Large B-Cell Lymphoma",
+      "year": "2018",
+      "journal": "The New England journal of medicine",
+      "doi": "10.1056/NEJMoa1801445",
+      "pmcid": "PMC6010183",
+      "authors": [
+        "Schmitz R",
+        "Wright GW",
+        "Huang DW",
+        "Johnson CA",
+        "Phelan JD",
+        "Wang JQ"
+      ],
+      "theme": "lymphoma_biology",
+      "supports_claim": "Genetics and pathogenesis of DLBCL, the companion genetic classification.",
+      "quote": "Overall, we classified 44.8% of our samples into these genetically \u201cpure\u201d subtypes of DLBCL and recognize that non-subtyped cases may share genetic features as well as etiologic factors with the genetic subtypes (Fig. 2B).",
+      "quote_section": "A GENETIC CLASSIFIER FOR DLBCL",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "18325927",
+      "title": "Merging two gene-expression studies via cross-platform normalization",
+      "year": "2008",
+      "journal": "Bioinformatics (Oxford, England)",
+      "doi": "10.1093/bioinformatics/btn083",
+      "pmcid": null,
+      "authors": [
+        "Shabalin AA",
+        "Tjelmeland H",
+        "Fan C",
+        "Perou CM",
+        "Nobel AB"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "XPN, the cross-platform normalization that merges two expression studies; method 26_xpn in this benchmark.",
+      "quote": "This article considers the problem of how to merge datasets arising from different gene-expression studies of a common organism and phenotype.",
+      "quote_section": "Abstract \u2014 MOTIVATION",
+      "quote_source": "PubMed abstract \u2014 full text is not open access"
+    },
+    {
+      "pmid": "22151536",
+      "title": "Empirical comparison of cross-platform normalization methods for gene expression data",
+      "year": "2011",
+      "journal": "BMC bioinformatics",
+      "doi": "10.1186/1471-2105-12-467",
+      "pmcid": "PMC3314675",
+      "authors": [
+        "Rudy J",
+        "Valafar F"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "An empirical comparison of cross-platform normalization methods \u2014 a benchmark that ranked methods on one criterion, which is the practice Article 2 tests.",
+      "quote": "By comparing these curves we obtain statistics for over and under-detection of differentially expressed genes after cross-platform normalization as follows.",
+      "quote_section": "Initial evaluation",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "17907809",
+      "title": "Capturing heterogeneity in gene expression studies by surrogate variable analysis",
+      "year": "2007",
+      "journal": "PLoS genetics",
+      "doi": "10.1371/journal.pgen.0030161",
+      "pmcid": "PMC1994707",
+      "authors": [
+        "Leek JT",
+        "Storey JD"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "Surrogate variable analysis, the basis of method 04_sva, which Article 1's clustermap elected and Article 2 carries as a named group.",
+      "quote": "This justifies the use of the singular value decomposition to identify orthogonal signatures of expression heterogeneity for surrogate variable estimates.",
+      "quote_section": "Statistical model for SVA.",
+      "quote_source": "PMC full text"
+    },
+    {
+      "pmid": "25150836",
+      "title": "Normalization of RNA-seq data using factor analysis of control genes or samples",
+      "year": "2014",
+      "journal": "Nature biotechnology",
+      "doi": "10.1038/nbt.2931",
+      "pmcid": "PMC4404308",
+      "authors": [
+        "Risso D",
+        "Ngai J",
+        "Speed TP",
+        "Dudoit S"
+      ],
+      "theme": "batch_effect",
+      "supports_claim": "RUV, factor analysis of control genes; method 09_ruv in the benchmark and the reference for the housekeeping-gene control used in Group L.",
+      "quote": "We propose a normalization strategy, remove unwanted variation (RUV), that adjusts for nuisance technical effects by performing factor analysis on suitable sets of control genes (e.g., ERCC spike-ins) or samples (e.g., replicate libraries).",
+      "quote_section": "Body",
+      "quote_source": "PMC full text"
+    }
+  ],
+  "orcid_self_citations": {
+    "orcid": "0000-0003-1029-1174",
+    "note": "The 19 distinct works of plan \u00a72.4, each verified against Crossref (or DataCite for the Zenodo record) on 2026-09-19, with the locus \u00a72.4 assigns it.",
+    "works": [
+      {
+        "n": 1,
+        "doi": "10.3389/fmolb.2021.737821",
+        "resolved": true,
+        "title": "Experimental and Meta-Analytic Validation of RNA Sequencing Signatures for Predicting Status of Microsatellite Instability",
+        "year": "2021",
+        "venue": "Frontiers in Molecular Biosciences",
+        "type": "journal-article",
+        "pmid": "34888350",
+        "locus": "Introduction \u2014 a signature validated across independently generated datasets"
+      },
+      {
+        "n": 2,
+        "doi": "10.1186/s12885-022-10177-3",
+        "resolved": true,
+        "title": "Personalized targeted therapy prescription in colorectal cancer using algorithmic analysis of RNA sequencing data",
+        "year": "2022",
+        "venue": "BMC Cancer",
+        "type": "journal-article",
+        "pmid": "36316649",
+        "locus": "Introduction \u2014 cross-cohort application of an expression model"
+      },
+      {
+        "n": 3,
+        "doi": "10.3389/fmolb.2022.753318",
+        "resolved": true,
+        "title": "Gene Expression-Based Signature Can Predict Sorafenib Response in Kidney Cancer",
+        "year": "2022",
+        "venue": "Frontiers in Molecular Biosciences",
+        "type": "journal-article",
+        "pmid": "35359606",
+        "locus": "Introduction \u2014 signature portability across cohorts"
+      },
+      {
+        "n": 4,
+        "doi": "10.3390/biomedicines8060142",
+        "resolved": true,
+        "title": "RNA Sequencing-Based Identification of Ganglioside GD2-Positive Cancer Phenotype",
+        "year": "2020",
+        "venue": "Biomedicines",
+        "type": "journal-article",
+        "pmid": "32486168",
+        "locus": "Methods, Group L \u2014 marker-panel expression readout"
+      },
+      {
+        "n": 5,
+        "doi": "10.3390/cancers11081060",
+        "resolved": true,
+        "title": "High FREM2 Gene and Protein Expression Are Associated with Favorable Prognosis of IDH-WT Glioblastomas",
+        "year": "2019",
+        "venue": "Cancers",
+        "type": "journal-article",
+        "pmid": "31357584",
+        "locus": "Methods, Group L \u2014 single-marker prognostic readout across platforms"
+      },
+      {
+        "n": 6,
+        "doi": "10.1016/j.heliyon.2021.e06408",
+        "resolved": true,
+        "title": "DNA repair pathway activation features in follicular and papillary thyroid tumors, interrogated using 95 experimental RNA sequencing profiles",
+        "year": "2021",
+        "venue": "Heliyon",
+        "type": "journal-article",
+        "pmid": "33748479",
+        "locus": "Introduction \u2014 pathway-level activation from expression, cross-dataset"
+      },
+      {
+        "n": 7,
+        "doi": "10.1016/j.jmig.2021.03.011",
+        "resolved": true,
+        "title": "Gene Expression Signature of Endometrial Samples from Women with and without Endometriosis",
+        "year": "2021",
+        "venue": "Journal of Minimally Invasive Gynecology",
+        "type": "journal-article",
+        "pmid": "33839309",
+        "locus": "Introduction \u2014 signature from a single-centre cohort; the generalization question"
+      },
+      {
+        "n": 8,
+        "doi": "10.1016/j.xcrm.2025.102029",
+        "resolved": true,
+        "title": "A patient-derived T cell lymphoma biorepository uncovers pathogenetic mechanisms and host-related therapeutic vulnerabilities",
+        "year": "2025",
+        "venue": "Cell Reports Medicine",
+        "type": "journal-article",
+        "pmid": "40147445",
+        "locus": "Introduction \u2014 lymphoma transcriptomics, the disease context"
+      },
+      {
+        "n": 9,
+        "doi": "10.3390/ijms21228491",
+        "resolved": true,
+        "title": "Analysis of miR-9-5p, miR-124-3p, miR-21-5p, miR-138-5p, and miR-1-3p in Glioblastoma Cell Lines and Extracellular Vesicles",
+        "year": "2020",
+        "venue": "International Journal of Molecular Sciences",
+        "type": "journal-article",
+        "pmid": "33187334",
+        "locus": "Discussion \u2014 marker stability across preparation types"
+      },
+      {
+        "n": 10,
+        "doi": "10.1007/s10549-018-5043-0",
+        "resolved": true,
+        "title": "Plasma exosomes stimulate breast cancer metastasis through surface interactions and activation of FAK signaling",
+        "year": "2018",
+        "venue": "Breast Cancer Research and Treatment",
+        "type": "journal-article",
+        "pmid": "30484103",
+        "locus": "Discussion \u2014 expression readouts from a non-standard input material"
+      },
+      {
+        "n": 11,
+        "doi": "10.14740/jh412w",
+        "resolved": true,
+        "title": "Functional Properties of Circulating Exosomes Mediated by Surface-Attached Plasma Proteins",
+        "year": "2018",
+        "venue": "Journal of Hematology",
+        "type": "journal-article",
+        "pmid": "32300430",
+        "locus": "Discussion \u2014 same, paired with 10"
+      },
+      {
+        "n": 12,
+        "doi": "10.1098/rsos.260639",
+        "resolved": true,
+        "title": "Transposable element-host genome evolutionary arms race revealed by multi-modal epigenomic profiling in a telomere-to-telomere human genome reference",
+        "year": "2026",
+        "venue": "Royal Society Open Science",
+        "type": "journal-article",
+        "pmid": null,
+        "locus": "Introduction \u2014 genome-wide profiles compared across assay modalities"
+      },
+      {
+        "n": 13,
+        "doi": "10.1101/2025.09.24.677146",
+        "resolved": true,
+        "title": "Joint analysis of human retroelements-linked histone modification profiles reveals quickly evolving molecular processes connected with cancer",
+        "year": "2025",
+        "venue": "",
+        "type": "posted-content",
+        "pmid": null,
+        "locus": "Introduction \u2014 joint analysis across separately generated profile sets"
+      },
+      {
+        "n": 14,
+        "doi": "10.3390/cells8091034",
+        "resolved": true,
+        "title": "H3K4me3, H3K9ac, H3K27ac, H3K27me3 and H3K9me3 Histone Tags Suggest Distinct Regulatory Evolution of Open and Condensed Chromatin Landmarks",
+        "year": "2019",
+        "venue": "Cells",
+        "type": "journal-article",
+        "pmid": "31491936",
+        "locus": "Introduction \u2014 multi-assay integration"
+      },
+      {
+        "n": 15,
+        "doi": "10.3390/cells8101219",
+        "resolved": true,
+        "title": "Retroelement-Linked H3K4me1 Histone Tags Uncover Regulatory Evolution Trends of Gene Enhancers and Feature Quickly Evolving Molecular Processes in Human Physiology",
+        "year": "2019",
+        "venue": "Cells",
+        "type": "journal-article",
+        "pmid": "31597351",
+        "locus": "Introduction \u2014 same theme as 14"
+      },
+      {
+        "n": 16,
+        "doi": "10.3390/cells8020130",
+        "resolved": true,
+        "title": "Retroelement\u2014Linked Transcription Factor Binding Patterns Point to Quickly Developing Molecular Pathways in Human Evolution",
+        "year": "2019",
+        "venue": "Cells",
+        "type": "journal-article",
+        "pmid": "30736359",
+        "locus": "Introduction \u2014 same theme as 14 (with correction 10.3390/cells8080832)"
+      },
+      {
+        "n": 17,
+        "doi": "10.3389/fimmu.2018.00030",
+        "resolved": true,
+        "title": "Profiling of Human Molecular Pathways Affected by Retrotransposons at the Level of Regulation by Transcription Factor Proteins",
+        "year": "2018",
+        "venue": "Frontiers in Immunology",
+        "type": "journal-article",
+        "pmid": "29441061",
+        "locus": "Introduction \u2014 pathway-level aggregation of noisy per-feature signal"
+      },
+      {
+        "n": 18,
+        "doi": "10.5281/zenodo.19052415",
+        "resolved": true,
+        "title": "Retroelements-driven regulatory evolution of human genes and molecular processes",
+        "year": "2026",
+        "venue": "Zenodo",
+        "type": "dataset",
+        "pmid": null,
+        "locus": "Data availability \u2014 deposited dataset, not a finding",
+        "error": null,
+        "registry": "DataCite"
+      },
+      {
+        "n": 19,
+        "doi": null,
+        "resolved": false,
+        "locus": "Discussion \u2014 method-development precedent (RetroSpect book chapter)",
+        "note": "book chapter; no DOI found \u2014 [TO CONFIRM: chapter DOI or ISBN]"
+      }
+    ]
+  }
+}

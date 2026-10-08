@@ -1,0 +1,703 @@
+{
+ "generated": "2026-09-20",
+ "source": "figures/panels_260917",
+ "font": "Inter",
+ "dpi": 300,
+ "supersample": 2,
+ "labels_only": false,
+ "panels": {
+  "a2_p14_expression_scatter_01_raw": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:2",
+   "letter": "A",
+   "placed": [
+    30,
+    64,
+    690,
+    1794
+   ],
+   "svg_pt": [
+    380.0077,
+    988.1372
+   ],
+   "sx": 1.815752,
+   "sy": 1.815537,
+   "n_text_elements": 281,
+   "n_text_items": 281,
+   "n_italic": 0,
+   "n_mixed_italic": 36,
+   "n_tick": 195,
+   "min_scaled_size": 9.08,
+   "png_size": [
+    1583,
+    4116
+   ],
+   "sha256": {
+    "artwork_svg": "8a8b23623b92fea3",
+    "text_svg": "91684f912a367d6c",
+    "artwork_png": "abaf55bdd9d303ad"
+   }
+  },
+  "a2_p14_expression_scatter_13_fsmvn": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:3",
+   "letter": "B",
+   "placed": [
+    30,
+    1916,
+    690,
+    1826
+   ],
+   "svg_pt": [
+    373.1924,
+    988.1372
+   ],
+   "sx": 1.848912,
+   "sy": 1.847922,
+   "n_text_elements": 282,
+   "n_text_items": 282,
+   "n_italic": 0,
+   "n_mixed_italic": 36,
+   "n_tick": 196,
+   "min_scaled_size": 9.24,
+   "png_size": [
+    1555,
+    4115
+   ],
+   "sha256": {
+    "artwork_svg": "eeea904247ba7616",
+    "text_svg": "4b469b48cedc39ac",
+    "artwork_png": "28b34f44b515d000"
+   }
+  },
+  "a2_p1_rho_vs_margin": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:4",
+   "letter": "C",
+   "placed": [
+    30,
+    3800,
+    417,
+    363
+   ],
+   "svg_pt": [
+    206.1208,
+    179.1444
+   ],
+   "sx": 2.023086,
+   "sy": 2.026298,
+   "n_text_elements": 19,
+   "n_text_items": 19,
+   "n_italic": 0,
+   "n_mixed_italic": 1,
+   "n_tick": 11,
+   "min_scaled_size": 12.14,
+   "png_size": [
+    859,
+    748
+   ],
+   "sha256": {
+    "artwork_svg": "a0ea90e38a2efa47",
+    "text_svg": "fdbcb49836caa2cc",
+    "artwork_png": "26b2518a9148340a"
+   }
+  },
+  "a2_p2_margin_ranking": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:5",
+   "letter": "D",
+   "placed": [
+    30,
+    4221,
+    690,
+    451
+   ],
+   "svg_pt": [
+    373.267,
+    242.9658
+   ],
+   "sx": 1.848543,
+   "sy": 1.856228,
+   "n_text_elements": 66,
+   "n_text_items": 66,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 64,
+   "min_scaled_size": 9.24,
+   "png_size": [
+    1555,
+    1016
+   ],
+   "sha256": {
+    "artwork_svg": "c6922ef5166d8990",
+    "text_svg": "2e4e506aabff9cbd",
+    "artwork_png": "16e86d16f08f7f70"
+   }
+  },
+  "a2_p3_agreement_specific": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:6",
+   "letter": "E",
+   "placed": [
+    30,
+    4730,
+    395,
+    375
+   ],
+   "svg_pt": [
+    195.9671,
+    184.6884
+   ],
+   "sx": 2.015644,
+   "sy": 2.030447,
+   "n_text_elements": 23,
+   "n_text_items": 23,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 20,
+   "min_scaled_size": 9.07,
+   "png_size": [
+    817,
+    776
+   ],
+   "sha256": {
+    "artwork_svg": "6497613c50eb2fc4",
+    "text_svg": "48914b83d9949f4f",
+    "artwork_png": "6edfb05d4d170a7d"
+   }
+  },
+  "a2_p7_strategy_imputation_method": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:7",
+   "letter": "F",
+   "placed": [
+    30,
+    5163,
+    690,
+    564
+   ],
+   "svg_pt": [
+    367.0173,
+    300.3232
+   ],
+   "sx": 1.88002,
+   "sy": 1.877977,
+   "n_text_elements": 53,
+   "n_text_items": 53,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 52,
+   "min_scaled_size": 10.34,
+   "png_size": [
+    1529,
+    1250
+   ],
+   "sha256": {
+    "artwork_svg": "c1079692ab0d182e",
+    "text_svg": "137cb1984407c498",
+    "artwork_png": "25c7e12cf1e305e1"
+   }
+  },
+  "a2_p12_raw_to_harmonized": {
+   "frame": "Figure 4 - Biomarker expression and correlation (L, M)",
+   "frame_id": "1255:2",
+   "rect_id": "1256:8",
+   "letter": "G",
+   "placed": [
+    30,
+    5785,
+    478,
+    414
+   ],
+   "svg_pt": [
+    238.7995,
+    206.2372
+   ],
+   "sx": 2.001679,
+   "sy": 2.007397,
+   "n_text_elements": 31,
+   "n_text_items": 31,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 28,
+   "min_scaled_size": 10.01,
+   "png_size": [
+    995,
+    862
+   ],
+   "sha256": {
+    "artwork_svg": "2ddba0ac41d82e65",
+    "text_svg": "62097f45c55d4c9a",
+    "artwork_png": "dbb6607051bfb2f6"
+   }
+  },
+  "a2_p4_lobo_ranking": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:9",
+   "letter": "A",
+   "placed": [
+    30,
+    64,
+    690,
+    451
+   ],
+   "svg_pt": [
+    373.267,
+    243.1172
+   ],
+   "sx": 1.848543,
+   "sy": 1.855072,
+   "n_text_elements": 68,
+   "n_text_items": 68,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 36,
+   "min_scaled_size": 9.24,
+   "png_size": [
+    1555,
+    1016
+   ],
+   "sha256": {
+    "artwork_svg": "7363ac1870ab7d77",
+    "text_svg": "799c6dac975cdabc",
+    "artwork_png": "4b02cb7a48e87c52"
+   }
+  },
+  "a2_p5_per_batch": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:10",
+   "letter": "B",
+   "placed": [
+    30,
+    573,
+    690,
+    349
+   ],
+   "svg_pt": [
+    387.7086,
+    195.1492
+   ],
+   "sx": 1.779687,
+   "sy": 1.788375,
+   "n_text_elements": 33,
+   "n_text_items": 33,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 30,
+   "min_scaled_size": 8.9,
+   "png_size": [
+    1615,
+    817
+   ],
+   "sha256": {
+    "artwork_svg": "f2145805c2be243c",
+    "text_svg": "62108c5730631f5d",
+    "artwork_png": "e7838edcd0c6d5ed"
+   }
+  },
+  "a2_p6_singleclass_audit": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:11",
+   "letter": "C",
+   "placed": [
+    30,
+    980,
+    403,
+    363
+   ],
+   "svg_pt": [
+    200.317,
+    179.1292
+   ],
+   "sx": 2.011811,
+   "sy": 2.02647,
+   "n_text_elements": 23,
+   "n_text_items": 23,
+   "n_italic": 0,
+   "n_mixed_italic": 1,
+   "n_tick": 19,
+   "min_scaled_size": 11.06,
+   "png_size": [
+    835,
+    752
+   ],
+   "sha256": {
+    "artwork_svg": "0f7a9d220e428142",
+    "text_svg": "e01cdc90a934310e",
+    "artwork_png": "9b035b8a9ee8dd24"
+   }
+  },
+  "a2_p8_generalizability_index": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:12",
+   "letter": "D",
+   "placed": [
+    30,
+    1401,
+    690,
+    475
+   ],
+   "svg_pt": [
+    373.3359,
+    257.3145
+   ],
+   "sx": 1.848201,
+   "sy": 1.84599,
+   "n_text_elements": 52,
+   "n_text_items": 52,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 45,
+   "min_scaled_size": 9.24,
+   "png_size": [
+    1556,
+    1071
+   ],
+   "sha256": {
+    "artwork_svg": "c34189cc22ed2d09",
+    "text_svg": "d8832da776ae6a63",
+    "artwork_png": "3b7315c8cfb07413"
+   }
+  },
+  "a2_p9_cross_election_circos": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:13",
+   "letter": "E",
+   "placed": [
+    30,
+    1934,
+    318,
+    317
+   ],
+   "svg_pt": [
+    158.9344,
+    158.544
+   ],
+   "sx": 2.000825,
+   "sy": 1.999445,
+   "n_text_elements": 10,
+   "n_text_items": 10,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 0,
+   "min_scaled_size": 11.0,
+   "png_size": [
+    662,
+    660
+   ],
+   "sha256": {
+    "artwork_svg": "ad1c2f22a6d67542",
+    "text_svg": "b5cb274d4b93f8cd",
+    "artwork_png": "43c052b553fe97a6"
+   }
+  },
+  "a2_p10_venn_supervenn": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:14",
+   "letter": "F",
+   "placed": [
+    30,
+    2309,
+    426,
+    246
+   ],
+   "svg_pt": [
+    308.2826,
+    177.6577
+   ],
+   "sx": 1.381849,
+   "sy": 1.384685,
+   "n_text_elements": 26,
+   "n_text_items": 26,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 0,
+   "min_scaled_size": 10.36,
+   "png_size": [
+    1285,
+    742
+   ],
+   "sha256": {
+    "artwork_svg": "b7a1100aed7e5719",
+    "text_svg": "e88e533b3f79b717",
+    "artwork_png": "3ed893674dbbb5bb"
+   }
+  },
+  "a2_p13_election_sankey": {
+   "frame": "Figure 5 - Prediction and election (N)",
+   "frame_id": "1255:3",
+   "rect_id": "1256:15",
+   "letter": "G",
+   "placed": [
+    480,
+    2309,
+    247,
+    204
+   ],
+   "svg_pt": [
+    179.0063,
+    147.456
+   ],
+   "sx": 1.37984,
+   "sy": 1.383464,
+   "n_text_elements": 12,
+   "n_text_items": 12,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 0,
+   "min_scaled_size": 6.9,
+   "png_size": [
+    746,
+    616
+   ],
+   "sha256": {
+    "artwork_svg": "48ec66d8306cad03",
+    "text_svg": "366486574fe20c39",
+    "artwork_png": "e5796e78d6233960"
+   }
+  },
+  "a2_p15_panel_coverage": {
+   "frame": "Supplementary Figure 11 - Marker panel QC",
+   "frame_id": "1255:5",
+   "rect_id": "1256:16",
+   "letter": "A",
+   "placed": [
+    30,
+    64,
+    384,
+    436
+   ],
+   "svg_pt": [
+    259.4347,
+    293.8022
+   ],
+   "sx": 1.480141,
+   "sy": 1.483992,
+   "n_text_elements": 31,
+   "n_text_items": 31,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 12,
+   "min_scaled_size": 7.4,
+   "png_size": [
+    1081,
+    1227
+   ],
+   "sha256": {
+    "artwork_svg": "58d688c2b356e0ca",
+    "text_svg": "65d7fed8065f23cd",
+    "artwork_png": "492a059dca8e4779"
+   }
+  },
+  "a2_p16_qc_gate": {
+   "frame": "Supplementary Figure 11 - Marker panel QC",
+   "frame_id": "1255:5",
+   "rect_id": "1256:17",
+   "letter": "B",
+   "placed": [
+    438,
+    64,
+    288,
+    357
+   ],
+   "svg_pt": [
+    194.0518,
+    240.5681
+   ],
+   "sx": 1.48414,
+   "sy": 1.483987,
+   "n_text_elements": 185,
+   "n_text_items": 185,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 32,
+   "min_scaled_size": 7.42,
+   "png_size": [
+    809,
+    1003
+   ],
+   "sha256": {
+    "artwork_svg": "405f5a8c8e5dba36",
+    "text_svg": "a364ca273d07efa4",
+    "artwork_png": "51072b18e3603660"
+   }
+  },
+  "a2_p17_rho_by_signature": {
+   "frame": "Supplementary Figure 11 - Marker panel QC",
+   "frame_id": "1255:5",
+   "rect_id": "1256:18",
+   "letter": "C",
+   "placed": [
+    30,
+    558,
+    690,
+    673
+   ],
+   "svg_pt": [
+    346.3606,
+    338.5862
+   ],
+   "sx": 1.992144,
+   "sy": 1.987677,
+   "n_text_elements": 72,
+   "n_text_items": 72,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 70,
+   "min_scaled_size": 8.96,
+   "png_size": [
+    1443,
+    1407
+   ],
+   "sha256": {
+    "artwork_svg": "8edb82f49b847ab1",
+    "text_svg": "b2a5f16e3404c49f",
+    "artwork_png": "8c29f4dd78932077"
+   }
+  },
+  "a2_p11_harshness_lmn": {
+   "frame": "Supplementary Figure 12 - Harshness by L, M, N",
+   "frame_id": "1255:6",
+   "rect_id": "1256:19",
+   "letter": "A",
+   "placed": [
+    30,
+    64,
+    690,
+    262
+   ],
+   "svg_pt": [
+    375.928,
+    141.753
+   ],
+   "sx": 1.835458,
+   "sy": 1.848285,
+   "n_text_elements": 89,
+   "n_text_items": 89,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 68,
+   "min_scaled_size": 9.18,
+   "png_size": [
+    1566,
+    595
+   ],
+   "sha256": {
+    "artwork_svg": "98b7679cb5e8b6a8",
+    "text_svg": "7d42ef539a42d660",
+    "artwork_png": "71183f07d1465c24"
+   }
+  },
+  "a2_p18_gene_method_clustermap": {
+   "frame": "Supplementary Figure 13 - Gene by method clustering",
+   "frame_id": "1255:7",
+   "rect_id": "1256:20",
+   "letter": "A",
+   "placed": [
+    30,
+    64,
+    690,
+    1221
+   ],
+   "svg_pt": [
+    397.1294,
+    702.1744
+   ],
+   "sx": 1.737469,
+   "sy": 1.738884,
+   "n_text_elements": 49,
+   "n_text_items": 49,
+   "n_italic": 0,
+   "n_mixed_italic": 0,
+   "n_tick": 45,
+   "min_scaled_size": 9.56,
+   "png_size": [
+    1655,
+    2929
+   ],
+   "sha256": {
+    "artwork_svg": "bbab83d042ec3057",
+    "text_svg": "54c511773bb3aa39",
+    "artwork_png": "182985c303903957"
+   }
+  },
+  "a2_p14_expression_scatter_12_scanorama": {
+   "frame": "Supplementary Figure 14 - Remaining expression scatters",
+   "frame_id": "1255:8",
+   "rect_id": "1256:21",
+   "letter": "A",
+   "placed": [
+    30,
+    64,
+    690,
+    1819
+   ],
+   "svg_pt": [
+    374.7182,
+    988.1372
+   ],
+   "sx": 1.841384,
+   "sy": 1.840838,
+   "n_text_elements": 280,
+   "n_text_items": 280,
+   "n_italic": 0,
+   "n_mixed_italic": 36,
+   "n_tick": 194,
+   "min_scaled_size": 9.21,
+   "png_size": [
+    1561,
+    4115
+   ],
+   "sha256": {
+    "artwork_svg": "36bad7776fb9c886",
+    "text_svg": "708425d5c5b71f53",
+    "artwork_png": "419ffd9294f1eb2b"
+   }
+  },
+  "a2_p14_expression_scatter_29_combat_ref": {
+   "frame": "Supplementary Figure 14 - Remaining expression scatters",
+   "frame_id": "1255:8",
+   "rect_id": "1256:22",
+   "letter": "B",
+   "placed": [
+    30,
+    1941,
+    690,
+    1797
+   ],
+   "svg_pt": [
+    379.259,
+    988.1372
+   ],
+   "sx": 1.819337,
+   "sy": 1.818573,
+   "n_text_elements": 281,
+   "n_text_items": 281,
+   "n_italic": 0,
+   "n_mixed_italic": 36,
+   "n_tick": 195,
+   "min_scaled_size": 9.1,
+   "png_size": [
+    1580,
+    4115
+   ],
+   "sha256": {
+    "artwork_svg": "8bdf562cb8e47b51",
+    "text_svg": "c2c957c30f3ccd8e",
+    "artwork_png": "a3495e614181d079"
+   }
+  }
+ }
+}

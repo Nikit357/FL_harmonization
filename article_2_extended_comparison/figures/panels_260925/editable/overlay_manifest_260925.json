@@ -1,0 +1,252 @@
+{
+ "fig_markers_lm": {
+  "kind": "composite",
+  "figure": "Figure 4 (classes L, M)",
+  "frame": [
+   756,
+   1132
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "fig_markers_lm",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 1132
+   }
+  ],
+  "n_text": 176,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   2358
+  ]
+ },
+ "fig_prediction_n": {
+  "kind": "composite",
+  "figure": "Figure 5 (class N)",
+  "frame": [
+   756,
+   840
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "fig_prediction_n",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 840
+   }
+  ],
+  "n_text": 148,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   1750
+  ]
+ },
+ "fig_election": {
+  "kind": "composite",
+  "figure": "new figure: election structure (old Figure 5E-G)",
+  "frame": [
+   756,
+   860
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "fig_election",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 860
+   }
+  ],
+  "n_text": 51,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   1792
+  ]
+ },
+ "sfig_harshness": {
+  "kind": "composite",
+  "figure": "Supplementary Figure 12 (harshness), rebuilt",
+  "frame": [
+   756,
+   940
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "sfig_harshness",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 940
+   }
+  ],
+  "n_text": 116,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   1958
+  ]
+ },
+ "sfig_lmn_scatter": {
+  "kind": "composite",
+  "figure": "new supplementary: L/M/N scatterplots",
+  "frame": [
+   756,
+   1080
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "sfig_lmn_scatter",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 1080
+   }
+  ],
+  "n_text": 151,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   2250
+  ]
+ },
+ "sfig_metric_clustermap": {
+  "kind": "composite",
+  "figure": "new supplementary: metric cross-correlation clustermap",
+  "frame": [
+   756,
+   1040
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "sfig_metric_clustermap",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 1040
+   }
+  ],
+  "n_text": 35,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   2167
+  ]
+ },
+ "sfig_expression": {
+  "kind": "composite",
+  "figure": "new supplementary: expression, linear vs non-linear (replaces Figure 4A/B and Supplementary Figure 14)",
+  "frame": [
+   756,
+   1144
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "sfig_expression",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 1144
+   }
+  ],
+  "n_text": 162,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   2383
+  ]
+ },
+ "sfig_pca": {
+  "kind": "composite",
+  "figure": "new supplementary: per-component PCA (Figure 1C + Supp. Figure 2F)",
+  "frame": [
+   756,
+   1120
+  ],
+  "boxes": [
+   {
+    "letter": "all",
+    "panel": "sfig_pca",
+    "x": 0,
+    "y": 0,
+    "w": 756,
+    "h": 1120
+   }
+  ],
+  "n_text": 115,
+  "min_text_px": 10.0,
+  "artwork_px": [
+   1575,
+   2333
+  ]
+ },
+ "sfig_marker_qc": {
+  "kind": "relaid",
+  "figure": "Supplementary Figure 11 (marker panel QC), re-laid out",
+  "frame": [
+   750,
+   1076
+  ],
+  "boxes": [
+   {
+    "letter": "A",
+    "panel": "a2_p15_panel_coverage",
+    "x": 30,
+    "y": 64,
+    "w": 320,
+    "h": 363
+   },
+   {
+    "letter": "B",
+    "panel": "a2_p16_qc_gate",
+    "x": 374,
+    "y": 64,
+    "w": 240,
+    "h": 298
+   },
+   {
+    "letter": "C",
+    "panel": "a2_p17_rho_by_signature",
+    "x": 30,
+    "y": 485,
+    "w": 575,
+    "h": 561
+   }
+  ],
+  "shrink": 0.8333,
+  "n_text": 288,
+  "min_text_px": 6.17
+ },
+ "sfig_gene_method": {
+  "kind": "relaid",
+  "figure": "Supplementary Figure 13 (gene by method), re-laid out",
+  "frame": [
+   750,
+   908
+  ],
+  "boxes": [
+   {
+    "letter": "A",
+    "panel": "a2_p18_gene_method_clustermap",
+    "x": 30,
+    "y": 64,
+    "w": 460,
+    "h": 814
+   }
+  ],
+  "shrink": 0.6667,
+  "n_text": 49,
+  "min_text_px": 6.37
+ }
+}

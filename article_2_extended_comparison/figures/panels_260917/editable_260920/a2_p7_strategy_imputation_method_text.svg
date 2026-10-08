@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="564" viewBox="0 0 690 564" version="1.1">
+  <text x="174.4027" y="513.2478" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 174.4027 513.2478)">A_confirmed_bad</text>
+  <text x="205.5516" y="509.8877" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 205.5516 509.8877)">B_extended_bad</text>
+  <text x="236.7005" y="498.9440" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 236.7005 498.9440)">C_rnaseq_only</text>
+  <text x="267.8493" y="516.6079" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 267.8493 516.6079)">D_malignant_only</text>
+  <text x="298.9982" y="501.8021" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 298.9982 501.8021)">E1_iterative_r1</text>
+  <text x="330.1471" y="501.8021" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 330.1471 501.8021)">E2_iterative_r2</text>
+  <text x="361.2959" y="501.8021" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 361.2959 501.8021)">E3_iterative_r3</text>
+  <text x="392.4448" y="518.4655" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 392.4448 518.4655)">F_microarray_only</text>
+  <text x="423.5937" y="517.7296" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 423.5937 517.7296)">G_affymetrix_only</text>
+  <text x="454.7425" y="544.3539" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 454.7425 544.3539)">H_affymetrix_extended</text>
+  <text x="485.8914" y="550.4786" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 485.8914 550.4786)">I_rare_batches_removed</text>
+  <text x="517.0403" y="466.8163" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 517.0403 466.8163)">J_ff_only</text>
+  <text x="548.1891" y="483.4555" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 548.1891 483.4555)">K_ffpe_only</text>
+  <text x="579.3380" y="502.7059" font-size="10.3401" font-family="Inter" fill="#262626" transform="rotate(-90.0000 579.3380 502.7059)">S0_no_removal</text>
+  <text x="138.2864" y="396.9315" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">01_raw</text>
+  <text x="138.2864" y="384.9726" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">02_median_scaling</text>
+  <text x="138.2864" y="372.9226" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">03_limma</text>
+  <text x="138.2864" y="360.7813" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">04_sva</text>
+  <text x="138.2864" y="348.8224" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">05_combat</text>
+  <text x="138.2864" y="336.7724" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">06_combat_seq</text>
+  <text x="138.2864" y="324.7223" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">07_pycombat</text>
+  <text x="138.2864" y="312.6722" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">08_inmoose_combatseq</text>
+  <text x="138.2864" y="300.5310" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">09_ruv</text>
+  <text x="138.2864" y="288.4809" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">10_mnn</text>
+  <text x="138.2864" y="276.5220" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">11_harmony</text>
+  <text x="138.2864" y="264.3808" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">12_scanorama</text>
+  <text x="138.2864" y="252.4219" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">13_fsmvn</text>
+  <text x="138.2864" y="240.3718" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">14_qsmooth</text>
+  <text x="138.2864" y="228.3218" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">15_fsqn_py</text>
+  <text x="138.2864" y="216.2717" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">16_fsqn_r</text>
+  <text x="138.2864" y="204.2216" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">17_quantile</text>
+  <text x="138.2864" y="192.1716" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">18_rank</text>
+  <text x="138.2864" y="180.1215" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">19_tdm</text>
+  <text x="138.2864" y="168.0714" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">20_shambhala</text>
+  <text x="138.2864" y="156.0214" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">21_harmonizr</text>
+  <text x="138.2864" y="143.8801" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">22_tmm</text>
+  <text x="138.2864" y="131.8300" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">23_vst</text>
+  <text x="138.2864" y="119.8712" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">25_angel</text>
+  <text x="138.2864" y="107.7299" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">26_xpn</text>
+  <text x="138.2864" y="95.7710" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">27_dwd</text>
+  <text x="138.2864" y="83.6298" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">28_npn</text>
+  <text x="138.2864" y="71.6709" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">29_combat_ref</text>
+  <text x="138.2864" y="59.5296" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">31_ruv3prps</text>
+  <text x="138.2864" y="47.5708" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">33_amdbnorm</text>
+  <text x="138.2864" y="35.5207" font-size="10.3401" font-family="Inter" fill="#262626" text-anchor="end">36_explobatch</text>
+  <text x="640.6730" y="405.4704" font-size="10.3401" font-family="Inter" fill="#262626">0.2</text>
+  <text x="640.6730" y="349.2257" font-size="10.3401" font-family="Inter" fill="#262626">0.3</text>
+  <text x="640.6730" y="292.9810" font-size="10.3401" font-family="Inter" fill="#262626">0.4</text>
+  <text x="640.6730" y="236.7363" font-size="10.3401" font-family="Inter" fill="#262626">0.5</text>
+  <text x="640.6730" y="180.4916" font-size="10.3401" font-family="Inter" fill="#262626">0.6</text>
+  <text x="640.6730" y="124.2469" font-size="10.3401" font-family="Inter" fill="#262626">0.7</text>
+  <text x="640.6730" y="68.0022" font-size="10.3401" font-family="Inter" fill="#262626">0.8</text>
+  <text x="673.9224" y="212.3475" font-size="12.2201" font-family="Inter" fill="#262626" text-anchor="middle" transform="rotate(-90.0000 673.9224 212.3475)">median generalizability index</text>
+</svg>

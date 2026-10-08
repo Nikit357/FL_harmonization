@@ -1,0 +1,112 @@
+[
+ {
+  "id": "SR-R01",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P38, P39, P53, P56",
+  "claim": "Per-component PCA values kept from Daniil's reviewed base text: 17.3–25.3% / 11.3–15.3% (five slow-decay methods, PC1/PC2), 26.2–43.3%, 79.9% (11_harmony), 79.5% (27_dwd), batch R² max 0.002 at PC2 of 07_pycombat, raw batch PCReg 0.226; clustermap/raw/14_qsmooth PC1 variance 37.9/73.5/53.7%, PC2 variance 11.6/9.7/13.5%, batch R² PC1 22.9/64.8/90.8%, PC2 15.2/65.9/67.1%; RNA_BATCH R² on PC1 0.29 (RNA-seq-only) and 0.23 (clustermap); 05_combat+29_combat_ref biology PCReg range 0.357–0.823",
+  "needs": "reproduce each value from pct_var_pc1..10 and r2_pc1..10_RNA_BATCH (and pcr_Diagnosis_cell_type_unified) of the analysis set; group means by method / strategy / clustermap group / 01_raw S0; add to 01_numbers.json. No test needed, provenance only",
+  "destination": "small -> in text (values already in text)",
+  "status": "resolved",
+  "resolution": "A2_T16_pca_component_means (group means of pct_var_pc1-10 and r2_pc1-10_RNA_BATCH per method, strategy, clustermap group, 01_raw S0)"
+ },
+ {
+  "id": "SR-R02",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P49",
+  "claim": "Supplementary Figure 3H: post-removal shifts batch PCReg upward in the Affymetrix-only strategy and not systematically elsewhere",
+  "needs": "Wilcoxon signed-rank (two-sided) of pcr_RNA_BATCH post1 − post0, matched on (strat, imp, method), per strategy (14 tests); median shift and p for G_affymetrix_only and the count of other strategies with p < 0.05",
+  "destination": "small -> in text; per-strategy rows -> Supplementary File 1, sheet Paired_tests",
+  "status": "resolved",
+  "resolution": "all 14 strategies shift up (p <= 4.3e-6); largest G_affymetrix_only median 0.075, others 0.007-0.028 — draft claim 'no systematic shift' corrected"
+ },
+ {
+  "id": "SR-R03",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P51",
+  "claim": "Batch-removal strategies affect batch PCReg more than imputations and post-removal",
+  "needs": "Kruskal-Wallis H, p and ε² of pcr_RNA_BATCH across the 3 imputations and across the 2 post-removal settings, 2,234 approaches (strategies already T10-010, ε² 0.100)",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "epsilon2 0.002 imputations (p = 0.043), 0.002 post-removal (p = 0.036)"
+ },
+ {
+  "id": "SR-R04",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P59+1",
+  "claim": "Supplementary Figure 5D: RNA-seq-only has the highest batch kBET acceptance rate, followed by the Affymetrix strategies and FF-only; B_extended_bad, D_malignant_only and I_rare_batches_removed near zero",
+  "needs": "Kruskal-Wallis across 14 strategies of kbet_acceptance_rate_RNA_BATCH, strategy means, and Mann-Whitney C_rnaseq_only vs other strategies",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "KW p = 1.2e-78, eps2 0.177; C_rnaseq_only vs rest p = 6.3e-43"
+ },
+ {
+  "id": "SR-R05",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P62",
+  "claim": "Supplementary Figure 7B: lowest KS fraction significant under S0_no_removal, then clustermap group and C_rnaseq_only",
+  "needs": "Kruskal-Wallis across strategies of ks_frac_sig_RNA_BATCH with strategy means (clustermap group as one more group) and Mann-Whitney S0_no_removal vs other strategies",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "KW p = 5.9e-115; S0 vs rest p = 0.0033"
+ },
+ {
+  "id": "SR-R06",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P62",
+  "claim": "Supplementary Figure 7F: D_malignant_only, S0_no_removal and K_ffpe_only have the highest biology distance ratio",
+  "needs": "Kruskal-Wallis across strategies of dist_ratio_Diagnosis_cell_type_unified, strategy means, Mann-Whitney of the top strategy vs the others",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "KW p = 5.8e-161; D_malignant_only highest by mean, vs rest p = 1.2e-39"
+ },
+ {
+  "id": "SR-R07",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P62+1",
+  "claim": "Supplementary Figure 7K: expression quantiles similar across strategies except G_affymetrix_only, highest maximum and SD",
+  "needs": "Mann-Whitney G_affymetrix_only vs other strategies on exp_max and on the per-gene SD column; Kruskal-Wallis across strategies on exp_median",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "SD higher (p = 6.8e-6); maximum NOT different (p = 0.30) — draft claim corrected"
+ },
+ {
+  "id": "SR-R08",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P63",
+  "claim": "Supplementary Figure 8B: low-harshness methods have the lowest mean biology PCReg in most strategies",
+  "needs": "count of strategies in which the low tier has the lowest mean pcr_Diagnosis_cell_type_unified, binomial test against 1/3 (as T10-064-*-all); also count where high tier is highest",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "7 of 14, p = 0.25 — not beyond chance; claim corrected"
+ },
+ {
+  "id": "SR-R09",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P63",
+  "claim": "Supplementary Figure 8E: low-harshness methods have the highest biology cLISI (weakest local biology preservation) in most strategies",
+  "needs": "count of strategies in which the low tier has the highest mean clisi_mean_Diagnosis_cell_type_unified, binomial test against 1/3",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "12 of 14, p = 8.2e-5"
+ },
+ {
+  "id": "SR-R10",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P49",
+  "claim": "Supplementary Figure 3F, G: 11_harmony approaches under J_ff_only and K_ffpe_only have lower tSNE centroid dispersion than the other approaches of their strategies",
+  "needs": "Mann-Whitney of tsne_centroid_disp_RNA_BATCH, 11_harmony vs other methods within J_ff_only and within K_ffpe_only; medians",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "NOT significant (p = 0.32, 0.15) — claim corrected"
+ },
+ {
+  "id": "SR-R11",
+  "requested_by": "writer-reviewed",
+  "paragraph": "P59+1",
+  "claim": "Supplementary Figure 4C, D: the clustermap group has high batch iLISI but not low biology cLISI",
+  "needs": "Mann-Whitney clustermap_best vs rest on ilisi_mean_RNA_BATCH and on clisi_mean_Diagnosis_cell_type_unified (medians, p)",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "batch iLISI higher (p = 2.0e-7), biology cLISI not different (p = 0.80)"
+ }
+]

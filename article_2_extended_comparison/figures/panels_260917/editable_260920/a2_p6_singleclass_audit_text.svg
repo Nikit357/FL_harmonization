@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="403" height="363" viewBox="0 0 403 363" version="1.1">
+  <text x="86.2250" y="322.4334" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle">0.00</text>
+  <text x="141.2830" y="322.4334" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle">0.25</text>
+  <text x="196.3409" y="322.4334" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle">0.50</text>
+  <text x="251.3989" y="322.4334" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle">0.75</text>
+  <text x="306.4569" y="322.4334" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle">1.00</text>
+  <text x="196.3409" y="345.2486" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle">full mean F1, all folds</text>
+  <text x="61.1308" y="290.7284" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="end">0.0</text>
+  <text x="61.1308" y="243.7467" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="end">0.2</text>
+  <text x="61.1308" y="196.7650" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="end">0.4</text>
+  <text x="61.1308" y="149.7833" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="end">0.6</text>
+  <text x="61.1308" y="102.8017" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="end">0.8</text>
+  <text x="61.1308" y="55.8200" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="end">1.0</text>
+  <text x="25.9500" y="167.4999" font-size="15.0886" font-family="Inter" fill="#262626" text-anchor="middle" transform="rotate(-90.0000 25.9500 167.4999)">mean F1, multiclass folds only</text>
+  <text x="71.7093" y="24.2733" font-size="15.0886" font-family="Inter" fill="#262626">ρ = 0.810 over 2174 approaches</text>
+  <text x="350.2151" y="300.9340" font-size="11.0650" font-family="Inter" fill="#262626">0.0</text>
+  <text x="350.2151" y="264.7581" font-size="11.0650" font-family="Inter" fill="#262626">0.1</text>
+  <text x="350.2151" y="228.5822" font-size="11.0650" font-family="Inter" fill="#262626">0.2</text>
+  <text x="350.2151" y="192.4063" font-size="11.0650" font-family="Inter" fill="#262626">0.3</text>
+  <text x="350.2151" y="156.2304" font-size="11.0650" font-family="Inter" fill="#262626">0.4</text>
+  <text x="350.2151" y="120.0545" font-size="11.0650" font-family="Inter" fill="#262626">0.5</text>
+  <text x="350.2151" y="83.8786" font-size="11.0650" font-family="Inter" fill="#262626">0.6</text>
+  <text x="350.2151" y="47.7027" font-size="11.0650" font-family="Inter" fill="#262626">0.7</text>
+  <text x="385.7954" y="167.4999" font-size="13.0768" font-family="Inter" fill="#262626" text-anchor="middle" transform="rotate(-90.0000 385.7954 167.4999)">fraction of folds with one class</text>
+</svg>

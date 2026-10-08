@@ -1,0 +1,20 @@
+table,file,tier,main_table_number,content,rows
+A2_T0_shambhala_identity,A2_T0_shambhala_identity_260924.csv,supplementary,,Shambhala two-names identity,79
+A2_T1_analysis_set_census,A2_T1_analysis_set_census_260924.csv,supplementary,,"the 2,234 approaches, L/M/N",2234
+A2_T2_generalizability_ranking,A2_T2_generalizability_ranking_260924.csv,supplementary,,"E1 index, all approaches",2234
+A2_T2b_generalizability_top_eligible,A2_T2b_generalizability_top_eligible_260924.csv,main,4,"E1 index, top 15 eligible",15
+A2_T3_cross_election_matrix,A2_T3_cross_election_matrix_260924.csv,main,3,Jaccard matrix of elected sets,9
+A2_T3b_cross_election_pairs,A2_T3b_cross_election_pairs_260924.csv,supplementary,,"pairs: counts, sizes, p",36
+A2_T4_method_census_by_class,A2_T4_method_census_by_class_260924.csv,supplementary,,methods per elected set,121
+A2_T5_per_batch_folds,A2_T5_per_batch_folds_260924.csv,supplementary,,per-batch LOBO folds,3521
+A2_T6_agreement_specific,A2_T6_agreement_specific_260924.csv,supplementary,,the 61 approaches,61
+A2_T7_harshness_by_lmn,A2_T7_harshness_by_lmn_260924.csv,supplementary,,superseded by A2_T9/A2_T9b,7
+A2_T8_fold_composition,A2_T8_fold_composition_260924.csv,supplementary,,fold census by class count,33
+A2_T9_harshness_table1,A2_T9_harshness_table1_260924.csv,main,1,L/M/N by harshness tier,11
+A2_T9b_harshness_full,A2_T9b_harshness_full_260924.csv,supplementary,,every L/M/N column by tier,186
+A2_T10_paired_tests,A2_T10_paired_tests_260924.csv,supplementary,,every test the text relies on,285
+A2_T11_scatter_correlations,A2_T11_scatter_correlations_260924.csv,supplementary,,Spearman per scatter claim,97
+A2_T12_metric_census,A2_T12_metric_census_260924.csv,supplementary,,344-metric registry map,344
+A2_T13_lobo_summary,A2_T13_lobo_summary_260924.csv,main,2,"LOBO, both cuts, both targets",14
+A2_T14_dispersion,A2_T14_dispersion_260924.csv,supplementary,,composite contribution spreads,34
+A2_T15_class_percentile_scores,A2_T15_class_percentile_scores_260924.csv,supplementary,,C15: class score per approach,2234

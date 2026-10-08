@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="756" height="840" viewBox="0 0 756 840" version="1.1">
+  <text x="208.4669" y="551.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.6</text>
+  <text x="265.7015" y="551.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.8</text>
+  <text x="230.0000" y="566.7641" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle">median LOBO3 macro F1</text>
+  <text x="153.0000" y="47.6117" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">29_combat_ref</text>
+  <text x="153.0000" y="63.2367" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">06_combat_seq</text>
+  <text x="153.0000" y="78.8617" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">08_inmoose_combatseq</text>
+  <text x="153.0000" y="94.4867" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">05_combat</text>
+  <text x="153.0000" y="110.0234" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">04_sva</text>
+  <text x="153.0000" y="125.7367" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">25_angel</text>
+  <text x="153.0000" y="141.3617" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">36_explobatch</text>
+  <text x="153.0000" y="156.8984" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">01_raw</text>
+  <text x="153.0000" y="172.5234" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">31_ruv3prps</text>
+  <text x="153.0000" y="188.2367" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">27_dwd</text>
+  <text x="153.0000" y="203.8617" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">14_qsmooth</text>
+  <text x="153.0000" y="219.4867" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">18_rank</text>
+  <text x="153.0000" y="235.1117" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">17_quantile</text>
+  <text x="153.0000" y="250.7367" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">15_fsqn_py</text>
+  <text x="153.0000" y="266.3617" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">20_shambhala</text>
+  <text x="153.0000" y="281.9867" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">19_tdm</text>
+  <text x="153.0000" y="297.5234" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">22_tmm</text>
+  <text x="153.0000" y="313.1484" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">09_ruv</text>
+  <text x="153.0000" y="328.7734" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">23_vst</text>
+  <text x="153.0000" y="344.3984" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">12_scanorama</text>
+  <text x="153.0000" y="360.1117" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">11_harmony</text>
+  <text x="153.0000" y="375.6484" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">10_mnn</text>
+  <text x="153.0000" y="391.3617" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">clustermap best</text>
+  <text x="153.0000" y="406.9867" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">33_amdbnorm</text>
+  <text x="153.0000" y="422.6117" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">16_fsqn_r</text>
+  <text x="153.0000" y="438.2367" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">13_fsmvn</text>
+  <text x="153.0000" y="453.7734" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">26_xpn</text>
+  <text x="153.0000" y="469.3984" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">28_npn</text>
+  <text x="153.0000" y="485.1117" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">21_harmonizr</text>
+  <text x="153.0000" y="500.7367" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">07_pycombat</text>
+  <text x="153.0000" y="516.3617" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">03_limma</text>
+  <text x="153.0000" y="531.9867" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">02_median_scaling</text>
+  <text x="186.0000" y="48.5984" font-size="10.0000" font-family="Inter" fill="#262626">all folds</text>
+  <text x="186.0000" y="60.2766" font-size="10.0000" font-family="Inter" fill="#262626">multiclass folds</text>
+  <text x="330.0000" y="46.5719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">7</text>
+  <text x="330.0000" y="62.1969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="77.8219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="93.4469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="109.0719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="124.6969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="140.3219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="155.9469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="171.5719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="187.1969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">7</text>
+  <text x="330.0000" y="202.8219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="218.4469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="234.0719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="249.6969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="265.3219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="280.9469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="296.5719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">4</text>
+  <text x="330.0000" y="312.1969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">10</text>
+  <text x="330.0000" y="327.8219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">5</text>
+  <text x="330.0000" y="343.4469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="359.0719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="374.6969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="390.3219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">5</text>
+  <text x="330.0000" y="405.9469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">6</text>
+  <text x="330.0000" y="421.5719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="437.1969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="452.8219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="468.4469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="484.0719" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="499.6969" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="515.3219" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="530.9469" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9</text>
+  <text x="330.0000" y="32.0000" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">folds</text>
+  <text x="630.4489" y="551.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.6</text>
+  <text x="681.7699" y="551.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.8</text>
+  <text x="733.0909" y="551.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">1.0</text>
+  <text x="664.0000" y="566.7641" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle">macro F1 in the held-out batch</text>
+  <text x="581.0000" y="50.2159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">RNASeq_FF_PolyA (n=1039)</text>
+  <text x="581.0000" y="71.0492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL570_FF_Unknown (n=994)</text>
+  <text x="581.0000" y="91.8826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL570_Unknown_Unknown (n=908)</text>
+  <text x="581.0000" y="112.7104" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">RNASeq_FFPE_Exome_capture (n=891)</text>
+  <text x="581.0000" y="133.5492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL14951_FFPE_Unknown (n=810)</text>
+  <text x="581.0000" y="154.3826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL570_FFPE_Unknown (n=800)</text>
+  <text x="581.0000" y="175.2159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL96+97_FF_Unknown (n=305)</text>
+  <text x="581.0000" y="196.0492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL13938_FFPE_Unknown (n=167)</text>
+  <text x="581.0000" y="216.8826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL96_FF_Unknown (n=133)</text>
+  <text x="581.0000" y="237.7159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL6244_FF_Unknown (n=131)</text>
+  <text x="581.0000" y="258.5492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL8432_FFPE_Unknown (n=130)</text>
+  <text x="581.0000" y="279.3826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">RNASeq_FF_rRNADepletion (n=117)</text>
+  <text x="581.0000" y="300.2159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL96_FFPE_Unknown (n=84)</text>
+  <text x="581.0000" y="321.0492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">RNASeq_FF_Unknown (n=79)</text>
+  <text x="581.0000" y="341.8826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL20188_FF_Unknown (n=68)</text>
+  <text x="581.0000" y="362.7159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL16686_FF_Unknown (n=48)</text>
+  <text x="581.0000" y="383.5492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL17586_FF_Unknown (n=40)</text>
+  <text x="581.0000" y="404.3826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL1708_FF_Unknown (n=40)</text>
+  <text x="581.0000" y="425.2159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL13158_FF_Unknown (n=40)</text>
+  <text x="581.0000" y="446.0492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL23541_FF_Unknown (n=35)</text>
+  <text x="581.0000" y="466.8826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">RNASeq_FFPE_PolyA (n=35)</text>
+  <text x="581.0000" y="487.7159" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL17077_FF_Unknown (n=33)</text>
+  <text x="581.0000" y="508.5492" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">RNASeq_FF_Total (n=32)</text>
+  <text x="581.0000" y="529.3826" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="end">GPL887_FFPE_Unknown (n=24)</text>
+  <text x="626.9805" y="20.5241" font-size="10.0000" font-family="Inter" fill="#262626">29_combat_ref</text>
+  <text x="575.4141" y="32.0000" font-size="10.0000" font-family="Inter" fill="#262626">S0_no_removal / softimpute / post0</text>
+  <text x="399.5719" y="585.0984" font-size="10.0000" font-family="Inter" fill="#262626">3-class target, multiclass fold</text>
+  <text x="399.5719" y="596.7766" font-size="10.0000" font-family="Inter" fill="#262626">3-class target, single-class fold</text>
+  <text x="581.2859" y="585.0984" font-size="10.0000" font-family="Inter" fill="#262626">2-class target, multiclass fold</text>
+  <text x="581.2859" y="596.7766" font-size="10.0000" font-family="Inter" fill="#262626">2-class target, single-class fold</text>
+  <text x="78.0420" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">1</text>
+  <text x="120.0000" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">2</text>
+  <text x="161.9580" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">3</text>
+  <text x="120.0000" y="834.7641" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle">classes in held-out batch</text>
+  <text x="53.0000" y="808.1791" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0</text>
+  <text x="53.0000" y="762.0620" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">5000</text>
+  <text x="53.0000" y="715.9448" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">10000</text>
+  <text x="53.0000" y="669.8277" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">15000</text>
+  <text x="11.5106" y="720.0000" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle" transform="rotate(-90.0000 11.5106 720.0000)">3-class LOBO folds</text>
+  <text x="78.0420" y="659.5474" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">15,436</text>
+  <text x="120.0000" y="711.3370" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">9,821</text>
+  <text x="161.9580" y="732.8460" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">7,489</text>
+  <text x="253.3333" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">1</text>
+  <text x="296.0000" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">2</text>
+  <text x="338.6667" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">3</text>
+  <text x="296.0000" y="834.7641" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle">classes in held-out batch</text>
+  <text x="225.0000" y="800.5428" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.0</text>
+  <text x="225.0000" y="769.9973" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.2</text>
+  <text x="225.0000" y="739.4519" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.4</text>
+  <text x="225.0000" y="708.9064" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.6</text>
+  <text x="225.0000" y="678.3610" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.8</text>
+  <text x="225.0000" y="647.8155" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">1.0</text>
+  <text x="201.0109" y="720.0000" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle" transform="rotate(-90.0000 201.0109 720.0000)">macro F1</text>
+  <text x="296.0000" y="632.0000" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">59 approaches: no multiclass fold</text>
+  <text x="456.6450" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.2</text>
+  <text x="508.7005" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.4</text>
+  <text x="560.7561" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.6</text>
+  <text x="612.8116" y="819.3583" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="middle">0.8</text>
+  <text x="554.0000" y="834.7641" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle">full-cut LOBO3 macro F1</text>
+  <text x="437.0000" y="780.8705" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.2</text>
+  <text x="437.0000" y="742.8636" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.4</text>
+  <text x="437.0000" y="704.8568" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.6</text>
+  <text x="437.0000" y="666.8499" font-size="11.0000" font-family="Inter" fill="#262626" text-anchor="end">0.8</text>
+  <text x="413.0109" y="720.0000" font-size="12.0000" font-family="Inter" fill="#262626" text-anchor="middle" transform="rotate(-90.0000 413.0109 720.0000)">generalizability index</text>
+  <text x="554.0000" y="632.0000" font-size="10.0000" font-family="Inter" fill="#262626" text-anchor="middle">ρ = 0.829, p &lt; 10⁻³⁰⁰</text>
+  <text x="470.0000" y="648.5984" font-size="10.0000" font-family="Inter" fill="#262626">other</text>
+  <text x="470.0000" y="660.2766" font-size="10.0000" font-family="Inter" fill="#262626">bad-batch strategies</text>
+  <text x="470.0000" y="671.9547" font-size="10.0000" font-family="Inter" fill="#262626">clustermap best</text>
+  <text x="694.5647" y="818.5984" font-size="10.0000" font-family="Inter" fill="#262626">no mc</text>
+  <text x="700.6186" y="829.7962" font-size="10.0000" font-family="Inter" fill="#262626">fold</text>
+  <text x="4.0000" y="27.1969" font-size="20.0000" font-family="Inter" fill="#262626">A</text>
+  <text x="368.0000" y="27.1969" font-size="20.0000" font-family="Inter" fill="#262626">B</text>
+  <text x="4.0000" y="627.1969" font-size="20.0000" font-family="Inter" fill="#262626">C</text>
+  <text x="392.0000" y="627.1969" font-size="20.0000" font-family="Inter" fill="#262626">D</text>
+</svg>

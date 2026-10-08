@@ -1,0 +1,124 @@
+# Gate 4 - team lead verdict, delivery (run 260919_run1)
+
+## Status
+
+**Complete.**
+
+- All five rules re-checked on the files on disk; none taken from an agent report. `audit_numbers.py`, `check_style.py` and `check_overlap.py` re-run by the team lead at 2026-09-19.
+- Provenance index built for all 452 distinct numbers and all 52 citations (`06_provenance.md` / `.json`).
+- Open-items list built (`06_open_items.md`): 2 placeholders, 4 defects surviving both review rounds, 3 found at this gate, 8 decisions for Daniil.
+- A fresh independent 20% of the reference list re-resolved against NCBI eSummary (11 of 52, `random.seed(20260919)`), 11 of 11 matching.
+
+**Not started.**
+
+- Rule 5 (Figma). No Figma read capability in this session and no geometry snapshot in the run folder; recorded `passed: false` with the reason, never assumed.
+- Phase 6 and everything downstream - stop point set by Daniil.
+
+**Nothing was edited at this gate.** Delivery has no revision round; every surviving defect is written into `06_open_items.md`.
+
+**Verdict: ACCEPT.**
+
+Accepted for DELIVERY, not cleared for submission. The manuscript, its .docx, the reference list, the figure legends and the nine tables are delivered as they stand on disk; nothing was edited at this gate. Two of the five rules are not satisfied: rule 1 fails on three values in two sentences whose locus is an upstream snapshot outside tables/, and rule 5 could not be checked at all in this session. Both are blocking open items for Daniil before submission. Delivery has no revision round, so the four defects that survived both review rounds are carried into 06_open_items.md instead of being fixed.
+
+---
+
+## The five rules
+
+### FAIL - 1. Every number in the manuscript resolves to a row in a table in tables/.
+
+audit_numbers.py --tables tables/ --evidence 01_numbers.json, re-run by the team lead on the delivered manuscript, exits 1 on 6 of 452 distinct tokens (02453, 555,004, 198, 141, 323, 2,038). Four of those six are audit artefacts I re-derived myself: 02453 is the Waltham postal code; 141 is the C_rnaseq_only count under (mk_rho_mean_markers > 0.75) & (xb_margin > 0) in A2_T1; 323 and 2,038 are the min and max rank of the 15 is_clustermap_best rows on generalizability_index in A2_T2. A stricter column-level index built for the provenance file shows the true exposure is three values in two sentences: 198, 1,359.6 and 555,004.7, whose only locus is metrics_comprehensive_260905.csv, outside tables/ (1,359 and 198 pass the audit only on coincidental matches in A2_T8.n_folds and an A2_T5 group count). Seven further numbers (53,737, 3,738, 20,991, 20,343, 648, 1,200, 25,426) have their locus in prediction_folds_long.csv, also outside tables/, and pass only because 01_numbers.json is loaded as a text source. All ten values were re-derived and are correct; the rule as worded is not met.
+
+### PASS - 2. Every citation has a PMID or an explicit [TO CONFIRM], and 20% of them re-resolve.
+
+52 reference entries parsed from references_260917.md, each with a PMID line: 47 numeric PMIDs, 5 ([23], [24], [31], [37], [38]) stating 'none; not indexed in PubMed' with the search run and the registry that resolved the entry named - a resolved statement, not a placeholder. grep for '[TO CONFIRM' in references_260917.md returns 0. Two [TO CONFIRM] markers remain in the manuscript body, both legitimate and both listed in 06_open_items.md (the unminted release DOI; the employment question escalated to Daniil). In-text citations run 1 to 52 with no gap, no reuse and first-citation order preserved, re-derived programmatically at this gate. I re-resolved 11 of 52 (21.2%) myself, random.seed(20260919), in one NCBI eSummary call on 2026-09-19: all 11 match on title, year, volume, pagination and first author.
+
+### PASS - 3. The overlap gate passes with zero 8-gram hits outside tools/overlap_allow.txt.
+
+check_overlap.py run by the team lead on all three manuscript .md files against FL_harmonization_article_NAR_260912.docx and Harmonization_metrics_extended_260802_v2.docx: exit 0, 'OK: no verbatim overlap' each time. Body 11,651 tokens with 40 allow-listed hits, legends 3,303 tokens with none, references 2,311 tokens with 154 allow-listed hits. The allow list was inspected at gate 1 and is unchanged; it holds funding statements, three affiliation strings and reference entries, no body prose. Zero occurrences of 'PREPRINT-1'; Article 1 is cited as [38] with its DOI.
+
+### PASS - 4. check_style.py exits 0.
+
+check_style.py manuscript/FL_metric_classes_F1000_260917.md --journal f1000: 'OK: clean.', exit 0. 10,324 words against a 20,000 limit, 0 em-dash, 33 semicolons (3.2 per 1,000 words), all six section budgets satisfied: abstract 300, introduction 773, methods 1,385, results 6,389, conclusions 669, back matter 716.
+
+### FAIL - 5. No Figma frame was modified beyond the §3.4 renaming.
+
+Not checked, and not assumed. This session has no Figma read capability - the plugin exposes only mcp__plugin_figma_figma__authenticate - so the file could not be opened and no frame name or geometry was compared against §3.4 of the plan. No before/after Page 2 geometry snapshot exists in workflow_runs/260919_run1/, so no diff was possible and none is reported. What I can state positively is narrower than the rule: no phase of this run touched Figma (phases executed are review and delivery), no run artifact records a Figma call, and git status shows no change under figures/recipe_assets_260917/. That is circumstantial. Daniil confirms in the interactive session before assembly.
+
+## Defects carried into delivery
+
+**D1 - owner: numbers**  
+*Artifact:* `workflow_runs/260919_run1/01_numbers.json, against manuscript/FL_metric_classes_F1000_260917.md (the exp_* sentence and the saturation paragraph)`  
+*Defect:* Rule 1 failure, unfixed since gate 3 round 1. Three values have no locus under tables/ and no entry in 01_numbers.json: 198, 1,359.6 and 555,004.7. All three are correct - the team lead re-derived them at this gate from metrics_comprehensive_260905.csv joined to the 2,234-row key of A2_T1 (pcr_RNA_BATCH > 0.9999 gives n = 198 from 03_limma, 07_pycombat, 13_fsmvn, 21_harmonizr, 28_npn, 33_amdbnorm, 98.5% of them with kbet_acceptance_rate_RNA_BATCH < 0.1; over the 84 20_shambhala rows mean exp_median = 1,359.6 and mean exp_max = 555,004.7) - but A2_T1 carries no pcr_*, kbet_* or exp_* column. New at delivery: 1,359.6 belongs to the same family; audit_numbers.py passes it only on a coincidental match against the fold count 1,359 in A2_T8.n_folds.  
+*Required fix:* Carry pcr_RNA_BATCH, kbet_acceptance_rate_RNA_BATCH and the exp_* columns into a file under tables/, or add the three values to 01_numbers.json naming metrics_comprehensive_260905.csv, the column and the filter. Daniil decides which.
+
+**D2 - owner: writer**  
+*Artifact:* `manuscript/FL_metric_classes_F1000_260917.md (+ .docx), Results, 'Metric classes capture non-overlapping components of harmonization quality'`  
+*Defect:* The sentence calls 1,359.6 'a median' and 555,004.7 'a maximum'. They are the means of the per-approach exp_median and exp_max over the 84 20_shambhala approaches. Median of exp_median is 1,348.7 and maximum of exp_max is 1,873,593.6, so both words name quantities the manuscript does not report. Unfixed since gate 3 round 2.  
+*Required fix:* Restate as means over the 84 approaches, matching the 'mean maximum expression values' phrasing used for the two ComBat-seq implementations in the same sentence; bring the .docx into agreement in the same pass (rule 12, plain edits).
+
+**D3 - owner: references**  
+*Artifact:* `manuscript/reference_support_260917.md`  
+*Defect:* Keyed to the superseded reference numbering and re-checked unchanged on disk at delivery: the Status block still reads 'Complete for all 55 references' and 'Six verdicts are not SUPPORTS', and blocks [51] Shtam 2019 Breast Cancer Res Treat, [52] Shtam 2018 J Hematol, [53] Nygaard 2016, [54] and [55] are all still present. The manuscript numbers 1 to 52 and its closing line sends the reader to this file, so following [51] or [52] from the manuscript lands on the wrong article.  
+*Required fix:* Renumber to 1-52 (former [52] -> [51], former [53] -> [52]), delete the blocks for former [51], [54] and [55], and change the Status block to 52 references and the three PARTIAL verdicts that remain ([22], [34], [49]). Change no verdict and re-resolve nothing.
+
+**D4 - owner: writer**  
+*Artifact:* `manuscript/FL_metric_classes_F1000_260917.md (+ .docx), Introduction para 3, the [22] sentence`  
+*Defect:* The sentence says principal-component analysis 'separated' primary tumours from their matched xenografts 'by tumour content and host cells'. The verified passage says 'demonstrating a partial overlap ... likely due to the tumor content ... and host human cells'. 'Partial' and 'likely' are both dropped. Unfixed since gate 3 round 2.  
+*Required fix:* Restore both hedges in one sentence; no number and no citation changes; .docx in the same pass.
+
+**D5 - owner: numbers**  
+*Artifact:* `manuscript/FL_metric_classes_F1000_260917.md, cross-batch prediction sub-section; workflow_runs/260919_run1/01_numbers.json`  
+*Defect:* New at delivery. Seven numbers of the unrestricted fold census - 53,737, 3,738, 20,991, 20,343, 648, 1,200 and 25,426 - have their locus in prediction_folds_long.csv, which is not under tables/. audit_numbers.py passes them only because 01_numbers.json is loaded as a text source. Each carries a named column and filter there, so the provenance is written down, but the rule as worded is not met. The in-analysis counts 32,746 and 17,310 are unaffected: both reproduce from A2_T8.n_folds at batch == '__ALL__'.  
+*Required fix:* Add a fold-population census table under tables/, or record the exception together with the rule 1 exception above. Daniil's call.
+
+**D6 - owner: writer**  
+*Artifact:* `workflow_runs/260919_run1/03_draft.md`  
+*Defect:* Housekeeping, no effect on the deliverable. The draft still carries 0.713 (three occurrences), the superseded per-method set and the deleted fixed-seed sentence; the delivered manuscript carries 0.712 and is correct on all three.  
+*Required fix:* Regenerate 03_draft.md from the delivered manuscript body, or state in its Status block that the three gate-2 corrections live only in the manuscript.
+
+## Accepted
+
+- Provenance index built and delivered: all 452 distinct numeric tokens of the manuscript indexed against the nine tables/A2_T*.csv column by column and against the named table/column/filter entries of 01_numbers.json. 428 sit in a cell of a named table column, 9 are derived over a tables/ file under a filter named and re-derived here, 7 have their locus in prediction_folds_long.csv, 5 are not measurements (two postal codes, the 633-gene panel and the 2,407 pre-filter approaches cited to [38], and the 1,000-gene KS design constant), and 3 have no locus under tables/.
+- Citation provenance delivered: 52 entries, each with its PMID or the registry that resolved it, the passage the reference verifier quoted, the section that passage sits in, and the manuscript sections that cite it. 47 numeric PMIDs, 5 resolved at Crossref, bioRxiv, DataCite or the publisher. 49 SUPPORTS, 3 PARTIAL. No entry is uncited and no citation lacks an entry.
+- Citation integrity re-derived at delivery: 52 distinct in-text numbers, 1 to 52, no gap, no reuse, first-citation order preserved; 52 reference entries, no duplicate; grep for '[TO CONFIRM' in references_260917.md returns 0.
+- Independent 20% re-resolution by the team lead at this gate, drawn fresh with random.seed(20260919): entries [4], [5], [7], [9], [18], [22], [25], [28], [41], [46], [47], one NCBI eSummary call on 2026-09-19. Title, year, volume, pagination and first author match the entry in 11 of 11.
+- Rule 7 re-checked on disk: A2_T1 is 2,234 rows over 31 methods, 14 strategies, 3 imputations and 2 post-removal settings, with 84 rows named 20_shambhala after the rename.
+- Rule 7b re-checked: the delivered .docx carries the results table as a real 6 x 7 Word table whose columns are Approach, Full-cut mean F1, Multiclass-only mean F1, Worst multiclass fold, Multiclass folds, 2-class AUC, Marker correlation.
+- Rule 12 re-checked: the .docx carries 0 w:ins, 0 w:del, 0 w:delText, 0 w:sdt and an empty comments part (0 w:comment); the strings removed at gate 3 (ZENODO.19052415, 'the same panel logic', [54], [55]) are absent from both the .md and the .docx.
+- Numbers re-derived from tables/ by the team lead at this gate: joint L/M gate 1,686 of 2,234 = 75.5%; per-strategy pass counts 141 of 168 (C_rnaseq_only), 130 of 164 (J_ff_only), 130 of 165 (S0_no_removal), 76 of 164 (K_ffpe_only); 01_raw 80 of 84; 32,746 and 17,310 folds from A2_T8; Spearman 0.810 over 2,174 approaches and 0.815 over the 2,058 with at least three multiclass folds; 1,527 eligible non-degenerate approaches; clustermap ranks 323 to 2,038 of 2,234.
+- No Figma frame was modified by this workflow (rule 8): the executed phases are review and delivery, no run artifact records a Figma call, and git status shows no change under figures/recipe_assets_260917/.
+
+## Open items
+
+- D1 / rule 1: 198, 1,359.6 and 555,004.7 have no locus under tables/. All three re-derived and correct; the provenance chain is missing. Daniil: promote pcr_*, kbet_* and exp_* into a tables/ file, or accept the exception knowingly before submission.
+- D2: the same sentence calls the mean of exp_median a median and the mean of exp_max a maximum. Writer restates both as means over the 84 20_shambhala approaches, .docx in the same pass.
+- D3: manuscript/reference_support_260917.md is keyed to the pre-gate-3 numbering and claims 55 references, while the manuscript's closing line points readers at it. References agent renumbers it to 1-52 and updates its Status block.
+- D4: the rewritten [22] sentence drops the source's hedges ('partial overlap', 'likely due to'). Writer restores both.
+- D5: workflow_runs/260919_run1/03_draft.md is stale on three numbers relative to the delivered manuscript. Housekeeping.
+- D6 / rule 1: seven fold-population numbers (53,737, 3,738, 20,991, 20,343, 648, 1,200, 25,426) have their locus in prediction_folds_long.csv, outside tables/. Daniil: add a census table or accept with D1.
+- D7: the number audit tests presence, not meaning - 198 and 1,359 both match unrelated cells. Read 06_provenance.md section 3 rather than the audit's exit code alone.
+- P1: Software availability carries [TO CONFIRM: new FL_harmonization release DOI]. The release must be minted before submission.
+- P2: Competing interests carries [TO CONFIRM] on which of the ten affiliation-2 authors hold employment. Daniil's to answer.
+- D8: Data availability quotes 10.5281/ZENODO.22737294 as a deposited record; project memory records draft 22737294 as fully uploaded on 2026-09-14 but NOT published, so the DOI may not resolve yet. Confirm before submission.
+- Rule 5 was never checked in this run: no Figma read capability and no geometry snapshot in the run folder. Daniil confirms in the interactive session that no frame changed beyond the §3.4 renaming.
+- Phase 6 and everything downstream are out of scope by Daniil's instruction for this run.
+
+## Figma (rule 8)
+
+No Figma frame was modified by this workflow. Figma assembly is a separate interactive step. The rule 5 *check* was not run: this session has no Figma read capability, and no before/after Page 2 geometry snapshot exists in `workflow_runs/260919_run1/`, so no diff was possible and none is reported.
+
+## Artifacts written at this gate
+
+- `<repo>/article_2_extended_comparison/workflow_runs/260919_run1/06_provenance.md`
+- `<repo>/article_2_extended_comparison/workflow_runs/260919_run1/06_provenance.json`
+- `<repo>/article_2_extended_comparison/workflow_runs/260919_run1/06_open_items.md`
+- `<repo>/article_2_extended_comparison/workflow_runs/260919_run1/05_teamlead_gate4.json`
+- `<repo>/article_2_extended_comparison/workflow_runs/260919_run1/05_teamlead_gate4.md`
+
+## Delivered manuscript files
+
+- `manuscript/FL_metric_classes_F1000_260917.docx (main state, plain edits, no tracked changes)`
+- `manuscript/FL_metric_classes_F1000_260917.md`
+- `manuscript/references_260917.md`
+- `manuscript/figure_legends_260917.md`
+- `manuscript/reference_support_260917.md (stale numbering, see D3)`

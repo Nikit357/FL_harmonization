@@ -1,0 +1,143 @@
+{
+  "gate": 2,
+  "round": 2,
+  "verdict": "revise",
+  "status": {
+    "complete": [
+      "All five unwaivable rules re-checked by the team lead in this session; every gate re-run, none taken from the writer's report.",
+      "check_style.py, check_overlap.py and audit_numbers.py (both invocations) executed on the post-edit manuscript.",
+      "All four round-1 defects addressed to the writer re-inspected against the file on disk; round-1 defect 6 (reference-verifier) re-inspected too.",
+      "Every number introduced by the round-2 rule-7b fix independently re-derived from tables/A2_T1 with pandas (strategy, imputation, post-removal and per-method medians on both cuts).",
+      "12 of 55 references (21.8%) independently re-resolved against NCBI esummary this round, disjoint from round 1's 13.",
+      "analysis/article2_generalizability.py read to verify the new Statistics subsection's claim about which procedures exist.",
+      "Article 1 Methods re-measured for the shorter-than comparison (2,732 words / 13 subsections against Article 2's 1,371 / 5).",
+      "workflow_runs/260919_run1/03_draft.md confirmed to end with the manuscript byte-for-byte; the .docx is newer than the .md and carries the deletions."
+    ],
+    "in_progress": [],
+    "not_started": [
+      "Rule 5 (Figma untouched) \u2014 this session has no Figma read capability (the figma MCP plugin exposes only an authenticate tool). Recorded passed:false with that reason, not assumed.",
+      "Reference verification deliverables (04_references_verified.md, manuscript/reference_support_260917.md) \u2014 a later phase, not a gate-2 defect.",
+      "Style-editor pass and gate 3."
+    ]
+  },
+  "round2_note": "This is round 2 of at most 2. The four defects below survive the round and therefore pass to Daniil as open items; the workflow proceeds. The team lead does not write the corrections.",
+  "round1_defect_disposition": [
+    {
+      "round1_defect": 1,
+      "agent": "writer",
+      "disposition": "fixed",
+      "evidence": "grep over manuscript/FL_metric_classes_F1000_260917.md returns 0 hits for 'Mann-Whitney', 'separated the two groups' and 'separated from the rest'. The PCReg paragraph now ends '...and quote its medians without a two-group test against the remainder.' The LISI sentence carrying p = 2.0e-7 / p = 0.80 is gone. No substitute two-group test was introduced. The .docx regenerated at 11:39 contains 0 occurrences of 'Mann-Whitney'."
+    },
+    {
+      "round1_defect": 2,
+      "agent": "numbers",
+      "disposition": "fixed",
+      "evidence": "audit_numbers.py with --tables tables/ --evidence workflow_runs/260919_run1/01_numbers.json now exits 1 on 7 tokens, down from 21 tables-only. I re-derived 141 myself from A2_T1 ((mk_rho_mean_markers>0.75)&(xb_margin>0) by strat) and 323/2,038 from A2_T2 (generalizability_index ranked descending, method='min', on the 15 is_clustermap_best rows), both correct. 198, 555,004 and 2,407 carry a stated non-table locus; 02453 is a postal code. The writer's claim that 633 is not in the failure list is true under both invocations."
+    },
+    {
+      "round1_defect": 3,
+      "agent": "writer",
+      "disposition": "fixed",
+      "evidence": "03_draft.md's Open-items block now prints the exact command, 'Exit code 1, FAIL: 7 number(s)...', the seven tokens, and states that dropping --evidence raises the count to 21. The non-existent --extra flag is gone and 633 is no longer listed. All three statements reproduce."
+    },
+    {
+      "round1_defect": 4,
+      "agent": "writer",
+      "disposition": "partially fixed \u2014 two new errors introduced",
+      "evidence": "The multiclass-only counterpart is now beside every strategy, imputation and post-removal median, and the per-method list carries four columns. I re-derived all of them from A2_T1: strategy full-cut 0.763 H_affymetrix_extended to 0.561 K_ffpe_only, range 0.202; multiclass-only 0.691 and 0.604 for the same two, max 0.724 F_microarray_only, min 0.462 G_affymetrix_only, range 0.262; G_affymetrix_only 95 of 154 rows carry f1_mc_mean; post-removal 0.692/0.719 and 0.669/0.681 \u2014 all exact. Two values do not reproduce: see defects 1 and 2 below."
+    },
+    {
+      "round1_defect": 5,
+      "agent": "writer",
+      "disposition": "fixed except the seed claim",
+      "evidence": "The three undeclared procedures are gone from Results: 0 hits for 'false discovery' and for a positive 'confidence interval' claim (the single surviving occurrence is the Methods negation 'we compute no confidence interval on a correlation coefficient'), and the 03_limma/12_scanorama/13_fsmvn/26_xpn clause is gone. The Methods boundary sentence is correct: article2_generalizability.py imports only kruskal and spearmanr from scipy.stats. The residual seed sentence is defect 3 below."
+    },
+    {
+      "round1_defect": 6,
+      "agent": "reference-verifier",
+      "disposition": "NOT fixed",
+      "evidence": "manuscript/references_260917.md line 161 still reads 'Breast Cancer Res Treat. 2018.' with no volume or pages; NCBI esummary for PMID 30484103 returns Breast Cancer Res Treat 2019 Feb, vol 174, iss 1, pp 129-141, first author Shtam T. Line 89 still truncates the title of PMID 30736359, which esummary returns as '...Point to Quickly Developing Molecular Pathways in Human Evolution'. Both strings are unchanged in tools/overlap_allow.txt too."
+    }
+  ],
+  "defects": [
+    {
+      "agent": "writer",
+      "artifact": "manuscript/FL_metric_classes_F1000_260917.md, Results, section 'Cross-batch prediction elects a third set...', the paragraph beginning 'The elected set spreads over 13 of the 14 strategies' (md line 169)",
+      "defect": "A number introduced by the round-2 rule-7b fix does not resolve to the table. The sentence reads 'The imputation medians run 0.714, 0.713 and 0.701 on the full cut for strict exclusion, softimpute and k-nearest-neighbour imputation'. Grouping tables/A2_T1_analysis_set_census_260917.csv by `imp` and taking the median of `pv_lobo3_f1_macro_mean` gives strict 0.713853, softimpute 0.712458, knn 0.701354. The softimpute median is 0.712 at three decimal places, not 0.713; 0.712458 does not round to 0.713 under any convention. The stated range of 0.013 is unaffected, because it is computed from the first and third values.",
+      "required_fix": "Change 0.713 to 0.712 in that sentence. Leave the range at 0.013 and leave the multiclass-only triple (0.698, 0.688, 0.648, range 0.050) alone \u2014 those four reproduce exactly."
+    },
+    {
+      "agent": "writer",
+      "artifact": "manuscript/FL_metric_classes_F1000_260917.md, Results, same section, the per-method median list (md line 167)",
+      "defect": "The round-2 rewrite of the per-method list states a bottom-of-the-ranking that the table contradicts. It says '...while 02_median_scaling (0.453, 0.571, 0.233, 9), 03_limma (0.480, 0.614, 0.154, 9), 26_xpn (0.529, 0.594, 0.255, 9), 16_fsqn_r (0.544, 0.621, 0.280, 9) and 13_fsmvn (0.537, 0.624, 0.240, 9) are last'. Grouping A2_T1 by `method` and taking the median of `pv_lobo3_f1_macro_mean` over all 31 methods, the five lowest are 02_median_scaling 0.4529, 03_limma 0.4804, 07_pycombat 0.5202, 21_harmonizr 0.5214 and 28_npn 0.5230. The three methods the sentence names as last \u2014 26_xpn 0.5288, 13_fsmvn 0.5369 and 16_fsqn_r 0.5435 \u2014 all sit above those three, and 16_fsqn_r is eighth from the bottom of 31. The four quoted columns for each named method are themselves correct; it is the word 'are last' and the membership of the set that fail. None of the three omitted methods appears in the class-N election list in the preceding sentence, so 'last' cannot be read as restricted to the elected methods.",
+      "required_fix": "Either replace the five named methods with the five that actually sit lowest on the full cut (02_median_scaling 0.453/0.571/0.233/9, 03_limma 0.480/0.614/0.154/9, 07_pycombat 0.520/0.624/0.168/9, 21_harmonizr 0.521/0.576/0.124/9, 28_npn 0.523/0.606/0.296/9), or keep the present five and restate the claim as what is true of them \u2014 that each sits in the bottom third \u2014 naming the cut and the denominator. Do not leave 'are last' attached to the present set."
+    },
+    {
+      "agent": "writer",
+      "artifact": "manuscript/FL_metric_classes_F1000_260917.md, Materials and methods, '### Statistics and software' (md line 67)",
+      "defect": "The round-2 fix added a correct boundary sentence naming Kruskal-Wallis and Spearman as the only inferential procedures in analysis/article2_generalizability.py, but left the adjacent sentence 'All stochastic steps used a fixed seed of 42' standing. That script has no stochastic step to seed: grep over its 588 lines returns no hit for seed, random_state, np.random, RandomState, shuffle, permut, sample( or sklearn, and its only scipy.stats imports are kruskal and spearmanr. The sentence is the same class of undeclared-procedure claim that round-1 defect 5 asked to be removed, and it now sits one clause away from a sentence asserting the script's full inferential inventory.",
+      "required_fix": "Delete 'All stochastic steps used a fixed seed of 42.' from the Statistics subsection, or, if the seed belongs to an upstream step the manuscript relies on (the prediction folds in prediction_folds_long.csv, say), name that step and the script that sets the seed so the claim has a locus. Do not leave it attributed to the Article 2 analysis script."
+    },
+    {
+      "agent": "reference-verifier",
+      "artifact": "manuscript/references_260917.md entries [51] (line 161) and [27] (line 89); the same two strings in tools/overlap_allow.txt (line 68 and the [27] block)",
+      "defect": "Round-1 defect 6 is unfixed \u2014 neither file changed. [51] still reads 'Breast Cancer Res Treat. 2018.' with no volume or pages; NCBI esummary for PMID 30484103 returns Breast Cancer Res Treat 2019 Feb;174(1):129-141, first author Shtam T. [27] still reads '...point to quickly developing molecular pathways.' where esummary for PMID 30736359 returns 'Retroelement-Linked Transcription Factor Binding Patterns Point to Quickly Developing Molecular Pathways in Human Evolution', first author Nikitin D. Both are bibliographic errors in entries whose PMIDs are real and resolve; neither is a fabrication.",
+      "required_fix": "In references_260917.md set [51] to 2019;174(1):129-141 and restore '... in Human Evolution' to the title of [27]. Make the identical edit to both strings in tools/overlap_allow.txt in the same pass, then re-run check_overlap.py and confirm it still exits 0. Author lists stay as [TO CONFIRM: author list] unless taken from the resolved record \u2014 Shtam T for [51], Nikitin D for [27] are the only two now confirmed."
+    }
+  ],
+  "accepted": [
+    "check_style.py exits 0 on the post-edit manuscript: 10,311 words (limit 20,000), 0 em-dashes, 33 semicolons (3.2 per 1,000), every section inside budget \u2014 abstract 300, introduction 729, methods 1,371, results 6,422, conclusions 685, back matter 712.",
+    "check_overlap.py exits 0 on all three manuscript .md files. Body 11,619 tokens with 40 allow-listed hits ignored and no verbatim overlap; legends 3,303 tokens with zero hits of any kind; references 1,985 tokens with 155 allow-listed hits. Zero occurrences of the string PREPRINT-1.",
+    "Binding rule 6 is now satisfied: both best-versus-rest Mann-Whitney tests are gone from Results, the descriptive medians and MADs are kept, the clustermap group is presented as one named group beside the strategies, imputations and methods, and no substitute two-group test was introduced.",
+    "The Methods sentence 'We do not repeat the two-group test between that group and the remaining approaches' is now true of the Results it governs.",
+    "Rule 7b now holds structurally: the strategy, imputation and post-removal medians carry both cuts, and the per-method list carries full-cut mean, multiclass-only mean, worst multiclass fold and multiclass fold count. I re-derived every one of these groupings from A2_T1; all reproduce except the two values in defects 1 and 2.",
+    "The Affymetrix-only multiclass-only median is quoted with its own denominator: A2_T1 gives G_affymetrix_only 154 rows of which 95 carry f1_mc_mean, exactly as the sentence states.",
+    "The Shambhala medians reproduce from A2_T1 on method == '20_shambhala': full-cut 0.7453, multiclass-only mean 0.7002, worst multiclass fold 0.4292, 9 multiclass folds, with the 83/82/82/83 denominators the sentence gives.",
+    "The analysis set reproduces: A2_T1 is exactly 2,234 rows over 31 methods, 14 strategies and 3 imputations, so binding rule 7 and the Shambhala rename hold.",
+    "Materials and methods has 5 subsections (four to six required) and is 1,371 words against Article 1's 2,732-word, 13-subsection Methods \u2014 shorter, as gate 2 requires.",
+    "All 55 reference entries carry a PMID line; 48 are numeric and 7 are explicit bracketed markers. In-text citations run [1] to [55] with no gap and no number above the list length. 12 of 55 (21.8%) re-resolved this round against NCBI esummary \u2014 33839309, 10676951, 29441061, 25150836, 22151536, 26844019, 33015620, 31948481, 31597351, 29360996, 31357584, 34837041 \u2014 and every one points to the article its entry describes, with matching journal and year. No fabricated identifier found in this round or the last.",
+    "The discrepancies from 01_numbers.json are in the running body text, not in a footnote: zero footnote markers in the file, and the fold-population pair (53,737 / 32,746) and the corrected Shambhala exclusion counts (20,343 / 20,991) appear in the prose.",
+    "03_draft.md ends with the manuscript byte-for-byte (verified by string comparison), and the .docx was regenerated at 11:39 after the 11:35 .md edits and carries 0 occurrences of 'Mann-Whitney' or 'false discovery'.",
+    "The composite harshness-tier ordering is still explicitly not quoted, respecting the open defect recorded in the directory CLAUDE.md."
+  ],
+  "rules_checked": [
+    {
+      "rule": "1. Every number in the manuscript resolves to a row in a table in tables/.",
+      "passed": false,
+      "evidence": "`python tools/audit_numbers.py manuscript/FL_metric_classes_F1000_260917.md --tables tables/` reports FAIL: 21 numbers not found; adding --evidence workflow_runs/260919_run1/01_numbers.json reduces that to 7 (02453, 555,004, 198, 141, 323, 2,038, 2,407), each of which I traced to a stated locus or re-derived myself. That part is an evidence-coverage limit of a tool that cannot evaluate a filtered aggregate, not a wrong number. The rule fails on two values I re-derived and found wrong: the softimpute full-cut imputation median is 0.712458 in A2_T1 and the manuscript says 0.713; and the per-method 'are last' set omits 07_pycombat (0.5202), 21_harmonizr (0.5214) and 28_npn (0.5230), all of which sit below the 26_xpn / 13_fsmvn / 16_fsqn_r the sentence names. Both are defects 1 and 2 below. A third claim, the fixed seed of 42, has no locus in the script it is attributed to (defect 3)."
+    },
+    {
+      "rule": "2. Every citation has a PMID or an explicit [TO CONFIRM], and 20% of them re-resolve.",
+      "passed": true,
+      "evidence": "55 numbered entries, 55 PMID lines: 48 numeric PMIDs and 7 explicit bracketed markers ([TO CONFIRM: not indexed in PubMed] x3, [TO CONFIRM] x1, [preprint; not indexed in PubMed], [dataset; no PMID], and one further [TO CONFIRM]). No entry lacks both. In-text citations run [1]..[55], no gap, nothing above 55. I re-resolved 12 of 55 (21.8%) against NCBI esummary this round, disjoint from round 1's 13 (25 of 55, 45%, cumulative): all 12 point to the article the entry describes with matching journal and year. Two bibliographic errors stand in entries whose PMIDs are real ([51] year and pagination, [27] truncated title) \u2014 defect 4, an accuracy failure, not a fabrication or a missing identifier, so the rule as written passes."
+    },
+    {
+      "rule": "3. The overlap gate passes with zero 8-gram hits outside tools/overlap_allow.txt.",
+      "passed": true,
+      "evidence": "`python tools/check_overlap.py manuscript/FL_metric_classes_F1000_260917.md manuscript/figure_legends_260917.md manuscript/references_260917.md` exits 0: 'OK: no verbatim overlap'. Body 11,619 tokens, 40 allow-listed hits ignored, no verbatim overlap; legends 3,303 tokens, zero hits of any kind; references 1,985 tokens, 155 allow-listed hits. The two allow-list blocks added this run are the author-1 postal address and the 55 reference entries, both legitimate under plan 2.1 rule 3 and neither exempting body prose. Zero occurrences of PREPRINT-1 in any of the three files."
+    },
+    {
+      "rule": "4. check_style.py exits 0.",
+      "passed": true,
+      "evidence": "`python tools/check_style.py manuscript/FL_metric_classes_F1000_260917.md` prints 'OK: clean.' and exits 0. 10,311 words, 0 em-dashes, 33 semicolons (3.2 per 1,000), and all six sections inside budget (abstract 300/300, introduction 729, methods 1,371, results 6,422, conclusions 685, back matter 712). The word count rose by 118 over round 1, which is the rule-7b additions, and every budget still holds."
+    },
+    {
+      "rule": "5. No Figma frame was modified beyond the \u00a73.4 renaming.",
+      "passed": false,
+      "evidence": "Not checked. This session has no Figma read or write capability \u2014 the figma MCP plugin exposes only mcp__plugin_figma_figma__authenticate here \u2014 so I cannot open the file and compare frame names or geometry against \u00a73.4. The phases this run executed are evidence and draft, neither of which is specified to touch Figma, and no run artifact records a Figma call; that is circumstantial and is not the check the rule asks for. Recorded as not passed with the reason, per instruction, rather than assumed."
+    }
+  ],
+  "open_items": [
+    "Round 2 is the last round, so all four defects above pass to Daniil as open items: the softimpute median 0.713 -> 0.712, the false 'are last' per-method set, the unsupported seed-of-42 sentence, and the two unfixed reference entries [51] and [27].",
+    "Rule 5 stays unverified until an interactive session with Figma access confirms that only the \u00a73.4 renaming touched the canvas.",
+    "27 [TO CONFIRM] markers stand in references_260917.md (20 author lists from the ORCID record, two JMLR entries with no PMID or DOI, the RetroSpect book chapter, the Zenodo dataset). These are honest placeholders for the reference-verifier phase, not gate-2 defects.",
+    "[TO CONFIRM: new FL_harmonization release DOI] stands in Software availability; F1000Research needs an archived DOI-bearing copy before submission.",
+    "The author list is carried over from Article 1 unchanged and needs Daniil's confirmation for Article 2.",
+    "audit_numbers.py cannot evaluate a filtered aggregate over a CSV, so a number derived from a groupby will always need an entry in 01_numbers.json to pass. That is a tool limitation worth recording in tools/ before the next run, not a manuscript defect.",
+    "The numbers agent also edited analysis/build_numbers_json.py, which the round-1 rejection did not name; the writer flagged it for confirmation and it is still open."
+  ],
+  "artifacts_written": [
+    "<repo>/article_2_extended_comparison/workflow_runs/260919_run1/05_teamlead_gate2.json",
+    "<repo>/article_2_extended_comparison/workflow_runs/260919_run1/05_teamlead_gate2.md"
+  ]
+}

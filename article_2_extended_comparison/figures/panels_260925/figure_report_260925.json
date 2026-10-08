@@ -1,0 +1,167 @@
+{
+ "sfig_harshness": {
+  "size_pt": [
+   378.0,
+   470.0
+  ],
+  "size_px": [
+   756,
+   940
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "marker correlation by harshness tier; Kruskal-Wallis p = 1.4 \u00d7 10\u207b\u2077\u2074",
+   "B": "marker \u2212 HK correlation by harshness tier; Kruskal-Wallis p = 5.5 \u00d7 10\u207b\u00b3\u00b9",
+   "C": "same-biology agreement by harshness tier; Kruskal-Wallis p = 4.5 \u00d7 10\u207b\u2076\u00b3",
+   "D": "different-biology agreement by harshness tier; Kruskal-Wallis p = 2.0 \u00d7 10\u207b\u2074\u2077",
+   "E": "margin by harshness tier; Kruskal-Wallis p = 1.4 \u00d7 10\u207b\u00b2\u2079",
+   "F": "margin gain over baseline by harshness tier; Kruskal-Wallis p = 2.3 \u00d7 10\u207b\u00b2\u2077",
+   "G": "LOBO3 F1, all folds by harshness tier; grey = permutation null (pv_lobo3_f1_macro_perm_mean); Kruskal-Wallis p = 6.1 \u00d7 10\u207b\u00b9\u00b2",
+   "H": "LOBO3 F1, multiclass folds by harshness tier; Kruskal-Wallis p = 0.0028",
+   "I": "LOBO3 AUC by harshness tier; grey = permutation null (pv_lobo3_auc_macro_perm_mean); Kruskal-Wallis p = 0.7",
+   "J": "LOBO2 F1, all folds by harshness tier; grey = permutation null (pv_lobo2_f1_macro_perm_mean); Kruskal-Wallis p = 8.2 \u00d7 10\u207b\u2078",
+   "K": "LOBO2 F1, multiclass folds by harshness tier; Kruskal-Wallis p = 1.3 \u00d7 10\u207b\u2074",
+   "L": "LOBO2 AUC by harshness tier; grey = permutation null (pv_lobo2_auc_macro_perm_mean); Kruskal-Wallis p = 0.48"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "fig_markers_lm": {
+  "size_pt": [
+   378.0,
+   566.0
+  ],
+  "size_px": [
+   756,
+   1132
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "class M margin vs class L marker correlation, by method (rho, p: A2_T11)",
+   "B": "the same plane by strategy",
+   "C": "methods ranked by median margin, clustermap group as its own row",
+   "D": "median marker correlation and median margin by strategy and imputation",
+   "E": "change in different- vs same-biology agreement; 61 agreement-specific",
+   "F": "same-biology agreement unharmonized to harmonized, gate-passing set"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "fig_prediction_n": {
+  "size_pt": [
+   378.0,
+   420.0
+  ],
+  "size_px": [
+   756,
+   840
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "methods by median LOBO3 F1, all folds vs multiclass folds; median folds",
+   "B": "per-batch F1, both targets, single-class folds hollow: S0_no_removal__softimpute__29_combat_ref__post0",
+   "C": "3-class fold counts and F1 by classes in the held-out batch",
+   "D": "E1 generalizability index vs full-cut F1; no-multiclass approaches apart"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "fig_election": {
+  "size_pt": [
+   378.0,
+   430.0
+  ],
+  "size_px": [
+   756,
+   860
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "chord of the nine elected sets; ribbon width = shared approaches (A2_T3b)",
+   "B": "Venn of the class N, class M and local elected sets",
+   "C": "supervenn of the N, M, L, global and local elected sets",
+   "D": "set sizes of all approaches and of the L, M, N and 2+ elected sets, with the part passing the L/M gate"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "sfig_lmn_scatter": {
+  "size_pt": [
+   378.0,
+   540.0
+  ],
+  "size_px": [
+   756,
+   1080
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "LOBO3 F1, all folds vs class L marker correlation, by method; \u03c1 = -0.234, p = 3.2 \u00d7 10\u207b\u00b2\u2079",
+   "B": "LOBO3 F1, all folds vs class L marker correlation, by strategy; \u03c1 = -0.234, p = 3.2 \u00d7 10\u207b\u00b2\u2079",
+   "C": "LOBO3 F1, all folds vs class M margin, by method; \u03c1 = 0.358, p = 2.3 \u00d7 10\u207b\u2076\u2078",
+   "D": "LOBO3 F1, all folds vs class M margin, by strategy; \u03c1 = 0.358, p = 2.3 \u00d7 10\u207b\u2076\u2078",
+   "E": "LOBO3 F1, multiclass folds vs class M margin gain over baseline, by method; \u03c1 = 0.127, p = 2.6 \u00d7 10\u207b\u2079",
+   "F": "LOBO3 F1, multiclass folds vs class M margin gain over baseline, by strategy; \u03c1 = 0.127, p = 2.6 \u00d7 10\u207b\u2079"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "sfig_metric_clustermap": {
+  "size_pt": [
+   378.0,
+   520.0
+  ],
+  "size_px": [
+   756,
+   1040
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "Spearman clustermap of 325 of the 334 non-metadata metrics (4 constant or sparse over the analysis set, 5 absent from the snapshot); bars: metric group, type, Article 2 class"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "sfig_pca": {
+  "size_pt": [
+   378.0,
+   560.0
+  ],
+  "size_px": [
+   756,
+   1120
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "% of total variance on PC1-PC10 by method, ordered by mean batch PCReg",
+   "B": "RNA_BATCH R\u00b2 (%) on PC1-PC10 by method",
+   "C": "% of total variance on PC1-PC10 by strategy",
+   "D": "RNA_BATCH R\u00b2 (%) on PC1-PC10 by strategy"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ },
+ "sfig_expression": {
+  "size_pt": [
+   378.0,
+   572.0
+  ],
+  "size_px": [
+   756,
+   1144
+  ],
+  "fits_frame": true,
+  "panels": {
+   "A": "03_limma (linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "B": "05_combat (linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "C": "29_combat_ref (linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "D": "13_fsmvn (linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "E": "16_fsqn_r (non-linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "F": "17_quantile (non-linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "G": "10_mnn (non-linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts",
+   "H": "12_scanorama (non-linear), S0_no_removal/knn/post0: harmonized vs unharmonized BCL6, IRF4, EEF1A1; 4 largest cohorts"
+  },
+  "n_text_overlaps": 0,
+  "overlaps": []
+ }
+}

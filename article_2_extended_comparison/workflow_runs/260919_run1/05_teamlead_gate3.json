@@ -1,0 +1,145 @@
+{
+  "gate": 3,
+  "round": 2,
+  "verdict": "accept",
+  "status": {
+    "complete": [
+      "All four gate-3 criteria re-checked on the files on disk, none taken from an agent report.",
+      "check_style.py, check_overlap.py and audit_numbers.py re-run by the team lead on the delivered manuscript.",
+      "A fresh random 20% of the reference list (11 of 52, random.seed(2609192), sample [3,4,6,7,9,13,14,26,34,41,45]) independently re-resolved against NCBI eSummary on 2026-09-19. All 11 confirm the verifier.",
+      "All three gate-3 round-1 writer defects re-inspected against the manuscript .md and .docx: all three fixed.",
+      "Citation integrity re-derived: 52 distinct in-text numbers, 1 to 52, no gap, no reuse, first-citation order preserved; 52 reference entries, no duplicate number.",
+      "The style editor's edit decomposed against the draft it received: 14 hunks = 12 declared prose edits (on 11 lines) + 3 writer number fixes. No number, citation or claim changed by the style editor.",
+      ".docx re-checked: 0 w:ins, 0 w:del, 0 w:delText, 0 w:sdt, 0 comments; content in agreement with the .md (rule 12).",
+      "Five numbers re-derived from tables/A2_T1 in this session: 1,686 / 75.5%; 141 / 130 / 130; 80 of 84 for 01_raw; 0.714 / 0.712 / 0.701 by imputation."
+    ],
+    "in_progress": [],
+    "not_started": [
+      "Rule 5 (Figma untouched) - this session has no Figma read capability; recorded passed:false with the reason, never assumed. Unchanged from gate 2 and gate 3 round 1.",
+      "Phase 6 and everything downstream - stop point set by Daniil."
+    ]
+  },
+  "verdict_note": "ACCEPT, and the acceptance is procedural, not a clean bill. This is round 2 of at most 2, so the surviving defects convert to open items for Daniil and the workflow proceeds to delivery. The three defects addressed to the writer at round 1 are fixed and verified. One unwaivable rule is still not satisfied (rule 1: two manuscript numbers have no locus under tables/) and one could not be checked at all (rule 5: no Figma read capability in this session). Both are open items that block submission, not delivery of this run.",
+  "gate3_criteria": [
+    {
+      "criterion": "The reference-verifier's defect list is empty, or every entry has been fixed by the writer.",
+      "result": "PASS",
+      "evidence": "All 11 verifier defects are now addressed. Four bibliographic ones were corrected by the verifier in references_260917.md and re-confirmed here ([23], [24], [26] full titles and identifiers; the 19 entries that carried '[TO CONFIRM: author list]' now carry none - grep for '[TO CONFIRM' in references_260917.md returns 0). Seven needed a change to the manuscript body and all seven were made: [51] Shtam 2019 dropped from the bracket at the marker-preservation paragraph, which now reads '...extracellular-vesicle and plasma-derived inputs [50,51]' with [51] the renumbered Shtam 2018 J Hematol whose verified passage does carry the input-material claim; [34] now states the principle as Saeb gives it ('shown for splits made by subject against splits made by record [34]; we apply that principle to batches and cut our folds by batch'); [36] softened to the reachable abstract ('The structure of genomics data can itself bias a performance evaluation [36]'); [48,49] split into two clauses and 'the same panel logic' deleted; [22] narrowed to what the PDX paper shows; the [54] sentence deleted with the reference; the [55] Data availability sentence deleted with the reference. grep confirms 'ZENODO.19052415', '[54]', '[55]', 'the same panel logic' and 'ordinary discipline of method development' are absent from both the .md and the .docx.",
+      "how_checked": "grep over manuscript/FL_metric_classes_F1000_260917.md; python-docx text extraction over the .docx; regex citation census over both files."
+    },
+    {
+      "criterion": "Re-resolve a RANDOM 20% of the verifier's own confirmations.",
+      "result": "PASS",
+      "evidence": "11 of 52 (21.2%), drawn with random.seed(2609192): entries [3], [4], [6], [7], [9], [13], [14], [26], [34], [41], [45]. All eleven are PubMed-indexed and were re-fetched in one NCBI eSummary call on 2026-09-19. Title, journal, year, volume, issue, pagination, first author and DOI match the reference entry exactly in all eleven, including the two that the verifier had corrected this run ([26] Cells 2019;8(10):1219 with the full title ending 'in Human Physiology'). Named in full: [3] 36140419 Biomedicines 2022;10(9):2318; [4] 22151536 BMC Bioinformatics 2011;12:467; [6] 34949812 Nat Methods 2022;19(1):41-50; [7] 31948481 Genome Biol 2020;21(1):12; [9] 31740819 Nat Methods 2019;16(12):1289-1296; [13] 29475724 Lancet Oncol 2018;19(4):549-561; [14] 24398326 Blood 2014;123(8):1214-7; [26] 31597351 Cells 2019;8(10):1219; [34] 28327985 Gigascience 2017;6(5):1-9; [41] 17907809 PLoS Genet 2007;3(9):1724-35; [45] 30727942 BMC Bioinformatics 2019;20(1):66. No discrepancy in any of the eleven. Three of them ([7], [26], [45]) were also in the round-1 sample and are unchanged; eight are new.",
+      "how_checked": "eutils.ncbi.nlm.nih.gov esummary.fcgi, db=pubmed, retmode=json, 11 PMIDs in one call, 2026-09-19."
+    },
+    {
+      "criterion": "check_style.py exits 0 and check_overlap.py reports zero hits outside the allow list.",
+      "result": "PASS",
+      "evidence": "check_style.py --journal f1000: 'OK: clean.', exit 0. 10,324 words against a 20,000 limit, 0 em-dash, 33 semicolons (3.2/1k), and all six sections inside budget: abstract 300 (150-300), introduction 773 (720-1215), methods 1,385 (1120-1890), results 6,389 (4400-7425), conclusions 669 (480-810), back matter 716 (560-945). check_overlap.py over the three manuscript .md files against both sources: 'OK: no verbatim overlap', exit 0 - body 11,651 tokens with 40 allow-listed hits, legends 3,303 tokens with none, references 2,311 tokens with 154 allow-listed hits (down from 167 at round 1, consistent with three reference entries having been removed). The allow list is unchanged since round 1, where I inspected it and found only funding statements, three affiliation strings and reference entries.",
+      "how_checked": "tools/check_style.py and tools/check_overlap.py run by the team lead on the delivered files at 2026-09-19."
+    },
+    {
+      "criterion": "The style-editor changed no number, no citation and no claim.",
+      "result": "PASS",
+      "evidence": "The style report (workflow_runs/260919_run1/04_style_report.{md,json}, mtime 16:06) is unchanged since round 1; the writer's gate-3 pass ran after it (16:48). Line-level SequenceMatcher of the manuscript body inside 03_draft.md against the delivered manuscript gives 14 non-equal hunks. Eleven of them carry the twelve declared style edits (two share one line: 'concrete' and the 'not noise' sentence), and a word-level diff of each shows no digit and no bracketed citation on either side - the two hunks that contain digits keep them identical ('0.75' -> '0.75'; '01_raw ... 80 ... 84' -> '01_raw ... 80 ... 84'). The other three hunks are the writer's own gate-2 number fixes, which 03_draft.md predates: the 9-word fixed-seed sentence deleted, the per-method 'are last' set changed from 26_xpn/16_fsqn_r/13_fsmvn to 07_pycombat/21_harmonizr/28_npn, and 0.713 changed to 0.712. Independently: all 12 declared 'after' strings are present in the delivered manuscript and all 12 'before' strings are absent.",
+      "how_checked": "difflib.SequenceMatcher line and word level, 03_draft.md body against manuscript/FL_metric_classes_F1000_260917.md; string presence test of each declared edit."
+    }
+  ],
+  "rules_checked": [
+    {
+      "rule": "1. Every number in the manuscript resolves to a row in a table in tables/.",
+      "passed": false,
+      "evidence": "audit_numbers.py --tables tables/ --evidence 01_numbers.json exits 1 on 6 of 452 distinct numbers: 02453, 555,004, 198, 141, 323, 2,038 - the same six as at round 1, so the numbers agent did not act on round-1 defect 4. Four are audit artefacts and I re-derived them myself: 02453 is the Waltham postal code in the affiliation block; 141 reproduces as the C_rnaseq_only count under (mk_rho_mean_markers > 0.75) & (xb_margin > 0) in A2_T1, with 130 (J_ff_only), 130 (S0_no_removal) and 80 of 84 for 01_raw alongside it, and the same filter gives 1,686 of 2,234 = 75.5% exactly as the manuscript states; 323 and 2,038 are the min and max rank of the 15 is_clustermap_best rows on generalizability_index in A2_T2 (re-derived at round 1). Two genuinely have no locus: 198 (approaches with pcr_RNA_BATCH > 0.9999) and 555,004.7 (mean exp_max over the 84 20_shambhala rows) reproduce only from the upstream snapshot metrics_comprehensive_260905.csv, which is not in tables/ and has no entry in 01_numbers.json. Both values are correct - I reproduced them at round 1 - but the rule as written is not satisfied for them.",
+      "note": "Surviving round-1 defect 4, owner: numbers agent. Converts to an open item at the round limit."
+    },
+    {
+      "rule": "2. Every citation has a PMID or an explicit [TO CONFIRM], and 20% of them re-resolve.",
+      "passed": true,
+      "evidence": "52 reference entries, 52 PMID lines, one per entry. 47 carry a numeric PMID; 5 ([23], [24], [31], [37], [38]) carry 'PMID: none' with the search that was run and the registry the entry was resolved at named in the line - a resolved statement, not an unfilled placeholder. grep for '[TO CONFIRM' in references_260917.md returns 0. Two [TO CONFIRM] markers remain in the manuscript body and both are legitimate: the not-yet-minted FL_harmonization release DOI in Software availability, and the employment question the writer escalated in Competing interests. In-text citations run 1-52 with no gap, no reuse and first-citation order preserved. I re-resolved 11 of 52 (21.2%) myself against NCBI eSummary; all 11 confirm.",
+      "note": ""
+    },
+    {
+      "rule": "3. The overlap gate passes with zero 8-gram hits outside tools/overlap_allow.txt.",
+      "passed": true,
+      "evidence": "check_overlap.py exits 0 with 'OK: no verbatim overlap' on all three manuscript .md files against FL_harmonization_article_NAR_260912.docx and Harmonization_metrics_extended_260802_v2.docx. Body 40 allow-listed hits, legends 0, references 154. The allow list is byte-identical to the one I inspected at round 1, where it contained only funding statements, three affiliation strings and reference entries, no body prose. Zero occurrences of 'PREPRINT-1' in any manuscript file; Article 1 is cited as [38] with its DOI 10.64898/2026.09.15.751825.",
+      "note": ""
+    },
+    {
+      "rule": "4. check_style.py exits 0.",
+      "passed": true,
+      "evidence": "'OK: clean.', exit 0, on manuscript/FL_metric_classes_F1000_260917.md with --journal f1000: 10,324 words, 0 em-dash, 33 semicolons (3.2/1k), all six section budgets satisfied.",
+      "note": ""
+    },
+    {
+      "rule": "5. No Figma frame was modified beyond the SS3.4 renaming.",
+      "passed": false,
+      "evidence": "Not checked. This session has no Figma read capability - the figma plugin exposes only mcp__plugin_figma_figma__authenticate here - so I cannot open the file and compare frame names or geometry against SS3.4 of the plan. The phases this run executed are review and delivery, neither of which is specified to touch Figma, no run artifact records a Figma call, and git status shows no change under figures/recipe_assets_260917/; that is circumstantial and is not the check the rule asks for. Recorded as not passed with the reason rather than assumed. Unchanged from gate 2 and gate 3 round 1.",
+      "note": "Open item: Daniil verifies in the interactive session before assembly."
+    }
+  ],
+  "defects": [
+    {
+      "agent": "numbers",
+      "artifact": "workflow_runs/260919_run1/01_numbers.json, against manuscript/FL_metric_classes_F1000_260917.md line 85 (555,004.7 and 1,359.6) and the saturation paragraph (198)",
+      "defect": "Unfixed since round 1. Two manuscript numbers have no locus under tables/ and no entry in 01_numbers.json, so rule 1 cannot be satisfied for them and audit_numbers.py can never pass them. A2_T1 carries no pcr_*, kbet_* or exp_* column; both values live only in the upstream snapshot metrics_comprehensive_260905.csv. Both are correct - I reproduced them from that file merged to the 2,234-row key at round 1 (198 approaches with pcr_RNA_BATCH > 0.9999 from exactly 03_limma, 07_pycombat, 13_fsmvn, 21_harmonizr, 28_npn and 33_amdbnorm, 98.5% of them with kbet_acceptance_rate_RNA_BATCH < 0.1; mean exp_max over the 84 20_shambhala rows = 555,004.7). Separately the wording still misdescribes the statistic: 1,359.6 is the mean of the per-approach exp_median and 555,004.7 the mean of the per-approach exp_max, but the sentence says '20_shambhala returned a median of 1,359.6 and a maximum of 555,004.7'. A reader taking the median of exp_median gets 1,348.7 and the maximum of exp_max gets 1,873,593.6.",
+      "required_fix": "Carry the pcr_RNA_BATCH, kbet_acceptance_rate_RNA_BATCH and exp_* columns into a tables/ file, or add entries for both values to 01_numbers.json naming metrics_comprehensive_260905.csv, the column and the filter. Then the writer restates the sentence as means over the 84 approaches, matching the 'mean maximum expression values' phrasing used for the two ComBat-seq implementations in the same sentence.",
+      "round_raised": 1,
+      "status": "surviving -> open item"
+    },
+    {
+      "agent": "references",
+      "artifact": "manuscript/reference_support_260917.md, against manuscript/references_260917.md and the manuscript's closing References line",
+      "defect": "New at round 2, created by this round's renumbering. The support file still opens 'Complete for all 55 references' and keys its blocks to the pre-round-2 numbering: its [51] is Shtam 2019 Breast Cancer Res Treat (the reference that was dropped precisely because it does not support the sentence), its [52] is Shtam 2018, its [53] Nygaard 2016, and it still carries blocks [54] and [55] for two removed references. The manuscript's last line states 'The supporting passage quoted from each cited article is kept separately in manuscript/reference_support_260917.md', so a reader following [51] or [52] from the manuscript lands on the wrong article. The writer recorded the mapping table in the Status block of references_260917.md, which documents the shift but does not remove the contradiction between two delivered artifacts.",
+      "required_fix": "Renumber the support file to 1-52 to match the manuscript, delete the blocks for the three removed references (former [51], [54], [55]), and update its Status block from 55 to 52 and from six not-SUPPORTS verdicts to the three that remain ([22] and [34] and [49] partial). Change no verdict and re-resolve nothing; this is a renumbering, not a re-verification.",
+      "round_raised": 2,
+      "status": "new at round 2 -> open item"
+    },
+    {
+      "agent": "writer",
+      "artifact": "manuscript/FL_metric_classes_F1000_260917.md, Introduction para 3, the rewritten [22] sentence",
+      "defect": "Minor precision. The new sentence reads 'principal-component analysis separated primary tumours from their matched xenografts by tumour content and host cells'. The passage the verifier quoted says 'comparing the transcriptomic profiles of primary (n = 79) and matched PDX (n = 140) by principal-component analysis (PCA), demonstrating a partial overlap (Figure S3A), likely due to the tumor content (Figures S3B and S3C) and host human cells (Figures S3C-S3E)'. 'Separated' drops 'partial' and the attribution drops 'likely'. The rest of the sentence, and the surrogate-variable-analysis clause, are carried by the passage exactly.",
+      "required_fix": "Restore the hedge: 'separated ... only partially' and 'attributed by the authors to tumour content and host cells'. One sentence, no number, no citation change.",
+      "round_raised": 2,
+      "status": "new at round 2 -> open item"
+    },
+    {
+      "agent": "writer",
+      "artifact": "workflow_runs/260919_run1/03_draft.md",
+      "defect": "Housekeeping, no effect on the deliverable. The draft artifact was rewritten at 16:48 with the gate-3 fixes but from a body that predates the writer's own gate-2 number corrections, so it still carries 0.713 and the superseded per-method set 26_xpn / 16_fsqn_r / 13_fsmvn, and it still carries the fixed-seed sentence. The delivered manuscript is correct on all three; only the run artifact is stale.",
+      "required_fix": "Regenerate 03_draft.md from the delivered manuscript body, or state in its Status block that the three gate-2 corrections live only in the manuscript.",
+      "round_raised": 2,
+      "status": "new at round 2 -> open item"
+    }
+  ],
+  "accepted": [
+    "Round-1 defect 1 fixed and verified: all six citing sentences rewritten. [51] Shtam 2019 dropped from the marker bracket; [34] states Saeb's subject-against-record principle and names the extension to batches as this work's; [36] softened to the reachable abstract; [48] and [49] split into two clauses with 'the same panel logic' gone; [22] narrowed to the PDX paper's own PCA and surrogate-variable result; the [54] sentence deleted. No reference was swapped in for another.",
+    "Round-1 defect 2 fixed and verified: the Data availability sentence citing ZENODO.19052415 is gone from both the .md and the .docx, and entry [55] with it.",
+    "Round-1 defect 3 fixed and verified: Competing interests now names the ten authors the affiliation block gives affiliation 2, and the employment question is escalated as an explicit [TO CONFIRM] instead of being guessed. This is the right handling of a factual claim about people.",
+    "Citation integrity after three removals and two renumberings: 52 distinct in-text numbers, 1 to 52, no gap, no reuse, first-citation order preserved; 52 reference entries, no duplicate; verified programmatically, not from the writer's assertion.",
+    "The reference list carries no unfilled author list: grep for '[TO CONFIRM' in references_260917.md returns 0, against 19 entries that carried one before the verifier's pass.",
+    "11 of 52 references re-resolved by the team lead against NCBI eSummary on 2026-09-19; all 11 match the entry exactly on title, journal, year, volume, issue, pagination, first author and DOI.",
+    "check_style.py exits 0: 10,324 words, 0 em-dash, 33 semicolons (3.2/1k), six of six section budgets satisfied.",
+    "check_overlap.py exits 0 on all three manuscript .md files; the allow list is unchanged and contains no body prose.",
+    "The style editor changed no number, no citation and no claim: the 14-hunk decomposition against 03_draft.md is exactly 12 declared prose edits plus the 3 writer number fixes, and no style hunk touches a digit or a bracket.",
+    "Rule 12 holds. manuscript/FL_metric_classes_F1000_260917.docx carries 0 w:ins, 0 w:del, 0 w:delText, 0 w:sdt and 0 comments; every sentence changed this round is present in the .docx and every deleted string is absent from it; the results table survives as a real 6 x 7 Word table.",
+    "Rule 7 holds: A2_T1 is 2,234 rows over 31 methods and 2 post-removal settings, and the manuscript quotes 2,234 throughout.",
+    "Rule 7b holds: the results table reports full-cut mean F1, multiclass-only mean F1, worst multiclass fold and multiclass fold count side by side for all six approaches, and the single-class folds are reported rather than dropped (59 approaches with no multiclass fold, 20 Affymetrix-only approaches at F1 1.000 with zero multiclass folds).",
+    "Numbers re-derived by the team lead this round from tables/A2_T1: the joint gate 1,686 of 2,234 = 75.5%; the per-strategy pass counts 141 (C_rnaseq_only), 130 (J_ff_only), 130 (S0_no_removal); 01_raw 80 of 84; the per-imputation full-cut LOBO medians 0.713853 strict, 0.712458 softimpute, 0.701354 knn, which is the manuscript's 0.714 / 0.712 / 0.701 and its range of 0.013."
+  ],
+  "open_items": [
+    "Rule 1 is not satisfied for two numbers. 198 and 555,004.7 reproduce only from metrics_comprehensive_260905.csv, which is not under tables/. Both values are correct; the provenance chain the workflow requires is missing. Daniil: either promote those columns into a tables/ file or accept the exception knowingly before submission.",
+    "The same sentence misdescribes its statistic: 1,359.6 and 555,004.7 are means of the per-approach exp_median and exp_max over the 84 20_shambhala approaches, but the manuscript calls them a median and a maximum.",
+    "Rule 5 was never checked in this run. No Figma read capability in this session; Daniil confirms in the interactive session that no frame changed beyond the SS3.4 renaming.",
+    "manuscript/reference_support_260917.md is keyed to the pre-round-2 reference numbering and claims 55 references; the manuscript's closing line points readers at it.",
+    "The rewritten [22] sentence drops the source's hedges ('partial overlap', 'likely due to').",
+    "Software availability carries an intentional [TO CONFIRM: new FL_harmonization release DOI]; it must be minted before submission.",
+    "Competing interests carries an intentional [TO CONFIRM] on which of the ten affiliation-2 authors hold employment; this is Daniil's to answer.",
+    "Data availability quotes 10.5281/ZENODO.22737294 as a deposited record. Project memory records draft 22737294 as fully uploaded on 2026-09-14 but NOT published, so the DOI may not resolve yet. Publication state must be confirmed before submission.",
+    "workflow_runs/260919_run1/03_draft.md is stale on three numbers relative to the delivered manuscript."
+  ],
+  "artifacts_written": [
+    "<repo>/article_2_extended_comparison/workflow_runs/260919_run1/05_teamlead_gate3.json",
+    "<repo>/article_2_extended_comparison/workflow_runs/260919_run1/05_teamlead_gate3.md"
+  ]
+}

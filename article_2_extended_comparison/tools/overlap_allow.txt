@@ -1,0 +1,83 @@
+# Phrases Article 2 is allowed to share verbatim with Article 1.
+# One phrase per line; blank lines and # comments ignored. Every n-gram of a listed
+# phrase is exempted from the gate.
+#
+# The grant wording is quoted verbatim from Article 1's FUNDING section on Daniil's
+# instruction (plan §1.10). F1000 requires the section; rewording a funder's own
+# sentence is not an option.
+[Funding statement: as in the published article.]
+This work was funded by the 21AG-1F021 grant from the Committee of Higher Education and Sciences MESCS of Armenia (to A.A.).
+
+# The affiliation address of author 1 is the legal name and postal address of an
+# institution. It is identical in Article 1 by necessity and cannot be reworded.
+Institute of Molecular Biology, National Academy of Science of the Republic of Armenia, Yerevan, 0014, Armenia
+
+# Reference entries. manuscript/references_260917.md cites works that Article 1 also
+# cites. A published title, journal name and year cannot be reworded, so each full
+# reference entry is exempted here. No body prose is exempted by these lines.
+# Rewritten 2026-09-19 by the reference-verifier: the entries below are the re-resolved
+# forms (author lists filled from the PubMed record, three titles corrected). The
+# superseded forms are left out; they no longer appear in any file the gate reads.
+Leek JT, Scharpf RB, Bravo HC, et al. Tackling the widespread and critical impact of batch effects in high-throughput data. Nat Rev Genet. 2010;11(10):733-9. doi:10.1038/nrg2825
+Lazar C, Meganck S, Taminau J, et al. Batch effect removal methods for microarray gene expression data integration: a survey. Brief Bioinform. 2013;14(4):469-90. doi:10.1093/bib/bbs037
+Borisov N, Buzdin A. Transcriptomic Harmonization as the Way for Suppressing Cross-Platform Bias and Batch Effect. Biomedicines. 2022;10(9):2318. doi:10.3390/biomedicines10092318
+Rudy J, Valafar F. Empirical comparison of cross-platform normalization methods for gene expression data. BMC Bioinformatics. 2011;12:467. doi:10.1186/1471-2105-12-467
+Thompson JA, Tan J, Greene CS. Cross-platform normalization of microarray and RNA-seq data for machine learning applications. PeerJ. 2016;4:e1621. doi:10.7717/peerj.1621
+Luecken MD, Büttner M, Chaichoompu K, et al. Benchmarking atlas-level data integration in single-cell genomics. Nat Methods. 2022;19(1):41-50. doi:10.1038/s41592-021-01336-8
+Tran HTN, Ang KS, Chevrier M, et al. A benchmark of batch-effect correction methods for single-cell RNA sequencing data. Genome Biol. 2020;21(1):12. doi:10.1186/s13059-019-1850-9
+Büttner M, Miao Z, Wolf FA, et al. A test metric for assessing single-cell RNA-seq batch correction. Nat Methods. 2019;16(1):43-49. doi:10.1038/s41592-018-0254-1
+Korsunsky I, Millard N, Fan J, et al. Fast, sensitive and accurate integration of single-cell data with Harmony. Nat Methods. 2019;16(12):1289-1296. doi:10.1038/s41592-019-0619-0
+Alizadeh AA, Eisen MB, Davis RE, et al. Distinct types of diffuse large B-cell lymphoma identified by gene expression profiling. Nature. 2000;403(6769):503-11. doi:10.1038/35000501
+Rosenwald A, Wright G, Chan WC, et al. The use of molecular profiling to predict survival after chemotherapy for diffuse large-B-cell lymphoma. N Engl J Med. 2002;346(25):1937-47. doi:10.1056/NEJMoa012914
+Dave SS, Wright G, Tan B, et al. Prediction of survival in follicular lymphoma based on molecular features of tumor-infiltrating immune cells. N Engl J Med. 2004;351(21):2159-69. doi:10.1056/NEJMoa041869
+Huet S, Tesson B, Jais JP, et al. A gene-expression profiling score for prediction of outcome in patients with follicular lymphoma: a retrospective training and validation analysis in three international cohorts. Lancet Oncol. 2018;19(4):549-561. doi:10.1016/S1470-2045(18)30102-5
+Scott DW, Wright GW, Williams PM, et al. Determining cell-of-origin subtypes of diffuse large B-cell lymphoma using gene expression in formalin-fixed paraffin-embedded tissue. Blood. 2014;123(8):1214-7. doi:10.1182/blood-2013-11-536433
+Chapuy B, Stewart C, Dunford AJ, et al. Molecular subtypes of diffuse large B cell lymphoma are associated with distinct pathogenic mechanisms and outcomes. Nat Med. 2018;24(5):679-690. doi:10.1038/s41591-018-0016-8
+Schmitz R, Wright GW, Huang DW, et al. Genetics and Pathogenesis of Diffuse Large B-Cell Lymphoma. N Engl J Med. 2018;378(15):1396-1407. doi:10.1056/NEJMoa1801445
+Sorokin M, Rabushko E, Efimov V, et al. Experimental and Meta-Analytic Validation of RNA Sequencing Signatures for Predicting Status of Microsatellite Instability. Front Mol Biosci. 2021;8:737821. doi:10.3389/fmolb.2021.737821
+Sorokin M, Zolotovskaia M, Nikitin D, et al. Personalized targeted therapy prescription in colorectal cancer using algorithmic analysis of RNA sequencing data. BMC Cancer. 2022;22(1):1113. doi:10.1186/s12885-022-10177-3
+Gudkov A, Shirokorad V, Kashintsev K, et al. Gene Expression-Based Signature Can Predict Sorafenib Response in Kidney Cancer. Front Mol Biosci. 2022;9:753318. doi:10.3389/fmolb.2022.753318
+Vladimirova U, Rumiantsev P, Zolotovskaia M, et al. DNA repair pathway activation features in follicular and papillary thyroid tumors, interrogated using 95 experimental RNA sequencing profiles. Heliyon. 2021;7(3):e06408. doi:10.1016/j.heliyon.2021.e06408
+Adamyan L, Aznaurova Y, Stepanian A, et al. Gene Expression Signature of Endometrial Samples from Women with and without Endometriosis. J Minim Invasive Gynecol. 2021;28(10):1774-1785. doi:10.1016/j.jmig.2021.03.011
+Fiore D, Cappelli LV, Zhaoqi L, et al. A patient-derived T cell lymphoma biorepository uncovers pathogenetic mechanisms and host-related therapeutic vulnerabilities. Cell Rep Med. 2025;6(4):102029. doi:10.1016/j.xcrm.2025.102029
+Nikitin DM. Transposable element-host genome evolutionary arms race revealed by multi-modal epigenomic profiling in a telomere-to-telomere human genome reference. R Soc Open Sci. 2026;13(8). doi:10.1098/rsos.260639
+Nikitin D. Joint analysis of human retroelements-linked histone modification profiles reveals quickly evolving molecular processes connected with cancer. bioRxiv [preprint]. Posted 2025 Oct 2 (version 2; version 1 posted 2025 Sep 27). doi:10.1101/2025.09.24.677146
+Igolkina AA, Zinkevich A, Karandasheva KO, et al. H3K4me3, H3K9ac, H3K27ac, H3K27me3 and H3K9me3 Histone Tags Suggest Distinct Regulatory Evolution of Open and Condensed Chromatin Landmarks. Cells. 2019;8(9):1034. doi:10.3390/cells8091034
+Nikitin D, Kolosov N, Murzina A, et al. Retroelement-Linked H3K4me1 Histone Tags Uncover Regulatory Evolution Trends of Gene Enhancers and Feature Quickly Evolving Molecular Processes in Human Physiology. Cells. 2019;8(10):1219. doi:10.3390/cells8101219
+Nikitin D, Garazha A, Sorokin M, et al. Retroelement-Linked Transcription Factor Binding Patterns Point to Quickly Developing Molecular Pathways in Human Evolution. Cells. 2019;8(2):130. doi:10.3390/cells8020130. Correction: Cells. 2019;8(8):832. doi:10.3390/cells8080832
+Nikitin D, Penzar D, Garazha A, et al. Profiling of Human Molecular Pathways Affected by Retrotransposons at the Level of Regulation by Transcription Factor Proteins. Front Immunol. 2018;9:30. doi:10.3389/fimmu.2018.00030
+Soneson C, Gerster S, Delorenzi M. Batch effect confounding leads to strong bias in performance estimates obtained by cross-validation. PLoS One. 2014;9(6):e100335. doi:10.1371/journal.pone.0100335
+Parker HS, Leek JT. The practical effect of batch on genomic prediction. Stat Appl Genet Mol Biol. 2012;11(3):Article 10. doi:10.1515/1544-6115.1766
+Cawley GC, Talbot NLC. On over-fitting in model selection and subsequent selection bias in performance evaluation. J Mach Learn Res. 2010;11(70):2079-2107. [JMLR assigns no DOI; opened at https://www.jmlr.org/papers/v11/cawley10a.html]
+Varma S, Simon R. Bias in error estimation when using cross-validation for model selection. BMC Bioinformatics. 2006;7:91. doi:10.1186/1471-2105-7-91
+Ambroise C, McLachlan GJ. Selection bias in gene extraction on the basis of microarray gene-expression data. Proc Natl Acad Sci U S A. 2002;99(10):6562-6. doi:10.1073/pnas.102102699
+Saeb S, Lonini L, Jayaraman A, et al. The need to approximate the use-case in clinical machine learning. Gigascience. 2017;6(5):1-9. doi:10.1093/gigascience/gix019
+Kapoor S, Narayanan A. Leakage and the reproducibility crisis in machine-learning-based science. Patterns (N Y). 2023;4(9):100804. doi:10.1016/j.patter.2023.100804
+Whalen S, Schreiber J, Noble WS, et al. Navigating the pitfalls of applying machine learning in genomics. Nat Rev Genet. 2022;23(3):169-181. doi:10.1038/s41576-021-00434-9
+Bengio Y, Grandvalet Y. No unbiased estimator of the variance of K-fold cross-validation. J Mach Learn Res. 2004;5:1089-1105. [JMLR assigns no DOI; opened at https://www.jmlr.org/papers/v5/grandvalet04a.html]
+Nikitin D, Borisov NM, Savchenko M, et al. Benchmarking of bulk transcriptomic harmonization tools in a multi-platform B-cell lymphoma cohort identifies feature-specific quantile normalization and surrogate variable analysis as top-performing methods. bioRxiv [preprint]. Posted 2026 Sep 17. doi:10.64898/2026.09.15.751825
+Johnson WE, Li C, Rabinovic A. Adjusting batch effects in microarray expression data using empirical Bayes methods. Biostatistics. 2007;8(1):118-27. doi:10.1093/biostatistics/kxj037
+Zhang Y, Parmigiani G, Johnson WE. ComBat-seq: batch effect adjustment for RNA-seq count data. NAR Genom Bioinform. 2020;2(3):lqaa078. doi:10.1093/nargab/lqaa078
+Leek JT, Storey JD. Capturing heterogeneity in gene expression studies by surrogate variable analysis. PLoS Genet. 2007;3(9):1724-35. doi:10.1371/journal.pgen.0030161
+Haghverdi L, Lun ATL, Morgan MD, et al. Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors. Nat Biotechnol. 2018;36(5):421-427. doi:10.1038/nbt.4091
+Franks JM, Cai G, Whitfield ML. Feature specific quantile normalization enables cross-platform classification of molecular subtypes using gene expression data. Bioinformatics. 2018;34(11):1868-1874. doi:10.1093/bioinformatics/bty026
+Shabalin AA, Tjelmeland H, Fan C, et al. Merging two gene-expression studies via cross-platform normalization. Bioinformatics. 2008;24(9):1154-60. doi:10.1093/bioinformatics/btn083
+Borisov N, Shabalina I, Tkachev V, et al. Shambhala: a platform-agnostic data harmonizer for gene expression data. BMC Bioinformatics. 2019;20(1):66. doi:10.1186/s12859-019-2641-8
+Borisov N, Sorokin M, Zolotovskaya M, et al. Shambhala-2: A Protocol for Uniformly Shaped Harmonization of Gene Expression Profiles of Various Formats. Curr Protoc. 2022;2(5):e444. doi:10.1002/cpz1.444
+Risso D, Ngai J, Speed TP, et al. Normalization of RNA-seq data using factor analysis of control genes or samples. Nat Biotechnol. 2014;32(9):896-902. doi:10.1038/nbt.2931
+Sorokin M, Kholodenko I, Kalinovsky D, et al. RNA Sequencing-Based Identification of Ganglioside GD2-Positive Cancer Phenotype. Biomedicines. 2020;8(6):142. doi:10.3390/biomedicines8060142
+Jovčevska I, Zottel A, Šamec N, et al. High FREM2 Gene and Protein Expression Are Associated with Favorable Prognosis of IDH-WT Glioblastomas. Cancers (Basel). 2019;11(8):1060. doi:10.3390/cancers11081060
+Zottel A, Šamec N, Kump A, et al. Analysis of miR-9-5p, miR-124-3p, miR-21-5p, miR-138-5p, and miR-1-3p in Glioblastoma Cell Lines and Extracellular Vesicles. Int J Mol Sci. 2020;21(22):8491. doi:10.3390/ijms21228491
+Shtam T, Naryzhny S, Samsonov R, et al. Plasma exosomes stimulate breast cancer metastasis through surface interactions and activation of FAK signaling. Breast Cancer Res Treat. 2019;174(1):129-141. doi:10.1007/s10549-018-5043-0
+Shtam T, Naryzhny S, Kopylov A, et al. Functional Properties of Circulating Exosomes Mediated by Surface-Attached Plasma Proteins. J Hematol. 2018;7(4):149-153. doi:10.14740/jh412w
+Nygaard V, Rødland EA, Hovig E. Methods that remove batch effects while retaining group differences may lead to exaggerated confidence in downstream analyses. Biostatistics. 2016;17(1):29-39. doi:10.1093/biostatistics/kxv027
+Nikitin D, Sorokin M, Tkachev V, et al. RetroSpect, a New Method of Measuring Gene Regulatory Evolution Rates Using Co-mapping of Genomic Functional Features with Transposable Elements. In: Evolution, Origin of Life, Concepts and Methods. Cham: Springer International Publishing; 2019. p. 85-111. doi:10.1007/978-3-030-30363-1_5. ISBN 978-3-030-30363-1
+Nikitin D. Retroelements-driven regulatory evolution of human genes and molecular processes: analysis of genome binding profiles of transcription factors and histone modifications [dissertation]. Zenodo; 2026. doi:10.5281/zenodo.19052415
+
+# Added 2026-09-25 (revision round 1). The same two affiliation addresses as tokenised from
+# the Markdown master, where the superscript affiliation number fuses with the first word
+# ("1institute", "2<affiliation>"); and author 1's second affiliation, its legal
+# name and postal address, identical in Article 1 by necessity.
+1Institute of Molecular Biology, National Academy of Science of the Republic of Armenia, Yerevan, 0014, Armenia
+2[affiliation 2: as in the published article]
+[affiliation 2: as in the published article]

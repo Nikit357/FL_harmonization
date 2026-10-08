@@ -1,0 +1,819 @@
+{
+  "analysis_set": {
+    "n_approaches": {
+      "value": 2234,
+      "table": "A2_T1",
+      "column": "run_id",
+      "filter": "Supplementary File 3, pct_samples_allNA < 5",
+      "quoted_in": "Methods; Results §6"
+    },
+    "n_methods": {
+      "value": 31,
+      "table": "A2_T1",
+      "column": "method",
+      "filter": "same",
+      "quoted_in": "Methods"
+    },
+    "n_strategies": {
+      "value": 14,
+      "table": "A2_T1",
+      "column": "strat",
+      "filter": "same",
+      "quoted_in": "Methods"
+    },
+    "n_imputations": {
+      "value": 3,
+      "table": "A2_T1",
+      "column": "imp",
+      "filter": "same",
+      "quoted_in": "Methods"
+    },
+    "n_shambhala_rows": {
+      "value": 84,
+      "table": "A2_T1",
+      "column": "method == 20_shambhala",
+      "filter": "after the shambhala_P0std_Q0std rename",
+      "quoted_in": "Methods"
+    },
+    "identity_columns_identical": {
+      "value": "78 of 79",
+      "table": "A2_T0",
+      "column": "identical",
+      "filter": "84 matched (strat, imp, post_rm) keys",
+      "quoted_in": "Methods; Results §6"
+    },
+    "identity_only_difference": {
+      "value": [
+        "compute_time_s"
+      ],
+      "table": "A2_T0",
+      "column": "column",
+      "filter": "identical == False",
+      "quoted_in": "Methods"
+    }
+  },
+  "gates": {
+    "joint_L_M_gate": {
+      "value": 1686,
+      "table": "A2_T1",
+      "column": "mk_rho_mean_markers, xb_margin",
+      "filter": "rho > 0.75 AND margin > 0",
+      "quoted_in": "Results §6"
+    },
+    "rho_gate": {
+      "value": 0.75,
+      "table": "—",
+      "column": "mk_rho_mean_markers",
+      "filter": "Daniil's threshold, necessary not sufficient",
+      "quoted_in": "Methods; Results §6"
+    }
+  },
+  "shambhala": {
+    "median_rho": {
+      "value": 0.84,
+      "table": "A2_T1",
+      "column": "mk_rho_mean_markers",
+      "filter": "method == 20_shambhala",
+      "quoted_in": "Results §6"
+    },
+    "median_margin": {
+      "value": 0.0048,
+      "table": "A2_T1",
+      "column": "xb_margin",
+      "filter": "method == 20_shambhala",
+      "quoted_in": "Results §6"
+    },
+    "median_lobo3_f1": {
+      "value": 0.745,
+      "table": "A2_T1",
+      "column": "pv_lobo3_f1_macro_mean",
+      "filter": "method == 20_shambhala",
+      "quoted_in": "Results §6"
+    }
+  },
+  "agreement_specific": {
+    "n": {
+      "value": 61,
+      "table": "A2_T6",
+      "column": "run_id",
+      "filter": "xb_rank_agree_delta > 0 AND xb_rank_disagree_diffbio_delta < 0",
+      "quoted_in": "Results §6"
+    },
+    "pct_of_non_raw": {
+      "value": 2.8,
+      "table": "A2_T6",
+      "column": "—",
+      "filter": "denominator = 2150 non-raw approaches",
+      "quoted_in": "Results §6"
+    },
+    "top_margin_delta": {
+      "value": 0.457,
+      "table": "A2_T6",
+      "column": "xb_margin_delta",
+      "filter": "maximum",
+      "quoted_in": "Results §6"
+    },
+    "top_approaches_tied": {
+      "value": [
+        "K_ffpe_only/knn/08_inmoose_combatseq/post0",
+        "K_ffpe_only/knn/06_combat_seq/post0"
+      ],
+      "table": "A2_T6",
+      "column": "strat, imp, method, post_rm",
+      "filter": "xb_margin_delta == max",
+      "quoted_in": "Results §6"
+    }
+  },
+  "prediction": {
+    "leading_non_degenerate": {
+      "value": {
+        "run_id": "S0_no_removal__softimpute__29_combat_ref__post0",
+        "full_mean_f1": 0.946,
+        "worst_multiclass_fold": 0.462,
+        "n_multiclass_folds": 11,
+        "auc_2class": 0.932,
+        "rho": 0.88
+      },
+      "table": "A2_T1",
+      "column": "pv_lobo3_f1_macro_mean",
+      "filter": "strat not in (A_confirmed_bad, B_extended_bad) AND n_mc >= 5",
+      "quoted_in": "Results §7"
+    },
+    "n_eligible_non_degenerate": {
+      "value": 1527,
+      "table": "A2_T1",
+      "column": "—",
+      "filter": "same filter",
+      "quoted_in": "Results §7"
+    },
+    "n_zero_multiclass_folds": {
+      "value": 59,
+      "table": "A2_T1",
+      "column": "n_mc",
+      "filter": "n_mc == 0",
+      "quoted_in": "Results §7; caveat 1"
+    },
+    "spearman_full_vs_multiclass": {
+      "value": 0.81,
+      "table": "A2_T1",
+      "column": "pv_lobo3_f1_macro_mean, f1_mc_mean",
+      "filter": "both present, n = 2174",
+      "quoted_in": "Results §7"
+    },
+    "spearman_min3_multiclass_folds": {
+      "value": 0.815,
+      "table": "A2_T1",
+      "column": "same",
+      "filter": "n_mc >= 3, n = 2058",
+      "quoted_in": "Results §7"
+    }
+  },
+  "fold_composition": {
+    "n_3class_folds": {
+      "value": 32746,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "target == 3class, run_id in the 2,234 analysis set",
+      "quoted_in": "Results §7"
+    },
+    "n_singleclass_folds": {
+      "value": 15436,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "n_classes == 1",
+      "quoted_in": "Results §7"
+    },
+    "pct_singleclass": {
+      "value": 47.1,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "n_classes == 1",
+      "quoted_in": "Results §7"
+    },
+    "median_f1_by_class_count": {
+      "value": {
+        "1": 0.903,
+        "2": 0.629,
+        "3": 0.804
+      },
+      "table": "A2_T8",
+      "column": "median_f1",
+      "filter": "per n_classes, median over batches",
+      "quoted_in": "Results §7"
+    },
+    "n_batches": {
+      "value": 25,
+      "table": "A2_T8",
+      "column": "batch",
+      "filter": "—",
+      "quoted_in": "Methods"
+    }
+  },
+  "harshness": {
+    "tier_sizes": {
+      "value": {
+        "medium": 1042,
+        "high": 848,
+        "low": 344
+      },
+      "table": "A2_T1",
+      "column": "harshness_level",
+      "filter": "HARSHNESS_LEVEL_MAP, method level",
+      "quoted_in": "Results §5b"
+    },
+    "kruskal": {
+      "value": {
+        "mk_rho_mean_markers": {
+          "H": 340.1,
+          "p": 1.4323253805703997e-74,
+          "low": 0.998,
+          "medium": 0.88,
+          "high": 0.922
+        },
+        "mk_rho_marker_minus_hk": {
+          "H": 139.3,
+          "p": 5.546808729547732e-31,
+          "low": -0.0,
+          "medium": 0.009,
+          "high": 0.031
+        },
+        "xb_rank_agree": {
+          "H": 287.1,
+          "p": 4.470324763395624e-63,
+          "low": 0.691,
+          "medium": 0.701,
+          "high": 0.507
+        },
+        "xb_margin": {
+          "H": 132.9,
+          "p": 1.4006458651335526e-29,
+          "low": 0.054,
+          "medium": 0.045,
+          "high": 0.03
+        },
+        "pv_lobo3_f1_macro_mean": {
+          "H": 51.6,
+          "p": 6.132188937881346e-12,
+          "low": 0.631,
+          "medium": 0.712,
+          "high": 0.715
+        },
+        "f1_mc_mean": {
+          "H": 11.8,
+          "p": 0.0027580633912576,
+          "low": 0.657,
+          "medium": 0.678,
+          "high": 0.678
+        },
+        "pv_lobo2_auc_macro_mean": {
+          "H": 1.5,
+          "p": 0.4769378448192957,
+          "low": 0.901,
+          "medium": 0.904,
+          "high": 0.904
+        }
+      },
+      "table": "A2_T7",
+      "column": "kruskal_H, kruskal_p, median_*",
+      "filter": "three method-level harshness tiers",
+      "quoted_in": "Results §5b"
+    }
+  },
+  "per_batch_example": {
+    "run_id": "S0_no_removal__softimpute__29_combat_ref__post0",
+    "n_folds": {
+      "value": 24,
+      "table": "A2_T5",
+      "column": "batch",
+      "filter": "target == 3class",
+      "quoted_in": "Results §7"
+    },
+    "n_singleclass": {
+      "value": 13,
+      "table": "A2_T5",
+      "column": "n_classes",
+      "filter": "n_classes == 1",
+      "quoted_in": "Results §7"
+    },
+    "hardest_multiclass_folds": {
+      "value": [
+        {
+          "batch": "GPL96_FFPE_Unknown",
+          "n": 84,
+          "n_classes": 2,
+          "f1_macro": 0.4615,
+          "auc": 0.5428
+        },
+        {
+          "batch": "RNASeq_FFPE_PolyA",
+          "n": 35,
+          "n_classes": 2,
+          "f1_macro": 0.6983,
+          "auc": 0.8736
+        },
+        {
+          "batch": "RNASeq_FF_PolyA",
+          "n": 1039,
+          "n_classes": 3,
+          "f1_macro": 0.7176,
+          "auc": 0.9722
+        }
+      ],
+      "table": "A2_T5",
+      "column": "f1_macro",
+      "filter": "n_classes >= 2, three smallest",
+      "quoted_in": "Results §7"
+    }
+  },
+  "discrepancies": [
+    {
+      "claim": "Across the 53,737 3-class folds, 25,426 (47.3%) contain a single class",
+      "source": "plan §1.5d",
+      "recomputed": "32,746 3-class folds, 15,436 single-class (47.1%)",
+      "filter_source": "every run_id in prediction_folds_long.csv (3,738 run_ids, 50 method names, all 18 Shambhala P/Q variants)",
+      "filter_recomputed": "run_id restricted to the 2,234-approach analysis set",
+      "cause": "the published figure counted folds for approaches the article never analyses; 20,343 of the 53,737 belong to the 17 non-canonical Shambhala P/Q variants, and the residual 648 to 34_arsyn and 38_harman, which fail pct_samples_allNA < 5 (20,343 + 648 = 20,991 = 53,737 - 32,746). The canonical shambhala_P0std_Q0std is kept, as 20_shambhala, and contributes 1,200 of the 32,746",
+      "direction": "the conclusion is unchanged -- single-class folds are still about half the population -- only the counts move"
+    },
+    {
+      "claim": "single-class folds have median macro F1 0.952; two-class 0.648; three-class 0.830",
+      "source": "plan §1.5d",
+      "recomputed": "0.903 / 0.629 / 0.804 on the analysis set",
+      "filter_source": "as above",
+      "filter_recomputed": "as above",
+      "cause": "same population difference",
+      "direction": "the ordering is unchanged: two-class folds remain the hardest and single-class folds the easiest"
+    },
+    {
+      "claim": "Spearman between the full metric and the multiclass-only mean is 0.812 over the 1,981 approaches with at least three multiclass folds",
+      "source": "plan §1.5d",
+      "recomputed": "0.815 over 2,058 such approaches; 0.810 over all 2,174 carrying both",
+      "filter_source": "fold aggregates computed over the unrestricted fold table",
+      "filter_recomputed": "fold aggregates over the analysis set only",
+      "cause": "same population difference; the approach count rises because restricting the fold table does not remove approaches, only foreign run_ids",
+      "direction": "unchanged conclusion: the two cuts agree closely and neither reverses the other"
+    },
+    {
+      "claim": "Per-batch detail for S0_no_removal/softimpute/29_combat_ref/post0: 10 of the 24 folds are single-class; the hard folds are GPL96_FFPE_Unknown and RNASeq_FF_PolyA",
+      "source": "plan §1.5d",
+      "recomputed": "13 of 24 folds are single-class; the three hardest multiclass folds are GPL96_FFPE_Unknown (F1 0.462), RNASeq_FFPE_PolyA (0.698) and RNASeq_FF_PolyA (0.718)",
+      "filter_source": "unknown; not reproducible from prediction_folds_long.csv",
+      "filter_recomputed": "A2_T5, target == 3class",
+      "cause": "the two quoted folds and their values reproduce exactly; the single-class count and the identity of the second-hardest fold do not",
+      "direction": "the approach's characterisation is unchanged"
+    },
+    {
+      "claim": "multiclass-only F1 across harshness tiers: H = 11.2, p = 0.0037",
+      "source": "plan §1.5e",
+      "recomputed": "H = 11.8, p = 0.0028",
+      "filter_source": "f1_mc_mean computed over the unrestricted fold table",
+      "filter_recomputed": "f1_mc_mean over the analysis set",
+      "cause": "same population difference; every other row of the tier table reproduces exactly, including the 2-class AUC result (H = 1.5, p = 0.48, not significant)",
+      "direction": "unchanged"
+    },
+    {
+      "claim": "Top by raw-subtracted margin: K_ffpe_only / knn / 06_combat_seq / post0",
+      "source": "plan §1.5c",
+      "recomputed": "06_combat_seq and 08_inmoose_combatseq are an exact tie at that (strat, imp, post_rm): margin 0.439161, gain +0.457154 for both",
+      "filter_source": "A2_T6 sorted by xb_margin_delta",
+      "filter_recomputed": "same",
+      "cause": "two implementations of the same algorithm return identical Group M values; the sort order between them is arbitrary",
+      "direction": "quote both, or say that the two implementations agree exactly -- which is itself a positive control worth a sentence"
+    },
+    {
+      "claim": "Cells not traceable to the generator: 8 in the main notebook, 43 in the narrow-set notebook, 29 in the deep-analysis notebook",
+      "source": "plan §4.2e",
+      "recomputed": "12 / 50 / 53 hand-written, plus 6 / 12 / 52 generator cells edited in place",
+      "filter_source": "unknown",
+      "filter_recomputed": "tools/extract_hand_written_cells.py, generator run at the same --date-tag, normalized comparison, NEAR threshold 0.90",
+      "cause": "the earlier count did not separate edited generator cells from untouched ones; an edited cell still looks like the generator's, so regeneration reverts it without saying so",
+      "direction": "materially larger: 185 cells must survive regeneration, not 80"
+    }
+  ],
+  "provenance": {
+    "snapshot": "metrics_comprehensive_260905.csv",
+    "supplementary_file_3": "figures_for_article/supplementary_260824/Supplementary File 3.csv.gz",
+    "folds": "harmonization-metrics/metric_tables/prediction_folds_long.csv",
+    "produced_by": "analysis/article2_generalizability.py --date-tag 260905",
+    "note": "Every value here is read back out of tables/A2_T*.csv. Nothing is retyped from the source document."
+  },
+  "reproduction_260919": {
+    "command": "source ~/venvs/collagen_3_11/bin/activate; python analysis/article2_generalizability.py --date-tag 260905 --out-dir <scratch>",
+    "runtime_s": 3.1,
+    "assertions_observed": {
+      "n_rows": 2234,
+      "n_methods": 31,
+      "n_strategies": 14,
+      "n_imputations": 3,
+      "n_rows_named_20_shambhala": 84,
+      "n_rows_named_shambhala_prefix": 0,
+      "fold_cut_columns_in_A2_T2": [
+        "pv_lobo3_f1_macro_mean",
+        "f1_mc_mean",
+        "f1_mc_min",
+        "n_mc"
+      ]
+    },
+    "tables_byte_identical": [
+      "A2_T2_generalizability_ranking_260917.csv",
+      "A2_T3_cross_election_matrix_260917.csv",
+      "A2_T4_method_census_by_class_260917.csv",
+      "A2_T5_per_batch_folds_260917.csv",
+      "A2_T6_agreement_specific_260917.csv",
+      "A2_T8_fold_composition_260917.csv"
+    ],
+    "tables_differing_at_machine_epsilon": {
+      "A2_T0_shambhala_identity_260917.csv": {
+        "shape": [
+          79,
+          6
+        ],
+        "max_abs_diff": 1.42e-14,
+        "column": "median_P0std_Q0std"
+      },
+      "A2_T1_analysis_set_census_260917.csv": {
+        "shape": [
+          2234,
+          293
+        ],
+        "max_abs_diff": 1.36e-20,
+        "column": "mk_rho_marker_minus_hk"
+      },
+      "A2_T7_harshness_by_lmn_260917.csv": {
+        "shape": [
+          7,
+          9
+        ],
+        "max_abs_diff": 1.62e-27,
+        "column": "kruskal_p"
+      }
+    },
+    "note": "All nine tables agree in shape and in every non-numeric column. The three differing files differ only in the last bits of a float text round-trip; no quoted number moves at any rounding the manuscript uses."
+  },
+  "panels_260919": {
+    "command": "§8 verification command 2 over figures/panels_260917/",
+    "n_panels_expected": 18,
+    "missing": [],
+    "n_files": 63,
+    "n_file_stems": 21,
+    "note": "21 stems, not 18, because a2_p14 carries the method in its filename and exists in four method variants. Each stem is present as .pdf, .svg and .png.",
+    "panels": [
+      "a2_p1",
+      "a2_p2",
+      "a2_p3",
+      "a2_p4",
+      "a2_p5",
+      "a2_p6",
+      "a2_p7",
+      "a2_p8",
+      "a2_p9",
+      "a2_p10",
+      "a2_p11",
+      "a2_p12",
+      "a2_p13",
+      "a2_p14",
+      "a2_p15",
+      "a2_p16",
+      "a2_p17",
+      "a2_p18"
+    ]
+  },
+  "fold_population_denominators": {
+    "analysis_set_3class_folds": {
+      "value": 32746,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "batch == '__ALL__', summed over n_classes 1/2/3",
+      "quoted_in": "Results §7"
+    },
+    "analysis_set_multiclass_folds": {
+      "value": 17310,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "batch == '__ALL__' AND n_classes >= 2 (9,821 + 7,489)",
+      "quoted_in": "Results §7"
+    },
+    "analysis_set_multiclass_median_f1": {
+      "value": 0.7334,
+      "table": "prediction_folds_long.csv",
+      "column": "f1_macro",
+      "filter": "target == '3class' AND n_classes >= 2, run_id restricted to the 2,234 analysis set after the Shambhala rename; 17,310 folds. Not derivable from A2_T8, which stores the 2-class and 3-class medians separately (0.6295 and 0.8045).",
+      "quoted_in": "Results §7; plan §9.4"
+    },
+    "unrestricted_3class_folds": {
+      "value": 53737,
+      "table": "prediction_folds_long.csv",
+      "column": "target",
+      "filter": "target == '3class', no run_id restriction",
+      "quoted_in": "Results §7 — as the denominator the published figure used"
+    },
+    "unrestricted_singleclass_folds": {
+      "value": 25426,
+      "table": "prediction_folds_long.csv",
+      "column": "n_classes",
+      "filter": "target == '3class' AND n_classes == 1, no run_id restriction (47.3%)",
+      "quoted_in": "discrepancy 1"
+    },
+    "unrestricted_run_ids": {
+      "value": 3738,
+      "table": "prediction_folds_long.csv",
+      "column": "run_id",
+      "filter": "whole table (94,582 rows, 50 method names)",
+      "quoted_in": "discrepancy 1"
+    },
+    "unrestricted_fold_denominators": {
+      "value": {
+        "unrestricted_3class_folds": 53737,
+        "analysis_set_3class_folds": 32746,
+        "excluded_total": 20991,
+        "excluded_noncanonical_shambhala": 20343,
+        "excluded_noncanonical_shambhala_variants": 17,
+        "excluded_pct_samples_allNA_failures": 648,
+        "canonical_shambhala_3class_folds_retained": 1200
+      },
+      "table": "prediction_folds_long.csv",
+      "column": "target, run_id, n_classes",
+      "filter": "prediction_folds_long.csv, target == '3class'. Unrestricted: 53,737 folds over 3,738 run_ids and 50 method names. Restricted to the 2,234-approach analysis set (after the Shambhala rename): 32,746. Excluded: 20,991. Of those, 20,343 carry a method (= run_id.split('__')[2]) that starts with 'shambhala_' and is not 'shambhala_P0std_Q0std' -- the 17 non-canonical P/Q variants. The residual 648 folds are 96 run_ids of 34_arsyn and 38_harman, which fail the pct_samples_allNA < 5 criterion (min 74.2% in Supplementary File 3). 20,343 + 648 = 20,991. The canonical shambhala_P0std_Q0std contributes 1,200 3-class folds and is NOT excluded; counting it gives 21,543, which is wrong.",
+      "quoted_in": "Results §7; discrepancy 1"
+    }
+  },
+  "corrections_260919": [
+    {
+      "entry": "fold_composition.n_batches",
+      "field": "value",
+      "was": 25,
+      "now": 24,
+      "why": "A2_T8.batch.nunique() is 25 only because the table carries three `__ALL__` sentinel rows added in Phase 2 issue 9. Excluding them leaves 24 distinct batches, which is also the batch count of prediction_folds_long.csv restricted to the analysis set (verified: f3.batch.nunique() == 24)."
+    },
+    {
+      "entry": "fold_composition.n_batches",
+      "field": "filter",
+      "was": "—",
+      "now": "batch != '__ALL__'",
+      "why": "The filter has to exclude the sentinel row, or the count is 25."
+    },
+    {
+      "entry": "fold_composition.median_f1_by_class_count",
+      "field": "filter",
+      "was": "per n_classes, median over batches",
+      "now": "batch == '__ALL__'; fold-level median over all 3-class folds of the analysis set",
+      "why": "The stated filter 'per n_classes, median over batches' describes a median of per-batch medians, which gives 0.925 / 0.767 / 0.881 — a different quantity from the quoted 0.903 / 0.629 / 0.804. The quoted values are A2_T8's `__ALL__` rows (0.90330 / 0.62950 / 0.80450). This is the same trap Phase 2 issue 9 fixed in the table; the filter text was not updated with it."
+    },
+    {
+      "entry": "fold_composition.n_3class_folds",
+      "field": "filter",
+      "was": "target == 3class, run_id in the 2,234 analysis set",
+      "now": "sum of the three batch == '__ALL__' rows (15,436 + 9,821 + 7,489)",
+      "why": "Names the rows the number is read out of."
+    },
+    {
+      "entry": "fold_composition.n_singleclass_folds",
+      "field": "filter",
+      "was": "n_classes == 1",
+      "now": "batch == '__ALL__' AND n_classes == 1",
+      "why": "Same."
+    },
+    {
+      "entry": "fold_composition.pct_singleclass",
+      "field": "filter",
+      "was": "n_classes == 1",
+      "now": "batch == '__ALL__'; 15,436 / 32,746 = 47.14%",
+      "why": "Same."
+    },
+    {
+      "entry": "agreement_specific.n",
+      "field": "column",
+      "was": "run_id",
+      "now": "row count; keyed by (strat, imp, method, post_rm)",
+      "why": "A2_T6 carries no `run_id` column — its key is the four-part (strat, imp, method, post_rm). The selection reproduces: 61 of 61 rows satisfy xb_rank_agree_delta > 0 AND xb_rank_disagree_diffbio_delta < 0."
+    },
+    {
+      "entry": "agreement_specific.top_approaches_tied",
+      "field": "column",
+      "was": "strat, imp, method, post_rm",
+      "now": "strat, imp, method, post_rm (A2_T6 has no run_id column)",
+      "why": "Same reason; the two tied rows are identified by the four-part key."
+    },
+    {
+      "entry": "agreement_specific.pct_of_non_raw",
+      "field": "column",
+      "was": "—",
+      "now": "derived: len(A2_T6) / (len(A2_T1) - rows where method == '01_raw')",
+      "why": "The column was '—'. The denominator is A2_T1: 2,234 - 84 `01_raw` rows = 2,150. 61 / 2,150 = 2.84%."
+    },
+    {
+      "entry": "prediction.leading_non_degenerate",
+      "field": "table",
+      "was": "A2_T1",
+      "now": "A2_T2",
+      "why": "A2_T2 is the ranking table and carries all four columns rule 7b requires side by side (pv_lobo3_f1_macro_mean, f1_mc_mean, f1_mc_min, n_mc). A2_T1 carries them too, so the entry resolved either way; A2_T2 is the table a reader should be sent to."
+    },
+    {
+      "entry": "prediction.leading_non_degenerate",
+      "field": "value_rule7b",
+      "was": null,
+      "now": {
+        "run_id": "S0_no_removal__softimpute__29_combat_ref__post0",
+        "full_mean_f1": 0.946,
+        "multiclass_only_mean_f1": 0.887,
+        "worst_multiclass_fold": 0.462,
+        "n_multiclass_folds": 11,
+        "auc_2class": 0.932,
+        "rho": 0.88
+      },
+      "why": "Rule 7b: the Phase 2 entry gave the full mean, the worst fold and the fold count but not the multiclass-only mean. A2_T2.f1_mc_mean for this run_id is 0.887082. Both cuts are now in the entry so neither can be quoted without the other."
+    },
+    {
+      "entry": "prediction.n_eligible_non_degenerate",
+      "field": "column",
+      "was": "—",
+      "now": "strat, n_mc",
+      "why": "The column was '—'. Verified in both tables: the filter returns 1,527 rows in A2_T1 and 1,527 in A2_T2."
+    },
+    {
+      "entry": "prediction.spearman_full_vs_multiclass",
+      "field": "table",
+      "was": "A2_T1",
+      "now": "A2_T2",
+      "why": "Recomputed from A2_T2 by scipy.stats.spearmanr on the 2,174 rows carrying both columns: 0.8100. A2_T1 carries the same two columns and gives the same value."
+    },
+    {
+      "entry": "prediction.spearman_min3_multiclass_folds",
+      "field": "table",
+      "was": "A2_T1",
+      "now": "A2_T2",
+      "why": "Recomputed from A2_T2 on the 2,058 rows with n_mc >= 3: 0.8151."
+    },
+    {
+      "entry": "prediction.spearman_min3_multiclass_folds",
+      "field": "column",
+      "was": "same",
+      "now": "pv_lobo3_f1_macro_mean, f1_mc_mean",
+      "why": "The column said 'same'; spelled out."
+    },
+    {
+      "entry": "gates.rho_gate",
+      "field": "table",
+      "was": "—",
+      "now": "not a measurement",
+      "why": "0.75 is a threshold Daniil declared (plan §1.4), applied to A2_T1.mk_rho_mean_markers. It has no source table and must not be audited as if it had one."
+    }
+  ],
+  "status": {
+    "run": "260919_run1",
+    "phase": "evidence (Phase 4 / REUSE mode: verify and carry forward, no recomputation of the tables)",
+    "complete": [
+      "Analysis script re-run into a scratch directory; all five assertions hold (2,234 rows / 31 methods / 14 strategies / 3 imputations / 84 rows named 20_shambhala, 0 rows named shambhala_*)",
+      "Nine tables diffed against tables/: 6 byte-identical, 3 differing only at machine epsilon",
+      "Every entry of the Phase 2 evidence object re-resolved against the table, column and filter it names; 13 entries corrected over 16 field changes. Exactly one VALUE moved: fold_composition.n_batches 25 -> 24. The rest are wrong table, column or filter text on a value that is right, plus one rule-7b extension adding the multiclass-only mean to the leading approach",
+      "18-panel inventory confirmed by §8 verification command 2: none missing in PDF, SVG or PNG",
+      "Two stale numbers still standing in the plan recorded as discrepancies 8 and 9",
+      "Team-lead gate 1 defects 1-3 fixed 2026-09-19: unrestricted_fold_denominators 21,543 -> 20,343 (+ the 648 residual, re-derived), the Shambhala Group N entry extended with its rule-7b multiclass-only cut, and the harshness tier caveat replaced by the per-metric n of all seven metrics from A2_T7"
+    ],
+    "in_progress": [],
+    "not_started": [
+      "Manuscript draft (02_draft) — separate deliverable of this run",
+      "tools/audit_numbers.py against the manuscript — the manuscript does not exist yet"
+    ],
+    "not_done_by_instruction": [
+      "Notebook regeneration and execution (done 2026-09-19, §11 of the plan)",
+      "Recomputation of any metric job",
+      "Any Figma write"
+    ]
+  },
+  "audit_260919": {
+    "command_tables_only": "python tools/audit_numbers.py workflow_runs/260919_run1/01_numbers.md --tables tables/",
+    "result_tables_only": "184 distinct numbers · 172 sourced · 12 UNSOURCED",
+    "command_with_evidence": "python tools/audit_numbers.py workflow_runs/260919_run1/01_numbers.md --tables tables/ --evidence workflow_runs/260919_run1/01_numbers.json",
+    "result_with_evidence": "184 distinct numbers · 184 sourced · 0 UNSOURCED",
+    "why_some_miss_the_tables": "184 distinct numbers, 184 sourced, 0 unsourced. Against `tables/` plus the sibling text files of this run folder the result is \"184 distinct numbers, 12 not found\". audit_numbers.py indexes cell VALUES. Five kinds of number in this file are not cell values and can never be: (1) row counts produced by a filter — 2,234, 2,150, 1,686, 1,527, 2,174, 2,058, 59; (2) fold counts summed across rows or filtered out of prediction_folds_long.csv — 32,746, 17,310, 53,737, 25,426, 20,991, 20,343, 1,200, 648; (3) further values from prediction_folds_long.csv, which is not under tables/ — 3,738, 94,582; (4) date tags and shapes — 260905, 260917, 260919, 293; (5) plan line numbers cited in discrepancies 8 and 9 — 254, 1656. Each was recomputed directly in this run and the recomputation is recorded in the entry's filter. A manuscript that quotes them must be audited with --evidence pointing at this JSON."
+  },
+  "corrections_260919_summary": {
+    "n_field_changes": 16,
+    "n_entries_touched": 13,
+    "entries": [
+      "agreement_specific.n",
+      "agreement_specific.pct_of_non_raw",
+      "agreement_specific.top_approaches_tied",
+      "fold_composition.median_f1_by_class_count",
+      "fold_composition.n_3class_folds",
+      "fold_composition.n_batches",
+      "fold_composition.n_singleclass_folds",
+      "fold_composition.pct_singleclass",
+      "gates.rho_gate",
+      "prediction.leading_non_degenerate",
+      "prediction.n_eligible_non_degenerate",
+      "prediction.spearman_full_vs_multiclass",
+      "prediction.spearman_min3_multiclass_folds"
+    ],
+    "n_values_changed": 1,
+    "value_changed": "fold_composition.n_batches: 25 -> 24"
+  },
+  "teamlead_gate1_fixes_260919": [
+    {
+      "key": "unrestricted_fold_denominators",
+      "was": "21,543 of the 53,737 unrestricted 3-class folds belong to the 17 non-canonical Shambhala P/Q variants",
+      "now": "20,343 belong to the 17 non-canonical variants; the residual 648 are 34_arsyn and 38_harman folds failing pct_samples_allNA < 5",
+      "why": "21,543 counts all 18 P/Q variants, the canonical shambhala_P0std_Q0std included; that one is kept as 20_shambhala and contributes 1,200 folds. The claimed value also exceeded the 20,991 total exclusion.",
+      "rederived_as": "prediction_folds_long.csv, target == '3class', run_id.split('__')[2].startswith('shambhala_') and != 'shambhala_P0std_Q0std' -> 20,343 rows (17 distinct variants)",
+      "also_fixed_in": [
+        "analysis/article2_generalizability.py (add_fold_metrics comment)",
+        "analysis/build_numbers_json.py (DISCREPANCIES[0]['cause'])"
+      ]
+    },
+    {
+      "key": "shambhala_median_lobo3_f1",
+      "was": "full cut only: median pv_lobo3_f1_macro_mean = 0.7453",
+      "now": "paired entry median_lobo3_f1_multiclass_only: median f1_mc_mean = 0.7002, f1_mc_min = 0.4292, n_mc = 9",
+      "why": "binding rule 7b -- no prediction number is presented in one fold cut alone",
+      "rederived_as": "A2_T1, method == '20_shambhala'; 83 of 84 rows carry the full cut, 82 of 84 the multiclass cut, so the two medians rest on different denominators",
+      "also_fixed_in": []
+    },
+    {
+      "key": "harshness_tier_sizes",
+      "was": "caveat naming only f1_mc_mean and pv_lobo2_auc_macro_mean as having a smaller per-metric n (333 / 1,016 / 825)",
+      "now": "harshness.per_metric_n carries n_low / n_medium / n_high for all seven metrics from A2_T7",
+      "why": "A2_T7 shows three further shortfalls: n_high = 847 for xb_rank_agree, xb_margin and pv_lobo3_f1_macro_mean, and 800 for mk_rho_marker_minus_hk. Only mk_rho_mean_markers uses the full 344 / 1,042 / 848.",
+      "rederived_as": "tables/A2_T7_harshness_by_lmn_260917.csv, columns n_low, n_medium, n_high, one row per metric",
+      "also_fixed_in": []
+    }
+  ],
+  "saturation_and_scale": {
+    "n_pcr_batch_above_0_9999": {
+      "value": 198,
+      "table": "metrics_comprehensive_260905.csv",
+      "column": "pcr_RNA_BATCH",
+      "filter": "analysis set, pcr_RNA_BATCH > 0.9999",
+      "quoted_in": "Results §3"
+    },
+    "methods_at_saturation": {
+      "value": [
+        "03_limma",
+        "07_pycombat",
+        "13_fsmvn",
+        "21_harmonizr",
+        "28_npn",
+        "33_amdbnorm"
+      ],
+      "table": "metrics_comprehensive_260905.csv",
+      "column": "method",
+      "filter": "same filter",
+      "quoted_in": "Results §3"
+    },
+    "pct_saturated_with_kbet_below_0_1": {
+      "value": 98.5,
+      "table": "metrics_comprehensive_260905.csv",
+      "column": "kbet_acceptance_rate_RNA_BATCH",
+      "filter": "same filter, share below 0.1",
+      "quoted_in": "Results §3"
+    },
+    "shambhala_mean_exp_median": {
+      "value": 1359.6,
+      "table": "metrics_comprehensive_260905.csv",
+      "column": "exp_median",
+      "filter": "mean over the 84 20_shambhala approaches -- a mean, not a median",
+      "quoted_in": "Results §4"
+    },
+    "shambhala_mean_exp_max": {
+      "value": 555004.7,
+      "table": "metrics_comprehensive_260905.csv",
+      "column": "exp_max",
+      "filter": "mean over the same 84 approaches -- a mean, not a maximum",
+      "quoted_in": "Results §4"
+    }
+  },
+  "gate_and_rank_counts": {
+    "joint_gate_by_strategy": {
+      "value": {
+        "C_rnaseq_only": 141,
+        "J_ff_only": 130,
+        "S0_no_removal": 130,
+        "A_confirmed_bad": 128,
+        "B_extended_bad": 124,
+        "E3_iterative_r3": 124,
+        "F_microarray_only": 124,
+        "E1_iterative_r1": 122,
+        "E2_iterative_r2": 122,
+        "I_rare_batches_removed": 121,
+        "H_affymetrix_extended": 119,
+        "G_affymetrix_only": 116,
+        "D_malignant_only": 109,
+        "K_ffpe_only": 76
+      },
+      "table": "A2_T1",
+      "column": "strat",
+      "filter": "mk_rho_mean_markers > 0.75 and xb_margin > 0, counted per strategy",
+      "quoted_in": "Results §6"
+    },
+    "clustermap_index_rank_range": {
+      "value": [
+        323,
+        2038
+      ],
+      "table": "A2_T2",
+      "column": "generalizability_index",
+      "filter": "rank of the 15 is_clustermap_best rows, descending, of 2,234",
+      "quoted_in": "Results §8"
+    }
+  }
+}

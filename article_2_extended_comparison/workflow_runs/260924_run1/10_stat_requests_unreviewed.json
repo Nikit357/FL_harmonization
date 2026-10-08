@@ -1,0 +1,52 @@
+[
+ {
+  "id": "SR-U01",
+  "requested_by": "writer-unreviewed",
+  "paragraph": "P136, P141",
+  "claim": "mean maximum expression of 06_combat_seq and 08_inmoose_combatseq",
+  "needs": "mean exp_max per method, analysis set",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "2.76 × 10⁸ and 1.46 × 10¹¹ (01_numbers stat_requests SR-U01)"
+ },
+ {
+  "id": "SR-U02",
+  "requested_by": "writer-unreviewed",
+  "paragraph": "P143",
+  "claim": "approaches passing every recipe step",
+  "needs": "count gate & margin>0 & n_mc>=5 & not bad-batch",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "1,187; leader S0_no_removal/softimpute/29_combat_ref/post0"
+ },
+ {
+  "id": "SR-U03",
+  "requested_by": "writer-unreviewed",
+  "paragraph": "P144",
+  "claim": "does the 5% election threshold change the ordering of the overlaps",
+  "needs": "elections at 2.5% and 10%",
+  "destination": "large -> Supplementary File 2 sheet Threshold_sensitivity",
+  "status": "resolved",
+  "resolution": "No: local-composite largest at all three; Spearman rho vs 5% = 0.801 (2.5%), 0.881 (10%); new table A2_T3c"
+ },
+ {
+  "id": "SR-U04",
+  "requested_by": "writer-unreviewed",
+  "paragraph": "P134",
+  "claim": "clustermap group vs rest on full-cut LOBO3 F1",
+  "needs": "Mann-Whitney U",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "NOT significant (0.629 vs 0.709, p = 0.97, A2_T10 T10-110); the draft's reading of it as disagreement was rewritten"
+ },
+ {
+  "id": "SR-U05",
+  "requested_by": "writer-unreviewed",
+  "paragraph": "P82",
+  "claim": "zero-multiclass approaches and the highest values among approaches with a multiclass fold",
+  "needs": "counts from A2_T1",
+  "destination": "small -> in text",
+  "status": "resolved",
+  "resolution": "59 zero-mc approaches, all G_affymetrix_only with post-removal, 20 at full F1 >= 0.999; highest full-cut is A_confirmed_bad/strict/29_combat_ref post0 (0.9582), post1 0.9575 — both 0.958 at three decimals; highest multiclass-only is post1 (0.924)"
+ }
+]

@@ -27,10 +27,15 @@ readers know where to apply for the underlying data.
 | Marker-correlation and prediction tables | `harmonization-metrics/metric_tables/*_long_*.csv` | **complete** — they carry a `cohort` column but no sample column |
 | Marker gene panel | `harmonization-metrics-calculation/marker_gene_annotation.csv` | complete; 633 genes, 63 signatures, 7 cited source articles, plus the 56-gene `in_narrow_set` QC-filtered subset |
 | Marker gene panel, with per-gene statistics | `…/Supplementary File 2.xlsx`, sheet `Table_S3_gene_panel` | complete; 834 (gene, signature) rows × 66 columns — the panel joined to its coverage audit and per-gene ρ/QC statistics |
+| Article 2 tables and supplementary workbooks | `article_2_extended_comparison/tables/`, `…/supplementary/` | **complete** — per approach and per held-out batch, over the same 2,234 attempts; no sample column |
+| Article 2 expression scatter data | `article_2_extended_comparison/figures/panels_260925/data/sfig_expression_long_260925.csv.gz` | open cohorts only — 3 genes × 8 methods, raw against harmonized, 124,272 of 172,176 rows |
 
 Expression matrices are **not** in this repository for any cohort, open or withheld —
 they are large, and for the open cohorts they are already available from their public
-repositories under the accessions listed in `Supplementary File 1 short.csv`.
+repositories under the accessions listed in `Supplementary File 1 short.csv`. The one
+per-sample expression table, behind Article 2's Supplementary Figure 16, holds three genes
+for open-cohort samples only; `article_2_extended_comparison/WITHHELD.md` lists what that
+folder withholds and why.
 
 ## The 15 withheld cohorts
 

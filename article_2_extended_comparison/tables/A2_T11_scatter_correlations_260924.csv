@@ -1,0 +1,98 @@
+scatter_id,panel,x,y,subset,n,spearman_rho,p_value,tier,destination
+T11-001,Figure 1A/1B,pcr_RNA_BATCH,pcr_Diagnosis_cell_type_unified,all approaches,2234,-0.1592311315926953,3.7257249671127865e-14,supplementary,A2_T11
+T11-002,Figure 2A/2B,ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,all approaches,2234,0.5269531013319875,7.044241514651896e-160,supplementary,A2_T11
+T11-003,Figure 3A/3B,ks_cohort_within_batch_mean_D,ks_mean_D_RNA_BATCH,all approaches,2037,0.051105275011565476,0.021075297104338864,supplementary,A2_T11
+T11-004,Supplementary Figure 2D/2E,r2_pc1_RNA_BATCH,pcr_RNA_BATCH,all approaches,2234,-0.9393155787155852,0.0,supplementary,A2_T11
+T11-005,Supplementary Figure 3A,pcr_RNA_BATCH,pcr_PLATFORM_RNA,all approaches,1912,0.9741807491133004,0.0,supplementary,A2_T11
+T11-006,Supplementary Figure 3B,pcr_RNA_BATCH,pcr_COHORT_LABEL,all approaches,2234,0.6063384244710283,2.0698480138042713e-224,supplementary,A2_T11
+T11-007,Supplementary Figure 3C,pcr_RNA_BATCH,dsc_RNA_BATCH,all approaches,2234,-0.9696616991762115,0.0,supplementary,A2_T11
+T11-008,Supplementary Figure 3D,dsc_RNA_BATCH,dsc_PLATFORM_RNA,all approaches,1912,0.9655438171307451,0.0,supplementary,A2_T11
+T11-009,Supplementary Figure 3E,dsc_RNA_BATCH,dsc_COHORT_LABEL,all approaches,2234,0.5442881997272704,1.6234649379261176e-172,supplementary,A2_T11
+T11-010,Supplementary Figure 3F-3H,pcr_RNA_BATCH,tsne_centroid_disp_RNA_BATCH,all approaches,2234,-0.8640330050155933,0.0,supplementary,A2_T11
+T11-011,Supplementary Figure 3I/3J,pcr_RNA_BATCH,asw_batch_RNA_BATCH,all approaches,2234,-0.6300722549374927,1.8585577722050698e-247,supplementary,A2_T11
+T11-012,Supplementary Figure 5A/5B,kbet_acceptance_rate_RNA_BATCH,ilisi_mean_RNA_BATCH,all approaches,2234,0.38594077753046363,2.9486497258523255e-80,supplementary,A2_T11
+T11-013,Supplementary Figure 5E/5F,ilisi_mean_RNA_BATCH,tsne_entropy_norm_RNA_BATCH,all approaches,2234,0.9146547623264754,0.0,supplementary,A2_T11
+T11-014,Supplementary Figure 5G/5H,tsne_centroid_disp_RNA_BATCH,tsne_entropy_norm_RNA_BATCH,all approaches,2234,-0.49272848246110107,5.562891929483672e-137,supplementary,A2_T11
+T11-015,Supplementary Figure 5I/5J,tsne_entropy_norm_RNA_BATCH,umap_entropy_norm_RNA_BATCH,all approaches,2234,0.9918903604243605,0.0,supplementary,A2_T11
+T11-016,Supplementary Figure 5K/5L,tsne_centroid_disp_RNA_BATCH,umap_centroid_disp_RNA_BATCH,all approaches,2234,0.8138165408273713,0.0,supplementary,A2_T11
+T11-017,Supplementary Figure 6A/6B,pcr_RNA_BATCH,ilisi_mean_RNA_BATCH,all approaches,2234,0.5574102301649876,1.3811578912295778e-182,supplementary,A2_T11
+T11-018,Supplementary Figure 6C/6D,pcr_Diagnosis_cell_type_unified,clisi_mean_Diagnosis_cell_type_unified,all approaches,2234,-0.40327154352253625,3.9624225422988395e-88,supplementary,A2_T11
+T11-019,Supplementary Figure 6E/6F,pcr_RNA_BATCH,kbet_acceptance_rate_RNA_BATCH,all approaches,2234,0.39583481305872026,1.0802409288611043e-84,supplementary,A2_T11
+T11-020,Supplementary Figure 7C/7D,graph_connectivity_PLATFORM_RNA,graph_connectivity_Diagnosis_cell_type_unified,all approaches,1912,0.08047874099931487,0.00042756036707211826,supplementary,A2_T11
+T11-021,Supplementary Figure 7E/7F,dist_ratio_RNA_BATCH,dist_ratio_Diagnosis_cell_type_unified,all approaches,2234,-0.07377783860670005,0.00048314687406031143,supplementary,A2_T11
+T11-022,Supplementary Figure 7G/7H,wm_RNA_BATCH,wm_Diagnosis_cell_type_unified,all approaches,2234,0.421700430677999,4.98978408102381e-97,supplementary,A2_T11
+T11-023,Supplementary Figure 7I/7J,wm_mean_batch,wm_mean_bio,all approaches,2234,0.12443733755103795,3.6083548150317115e-09,supplementary,A2_T11
+T11-024,Figure 4C,mk_rho_mean_markers,xb_margin,all approaches,2233,0.1772677140482396,3.202110034347131e-17,supplementary,A2_T11
+T11-025,Figure 4E,xb_rank_agree_delta,xb_rank_disagree_diffbio_delta,all approaches,2233,0.9312472456539646,0.0,supplementary,A2_T11
+T11-026,Figure 5D,pv_lobo3_f1_macro_mean,generalizability_index,all approaches,2233,0.8288347001646855,0.0,supplementary,A2_T11
+T11-027,"Results, LOBO fold cuts",pv_lobo3_f1_macro_mean,f1_mc_mean,all approaches,2174,0.8099760631433325,0.0,supplementary,A2_T11
+T11-S01,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,A_confirmed_bad,166,0.6334418831937071,5.2789017641995046e-20,supplementary,A2_T11
+T11-S02,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,B_extended_bad,156,0.6484324990714325,5.610536696472145e-20,supplementary,A2_T11
+T11-S03,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,C_rnaseq_only,168,0.5572226816618926,4.346442226430454e-15,supplementary,A2_T11
+T11-S04,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,D_malignant_only,156,0.8147109076051823,2.8033952961550356e-38,supplementary,A2_T11
+T11-S05,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,E1_iterative_r1,156,0.6105231463730793,2.6348146209395305e-17,supplementary,A2_T11
+T11-S06,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,E2_iterative_r2,156,0.617208454706815,9.456089959579336e-18,supplementary,A2_T11
+T11-S07,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,E3_iterative_r3,156,0.6391630696095976,2.733836059866397e-19,supplementary,A2_T11
+T11-S08,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,F_microarray_only,156,0.6598342906457354,7.407232229503717e-21,supplementary,A2_T11
+T11-S09,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,G_affymetrix_only,154,0.14713780042524804,0.0686099347217098,supplementary,A2_T11
+T11-S10,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,H_affymetrix_extended,162,0.37439611822039937,9.196960067976938e-07,supplementary,A2_T11
+T11-S11,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,I_rare_batches_removed,155,0.6173644165302384,1.1770319370613002e-17,supplementary,A2_T11
+T11-S12,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,J_ff_only,164,0.5884299791621561,1.1757327987009784e-16,supplementary,A2_T11
+T11-S13,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,K_ffpe_only,164,0.571639622579908,1.3038778608803106e-15,supplementary,A2_T11
+T11-S14,"Figure 2A/2B, per strategy",ilisi_mean_RNA_BATCH,clisi_mean_Diagnosis_cell_type_unified,S0_no_removal,165,0.6792696797869224,1.1424710996160927e-23,supplementary,A2_T11
+T11-M01,"Results, LOBO fold cuts",pv_lobo3_f1_macro_mean,f1_mc_mean,n_mc >= 3,2058,0.8150962744504743,0.0,supplementary,A2_T11
+T11-L01,C48 L/M/N scatter (new),mk_rho_mean_markers,mk_rho_marker_minus_hk,all approaches,2186,-0.5093353415801652,1.2465271182437668e-144,supplementary,A2_T11
+T11-L02,C48 L/M/N scatter (new),mk_rho_mean_markers,xb_rank_agree,all approaches,2233,-0.27836618886098125,5.095323750748964e-41,supplementary,A2_T11
+T11-L03,C48 L/M/N scatter (new),mk_rho_mean_markers,xb_rank_disagree_diffbio,all approaches,2233,-0.26624586302412206,1.5148575958566204e-37,supplementary,A2_T11
+T11-L04,C48 L/M/N scatter (new),mk_rho_mean_markers,xb_margin,all approaches,2233,0.1772677140482396,3.202110034347131e-17,supplementary,A2_T11
+T11-L05,C48 L/M/N scatter (new),mk_rho_mean_markers,xb_margin_delta,all approaches,2233,0.1535512403946788,2.98111572114381e-13,supplementary,A2_T11
+T11-L06,C48 L/M/N scatter (new),mk_rho_mean_markers,pv_lobo3_f1_macro_mean,all approaches,2233,-0.23426215158949634,3.2432964926008336e-29,supplementary,A2_T11
+T11-L07,C48 L/M/N scatter (new),mk_rho_mean_markers,f1_mc_mean,all approaches,2174,-0.14564762525484048,8.884833365764626e-12,supplementary,A2_T11
+T11-L08,C48 L/M/N scatter (new),mk_rho_mean_markers,pv_lobo3_auc_macro_mean,all approaches,2174,-0.07148813083042653,0.0008512499474219192,supplementary,A2_T11
+T11-L09,C48 L/M/N scatter (new),mk_rho_mean_markers,pv_lobo2_f1_macro_mean,all approaches,2233,-0.13398177731217406,2.0654735122371578e-10,supplementary,A2_T11
+T11-L10,C48 L/M/N scatter (new),mk_rho_mean_markers,pv_lobo2_auc_macro_mean,all approaches,2174,-0.1890342568498179,6.158774069869825e-19,supplementary,A2_T11
+T11-L11,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,xb_rank_agree,all approaches,2185,-0.10564072259167509,7.45589094835422e-07,supplementary,A2_T11
+T11-L12,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,xb_rank_disagree_diffbio,all approaches,2185,-0.11743485249833358,3.685609611131422e-08,supplementary,A2_T11
+T11-L13,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,xb_margin,all approaches,2185,0.13921937691058717,6.327221721587908e-11,supplementary,A2_T11
+T11-L14,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,xb_margin_delta,all approaches,2185,0.16413376184142442,1.160671206630277e-14,supplementary,A2_T11
+T11-L15,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,pv_lobo3_f1_macro_mean,all approaches,2185,0.4467581982427242,1.1101648105579053e-107,supplementary,A2_T11
+T11-L16,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,f1_mc_mean,all approaches,2126,0.2996237773982485,2.3766813918479686e-45,supplementary,A2_T11
+T11-L17,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,pv_lobo3_auc_macro_mean,all approaches,2126,0.15367600292107428,1.048629005341543e-12,supplementary,A2_T11
+T11-L18,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,pv_lobo2_f1_macro_mean,all approaches,2185,0.3337325622484709,5.399743730853039e-58,supplementary,A2_T11
+T11-L19,C48 L/M/N scatter (new),mk_rho_marker_minus_hk,pv_lobo2_auc_macro_mean,all approaches,2126,0.29391496461598665,1.2531086971913188e-43,supplementary,A2_T11
+T11-L20,C48 L/M/N scatter (new),xb_rank_agree,xb_rank_disagree_diffbio,all approaches,2233,0.9503253205578668,0.0,supplementary,A2_T11
+T11-L21,C48 L/M/N scatter (new),xb_rank_agree,xb_margin,all approaches,2233,-0.024326972470554292,0.250519515041269,supplementary,A2_T11
+T11-L22,C48 L/M/N scatter (new),xb_rank_agree,xb_margin_delta,all approaches,2233,-0.03661112453752547,0.08369170710609163,supplementary,A2_T11
+T11-L23,C48 L/M/N scatter (new),xb_rank_agree,pv_lobo3_f1_macro_mean,all approaches,2233,-0.17966333872642862,1.1800138895221455e-17,supplementary,A2_T11
+T11-L24,C48 L/M/N scatter (new),xb_rank_agree,f1_mc_mean,all approaches,2174,-0.10971786880540906,2.9241562022046596e-07,supplementary,A2_T11
+T11-L25,C48 L/M/N scatter (new),xb_rank_agree,pv_lobo3_auc_macro_mean,all approaches,2174,0.027180974173551514,0.20520894309875984,supplementary,A2_T11
+T11-L26,C48 L/M/N scatter (new),xb_rank_agree,pv_lobo2_f1_macro_mean,all approaches,2233,-0.18703883870567461,5.000216907703898e-19,supplementary,A2_T11
+T11-L27,C48 L/M/N scatter (new),xb_rank_agree,pv_lobo2_auc_macro_mean,all approaches,2174,0.05284306705729631,0.013732918025805181,supplementary,A2_T11
+T11-L28,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,xb_margin,all approaches,2233,-0.22936611629271536,4.810119976061768e-28,supplementary,A2_T11
+T11-L29,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,xb_margin_delta,all approaches,2233,-0.14623373081519372,3.819375844481101e-12,supplementary,A2_T11
+T11-L30,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,pv_lobo3_f1_macro_mean,all approaches,2233,-0.24078043212833525,8.117893335425942e-31,supplementary,A2_T11
+T11-L31,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,f1_mc_mean,all approaches,2174,-0.14754605480000674,4.7310501527123396e-12,supplementary,A2_T11
+T11-L32,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,pv_lobo3_auc_macro_mean,all approaches,2174,-0.004814257806402328,0.8224907173178805,supplementary,A2_T11
+T11-L33,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,pv_lobo2_f1_macro_mean,all approaches,2233,-0.23188626413394076,1.2097841202046528e-28,supplementary,A2_T11
+T11-L34,C48 L/M/N scatter (new),xb_rank_disagree_diffbio,pv_lobo2_auc_macro_mean,all approaches,2174,0.0679882987879165,0.0015145478116006666,supplementary,A2_T11
+T11-L35,C48 L/M/N scatter (new),xb_margin,xb_margin_delta,all approaches,2233,0.6314667146517795,9.178675165985592e-249,supplementary,A2_T11
+T11-L36,C48 L/M/N scatter (new),xb_margin,pv_lobo3_f1_macro_mean,all approaches,2233,0.35768099550391586,2.263047521146233e-68,supplementary,A2_T11
+T11-L37,C48 L/M/N scatter (new),xb_margin,f1_mc_mean,all approaches,2174,0.23974639321492308,8.52884041139917e-30,supplementary,A2_T11
+T11-L38,C48 L/M/N scatter (new),xb_margin,pv_lobo3_auc_macro_mean,all approaches,2174,0.21969326036547357,3.5987048285477207e-25,supplementary,A2_T11
+T11-L39,C48 L/M/N scatter (new),xb_margin,pv_lobo2_f1_macro_mean,all approaches,2233,0.2854928826251228,3.814367172802238e-43,supplementary,A2_T11
+T11-L40,C48 L/M/N scatter (new),xb_margin,pv_lobo2_auc_macro_mean,all approaches,2174,0.1566103491808789,2.0839602263446207e-13,supplementary,A2_T11
+T11-L41,C48 L/M/N scatter (new),xb_margin_delta,pv_lobo3_f1_macro_mean,all approaches,2233,0.2451791327147322,6.326266615854155e-32,supplementary,A2_T11
+T11-L42,C48 L/M/N scatter (new),xb_margin_delta,f1_mc_mean,all approaches,2174,0.12730746580662444,2.5738620605372775e-09,supplementary,A2_T11
+T11-L43,C48 L/M/N scatter (new),xb_margin_delta,pv_lobo3_auc_macro_mean,all approaches,2174,0.035509243678019865,0.09787787193983791,supplementary,A2_T11
+T11-L44,C48 L/M/N scatter (new),xb_margin_delta,pv_lobo2_f1_macro_mean,all approaches,2233,0.2081940869853965,2.7395702696942667e-23,supplementary,A2_T11
+T11-L45,C48 L/M/N scatter (new),xb_margin_delta,pv_lobo2_auc_macro_mean,all approaches,2174,0.1329358026560174,4.89740227917154e-10,supplementary,A2_T11
+T11-L46,C48 L/M/N scatter (new),pv_lobo3_f1_macro_mean,f1_mc_mean,all approaches,2174,0.8099760631433325,0.0,supplementary,A2_T11
+T11-L47,C48 L/M/N scatter (new),pv_lobo3_f1_macro_mean,pv_lobo3_auc_macro_mean,all approaches,2174,0.49529840095828415,6.139170684984079e-135,supplementary,A2_T11
+T11-L48,C48 L/M/N scatter (new),pv_lobo3_f1_macro_mean,pv_lobo2_f1_macro_mean,all approaches,2233,0.7609919572523538,0.0,supplementary,A2_T11
+T11-L49,C48 L/M/N scatter (new),pv_lobo3_f1_macro_mean,pv_lobo2_auc_macro_mean,all approaches,2174,0.471752541763048,6.746390955961813e-121,supplementary,A2_T11
+T11-L50,C48 L/M/N scatter (new),f1_mc_mean,pv_lobo3_auc_macro_mean,all approaches,2174,0.690652169824533,4.857777994704165e-308,supplementary,A2_T11
+T11-L51,C48 L/M/N scatter (new),f1_mc_mean,pv_lobo2_f1_macro_mean,all approaches,2174,0.6070776893638989,4.197413960579216e-219,supplementary,A2_T11
+T11-L52,C48 L/M/N scatter (new),f1_mc_mean,pv_lobo2_auc_macro_mean,all approaches,2174,0.5396272877408573,1.48326841895336e-164,supplementary,A2_T11
+T11-L53,C48 L/M/N scatter (new),pv_lobo3_auc_macro_mean,pv_lobo2_f1_macro_mean,all approaches,2174,0.3006720133222341,1.1563062413247232e-46,supplementary,A2_T11
+T11-L54,C48 L/M/N scatter (new),pv_lobo3_auc_macro_mean,pv_lobo2_auc_macro_mean,all approaches,2174,0.6615118836801305,9.195503552660586e-274,supplementary,A2_T11
+T11-L55,C48 L/M/N scatter (new),pv_lobo2_f1_macro_mean,pv_lobo2_auc_macro_mean,all approaches,2174,0.38395578197333435,2.6623433850638636e-77,supplementary,A2_T11

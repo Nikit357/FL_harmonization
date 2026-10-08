@@ -1,0 +1,326 @@
+,Polarity,is_scoring,Metric group,Metric type,is_metadata,route,snapshot_source,recoverable,article2_class,tier,destination,position
+mk_n_genes_null,0,False,L,Other,False,direct,mk_n_genes_null,True,L,supplementary,A2_T12,0
+mk_n_genes_null_narrow_set,0,False,L,Other,False,direct,mk_n_genes_null_narrow_set,True,L,supplementary,A2_T12,1
+pct_genes_noNA,1,True,K,Other,False,direct,pct_genes_noNA,True,unassigned,supplementary,A2_T12,2
+pct_samples_noNA,1,True,K,Other,False,direct,pct_samples_noNA,True,unassigned,supplementary,A2_T12,3
+xb_rank_agree_MZ,0,False,M,Distributional similarity,False,direct,xb_rank_agree_MZ,True,M,supplementary,A2_T12,4
+xb_rank_agree_Plasmablast,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Plasmablast,True,M,supplementary,A2_T12,5
+xb_rank_agree_GC,0,False,M,Distributional similarity,False,direct,xb_rank_agree_GC,True,M,supplementary,A2_T12,6
+xb_rank_agree_Centroblast,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Centroblast,True,M,supplementary,A2_T12,7
+xb_rank_agree_Centrocyte,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Centrocyte,True,M,supplementary,A2_T12,8
+xb_rank_agree_Immature,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Immature,True,M,supplementary,A2_T12,9
+xb_rank_agree_Plasma,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Plasma,True,M,supplementary,A2_T12,10
+xb_rank_agree_Bone_marrow_CD19+,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Bone_marrow_CD19+,True,M,supplementary,A2_T12,11
+xb_rank_agree_Memory,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Memory,True,M,supplementary,A2_T12,12
+xb_rank_agree_Naive,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Naive,True,M,supplementary,A2_T12,13
+xb_rank_agree_delta,0,False,M,Distributional similarity,False,derived_baseline,xb_rank_agree vs 01_raw baseline,True,M,supplementary,A2_T12,14
+xb_rank_disagree_diffbio_delta,0,False,M,Distributional similarity,False,derived_baseline,xb_rank_disagree_diffbio vs 01_raw baseline,True,M,supplementary,A2_T12,15
+xb_rank_agree_Follicular_Lymphoma,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Follicular_Lymphoma,True,M,supplementary,A2_T12,16
+xb_rank_disagree_diffbio,0,False,M,Distributional similarity,False,direct,xb_rank_disagree_diffbio,True,M,supplementary,A2_T12,17
+xb_rank_disagree_diffbio_median,0,False,M,Distributional similarity,False,direct,xb_rank_disagree_diffbio_median,True,M,supplementary,A2_T12,18
+xb_rank_agree_median,0,False,M,Distributional similarity,False,direct,xb_rank_agree_median,True,M,supplementary,A2_T12,19
+xb_rank_agree,0,False,M,Distributional similarity,False,direct,xb_rank_agree,True,M,supplementary,A2_T12,20
+xb_rank_agree_Diffuse_Large_B_Cell_Lymphoma,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Diffuse_Large_B_Cell_Lymphoma,True,M,supplementary,A2_T12,21
+xb_rank_agree_B_cells,0,False,M,Distributional similarity,False,direct,xb_rank_agree_B_cells,True,M,supplementary,A2_T12,22
+xb_rank_agree_Burkitt_Lymphoma,0,False,M,Distributional similarity,False,direct,xb_rank_agree_Burkitt_Lymphoma,True,M,supplementary,A2_T12,23
+graph_connectivity_Diagnosis_cell_type_unified,1,True,G,Local,False,direct,graph_connectivity_Diagnosis_cell_type_unified,True,local,supplementary,A2_T12,24
+kbet_acceptance_rate_PLATFORM_RNA,1,True,B,Local,False,direct,kbet_acceptance_rate_PLATFORM_RNA,True,local,supplementary,A2_T12,25
+kbet_acceptance_rate_RNA_BATCH,1,True,B,Local,False,direct,kbet_acceptance_rate_RNA_BATCH,True,local,supplementary,A2_T12,26
+PCReg_RNASEQ_SOURCE,1,True,A,Global,False,rename,pcr_RNASEQ_SOURCE,True,global,supplementary,A2_T12,27
+asw_batch_norm_RNASEQ_SOURCE,1,True,B,Global,False,direct,asw_batch_norm_RNASEQ_SOURCE,True,local,supplementary,A2_T12,28
+dist_ratio_RNASEQ_SOURCE,1,True,H,Global,False,direct,dist_ratio_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,29
+dsc_pvalue_RNASEQ_SOURCE,0,False,A,Global,False,direct,dsc_pvalue_RNASEQ_SOURCE,True,global,supplementary,A2_T12,30
+dsc_pvalue_PLATFORM_RNA,0,False,A,Global,False,direct,dsc_pvalue_PLATFORM_RNA,True,global,supplementary,A2_T12,31
+dsc_pvalue_RNA_BATCH,0,False,A,Global,False,direct,dsc_pvalue_RNA_BATCH,True,global,supplementary,A2_T12,32
+pv_lobo2_f1_macro_perm_mean,0,False,N,Other,False,direct,pv_lobo2_f1_macro_perm_mean,True,N,supplementary,A2_T12,33
+dist_ratio_PLATFORM_RNA,1,True,H,Global,False,direct,dist_ratio_PLATFORM_RNA,True,structural,supplementary,A2_T12,34
+dist_ratio_RNA_BATCH,1,True,H,Global,False,direct,dist_ratio_RNA_BATCH,True,structural,supplementary,A2_T12,35
+PCReg_PLATFORM_RNA,1,True,A,Global,False,rename,pcr_PLATFORM_RNA,True,global,supplementary,A2_T12,36
+PCReg_RNA_BATCH,1,True,A,Global,False,rename,pcr_RNA_BATCH,True,global,supplementary,A2_T12,37
+pv_lobo3_f1_macro_perm_mean,0,False,N,Other,False,direct,pv_lobo3_f1_macro_perm_mean,True,N,supplementary,A2_T12,38
+graph_connectivity_Major_group,1,True,G,Local,False,direct,graph_connectivity_Major_group,True,local,supplementary,A2_T12,39
+graph_connectivity_TUMOR_NORMAL,1,True,G,Local,False,direct,graph_connectivity_TUMOR_NORMAL,True,local,supplementary,A2_T12,40
+clisi_mean_Diagnosis_cell_type_unified,1,True,B,Local,False,direct,clisi_mean_Diagnosis_cell_type_unified,True,local,supplementary,A2_T12,41
+clisi_mean_TUMOR_NORMAL,1,True,B,Local,False,direct,clisi_mean_TUMOR_NORMAL,True,local,supplementary,A2_T12,42
+kbet_acceptance_rate_COHORT_LABEL,1,True,B,Local,False,direct,kbet_acceptance_rate_COHORT_LABEL,True,local,supplementary,A2_T12,43
+clisi_mean_Major_group,1,True,B,Local,False,direct,clisi_mean_Major_group,True,local,supplementary,A2_T12,44
+cms_fraction_mixed_PLATFORM_RNA,1,True,B,Global,False,direct,cms_fraction_mixed_PLATFORM_RNA,True,local,supplementary,A2_T12,45
+cms_mean_PLATFORM_RNA,0,False,B,Global,False,direct,cms_mean_PLATFORM_RNA,True,local,supplementary,A2_T12,46
+tsne_entropy_norm_RNA_BATCH,1,True,C,Local,False,direct,tsne_entropy_norm_RNA_BATCH,True,structural,supplementary,A2_T12,47
+umap_entropy_norm_RNA_BATCH,1,True,C,Local,False,direct,umap_entropy_norm_RNA_BATCH,True,structural,supplementary,A2_T12,48
+ilisi_mean_RNA_BATCH,0,False,B,Local,False,direct,ilisi_mean_RNA_BATCH,True,local,supplementary,A2_T12,49
+tsne_entropy_mean_RNA_BATCH,0,False,C,Local,False,direct,tsne_entropy_mean_RNA_BATCH,True,structural,supplementary,A2_T12,50
+umap_entropy_mean_RNA_BATCH,0,False,C,Local,False,direct,umap_entropy_mean_RNA_BATCH,True,structural,supplementary,A2_T12,51
+ilisi_norm_RNA_BATCH,1,True,B,Local,False,direct,ilisi_norm_RNA_BATCH,True,local,supplementary,A2_T12,52
+ilisi_norm_PLATFORM_RNA,1,True,B,Local,False,direct,ilisi_norm_PLATFORM_RNA,True,local,supplementary,A2_T12,53
+clisi_mean_PLATFORM_RNA,0,False,B,Local,False,direct,clisi_mean_PLATFORM_RNA,True,local,supplementary,A2_T12,54
+ilisi_mean_PLATFORM_RNA,0,False,B,Local,False,direct,ilisi_mean_PLATFORM_RNA,True,local,supplementary,A2_T12,55
+tsne_entropy_mean_PLATFORM_RNA,0,False,C,Local,False,direct,tsne_entropy_mean_PLATFORM_RNA,True,structural,supplementary,A2_T12,56
+tsne_entropy_norm_PLATFORM_RNA,1,True,C,Local,False,direct,tsne_entropy_norm_PLATFORM_RNA,True,structural,supplementary,A2_T12,57
+umap_entropy_mean_PLATFORM_RNA,0,False,C,Local,False,direct,umap_entropy_mean_PLATFORM_RNA,True,structural,supplementary,A2_T12,58
+umap_entropy_norm_PLATFORM_RNA,1,True,C,Local,False,direct,umap_entropy_norm_PLATFORM_RNA,True,structural,supplementary,A2_T12,59
+kbet_acceptance_rate_RNASEQ_SOURCE,1,True,B,Local,False,direct,kbet_acceptance_rate_RNASEQ_SOURCE,True,local,supplementary,A2_T12,60
+ilisi_norm_RNASEQ_SOURCE,1,True,B,Local,False,direct,ilisi_norm_RNASEQ_SOURCE,True,local,supplementary,A2_T12,61
+ilisi_mean_RNASEQ_SOURCE,0,False,B,Local,False,direct,ilisi_mean_RNASEQ_SOURCE,True,local,supplementary,A2_T12,62
+tsne_entropy_mean_RNASEQ_SOURCE,0,False,C,Local,False,direct,tsne_entropy_mean_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,63
+tsne_entropy_norm_RNASEQ_SOURCE,1,True,C,Local,False,direct,tsne_entropy_norm_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,64
+umap_entropy_mean_RNASEQ_SOURCE,0,False,C,Local,False,direct,umap_entropy_mean_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,65
+umap_entropy_norm_RNASEQ_SOURCE,1,True,C,Local,False,direct,umap_entropy_norm_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,66
+ilisi_norm_COHORT_LABEL,1,True,B,Local,False,direct,ilisi_norm_COHORT_LABEL,True,local,supplementary,A2_T12,67
+asw_batch_norm_COHORT_LABEL,1,True,B,Global,False,direct,asw_batch_norm_COHORT_LABEL,True,local,supplementary,A2_T12,68
+tsne_entropy_norm_COHORT_LABEL,1,True,C,Local,False,direct,tsne_entropy_norm_COHORT_LABEL,True,structural,supplementary,A2_T12,69
+umap_entropy_norm_COHORT_LABEL,1,True,C,Local,False,direct,umap_entropy_norm_COHORT_LABEL,True,structural,supplementary,A2_T12,70
+ilisi_mean_COHORT_LABEL,0,False,B,Local,False,direct,ilisi_mean_COHORT_LABEL,True,local,supplementary,A2_T12,71
+tsne_entropy_mean_COHORT_LABEL,0,False,C,Local,False,direct,tsne_entropy_mean_COHORT_LABEL,True,structural,supplementary,A2_T12,72
+umap_entropy_mean_COHORT_LABEL,0,False,C,Local,False,direct,umap_entropy_mean_COHORT_LABEL,True,structural,supplementary,A2_T12,73
+graph_connectivity_PLATFORM_RNA,0,False,G,Local,False,direct,graph_connectivity_PLATFORM_RNA,True,local,supplementary,A2_T12,74
+pct_var_pc2,0,False,J,Global,False,direct,pct_var_pc2,True,global,supplementary,A2_T12,75
+dist_ratio_COHORT_LABEL,1,True,H,Global,False,direct,dist_ratio_COHORT_LABEL,True,structural,supplementary,A2_T12,76
+PCReg_COHORT_LABEL,1,True,A,Global,False,rename,pcr_COHORT_LABEL,True,global,supplementary,A2_T12,77
+pct_var_pc3,0,False,J,Global,False,direct,pct_var_pc3,True,global,supplementary,A2_T12,78
+pct_var_pc8,0,False,J,Global,False,direct,pct_var_pc8,True,global,supplementary,A2_T12,79
+pct_var_pc10,0,False,J,Global,False,direct,pct_var_pc10,True,global,supplementary,A2_T12,80
+pct_var_pc9,0,False,J,Global,False,direct,pct_var_pc9,True,global,supplementary,A2_T12,81
+pct_var_pc6,0,False,J,Global,False,direct,pct_var_pc6,True,global,supplementary,A2_T12,82
+pct_var_pc7,0,False,J,Global,False,direct,pct_var_pc7,True,global,supplementary,A2_T12,83
+pct_var_pc4,0,False,J,Global,False,direct,pct_var_pc4,True,global,supplementary,A2_T12,84
+pct_var_pc5,0,False,J,Global,False,direct,pct_var_pc5,True,global,supplementary,A2_T12,85
+asw_bio_norm_TUMOR_NORMAL,1,True,B,Global,False,direct,asw_bio_norm_TUMOR_NORMAL,True,local,supplementary,A2_T12,86
+asw_bio_TUMOR_NORMAL,0,False,B,Global,False,direct,asw_bio_TUMOR_NORMAL,True,local,supplementary,A2_T12,87
+asw_bio_norm_Major_group,1,True,B,Global,False,direct,asw_bio_norm_Major_group,True,local,supplementary,A2_T12,88
+asw_bio_Major_group,0,False,B,Global,False,direct,asw_bio_Major_group,True,local,supplementary,A2_T12,89
+asw_bio_norm_Diagnosis_cell_type_unified,1,True,B,Global,False,direct,asw_bio_norm_Diagnosis_cell_type_unified,True,local,supplementary,A2_T12,90
+asw_bio_Diagnosis_cell_type_unified,0,False,B,Global,False,direct,asw_bio_Diagnosis_cell_type_unified,True,local,supplementary,A2_T12,91
+mk_n_panel_genes_used_narrow_set,0,False,L,Other,False,direct,mk_n_panel_genes_used_narrow_set,True,L,supplementary,A2_T12,92
+mk_panel_coverage_frac_narrow_set,0,False,L,Other,False,direct,mk_panel_coverage_frac_narrow_set,True,L,supplementary,A2_T12,93
+n_genes_noNA,0,False,K,Other,False,direct,n_genes_noNA,True,unassigned,supplementary,A2_T12,94
+mk_n_hk_genes_used_narrow_set,0,False,L,Other,False,direct,mk_n_hk_genes_used_narrow_set,True,L,supplementary,A2_T12,95
+n_genes,0,False,E,Other,False,direct,n_genes,True,unassigned,supplementary,A2_T12,96
+xb_n_panel_genes_used,0,False,M,Other,False,direct,xb_n_panel_genes_used,True,M,supplementary,A2_T12,97
+mk_n_panel_genes_used,0,False,L,Other,False,direct,mk_n_panel_genes_used,True,L,supplementary,A2_T12,98
+mk_panel_coverage_frac,0,False,L,Other,False,direct,mk_panel_coverage_frac,True,L,supplementary,A2_T12,99
+n_genes_allNA,0,False,K,Other,False,direct,n_genes_allNA,True,unassigned,supplementary,A2_T12,100
+pct_genes_allNA,-1,True,K,Other,False,derived_percent,100 * n_genes_allNA / n_genes,True,unassigned,supplementary,A2_T12,101
+xb_rank_agree_ratio_raw,0,False,M,Distributional similarity,False,derived_baseline,xb_rank_agree_ratio vs 01_raw baseline,True,M,supplementary,A2_T12,102
+pv_n_genes_dropped_na,0,False,N,Other,False,direct,pv_n_genes_dropped_na,True,N,supplementary,A2_T12,103
+n_na_cells,0,False,K,Other,False,direct,n_na_cells,True,unassigned,supplementary,A2_T12,104
+pct_na_cells,-1,True,K,Other,False,direct,pct_na_cells,True,unassigned,supplementary,A2_T12,105
+pct_samples_allNA,-1,True,K,Other,False,derived_percent,100 * n_samples_allNA / n_samples,True,unassigned,supplementary,A2_T12,106
+n_samples_allNA,0,False,K,Other,False,direct,n_samples_allNA,True,unassigned,supplementary,A2_T12,107
+pv_n_samples_dropped_na,0,False,N,Other,False,direct,pv_n_samples_dropped_na,True,N,supplementary,A2_T12,108
+umap_centroid_disp_COHORT_LABEL,-1,True,C,Global,False,direct,umap_centroid_disp_COHORT_LABEL,True,structural,supplementary,A2_T12,109
+mk_rho_median_all_genes_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_median_all_genes_narrow_set,True,L,supplementary,A2_T12,110
+mk_rho_mean_PGK1_only_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_mean_PGK1_only_narrow_set,True,L,supplementary,A2_T12,111
+mk_rho_median_all_genes,0,False,L,Distributional similarity,False,direct,mk_rho_median_all_genes,True,L,supplementary,A2_T12,112
+mk_rho_mean_housekeeping,0,False,L,Distributional similarity,False,direct,mk_rho_mean_housekeeping,True,L,supplementary,A2_T12,113
+mk_rho_mean_housekeeping_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_mean_housekeeping_narrow_set,True,L,supplementary,A2_T12,114
+mk_rho_min_all_genes_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_min_all_genes_narrow_set,True,L,supplementary,A2_T12,115
+mk_rho_p10_all_genes_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_p10_all_genes_narrow_set,True,L,supplementary,A2_T12,116
+mk_rho_mean_by_cohort_mean_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_mean_by_cohort_mean_narrow_set,True,L,supplementary,A2_T12,117
+mk_rho_mean_all_genes_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_mean_all_genes_narrow_set,True,L,supplementary,A2_T12,118
+mk_rho_mean_markers_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_mean_markers_narrow_set,True,L,supplementary,A2_T12,119
+mk_rho_min_all_genes,0,False,L,Distributional similarity,False,direct,mk_rho_min_all_genes,True,L,supplementary,A2_T12,120
+mk_rho_p10_all_genes,0,False,L,Distributional similarity,False,direct,mk_rho_p10_all_genes,True,L,supplementary,A2_T12,121
+mk_rho_mean_by_cohort_mean,0,False,L,Distributional similarity,False,direct,mk_rho_mean_by_cohort_mean,True,L,supplementary,A2_T12,122
+mk_rho_mean_all_genes,0,False,L,Distributional similarity,False,direct,mk_rho_mean_all_genes,True,L,supplementary,A2_T12,123
+mk_rho_mean_markers,0,False,L,Distributional similarity,False,direct,mk_rho_mean_markers,True,L,supplementary,A2_T12,124
+mk_rho_frac_genes_above_0.9,0,False,L,Distributional similarity,False,direct,mk_rho_frac_genes_above_0.9,True,L,supplementary,A2_T12,125
+mk_rho_frac_genes_above_0.9_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_frac_genes_above_0.9_narrow_set,True,L,supplementary,A2_T12,126
+ks_frac_sig_COHORT_LABEL,-1,True,D,Distributional similarity,False,direct,ks_frac_sig_COHORT_LABEL,True,distributional,supplementary,A2_T12,127
+ks_mean_D_COHORT_LABEL,-1,True,D,Distributional similarity,False,direct,ks_mean_D_COHORT_LABEL,True,distributional,supplementary,A2_T12,128
+ks_cohort_within_batch_frac_sig,-1,True,D,Distributional similarity,False,direct,ks_cohort_within_batch_frac_sig,True,distributional,supplementary,A2_T12,129
+ks_cohort_within_batch_mean_D,-1,True,D,Distributional similarity,False,direct,ks_cohort_within_batch_mean_D,True,distributional,supplementary,A2_T12,130
+pv_lobo3_f1_macro_min,0,False,N,Other,False,direct,pv_lobo3_f1_macro_min,True,N,supplementary,A2_T12,131
+pv_lobo2_f1_macro_min,0,False,N,Other,False,direct,pv_lobo2_f1_macro_min,True,N,supplementary,A2_T12,132
+pv_lobo3_f1_macro_mean_raw,0,False,N,Other,False,derived_baseline,pv_lobo3_f1_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,133
+pv_lobo2_f1_macro_mean_raw,0,False,N,Other,False,derived_baseline,pv_lobo2_f1_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,134
+xb_rank_agree_ratio,0,False,M,Distributional similarity,False,direct,xb_rank_agree_ratio,True,M,supplementary,A2_T12,135
+xb_rank_agree_ratio_delta,0,False,M,Distributional similarity,False,derived_baseline,xb_rank_agree_ratio vs 01_raw baseline,True,M,supplementary,A2_T12,136
+below_1_fraction_by_batch_min,0,False,E,Other,False,direct,below_1_fraction_by_batch_min,True,unassigned,supplementary,A2_T12,137
+fraction_cohorts_zero_inflated_bimodal,1,True,E,Other,False,direct,fraction_cohorts_zero_inflated_bimodal,True,unassigned,supplementary,A2_T12,138
+n_cohorts_zero_inflated_bimodal,0,False,E,Other,False,direct,n_cohorts_zero_inflated_bimodal,True,unassigned,supplementary,A2_T12,139
+below_1_fraction_by_batch_max,0,False,E,Other,False,direct,below_1_fraction_by_batch_max,True,unassigned,supplementary,A2_T12,140
+fraction_genes_below_1,0,False,E,Other,False,direct,fraction_genes_below_1,True,unassigned,supplementary,A2_T12,141
+zero_fraction_by_batch_min,0,False,E,Other,False,direct,zero_fraction_by_batch_min,True,unassigned,supplementary,A2_T12,142
+zero_fraction_by_batch_max,0,False,E,Other,False,direct,zero_fraction_by_batch_max,True,unassigned,supplementary,A2_T12,143
+zero_fraction_global,0,False,E,Other,False,direct,zero_fraction_global,True,unassigned,supplementary,A2_T12,144
+wm_Diagnosis_cell_type_unified,1,True,I,Global,False,direct,wm_Diagnosis_cell_type_unified,True,structural,supplementary,A2_T12,145
+n_samples_per_batch_median,0,False,E,Other,False,direct,n_samples_per_batch_median,True,unassigned,supplementary,A2_T12,146
+n_samples_per_batch_min,0,False,E,Other,False,direct,n_samples_per_batch_min,True,unassigned,supplementary,A2_T12,147
+wm_PLATFORM_RNA,-1,True,I,Global,False,direct,wm_PLATFORM_RNA,True,structural,supplementary,A2_T12,148
+wm_RNASEQ_SOURCE,1,True,I,Global,False,direct,wm_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,149
+wm_COHORT_LABEL,-1,True,I,Global,False,direct,wm_COHORT_LABEL,True,structural,supplementary,A2_T12,150
+wm_RNA_BATCH,-1,True,I,Global,False,direct,wm_RNA_BATCH,True,structural,supplementary,A2_T12,151
+wm_mean_batch,-1,True,I,Global,False,direct,wm_mean_batch,True,structural,supplementary,A2_T12,152
+tsne_centroid_disp_COHORT_LABEL,-1,True,C,Global,False,direct,tsne_centroid_disp_COHORT_LABEL,True,structural,supplementary,A2_T12,153
+per_gene_batch_mean_cv_COHORT_LABEL,-1,True,D,Distributional similarity,False,direct,per_gene_batch_mean_cv_COHORT_LABEL,True,distributional,supplementary,A2_T12,154
+per_batch_median_cv,0,False,E,Other,False,direct,per_batch_median_cv,True,unassigned,supplementary,A2_T12,155
+per_gene_batch_mean_cv_PLATFORM_RNA,-1,True,D,Distributional similarity,False,direct,per_gene_batch_mean_cv_PLATFORM_RNA,True,distributional,supplementary,A2_T12,156
+per_gene_batch_mean_cv_RNA_BATCH,-1,True,D,Distributional similarity,False,direct,per_gene_batch_mean_cv_RNA_BATCH,True,distributional,supplementary,A2_T12,157
+fraction_cohorts_bimodal,1,True,E,Other,False,direct,fraction_cohorts_bimodal,True,unassigned,supplementary,A2_T12,158
+n_cohorts_bimodal,0,False,E,Other,False,direct,n_cohorts_bimodal,True,unassigned,supplementary,A2_T12,159
+pct_var_cum_top10,0,False,J,Global,False,direct,pct_var_cum_top10,True,global,supplementary,A2_T12,160
+pct_var_pc1,0,False,J,Global,False,direct,pct_var_pc1,True,global,supplementary,A2_T12,161
+avg_intra_dist_COHORT_LABEL,0,False,H,Global,False,direct,avg_intra_dist_COHORT_LABEL,True,structural,supplementary,A2_T12,162
+exp_max,0,False,E,Other,False,direct,exp_max,True,unassigned,supplementary,A2_T12,163
+avg_intra_dist_PLATFORM_RNA,0,False,H,Global,False,direct,avg_intra_dist_PLATFORM_RNA,True,structural,supplementary,A2_T12,164
+avg_intra_dist_RNA_BATCH,0,False,H,Global,False,direct,avg_intra_dist_RNA_BATCH,True,structural,supplementary,A2_T12,165
+avg_inter_dist_TUMOR_NORMAL,0,False,H,Global,False,direct,avg_inter_dist_TUMOR_NORMAL,True,structural,supplementary,A2_T12,166
+avg_intra_dist_Diagnosis_cell_type_unified,0,False,H,Global,False,direct,avg_intra_dist_Diagnosis_cell_type_unified,True,structural,supplementary,A2_T12,167
+avg_intra_dist_Major_group,0,False,H,Global,False,direct,avg_intra_dist_Major_group,True,structural,supplementary,A2_T12,168
+avg_intra_dist_RNASEQ_SOURCE,0,False,H,Global,False,direct,avg_intra_dist_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,169
+avg_inter_dist_Diagnosis_cell_type_unified,0,False,H,Global,False,direct,avg_inter_dist_Diagnosis_cell_type_unified,True,structural,supplementary,A2_T12,170
+avg_inter_dist_Major_group,0,False,H,Global,False,direct,avg_inter_dist_Major_group,True,structural,supplementary,A2_T12,171
+avg_inter_dist_PLATFORM_RNA,0,False,H,Global,False,direct,avg_inter_dist_PLATFORM_RNA,True,structural,supplementary,A2_T12,172
+avg_intra_dist_TUMOR_NORMAL,0,False,H,Global,False,direct,avg_intra_dist_TUMOR_NORMAL,True,structural,supplementary,A2_T12,173
+avg_inter_dist_RNASEQ_SOURCE,0,False,H,Global,False,direct,avg_inter_dist_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,174
+avg_inter_dist_COHORT_LABEL,0,False,H,Global,False,direct,avg_inter_dist_COHORT_LABEL,True,structural,supplementary,A2_T12,175
+avg_inter_dist_RNA_BATCH,0,False,H,Global,False,direct,avg_inter_dist_RNA_BATCH,True,structural,supplementary,A2_T12,176
+exp_std,0,False,E,Other,False,direct,exp_std,True,unassigned,supplementary,A2_T12,177
+exp_p95,0,False,E,Other,False,direct,exp_p95,True,unassigned,supplementary,A2_T12,178
+exp_p99,0,False,E,Other,False,direct,exp_p99,True,unassigned,supplementary,A2_T12,179
+asw_batch_norm_PLATFORM_RNA,1,True,B,Global,False,direct,asw_batch_norm_PLATFORM_RNA,True,local,supplementary,A2_T12,180
+asw_batch_norm_RNA_BATCH,1,True,B,Global,False,direct,asw_batch_norm_RNA_BATCH,True,local,supplementary,A2_T12,181
+r2_Major_group,0,False,A,Global,False,direct,r2_Major_group,True,global,supplementary,A2_T12,182
+r2_TUMOR_NORMAL,0,False,A,Global,False,direct,r2_TUMOR_NORMAL,True,global,supplementary,A2_T12,183
+pv_lobo3_f1_per_class_DLBCL,0,False,N,Other,False,direct,pv_lobo3_f1_per_class_DLBCL,True,N,supplementary,A2_T12,184
+pv_lobo2_f1_per_class_DLBCL,0,False,N,Other,False,direct,pv_lobo2_f1_per_class_DLBCL,True,N,supplementary,A2_T12,185
+pv_lobo3_f1_macro_mean_delta,0,False,N,Other,False,derived_baseline,pv_lobo3_f1_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,186
+pv_lobo2_f1_macro_mean_delta,0,False,N,Other,False,derived_baseline,pv_lobo2_f1_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,187
+pv_lobo3_f1_per_class_FL,0,False,N,Other,False,direct,pv_lobo3_f1_per_class_FL,True,N,supplementary,A2_T12,188
+pv_lobo2_f1_macro_median,0,False,N,Other,False,direct,pv_lobo2_f1_macro_median,True,N,supplementary,A2_T12,189
+pv_lobo2_f1_per_class_FL,0,False,N,Other,False,direct,pv_lobo2_f1_per_class_FL,True,N,supplementary,A2_T12,190
+pv_lobo2_f1_macro_delta,0,False,N,Other,False,direct,pv_lobo2_f1_macro_delta,True,N,supplementary,A2_T12,191
+pv_lobo2_bal_acc_mean,0,False,N,Other,False,direct,pv_lobo2_bal_acc_mean,True,N,supplementary,A2_T12,192
+pv_lobo2_f1_macro_mean,0,False,N,Other,False,direct,pv_lobo2_f1_macro_mean,True,N,supplementary,A2_T12,193
+pv_lobo2_f1_weighted_mean,0,False,N,Other,False,direct,pv_lobo2_f1_weighted_mean,True,N,supplementary,A2_T12,194
+pv_lobo3_f1_per_class_Normal_B,0,False,N,Other,False,direct,pv_lobo3_f1_per_class_Normal_B,True,N,supplementary,A2_T12,195
+pv_lobo3_f1_macro_median,0,False,N,Other,False,direct,pv_lobo3_f1_macro_median,True,N,supplementary,A2_T12,196
+pv_lobo3_f1_macro_delta,0,False,N,Other,False,direct,pv_lobo3_f1_macro_delta,True,N,supplementary,A2_T12,197
+pv_lobo3_f1_weighted_mean,0,False,N,Other,False,direct,pv_lobo3_f1_weighted_mean,True,N,supplementary,A2_T12,198
+pv_lobo3_f1_macro_mean,0,False,N,Other,False,direct,pv_lobo3_f1_macro_mean,True,N,supplementary,A2_T12,199
+pv_lobo3_bal_acc_mean,0,False,N,Other,False,direct,pv_lobo3_bal_acc_mean,True,N,supplementary,A2_T12,200
+pv_lobo3_auc_macro_mean_delta,0,False,N,Other,False,derived_baseline,pv_lobo3_auc_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,201
+pv_lobo2_auc_macro_mean_delta,0,False,N,Other,False,derived_baseline,pv_lobo2_auc_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,202
+r2_pc7_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc7_COHORT_LABEL,True,global,supplementary,A2_T12,203
+r2_pc8_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc8_COHORT_LABEL,True,global,supplementary,A2_T12,204
+r2_pc9_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc9_COHORT_LABEL,True,global,supplementary,A2_T12,205
+asw_batch_COHORT_LABEL,0,False,B,Global,False,direct,asw_batch_COHORT_LABEL,True,local,supplementary,A2_T12,206
+r2_pc2_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc2_COHORT_LABEL,True,global,supplementary,A2_T12,207
+dsc_COHORT_LABEL,-1,True,A,Global,False,direct,dsc_COHORT_LABEL,True,global,supplementary,A2_T12,208
+r2_pc1_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc1_COHORT_LABEL,True,global,supplementary,A2_T12,209
+r2_pc3_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc3_COHORT_LABEL,True,global,supplementary,A2_T12,210
+r2_pc4_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc4_COHORT_LABEL,True,global,supplementary,A2_T12,211
+r2_COHORT_LABEL,0,False,A,Global,False,direct,r2_COHORT_LABEL,True,global,supplementary,A2_T12,212
+r2_pc5_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc5_COHORT_LABEL,True,global,supplementary,A2_T12,213
+r2_pc10_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc10_COHORT_LABEL,True,global,supplementary,A2_T12,214
+r2_pc6_COHORT_LABEL,0,False,A,Global,False,direct,r2_pc6_COHORT_LABEL,True,global,supplementary,A2_T12,215
+r2_pc10_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc10_RNASEQ_SOURCE,True,global,supplementary,A2_T12,216
+r2_pc9_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc9_RNASEQ_SOURCE,True,global,supplementary,A2_T12,217
+r2_pc7_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc7_RNASEQ_SOURCE,True,global,supplementary,A2_T12,218
+r2_pc8_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc8_RNASEQ_SOURCE,True,global,supplementary,A2_T12,219
+r2_pc5_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc5_RNASEQ_SOURCE,True,global,supplementary,A2_T12,220
+r2_pc3_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc3_RNASEQ_SOURCE,True,global,supplementary,A2_T12,221
+r2_pc6_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc6_RNASEQ_SOURCE,True,global,supplementary,A2_T12,222
+r2_pc4_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc4_RNASEQ_SOURCE,True,global,supplementary,A2_T12,223
+r2_pc2_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc2_RNASEQ_SOURCE,True,global,supplementary,A2_T12,224
+asw_batch_RNASEQ_SOURCE,0,False,B,Global,False,direct,asw_batch_RNASEQ_SOURCE,True,local,supplementary,A2_T12,225
+dsc_RNA_BATCH,-1,True,A,Global,False,direct,dsc_RNA_BATCH,True,global,supplementary,A2_T12,226
+r2_pc1_RNA_BATCH,0,False,A,Global,False,direct,r2_pc1_RNA_BATCH,True,global,supplementary,A2_T12,227
+dsc_PLATFORM_RNA,-1,True,A,Global,False,direct,dsc_PLATFORM_RNA,True,global,supplementary,A2_T12,228
+r2_pc1_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc1_PLATFORM_RNA,True,global,supplementary,A2_T12,229
+dsc_RNASEQ_SOURCE,-1,True,A,Global,False,direct,dsc_RNASEQ_SOURCE,True,global,supplementary,A2_T12,230
+r2_pc1_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_pc1_RNASEQ_SOURCE,True,global,supplementary,A2_T12,231
+r2_pc4_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc4_PLATFORM_RNA,True,global,supplementary,A2_T12,232
+r2_pc3_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc3_PLATFORM_RNA,True,global,supplementary,A2_T12,233
+r2_pc3_RNA_BATCH,0,False,A,Global,False,direct,r2_pc3_RNA_BATCH,True,global,supplementary,A2_T12,234
+r2_RNASEQ_SOURCE,0,False,A,Global,False,direct,r2_RNASEQ_SOURCE,True,global,supplementary,A2_T12,235
+asw_batch_RNA_BATCH,0,False,B,Global,False,direct,asw_batch_RNA_BATCH,True,local,supplementary,A2_T12,236
+asw_bio_norm_PLATFORM_RNA,0,False,B,Global,False,direct,asw_bio_norm_PLATFORM_RNA,True,local,supplementary,A2_T12,237
+asw_batch_PLATFORM_RNA,0,False,B,Global,False,direct,asw_batch_PLATFORM_RNA,True,local,supplementary,A2_T12,238
+asw_bio_PLATFORM_RNA,0,False,B,Global,False,direct,asw_bio_PLATFORM_RNA,True,local,supplementary,A2_T12,239
+umap_centroid_disp_PLATFORM_RNA,-1,True,C,Global,False,direct,umap_centroid_disp_PLATFORM_RNA,True,structural,supplementary,A2_T12,240
+umap_centroid_disp_RNA_BATCH,-1,True,C,Global,False,direct,umap_centroid_disp_RNA_BATCH,True,structural,supplementary,A2_T12,241
+tsne_centroid_disp_PLATFORM_RNA,-1,True,C,Global,False,direct,tsne_centroid_disp_PLATFORM_RNA,True,structural,supplementary,A2_T12,242
+tsne_centroid_disp_RNA_BATCH,-1,True,C,Global,False,direct,tsne_centroid_disp_RNA_BATCH,True,structural,supplementary,A2_T12,243
+r2_pc5_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc5_PLATFORM_RNA,True,global,supplementary,A2_T12,244
+r2_pc5_RNA_BATCH,0,False,A,Global,False,direct,r2_pc5_RNA_BATCH,True,global,supplementary,A2_T12,245
+r2_pc6_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc6_PLATFORM_RNA,True,global,supplementary,A2_T12,246
+r2_pc6_RNA_BATCH,0,False,A,Global,False,direct,r2_pc6_RNA_BATCH,True,global,supplementary,A2_T12,247
+r2_pc7_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc7_PLATFORM_RNA,True,global,supplementary,A2_T12,248
+r2_pc7_RNA_BATCH,0,False,A,Global,False,direct,r2_pc7_RNA_BATCH,True,global,supplementary,A2_T12,249
+r2_pc9_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc9_PLATFORM_RNA,True,global,supplementary,A2_T12,250
+r2_pc9_RNA_BATCH,0,False,A,Global,False,direct,r2_pc9_RNA_BATCH,True,global,supplementary,A2_T12,251
+r2_pc8_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc8_PLATFORM_RNA,True,global,supplementary,A2_T12,252
+r2_pc8_RNA_BATCH,0,False,A,Global,False,direct,r2_pc8_RNA_BATCH,True,global,supplementary,A2_T12,253
+r2_pc10_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc10_PLATFORM_RNA,True,global,supplementary,A2_T12,254
+r2_pc10_RNA_BATCH,0,False,A,Global,False,direct,r2_pc10_RNA_BATCH,True,global,supplementary,A2_T12,255
+r2_pc4_RNA_BATCH,0,False,A,Global,False,direct,r2_pc4_RNA_BATCH,True,global,supplementary,A2_T12,256
+r2_PLATFORM_RNA,0,False,A,Global,False,direct,r2_PLATFORM_RNA,True,global,supplementary,A2_T12,257
+r2_RNA_BATCH,0,False,A,Global,False,direct,r2_RNA_BATCH,True,global,supplementary,A2_T12,258
+r2_pc2_PLATFORM_RNA,0,False,A,Global,False,direct,r2_pc2_PLATFORM_RNA,True,global,supplementary,A2_T12,259
+r2_pc2_RNA_BATCH,0,False,A,Global,False,direct,r2_pc2_RNA_BATCH,True,global,supplementary,A2_T12,260
+ks_mean_D_PLATFORM_RNA,-1,True,D,Distributional similarity,False,direct,ks_mean_D_PLATFORM_RNA,True,distributional,supplementary,A2_T12,261
+ks_mean_D_RNA_BATCH,-1,True,D,Distributional similarity,False,direct,ks_mean_D_RNA_BATCH,True,distributional,supplementary,A2_T12,262
+ks_frac_sig_PLATFORM_RNA,-1,True,D,Distributional similarity,False,direct,ks_frac_sig_PLATFORM_RNA,True,distributional,supplementary,A2_T12,263
+ks_frac_sig_RNA_BATCH,-1,True,D,Distributional similarity,False,direct,ks_frac_sig_RNA_BATCH,True,distributional,supplementary,A2_T12,264
+umap_centroid_disp_RNASEQ_SOURCE,-1,True,C,Global,False,direct,umap_centroid_disp_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,265
+exp_min,0,False,E,Other,False,direct,exp_min,True,unassigned,supplementary,A2_T12,266
+tsne_centroid_disp_RNASEQ_SOURCE,-1,True,C,Global,False,direct,tsne_centroid_disp_RNASEQ_SOURCE,True,structural,supplementary,A2_T12,267
+pv_lobo3_f1_macro_perm_std,0,False,N,Other,False,direct,pv_lobo3_f1_macro_perm_std,True,N,supplementary,A2_T12,268
+pv_lobo2_f1_macro_perm_std,0,False,N,Other,False,direct,pv_lobo2_f1_macro_perm_std,True,N,supplementary,A2_T12,269
+wm_subsampled,0,False,I,Other,False,boolean_flag,wm_subsampled,True,structural,supplementary,A2_T12,270
+n_samples_noNA,0,False,K,Other,False,direct,n_samples_noNA,True,unassigned,supplementary,A2_T12,271
+pv_lobo2_n_folds,0,False,N,Other,False,direct,pv_lobo2_n_folds,True,N,supplementary,A2_T12,272
+xb_n_pairs_diff_bio,0,False,M,Other,False,direct,xb_n_pairs_diff_bio,True,M,supplementary,A2_T12,273
+xb_n_pairs_same_bio,0,False,M,Other,False,direct,xb_n_pairs_same_bio,True,M,supplementary,A2_T12,274
+n_samples,0,False,E,Other,False,direct,n_samples,True,unassigned,supplementary,A2_T12,275
+xb_n_samples_used,0,False,M,Other,False,direct,xb_n_samples_used,True,M,supplementary,A2_T12,276
+pv_lobo3_n_folds_multiclass,0,False,N,Other,False,direct,pv_lobo3_n_folds_multiclass,True,N,supplementary,A2_T12,277
+pv_lobo2_n_folds_multiclass,0,False,N,Other,False,direct,pv_lobo2_n_folds_multiclass,True,N,supplementary,A2_T12,278
+n_batches,0,False,E,Other,False,direct,n_batches,True,unassigned,supplementary,A2_T12,279
+pv_lobo3_n_folds,0,False,N,Other,False,direct,pv_lobo3_n_folds,True,N,supplementary,A2_T12,280
+mk_n_cohorts_skipped_small,0,False,L,Other,False,direct,mk_n_cohorts_skipped_small,True,L,supplementary,A2_T12,281
+n_cohorts,0,False,E,Other,False,direct,n_cohorts,True,unassigned,supplementary,A2_T12,282
+mk_n_cohorts_used,0,False,L,Other,False,direct,mk_n_cohorts_used,True,L,supplementary,A2_T12,283
+n_diagnosis_groups,0,False,E,Other,False,direct,n_diagnosis_groups,True,unassigned,supplementary,A2_T12,284
+n_samples_per_batch_max,0,False,E,Other,False,direct,n_samples_per_batch_max,True,unassigned,supplementary,A2_T12,285
+mk_rho_marker_minus_PGK1_only_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_marker_minus_PGK1_only_narrow_set,True,L,supplementary,A2_T12,286
+mk_rho_marker_minus_hk,0,False,L,Distributional similarity,False,direct,mk_rho_marker_minus_hk,True,L,supplementary,A2_T12,287
+mk_rho_marker_minus_hk_narrow_set,0,False,L,Distributional similarity,False,direct,mk_rho_marker_minus_hk_narrow_set,True,L,supplementary,A2_T12,288
+wm_ratio_bio_batch,1,True,I,Global,False,direct,wm_ratio_bio_batch,True,structural,supplementary,A2_T12,289
+wm_TUMOR_NORMAL,1,True,I,Global,False,direct,wm_TUMOR_NORMAL,True,structural,supplementary,A2_T12,290
+wm_Major_group,1,True,I,Global,False,direct,wm_Major_group,True,structural,supplementary,A2_T12,291
+wm_mean_bio,1,True,I,Global,False,direct,wm_mean_bio,True,structural,supplementary,A2_T12,292
+pv_lobo3_mcc_mean,0,False,N,Other,False,direct,pv_lobo3_mcc_mean,True,N,supplementary,A2_T12,293
+pv_lobo2_mcc_mean,0,False,N,Other,False,direct,pv_lobo2_mcc_mean,True,N,supplementary,A2_T12,294
+pv_lobo3_auc_macro_mean,0,False,N,Other,False,direct,pv_lobo3_auc_macro_mean,True,N,supplementary,A2_T12,295
+pv_lobo2_auc_macro_mean,0,False,N,Other,False,direct,pv_lobo2_auc_macro_mean,True,N,supplementary,A2_T12,296
+xb_rank_agree_raw,0,False,M,Distributional similarity,False,derived_baseline,xb_rank_agree vs 01_raw baseline,True,M,supplementary,A2_T12,297
+xb_rank_disagree_diffbio_raw,0,False,M,Distributional similarity,False,derived_baseline,xb_rank_disagree_diffbio vs 01_raw baseline,True,M,supplementary,A2_T12,298
+pv_lobo3_auc_macro_mean_raw,0,False,N,Other,False,derived_baseline,pv_lobo3_auc_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,299
+pv_lobo2_auc_macro_mean_raw,0,False,N,Other,False,derived_baseline,pv_lobo2_auc_macro_mean vs 01_raw baseline,True,N,supplementary,A2_T12,300
+dist_ratio_Diagnosis_cell_type_unified,-1,True,H,Global,False,direct,dist_ratio_Diagnosis_cell_type_unified,True,structural,supplementary,A2_T12,301
+dist_ratio_Major_group,-1,True,H,Global,False,direct,dist_ratio_Major_group,True,structural,supplementary,A2_T12,302
+PCReg_Diagnosis_cell_type_unified,-1,True,A,Global,False,rename,pcr_Diagnosis_cell_type_unified,True,global,supplementary,A2_T12,303
+PCReg_Major_group,-1,True,A,Global,False,rename,pcr_Major_group,True,global,supplementary,A2_T12,304
+dist_ratio_TUMOR_NORMAL,-1,True,H,Global,False,direct,dist_ratio_TUMOR_NORMAL,True,structural,supplementary,A2_T12,305
+PCReg_TUMOR_NORMAL,-1,True,A,Global,False,rename,pcr_TUMOR_NORMAL,True,global,supplementary,A2_T12,306
+n_samples_per_batch_sd,0,False,E,Other,False,direct,n_samples_per_batch_sd,True,unassigned,supplementary,A2_T12,307
+cms_fraction_mixed_RNASEQ_SOURCE,1,True,B,Global,False,direct,cms_fraction_mixed_RNASEQ_SOURCE,True,local,supplementary,A2_T12,308
+cms_mean_RNASEQ_SOURCE,0,False,B,Global,False,direct,cms_mean_RNASEQ_SOURCE,True,local,supplementary,A2_T12,309
+cms_fraction_mixed_COHORT_LABEL,1,True,B,Global,False,direct,cms_fraction_mixed_COHORT_LABEL,True,local,supplementary,A2_T12,310
+cms_mean_COHORT_LABEL,0,False,B,Global,False,direct,cms_mean_COHORT_LABEL,True,local,supplementary,A2_T12,311
+cms_fraction_mixed_RNA_BATCH,1,True,B,Global,False,direct,cms_fraction_mixed_RNA_BATCH,True,local,supplementary,A2_T12,312
+cms_mean_RNA_BATCH,0,False,B,Global,False,direct,cms_mean_RNA_BATCH,True,local,supplementary,A2_T12,313
+pv_lobo3_f1_perm_pvalue,0,False,N,Other,False,direct,pv_lobo3_f1_perm_pvalue,True,N,supplementary,A2_T12,314
+pv_lobo2_f1_perm_pvalue,0,False,N,Other,False,direct,pv_lobo2_f1_perm_pvalue,True,N,supplementary,A2_T12,315
+pv_lobo3_f1_macro_std,0,False,N,Other,False,direct,pv_lobo3_f1_macro_std,True,N,supplementary,A2_T12,316
+pv_lobo2_f1_macro_std,0,False,N,Other,False,direct,pv_lobo2_f1_macro_std,True,N,supplementary,A2_T12,317
+exp_p25,0,False,E,Other,False,direct,exp_p25,True,unassigned,supplementary,A2_T12,318
+exp_median,0,False,E,Other,False,direct,exp_median,True,unassigned,supplementary,A2_T12,319
+exp_p75,0,False,E,Other,False,direct,exp_p75,True,unassigned,supplementary,A2_T12,320
+exp_p01,0,False,E,Other,False,direct,exp_p01,True,unassigned,supplementary,A2_T12,321
+exp_p05,0,False,E,Other,False,direct,exp_p05,True,unassigned,supplementary,A2_T12,322
+pv_lobo3_auc_macro_perm_mean,0,False,N,Other,False,direct,pv_lobo3_auc_macro_perm_mean,True,N,supplementary,A2_T12,323
+pv_lobo2_auc_macro_perm_mean,0,False,N,Other,False,direct,pv_lobo2_auc_macro_perm_mean,True,N,supplementary,A2_T12,324

@@ -1,0 +1,12 @@
+[
+ {
+  "id": "SR-L01",
+  "requested_by": "legend-writer",
+  "paragraph": "P130+1",
+  "claim": "Of the three 112-approach elected sets, 106 (class L), 0 (class M) and 102 (class N) pass the joint L/M gate (mk_rho_mean_markers > 0.75 and xb_margin > 0); the only approach elected by at least two of L, M, N is I_rare_batches_removed__softimpute__01_raw__post1 (L and N).",
+  "needs": "Counts already computed by the legend-writer from A2_T15 (elected_L, elected_M, elected_N) joined to A2_T1 (gate filter); add them as rows to 01_numbers.json (or a small table) so audit_numbers.py can trace them. No new test.",
+  "destination": "small -> in legend of [FIG:fig_election]D",
+  "status": "resolved",
+  "resolution": "106 / 0 / 102 of 112 pass the gate; the one approach elected by 2+ of L, M, N is I_rare_batches_removed__softimpute__01_raw__post1 (01_numbers stat_requests SR-L01)"
+ }
+]

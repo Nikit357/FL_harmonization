@@ -119,6 +119,7 @@ Hierarchy: **strategy > method > post-removal > imputation**. Full details in `p
 | `harmonization-metrics/correlation_prediction_metrics_analysis_narrow_set.ipynb` | Same analysis on the 56-gene narrow panel (`mk_*_narrow_set`), plus §3b comparing the two housekeeping controls for noise |
 | `harmonization-metrics/marker_gene_deep_analysis.ipynb` | Marker panel deep-dive: gene-level correlation structure, coverage/QC/saturation gates, minimal orthogonal panel selection |
 | `harmonization-metrics-calculation/gene_panel_analysis/` | Sub-pipeline for the above: gene × gene correlation + per-gene QC (1,204 jobs); own README |
+| `article_2_extended_comparison/` | Article 2 (F1000Research) external material: `A2_*` tables, figures, supplementary workbooks, analysis code. A one-way sanitized copy of the private working folder — never edit it here; `WITHHELD.md` lists what it omits |
 | `harmonization-metrics/harmonization_metrics_analysis.ipynb` | Loads `metrics_comprehensive.csv`, visualizes rankings |
 | `shambhala_adoption/Shambhala_containerized/run_shambhala.py` | Shambhala CLI entry point (pure Python, no R/rpy2) |
 | `shambhala_adoption/Shambhala_containerized/harmonization_scripts/` | Cross-product benchmark: 18 P/Q × 3 imp = 54 jobs |

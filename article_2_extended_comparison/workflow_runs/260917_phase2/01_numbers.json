@@ -1,0 +1,400 @@
+{
+  "analysis_set": {
+    "n_approaches": {
+      "value": 2234,
+      "table": "A2_T1",
+      "column": "run_id",
+      "filter": "Supplementary File 3, pct_samples_allNA < 5",
+      "quoted_in": "Methods; Results \u00a76"
+    },
+    "n_methods": {
+      "value": 31,
+      "table": "A2_T1",
+      "column": "method",
+      "filter": "same",
+      "quoted_in": "Methods"
+    },
+    "n_strategies": {
+      "value": 14,
+      "table": "A2_T1",
+      "column": "strat",
+      "filter": "same",
+      "quoted_in": "Methods"
+    },
+    "n_imputations": {
+      "value": 3,
+      "table": "A2_T1",
+      "column": "imp",
+      "filter": "same",
+      "quoted_in": "Methods"
+    },
+    "n_shambhala_rows": {
+      "value": 84,
+      "table": "A2_T1",
+      "column": "method == 20_shambhala",
+      "filter": "after the shambhala_P0std_Q0std rename",
+      "quoted_in": "Methods"
+    },
+    "identity_columns_identical": {
+      "value": "78 of 79",
+      "table": "A2_T0",
+      "column": "identical",
+      "filter": "84 matched (strat, imp, post_rm) keys",
+      "quoted_in": "Methods; Results \u00a76"
+    },
+    "identity_only_difference": {
+      "value": [
+        "compute_time_s"
+      ],
+      "table": "A2_T0",
+      "column": "column",
+      "filter": "identical == False",
+      "quoted_in": "Methods"
+    }
+  },
+  "gates": {
+    "joint_L_M_gate": {
+      "value": 1686,
+      "table": "A2_T1",
+      "column": "mk_rho_mean_markers, xb_margin",
+      "filter": "rho > 0.75 AND margin > 0",
+      "quoted_in": "Results \u00a76"
+    },
+    "rho_gate": {
+      "value": 0.75,
+      "table": "\u2014",
+      "column": "mk_rho_mean_markers",
+      "filter": "Daniil's threshold, necessary not sufficient",
+      "quoted_in": "Methods; Results \u00a76"
+    }
+  },
+  "shambhala": {
+    "median_rho": {
+      "value": 0.84,
+      "table": "A2_T1",
+      "column": "mk_rho_mean_markers",
+      "filter": "method == 20_shambhala",
+      "quoted_in": "Results \u00a76"
+    },
+    "median_margin": {
+      "value": 0.0048,
+      "table": "A2_T1",
+      "column": "xb_margin",
+      "filter": "method == 20_shambhala",
+      "quoted_in": "Results \u00a76"
+    },
+    "median_lobo3_f1": {
+      "value": 0.745,
+      "table": "A2_T1",
+      "column": "pv_lobo3_f1_macro_mean",
+      "filter": "method == 20_shambhala",
+      "quoted_in": "Results \u00a76"
+    }
+  },
+  "agreement_specific": {
+    "n": {
+      "value": 61,
+      "table": "A2_T6",
+      "column": "run_id",
+      "filter": "xb_rank_agree_delta > 0 AND xb_rank_disagree_diffbio_delta < 0",
+      "quoted_in": "Results \u00a76"
+    },
+    "pct_of_non_raw": {
+      "value": 2.8,
+      "table": "A2_T6",
+      "column": "\u2014",
+      "filter": "denominator = 2150 non-raw approaches",
+      "quoted_in": "Results \u00a76"
+    },
+    "top_margin_delta": {
+      "value": 0.457,
+      "table": "A2_T6",
+      "column": "xb_margin_delta",
+      "filter": "maximum",
+      "quoted_in": "Results \u00a76"
+    },
+    "top_approaches_tied": {
+      "value": [
+        "K_ffpe_only/knn/08_inmoose_combatseq/post0",
+        "K_ffpe_only/knn/06_combat_seq/post0"
+      ],
+      "table": "A2_T6",
+      "column": "strat, imp, method, post_rm",
+      "filter": "xb_margin_delta == max",
+      "quoted_in": "Results \u00a76"
+    }
+  },
+  "prediction": {
+    "leading_non_degenerate": {
+      "value": {
+        "run_id": "S0_no_removal__softimpute__29_combat_ref__post0",
+        "full_mean_f1": 0.946,
+        "worst_multiclass_fold": 0.462,
+        "n_multiclass_folds": 11,
+        "auc_2class": 0.932,
+        "rho": 0.88
+      },
+      "table": "A2_T1",
+      "column": "pv_lobo3_f1_macro_mean",
+      "filter": "strat not in (A_confirmed_bad, B_extended_bad) AND n_mc >= 5",
+      "quoted_in": "Results \u00a77"
+    },
+    "n_eligible_non_degenerate": {
+      "value": 1527,
+      "table": "A2_T1",
+      "column": "\u2014",
+      "filter": "same filter",
+      "quoted_in": "Results \u00a77"
+    },
+    "n_zero_multiclass_folds": {
+      "value": 59,
+      "table": "A2_T1",
+      "column": "n_mc",
+      "filter": "n_mc == 0",
+      "quoted_in": "Results \u00a77; caveat 1"
+    },
+    "spearman_full_vs_multiclass": {
+      "value": 0.81,
+      "table": "A2_T1",
+      "column": "pv_lobo3_f1_macro_mean, f1_mc_mean",
+      "filter": "both present, n = 2174",
+      "quoted_in": "Results \u00a77"
+    },
+    "spearman_min3_multiclass_folds": {
+      "value": 0.815,
+      "table": "A2_T1",
+      "column": "same",
+      "filter": "n_mc >= 3, n = 2058",
+      "quoted_in": "Results \u00a77"
+    }
+  },
+  "fold_composition": {
+    "n_3class_folds": {
+      "value": 32746,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "target == 3class, run_id in the 2,234 analysis set",
+      "quoted_in": "Results \u00a77"
+    },
+    "n_singleclass_folds": {
+      "value": 15436,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "n_classes == 1",
+      "quoted_in": "Results \u00a77"
+    },
+    "pct_singleclass": {
+      "value": 47.1,
+      "table": "A2_T8",
+      "column": "n_folds",
+      "filter": "n_classes == 1",
+      "quoted_in": "Results \u00a77"
+    },
+    "median_f1_by_class_count": {
+      "value": {
+        "1": 0.903,
+        "2": 0.629,
+        "3": 0.804
+      },
+      "table": "A2_T8",
+      "column": "median_f1",
+      "filter": "per n_classes, median over batches",
+      "quoted_in": "Results \u00a77"
+    },
+    "n_batches": {
+      "value": 25,
+      "table": "A2_T8",
+      "column": "batch",
+      "filter": "\u2014",
+      "quoted_in": "Methods"
+    }
+  },
+  "harshness": {
+    "tier_sizes": {
+      "value": {
+        "medium": 1042,
+        "high": 848,
+        "low": 344
+      },
+      "table": "A2_T1",
+      "column": "harshness_level",
+      "filter": "HARSHNESS_LEVEL_MAP, method level",
+      "quoted_in": "Results \u00a75b"
+    },
+    "kruskal": {
+      "value": {
+        "mk_rho_mean_markers": {
+          "H": 340.1,
+          "p": 1.4323253805703997e-74,
+          "low": 0.998,
+          "medium": 0.88,
+          "high": 0.922
+        },
+        "mk_rho_marker_minus_hk": {
+          "H": 139.3,
+          "p": 5.546808729547732e-31,
+          "low": -0.0,
+          "medium": 0.009,
+          "high": 0.031
+        },
+        "xb_rank_agree": {
+          "H": 287.1,
+          "p": 4.4703247633956234e-63,
+          "low": 0.691,
+          "medium": 0.701,
+          "high": 0.507
+        },
+        "xb_margin": {
+          "H": 132.9,
+          "p": 1.4006458651335526e-29,
+          "low": 0.054,
+          "medium": 0.045,
+          "high": 0.03
+        },
+        "pv_lobo3_f1_macro_mean": {
+          "H": 51.6,
+          "p": 6.132188937881346e-12,
+          "low": 0.631,
+          "medium": 0.712,
+          "high": 0.715
+        },
+        "f1_mc_mean": {
+          "H": 11.8,
+          "p": 0.0027580633912576,
+          "low": 0.657,
+          "medium": 0.678,
+          "high": 0.678
+        },
+        "pv_lobo2_auc_macro_mean": {
+          "H": 1.5,
+          "p": 0.4769378448192957,
+          "low": 0.901,
+          "medium": 0.904,
+          "high": 0.904
+        }
+      },
+      "table": "A2_T7",
+      "column": "kruskal_H, kruskal_p, median_*",
+      "filter": "three method-level harshness tiers",
+      "quoted_in": "Results \u00a75b"
+    }
+  },
+  "per_batch_example": {
+    "run_id": "S0_no_removal__softimpute__29_combat_ref__post0",
+    "n_folds": {
+      "value": 24,
+      "table": "A2_T5",
+      "column": "batch",
+      "filter": "target == 3class",
+      "quoted_in": "Results \u00a77"
+    },
+    "n_singleclass": {
+      "value": 13,
+      "table": "A2_T5",
+      "column": "n_classes",
+      "filter": "n_classes == 1",
+      "quoted_in": "Results \u00a77"
+    },
+    "hardest_multiclass_folds": {
+      "value": [
+        {
+          "batch": "GPL96_FFPE_Unknown",
+          "n": 84,
+          "n_classes": 2,
+          "f1_macro": 0.4615,
+          "auc": 0.5428
+        },
+        {
+          "batch": "RNASeq_FFPE_PolyA",
+          "n": 35,
+          "n_classes": 2,
+          "f1_macro": 0.6983,
+          "auc": 0.8736
+        },
+        {
+          "batch": "RNASeq_FF_PolyA",
+          "n": 1039,
+          "n_classes": 3,
+          "f1_macro": 0.7176,
+          "auc": 0.9722
+        }
+      ],
+      "table": "A2_T5",
+      "column": "f1_macro",
+      "filter": "n_classes >= 2, three smallest",
+      "quoted_in": "Results \u00a77"
+    }
+  },
+  "discrepancies": [
+    {
+      "claim": "Across the 53,737 3-class folds, 25,426 (47.3%) contain a single class",
+      "source": "plan \u00a71.5d",
+      "recomputed": "32,746 3-class folds, 15,436 single-class (47.1%)",
+      "filter_source": "every run_id in prediction_folds_long.csv (3,738 run_ids, 50 method names, all 18 Shambhala P/Q variants)",
+      "filter_recomputed": "run_id restricted to the 2,234-approach analysis set",
+      "cause": "the published figure counted folds for approaches the article never analyses; 21,543 of the 53,737 belong to the 17 non-canonical Shambhala variants alone",
+      "direction": "the conclusion is unchanged -- single-class folds are still about half the population -- only the counts move"
+    },
+    {
+      "claim": "single-class folds have median macro F1 0.952; two-class 0.648; three-class 0.830",
+      "source": "plan \u00a71.5d",
+      "recomputed": "0.903 / 0.629 / 0.804 on the analysis set",
+      "filter_source": "as above",
+      "filter_recomputed": "as above",
+      "cause": "same population difference",
+      "direction": "the ordering is unchanged: two-class folds remain the hardest and single-class folds the easiest"
+    },
+    {
+      "claim": "Spearman between the full metric and the multiclass-only mean is 0.812 over the 1,981 approaches with at least three multiclass folds",
+      "source": "plan \u00a71.5d",
+      "recomputed": "0.815 over 2,058 such approaches; 0.810 over all 2,174 carrying both",
+      "filter_source": "fold aggregates computed over the unrestricted fold table",
+      "filter_recomputed": "fold aggregates over the analysis set only",
+      "cause": "same population difference; the approach count rises because restricting the fold table does not remove approaches, only foreign run_ids",
+      "direction": "unchanged conclusion: the two cuts agree closely and neither reverses the other"
+    },
+    {
+      "claim": "Per-batch detail for S0_no_removal/softimpute/29_combat_ref/post0: 10 of the 24 folds are single-class; the hard folds are GPL96_FFPE_Unknown and RNASeq_FF_PolyA",
+      "source": "plan \u00a71.5d",
+      "recomputed": "13 of 24 folds are single-class; the three hardest multiclass folds are GPL96_FFPE_Unknown (F1 0.462), RNASeq_FFPE_PolyA (0.698) and RNASeq_FF_PolyA (0.718)",
+      "filter_source": "unknown; not reproducible from prediction_folds_long.csv",
+      "filter_recomputed": "A2_T5, target == 3class",
+      "cause": "the two quoted folds and their values reproduce exactly; the single-class count and the identity of the second-hardest fold do not",
+      "direction": "the approach's characterisation is unchanged"
+    },
+    {
+      "claim": "multiclass-only F1 across harshness tiers: H = 11.2, p = 0.0037",
+      "source": "plan \u00a71.5e",
+      "recomputed": "H = 11.8, p = 0.0028",
+      "filter_source": "f1_mc_mean computed over the unrestricted fold table",
+      "filter_recomputed": "f1_mc_mean over the analysis set",
+      "cause": "same population difference; every other row of the tier table reproduces exactly, including the 2-class AUC result (H = 1.5, p = 0.48, not significant)",
+      "direction": "unchanged"
+    },
+    {
+      "claim": "Top by raw-subtracted margin: K_ffpe_only / knn / 06_combat_seq / post0",
+      "source": "plan \u00a71.5c",
+      "recomputed": "06_combat_seq and 08_inmoose_combatseq are an exact tie at that (strat, imp, post_rm): margin 0.439161, gain +0.457154 for both",
+      "filter_source": "A2_T6 sorted by xb_margin_delta",
+      "filter_recomputed": "same",
+      "cause": "two implementations of the same algorithm return identical Group M values; the sort order between them is arbitrary",
+      "direction": "quote both, or say that the two implementations agree exactly -- which is itself a positive control worth a sentence"
+    },
+    {
+      "claim": "Cells not traceable to the generator: 8 in the main notebook, 43 in the narrow-set notebook, 29 in the deep-analysis notebook",
+      "source": "plan \u00a74.2e",
+      "recomputed": "12 / 50 / 53 hand-written, plus 6 / 12 / 52 generator cells edited in place",
+      "filter_source": "unknown",
+      "filter_recomputed": "tools/extract_hand_written_cells.py, generator run at the same --date-tag, normalized comparison, NEAR threshold 0.90",
+      "cause": "the earlier count did not separate edited generator cells from untouched ones; an edited cell still looks like the generator's, so regeneration reverts it without saying so",
+      "direction": "materially larger: 185 cells must survive regeneration, not 80"
+    }
+  ],
+  "provenance": {
+    "snapshot": "metrics_comprehensive_260905.csv",
+    "supplementary_file_3": "figures_for_article/supplementary_260824/Supplementary File 3.csv.gz",
+    "folds": "harmonization-metrics/metric_tables/prediction_folds_long.csv",
+    "produced_by": "analysis/article2_generalizability.py --date-tag 260905",
+    "note": "Every value here is read back out of tables/A2_T*.csv. Nothing is retyped from the source document."
+  }
+}

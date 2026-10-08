@@ -67,6 +67,9 @@ harmonization-metrics/            analysis and figures
   metric_tables/                  the published per-run metric tables
 
 figures_for_article/              manuscript, figures, supplementary tables
+article_2_extended_comparison/    Article 2 (F1000Research): metric-class cross-election —
+                                  tables, figures, supplementary workbooks, analysis code;
+                                  WITHHELD.md lists what the public copy omits
 shambhala_adoption/               pure-Python Shambhala port (excluded from Article 1)
 SOM_implementation/               oposSOM pipeline on FSQN-normalized data
 slides_for_project/               progress decks

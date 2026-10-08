@@ -1,0 +1,1485 @@
+[
+ {
+  "id": "P0",
+  "style": "Heading1",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "334 harmonization quality metrics analysis of 2,234 approaches in a multi-platform B-cell lymphoma bulk transcriptomic benchmark: ComBat is superior by cross-batch prediction quality"
+ },
+ {
+  "id": "P1",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Daniil Nikitin1,2*, and Arsen Arakelyan1"
+ },
+ {
+  "id": "P2",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "1Institute of Molecular Biology, National Academy of Science of the Republic of Armenia, Yerevan, 0014, Armenia"
+ },
+ {
+  "id": "P3",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "2[affiliation 2: as in the published article] "
+ },
+ {
+  "id": "P4",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "*Corresponding author. Email: danya.nikitin.orel@gmail.com"
+ },
+ {
+  "id": "P5",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Keywords: batch effect, transcriptomic harmonization, benchmarking metrics, cross-validation bias, leave-one-batch-out prediction, follicular lymphoma, gene expression"
+ },
+ {
+  "id": "P6",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Abstract"
+ },
+ {
+  "id": "P7",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Background. Cross-platform transcriptomic harmonization benchmarks rely on individual success metric each: correlation with a reference profile, classifier accuracy, or a composite imported from single-cell integration. We found no published study that computes multiple orthogonal metric classes over one set of harmonization approaches and measures overlapping between the best approaches by these metrics."
+ },
+ {
+  "id": "P8",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Methods. We used the 2,234 approaches of the recent real-world benchmark: 31 harmonization methods, 14 batch-removal strategies, 3 imputations and 2 post-removal settings on 7,174 B-cell lymphoma transcriptomes. We assigned its 87 polarity-adjusted metrics to five classes (global, local, distributional, structural, and the composite group which is a mean of all the previous metrics) and added three biology-facing classes: within-cohort marker correlation (L), cross-batch rank agreement of a marker panel (M), and leave-one-batch-out (LOBO) prediction of diffuse large B-cell lymphoma, follicular lymphoma and normal B cells (N). Each class resulted in top 112 approaches (5%) by its own rank-percentile composite, and we measured overlap by the Jaccard index. "
+ },
+ {
+  "id": "P9",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C2",
+   "C3",
+   "C4"
+  ],
+  "n_citations": 0,
+  "text": "Results. Harmonization methods of high harshness such as quantile normalization matched different batches to the same shape of distribution but were inferior by local and global metrics. Local and composite metrics resulted in the largest overlap of best approaches (0.333, 56 shared). Classes L and M, M and N - shared no approach, whereas L and N shared one approach. The 15 approaches selected by the published clustermap shared none of the 112 that class N elected. Class N resulted in the ComBat family in 84 of its 112 places and class M elected two methods whose median marker correlation was -0.0007 and -0.0082. Of the 32,746 three-class LOBO folds, 15,436 (47.1%) carried one class and reached a median macro F1 of 0.903, against 0.7334 on the rest."
+ },
+ {
+  "id": "P10",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Conclusions. Best transcriptomic harmonization approach is highly contingent on the quality metrics used. We provide a six-step recipe for metric classes, their thresholds and the cross-batch tests for the robust selection of best approaches."
+ },
+ {
+  "id": "P11",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Introduction"
+ },
+ {
+  "id": "P12",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 3,
+  "text": "Technical variation between sequencing platforms, RNA extraction protocols and tissue preservation methods separates samples of the same biological class, and it distorts inference whenever it is correlated with the outcome under study ⟦CIT:(Leek et al. 2010)⟧ . Algorithms that remove this variation from bulk expression matrices have been initially developed microarray integration ⟦CIT:(Lazar et al. 2013)⟧, whereas the cross-platform harmonization is more challenging, particularly, between microarrays and next-generation sequencing (NGS) ⟦CIT:(Borisov and Buzdin 2022)⟧ ."
+ },
+ {
+  "id": "P13",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 7,
+  "text": "Each benchmark of these algorithms declares a different criterion of success. An early 2021 empirical comparison of cross-platform normalization scored methods on inter-platform concordance of gene lists supported by ROC-like curves and bootstrap ⟦CIT:(Rudy and Valafar 2011)⟧. A later comparison scored the methods by the accuracy of a downstream subtype classifier ⟦CIT:(Thompson et al. 2016)⟧. The single-cell integration literature supplied a third criterion, a trade-off between batch effect removal and biology conservation ⟦CIT:(Luecken et al. 2021)⟧. A benchmark of batch-effect correction methods for single-cell RNA sequencing recorded the same trade-off, reporting also that quality metrics can disagree with visual inspection of the embeddings ⟦CIT:(Tran et al. 2020)⟧. Two of the metrics that this literature contributed, the k-nearest-neighbour batch-effect test ⟦CIT:(Büttner et al. 2018)⟧  and the local inverse Simpson’s index ⟦CIT:(Korsunsky et al. 2019)⟧, are now applied to bulk data, albeit there is still no standard of harmonization quality measurement ⟦CIT:(Borisov and Buzdin 2022)⟧."
+ },
+ {
+  "id": "P14",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C6"
+  ],
+  "n_citations": 11,
+  "text": "The harmonization quality criteria are especially important in datasets where the biological contrast is small compared to the batch level technical differences. In the case of germinal center (GC) B-cell lymphomas, expression profiling splits diffuse large B-cell lymphoma (DLBCL) into germinal-centre and activated B-cell types ⟦CIT:(Alizadeh et al. 2000)⟧ predicting survival after chemotherapy ⟦CIT:(Rosenwald et al. 2002)⟧. Survival in follicular lymphoma (FL) is predicted by subtle differences in immune-cell signatures of the microenvironment ⟦CIT:(Dave et al. 2004)⟧, and a 23-gene score separates FL patients into two outcome groups under immunochemotherapy ⟦CIT:(Huet et al. 2018)⟧. These small-scale transcriptomic differences are challenging to survive transfer between materials and platforms, explaining the cell-of-origin assignment reinvention for formalin-fixed paraffin-embedded (FFPE) tissue ⟦CIT:(Scott et al. 2014)⟧ and multiple cohort sources for genetic subtypes of DLBCL ⟦CIT:(Chapuy et al. 2018; Schmitz et al. 2018)⟧. The same transfer problem governs expression signatures outside lymphoma, for example microsatellite instability status ⟦CIT:(Sorokin et al. 2021)⟧, therapy prescription in colorectal ⟦CIT:(Sorokin et al. 2022)⟧ and kidney cancer ⟦CIT:(Gudkov et al. 2022)⟧ and DNA repair pathway activation in thyroid tumors ⟦CIT:(Vladimirova et al. 2021)⟧. In a recent T-cell lymphoma xenograft study, principal-component analysis (PCA) showed only a partial overlap between primary tumors and their matched xenografts, which the authors attributed to tumor content and host cells, and that variation was removed by surrogate variable analysis (SVA) ⟦CIT:(Fiore et al. 2025)⟧. "
+ },
+ {
+  "id": "P15",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 6,
+  "text": "In case of the real-world batch correction scenario, the analysis is complicated by confounding between the batch variable and with the class labels ⟦CIT:(Soneson et al. 2014)⟧ which drastically reduces predictors generalizability ⟦CIT:(Parker and Leek 2012)⟧. Moreover, cross-validation could be biased under these scenarios ⟦CIT:(Varma and Simon 2006)⟧ which is amplified by selection bias among thousands of genes in transcriptomic datasets containing only tens to hundreds of samples ⟦CIT:(Ambroise and McLachlan 2002)⟧. These issues lead to prediction failures of models deployed in clinical practice ⟦CIT:(Saeb et al. 2017; Whalen et al. 2021)⟧, as highlighted as ‘reproducibility crisis’ in the machine learning science in general ⟦CIT:(Kapoor and Narayanan 2023)⟧ ."
+ },
+ {
+  "id": "P16",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C7",
+   "C8",
+   "C9",
+   "C10"
+  ],
+  "n_citations": 1,
+  "text": "To address these current issues in transcriptomic cross-platform harmonization, we deeply analyzed the 2,234 harmonization approaches of a recently published multi-platform B-cell lymphoma benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧, which calculate 344 quality metrics across 31 methods, 14 prior batch-removal strategies, 3 imputation schemes and 2 post-removal settings. For each metric class among local, global, distributional, composite, biomarker genes correlation before and after harmonization (class L), cross-batch agreement of biomarker genes (class M) and leave-one-batch-out (LOBO) prediction metrics (class N), we extensively compared harmonization methods and batch removal strategies, selecting 5% best approaches by a given metric class. Local and composite metrics resulted in the largest overlap (0.333, 56 shared approaches). Classes L and M, M and N - shared no approach, whereas L and N shared one approach. The 15 approaches selected by the published clustermap shared none of the 112 that class N elected. Class N resulted in the ComBat family in 84 of its 112 places and class M elected two methods whose median marker correlation was -0.0007 and -0.0082. Of the 32,746 three-class LOBO folds, 15,436 (47.1%) carried one class and reached a median macro F1 of 0.903, against 0.7334 on the rest."
+ },
+ {
+  "id": "P17",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Finally, we propose a novel six step framework for harmonization quality metrics usage to select best harmonization approaches in other bulk trascriptomic datasets, including the non-B cell lymphoma ones. "
+ },
+ {
+  "id": "P18",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Materials and methods"
+ },
+ {
+  "id": "P19",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Dataset, harmonization approaches and the analysis set"
+ },
+ {
+  "id": "P20",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 8,
+  "text": "The GC B-cell lymphomas dataset, the 14 prior batch-removal strategies, the 3 imputation schemes, the harmonization method registry and the optional post-removal step are specified in the benchmarking study previously published by our team ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧: 7,174 bulk transcriptomes from 88 germinal-centre B-cell lymphoma cohorts across RNA sequencing and Affymetrix, Illumina and Agilent microarrays. We re-used that output and computed no new harmonization. The most important algorithms were ComBat with its reference (Combat-ref) and count-based (Combat-seq) variants ⟦CIT:(Johnson et al. 2007; Zhang et al. 2020)⟧, surrogate variable analysis ⟦CIT:(Leek and Storey 2007)⟧, mutual nearest neighbors ⟦CIT:(Haghverdi et al. 2018)⟧, feature-specific quantile normalization ⟦CIT:(Franks et al. 2018)⟧, cross-platform normalization by XPN ⟦CIT:(Shabalin et al. 2008)⟧  and Shambhala-2 ⟦CIT:(Borisov et al. 2019; Borisov et al. 2022)⟧; the full registry with the parameters used is given in the source benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧."
+ },
+ {
+  "id": "P21",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "A harmonization approach is defined as one combination of batch-removal strategy, imputation, harmonization method and post-removal. We defined the approaches set by the condition that fewer than 5% of samples carry no defined expression value for all genes (pct_samples_allNA < 5). This set contained 2,234 approaches over 31 methods, 14 strategies, 3 imputations and both post-removal settings. Two methods, 34_arsyn and 38_harman, had a minimum of 74.23% of samples with no defined expression across all 84 of their approaches and were not included into the final approach set. Shambhala-2 was implemented using its standard P0 and Q0 calibration datasets and was named as 20_shambhala in the benchmark."
+ },
+ {
+  "id": "P22",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Metric classes and the best approaches selection procedure"
+ },
+ {
+  "id": "P23",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C14"
+  ],
+  "n_citations": 1,
+  "text": "We assigned each of the 87 polarity-adjusted scoring metrics of the source benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧  to one of four classes: global, covering principal component regression (PCReg), the dispersion separability criterion (DSC), per-component R2 and the variance explained by each principal component; local, covering the k-nearest-neighbour batch-effect test (kBET), the integration and cell-type local inverse Simpson’s indices (iLISI and cLISI), average silhouette width and graph connectivity; distributional, covering the Kolmogorov-Smirnov (KS) statistics and per-gene batch quantities; and structural, covering tSNE and UMAP embedding statistics, intra- and inter-group distances, the distance ratio and the Watermelon score (Supplementary File X). A fifth class, the composite, is the equally weighted mean of those four classes."
+ },
+ {
+  "id": "P24",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C15"
+  ],
+  "n_citations": 2,
+  "text": "Within a class we converted every metric to a rank percentile over the 2,234 approaches, oriented so that a higher percentile is better according to the polarity assignments from the benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧, and averaged the percentiles into one class score per approach (Supplementary File X). For each class we took top 5% approaches as the best ones (112 approaches in total). For comparison, we treated the 15 approaches selected by the published clustermap ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧. Overlap between each two elected sets was calculated as Jaccard index."
+ },
+ {
+  "id": "P25",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C16",
+   "C17"
+  ],
+  "n_citations": 1,
+  "text": "We also built a separate generalizability and biology preservation index as the mean of six rank percentiles: the full and multiclass-only LOBO three-class macro F1, the two-class LOBO macro area under the curve (AUC), the mean within-cohort marker correlation before and after harmonization, the group M cross-batch agreement of biomarker genes subtracted by the unharmonized baseline, and the worst multiclass fold. We compared batch-removal strategies against each other, imputations against each other and harmonization methods against each other, and the clustermap-selected group from the benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧ was treated as an isolated named group. "
+ },
+ {
+  "id": "P26",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The biology evaluating metric classes L, M and N"
+ },
+ {
+  "id": "P27",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 3,
+  "text": "Since gene signatures were systematically shown to predict biological subtypes better than individual genes ⟦CIT:(Jovčevska et al. 2019; Sorokin et al. 2020)⟧ , for classes L and M, we took 633-gene marker panel assembled from published FL and DLBCL studies and its narrow 56-gene versions as described in the benchmarking study ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧. In the L class, the Spearman correlation of these gene’s expression before and after harmonization, together with the contrast against a housekeeping control ⟦CIT:(Risso et al. 2014)⟧, were calculated. We treated a cohort wise mean marker correlation before and after harmonization above 0.75 as a necessary, albeit not sufficient, condition for good quality harmonization approach. "
+ },
+ {
+  "id": "P28",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 1,
+  "text": "For class M metric, we calculated Spearman rank correlation of the marker panel between pairs of batches, computed separately for pairs of the same biological group and for pairs of different groups ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧. The margin was calculated as the same-biology agreement subtracted by the different-biology agreement. We also analyzed the margin relative to the unharmonized baseline expression matrices at the same strategy and imputation, so we were able to extract approaches that increased same-biology agreement and decreased different-biology agreement against their own baseline."
+ },
+ {
+  "id": "P29",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Class N metrics were designed as leave-one-batch-out prediction to measure a transferability and generatability of the best harmonization approaches selected. For each approach and each of the 24 RNA batches we excluded this batch and fitted logistic regression in principal components on the training batches alone for the three-class target (DLBCL, FL and normal B cells) and for the two-class target (FL against DLBCL). Then we projected the PCA coordinates at the held-out batch and predicted its biology labels using the previously fitted logistic regression, calculating Area Under Curve (AUC) and F1 scores. We also controlled this calculation using 100 biological label permutations and averaged all the N class metrics separately on multiclass batches (having more than one biology class) and on all batches. Multiclass-only batches were selected in order to remove a potential F1/AUC bias in batches that contain single biology group."
+ },
+ {
+  "id": "P30",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Statistics and software"
+ },
+ {
+  "id": "P31",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C20",
+   "C21"
+  ],
+  "n_citations": 0,
+  "text": "Group comparisons across three or more groups used the Kruskal-Wallis H test, and monotone associations used the Spearman correlation coefficient. Per-strategy coefficients were analyzed as their ranges and medians and selected groups were reported by their medians and median absolute deviations (MAD). We ran the analyses under Python 3.11 with pandas 2.3.3, numpy 1.26.4, scipy 1.12.0, scikit-learn 1.3.2, statsmodels 0.14.1, matplotlib 3.10.8 and seaborn 0.13.2. "
+ },
+ {
+  "id": "P32",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "AI usage"
+ },
+ {
+  "id": "P33",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Claude Code with the Claude Opus 5 model was used for literature retrieval, analysis code and language checks, in a plan-then-act mode: the agent wrote an implementation plan, the authors reviewed and corrected it over several cycles, and only then were the code and documents written. The study design, the choice of comparisons and the interpretation are the authors’ own."
+ },
+ {
+  "id": "P34",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Results and discussion"
+ },
+ {
+  "id": "P35",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Metric classes capture non-overlapping components of harmonization quality"
+ },
+ {
+  "id": "P36",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C25"
+  ],
+  "n_citations": 0,
+  "text": "We started the analysis from the two metric families that dominate the published comparisons, the global PCA-based and the local neighborhood and investigated their order in the canonical set of 2,234 approaches. As the global representative we took PCReg in polarity-adjusted form: 1 means that the annotation column explains none of the PCA variation and 0 means that it explains all of it. Plotting PCReg for the biology column against PCReg for the batch column gave a weak negative association across the whole set (Spearman r = -0.159, p = 3.7 x 10-14, Figure 1A and 1B for harmonization methods and batch removal strategies, respectively). The 15 clustermap-selected approaches occupied the upper right of the plot, with a batch median of 0.871 (MAD 0.122) against 0.626 for the remaining approaches and a biology median of 0.820 (MAD 0.063) against 0.802. "
+ },
+ {
+  "id": "P37",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Figure 1. Global variance-based metrics across harmonization methods and batch-removal strategies. (A) Biology PCReg against batch PCReg for all 2,234 approaches, colored by harmonization method, with the 15 clustermap-selected approaches marked by black asterisks. (B) The same plane colored by batch-removal strategy. (C) Percentage of total variance explained by each of the first ten principal components (left) and the share of it explained by the batch column (right), grouped by method and ordered by mean batch PCReg. The clustermap group is shown as one composite row."
+ },
+ {
+  "id": "P38",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C26"
+  ],
+  "n_citations": 0,
+  "text": "Individual methods behaved in divergent and counterintuitive manner. 33_amdbnorm returned a batch PCReg of exactly 1.0000 in each of its 14 completed runs, and 13_fsmvn reached a median of 1.0000 with minimum 0.9967, but they were selected as the clustermap best approaches only for the no-removal strategy (Figure 1A). 05_combat and 29_combat_ref separated biology better than the remaining methods across the A, B, I, J and E1 to E3 strategies (median biology PCReg 0.568 against 0.778, full range 0.357 to 0.823, Figure 1A) without being selected by the clustermap. 14_qsmooth was the last method by PCA batch correction, with a median of 0.208 and MAD 0.098. Among strategies, malignant-only, FFPE-only and no-removal were weakest on biology, with medians of 0.939 (malignant-only), 0.925 (FFPE-only) and 0.883 (no removal), and RNA-seq-only was strongest on batch, with a median of 0.872 (Figure 1B). The malignant-only and FFPE-only strategies contain no normal B cells, so their biology column contains only four classes (DLBLC, FL, Burkitt lymphoma and High grade B-cell lymphoma) potentially explaining their high PCReg by biology."
+ },
+ {
+  "id": "P39",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Decomposing the variance by principal component showed the batch signal transformation by harmonization methods. Five methods (15_fsqn_py, 17_quantile, 18_rank, 20_shambhala and 25_angel) spread the variance slowly across components, starting at 17.3 to 25.3% on the first and 11.3 to 15.3% on the second, eight further methods and the clustermap best group concentrated 26.2 to 43.3% on the first, and the remaining 18 methods placed up to 79.9% on the first component (11_harmony) and 79.5% (27_dwd) (Figure 1C). For the five leading methods by mean batch PCReg (03_limma, 07_pycombat, 13_fsmvn, 28_npn and 33_amdbnorm) the batch-explained R2 stayed below 1% at every one of the first ten components, with a maximum of 0.0024 at the second component of 07_pycombat. Without harmonization and without batch removal the same dataset gives a batch PCReg of 0.226, which means that batch accounts for 77.4% of the PCA variance summed over all components."
+ },
+ {
+  "id": "P40",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The local metrics ordered the approaches in a different manner compared to the global metrics (Figure 2). Taking the local inverse Simpson’s index as a main local metrics, 10_mnn led on batch mixing with a median of 1.72 and MAD 0.209, against 1.16 and MAD 0.103 over all approaches, and 14_qsmooth came last at 1.07 and MAD 0.032 (Figure 2A). Batch and biology mixing increased together with significant correlation (Spearman r = 0.527, p = 7 x 10-160), and the association could be visually confirmed inside every strategy except the Affymetrix-only one, with r between 0.374 and 0.815 at a median of 0.617. The tSNE entropy of the batch labels agreed with that ordering, placing 10_mnn at a median of 0.179 with MAD 0.025 and 14_qsmooth at 0.0178 with MAD 0.0086 (Figure 2C), whereas tSNE centroid dispersion, a global quantity computed in the same tSNE embedding, split the methods into a low group and a high group, with method means between 0.24 for 13_fsmvn and 1.00 for 27_dwd, and placed the clustermap group on the boundary between them (Figure 2D)."
+ },
+ {
+  "id": "P41",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Figure 2. Local neighborhood metrics across harmonization methods and batch-removal strategies. (A) Biology cLISI against batch iLISI for all 2,234 approaches, colored by method. (B) The same plane colored by strategy. (C) Heat map of tSNE entropy of the batch labels by method and strategy. (D) Heat map of tSNE centroid dispersion of the batch labels over the same grid. Clustermap-selected approaches are marked by black asterisks throughout."
+ },
+ {
+  "id": "P42",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The third family, distributional convergence, separated the approaches on another axis compared to global and local metrics. Comparing the mean within-batch KS D statistic over 1,000 randomly drawn genes against the mean between-batch D statistic for the same genes, the clustermap group fell in the lower half of the plane (median 0.445, MAD 0.041), individual methods formed vertical bands, and strategies formed horizontal layers with the RNA-seq-only strategy at the lower left (within-batch median 0.439, MAD 0.015; between-batch median 0.332, MAD 0.052; Figure 3A, 3B, respectively)."
+ },
+ {
+  "id": "P43",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Missing values and normalized gene expression scale separated the methods differently again. 18 of the 31 methods lost no sample to a missing value under any strategy, 9 lost 0.003 to 1.4% of samples, and 4 methods (26_xpn, 20_shambhala, 15_fsqn_py, 17_quantile) lost 30.2 to 38.1% (Figure 3C). At gene level the same 18 lost no genes, 10 lost 0.004 to 2.41% of genes, 15_fsqn_py lost 13.0% and 17_quantile 16.2%, and 21_harmonizr lost all genes under 8 strategies of the 14 (Figure 3D). 06_combat_seq and 08_inmoose_combatseq returned maximum expression values of 2.76 x 108 and 1.46 x 1011, against 99th percentiles of 18.5 and 17.9, 20_shambhala returned a median expression value of 1,359.6 and a maximum of 555,004.7, and 19 of the 31 methods returned minimum below zero, with 13_fsmvn lowest at -40.6 (Figure 3E). Across the 15 clustermap best approaches the median expression varied from 2.63 to 6.70, and the maximum from 12.6 to 28.6 (Figure 3F)."
+ },
+ {
+  "id": "P44",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Figure 3. Distributional convergence, missing values and output scale. (A) Mean between-batch against mean within-batch Kolmogorov-Smirnov D statistic over 1,000 randomly drawn genes, coloured by method. (B) The same plane coloured by strategy. (C) Heat map of the percentage of samples with no missing expression value, by method and strategy. (D) The same heat map for genes. (E) Heat map of the minimum, the 1st, 5th, 25th, 50th, 95th and 99th percentiles, the maximum and the per-gene standard deviation of the output, averaged by method and ordered by mean batch PCReg. (F) The same heat map for the 15 clustermap-selected approaches."
+ },
+ {
+  "id": "P45",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The initial screening of harmonization approaches by global, local and distributional metrics showed that the three families ordered the same set of approaches differently. In the next chapters we deeply investigated these differences in order to derive a unified framework of harmonization approaches benchmarking."
+ },
+ {
+  "id": "P46",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Global variance-based metrics saturate below the threshold of biological preservation"
+ },
+ {
+  "id": "P47",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Twelve of the 31 methods overlapped batches better than biology in PCA space, and five of them (03_limma, 07_pycombat, 13_fsmvn, 28_npn and 33_amdbnorm) reached a mean batch PCReg at least 0.999, with 33_amdbnorm at exactly 1.0000 (Supplementary Figure 1A). At strategy level only two of the 14 strategies, RNA-seq-only and Affymetrix-only, overlapped batches better than biology (Supplementary Figure 1B), which places the choice of method above the choice of strategy at this level of batch effect quality control."
+ },
+ {
+  "id": "P48",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C28",
+   "C29"
+  ],
+  "n_citations": 0,
+  "text": "Looking at the PCReg-saturated approaches, we derived that of the 198 approaches whose batch PCReg exceeded 0.9999, generated by six methods (03_limma, 13_fsmvn, 07_pycombat, 21_harmonizr, 33_amdbnorm and 28_npn), 98.5% returned a kBET acceptance rate under 0.1 (Supplementary Figure 6E) indicating poor local batch separation."
+ },
+ {
+  "id": "P49",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C30",
+   "C31"
+  ],
+  "n_citations": 0,
+  "text": "The remaining global metrics closely reproduced PCReg and added little separation. DSC for the batch column followed PCReg along a monotone sigmoid (Supplementary Figure 3C), and DSC for the platform column followed DSC for the batch column linearly on a logarithmic scale (Supplementary Figure 3D). All 15 clustermap approaches were below the overall median batch DSC of 0.962, although the four MNN approaches (0.781 to 0.957) located at the boundary, about two orders of magnitude higher than the FSQN R approaches (0.0013 to 0.0098). Such behavior can be explained by the definition of DSC as between-group scatter divided by within-group scatter, which is sensitive to outliers. Average silhouette width tracked PCReg in a noisy manner, with the Affymetrix-only and FFPE-only strategies worst (means of 0.165 and 0.078, against a range of -0.066 to -0.019 elsewhere, Supplementary Figure 3I) and 02_median_scaling and 33_amdbnorm best (-0.286 and -0.276, Supplementary Figure 3J)."
+ },
+ {
+  "id": "P50",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C32"
+  ],
+  "n_citations": 1,
+  "text": "The two pipeline factors, namely imputation and post-removal, impacted the harmonization performance to the least extent according to the source benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧, and we quantified them here on the global metric. Softimpute exceeded k-nearest-neighbor (KNN) imputation by between 1.7 and 9.7 percentage points, with a mean of 4.8, across the 11 methods with the lowest batch PCReg, while strict exclusion and k-nearest-neighbour imputation differed by 0.020 in mean batch PCReg over the affected methods (0.370 against 0.390, Supplementary Figure 2A). Post-removal raised the mean batch PCReg for 30 of the 31 methods, with a median shift of 0.030; 22_tmm increased to the highest degree, from 0.70 up to 0.88, and 23_vst from 0.70 to 0.83. 12_scanorama was the single method with PCReg decrease, from 0.49 to 0.48 (Supplementary Figure 2C). "
+ },
+ {
+  "id": "P51",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Batch removal strategies impacted batch PCReg to higher degree compared to imputations and post removals: every method reached at least 0.76 under the RNA-seq-only strategy, 0.72 under Affymetrix-only and 0.46 under Affymetrix-extended (Supplementary Figure 2B). In contrast, 16_fsqn_r method decreased from a cross-strategy (S0_no_removal) mean of 0.83 to 0.30 under microarray-only and 0.08 under FFPE-only, proving that feature-specific quantile normalization perform poorly in cross-platform FFPE-only dataset."
+ },
+ {
+  "id": "P52",
+  "style": "",
+  "in_table": false,
+  "comments": [
+   "C33"
+  ],
+  "n_citations": 0,
+  "text": "We defined the PCReg metric so that 1 denotes the best possible overlap in PCA space for a given column, that is, none of the variance is explained by that column. Conversely, 0 PCReg means that the entire variance is explained by the column, and this is the worst scenario for batch columns (RNA_BATCH, PLATFORM_RNA, COHORT_LABEL, RNASEQ_SOURCE) and the best one for the biology one (Major_Group, Diagnosis_cell_type_unified, TUMOR_NORMAL). Because the variance is unevenly distributed across the PCs, we compared PCReg RNA_BATCH against R2 of RNA_BATCH in the first PCs by harmonization methods and batch removal strategies (Supplementary Figure 2D, 2E, respectively). As expected, we observed a strong negative relationship between the two, with the clustermap best approaches occupying the lower right corner of the plot. 10_mnn, 20_shambhala and 16_fsqn_r were shifted above the main diagonal, suggesting that their batch-explained variance is moved towards lower rank PCs. The same was true for the C strategy (Supplementary Figure 2E). "
+ },
+ {
+  "id": "P53",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "For all the batch removal strategies we also investigated batch-explained variance for the first 10 PCs (Supplementary Figure 2F), examining the percentage of variance explained and the R2 for RNA_BATCH at each PC. The joint group of the clustermap best approaches was the second one after the C strategy (shown earlier in Supplementary Figure 1B). At the heatmap both the strategy C and the clustermap best approaches group showed the lowest average percentage of variance explained by the first PC (30.4 and 37.9%, respectively), and the smoothest decay of the percentage by PC’s number. The G strategy showed the highest average percentage, 66.0%, presumably because the already quantile-normalized SOM cohort makes up a larger share of the samples in this strategy than in any other. The decay trajectory of R2 RNA_BATCH for the strategy C and the best approaches started at 0.29 and 0.23, respectively, whereas the rest strategies (except for G and H) had higher first PC values. 10 of the 14 batch removal strategies had a lower R2 RNA_BATCH for the first PC than for the second."
+ },
+ {
+  "id": "P54",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Taking together, global metrics in-depth analysis showed that global metrics form a weak, permissive criterion of harmonization quality. Both biology and batch PCReg should be measured, and other metric classes should be added to evaluate harmonization quality robustly."
+ },
+ {
+  "id": "P55",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Batch-associated variance is redistributed across principal components instead of being eliminated"
+ },
+ {
+  "id": "P56",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C35"
+  ],
+  "n_citations": 0,
+  "text": "We separately investigated distribution of batch-associated variance over principal components by batch removal strategies. Ten of the 14 strategies, and 19 of the 31 methods, placed a lower batch-explained R2 on the first principal component than on some later one (Figure 1C, Supplementary Figure 2F). Among the five methods whose explained variance decayed most slowly, four (excluding 20_shambhala) reached their maximum batch R2 away from the first component (Figure 1C). The clustermap group averaged 37.9% and 11.6% of total variance and 22.9% and 15.2% batch R2 on the first two components; 14_qsmooth, the weakest method on the PCA metrics, averaged 53.7% and 13.5% of variance with 90.8% and 67.1% batch R2; the unharmonized data averaged 73.5% and 9.7% of variance with 64.8% and 65.9% batch R2. The RNA-seq-only strategy and the clustermap group showed the lowest first-component variance (30.4% and 37.9%) among the batch removal strategies and the smoothest decay (Supplementary Figure 2F), whereas the Affymetrix-only strategy had the highest variance explained by the first component (66.0%). The individual principal components analysis therefore showed that harmonization benchmarking based on the first component only inherently underestimates batch effect, and harmonization methods can hide the batch-related variance into the lower rank principal components which should be accounted for during benchmarking."
+ },
+ {
+  "id": "P57",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Local neighborhood metrics discriminate well between good and bad approaches but are vulnerable to batch composition"
+ },
+ {
+  "id": "P58",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Only six of the 31 methods (02_median_scaling, 10_mnn, 16_fsqn_r, 25_angel, 28_npn and 33_amdbnorm) mixed batches better than biology by LISI (Supplementary Figure 4A). The kBET acceptance rate behaved as more stringent criterion: it stayed under 0.01 for 82.0% of the 2,234 approaches and under 0.10 for 97.0% (Supplementary Figure 5A). Five of the 15 clustermap best approaches exceeded 0.10, and these approaches were SVA under the RNA-seq-only and FFPE-only strategies. Eight methods exceeded the unharmonized baseline of 0.027 by batch kBET acceptance rate: 22_tmm at 0.331 (RNA-seq only), 23_vst at 0.230 (RNA-seq only), 10_mnn at 0.044, 04_sva at 0.036, 36_explobatch at 0.036, 13_fsmvn at 0.035, 20_shambhala at 0.029 and 19_tdm at 0.028. The other 22 methods scored below raw dataset, indicating that they do not improve local batch mixing (Supplementary Figure 5C)."
+ },
+ {
+  "id": "P59",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C37",
+   "C38"
+  ],
+  "n_citations": 0,
+  "text": "According to their design, local values depended on how many classes the strategy leaves in the data, which limits comparison across strategies. The malignant-only and FFPE-only strategies retained four malignant groups and returned the lowest biology LISI (medians 1.10 and 1.07), whereas the FF-only strategy preserved all the normal B-cell types and returned the highest value (median 1.62, Supplementary Figure 4B). The same two strategies (FFPE-only, malignant-only) returned the lowest biology graph connectivity (0.646 and 0.727 against 0.799 to 0.854 for the rest, Supplementary Figure 7D), although fewer biology groups are expected to increase connectivity, which could derive from their assembly from heterogeneous FFPE batches. The RNA-seq-only strategy produced a tight group of 41 approaches spanning 18 methods, with kBET between 0.654 and 0.867, and none of them was selected by the clustermap, because their LISI values stayed between 1.24 and 1.38 (Supplementary Figure 5B)."
+ },
+ {
+  "id": "P60",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Taking together, the in-depth analysis of local metrics showed that reaching the maximum of one local metric is not sufficient for the clustermap best selection. Moreover, the local metrics were highly dependent on prior batch removal strategies. These findings indicate that a robust harmonization quality benchmarking pipeline should treat local metrics as necessary but not sufficient metric family."
+ },
+ {
+  "id": "P61",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Distributional convergence is the only axis on which the high harshness harmonization methods rank first"
+ },
+ {
+  "id": "P62",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C40",
+   "C41"
+  ],
+  "n_citations": 0,
+  "text": "We further deeply compared metrics of distributional similarity between harmonization approaches. On the fraction of cohort pairs whose expression distributions differ by the KS test, 29 of the 31 methods had the score below the unharmonized baseline of 0.948, and only 27_dwd was worse than the raw expression mnatrix (0.965, Supplementary Figure 7A). Only ten methods brought the metric below 0.7, ranging from 0.173 for 28_npn and 0.217 for 26_xpn up to 0.691 for 03_limma, and the clustermap best group reached 0.560, so 56.0% of cohort pairs still differed after the best harmonization by the clustermap assessment. Distance ratio separated the clustermap group as well (batch distance ratio between 0.845 and 1.032, with a median of 0.914 against 0.757 over the full set, Supplementary Figure 7E), with the only the two methods, 27_dwd (0.508) and 14_qsmooth (0.531), having the metric below the unharmonized dataset (0.566). The Watermelon score did not separate the clustermap group from the rest approaches (Supplementary Figure 7G to 7J), which makes this metric a candidate for an independent metric class to be compared to the global and local families."
+ },
+ {
+  "id": "P63",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 1,
+  "text": "We then compared methods by their harshness score defined in the harmonization benchmark ⟦CIT:(Nikitin et al. 2026 Sep 17)⟧ as low harshness is linear transformation, high harshness is significant distribution reshaping (for example in quantile normalization) and medium harshness is everything in between. There were 344 low, 1,042 medium and 848 high harshness approaches for the comparison. Low-harshness methods demonstrated the highest batch PCReg under 11 strategies of 14, and the highest batch LISI under 10 of 14, while high-harshness methods showed lowest tSNE entropy under 12 strategies of 14 (Supplementary Figure 8A, 8C, 8D). High harshness prevailed over low and middle harshness on one axis only, namely distributional convergence, where it demonstrated the lowest KS fraction significant under 13 strategies of 14 (Supplementary Figure 8F). Matching expression distributions to a same distribution is a distinguishing feature of harshest transformations, but it does not lead to improvement of local or global metrics."
+ },
+ {
+  "id": "P64",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C42",
+   "C43"
+  ],
+  "n_citations": 0,
+  "text": "We also calculated and compared a composite score, which was the equally weighted composite of all 87 metrics. Expectedly, it ranked the clustermap group as first at 0.602, with the RNA-seq-only strategy next at the level of 0.578 (Supplementary Figure 9A). The composite score was dominated by global distance metrics, that supply 47 of the 87 columns and 0.360 of the group’s score while varying by only 0.017 across strategies and 0.030 across methods (Supplementary Figure 9A, B, respectively). In contrast, local neighborhood metrics provide only 22 columns and 0.109 of the score but produce the largest between-group spreads, 0.043 across strategies and 0.049 across methods for the neighbor-based integration group (Supplementary Figure 9C, 9D, respectively). Batch-annotated columns supply 57 metrics of the 87 and between 60.7 and 67.4% of the composite score, and the 18 biology columns separate approaches weakly: across strategies their spread is 0.053, and for the batch columns it is 0.122 (Supplementary Figure 9E, 9F, respectively)."
+ },
+ {
+  "id": "P65",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "We also sorted all approaches by the composite score and revealed an upper tail of 150 approaches above 0.6 (6.7% of total appricase), containing 9 of the 15 clustermap selections (Supplementary Figure 10). We did not reveal ordering of the harshness tiers by this composite score."
+ },
+ {
+  "id": "P66",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C44",
+   "C45",
+   "C46",
+   "C47"
+  ],
+  "n_citations": 0,
+  "text": "We then compared the biology related metrics of classes L, M and N between the harshness groups and observed clear differences (Supplementary Figure 12). Low-harshness methods showed the mean biomarker correlation before and after harmonization at 0.998 against 0.880 for medium and 0.922 for high (Kruskal-Wallis H = 340.1, p = 1.4 x 10-74, n = 344 / 1,042 / 848), and had the smallest marker-minus-housekeeping contrast (-0.000 against 0.009 and 0.031; H = 139.3, p = 5.5 x 10-31, n = 344 / 1,042 / 800). High-harshness methods destroyed cross-batch rank agreement (0.507 against 0.691 and 0.701; H = 287.1, p = 4.5 x 10-63, n = 344 / 1,042 / 847) and carried the smallest margin (0.030 against 0.054 and 0.045; H = 132.9, p = 1.4 x 10-29, same n). On the full-cut LOBO three-class F1 the low tier was last (0.631 against 0.712 and 0.715; H = 51.6, p = 6.1 x 10-12, n = 344 / 1,042 / 847); on the multiclass-only cut the three tiers spanned 0.021 (0.657, 0.678, 0.678; H = 11.8, p = 2.8 x 10-3, n = 333 / 1,016 / 825); and the two-class AUC did not separate them (0.901, 0.904, 0.904; H = 1.5, p = 0.48, same n). An earlier calculation of the multiclass-only test over the unrestricted fold table gave H = 11.2 and p = 0.0037, and an earlier reading of the medium-tier full-cut median gave 0.713; the values quoted here, H = 11.8, p = 2.8 x 10-3 and 0.712, come from the fold population restricted to the analysis set and from the table at three decimals, and the tier ordering is the same under both."
+ },
+ {
+  "id": "P67",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [
+   "C48"
+  ],
+  "n_citations": 0,
+  "text": "Taken together, we showed that prediction quality metrics (class N) are better in medium and high harshness approaches, whereas cross batch agreement by biomarker genes is decreases in high harshness. This opposite trend could indicate tradeoff between biology subtype prediction and biomarker correlation preservation metrics."
+ },
+ {
+  "id": "P68",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Preservation of biomarker expression and of cross-batch rank structure selects a distinct set of approaches"
+ },
+ {
+  "id": "P69",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C50"
+  ],
+  "n_citations": 0,
+  "text": "Since none of the 87 scoring metrics in the published benchmark assess expression of biomarker genes, we deeply studied performance of L and M metric classes. These classes were visualized for the clustermap best approach in the benchmarking article but there were not extensively compared between batch removal strategies and harmonization methods. Plotting raw against harmonized expression, gene by gene and cohort by cohort, shows what each class is reacting to: the unharmonized baseline lies on the identity line by construction (Figure 4A), 13_fsmvn moves every point along a per-gene affine path and keeps the within-cohort order (Figure 4B), 12_scanorama returns a cloud with no relation to the input (Supplementary Figure 14A), and 29_combat_ref shifts the cohorts onto a common scale while keeping the within-cohort spread (Supplementary Figure 14B)."
+ },
+ {
+  "id": "P70",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Class L is saturated at the top of its range. Five methods returned a median within-cohort marker correlation of exactly 1.0000 (01_raw, 36_explobatch, 31_ruv3prps, 27_dwd, 21_harmonizr), and the low-harshness tier sat at 0.998. When class L elects on its own it therefore chooses unharmonized output. Of its 112 elected approaches, 55 are 01_raw and 38 are 36_explobatch, so 93 of 112 places go to output that is unchanged or close to unchanged, with 13_fsmvn and 02_median_scaling taking 7 each, 04_sva 4 and 03_limma 1 (Supplementary File 1, sheet Method_census_by_class). A marker correlation above 0.75 is therefore a gate that an approach must pass and cannot win on, and we treat it as such throughout."
+ },
+ {
+  "id": "P71",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Class M has the opposite failure. Its own composite is dominated by same-biology agreement, which rises whenever an algorithm makes all profiles alike, so class M elected only two methods: 10_mnn took 61 of its 112 places and 12_scanorama took 51. The median within-cohort marker correlation of those two methods is -0.0007 and -0.0082, and their median same-minus-different-biology margin is 0.0000, with a median change of -0.0489 against their own unharmonized baseline. An approach that collapses the panel onto a single profile maximizes agreement and carries no biology at all. The discriminative quantity is the margin, and the margin relative to the unharmonized baseline at the same strategy and imputation separates an approach that sharpened the biology from one that erased it."
+ },
+ {
+  "id": "P72",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Applying the two classes together as a gate, 1,686 of the 2,234 approaches (75.5%) reached a marker correlation above 0.75 with a positive margin. The methods that pass most often are 06_combat_seq (83 of its approaches), 03_limma (82), 07_pycombat (82), 08_inmoose_combatseq (82), 01_raw (80) and 05_combat (80), and by strategy the RNA-seq-only, FF-only and no-removal strategies pass most often (141, 130 and 130) with FFPE-only last (76 of 164). 01_raw passes the joint gate in 80 of its 84 approaches, so passing the gate does not require having harmonized anything."
+ },
+ {
+  "id": "P73",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Compared against each other on the two class columns, the batch-removal strategies spanned 0.0647 in median marker correlation, from malignant-only at 0.9791 and A_confirmed_bad at 0.9753 down to Affymetrix-extended at 0.9145 and rare-batches-removed at 0.9144, and they spanned 0.0667 in median margin, from Affymetrix-only at 0.0757 down to FFPE-only at 0.0090. Only two strategies raised the margin above their own unharmonized baseline in the median, FFPE-only (+0.0180) and RNA-seq-only (+0.0077). Imputations separated far less: median marker correlation was 0.9586 under k-nearest-neighbour imputation, 0.9471 under strict exclusion and 0.9343 under softimpute, a range of 0.0243 against the 0.0647 spanned by strategies, and the median margin ran 0.0513, 0.0432 and 0.0364 in the reverse order (Figure 4F). Methods separated most: median marker correlation ran from 1.0000 for five methods to -0.0082 for 12_scanorama, and median margin from 0.1263 for 05_combat to 0.0000 for 10_mnn and 12_scanorama (Figure 4C, 4D)."
+ },
+ {
+  "id": "P74",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Requiring the two directions of class M separately leaves few approaches. Only 61 of the 2,150 non-raw approaches (2.8%) raised same-biology agreement and lowered different-biology agreement against their own baseline, which we call agreement-specific (Figure 4E). They concentrate in the FFPE-only strategy (21 of 61), microarray-only (11) and rare-batches-removed (7), spread across imputations (24 under k-nearest-neighbour, 21 under softimpute, 16 under strict exclusion) and are led by 05_combat (14), then 36_explobatch, 06_combat_seq and 08_inmoose_combatseq (6 each), 14_qsmooth and 25_angel (5 each) and 04_sva and 16_fsqn_r (4 each). The two highest by margin gain are an exact tie, FFPE-only with k-nearest-neighbour imputation and no post-removal, under 06_combat_seq and under 08_inmoose_combatseq: both return a margin of 0.439161 and a gain over their own baseline of +0.457154, made of +0.257 in same-biology agreement and -0.200 in different-biology agreement. An earlier reading of the same ranking named 06_combat_seq alone as the top approach; the two implementations of ComBat-Seq agree to six decimals here, so neither may be quoted without the other, and their agreement is a positive control on the class M computation."
+ },
+ {
+  "id": "P75",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The two methods that produce these top margins are also the two that returned mean maximum expression values of 2.76 x 108 and 1.46 x 1011 (Figure 3E). They win on classes L and M while failing a basic check on the scale of their own output. We report that contradiction because the scale of the output lies outside what classes L and M measure: a class elects what it measures."
+ },
+ {
+  "id": "P76",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Marker readouts are known to move with the preparation of the input material, including extracellular-vesicle and plasma-derived inputs [50,51], which is the same axis that the FF-only and FFPE-only strategies separate here. Shambhala-2 sits in mid-field on every axis of this section. Across its 84 approaches the median marker correlation is 0.840 and the median margin is 0.0048, and none of its approaches enters the agreement-specific group of 61. Its prediction values are given with both fold cuts in the next section."
+ },
+ {
+  "id": "P77",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Figure 4. Marker-gene preservation and cross-batch rank structure, metric classes L and M. (A and B) Harmonized against raw expression for the marker panel, one point per sample, faceted by gene and cohort, with the identity line and a per-facet Spearman correlation: (A) the unharmonized baseline 01_raw and (B) 13_fsmvn, selected by the published clustermap. The two further representatives, 12_scanorama elected by class M and 29_combat_ref elected by class N, are drawn on the same axes in Supplementary Figure 14. (C) Class M margin against class L mean marker correlation for all 2,234 approaches, coloured by method, with the 0.75 gate drawn. (D) Methods ranked by median margin, with the clustermap-selected approaches shown as an isolated group. (E) Change in different-biology agreement against change in same-biology agreement, both relative to the unharmonized baseline at the same strategy and imputation; the 61 agreement-specific approaches occupy the lower right quadrant. (F) Median marker correlation and median margin by batch-removal strategy, by imputation and by method. (G) Same-biology agreement before and after harmonization, one line per approach, for the approaches that pass the joint gate."
+ },
+ {
+  "id": "P78",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Cross-batch prediction elects a third set, whose ranking is stable across two cuts of the fold population"
+ },
+ {
+  "id": "P79",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Class N asks whether a classifier fitted on the batches that are present can label the samples of a batch it has never seen. Across the analysis set this produced 32,746 three-class folds over 24 RNA batches. Of those, 15,436 (47.1%) contained a single biological class and reached a median macro F1 of 0.903, against 0.7334 over the 17,310 folds carrying two or more classes; inside the latter, two-class folds were the harder ones (median 0.629) and three-class folds the easier (median 0.804) (Figure 5C)."
+ },
+ {
+  "id": "P80",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The fold population has to be restricted to the approaches under analysis before it is counted. The per-fold table holds 53,737 three-class folds over 3,738 run identifiers under 50 method names, and a census over all of them describes approaches this article never analyses: 20,991 of those folds fall outside the analysis set, of which 20,343 belong to the 17 non-canonical Shambhala parameter variants and the remaining 648 to 34_arsyn and 38_harman, the two methods whose approaches all fail the 5% all-missing criterion. The canonical Shambhala variant is retained and contributes 1,200 folds. An earlier count over the unrestricted table gave 53,737 folds with 25,426 single-class (47.3%) and fold-level medians of 0.952, 0.648 and 0.830 by class count. The counts quoted here come from the restricted population, and the conclusion is the same under both: about half of the held-out batches carry one class, and they score higher than the folds that require the classifier to separate classes."
+ },
+ {
+  "id": "P81",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The two cuts agree closely and do not coincide. Spearman correlation between the full-cut mean and the multiclass-only mean is 0.810 over the 2,174 approaches carrying both, and 0.815 over the 2,058 with at least three multiclass folds; an earlier value of 0.812 came from the unrestricted fold table. That is high enough for the two cuts to select the same methods and low enough for the order inside the leading group to change, which is why both are reported everywhere below."
+ },
+ {
+  "id": "P82",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Two fold structures make a high value uninformative, and we report the approaches that carry them with the structure stated beside the number. Fifty-nine of the 2,234 approaches have no multiclass fold at all, and 20 Affymetrix-only approaches with post-removal report a full-cut F1 of 1.000 with a perfect worst fold and zero multiclass folds (Figure 5C). Separately, the strategy that retains the known-bad batches gives the highest prediction values anywhere: A_confirmed_bad with strict exclusion under 29_combat_ref and post-removal reaches a full-cut F1 of 0.958, a multiclass-only mean of 0.924, a worst multiclass fold of 0.643 over 11 multiclass folds, a two-class AUC of 0.998 and a marker correlation of 0.957. If a retained bad batch is also diagnosis-pure, held-out prediction measures that confounding, so this approach is reported and is not offered as a recommendation. Protecting the biological covariate during correction does not remove the problem: when groups are unevenly distributed across batches, the corrected data are not batch-effect free and the estimation errors are deflated [52]."
+ },
+ {
+  "id": "P83",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Excluding the two bad-batch-retaining strategies and approaches with fewer than five multiclass folds leaves 1,527 eligible approaches, and their leading approaches are given in Table 1 with both cuts side by side. The leading non-confounded approach is no removal with softimpute under 29_combat_ref without post-removal: full-cut mean F1 0.946, multiclass-only mean 0.887, worst multiclass fold 0.462 over 11 multiclass folds, two-class AUC 0.932, marker correlation 0.880. Its per-batch detail shows where the two cuts come from (Figure 5B): 13 of its 24 folds are single-class and score between 0.986 and 1.000, and the three hardest multiclass folds are GPL96_FFPE_Unknown (n = 84, 2 classes, F1 0.462, AUC 0.543), RNASeq_FFPE_PolyA (n = 35, 2 classes, F1 0.698, AUC 0.874) and RNASeq_FF_PolyA (n = 1,039, 3 classes, F1 0.718, AUC 0.972). An earlier reading of the same approach counted 10 single-class folds and named only two hard folds; the two named folds and their values reproduce exactly, the single-class count and the identity of the second-hardest fold do not, and the values here are read from the deposited per-fold table."
+ },
+ {
+  "id": "P84",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Table 1. Leading approaches by leave-one-batch-out three-class prediction, both fold cuts. Eligible approaches exclude the two strategies that retain known-bad batches and approaches with fewer than five multiclass folds (n = 1,527). The confounded approach is listed separately and we do not recommend it."
+ },
+ {
+  "id": "P85",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Approach"
+ },
+ {
+  "id": "P86",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Full-cut mean F1"
+ },
+ {
+  "id": "P87",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Multiclass-only mean F1"
+ },
+ {
+  "id": "P88",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Worst multiclass fold"
+ },
+ {
+  "id": "P89",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Multiclass folds"
+ },
+ {
+  "id": "P90",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "2-class AUC"
+ },
+ {
+  "id": "P91",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Marker correlation"
+ },
+ {
+  "id": "P92",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "S0_no_removal / softimpute / 29_combat_ref / post0"
+ },
+ {
+  "id": "P93",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.946"
+ },
+ {
+  "id": "P94",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.887"
+ },
+ {
+  "id": "P95",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.462"
+ },
+ {
+  "id": "P96",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "11"
+ },
+ {
+  "id": "P97",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.932"
+ },
+ {
+  "id": "P98",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.880"
+ },
+ {
+  "id": "P99",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "F_microarray_only / strict / 08_inmoose_combatseq / post0"
+ },
+ {
+  "id": "P100",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.945"
+ },
+ {
+  "id": "P101",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.838"
+ },
+ {
+  "id": "P102",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.592"
+ },
+ {
+  "id": "P103",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "6"
+ },
+ {
+  "id": "P104",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.927"
+ },
+ {
+  "id": "P105",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.829"
+ },
+ {
+  "id": "P106",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "J_ff_only / softimpute / 29_combat_ref / post0"
+ },
+ {
+  "id": "P107",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.935"
+ },
+ {
+  "id": "P108",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.863"
+ },
+ {
+  "id": "P109",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.639"
+ },
+ {
+  "id": "P110",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "7"
+ },
+ {
+  "id": "P111",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.912"
+ },
+ {
+  "id": "P112",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.944"
+ },
+ {
+  "id": "P113",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "I_rare_batches_removed / softimpute / 29_combat_ref / post1"
+ },
+ {
+  "id": "P114",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.928"
+ },
+ {
+  "id": "P115",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.890"
+ },
+ {
+  "id": "P116",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.541"
+ },
+ {
+  "id": "P117",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "9"
+ },
+ {
+  "id": "P118",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.931"
+ },
+ {
+  "id": "P119",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.898"
+ },
+ {
+  "id": "P120",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "A_confirmed_bad / strict / 29_combat_ref / post1 (batch-confounded)"
+ },
+ {
+  "id": "P121",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.958"
+ },
+ {
+  "id": "P122",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.924"
+ },
+ {
+  "id": "P123",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.643"
+ },
+ {
+  "id": "P124",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "11"
+ },
+ {
+  "id": "P125",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.998"
+ },
+ {
+  "id": "P126",
+  "style": "Compact",
+  "in_table": true,
+  "comments": [],
+  "n_citations": 0,
+  "text": "0.957"
+ },
+ {
+  "id": "P127",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Class N elects the ComBat family. Of its 112 places, 84 go to four implementations of that algorithm, 05_combat with 32, 29_combat_ref with 20, 06_combat_seq with 16 and 08_inmoose_combatseq with 16, followed by 25_angel with 10, 20_shambhala with 6, 14_qsmooth with 4, 10_mnn with 3, 18_rank with 2 and one place each to 12_scanorama, 01_raw and 27_dwd. The same ordering appears in the per-method medians, which we give as four numbers in the order full-cut mean, multiclass-only mean, worst multiclass fold and multiclass fold count: 29_combat_ref leads at 0.898, 0.827, 0.462 and 7 folds, then 06_combat_seq (0.877, 0.771, 0.462, 10), 08_inmoose_combatseq (0.876, 0.772, 0.464, 10) and 05_combat (0.858, 0.755, 0.409, 10), while 02_median_scaling (0.453, 0.571, 0.233, 9), 03_limma (0.480, 0.614, 0.154, 9), 07_pycombat (0.520, 0.624, 0.168, 9), 21_harmonizr (0.521, 0.576, 0.124, 9) and 28_npn (0.523, 0.606, 0.296, 9) are last (Figure 5A). Two limitations travel with that election. Twenty of the 112 elected approaches use the batch-confounded strategy, and 5 have no multiclass fold, so 25 of 112 are elected on fold structure the section above has already described."
+ },
+ {
+  "id": "P128",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The elected set spreads over 13 of the 14 strategies, led by A_confirmed_bad (15), E2_iterative_r2 (13) and I_rare_batches_removed (12), with FFPE-only contributing none, and it favours strict exclusion (50 of 112) over softimpute (33) and k-nearest-neighbour imputation (29), and post-removal (63) over its absence (49). Strategies themselves separate more than imputations on both cuts. On the full cut the strategy medians run from 0.763 for Affymetrix-extended to 0.561 for FFPE-only, a range of 0.202; on the multiclass-only cut the same two strategies give 0.691 and 0.604, the highest median is 0.724 for microarray-only and the lowest is 0.462 for Affymetrix-only, a range of 0.262 that rests on the 95 of the 154 Affymetrix-only approaches carrying a multiclass fold at all. The imputation medians run 0.714, 0.712 and 0.701 on the full cut for strict exclusion, softimpute and k-nearest-neighbour imputation, a range of 0.013, and 0.698, 0.688 and 0.648 on the multiclass-only cut, a range of 0.050. Post-removal moves the median from 0.692 to 0.719 on the full cut and from 0.669 to 0.681 on the multiclass-only cut. Shambhala-2 sits in the middle of this distribution on both cuts, with a median full-cut F1 of 0.7453 over the 83 of its 84 approaches that carry that column, a median multiclass-only mean of 0.7002 over the 82 that carry theirs, a median worst multiclass fold of 0.4292 over the same 82 and a median of 9 multiclass folds over 83."
+ },
+ {
+  "id": "P129",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Combining all six prediction and preservation columns into one rank-percentile index reproduces the same warning about fold structure. The 15 highest values over the whole analysis set, from 0.933 to 0.982, all belong to Affymetrix-only approaches with post-removal and zero multiclass folds, because a missing column raises a mean of the columns that remain. Restricted to the 1,527 eligible approaches, the index is led by no removal with strict exclusion under 29_combat_ref with post-removal at 0.8875, which carries a full-cut F1 of 0.935, a multiclass-only mean of 0.866, a worst multiclass fold of 0.541 over 11 folds, a two-class AUC of 0.980 and a marker correlation of 0.953 (Figure 5D). The 15 clustermap-selected approaches rank between 323rd and 2,038th of 2,234 on the same index."
+ },
+ {
+  "id": "P130",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Figure 5. Cross-batch prediction and the cross-election structure, metric class N. (A) Methods ranked by median leave-one-batch-out three-class macro F1, with the full cut and the multiclass-only cut drawn side by side and the multiclass fold count beneath each method. (B) Per-batch macro F1 for the leading non-confounded approach, one ridge per batch, ordered by sample count, with single-class folds marked. (C) Fold composition of the analysis set: counts and macro F1 distributions for one-, two- and three-class folds, and the 59 approaches with no multiclass fold. (D) Generalizability index against the full-cut F1, with the approaches carrying no multiclass fold shown in a separate panel. (E) Chord diagram of the cross-election structure: each arc is one metric class, each ribbon is weighted by the number of approaches two classes jointly elect. (F) Venn and supervenn views of the elected sets of the prediction, cross-batch agreement, local, global and distributional classes. (G) Sankey diagram of the raw, gated, elected and validated funnel, from all 2,234 approaches to the approaches that survive every class."
+ },
+ {
+  "id": "P131",
+  "style": "Heading3",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The sets elected by the individual metric classes show limited intersection"
+ },
+ {
+  "id": "P132",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Running the election once per class over the same 2,234 candidates gives eight sets of 112 approaches and one published set of 15. The largest agreement between any two of them is between the local class and the equally weighted composite, Jaccard 0.333, which is 56 shared approaches (Figure 5E, Supplementary File 2, sheet Cross_election_matrix). The composite’s other overlaps follow from its construction as the mean of four classes: 0.325 with the distributional class (55 approaches), 0.295 with the structural class (51) and 0.217 with the global class (40). Between the four component classes themselves the agreement is lower: local and distributional share 51 approaches (Jaccard 0.295), global and distributional 27 (0.137), local and structural 17 (0.082), global and local 15 (0.072), global and structural 15 (0.072), and distributional and structural 12 (0.057). No pair of metric classes agrees on even a third of its choices."
+ },
+ {
+  "id": "P133",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The three biology-facing classes sit almost entirely outside that structure. Classes L and M share no approach, classes M and N share no approach, and classes L and N share one (Jaccard 0.0045). Class N shares nothing with the global class and nothing with the composite, and its largest overlap with any other class is 10 approaches with the structural class (0.047). Class M reaches 12 approaches with the local class (0.057) and 9 with the structural class (0.042). Class L reaches 9 approaches with the composite (0.042) and 7 with the distributional class (0.032)."
+ },
+ {
+  "id": "P134",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The 15 approaches that the published clustermap selected share 9 approaches with the local class (Jaccard 0.076), 6 with the distributional class (0.050), 4 each with the global class and the composite (0.033), and 3 each with the structural class and class M (0.024). They share none with class L and none with class N. The set that a joint reading of 87 metrics produced therefore has no member in common with the set that cross-batch prediction elects, and none with the set that marker preservation elects."
+ },
+ {
+  "id": "P135",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The method censuses say why (Figure 5F, Figure 5G). The global class puts 86 of its 112 places into two methods, 13_fsmvn (59) and 03_limma (27), both of which drive batch PCReg to its ceiling. Class L puts 93 places into 01_raw and 36_explobatch. Class M puts all 112 into 10_mnn and 12_scanorama. Class N puts 84 into four ComBat implementations. The local, distributional, structural and composite classes spread over 24, 22, 20 and 24 methods respectively, and share their leading method, 16_fsqn_r, which takes 9, 12, 18 and 18 places. Four of the nine groups are therefore single-method verdicts, and they name four different methods."
+ },
+ {
+  "id": "P136",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "This is the cost of choosing a criterion before running a benchmark. A study that reports global metrics would recommend 13_fsmvn, whose median full-cut LOBO F1 is 0.537 and whose median multiclass-only F1 is 0.624, both in the bottom five methods. A study that reports cross-batch rank agreement without the margin would recommend 10_mnn, whose median within-cohort marker correlation is -0.0007. A study that reports LOBO prediction alone would recommend ComBat-Seq implementations that return mean maximum expression values of 2.76 x 108 and 1.46 x 1011. Each recommendation is correct under its own criterion and fails under the next one. The choice of metric class therefore determines the recommendation more than the data do."
+ },
+ {
+  "id": "P137",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The practical consequence is that a benchmark has to state its metric classes, its gates and its held-out test before it ranks anything, and has to report all of them afterwards. Class L is a gate that an approach must pass and cannot win on, because a per-batch monotone transform scores near 1.0 by construction and the low-harshness tier sits at 0.998 while predicting worst of the three tiers (0.631 on the full cut). Class M has to be read as a margin against the unharmonized baseline at the same strategy and imputation, because agreement alone rewards collapse. Class N has to be cut by batch and reported on both fold cuts, because 47.1% of the held-out batches carry one class and score a median of 0.903 against 0.7334 for the rest, and because a confounded strategy reaches the highest value of all (0.958 full cut, 0.924 multiclass-only). We have drawn these three traps and the six steps around them as a recipe (Figure 6), in the same terms the analysis above used."
+ },
+ {
+  "id": "P138",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Figure 6. A recipe for selecting metrics when benchmarking harmonization approaches. A block scheme in six steps: declare the metric classes to be computed; compute each class over the full approach set; apply class L as a gate at a stated correlation threshold; rank on the class M margin taken against the unharmonized baseline at the same strategy and imputation; validate by leave-one-batch-out prediction with the projection fitted on training batches only, reported on both fold cuts; and report the elected set of every class together with their intersections. Three named traps are drawn beside the steps they belong to: saturation of the within-cohort correlation under a monotone per-batch transform, agreement without a margin, and a batch variable confounded with the class labels. An inset draws the leave-one-batch-out scheme and the fold-composition census that the two cuts rest on."
+ },
+ {
+  "id": "P139",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Conclusions"
+ },
+ {
+  "id": "P140",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "We ran the same election eight times over one set of 2,234 harmonization approaches, changing only the metric class that was allowed to vote, and the winners changed with it. The largest agreement between any two elected sets of 112 approaches was 56 approaches (Jaccard 0.333), and that pair was a class and the composite built from it. Between the three biology-facing classes the agreement was one approach in total: marker preservation and cross-batch rank agreement shared none, cross-batch rank agreement and prediction shared none, and marker preservation and prediction shared one. The 15 approaches selected by a joint reading of 87 metrics shared none of the 112 that prediction elected."
+ },
+ {
+  "id": "P141",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Each class elected what it was built to reward. Marker preservation elected unharmonized and near-unharmonized output, because a per-batch monotone transform leaves within-cohort ranks unchanged and scores near 1.0 by construction. Cross-batch rank agreement elected the two methods that make all profiles alike, whose median within-cohort marker correlation is -0.0007 and -0.0082. Global variance metrics elected the two methods that drive batch PCReg to its ceiling, one of which ranks in the bottom five on prediction. Cross-batch prediction elected four implementations of ComBat, two of which return mean maximum expression values of 2.76 x 108 and 1.46 x 1011. Every one of these verdicts is defensible inside its own class and indefensible outside it."
+ },
+ {
+  "id": "P142",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Three properties of the metrics themselves caused most of that behaviour, and all three can be handled by reporting. A within-cohort correlation metric saturates, so it works as a gate at a stated threshold and does not order the approaches that pass: the low-harshness tier holds it at 0.998 while returning the lowest full-cut prediction F1 of the three tiers (0.631). An agreement metric rises whenever an algorithm converges profiles, so it has to be read as a margin between same-biology and different-biology pairs, taken against the unharmonized baseline at the same strategy and imputation; requiring both directions of that margin leaves 61 of 2,150 non-raw approaches (2.8%). A prediction metric depends on the composition of the held-out batch, so it has to be cut by batch and reported on both fold cuts: 15,436 of the 32,746 three-class folds carry one class and reach a median macro F1 of 0.903 against 0.7334 for the rest, and the highest prediction values anywhere come from a strategy that keeps the known-bad batches (full-cut F1 0.958, multiclass-only 0.924)."
+ },
+ {
+  "id": "P143",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "We set these out as a recipe (Figure 6). Declare the metric classes before computing them. Compute every class over the full approach set instead of a shortlist. Use the within-cohort correlation as a gate at a stated threshold. Rank on a margin taken against an explicit unharmonized baseline. Validate with leave-one-batch-out prediction whose projection is fitted on training batches only, reported on both fold cuts with the multiclass fold count beside each value. Report the elected set of every class together with their intersections, so a reader can see which recommendation depends on which criterion. Applied to this dataset the recipe leaves a small set of approaches that pass every step, led by no removal with softimpute under 29_combat_ref, which reaches a full-cut F1 of 0.946, a multiclass-only mean of 0.887 over 11 multiclass folds and a marker correlation of 0.880."
+ },
+ {
+  "id": "P144",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The limits of this work follow from its design. All 2,234 approaches come from one dataset of germinal-centre B-cell lymphomas, so the numbers are specific to a setting in which the biological contrast is small and the technical contrast is large. The election threshold of 5% is a choice, and a different threshold changes the set sizes although not the ordering of the overlaps. Classes L and M rest on one 633-gene panel, and a different panel would move their members. The prediction class uses three diagnostic classes and 24 batches, so its folds are coarse. What does not depend on these choices is the finding that the classes disagree, because that disagreement is measured between sets drawn from the same 2,234 candidates by the same procedure."
+ },
+ {
+  "id": "P145",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Data availability"
+ },
+ {
+  "id": "P146",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The expression matrices, cohort annotation and harmonization metric tables analysed here are deposited at Zenodo, https://doi.org/10.5281/ZENODO.22737294 (harmonized expression matrices and benchmark metric tables covering 73 public cohorts, CC-BY-4.0). The nine derived tables behind every number in this article (A2_T0 to A2_T8) are provided as Supplementary Files 1 and 2 and in the same record. Source accession numbers for the public cohorts are listed in Supplementary File 1 of the source benchmark [38]."
+ },
+ {
+  "id": "P147",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Software availability"
+ },
+ {
+  "id": "P148",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Analysis code, the election module analysis/article2_generalizability.py and the panel scripts are in https://github.com/Nikit357/FL_harmonization, archived at [TO CONFIRM: new FL_harmonization release DOI]. The ComboBatch harmonization tool is at https://github.com/Nikit357/ComboBatch, archived at https://doi.org/10.5281/ZENODO.22755758, with its benchmark record at https://doi.org/10.5281/ZENODO.22755764. The containerized Shambhala-2 implementation is at https://github.com/Nikit357/Shambhala2_fast, archived at https://doi.org/10.5281/ZENODO.22756647. Licence: MIT. Package versions are given in Materials and methods."
+ },
+ {
+  "id": "P149",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary material"
+ },
+ {
+  "id": "P150",
+  "style": "",
+  "in_table": false,
+  "comments": [
+   "C73"
+  ],
+  "n_citations": 0,
+  "text": "Supplementary Figure 1. Principal component regression metrics comparison. (A) Barplot showing PCReg metrics by 3 columns visualized by harmonization methods, sorted by PCReg RNA_BATCH. Color annotations below the bars show method harshness score and overall quality. Best group means a composed group of the clustermap best approaches. (B) The analogous barplot for 4 PCReg metrics by batch removal strategies. Higher values indicate better overlap of classes by a given column in the PCA space. Error bars indicate 95% confidence interval (CI) estimation."
+ },
+ {
+  "id": "P151",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 2. Global metrics comparison by imputation, harmonization methods and batch removal strategies. (A) Boxplots of PCReg RNA_BATCH by harmonization methods stratified by imputation. Methods are ordered by mean PCReg RNA_BATCH across all batch removal strategies, imputations and post-removals. The clustermap best approaches are highlighted in bold. (B) Boxplots of PCReg RNA_BATCH by harmonization methods stratified by batch removal strategies. Harmonization methods order is the same as in panel A, but with the group of clustermap best approaches is empty for strategies where no best approaches were selected. (C) Boxplots of PCReg RNA_BATCH by harmonization methods stratified by post-removal. The group of clustermap best approaches is empty in the post-removal boxplot because only the approaches without post-removal were selected. (D) Scatterplot showing correlation of PCReg RNA_BATCH and RNA_BATCH R2 by first PC, color annotated by harmonization methods with black stars indicating the clustermap best approaches. (E) The same scatterplot color annotated by batch removal strategies. (F) Heatmaps showing percentage of total variance explained (left heatmap) and percentage of the RNA_BATCH-explained variance for the first 10 PCs, grouped by batch removal strategy and sorted by PCReg RNA_BATCH. The composite group of the best approaches is shown by bold font."
+ },
+ {
+  "id": "P152",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 3. Additional global metrics analysis. (A) Scatterplot showing correlation of PCReg PLATFORM_RNA with PCReg RNA_BATCH. (B) Scatterplot of PCReg COHORT_LABEL versus PCReg RNA_BATCH. (C) Scatterplot of DSC RNA_BATCH versus PCReg RNA_BATCH. (D) Scatterplot of DSC PLATFORM_RNA versus DSC RNA_BATCH. (E) Scatterplot of COHORT_LABEL versus DSC RNA_BATCH. Scatterplots in the panel A-E are color annotated by batch removal strategy. (F) Scatterplot of tSNE centroid disp RNA_BATCH versus PCReg RNA_BATCH, color annotated by batch removal strategy. (G) The same scatterplot of tSNE centroid disp RNA_BATCH versus PCReg RNA_BATCH, color annotated by harmonization method. (H) The same scatterplot with color annotation by post-removal and connection lines that show transition between approaches with and without post-removal. (I) Scatterplot of ASW RNA_BATCH versus PCReg RNA_BATCH, color annotated by batch removal strategy. (J) The same scatterplot of ASW RNA_BATCH versus PCReg RNA_BATCH, color annotated by harmonization method. Black empty stars on all the panels of this figure show the clustermap best approaches."
+ },
+ {
+  "id": "P153",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 4. LISI metrics of local neighborhood. (A) Barplot of the LISI metrics by 3 columns (Diagnosis_cell_type_unified, COHORT_LABEL, RNA_BATCH) visualized by harmonization methods, sorted by iLISI RNA_BATCH. Color annotations below the bars show method harshness score and overall quality. Best group means a composed group of the clustermap best approaches. (B) The analogous barplot for 4 LISI metrics by batch removal strategies (added the metric for the RNASEQ_SOURCE column). Higher values indicate better overlap of classes by a given column in a local nearest neighbors’ environment. Error bars indicate 95% confidence interval (CI) estimation. (C) Heatmap of LISI by RNA_BATCH, clustered by harmonization methods (columns) and batch removal strategies (rows). Each cell shows the metric value averaged by imputations and post-removals. (D) The similar heatmap for LISI by Diagnosis_cell_type_unified. Best approaches are marked as black asterisks in the panels C and D."
+ },
+ {
+  "id": "P154",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 5. Analysis of a more diverse set of local mixing metrics: LISI, kBET acceptance rate, tSNE and UMAP entropy. (A) Scatterplot showing LISI and kBET acceptance rate by RNA_BATCH, color annotated by harmonization methods. (B) The same scatterplot color annotated by harmonization strategies. (C) Barplot of the kBET metrics by 3 columns (PLATFORM_RNA, COHORT_LABEL, RNA_BATCH) visualized by harmonization methods, sorted by kBET acceptance rate RNA_BATCH. Color annotations below the bars show method harshness score and overall quality. Best group means a composed group of the clustermap best approaches. (D) The analogous barplot for the same 3 kBET metrics by batch removal strategies. Higher values indicate better overlap of classes by a given column in a local nearest neighbors’ environment. Error bars indicate 95% confidence interval (CI) estimation. (E) Scatterplot of tSNE entropy vs LISI by RNA_BATCH, color annotated by harmonization methods. (F) The same scatterplot color annotated by batch removal strategies. (G) Scatterplot of tSNE entropy vs tSNE centroid dispersion by RNA_BATCH, color annotated by harmonization methods. (H) The same scatterplot color annotated by batch removal strategies. (I) Scatterplot of UMAP entropy vs tSNE entropy by RNA_BATCH, color annotated by harmonization methods. (J) The same scatterplot color annotated by batch removal strategies. (K) Scatterplot of UMAP centroid dispersion vs tSNE centroid dispersion by RNA_BATCH, color annotated by harmonization methods. (L) The same scatterplot color annotated by batch removal strategies. The clustermap best approaches are shown as empty black stars on the panels A, B and E – L."
+ },
+ {
+  "id": "P155",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 6. Comparison of kBET and LISI against PCReg. (A) Scatterplot of LISI vs PCReg by RNA_BATCH, color annotated by harmonization methods. (B) The same scatterplot color annotated by batch removal strategies. (C) Scatterplot of LISI vs PCReg by Diagnosis_cell_type_unified, color annotated by harmonization methods. (D) The same scatterplot color annotated by batch removal strategies. (E) Scatterplot of kBET acceptance rate vs PCReg by RNA_BATCH, color annotated by harmonization methods. (F) The same scatterplot color annotated by batch removal strategies. The clustermap best approaches are shown as empty black stars on all the panels of this figure."
+ },
+ {
+  "id": "P156",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 7. Structural and other metrics performance. (A) Barplot of the KS fraction significant metrics by 3 columns (PLATFORM_RNA, COHORT_LABEL, RNA_BATCH) visualized by harmonization methods, sorted by KS fraction significant RNA_BATCH. Color annotations below the bars show method harshness score and overall quality. Best group means a composed group of the clustermap best approaches. (B) The analogous barplot for the same 3 KS metrics by batch removal strategies. Higher values indicate higher proportion of pairwise comparisons with significant differences in gene expression distributions by Kolmogorov-Smirnov test. Error bars indicate 95% confidence interval (CI) estimation. (C) Scatterplot of graph connectivity by Diagnosis_cell_type_unified versus PLATFORM_RNA, color annotated by harmonization methods. (D) The same scatterplot color annotated by batch removal strategies. (E) Scatterplot of distance ratio (intragroup to intergroup) by Diagnosis_cell_type_unified versus RNA_BATCH, color annotated by harmonization methods. (F) The same scatterplot color annotated by batch removal strategies. (G) Scatterplot of Watermelon score by Diagnosis_cell_type_unified versus RNA_BATCH, color annotated by harmonization methods. (H) The same scatterplot color annotated by batch removal strategies. (I) Scatterplot of mean Watermelon score by biology columns versus the same score by batch columns, color annotated by harmonization methods. (J) The same scatterplot color annotated by batch removal strategies. The clustermap best approaches are shown as empty black stars on the panels C – J. (K) Heatmap showing gene expression quantiles and standard deviation by harmonization strategies."
+ },
+ {
+  "id": "P157",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 8. Barplots comparing metrics of different harshness harmonization methods by batch removal strategies. (A) PCReg RNA_BATCH. (B) PCReg Diagnosis_cell_type_unified. (C) tSNE entropy RNA_BATCH. (D) LISI RNA_BATCH. (E) LISI Diagnosis_cell_type_unified. (F) KS fraction significant RNA_BATCH. In each barplot, the harmonization strategies are sorted by the metric shown, and the clustermap best methods are shown as a surrogate batch removal strategy."
+ },
+ {
+  "id": "P158",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 9. Stacked barplots showing impact of metric type, group and column into the equally weighted composite score. (A) Metric type by batch removal strategy. (B) Metric type by harmonization method. (C) Metric group by batch removal strategy. (D) Metric group by harmonization method. (E) Metric column by batch removal strategy. (F) Metric column by harmonization method. In all barplots bars are sorted by average value descending."
+ },
+ {
+  "id": "P159",
+  "style": "",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Supplementary Figure 10. Individual approaches sorted by the composite score, color annotated by batch removal strategy, imputation, harmonization method, post-removal and harshness level. The clustermap best approaches are shown with black stars."
+ },
+ {
+  "id": "P160",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [
+   "C74"
+  ],
+  "n_citations": 0,
+  "text": "Supplementary Figures 1 to 3. Global metrics: principal component regression by method and strategy, the same metric stratified by imputation, strategy and post-removal with the per-component decomposition, and additional global metrics (DSC, tSNE centroid dispersion, average silhouette width) against PCReg. Supplementary Figures 4 to 6. Local metrics: LISI by method and strategy, LISI against kBET, tSNE and UMAP entropy, and kBET and LISI against PCReg. Supplementary Figure 7. Distributional similarity, graph connectivity, distance ratio, Watermelon score and expression quantiles. Supplementary Figure 8. The same metric families compared across the three method harshness tiers, by strategy. Supplementary Figures 9 and 10. Contribution of metric type, group and annotation column to the equally weighted composite, and all approaches ordered by it. Supplementary Figure 11. Marker panel coverage, the per-gene quality gates and the correlation structure of the panel by signature. Supplementary Figure 12. Classes L, M and N across the three method harshness tiers, with the per-metric denominator on each panel. Supplementary Figure 13. Gene by method clustering of the per-gene marker correlations. Supplementary File 1. The analysis set and its metrics: seven sheets covering the 2,234 approaches, the reconciliation from the 2,407 completed approaches of the source benchmark [38] to 2,234, with the Shambhala identity check, the generalizability ranking, the method census by class, the strategy and imputation summary and the harshness comparison. Supplementary File 2. Cross-batch structure and prediction: seven sheets covering the cross-election matrix, the elected sets, the 61 agreement-specific approaches, the margin in raw and baseline-subtracted form, the per-batch folds for both targets and the fold composition census. Supplementary File 3. The marker gene panel behind Supplementary Figures 11 and 13: five sheets covering the coverage gate sweep, the quality gate grid, the per-gene correlation summary with signature membership, and the genes of the narrow panel. Full legends with alt text are provided in manuscript/figure_legends_260917.md. Supplementary Figure 14. Harmonized against raw marker expression for the two remaining best-approach representatives, 12_scanorama and 29_combat_ref, on the axes of Figure 4A and 4B."
+ },
+ {
+  "id": "P161",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Reporting guidelines"
+ },
+ {
+  "id": "P162",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "No consensus reporting guideline covers a re-analysis of benchmark metric tables. We followed the general principle that every quoted value names the table, column and filter that produced it, and those assignments are listed in Supplementary Files 1 and 2."
+ },
+ {
+  "id": "P163",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Preregistration"
+ },
+ {
+  "id": "P164",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "This study was not preregistered."
+ },
+ {
+  "id": "P165",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Ethics and consent"
+ },
+ {
+  "id": "P166",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Ethical approval and consent were not required. The study used de-identified transcriptomic profiles that had already been published, and produced no new human material or data."
+ },
+ {
+  "id": "P167",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Author contributions"
+ },
+ {
+  "id": "P168",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "CRediT roles, by author. Daniil Nikitin: conceptualization, methodology, software, formal analysis, investigation, data curation, validation, visualization, original draft, review and editing. Nikolay Borisov: methodology, conceptualization, review and editing. Maria Savchenko: methodology and conceptualization. Anatoly Bobe: data curation, review and editing. Mark Meerson: software, resources, conceptualization. Alexander Nesmelov, Nazar Harutyunyan and Svetlana Paponova: data curation. Andrey Kravets: review and editing, data curation. Alexandr Zaitsev: review and editing, conceptualization. Alexandr Bagaev: supervision, resources, funding acquisition, conceptualization. Arsen Arakelyan: supervision, project administration, funding acquisition, methodology, conceptualization, review and editing."
+ },
+ {
+  "id": "P169",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Competing interests"
+ },
+ {
+  "id": "P170",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "[Competing-interests statement: as in the published article.] [TO CONFIRM: competing-interest detail, resolved in the published article] Arsen Arakelyan directs the institute given as affiliation 1, where Daniil Nikitin is a PhD candidate, and this article forms part of that thesis."
+ },
+ {
+  "id": "P171",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Grant information"
+ },
+ {
+  "id": "P172",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "[Funding statement: as in the published article.]"
+ },
+ {
+  "id": "P173",
+  "style": "BodyText",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "This work was funded by the 21AG-1F021 grant from the Committee of Higher Education and Sciences MESCS of Armenia (to A.A.)."
+ },
+ {
+  "id": "P174",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "Acknowledgements"
+ },
+ {
+  "id": "P175",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "We thank Alisa Sadekova and Alexander Ryabykh for help with dataset assembly. For discussion we thank Anastasiya Yudina, Daniil Ivanov, Konstantin Chernyshov, Aleksei Efremov and Katerina Nuzhdina."
+ },
+ {
+  "id": "P176",
+  "style": "Heading2",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "References"
+ },
+ {
+  "id": "P177",
+  "style": "FirstParagraph",
+  "in_table": false,
+  "comments": [],
+  "n_citations": 0,
+  "text": "The numbered reference list, one block per entry with its PubMed identifier, is provided in manuscript/references_260917.md. The supporting passage quoted from each cited article is kept separately in manuscript/reference_support_260917.md."
+ }
+]
