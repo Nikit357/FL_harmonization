@@ -1,0 +1,87 @@
+gene,gene_group,cell_type,is_housekeeping
+CCND2,FL2025_C1_DZ_proliferative,centroblast (DZ),False
+CDK4,FL2025_C1_DZ_proliferative,centroblast (DZ),False
+MCM6,FL2025_C1_DZ_proliferative,centroblast (DZ),False
+PCNA,FL2025_C1_DZ_proliferative,centroblast (DZ),False
+BCL2,FL2025_C2_LZ_anergy,centrocyte (LZ),False
+CD83,FL2025_C2_LZ_anergy,centrocyte (LZ),False
+IFI44,FL2025_C3_inflammatory,none,False
+IFIT1,FL2025_C3_inflammatory,none,False
+BCL2,FL_PFS_signature_2019,none,False
+CCND2,FL_PFS_signature_2019,none,False
+LMO2,FL_PFS_signature_2019,none,False
+BCL2,FL_POD24_markers,none,False
+EZH2,FL_POD24_markers,none,False
+CD22,clinical_IHC_B_cell,B cell,False
+BCL2,clinical_IHC_GC_B_cell,germinal centre B,False
+LMO2,clinical_IHC_GC_B_cell,germinal centre B,False
+CD5,clinical_IHC_T_cell,CD4 T,False
+BCL2,dybkaer_centroblast_DZ,centroblast (DZ),False
+CCND2,dybkaer_centroblast_DZ,centroblast (DZ),False
+EGR3,dybkaer_centroblast_DZ,centroblast (DZ),False
+ENTPD1,dybkaer_centroblast_DZ,centroblast (DZ),False
+SKI,dybkaer_centroblast_DZ,centroblast (DZ),False
+BCL2A1,dybkaer_centrocyte_LZ,centrocyte (LZ),False
+CHPT1,dybkaer_centrocyte_LZ,centrocyte (LZ),False
+EGR3,dybkaer_centrocyte_LZ,centrocyte (LZ),False
+FEZ1,dybkaer_centrocyte_LZ,centrocyte (LZ),False
+LIMD1,dybkaer_centrocyte_LZ,centrocyte (LZ),False
+STMN1,holmes_DZ_a,centroblast (DZ),False
+VIM,holmes_DZ_a,centroblast (DZ),False
+SNX2,holmes_DZ_b,centroblast (DZ),False
+TPD52,holmes_DZ_b,centroblast (DZ),False
+METAP2,holmes_INT_a,centrocyte (LZ),False
+ZNF277,holmes_INT_b,centrocyte (LZ),False
+CAMK1,holmes_INT_c,centrocyte (LZ),False
+CD83,holmes_INT_c,centrocyte (LZ),False
+IMPDH2,holmes_INT_c,centrocyte (LZ),False
+POU2F2,holmes_INT_c,centrocyte (LZ),False
+ANXA6,holmes_INT_d,centrocyte (LZ),False
+CD72,holmes_INT_d,centrocyte (LZ),False
+CNN2,holmes_INT_d,centrocyte (LZ),False
+IFNGR1,holmes_INT_d,centrocyte (LZ),False
+CAMK1,holmes_INT_e,centrocyte (LZ),False
+CD22,holmes_INT_e,centrocyte (LZ),False
+CD53,holmes_INT_e,centrocyte (LZ),False
+LMO2,holmes_INT_e,centrocyte (LZ),False
+BCL2A1,holmes_LZ_a,centrocyte (LZ),False
+BIRC3,holmes_LZ_a,centrocyte (LZ),False
+CD83,holmes_LZ_a,centrocyte (LZ),False
+LMO2,holmes_LZ_a,centrocyte (LZ),False
+PLEK,holmes_LZ_a,centrocyte (LZ),False
+BCL2A1,holmes_LZ_b,centrocyte (LZ),False
+CD83,holmes_LZ_b,centrocyte (LZ),False
+DDX21,holmes_LZ_b,centrocyte (LZ),False
+RGS1,holmes_PBL_b,plasma cell,False
+CD44,holmes_PreM,memory precursor,False
+FXYD5,holmes_PreM,memory precursor,False
+IFITM2,holmes_PreM,memory precursor,False
+VIM,holmes_PreM,memory precursor,False
+BCL2,holmes_double_hit_signature,centroblast (DZ),False
+PGK1,housekeeping,none,True
+BCL2,kotlov_COO_classifier,germinal centre B,False
+CCND2,kotlov_COO_classifier,germinal centre B,False
+CSTB,kotlov_COO_classifier,germinal centre B,False
+ITPKB,kotlov_COO_classifier,germinal centre B,False
+LMO2,kotlov_COO_classifier,germinal centre B,False
+PLEK,kotlov_COO_classifier,germinal centre B,False
+SLA,kotlov_COO_classifier,germinal centre B,False
+SP140,kotlov_COO_classifier,germinal centre B,False
+VCL,kotlov_COO_classifier,germinal centre B,False
+FHIT,kotlov_DHIT_classifier,centroblast (DZ),False
+CD22,kotlov_FGES_B_cells,B cell,False
+FBLN1,kotlov_FGES_CAF,stromal/fibroblast,False
+PRELP,kotlov_FGES_CAF,stromal/fibroblast,False
+ICAM1,kotlov_FGES_FRC,stromal/fibroblast,False
+VIM,kotlov_FGES_FRC,stromal/fibroblast,False
+JAM3,kotlov_FGES_LEC,endothelial,False
+BIRC3,kotlov_FGES_NFkB,none,False
+AKT1,kotlov_FGES_PI3K,none,False
+CCNB1,kotlov_FGES_cell_proliferation,none,False
+CCND1,kotlov_FGES_cell_proliferation,none,False
+CCNE1,kotlov_FGES_cell_proliferation,none,False
+CDK2,kotlov_FGES_cell_proliferation,none,False
+MCM6,kotlov_FGES_cell_proliferation,none,False
+IFI44,kotlov_FGES_interferon,none,False
+IFIT1,kotlov_FGES_interferon,none,False
+EZH2,kotlov_curated_alterations,none,False
