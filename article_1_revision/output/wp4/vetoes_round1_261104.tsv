@@ -1,0 +1,36 @@
+strat	imp	method	post_rm	scenario	method_display	reason	decided_by	date	review_round
+J_ff_only	strict	25_angel	False	FF only	Angel	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+J_ff_only	knn	05_combat	True	FF only	ComBat	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+J_ff_only	knn	05_combat	False	FF only	ComBat	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+J_ff_only	knn	29_combat_ref	True	FF only	M-ComBat	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+J_ff_only	softimpute	29_combat_ref	True	FF only	M-ComBat	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+J_ff_only	strict	29_combat_ref	False	FF only	M-ComBat	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+J_ff_only	strict	29_combat_ref	True	FF only	M-ComBat	tSNE does not differ from the unharmonized matrix: batches stay scattered and isolated; no improvement on PCA either	Daniil	2026-11-04	1
+K_ffpe_only	strict	02_median_scaling	True	FFPE only	Median scaling	batches of the same biology do not mix, or batches of different biology mix together (tSNE, UMAP, PCA)	Daniil	2026-11-04	1
+K_ffpe_only	knn	02_median_scaling	True	FFPE only	Median scaling	batches of the same biology do not mix, or batches of different biology mix together (tSNE, UMAP, PCA)	Daniil	2026-11-04	1
+K_ffpe_only	knn	13_fsmvn	False	FFPE only	FSMVN	batches of the same biology do not mix, or batches of different biology mix together (tSNE, UMAP, PCA)	Daniil	2026-11-04	1
+K_ffpe_only	strict	13_fsmvn	True	FFPE only	FSMVN	batches of the same biology do not mix, or batches of different biology mix together (tSNE, UMAP, PCA)	Daniil	2026-11-04	1
+C_rnaseq_only	strict	20_shambhala	True	RNA-seq only	Shambhala-2	post-removal deletes the whole RNA-seq FFPE exome-capture batch (almost half of the RNA-seq samples) and keeps only FF; an RNA-seq-only approach must mix FF and FFPE	Daniil	2026-11-04	1
+C_rnaseq_only	knn	20_shambhala	True	RNA-seq only	Shambhala-2	post-removal deletes the whole RNA-seq FFPE exome-capture batch (almost half of the RNA-seq samples) and keeps only FF; an RNA-seq-only approach must mix FF and FFPE	Daniil	2026-11-04	1
+C_rnaseq_only	softimpute	20_shambhala	True	RNA-seq only	Shambhala-2	post-removal deletes the whole RNA-seq FFPE exome-capture batch (almost half of the RNA-seq samples) and keeps only FF; an RNA-seq-only approach must mix FF and FFPE	Daniil	2026-11-04	1
+C_rnaseq_only	strict	06_combat_seq	False	RNA-seq only	ComBat-seq	FF and FFPE batches do not mix on tSNE	Daniil	2026-11-04	1
+C_rnaseq_only	strict	08_inmoose_combatseq	False	RNA-seq only	InMoose ComBat-seq	FF and FFPE batches do not mix on tSNE	Daniil	2026-11-04	1
+A_confirmed_bad	strict	29_combat_ref	True	Multi-platform (RNA-seq + microarrays)	M-ComBat	no separation of the biology groups and no mixing of batches on PCA, UMAP or tSNE	Daniil	2026-11-04	1
+B_extended_bad	softimpute	05_combat	True	Multi-platform (RNA-seq + microarrays)	ComBat	no separation of the biology groups and no mixing of batches on PCA, UMAP or tSNE	Daniil	2026-11-04	1
+E2_iterative_r2	softimpute	05_combat	True	Multi-platform (RNA-seq + microarrays)	ComBat	no separation of the biology groups and no mixing of batches on PCA, UMAP or tSNE	Daniil	2026-11-04	1
+E3_iterative_r3	softimpute	05_combat	True	Multi-platform (RNA-seq + microarrays)	ComBat	no separation of the biology groups and no mixing of batches on PCA, UMAP or tSNE	Daniil	2026-11-04	1
+I_rare_batches_removed	knn	05_combat	False	Multi-platform (RNA-seq + microarrays)	ComBat	no separation of the biology groups and no mixing of batches on PCA, UMAP or tSNE	Daniil	2026-11-04	1
+I_rare_batches_removed	knn	05_combat	True	Multi-platform (RNA-seq + microarrays)	ComBat	no separation of the biology groups and no mixing of batches on PCA, UMAP or tSNE	Daniil	2026-11-04	1
+G_affymetrix_only	knn	25_angel	False	Microarrays only (not a tree leaf)	Angel	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+H_affymetrix_extended	softimpute	31_ruv3prps	True	Microarrays only (not a tree leaf)	RUV-III-PRPS	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+F_microarray_only	knn	05_combat	False	Microarrays only (not a tree leaf)	ComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+F_microarray_only	knn	05_combat	True	Microarrays only (not a tree leaf)	ComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+F_microarray_only	softimpute	05_combat	True	Microarrays only (not a tree leaf)	ComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+G_affymetrix_only	strict	07_pycombat	False	Microarrays only (not a tree leaf)	pyComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+G_affymetrix_only	strict	13_fsmvn	False	Microarrays only (not a tree leaf)	FSMVN	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+G_affymetrix_only	strict	21_harmonizr	False	Microarrays only (not a tree leaf)	HarmonizR	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+G_affymetrix_only	strict	28_npn	False	Microarrays only (not a tree leaf)	NPN	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+H_affymetrix_extended	knn	05_combat	False	Microarrays only (not a tree leaf)	ComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+H_affymetrix_extended	knn	29_combat_ref	False	Microarrays only (not a tree leaf)	M-ComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+H_affymetrix_extended	softimpute	29_combat_ref	False	Microarrays only (not a tree leaf)	M-ComBat	tSNE: batches form isolated groups with no co-localization of the same biology; PCA: batches of the same biology do not overlap	Daniil	2026-11-04	1
+S0_no_removal	softimpute	05_combat	True	No batch removal (S0 only)	ComBat	does not differ from the unharmonized matrix on tSNE, PCA and UMAP	Daniil	2026-11-04	1

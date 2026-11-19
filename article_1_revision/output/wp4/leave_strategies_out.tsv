@@ -1,0 +1,55 @@
+scenario	pool	method	method_display	n_candidates	n_front	on_front	best_front_rank
+FF only	with	16_fsqn_r	FSQN R	164	8	False	
+FF only	with	04_sva	SVA	164	8	False	
+FF only	with	10_mnn	MNN	164	8	False	
+FF only	with	06_combat_seq	ComBat-seq	164	8	True	6.0
+FF only	with	20_shambhala	Shambhala-2	164	8	True	7.0
+FF only	with	25_angel	Angel	164	8	True	1.0
+FF only	without	16_fsqn_r	FSQN R	164	8	False	
+FF only	without	04_sva	SVA	164	8	False	
+FF only	without	10_mnn	MNN	164	8	False	
+FF only	without	06_combat_seq	ComBat-seq	164	8	True	6.0
+FF only	without	20_shambhala	Shambhala-2	164	8	True	7.0
+FF only	without	25_angel	Angel	164	8	True	1.0
+FFPE only	with	16_fsqn_r	FSQN R	164	3	False	
+FFPE only	with	04_sva	SVA	164	3	True	1.0
+FFPE only	with	10_mnn	MNN	164	3	False	
+FFPE only	with	07_pycombat	pyComBat	164	3	True	3.0
+FFPE only	with	13_fsmvn	FSMVN	164	3	True	2.0
+FFPE only	without	16_fsqn_r	FSQN R	164	3	False	
+FFPE only	without	04_sva	SVA	164	3	True	1.0
+FFPE only	without	10_mnn	MNN	164	3	False	
+FFPE only	without	07_pycombat	pyComBat	164	3	True	3.0
+FFPE only	without	13_fsmvn	FSMVN	164	3	True	2.0
+RNA-seq only	with	16_fsqn_r	FSQN R	168	12	False	
+RNA-seq only	with	04_sva	SVA	168	12	True	10.0
+RNA-seq only	with	10_mnn	MNN	168	12	False	
+RNA-seq only	with	01_raw	No harmonization	168	12	True	1.0
+RNA-seq only	with	05_combat	ComBat	168	12	True	12.0
+RNA-seq only	with	14_qsmooth	qsmooth	168	12	True	5.0
+RNA-seq only	with	15_fsqn_py	FSQN Python	168	12	True	8.0
+RNA-seq only	with	17_quantile	Quantile normalization	168	12	True	6.0
+RNA-seq only	with	19_tdm	TDM	168	12	True	4.0
+RNA-seq only	with	23_vst	VST	168	12	True	3.0
+RNA-seq only	without	16_fsqn_r	FSQN R	168	12	False	
+RNA-seq only	without	04_sva	SVA	168	12	True	10.0
+RNA-seq only	without	10_mnn	MNN	168	12	False	
+RNA-seq only	without	01_raw	No harmonization	168	12	True	1.0
+RNA-seq only	without	05_combat	ComBat	168	12	True	12.0
+RNA-seq only	without	14_qsmooth	qsmooth	168	12	True	5.0
+RNA-seq only	without	15_fsqn_py	FSQN Python	168	12	True	8.0
+RNA-seq only	without	17_quantile	Quantile normalization	168	12	True	6.0
+RNA-seq only	without	19_tdm	TDM	168	12	True	4.0
+RNA-seq only	without	23_vst	VST	168	12	True	3.0
+Multi-platform (RNA-seq + microarrays)	with	16_fsqn_r	FSQN R	1266	8	True	1.0
+Multi-platform (RNA-seq + microarrays)	with	04_sva	SVA	1266	8	False	
+Multi-platform (RNA-seq + microarrays)	with	10_mnn	MNN	1266	8	False	
+Multi-platform (RNA-seq + microarrays)	with	05_combat	ComBat	1266	8	True	2.0
+Multi-platform (RNA-seq + microarrays)	with	13_fsmvn	FSMVN	1266	8	True	4.0
+Multi-platform (RNA-seq + microarrays)	with	29_combat_ref	M-ComBat	1266	8	True	6.0
+Multi-platform (RNA-seq + microarrays)	without	16_fsqn_r	FSQN R	476	7	True	1.0
+Multi-platform (RNA-seq + microarrays)	without	04_sva	SVA	476	7	False	
+Multi-platform (RNA-seq + microarrays)	without	10_mnn	MNN	476	7	False	
+Multi-platform (RNA-seq + microarrays)	without	05_combat	ComBat	476	7	True	2.0
+Multi-platform (RNA-seq + microarrays)	without	13_fsmvn	FSMVN	476	7	True	3.0
+Multi-platform (RNA-seq + microarrays)	without	29_combat_ref	M-ComBat	476	7	True	5.0

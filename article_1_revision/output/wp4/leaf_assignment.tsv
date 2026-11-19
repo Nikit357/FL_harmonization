@@ -1,0 +1,8 @@
+strat	imp	method	post_rm	method_display	tree_leaf_name	decided_by	date	note
+D_malignant_only	knn	16_fsqn_r	False	FSQN R	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma
+D_malignant_only	knn	13_fsmvn	False	FSMVN	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma
+D_malignant_only	strict	05_combat	True	ComBat	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma
+I_rare_batches_removed	knn	29_combat_ref	False	M-ComBat	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma
+I_rare_batches_removed	knn	29_combat_ref	True	M-ComBat	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma
+I_rare_batches_removed	strict	29_combat_ref	True	M-ComBat	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma
+D_malignant_only	strict	05_combat	False	ComBat	RNA-seq + microarrays	Daniil	2026-11-07	G4.2 (2026-11-07): the two multi-platform leaves merged into one; Daniil redraws the tree in Figma

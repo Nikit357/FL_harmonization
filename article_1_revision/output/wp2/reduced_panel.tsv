@@ -1,0 +1,23 @@
+metric	metric_group	column	polarity	axis_scope	axis_role	four_score_bar	cluster_id	representative_of	n_members	na_fraction
+PCReg_Diagnosis_cell_type_unified	A	Diagnosis_cell_type_unified	-1	Global	biology retention	global_biology	19	dist_ratio_Diagnosis_cell_type_unified	2	0.0
+PCReg_RNA_BATCH	A	RNA_BATCH	1	Global	batch removal	global_batch	9	dist_ratio_RNA_BATCH;dsc_RNA_BATCH;ks_mean_D_RNA_BATCH	4	0.0
+asw_batch_norm_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	2		1	0.0
+asw_bio_norm_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	14		1	0.0
+clisi_mean_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	7		1	0.0
+cms_fraction_mixed_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	22		1	0.0008952551477170994
+kbet_acceptance_rate_RNA_BATCH	B	RNA_BATCH	1	Local	batch removal	local_batch	15		1	0.0
+umap_centroid_disp_RNA_BATCH	C	RNA_BATCH	-1	Global	batch removal	global_batch	10		1	0.0
+umap_entropy_norm_RNA_BATCH	C	RNA_BATCH	1	Local	batch removal	local_batch	11	ilisi_norm_RNA_BATCH;tsne_entropy_norm_RNA_BATCH	3	0.0
+ks_cohort_within_batch_frac_sig	D	none	-1	Distributional	batch removal	global_batch	1	ks_cohort_within_batch_mean_D	2	0.0
+ks_frac_sig_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	12		1	0.08818263205013428
+per_gene_batch_mean_cv_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	5		1	0.021486123545210387
+fraction_cohorts_bimodal	E	none	1	Coverage	neither		3		1	0.0
+fraction_cohorts_zero_inflated_bimodal	E	none	1	Coverage	neither		4		1	0.0
+graph_connectivity_Diagnosis_cell_type_unified	G	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	13		1	0.0
+wm_Diagnosis_cell_type_unified	I	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	8		1	0.0
+wm_RNA_BATCH	I	RNA_BATCH	-1	Global	batch removal	global_batch	6	wm_mean_batch	2	0.0
+wm_mean_bio	I	none	1	Global	biology retention	global_biology	20		1	0.0
+wm_ratio_bio_batch	I	none	1	Global	neither		21		1	0.0
+pct_genes_allNA	K	none	-1	Coverage	neither		18		1	0.0
+pct_na_cells	K	none	-1	Coverage	neither		17	pct_genes_noNA;pct_samples_noNA	3	0.0
+pct_samples_allNA	K	none	-1	Coverage	neither		16		1	0.0

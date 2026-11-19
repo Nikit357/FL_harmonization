@@ -1,0 +1,115 @@
+variant	metric	metric_group	column	polarity	axis_scope	axis_role	four_score_bar	cluster_id	representative_of	n_members	na_fraction
+33_cut0.1	PCReg_Diagnosis_cell_type_unified	A	Diagnosis_cell_type_unified	-1	Global	biology retention	global_biology	22		1	0.0
+33_cut0.1	PCReg_RNA_BATCH	A	RNA_BATCH	1	Global	batch removal	global_batch	10	dist_ratio_RNA_BATCH;dsc_RNA_BATCH	3	0.0
+33_cut0.1	asw_batch_norm_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	3		1	0.0
+33_cut0.1	asw_bio_norm_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	16		1	0.0
+33_cut0.1	clisi_mean_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	8		1	0.0
+33_cut0.1	cms_fraction_mixed_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	25		1	0.0008952551477170994
+33_cut0.1	kbet_acceptance_rate_RNA_BATCH	B	RNA_BATCH	1	Local	batch removal	local_batch	17		1	0.0
+33_cut0.1	umap_centroid_disp_RNA_BATCH	C	RNA_BATCH	-1	Global	batch removal	global_batch	12		1	0.0
+33_cut0.1	umap_entropy_norm_RNA_BATCH	C	RNA_BATCH	1	Local	batch removal	local_batch	13	ilisi_norm_RNA_BATCH;tsne_entropy_norm_RNA_BATCH	3	0.0
+33_cut0.1	ks_cohort_within_batch_frac_sig	D	none	-1	Distributional	batch removal	global_batch	1		1	0.0
+33_cut0.1	ks_cohort_within_batch_mean_D	D	none	-1	Distributional	batch removal	global_batch	2		1	0.0
+33_cut0.1	ks_frac_sig_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	14		1	0.08818263205013428
+33_cut0.1	ks_mean_D_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	11		1	0.08818263205013428
+33_cut0.1	per_gene_batch_mean_cv_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	6		1	0.021486123545210387
+33_cut0.1	fraction_cohorts_bimodal	E	none	1	Coverage	neither		4		1	0.0
+33_cut0.1	fraction_cohorts_zero_inflated_bimodal	E	none	1	Coverage	neither		5		1	0.0
+33_cut0.1	graph_connectivity_Diagnosis_cell_type_unified	G	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	15		1	0.0
+33_cut0.1	dist_ratio_Diagnosis_cell_type_unified	H	Diagnosis_cell_type_unified	-1	Global	biology retention	global_biology	21		1	0.0
+33_cut0.1	wm_Diagnosis_cell_type_unified	I	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	9		1	0.0
+33_cut0.1	wm_RNA_BATCH	I	RNA_BATCH	-1	Global	batch removal	global_batch	7	wm_mean_batch	2	0.0
+33_cut0.1	wm_mean_bio	I	none	1	Global	biology retention	global_biology	23		1	0.0
+33_cut0.1	wm_ratio_bio_batch	I	none	1	Global	neither		24		1	0.0
+33_cut0.1	pct_genes_allNA	K	none	-1	Coverage	neither		20		1	0.0
+33_cut0.1	pct_na_cells	K	none	-1	Coverage	neither		19	pct_genes_noNA;pct_samples_noNA	3	0.0
+33_cut0.1	pct_samples_allNA	K	none	-1	Coverage	neither		18		1	0.0
+33_cut0.2	PCReg_Diagnosis_cell_type_unified	A	Diagnosis_cell_type_unified	-1	Global	biology retention	global_biology	19	dist_ratio_Diagnosis_cell_type_unified	2	0.0
+33_cut0.2	PCReg_RNA_BATCH	A	RNA_BATCH	1	Global	batch removal	global_batch	9	dist_ratio_RNA_BATCH;dsc_RNA_BATCH;ks_mean_D_RNA_BATCH	4	0.0
+33_cut0.2	asw_batch_norm_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	2		1	0.0
+33_cut0.2	asw_bio_norm_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	14		1	0.0
+33_cut0.2	clisi_mean_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	7		1	0.0
+33_cut0.2	cms_fraction_mixed_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	22		1	0.0008952551477170994
+33_cut0.2	kbet_acceptance_rate_RNA_BATCH	B	RNA_BATCH	1	Local	batch removal	local_batch	15		1	0.0
+33_cut0.2	umap_centroid_disp_RNA_BATCH	C	RNA_BATCH	-1	Global	batch removal	global_batch	10		1	0.0
+33_cut0.2	umap_entropy_norm_RNA_BATCH	C	RNA_BATCH	1	Local	batch removal	local_batch	11	ilisi_norm_RNA_BATCH;tsne_entropy_norm_RNA_BATCH	3	0.0
+33_cut0.2	ks_cohort_within_batch_frac_sig	D	none	-1	Distributional	batch removal	global_batch	1	ks_cohort_within_batch_mean_D	2	0.0
+33_cut0.2	ks_frac_sig_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	12		1	0.08818263205013428
+33_cut0.2	per_gene_batch_mean_cv_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	5		1	0.021486123545210387
+33_cut0.2	fraction_cohorts_bimodal	E	none	1	Coverage	neither		3		1	0.0
+33_cut0.2	fraction_cohorts_zero_inflated_bimodal	E	none	1	Coverage	neither		4		1	0.0
+33_cut0.2	graph_connectivity_Diagnosis_cell_type_unified	G	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	13		1	0.0
+33_cut0.2	wm_Diagnosis_cell_type_unified	I	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	8		1	0.0
+33_cut0.2	wm_RNA_BATCH	I	RNA_BATCH	-1	Global	batch removal	global_batch	6	wm_mean_batch	2	0.0
+33_cut0.2	wm_mean_bio	I	none	1	Global	biology retention	global_biology	20		1	0.0
+33_cut0.2	wm_ratio_bio_batch	I	none	1	Global	neither		21		1	0.0
+33_cut0.2	pct_genes_allNA	K	none	-1	Coverage	neither		18		1	0.0
+33_cut0.2	pct_na_cells	K	none	-1	Coverage	neither		17	pct_genes_noNA;pct_samples_noNA	3	0.0
+33_cut0.2	pct_samples_allNA	K	none	-1	Coverage	neither		16		1	0.0
+33_cut0.3	PCReg_Diagnosis_cell_type_unified	A	Diagnosis_cell_type_unified	-1	Global	biology retention	global_biology	19	dist_ratio_Diagnosis_cell_type_unified	2	0.0
+33_cut0.3	PCReg_RNA_BATCH	A	RNA_BATCH	1	Global	batch removal	global_batch	9	dist_ratio_RNA_BATCH;dsc_RNA_BATCH;ks_mean_D_RNA_BATCH	4	0.0
+33_cut0.3	asw_batch_norm_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	2		1	0.0
+33_cut0.3	asw_bio_norm_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	14		1	0.0
+33_cut0.3	clisi_mean_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	7		1	0.0
+33_cut0.3	cms_fraction_mixed_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	22		1	0.0008952551477170994
+33_cut0.3	kbet_acceptance_rate_RNA_BATCH	B	RNA_BATCH	1	Local	batch removal	local_batch	15		1	0.0
+33_cut0.3	umap_centroid_disp_RNA_BATCH	C	RNA_BATCH	-1	Global	batch removal	global_batch	10		1	0.0
+33_cut0.3	umap_entropy_norm_RNA_BATCH	C	RNA_BATCH	1	Local	batch removal	local_batch	11	ilisi_norm_RNA_BATCH;tsne_entropy_norm_RNA_BATCH	3	0.0
+33_cut0.3	ks_cohort_within_batch_frac_sig	D	none	-1	Distributional	batch removal	global_batch	1	ks_cohort_within_batch_mean_D	2	0.0
+33_cut0.3	ks_frac_sig_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	12		1	0.08818263205013428
+33_cut0.3	per_gene_batch_mean_cv_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	5		1	0.021486123545210387
+33_cut0.3	fraction_cohorts_bimodal	E	none	1	Coverage	neither		3		1	0.0
+33_cut0.3	fraction_cohorts_zero_inflated_bimodal	E	none	1	Coverage	neither		4		1	0.0
+33_cut0.3	graph_connectivity_Diagnosis_cell_type_unified	G	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	13		1	0.0
+33_cut0.3	wm_Diagnosis_cell_type_unified	I	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	8		1	0.0
+33_cut0.3	wm_RNA_BATCH	I	RNA_BATCH	-1	Global	batch removal	global_batch	6	wm_mean_batch	2	0.0
+33_cut0.3	wm_mean_bio	I	none	1	Global	biology retention	global_biology	20		1	0.0
+33_cut0.3	wm_ratio_bio_batch	I	none	1	Global	neither		21		1	0.0
+33_cut0.3	pct_genes_allNA	K	none	-1	Coverage	neither		18		1	0.0
+33_cut0.3	pct_na_cells	K	none	-1	Coverage	neither		17	pct_genes_noNA;pct_samples_noNA	3	0.0
+33_cut0.3	pct_samples_allNA	K	none	-1	Coverage	neither		16		1	0.0
+87_cut0.2	PCReg_COHORT_LABEL	A	COHORT_LABEL	1	Global	neither		19	dist_ratio_COHORT_LABEL;dsc_COHORT_LABEL	3	0.0
+87_cut0.2	PCReg_RNASEQ_SOURCE	A	RNASEQ_SOURCE	1	Global	neither		30	dsc_RNASEQ_SOURCE	2	0.1548791405550582
+87_cut0.2	PCReg_RNA_BATCH	A	RNA_BATCH	1	Global	batch removal	global_batch	24	dist_ratio_PLATFORM_RNA;dist_ratio_RNA_BATCH;dsc_PLATFORM_RNA;dsc_RNA_BATCH;PCReg_PLATFORM_RNA	6	0.0
+87_cut0.2	asw_batch_norm_PLATFORM_RNA	B	PLATFORM_RNA	1	Global	neither		42		1	0.144136078782453
+87_cut0.2	asw_batch_norm_RNASEQ_SOURCE	B	RNASEQ_SOURCE	1	Global	neither		31	dist_ratio_RNASEQ_SOURCE	2	0.1548791405550582
+87_cut0.2	asw_batch_norm_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	43		1	0.0
+87_cut0.2	asw_bio_norm_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	9	asw_bio_norm_Major_group	2	0.0
+87_cut0.2	asw_bio_norm_TUMOR_NORMAL	B	TUMOR_NORMAL	1	Global	neither		10	dist_ratio_TUMOR_NORMAL;PCReg_TUMOR_NORMAL	3	0.08907788719785138
+87_cut0.2	clisi_mean_Diagnosis_cell_type_unified	B	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	37		1	0.0
+87_cut0.2	clisi_mean_Major_group	B	Major_group	1	Local	neither		23		1	0.0
+87_cut0.2	clisi_mean_TUMOR_NORMAL	B	TUMOR_NORMAL	1	Local	neither		38		1	0.08907788719785138
+87_cut0.2	cms_fraction_mixed_COHORT_LABEL	B	COHORT_LABEL	1	Global	neither		27		1	0.0
+87_cut0.2	cms_fraction_mixed_PLATFORM_RNA	B	PLATFORM_RNA	1	Global	neither		17		1	0.144136078782453
+87_cut0.2	cms_fraction_mixed_RNASEQ_SOURCE	B	RNASEQ_SOURCE	1	Global	neither		29		1	0.1566696508504924
+87_cut0.2	cms_fraction_mixed_RNA_BATCH	B	RNA_BATCH	1	Global	batch removal	global_batch	28		1	0.0008952551477170994
+87_cut0.2	kbet_acceptance_rate_COHORT_LABEL	B	COHORT_LABEL	1	Local	neither		18		1	0.0
+87_cut0.2	kbet_acceptance_rate_PLATFORM_RNA	B	PLATFORM_RNA	1	Local	neither		3		1	0.144136078782453
+87_cut0.2	kbet_acceptance_rate_RNA_BATCH	B	RNA_BATCH	1	Local	batch removal	local_batch	4		1	0.0
+87_cut0.2	umap_centroid_disp_COHORT_LABEL	C	COHORT_LABEL	-1	Global	neither		36		1	0.0
+87_cut0.2	umap_centroid_disp_RNASEQ_SOURCE	C	RNASEQ_SOURCE	-1	Global	neither		32		1	0.1548791405550582
+87_cut0.2	umap_centroid_disp_RNA_BATCH	C	RNA_BATCH	-1	Global	batch removal	global_batch	22	umap_centroid_disp_PLATFORM_RNA	2	0.0
+87_cut0.2	umap_entropy_norm_COHORT_LABEL	C	COHORT_LABEL	1	Local	neither		15	asw_batch_norm_COHORT_LABEL;ilisi_norm_COHORT_LABEL;tsne_entropy_norm_COHORT_LABEL	4	0.0
+87_cut0.2	umap_entropy_norm_RNASEQ_SOURCE	C	RNASEQ_SOURCE	1	Local	neither		14	ilisi_norm_RNASEQ_SOURCE;kbet_acceptance_rate_RNASEQ_SOURCE;tsne_entropy_norm_RNASEQ_SOURCE;wm_RNASEQ_SOURCE	5	0.1548791405550582
+87_cut0.2	umap_entropy_norm_RNA_BATCH	C	RNA_BATCH	1	Local	batch removal	local_batch	16	ilisi_norm_PLATFORM_RNA;ilisi_norm_RNA_BATCH;tsne_entropy_norm_PLATFORM_RNA;tsne_entropy_norm_RNA_BATCH;umap_entropy_norm_PLATFORM_RNA	6	0.0
+87_cut0.2	ks_cohort_within_batch_frac_sig	D	none	-1	Distributional	batch removal	global_batch	35	ks_cohort_within_batch_mean_D	2	0.0
+87_cut0.2	ks_frac_sig_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	26	ks_frac_sig_PLATFORM_RNA	2	0.08818263205013428
+87_cut0.2	ks_mean_D_COHORT_LABEL	D	COHORT_LABEL	-1	Distributional	neither		34	ks_frac_sig_COHORT_LABEL	2	0.08818263205013428
+87_cut0.2	ks_mean_D_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	25	ks_mean_D_PLATFORM_RNA	2	0.08818263205013428
+87_cut0.2	per_gene_batch_mean_cv_COHORT_LABEL	D	COHORT_LABEL	-1	Distributional	neither		2		1	0.0
+87_cut0.2	per_gene_batch_mean_cv_RNA_BATCH	D	RNA_BATCH	-1	Distributional	batch removal	global_batch	1	per_gene_batch_mean_cv_PLATFORM_RNA	2	0.021486123545210387
+87_cut0.2	fraction_cohorts_bimodal	E	none	1	Coverage	neither		44		1	0.0
+87_cut0.2	fraction_cohorts_zero_inflated_bimodal	E	none	1	Coverage	neither		45		1	0.0
+87_cut0.2	graph_connectivity_Diagnosis_cell_type_unified	G	Diagnosis_cell_type_unified	1	Local	biology retention	local_biology	21		1	0.0
+87_cut0.2	graph_connectivity_Major_group	G	Major_group	1	Local	neither		20	graph_connectivity_TUMOR_NORMAL	2	0.0
+87_cut0.2	dist_ratio_Major_group	H	Major_group	-1	Global	neither		11	dist_ratio_Diagnosis_cell_type_unified;PCReg_Diagnosis_cell_type_unified;PCReg_Major_group	4	0.0
+87_cut0.2	wm_COHORT_LABEL	I	COHORT_LABEL	-1	Global	neither		40		1	0.0
+87_cut0.2	wm_Diagnosis_cell_type_unified	I	Diagnosis_cell_type_unified	1	Global	biology retention	global_biology	6		1	0.0
+87_cut0.2	wm_Major_group	I	Major_group	1	Global	neither		12	wm_mean_bio	2	0.0
+87_cut0.2	wm_PLATFORM_RNA	I	PLATFORM_RNA	-1	Global	neither		5		1	0.144136078782453
+87_cut0.2	wm_RNA_BATCH	I	RNA_BATCH	-1	Global	batch removal	global_batch	39	wm_mean_batch	2	0.0
+87_cut0.2	wm_TUMOR_NORMAL	I	TUMOR_NORMAL	1	Global	neither		13		1	0.08907788719785138
+87_cut0.2	wm_ratio_bio_batch	I	none	1	Global	neither		41		1	0.0
+87_cut0.2	pct_genes_allNA	K	none	-1	Coverage	neither		8		1	0.0
+87_cut0.2	pct_na_cells	K	none	-1	Coverage	neither		7	pct_genes_noNA;pct_samples_noNA	3	0.0
+87_cut0.2	pct_samples_allNA	K	none	-1	Coverage	neither		33		1	0.0

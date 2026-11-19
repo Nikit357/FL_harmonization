@@ -1,0 +1,86 @@
+experiment	subset_id	arm	method_display	status	seconds	n_samples_in	returned_input_unchanged
+gradient	grad_cap150_l0.0_r1	01_raw	No harmonization	ok	1.7	405	False
+gradient	grad_cap150_l0.0_r1	03_limma	limma	ok	8.1	405	False
+gradient	grad_cap150_l0.0_r1	04_sva	SVA	ok	43.7	405	True
+gradient	grad_cap150_l0.0_r1	04_sva_nocov	SVA without the diagnosis covariate	ok	79.4	405	False
+gradient	grad_cap150_l0.0_r1	05_combat	ComBat	ok	23.8	405	False
+gradient	grad_cap150_l0.0_r1	05_combat_nocov	ComBat without the diagnosis covariate	ok	24.7	405	False
+gradient	grad_cap150_l0.0_r1	10_mnn	MNN	ok	25.7	405	False
+gradient	grad_cap150_l0.0_r1	11_harmony	Harmony	ok	2.3	405	False
+gradient	grad_cap150_l0.0_r1	13_fsmvn	FSMVN	ok	1.9	405	False
+gradient	grad_cap150_l0.0_r1	16_fsqn_r	FSQN R	ok	23.1	405	False
+gradient	grad_cap150_l0.0_r1	17_quantile	Quantile normalization	ok	2.1	405	False
+gradient	grad_cap150_l0.0_r1	33_amdbnorm	AMDBNorm	ok	2774.5	405	False
+gradient	grad_cap150_l1.0_r1	01_raw	No harmonization	ok	1.5	405	False
+gradient	grad_cap150_l1.0_r1	03_limma	limma	ok	7.8	405	False
+gradient	grad_cap150_l1.0_r1	04_sva	SVA	ok	48.9	405	False
+gradient	grad_cap150_l1.0_r1	04_sva_nocov	SVA without the diagnosis covariate	ok	81.4	405	False
+gradient	grad_cap150_l1.0_r1	05_combat	ComBat	failed	15.7	405	
+gradient	grad_cap150_l1.0_r1	05_combat_nocov	ComBat without the diagnosis covariate	ok	24.5	405	False
+gradient	grad_cap150_l1.0_r1	10_mnn	MNN	ok	26.7	405	False
+gradient	grad_cap150_l1.0_r1	11_harmony	Harmony	ok	2.2	405	False
+gradient	grad_cap150_l1.0_r1	13_fsmvn	FSMVN	ok	2.0	405	False
+gradient	grad_cap150_l1.0_r1	16_fsqn_r	FSQN R	ok	24.1	405	False
+gradient	grad_cap150_l1.0_r1	17_quantile	Quantile normalization	ok	2.3	405	False
+gradient	grad_cap150_l1.0_r1	33_amdbnorm	AMDBNorm	ok	2826.3	405	False
+v1	v1_C_f1_test	01_raw	No harmonization	ok	2.0	374	False
+v1	v1_C_f1_test	02_median_scaling	Median scaling	ok	2.8	374	False
+v1	v1_C_f1_test	03_limma	limma	ok	16.4	374	False
+v1	v1_C_f1_test	04_sva	SVA	ok	88.6	374	True
+v1	v1_C_f1_test	05_combat	ComBat	ok	35.1	374	False
+v1	v1_C_f1_test	06_combat_seq	ComBat-seq	ok	117.1	374	False
+v1	v1_C_f1_test	07_pycombat	pyComBat	ok	2.4	374	False
+v1	v1_C_f1_test	08_inmoose_combatseq	InMoose ComBat-seq	ok	151.0	374	False
+v1	v1_C_f1_test	09_ruv	RUV	ok	45.3	374	False
+v1	v1_C_f1_test	10_mnn	MNN	ok	36.6	374	False
+v1	v1_C_f1_test	11_harmony	Harmony	ok	2.9	374	False
+v1	v1_C_f1_test	12_scanorama	Scanorama	ok	3.9	374	False
+v1	v1_C_f1_test	13_fsmvn	FSMVN	ok	2.2	374	False
+v1	v1_C_f1_test	14_qsmooth	qsmooth	ok	38.9	374	False
+v1	v1_C_f1_test	15_fsqn_py	FSQN Python	ok	6.3	374	False
+v1	v1_C_f1_test	16_fsqn_r	FSQN R	ok	77.4	374	False
+v1	v1_C_f1_test	17_quantile	Quantile normalization	ok	3.2	374	False
+v1	v1_C_f1_test	18_rank	Rank normalization	ok	2.8	374	False
+v1	v1_C_f1_test	19_tdm	TDM	ok	186.5	374	False
+v1	v1_C_f1_test	20_shambhala	Shambhala-2	ok	917.5	374	False
+v1	v1_C_f1_test	21_harmonizr	HarmonizR	ok	494.9	374	False
+v1	v1_C_f1_test	22_tmm	TMM	ok	47.5	374	False
+v1	v1_C_f1_test	23_vst	VST	ok	110.3	374	False
+v1	v1_C_f1_test	25_angel	Angel	ok	8.4	374	False
+v1	v1_C_f1_test	26_xpn	XPN	ok	7.1	374	False
+v1	v1_C_f1_test	27_dwd	DWD	ok	164.1	374	False
+v1	v1_C_f1_test	28_npn	NPN	ok	166.8	374	False
+v1	v1_C_f1_test	29_combat_ref	M-ComBat	ok	187.1	374	False
+v1	v1_C_f1_test	31_ruv3prps	RUV-III-PRPS	ok	127.4	374	False
+v1	v1_C_f1_test	33_amdbnorm	AMDBNorm	ok	4040.3	374	False
+v1	v1_C_f1_test	36_explobatch	exploBATCH	failed	1.8	374	
+v1	v1_C_f1_train	01_raw	No harmonization	ok	1.6	1869	False
+v1	v1_C_f1_train	02_median_scaling	Median scaling	ok	4.4	1869	False
+v1	v1_C_f1_train	03_limma	limma	ok	62.3	1869	False
+v1	v1_C_f1_train	04_sva	SVA	ok	472.4	1869	False
+v1	v1_C_f1_train	05_combat	ComBat	ok	97.3	1869	False
+v1	v1_C_f1_train	06_combat_seq	ComBat-seq	ok	575.1	1869	False
+v1	v1_C_f1_train	07_pycombat	pyComBat	ok	3.8	1869	False
+v1	v1_C_f1_train	08_inmoose_combatseq	InMoose ComBat-seq	ok	714.6	1869	False
+v1	v1_C_f1_train	09_ruv	RUV	ok	117.7	1869	False
+v1	v1_C_f1_train	10_mnn	MNN	ok	78.5	1869	False
+v1	v1_C_f1_train	11_harmony	Harmony	ok	6.5	1869	False
+v1	v1_C_f1_train	12_scanorama	Scanorama	ok	8.0	1869	False
+v1	v1_C_f1_train	13_fsmvn	FSMVN	ok	3.6	1869	False
+v1	v1_C_f1_train	14_qsmooth	qsmooth	ok	74.1	1869	False
+v1	v1_C_f1_train	15_fsqn_py	FSQN Python	ok	20.5	1869	False
+v1	v1_C_f1_train	16_fsqn_r	FSQN R	ok	139.3	1869	False
+v1	v1_C_f1_train	17_quantile	Quantile normalization	ok	7.9	1869	False
+v1	v1_C_f1_train	18_rank	Rank normalization	ok	6.0	1869	False
+v1	v1_C_f1_train	19_tdm	TDM	ok	540.1	1869	False
+v1	v1_C_f1_train	20_shambhala	Shambhala-2	ok	2150.1	1869	False
+v1	v1_C_f1_train	21_harmonizr	HarmonizR	ok	2189.4	1869	False
+v1	v1_C_f1_train	22_tmm	TMM	ok	182.9	1869	False
+v1	v1_C_f1_train	23_vst	VST	ok	247.4	1869	False
+v1	v1_C_f1_train	25_angel	Angel	ok	13.2	1869	False
+v1	v1_C_f1_train	26_xpn	XPN	ok	11.7	1869	False
+v1	v1_C_f1_train	27_dwd	DWD	ok	583.8	1869	False
+v1	v1_C_f1_train	28_npn	NPN	ok	524.1	1869	False
+v1	v1_C_f1_train	29_combat_ref	M-ComBat	ok	646.9	1869	False
+v1	v1_C_f1_train	31_ruv3prps	RUV-III-PRPS	ok	531.3	1869	False
+v1	v1_C_f1_train	36_explobatch	exploBATCH	failed	1.7	1869	

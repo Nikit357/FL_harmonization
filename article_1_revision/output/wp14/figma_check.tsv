@@ -1,0 +1,34 @@
+stem	file_w_px	file_h_px	font_sizes_px	font_ok	plot_w_px	plot_h_px	slot_w_px	slot_h_px	fits_slot
+fig1E_confounding	776.3	819.8	10	True	756.3	749.2	756.0		True
+fig2A_strategy_sankey	775.2	617.7	10	True	756.0	598.5	756.0		True
+fig3_reduced_panel_clustermap	1147.7	858.8	10	True	755.2	840.0	756.0	840.0	True
+fig4A_unharmonized_no_removal	533.9	179.2	10	True	514.9	160.0	756.0	168.0	True
+fig4B_ff_only_angel	462.7	271.6	10	True	443.8	252.4	756.0	260.4	True
+fig4C_ffpe_only_sva	458.1	271.6	10	True	439.3	252.4	756.0	260.4	True
+fig4D_rnaseq_only_sva	458.1	271.6	10	True	439.3	252.4	756.0	260.4	True
+fig4_legend	619.8	205.3	10	True	756.0	176.4	756.0	176.4	True
+fig5A_malignant_only_fsqn_r	436.7	313.6	10	True	418.4	294.4	756.0	302.4	True
+fig5B_malignant_only_combat	441.7	313.6	10	True	422.7	294.4	756.0	302.4	True
+fig5C_rare_batches_removed_mcombat	468.5	313.6	10	True	449.5	294.4	756.0	302.4	True
+fig5_legend	619.8	231.0	10	True	756.0	226.8	756.0	226.8	True
+fig6B_eta_squared	375.1	229.3	10	True	356.1	210.0	357.0	210.0	True
+fig6CD_four_scores	901.8	560.5	10	True	755.2	462.0	756.0	462.0	True
+fig6F_decision_tree	775.2	481.2	10	True	756.0	462.0	756.0	462.0	True
+fig6_gradient_panel	418.4	324.6	10	True	398.9	209.8	399.0	210.0	True
+figS14a_marker_correlation_gate	775.3	374.8	10	True	756.0	356.2	756.0	357.0	True
+figS14b_prediction_gate	775.4	374.8	10	True	756.0	356.2	756.0	357.0	True
+figS14c_label_leakage	775.3	391.8	10	True	755.9	335.7	756.0	336.0	True
+figS16a_robustness_tau	775.0	667.8	10	True	756.0	587.6	756.0	588.0	True
+figS16b_front_stability	774.0	502.3	10	True	755.0	483.0	756.0	483.0	True
+figS17a_gradient_scores	775.3	665.0	10	True	755.9	524.9	756.0	525.0	True
+figS17b_gradient_slopes	774.1	291.4	10	True	755.5	230.3	756.0	231.0	True
+figS17c_observational_strategies	775.5	293.3	10	True	756.0	188.5	756.0	189.0	True
+figS17d_gradient_scatter	805.1	330.9	10	True	756.0	243.4	756.0	243.6	True
+figS17e_gradient_rank_trajectories	775.2	375.8	10	True	755.9	259.5	756.0	260.4	True
+figS17f_selected_methods_scores	775.1	525.4	10	True	755.7	440.9	756.0	441.0	True
+figS18a_v1_rank_on_test	993.0	300.4	10	True	756.0	209.4	756.0	210.0	True
+figS18b_v1_regret	775.3	397.9	10	True	755.9	378.6	756.0	378.0	True
+figS2_merged_distributions	789.3	907.8	10	True	756.9	838.6	756.0		True
+figS4_metric_availability	627.0	279.7	10	True	546.6	260.4	546.0	260.4	True
+figS5_metric_correlation_clusters	942.7	759.8	6, 10	True	757.0	740.7	756.0		True
+figS6_approach_correlation	1137.4	775.2	10	True	756.1	756.1	756.0		True

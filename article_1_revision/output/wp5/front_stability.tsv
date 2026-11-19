@@ -1,0 +1,103 @@
+strat	imp	method	post_rm	scenario	reference	panel_cut0.1	panel_cut0.3	all_87_metrics	axis_mean	group_balanced	local_runner_up	bridging_biology	front_stability	method_display	selected_after_visual_check
+J_ff_only	softimpute	25_angel	False	FF only	True	True	True	True	True	True	True	True	1.0	Angel	True
+J_ff_only	knn	25_angel	False	FF only	True	True	True	True	True	True	False	True	0.875	Angel	True
+J_ff_only	knn	25_angel	True	FF only	True	True	False	False	True	True	True	False	0.625	Angel	True
+J_ff_only	softimpute	25_angel	True	FF only	True	True	True	True	False	False	False	False	0.5	Angel	True
+J_ff_only	strict	25_angel	True	FF only	True	True	False	True	False	False	False	True	0.5	Angel	True
+J_ff_only	knn	06_combat_seq	True	FF only	True	True	False	False	False	False	True	False	0.375	ComBat-seq	False
+J_ff_only	knn	09_ruv	False	FF only	False	False	False	False	True	True	True	False	0.375	RUV	False
+J_ff_only	softimpute	20_shambhala	False	FF only	True	True	False	False	False	False	True	False	0.375	Shambhala-2	False
+J_ff_only	strict	06_combat_seq	True	FF only	True	True	False	False	False	False	True	False	0.375	ComBat-seq	False
+J_ff_only	softimpute	09_ruv	False	FF only	False	False	False	False	True	False	True	False	0.25	RUV	False
+J_ff_only	strict	08_inmoose_combatseq	True	FF only	False	False	False	False	False	False	True	False	0.125	InMoose ComBat-seq	False
+J_ff_only	strict	09_ruv	False	FF only	False	False	False	False	False	False	True	False	0.125	RUV	False
+K_ffpe_only	softimpute	04_sva	False	FFPE only	True	True	True	True	True	True	True	False	0.875	SVA	True
+K_ffpe_only	knn	13_fsmvn	True	FFPE only	True	True	True	True	False	False	False	True	0.625	FSMVN	False
+K_ffpe_only	strict	07_pycombat	False	FFPE only	True	True	True	True	False	False	False	False	0.5	pyComBat	False
+K_ffpe_only	softimpute	13_fsmvn	True	FFPE only	False	False	False	True	False	False	False	True	0.25	FSMVN	False
+K_ffpe_only	knn	05_combat	True	FFPE only	False	False	False	False	False	False	True	False	0.125	ComBat	False
+K_ffpe_only	softimpute	03_limma	True	FFPE only	False	False	False	False	False	False	False	True	0.125	limma	False
+K_ffpe_only	softimpute	05_combat	False	FFPE only	False	False	False	False	False	False	True	False	0.125	ComBat	False
+K_ffpe_only	softimpute	13_fsmvn	False	FFPE only	False	False	True	False	False	False	False	False	0.125	FSMVN	False
+K_ffpe_only	softimpute	29_combat_ref	False	FFPE only	False	False	False	False	False	False	True	False	0.125	M-ComBat	False
+K_ffpe_only	softimpute	29_combat_ref	True	FFPE only	False	False	False	False	False	False	True	False	0.125	M-ComBat	False
+K_ffpe_only	strict	26_xpn	True	FFPE only	False	False	False	False	False	False	False	True	0.125	XPN	False
+H_affymetrix_extended	softimpute	25_angel	True	Microarrays only (not a tree leaf)	True	True	True	True	True	True	True	True	1.0	Angel	True
+G_affymetrix_only	strict	26_xpn	False	Microarrays only (not a tree leaf)	True	True	True	True	False	False	True	True	0.75	XPN	False
+G_affymetrix_only	knn	03_limma	True	Microarrays only (not a tree leaf)	True	True	True	True	False	False	False	True	0.625	limma	False
+G_affymetrix_only	strict	05_combat	True	Microarrays only (not a tree leaf)	True	True	True	True	False	False	False	True	0.625	ComBat	False
+G_affymetrix_only	knn	05_combat	True	Microarrays only (not a tree leaf)	True	True	False	True	False	False	False	True	0.5	ComBat	False
+H_affymetrix_extended	strict	25_angel	True	Microarrays only (not a tree leaf)	False	False	True	False	True	True	False	False	0.375	Angel	False
+F_microarray_only	strict	05_combat	False	Microarrays only (not a tree leaf)	False	False	False	False	False	True	True	False	0.25	ComBat	False
+F_microarray_only	strict	25_angel	False	Microarrays only (not a tree leaf)	False	False	False	False	True	True	False	False	0.25	Angel	False
+F_microarray_only	strict	05_combat	True	Microarrays only (not a tree leaf)	False	False	True	False	False	False	False	False	0.125	ComBat	False
+G_affymetrix_only	knn	01_raw	True	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	No harmonization	False
+G_affymetrix_only	knn	31_ruv3prps	True	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	RUV-III-PRPS	False
+G_affymetrix_only	strict	01_raw	True	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	No harmonization	False
+G_affymetrix_only	strict	25_angel	False	Microarrays only (not a tree leaf)	False	False	True	False	False	False	False	False	0.125	Angel	False
+H_affymetrix_extended	knn	15_fsqn_py	False	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	FSQN Python	False
+H_affymetrix_extended	knn	17_quantile	False	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	Quantile normalization	False
+H_affymetrix_extended	softimpute	15_fsqn_py	True	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	FSQN Python	False
+H_affymetrix_extended	softimpute	17_quantile	False	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	Quantile normalization	False
+H_affymetrix_extended	softimpute	18_rank	False	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	Rank normalization	False
+H_affymetrix_extended	softimpute	18_rank	True	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	Rank normalization	False
+H_affymetrix_extended	softimpute	25_angel	False	Microarrays only (not a tree leaf)	False	False	False	False	False	False	True	False	0.125	Angel	False
+D_malignant_only	knn	16_fsqn_r	False	Multi-platform (RNA-seq + microarrays)	True	True	True	True	True	True	True	True	1.0	FSQN R	True
+D_malignant_only	knn	13_fsmvn	False	Multi-platform (RNA-seq + microarrays)	True	True	True	True	False	False	True	True	0.75	FSMVN	True
+I_rare_batches_removed	strict	29_combat_ref	True	Multi-platform (RNA-seq + microarrays)	True	True	True	True	False	False	True	True	0.75	M-ComBat	True
+A_confirmed_bad	softimpute	05_combat	True	Multi-platform (RNA-seq + microarrays)	True	True	False	False	False	False	True	True	0.5	ComBat	False
+D_malignant_only	strict	05_combat	True	Multi-platform (RNA-seq + microarrays)	True	True	True	True	False	False	False	False	0.5	ComBat	True
+I_rare_batches_removed	strict	29_combat_ref	False	Multi-platform (RNA-seq + microarrays)	False	False	True	True	False	False	True	True	0.5	M-ComBat	False
+D_malignant_only	knn	26_xpn	False	Multi-platform (RNA-seq + microarrays)	False	False	True	False	True	True	False	False	0.375	XPN	False
+D_malignant_only	strict	05_combat	False	Multi-platform (RNA-seq + microarrays)	True	True	True	False	False	False	False	False	0.375	ComBat	True
+E1_iterative_r1	strict	05_combat	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	True	True	True	False	0.375	ComBat	False
+E1_iterative_r1	strict	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	True	True	True	False	0.375	Angel	False
+E2_iterative_r2	strict	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	True	True	True	False	0.375	Angel	False
+A_confirmed_bad	knn	25_angel	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	True	True	False	False	0.25	Angel	False
+E3_iterative_r3	strict	05_combat	False	Multi-platform (RNA-seq + microarrays)	False	False	True	False	False	False	True	False	0.25	ComBat	False
+E3_iterative_r3	strict	05_combat	True	Multi-platform (RNA-seq + microarrays)	False	False	True	False	False	False	True	False	0.25	ComBat	False
+E3_iterative_r3	strict	25_angel	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	True	True	False	False	0.25	Angel	False
+I_rare_batches_removed	knn	29_combat_ref	False	Multi-platform (RNA-seq + microarrays)	True	True	False	False	False	False	False	False	0.25	M-ComBat	True
+I_rare_batches_removed	knn	29_combat_ref	True	Multi-platform (RNA-seq + microarrays)	True	True	False	False	False	False	False	False	0.25	M-ComBat	True
+S0_no_removal	strict	05_combat	True	Multi-platform (RNA-seq + microarrays)	False	False	True	False	False	False	True	False	0.25	ComBat	False
+S0_no_removal	strict	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	True	True	False	False	0.25	Angel	False
+A_confirmed_bad	softimpute	05_combat	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	ComBat	False
+A_confirmed_bad	softimpute	25_angel	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	Angel	False
+D_malignant_only	softimpute	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	True	False	False	False	False	0.125	Angel	False
+E1_iterative_r1	softimpute	05_combat	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	ComBat	False
+E2_iterative_r2	knn	25_angel	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	Angel	False
+E2_iterative_r2	knn	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	Angel	False
+E3_iterative_r3	knn	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	Angel	False
+E3_iterative_r3	softimpute	05_combat	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	ComBat	False
+I_rare_batches_removed	softimpute	29_combat_ref	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	M-ComBat	False
+I_rare_batches_removed	softimpute	29_combat_ref	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	M-ComBat	False
+S0_no_removal	softimpute	25_angel	False	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	Angel	False
+S0_no_removal	softimpute	25_angel	True	Multi-platform (RNA-seq + microarrays)	False	False	False	False	False	False	True	False	0.125	Angel	False
+S0_no_removal	strict	05_combat	False	Multi-platform (RNA-seq + microarrays)	False	False	True	False	False	False	False	False	0.125	ComBat	False
+S0_no_removal	strict	25_angel	True	No batch removal (S0 only)	True	True	True	True	True	True	True	True	1.0	Angel	True
+S0_no_removal	knn	25_angel	False	No batch removal (S0 only)	True	True	False	True	True	True	False	True	0.75	Angel	True
+S0_no_removal	softimpute	25_angel	False	No batch removal (S0 only)	True	True	False	False	False	False	True	True	0.5	Angel	True
+S0_no_removal	softimpute	25_angel	True	No batch removal (S0 only)	True	True	False	True	False	False	True	False	0.5	Angel	True
+S0_no_removal	softimpute	29_combat_ref	False	No batch removal (S0 only)	True	True	False	False	False	False	True	True	0.5	M-ComBat	False
+S0_no_removal	strict	25_angel	False	No batch removal (S0 only)	True	True	False	False	False	False	False	True	0.375	Angel	True
+S0_no_removal	knn	25_angel	True	No batch removal (S0 only)	False	False	False	True	False	True	False	False	0.25	Angel	False
+S0_no_removal	strict	05_combat	True	No batch removal (S0 only)	False	False	True	False	False	False	True	False	0.25	ComBat	False
+S0_no_removal	strict	05_combat	False	No batch removal (S0 only)	False	False	True	False	False	False	False	False	0.125	ComBat	False
+C_rnaseq_only	strict	15_fsqn_py	True	RNA-seq only	True	True	False	True	True	True	True	True	0.875	FSQN Python	False
+C_rnaseq_only	strict	17_quantile	True	RNA-seq only	True	True	False	True	True	True	True	True	0.875	Quantile normalization	False
+C_rnaseq_only	softimpute	01_raw	True	RNA-seq only	True	True	True	True	False	False	False	True	0.625	No harmonization	False
+C_rnaseq_only	knn	04_sva	False	RNA-seq only	True	True	False	False	False	False	True	True	0.5	SVA	True
+C_rnaseq_only	knn	17_quantile	True	RNA-seq only	True	True	False	False	False	False	True	True	0.5	Quantile normalization	False
+C_rnaseq_only	knn	23_vst	True	RNA-seq only	True	True	False	True	False	False	False	True	0.5	VST	False
+C_rnaseq_only	softimpute	14_qsmooth	True	RNA-seq only	True	True	True	False	False	False	False	True	0.5	qsmooth	False
+C_rnaseq_only	softimpute	19_tdm	True	RNA-seq only	True	True	True	False	False	False	False	True	0.5	TDM	False
+C_rnaseq_only	knn	01_raw	True	RNA-seq only	True	True	False	False	False	False	False	True	0.375	No harmonization	False
+C_rnaseq_only	knn	14_qsmooth	True	RNA-seq only	True	True	False	False	False	False	False	True	0.375	qsmooth	False
+C_rnaseq_only	softimpute	04_sva	False	RNA-seq only	True	True	False	False	False	False	False	True	0.375	SVA	True
+C_rnaseq_only	softimpute	17_quantile	True	RNA-seq only	False	False	False	True	True	True	False	False	0.375	Quantile normalization	False
+C_rnaseq_only	strict	05_combat	False	RNA-seq only	True	True	False	False	False	False	False	True	0.375	ComBat	True
+C_rnaseq_only	strict	11_harmony	True	RNA-seq only	False	False	False	False	True	True	True	False	0.375	Harmony	False
+C_rnaseq_only	softimpute	18_rank	True	RNA-seq only	False	False	True	True	False	False	False	False	0.25	Rank normalization	False
+C_rnaseq_only	softimpute	22_tmm	True	RNA-seq only	False	False	True	True	False	False	False	False	0.25	TMM	False
+C_rnaseq_only	softimpute	20_shambhala	False	RNA-seq only	False	False	True	False	False	False	False	False	0.125	Shambhala-2	False
+C_rnaseq_only	strict	09_ruv	True	RNA-seq only	False	False	False	False	True	False	False	False	0.125	RUV	False

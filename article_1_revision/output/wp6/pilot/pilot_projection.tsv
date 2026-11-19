@@ -1,0 +1,44 @@
+experiment	arm	method_display	measured_in_pilot	projected_cpu_hours
+gradient	01_raw	No harmonization	True	0.0230320987654321
+gradient	03_limma	limma	True	0.15546666666666664
+gradient	04_sva	SVA	True	1.042518082788671
+gradient	04_sva_nocov	SVA without the diagnosis covariate	True	1.1573629629629631
+gradient	05_combat	ComBat	True	0.3426024691358025
+gradient	05_combat_nocov	ComBat without the diagnosis covariate	True	0.3541185185185185
+gradient	10_mnn	MNN	True	0.37715061728395066
+gradient	13_fsmvn	FSMVN	True	0.028070370370370374
+gradient	16_fsqn_r	FSQN R	True	0.3907207934526287
+gradient	17_quantile	Quantile normalization	True	0.031669135802469134
+gradient	33_amdbnorm	AMDBNorm	True	40.684762962962964
+gradient	11_harmony	Harmony	True	0.03238888888888889
+v1	01_raw	No harmonization	True	0.08550891632373113
+v1	02_median_scaling	Median scaling	True	0.10649966126502806
+v1	03_limma	limma	True	0.5771851851851851
+v1	04_sva	SVA	True	3.870450210162628
+v1	05_combat	ComBat	True	1.2719451303155005
+v1	06_combat_seq	ComBat-seq	True	6.718503293724708
+v1	07_pycombat	pyComBat	True	0.09145086340063206
+v1	08_inmoose_combatseq	InMoose ComBat-seq	True	8.507206194701238
+v1	09_ruv	RUV	True	1.9923478164390258
+v1	10_mnn	MNN	True	1.4002085048010975
+v1	11_harmony	Harmony	True	0.12024691358024692
+v1	12_scanorama	Scanorama	True	0.15917509848111303
+v1	13_fsmvn	FSMVN	True	0.10421399176954733
+v1	14_qsmooth	qsmooth	True	1.5546940941851712
+v1	15_fsqn_py	FSQN Python	True	0.30100227720188066
+v1	16_fsqn_r	FSQN R	True	1.450589109292397
+v1	17_quantile	Quantile normalization	True	0.11757475994513031
+v1	18_rank	Rank normalization	True	0.115764270979076
+v1	19_tdm	TDM	True	8.524027716182376
+v1	20_shambhala	Shambhala-2	True	38.99906649346835
+v1	21_harmonizr	HarmonizR	True	26.998096086919617
+v1	22_tmm	TMM	True	2.433540793005433
+v1	23_vst	VST	True	4.624227739898592
+v1	25_angel	Angel	True	0.3194989837950843
+v1	26_xpn	XPN	True	0.2731960622178731
+v1	27_dwd	DWD	True	8.128891492586138
+v1	28_npn	NPN	True	7.861334084876717
+v1	29_combat_ref	M-ComBat	True	9.159802268427516
+v1	31_ruv3prps	RUV-III-PRPS	True	6.762929760259568
+v1	33_amdbnorm	AMDBNorm	True	151.04615637860084
+v1	36_explobatch	exploBATCH	False	

@@ -1,0 +1,43 @@
+w:fldChar 0 | w:instrText 0 | w:sdt 82 | w:hyperlink 12
+  [15] SDT          Despite considerable progress in transcriptomic batch correction, technical va
+  [16] SDT          Despite the rise of single-cell RNA sequencing, bulk transcriptomic profiling 
+  [17] SDT          The two principal sources of batch variation in multi-platform bulk transcript
+  [18] SDT          Most harmonization tools have been developed and benchmarked on datasets chara
+  [22] LINK         Finally, the ComboBatch tool is available in a public GitHub repository via th
+  [31] SDT          For RNA-seq datasets gene expression profiling was done starting from the raw 
+  [34] SDT          The full cross-product of prior batch removal, imputation, log2-transformation
+  [36] SDT          Because most harmonization algorithms process samples jointly and their perfor
+  [46] SDT          We ran KNN imputation using the KNNImputer from Python scikit-learn package ve
+  [48] SDT          Harmonization methods
+  [55] SDT+LINK     Six methods failed implementation and are documented with reasons in Supplemen
+  [61] LINK         We built the harmonization pipeline based on python scripts that can be found 
+  [63] SDT+LINK     For harmonization quality assessment, we assembled a set of 87 polarity-define
+  [67] SDT          Harmonization quality metrics were computed and statistically analyzed using t
+  [69] SDT          Basic plotting was done using the general Python packages seaborn (v0.13.2) (W
+  [72] SDT          Data analysis and table manipulations were done using pandas (v2.3.3) (Mckinne
+  [74] SDT+LINK     Claude Code with the Claude Sonnet 4.8, Sonnet 5 and Opus 5 models (Liu et al.
+  [76] SDT          Iterative code refinement for complicated visuals was done using Google Gemini
+  [84] SDT          The dataset was markedly imbalanced with respect to both batch and biology gro
+  [92] SDT          Strict NA exclusion produced predominantly bimodal (72 of 88; Supplementary Fi
+  [151] SDT          The two top methods after the clustermap best group (it was the best by the co
+  [172] SDT          Final decision tree for bulk transcriptomic datasets harmonization
+  [183] SDT          We aimed to find the best harmonization approach for the multiplatform GC B ce
+  [185] SDT          The dataset assembled for this study was markedly imbalanced with respect to b
+  [187] SDT          Moreover, the follicular lymphoma transcriptome represents one of the most tec
+  [189] SDT          Current benchmarking datasets (TCGA, GTEx, SEQC, MAQC etc) comprise biological
+  [191] SDT          The FL-specific biological discovery — two transcriptional subgroups revealed 
+  [194] SDT          The ComboBatch pipeline is conceptually distinct from previous harmonization b
+  [196] LINK         The computational scale of ComboBatch — 2,234 successfully completed approache
+  [198] SDT+LINK     We note important technical limitations of the current pipeline. The kBET metr
+  [212] SDT          The ComboBatch benchmark was designed as an exhaustive computational search wh
+  [214] SDT          Interestingly, rank normalization and standard quantile normalization — both h
+  [217] SDT          Among the 31 methods analyzed, SVA and FSQN R were the only algorithms that si
+  [219] SDT          Methods that dominated earlier harmonization benchmarks designed on TCGA or GT
+  [221] SDT          The Quartet reference material framework (Yu et al. 2023), while conceptually 
+  [251] SDT          before vs after harmonization (metric name mk_rho_mean_all_genes_narrow_set) f
+  [263] SDT+LINK     The data supporting this article are available in the article and its online s
+  [267] SDT+LINK     The transcriptomic data analyzed in this study derive from publicly available 
+
+38 paragraphs hold citation fields or links -> tracked_replace() would destroy them; use safe_tracked_replace().
+
+Standalone bibliography sdt: 19339 chars, entries 1-26 (18 found)

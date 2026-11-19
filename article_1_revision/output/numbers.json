@@ -1,0 +1,3914 @@
+{
+ "cohort_V_batch_diagnosis": {
+  "value": 0.357763833327463,
+  "display": "0.358",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "cohort_AMI_batch_diagnosis": {
+  "value": 0.2626795517102991,
+  "display": "0.263",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "cohort_V_batch_major_group": {
+  "value": 0.494929434984825,
+  "display": "0.495",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "n_single_dx_batches": {
+  "value": 11,
+  "display": "11",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "n_batches": {
+  "value": 29,
+  "display": "29",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "n_samples_single_dx_batches": {
+  "value": 2068,
+  "display": "2,068",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "pct_samples_single_dx_batches": {
+  "value": 28.826317256760525,
+  "display": "28.8",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__S0_no_removal": {
+  "value": 0.357763833327463,
+  "display": "0.36",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__S0_no_removal": {
+  "value": 28.826317256760525,
+  "display": "28.8",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__A_confirmed_bad": {
+  "value": 0.3506900962382653,
+  "display": "0.35",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__A_confirmed_bad": {
+  "value": 17.652461425422484,
+  "display": "17.7",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__B_extended_bad": {
+  "value": 0.3240691824191899,
+  "display": "0.32",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__B_extended_bad": {
+  "value": 17.34534064212999,
+  "display": "17.3",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__C_rnaseq_only": {
+  "value": 0.395199729121088,
+  "display": "0.40",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__C_rnaseq_only": {
+  "value": 0.0891662951404369,
+  "display": "0.1",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__D_malignant_only": {
+  "value": 0.4162382852533992,
+  "display": "0.42",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__D_malignant_only": {
+  "value": 34.44709626093874,
+  "display": "34.4",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__E1_iterative_r1": {
+  "value": 0.3499935824056592,
+  "display": "0.35",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__E1_iterative_r1": {
+  "value": 17.28782287822878,
+  "display": "17.3",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__E2_iterative_r2": {
+  "value": 0.333417190224991,
+  "display": "0.33",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__E2_iterative_r2": {
+  "value": 17.393725635789863,
+  "display": "17.4",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__E3_iterative_r3": {
+  "value": 0.3356074815471031,
+  "display": "0.34",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__E3_iterative_r3": {
+  "value": 17.82724505327245,
+  "display": "17.8",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__F_microarray_only": {
+  "value": 0.3782584362218955,
+  "display": "0.38",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__F_microarray_only": {
+  "value": 41.89819509227337,
+  "display": "41.9",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__G_affymetrix_only": {
+  "value": 0.4900063602314878,
+  "display": "0.49",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__G_affymetrix_only": {
+  "value": 28.561228132809717,
+  "display": "28.6",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__H_affymetrix_extended": {
+  "value": 0.3411476421566685,
+  "display": "0.34",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__H_affymetrix_extended": {
+  "value": 24.01395224040784,
+  "display": "24.0",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__I_rare_batches_removed": {
+  "value": 0.2780388384226375,
+  "display": "0.28",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__I_rare_batches_removed": {
+  "value": 28.031750698221376,
+  "display": "28.0",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__J_ff_only": {
+  "value": 0.3698580444340429,
+  "display": "0.37",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__J_ff_only": {
+  "value": 3.978528575939375,
+  "display": "4.0",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_V__K_ffpe_only": {
+  "value": 0.4344625621147375,
+  "display": "0.43",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "table1_pct_single_dx__K_ffpe_only": {
+  "value": 64.73333333333333,
+  "display": "64.7",
+  "source": "output/wp1/confounding_by_strategy.tsv",
+  "status": "ready"
+ },
+ "n_multi_dx_batches": {
+  "value": 18,
+  "display": "18",
+  "source": "output/wp1/bridging_batches.tsv",
+  "status": "ready"
+ },
+ "n_samples_multi_dx_batches": {
+  "value": 5106,
+  "display": "5,106",
+  "source": "output/wp1/bridging_batches.tsv",
+  "status": "ready"
+ },
+ "n_graph_components": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp1/bridging_batches.tsv",
+  "status": "ready"
+ },
+ "variance_partition_median_R2__batch": {
+  "value": 0.7432807036261457,
+  "display": "0.743",
+  "source": "output/wp1/variance_partition_raw.tsv",
+  "status": "ready"
+ },
+ "variance_partition_median_R2__diagnosis": {
+  "value": 0.0702148454152215,
+  "display": "0.070",
+  "source": "output/wp1/variance_partition_raw.tsv",
+  "status": "ready"
+ },
+ "variance_partition_median_R2__batch_plus_diagnosis": {
+  "value": 0.7801113585038417,
+  "display": "0.780",
+  "source": "output/wp1/variance_partition_raw.tsv",
+  "status": "ready"
+ },
+ "variance_partition_median_R2__shared": {
+  "value": 0.0370212596786784,
+  "display": "0.037",
+  "source": "output/wp1/variance_partition_raw.tsv",
+  "status": "ready"
+ },
+ "panel_n_universe": {
+  "value": 32,
+  "display": "32",
+  "source": "output/wp2/panel_summary.json",
+  "status": "ready"
+ },
+ "panel_n_panel": {
+  "value": 22,
+  "display": "22",
+  "source": "output/wp2/panel_summary.json",
+  "status": "ready"
+ },
+ "panel_complete_on_panel": {
+  "value": 1993,
+  "display": "1,993",
+  "source": "output/wp2/panel_summary.json",
+  "status": "ready"
+ },
+ "panel_complete_on_87": {
+  "value": 1354,
+  "display": "1,354",
+  "source": "output/wp2/panel_summary.json",
+  "status": "ready"
+ },
+ "panel_n_approaches": {
+  "value": 2234,
+  "display": "2,234",
+  "source": "output/wp2/panel_summary.json",
+  "status": "ready"
+ },
+ "panel_n_clusters": {
+  "value": 22,
+  "display": "22",
+  "source": "output/wp2/cluster_membership.tsv",
+  "status": "ready"
+ },
+ "headline__global_batch": {
+  "value": "PCReg_RNA_BATCH",
+  "display": "PCReg_RNA_BATCH",
+  "source": "output/wp3/bar_headlines.tsv",
+  "status": "ready"
+ },
+ "headline__global_biology": {
+  "value": "PCReg_Diagnosis_cell_type_unified",
+  "display": "PCReg_Diagnosis_cell_type_unified",
+  "source": "output/wp3/bar_headlines.tsv",
+  "status": "ready"
+ },
+ "headline__local_batch": {
+  "value": "kbet_acceptance_rate_RNA_BATCH",
+  "display": "kbet_acceptance_rate_RNA_BATCH",
+  "source": "output/wp3/bar_headlines.tsv",
+  "status": "ready"
+ },
+ "headline__local_biology": {
+  "value": "graph_connectivity_Diagnosis_cell_type_unified",
+  "display": "graph_connectivity_Diagnosis_cell_type_unified",
+  "source": "output/wp3/bar_headlines.tsv",
+  "status": "ready"
+ },
+ "eta2_panel__Strategy": {
+  "value": 0.27658849583295014,
+  "display": "0.277",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_panel__Method": {
+  "value": 0.3332411463559142,
+  "display": "0.333",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_panel__Imputation": {
+  "value": 0.010380630476382885,
+  "display": "0.010",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_panel__Post-removal": {
+  "value": 0.00185496945761265,
+  "display": "0.002",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_all87__Strategy": {
+  "value": 0.25641664048485446,
+  "display": "0.256",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_all87__Method": {
+  "value": 0.3629135255559775,
+  "display": "0.363",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_all87__Imputation": {
+  "value": 0.015503816238135206,
+  "display": "0.016",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "eta2_all87__Post-removal": {
+  "value": 0.0020355880780086916,
+  "display": "0.002",
+  "source": "output/wp3/eta_squared.tsv",
+  "status": "ready"
+ },
+ "fsqn_on_front_without_A_B_E": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp4/leave_strategies_out.tsv",
+  "status": "ready"
+ },
+ "gradient_n_meaningful_slopes": {
+  "value": 100,
+  "display": "100",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__01_raw__L": {
+  "value": NaN,
+  "display": "nan",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__01_raw__N": {
+  "value": -0.2812071489295048,
+  "display": "-0.281",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__01_raw__batch_removal": {
+  "value": 0.046640331039531,
+  "display": "0.047",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__01_raw__biology_retention": {
+  "value": 0.0667388051796952,
+  "display": "0.067",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__03_limma__L": {
+  "value": NaN,
+  "display": "nan",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__03_limma__N": {
+  "value": -0.414306932702809,
+  "display": "-0.414",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__03_limma__batch_removal": {
+  "value": 0.0169752121692274,
+  "display": "0.017",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__03_limma__biology_retention": {
+  "value": -0.129169208758543,
+  "display": "-0.129",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva__L": {
+  "value": -0.1242990867041563,
+  "display": "-0.124",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva__N": {
+  "value": -0.2963908445899035,
+  "display": "-0.296",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva__batch_removal": {
+  "value": 0.0489364564857822,
+  "display": "0.049",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva__biology_retention": {
+  "value": 0.1074801416504976,
+  "display": "0.107",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva_nocov__L": {
+  "value": 0.0220237385612291,
+  "display": "0.022",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva_nocov__N": {
+  "value": -0.0768173680002209,
+  "display": "-0.077",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva_nocov__batch_removal": {
+  "value": 0.0647509485327989,
+  "display": "0.065",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__04_sva_nocov__biology_retention": {
+  "value": -0.0403697267683433,
+  "display": "-0.040",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat__L": {
+  "value": 0.0563496434752514,
+  "display": "0.056",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat__N": {
+  "value": -0.4114381932342302,
+  "display": "-0.411",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat__batch_removal": {
+  "value": -0.1031425754795821,
+  "display": "-0.103",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat__biology_retention": {
+  "value": 0.0580512990416563,
+  "display": "0.058",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat_nocov__L": {
+  "value": NaN,
+  "display": "nan",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat_nocov__N": {
+  "value": -0.631415086935281,
+  "display": "-0.631",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat_nocov__batch_removal": {
+  "value": -0.0160126675120296,
+  "display": "-0.016",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__05_combat_nocov__biology_retention": {
+  "value": -0.1072642401950081,
+  "display": "-0.107",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__10_mnn__L": {
+  "value": 0.0458247120143104,
+  "display": "0.046",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__10_mnn__N": {
+  "value": -0.4329106942571429,
+  "display": "-0.433",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__10_mnn__batch_removal": {
+  "value": -0.1083881452009535,
+  "display": "-0.108",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__10_mnn__biology_retention": {
+  "value": -0.0275015576616951,
+  "display": "-0.028",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__11_harmony__L": {
+  "value": 0.015540159070837,
+  "display": "0.016",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__11_harmony__N": {
+  "value": -0.3167721342509468,
+  "display": "-0.317",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__11_harmony__batch_removal": {
+  "value": 0.0395306079989894,
+  "display": "0.040",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__11_harmony__biology_retention": {
+  "value": 0.2153127644032511,
+  "display": "0.215",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__13_fsmvn__L": {
+  "value": NaN,
+  "display": "nan",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__13_fsmvn__N": {
+  "value": -0.6014143892936241,
+  "display": "-0.601",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__13_fsmvn__batch_removal": {
+  "value": 0.0141489514368573,
+  "display": "0.014",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__13_fsmvn__biology_retention": {
+  "value": -0.1062946021124731,
+  "display": "-0.106",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__16_fsqn_r__L": {
+  "value": 2.0843147366360075e-05,
+  "display": "0.000",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__16_fsqn_r__N": {
+  "value": -0.4595525022224991,
+  "display": "-0.460",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__16_fsqn_r__batch_removal": {
+  "value": 0.0504014618591853,
+  "display": "0.050",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__16_fsqn_r__biology_retention": {
+  "value": -0.1320330998612852,
+  "display": "-0.132",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__17_quantile__L": {
+  "value": -0.0020228004099242,
+  "display": "-0.002",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__17_quantile__N": {
+  "value": -0.2197410762171558,
+  "display": "-0.220",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__17_quantile__batch_removal": {
+  "value": 0.0023989730861601,
+  "display": "0.002",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__17_quantile__biology_retention": {
+  "value": -0.0157100023650802,
+  "display": "-0.016",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__25_angel__L": {
+  "value": 0.0045452857488549,
+  "display": "0.005",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__25_angel__N": {
+  "value": -0.5571783721699658,
+  "display": "-0.557",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__25_angel__batch_removal": {
+  "value": -0.0270091609243294,
+  "display": "-0.027",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__25_angel__biology_retention": {
+  "value": -0.0986475038043552,
+  "display": "-0.099",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__29_combat_ref__L": {
+  "value": 0.0460487026822203,
+  "display": "0.046",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__29_combat_ref__N": {
+  "value": -0.2866550688329658,
+  "display": "-0.287",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__29_combat_ref__batch_removal": {
+  "value": -0.1930983166489549,
+  "display": "-0.193",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__29_combat_ref__biology_retention": {
+  "value": 0.1938237697691467,
+  "display": "0.194",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__33_amdbnorm__L": {
+  "value": 0.0274014017461744,
+  "display": "0.027",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__33_amdbnorm__N": {
+  "value": -0.643540637881532,
+  "display": "-0.644",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__33_amdbnorm__batch_removal": {
+  "value": -0.0065593619425791,
+  "display": "-0.007",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_slope__33_amdbnorm__biology_retention": {
+  "value": -0.1361769115186267,
+  "display": "-0.136",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "real_data_V__five_batches": {
+  "value": 0.39834620175838426,
+  "display": "0.398",
+  "source": "output/wp6/real_data_v.json",
+  "status": "ready"
+ },
+ "real_data_V__five_batches_n": {
+  "value": 3404,
+  "display": "3,404",
+  "source": "output/wp6/real_data_v.json",
+  "status": "ready"
+ },
+ "real_data_V__all_samples": {
+  "value": 0.357763833327463,
+  "display": "0.358",
+  "source": "output/wp6/real_data_v.json",
+  "status": "ready"
+ },
+ "v1_n_folds": {
+  "value": 20,
+  "display": "20",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top3_hits": {
+  "value": 6,
+  "display": "6",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top1_hits": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_chosen_failed_on_test": {
+  "value": 4,
+  "display": "4",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_n_evaluable_folds": {
+  "value": 16,
+  "display": "16",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top3_hits_evaluable": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "robustness_median_tau": {
+  "value": 0.857699166557288,
+  "display": "0.86",
+  "source": "output/wp5/robustness_summary.tsv",
+  "status": "ready"
+ },
+ "bridging_median_tau": {
+  "value": 0.9197220623135436,
+  "display": "0.92",
+  "source": "output/wp5/robustness_summary.tsv",
+  "status": "ready"
+ },
+ "n_selected": {
+  "value": 22,
+  "display": "22",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected__RNA-seq + microarrays": {
+  "value": 7,
+  "display": "7",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected__FF only": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected__RNA-seq only": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected__FFPE only": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected_scenario__Multi-platform (RNA-seq + microarrays)": {
+  "value": 7,
+  "display": "7",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected_scenario__FF only": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected_scenario__No batch removal (S0 only)": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected_scenario__RNA-seq only": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected_scenario__FFPE only": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "n_selected_scenario__Microarrays only (not a tree leaf)": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp4/selection_after_visual_check.tsv",
+  "status": "ready"
+ },
+ "visual_check_round1__accepted": {
+  "value": 17,
+  "display": "17",
+  "source": "output/wp4/visual_check.tsv",
+  "status": "ready"
+ },
+ "visual_check_round1__vetoed": {
+  "value": 36,
+  "display": "36",
+  "source": "output/wp4/visual_check.tsv",
+  "status": "ready"
+ },
+ "visual_check_round2__accepted": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp4/visual_check.tsv",
+  "status": "ready"
+ },
+ "visual_check_round2__vetoed": {
+  "value": 23,
+  "display": "23",
+  "source": "output/wp4/visual_check.tsv",
+  "status": "ready"
+ },
+ "visual_check_n_reviewed": {
+  "value": 81,
+  "display": "81",
+  "source": "output/wp4/visual_check.tsv",
+  "status": "ready"
+ },
+ "n_identical_to_raw": {
+  "value": 111,
+  "display": "111",
+  "source": "output/wp3/four_scores.parquet",
+  "status": "ready"
+ },
+ "n_identical_to_raw__36_explobatch": {
+  "value": 49,
+  "display": "49",
+  "source": "output/wp3/four_scores.parquet",
+  "status": "ready"
+ },
+ "n_identical_to_raw__31_ruv3prps": {
+  "value": 27,
+  "display": "27",
+  "source": "output/wp3/four_scores.parquet",
+  "status": "ready"
+ },
+ "n_identical_to_raw__27_dwd": {
+  "value": 19,
+  "display": "19",
+  "source": "output/wp3/four_scores.parquet",
+  "status": "ready"
+ },
+ "n_identical_to_raw__16_fsqn_r": {
+  "value": 10,
+  "display": "10",
+  "source": "output/wp3/four_scores.parquet",
+  "status": "ready"
+ },
+ "n_identical_to_raw__04_sva": {
+  "value": 6,
+  "display": "6",
+  "source": "output/wp3/four_scores.parquet",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__N": {
+  "value": 0.7458053843794069,
+  "display": "0.75",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__N": {
+  "value": 0.4372591566091051,
+  "display": "0.44",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__global_batch": {
+  "value": 0.4961233155185702,
+  "display": "0.50",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__global_batch": {
+  "value": 0.5864050746928302,
+  "display": "0.59",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__global_biology": {
+  "value": 0.746321861189759,
+  "display": "0.75",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__global_biology": {
+  "value": 0.602801936702687,
+  "display": "0.60",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__local_batch": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__local_biology": {
+  "value": 0.9205840455840454,
+  "display": "0.92",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__local_biology": {
+  "value": 0.9027777777777776,
+  "display": "0.90",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__global_batch_scaled": {
+  "value": 0.4746083246706347,
+  "display": "0.47",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__global_batch_scaled": {
+  "value": 0.5687450175661658,
+  "display": "0.57",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__global_biology_scaled": {
+  "value": 0.3725342678305903,
+  "display": "0.37",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__global_biology_scaled": {
+  "value": 0.5955901870235153,
+  "display": "0.60",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__local_batch_scaled": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__local_biology_scaled": {
+  "value": 0.8778216085908394,
+  "display": "0.88",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__local_biology_scaled": {
+  "value": 0.8504273504273504,
+  "display": "0.85",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__batch_removal": {
+  "value": 0.2517272392583942,
+  "display": "0.25",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__batch_removal": {
+  "value": 0.2843725087830829,
+  "display": "0.28",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__01_raw__biology_retention": {
+  "value": 0.6251779382107148,
+  "display": "0.63",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__01_raw__biology_retention": {
+  "value": 0.7230087687254327,
+  "display": "0.72",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__N": {
+  "value": 0.6831627801308207,
+  "display": "0.68",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__N": {
+  "value": 0.4000000000000001,
+  "display": "0.40",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__global_batch": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__global_batch": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__global_biology": {
+  "value": 0.7546090855731994,
+  "display": "0.75",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__global_biology": {
+  "value": 0.9057757506999548,
+  "display": "0.91",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__local_biology": {
+  "value": 0.9861111111111112,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__local_biology": {
+  "value": 0.9444444444444444,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__global_batch_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__global_batch_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__global_biology_scaled": {
+  "value": 0.3596544223386646,
+  "display": "0.36",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__global_biology_scaled": {
+  "value": 0.1247140852273891,
+  "display": "0.12",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__local_biology_scaled": {
+  "value": 0.9786324786324788,
+  "display": "0.98",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__local_biology_scaled": {
+  "value": 0.9145299145299144,
+  "display": "0.91",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__batch_removal": {
+  "value": 0.514423076923077,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__batch_removal": {
+  "value": 0.514423076923077,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__03_limma__biology_retention": {
+  "value": 0.6691434504855717,
+  "display": "0.67",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__03_limma__biology_retention": {
+  "value": 0.5196219998786517,
+  "display": "0.52",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__L": {
+  "value": 0.9855703053901916,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__L": {
+  "value": 0.8977728249077442,
+  "display": "0.90",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__N": {
+  "value": 0.754287944526255,
+  "display": "0.75",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__N": {
+  "value": 0.484244047584468,
+  "display": "0.48",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__global_batch": {
+  "value": 0.509262850508434,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__global_batch": {
+  "value": 0.5782312825690941,
+  "display": "0.58",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__global_biology": {
+  "value": 0.7413807280239514,
+  "display": "0.74",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__global_biology": {
+  "value": 0.5769841868653057,
+  "display": "0.58",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__local_batch": {
+  "value": 0.0166666666666666,
+  "display": "0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__local_batch": {
+  "value": 0.0083333333333333,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__local_biology": {
+  "value": 0.9344729344729344,
+  "display": "0.93",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__local_biology": {
+  "value": 0.9351851851851852,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__global_batch_scaled": {
+  "value": 0.4883089036297068,
+  "display": "0.49",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__global_batch_scaled": {
+  "value": 0.5602222133365884,
+  "display": "0.56",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__global_biology_scaled": {
+  "value": 0.3802136824072968,
+  "display": "0.38",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__global_biology_scaled": {
+  "value": 0.6357156395838585,
+  "display": "0.64",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__local_batch_scaled": {
+  "value": 0.0192307692307692,
+  "display": "0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__local_batch_scaled": {
+  "value": 0.0096153846153846,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__local_biology_scaled": {
+  "value": 0.8991891299583606,
+  "display": "0.90",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__local_biology_scaled": {
+  "value": 0.9002849002849002,
+  "display": "0.90",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__batch_removal": {
+  "value": 0.2537698364302381,
+  "display": "0.25",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__batch_removal": {
+  "value": 0.2849187989759865,
+  "display": "0.28",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva__biology_retention": {
+  "value": 0.6397014061828287,
+  "display": "0.64",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva__biology_retention": {
+  "value": 0.7680002699343792,
+  "display": "0.77",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__L": {
+  "value": 0.7581416778481919,
+  "display": "0.76",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__L": {
+  "value": 0.7974104380386567,
+  "display": "0.80",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__N": {
+  "value": 0.3004705993821551,
+  "display": "0.30",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__N": {
+  "value": 0.3309827080050572,
+  "display": "0.33",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__global_batch": {
+  "value": 0.9291134954293409,
+  "display": "0.93",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__global_batch": {
+  "value": 0.9865947182194112,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__global_biology": {
+  "value": 0.8723762845332722,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__global_biology": {
+  "value": 0.91043045092144,
+  "display": "0.91",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__local_batch": {
+  "value": 0.05,
+  "display": "0.05",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__global_batch_scaled": {
+  "value": 0.9260867181561484,
+  "display": "0.93",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__global_batch_scaled": {
+  "value": 0.9860223271489248,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__global_biology_scaled": {
+  "value": 0.176622896167667,
+  "display": "0.18",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__global_biology_scaled": {
+  "value": 0.1174798392494767,
+  "display": "0.12",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__local_batch_scaled": {
+  "value": 0.0576923076923077,
+  "display": "0.06",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__batch_removal": {
+  "value": 0.4774664360011511,
+  "display": "0.48",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__batch_removal": {
+  "value": 0.5218573174206164,
+  "display": "0.52",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__04_sva_nocov__biology_retention": {
+  "value": 0.5883114480838336,
+  "display": "0.59",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__04_sva_nocov__biology_retention": {
+  "value": 0.5587399196247383,
+  "display": "0.56",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__L": {
+  "value": 0.8762684513221558,
+  "display": "0.88",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__L": {
+  "value": 0.9566883819122584,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__N": {
+  "value": 0.7083453865115565,
+  "display": "0.71",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__N": {
+  "value": 0.3237729113381297,
+  "display": "0.32",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__global_batch": {
+  "value": 0.992167643345732,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__global_batch": {
+  "value": 0.8026770995265368,
+  "display": "0.80",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__global_biology": {
+  "value": 0.7574118549273937,
+  "display": "0.76",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__global_biology": {
+  "value": 0.7037844603707066,
+  "display": "0.70",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__local_batch": {
+  "value": 0.0083333333333333,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__local_batch": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__local_biology": {
+  "value": 0.9604700854700856,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__global_batch_scaled": {
+  "value": 0.9918332101660984,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__global_batch_scaled": {
+  "value": 0.7942516245471897,
+  "display": "0.79",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__global_biology_scaled": {
+  "value": 0.3552984118626286,
+  "display": "0.36",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__global_biology_scaled": {
+  "value": 0.4386450818773622,
+  "display": "0.44",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__local_batch_scaled": {
+  "value": 0.0096153846153846,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__local_batch_scaled": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__local_biology_scaled": {
+  "value": 0.9391847468770546,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__batch_removal": {
+  "value": 0.5007242973907414,
+  "display": "0.50",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__batch_removal": {
+  "value": 0.3971258122735948,
+  "display": "0.40",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat__biology_retention": {
+  "value": 0.6472415793698416,
+  "display": "0.65",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat__biology_retention": {
+  "value": 0.7193225409386811,
+  "display": "0.72",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__N": {
+  "value": 0.7775469865395696,
+  "display": "0.78",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__N": {
+  "value": 0.3315993517202972,
+  "display": "0.33",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__global_batch": {
+  "value": 0.9975669009959448,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__global_batch": {
+  "value": 0.9380347542026148,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__global_biology": {
+  "value": 0.6970106642467483,
+  "display": "0.70",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__global_biology": {
+  "value": 0.816197910337717,
+  "display": "0.82",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__local_batch": {
+  "value": 0.0083333333333333,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__local_biology": {
+  "value": 0.9871794871794872,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__global_batch_scaled": {
+  "value": 0.9974630102932855,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__global_batch_scaled": {
+  "value": 0.935388905054836,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__global_biology_scaled": {
+  "value": 0.4491727861404114,
+  "display": "0.45",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__global_biology_scaled": {
+  "value": 0.2639342499029625,
+  "display": "0.26",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__local_batch_scaled": {
+  "value": 0.0096153846153846,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__local_biology_scaled": {
+  "value": 0.980276134122288,
+  "display": "0.98",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__batch_removal": {
+  "value": 0.5131545820697198,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__batch_removal": {
+  "value": 0.4725021448351102,
+  "display": "0.47",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__05_combat_nocov__biology_retention": {
+  "value": 0.7147244601313497,
+  "display": "0.71",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__05_combat_nocov__biology_retention": {
+  "value": 0.6319671249514812,
+  "display": "0.63",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__L": {
+  "value": -0.0179353392105179,
+  "display": "-0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__L": {
+  "value": -0.0293197919711955,
+  "display": "-0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__N": {
+  "value": 0.873562288387653,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__N": {
+  "value": 0.4967124437070436,
+  "display": "0.50",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__global_batch": {
+  "value": 0.8740231928870844,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__global_batch": {
+  "value": 0.8520312419970514,
+  "display": "0.85",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__global_biology": {
+  "value": 0.8406711604935356,
+  "display": "0.84",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__global_biology": {
+  "value": 0.8757496022588557,
+  "display": "0.88",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__local_batch": {
+  "value": 0.225,
+  "display": "0.23",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__local_batch": {
+  "value": 0.05,
+  "display": "0.05",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__global_batch_scaled": {
+  "value": 0.868644119126456,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__global_batch_scaled": {
+  "value": 0.8457131356582153,
+  "display": "0.85",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__global_biology_scaled": {
+  "value": 0.225898393009544,
+  "display": "0.23",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__global_biology_scaled": {
+  "value": 0.1713801503349964,
+  "display": "0.17",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__local_batch_scaled": {
+  "value": 0.2596153846153846,
+  "display": "0.26",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__local_batch_scaled": {
+  "value": 0.0576923076923077,
+  "display": "0.06",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__batch_removal": {
+  "value": 0.5641297518709203,
+  "display": "0.56",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__batch_removal": {
+  "value": 0.4517027216752615,
+  "display": "0.45",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__10_mnn__biology_retention": {
+  "value": 0.6129491965047721,
+  "display": "0.61",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__10_mnn__biology_retention": {
+  "value": 0.5856900751674982,
+  "display": "0.59",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__L": {
+  "value": 0.6605129917312204,
+  "display": "0.66",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__L": {
+  "value": 0.6861451845133804,
+  "display": "0.69",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__N": {
+  "value": 0.8453689277069959,
+  "display": "0.85",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__N": {
+  "value": 0.5361203318194457,
+  "display": "0.54",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__global_batch": {
+  "value": 0.4905165147414735,
+  "display": "0.49",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__global_batch": {
+  "value": 0.4996716705912005,
+  "display": "0.50",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__global_biology": {
+  "value": 0.7471943623519084,
+  "display": "0.75",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__global_biology": {
+  "value": 0.5144310881014702,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__local_batch": {
+  "value": 0.0166666666666666,
+  "display": "0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__local_batch": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__local_biology": {
+  "value": 0.9120370370370368,
+  "display": "0.91",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__local_biology": {
+  "value": 0.9583333333333334,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__global_batch_scaled": {
+  "value": 0.468762119548942,
+  "display": "0.47",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__global_batch_scaled": {
+  "value": 0.4783081906769201,
+  "display": "0.48",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__global_biology_scaled": {
+  "value": 0.3711782432269285,
+  "display": "0.37",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__global_biology_scaled": {
+  "value": 0.7329344682099145,
+  "display": "0.73",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__local_batch_scaled": {
+  "value": 0.0192307692307692,
+  "display": "0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__local_batch_scaled": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__local_biology_scaled": {
+  "value": 0.8646723646723645,
+  "display": "0.86",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__local_biology_scaled": {
+  "value": 0.9358974358974358,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__batch_removal": {
+  "value": 0.2439964443898556,
+  "display": "0.24",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__batch_removal": {
+  "value": 0.23915409533846,
+  "display": "0.24",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__11_harmony__biology_retention": {
+  "value": 0.6179253039496465,
+  "display": "0.62",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__11_harmony__biology_retention": {
+  "value": 0.8344159520536752,
+  "display": "0.83",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__N": {
+  "value": 0.7405080804389677,
+  "display": "0.74",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__N": {
+  "value": 0.2694668394586474,
+  "display": "0.27",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__global_batch": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__global_batch": {
+  "value": 0.9999998288706924,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__global_biology": {
+  "value": 0.7001183366765643,
+  "display": "0.70",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__global_biology": {
+  "value": 0.8585204007080655,
+  "display": "0.86",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__local_batch": {
+  "value": 0.0833333333333333,
+  "display": "0.08",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__local_biology": {
+  "value": 0.9743589743589745,
+  "display": "0.97",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__global_batch_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__global_batch_scaled": {
+  "value": 0.9999998215636556,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__global_biology_scaled": {
+  "value": 0.4443429011410946,
+  "display": "0.44",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__global_biology_scaled": {
+  "value": 0.1981574455614708,
+  "display": "0.20",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__local_batch_scaled": {
+  "value": 0.0961538461538461,
+  "display": "0.10",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__local_biology_scaled": {
+  "value": 0.960552268244576,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__batch_removal": {
+  "value": 0.514423076923077,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__batch_removal": {
+  "value": 0.5480768338587508,
+  "display": "0.55",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__13_fsmvn__biology_retention": {
+  "value": 0.7024475846928353,
+  "display": "0.70",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__13_fsmvn__biology_retention": {
+  "value": 0.5990787227807354,
+  "display": "0.60",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__L": {
+  "value": 0.999978316936928,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__N": {
+  "value": 0.7314565081331654,
+  "display": "0.73",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__N": {
+  "value": 0.5249080844889337,
+  "display": "0.52",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__global_batch": {
+  "value": 0.9996262261706486,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__global_batch": {
+  "value": 0.9968316938272954,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__global_biology": {
+  "value": 0.7017368422637985,
+  "display": "0.70",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__global_biology": {
+  "value": 0.8665680539670824,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__local_batch": {
+  "value": 0.025,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__local_batch": {
+  "value": 0.125,
+  "display": "0.12",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__global_batch_scaled": {
+  "value": 0.9996102664313604,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__global_batch_scaled": {
+  "value": 0.9966964105716722,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__global_biology_scaled": {
+  "value": 0.4418274507409526,
+  "display": "0.44",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__global_biology_scaled": {
+  "value": 0.1856499369249427,
+  "display": "0.19",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__local_batch_scaled": {
+  "value": 0.0288461538461538,
+  "display": "0.03",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__local_batch_scaled": {
+  "value": 0.1442307692307692,
+  "display": "0.14",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__batch_removal": {
+  "value": 0.5142282101387571,
+  "display": "0.51",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__batch_removal": {
+  "value": 0.5704635899012208,
+  "display": "0.57",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__16_fsqn_r__biology_retention": {
+  "value": 0.7209137253704764,
+  "display": "0.72",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__16_fsqn_r__biology_retention": {
+  "value": 0.5928249684624713,
+  "display": "0.59",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__L": {
+  "value": 0.9354913843135484,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__L": {
+  "value": 0.9440516746362446,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__N": {
+  "value": 0.6885860873353241,
+  "display": "0.69",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__N": {
+  "value": 0.4197552258133316,
+  "display": "0.42",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__global_batch": {
+  "value": 0.66954358460841,
+  "display": "0.67",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__global_batch": {
+  "value": 0.6825149852943028,
+  "display": "0.68",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__global_biology": {
+  "value": 0.7300667328640991,
+  "display": "0.73",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__global_biology": {
+  "value": 0.7348884245614773,
+  "display": "0.73",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__local_batch": {
+  "value": 0.0166666666666666,
+  "display": "0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__local_batch": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__local_biology": {
+  "value": 0.9583333333333334,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__global_batch_scaled": {
+  "value": 0.6554334521657692,
+  "display": "0.66",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__global_batch_scaled": {
+  "value": 0.6689587176674733,
+  "display": "0.67",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__global_biology_scaled": {
+  "value": 0.3977976770975429,
+  "display": "0.40",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__global_biology_scaled": {
+  "value": 0.3903038961645652,
+  "display": "0.39",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__local_batch_scaled": {
+  "value": 0.0192307692307692,
+  "display": "0.02",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__local_batch_scaled": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__local_biology_scaled": {
+  "value": 0.9358974358974358,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__batch_removal": {
+  "value": 0.3373321106982692,
+  "display": "0.34",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__batch_removal": {
+  "value": 0.3344793588337366,
+  "display": "0.33",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__17_quantile__biology_retention": {
+  "value": 0.6988988385487714,
+  "display": "0.70",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__17_quantile__biology_retention": {
+  "value": 0.6631006660310006,
+  "display": "0.66",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__L": {
+  "value": 0.9361241010235828,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__L": {
+  "value": 0.9514691421708502,
+  "display": "0.95",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__N": {
+  "value": 0.9000900393368519,
+  "display": "0.90",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__N": {
+  "value": 0.3486520801966089,
+  "display": "0.35",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__global_batch": {
+  "value": 0.8673159866997304,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__global_batch": {
+  "value": 0.8454132586795646,
+  "display": "0.85",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__global_biology": {
+  "value": 0.69205602061557,
+  "display": "0.69",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__global_biology": {
+  "value": 0.8078638061642541,
+  "display": "0.81",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__local_batch": {
+  "value": 0.075,
+  "display": "0.07",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__local_batch": {
+  "value": 0.0416666666666666,
+  "display": "0.04",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__local_biology": {
+  "value": 0.9722222222222224,
+  "display": "0.97",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__global_batch_scaled": {
+  "value": 0.8616505224705994,
+  "display": "0.86",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__global_batch_scaled": {
+  "value": 0.8388125715925163,
+  "display": "0.84",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__global_biology_scaled": {
+  "value": 0.4568731984237622,
+  "display": "0.46",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__global_biology_scaled": {
+  "value": 0.2768869550671073,
+  "display": "0.28",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__local_batch_scaled": {
+  "value": 0.0865384615384615,
+  "display": "0.09",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__local_batch_scaled": {
+  "value": 0.048076923076923,
+  "display": "0.05",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__local_biology_scaled": {
+  "value": 0.9572649572649572,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__batch_removal": {
+  "value": 0.4740944920045304,
+  "display": "0.47",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__batch_removal": {
+  "value": 0.4434447473347196,
+  "display": "0.44",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__25_angel__biology_retention": {
+  "value": 0.7284365992118812,
+  "display": "0.73",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__25_angel__biology_retention": {
+  "value": 0.6170759561660323,
+  "display": "0.62",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__L": {
+  "value": 0.8789955089681475,
+  "display": "0.88",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__L": {
+  "value": 0.9472416682432248,
+  "display": "0.95",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__N": {
+  "value": 0.9661814021494516,
+  "display": "0.97",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__N": {
+  "value": 0.732258512776097,
+  "display": "0.73",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__global_batch": {
+  "value": 0.9879310195553992,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__global_batch": {
+  "value": 0.6145735939445923,
+  "display": "0.61",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__global_biology": {
+  "value": 0.5922475263937766,
+  "display": "0.59",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__global_biology": {
+  "value": 0.3552696755875625,
+  "display": "0.36",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__local_batch": {
+  "value": 0.0083333333333333,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__local_batch": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__local_biology": {
+  "value": 0.9604700854700856,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__global_batch_scaled": {
+  "value": 0.9874156871103652,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__global_batch_scaled": {
+  "value": 0.5981163022019329,
+  "display": "0.60",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__global_biology_scaled": {
+  "value": 0.6119936494793872,
+  "display": "0.61",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__global_biology_scaled": {
+  "value": 0.9803000886644592,
+  "display": "0.98",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__local_batch_scaled": {
+  "value": 0.0096153846153846,
+  "display": "0.01",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__local_batch_scaled": {
+  "value": 0.0,
+  "display": "0.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__local_biology_scaled": {
+  "value": 0.9391847468770546,
+  "display": "0.94",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__batch_removal": {
+  "value": 0.4985155358628749,
+  "display": "0.50",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__batch_removal": {
+  "value": 0.2990581511009664,
+  "display": "0.30",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__29_combat_ref__biology_retention": {
+  "value": 0.7755891981782209,
+  "display": "0.78",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__29_combat_ref__biology_retention": {
+  "value": 0.9901500443322296,
+  "display": "0.99",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__L": {
+  "value": 0.933673705686568,
+  "display": "0.93",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__L": {
+  "value": 0.960635730671798,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__N": {
+  "value": 0.8704691488046051,
+  "display": "0.87",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__N": {
+  "value": 0.4000000000000001,
+  "display": "0.40",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__global_batch": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__global_batch": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__global_biology": {
+  "value": 0.7631034590394901,
+  "display": "0.76",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__global_biology": {
+  "value": 0.9148373472327002,
+  "display": "0.91",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__local_batch": {
+  "value": 0.0583333333333333,
+  "display": "0.06",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__local_batch": {
+  "value": 0.0416666666666666,
+  "display": "0.04",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__local_biology": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__local_biology": {
+  "value": 0.9722222222222224,
+  "display": "0.97",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__global_batch_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__global_batch_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__global_biology_scaled": {
+  "value": 0.3464526297076898,
+  "display": "0.35",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__global_biology_scaled": {
+  "value": 0.1106307253650517,
+  "display": "0.11",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__local_batch_scaled": {
+  "value": 0.0673076923076923,
+  "display": "0.07",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__local_batch_scaled": {
+  "value": 0.048076923076923,
+  "display": "0.05",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__local_biology_scaled": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__local_biology_scaled": {
+  "value": 0.9572649572649572,
+  "display": "0.96",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__batch_removal": {
+  "value": 0.5336538461538461,
+  "display": "0.53",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__batch_removal": {
+  "value": 0.5240384615384616,
+  "display": "0.52",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at0__33_amdbnorm__biology_retention": {
+  "value": 0.6732263148538449,
+  "display": "0.67",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_at1__33_amdbnorm__biology_retention": {
+  "value": 0.5339478413150044,
+  "display": "0.53",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_main_tested": {
+  "value": 78,
+  "display": "78",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_main_changes": {
+  "value": 43,
+  "display": "43",
+  "source": "output/wp6/gradient_slopes.tsv",
+  "status": "ready"
+ },
+ "gradient_raw_rank_l0": {
+  "value": 9.0,
+  "display": "9",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_raw_rank_l05_06": {
+  "value": 3.0,
+  "display": "3",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_n_arms": {
+  "value": 14,
+  "display": "14",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_mcombat_rank_l05_09": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_mcombat_batch_removal_l0": {
+  "value": 0.49851553586287495,
+  "display": "0.50",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_mcombat_biology_retention_l0": {
+  "value": 0.7755891981782209,
+  "display": "0.78",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_mcombat_batch_removal_l09": {
+  "value": 0.29905815110096645,
+  "display": "0.30",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_mcombat_biology_retention_l09": {
+  "value": 0.9901500443322296,
+  "display": "0.99",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "s5_n_clusters_87": {
+  "value": 48,
+  "display": "48",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "s5_clusters_with_panel": {
+  "value": 22,
+  "display": "22",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "s5_clusters_without_panel": {
+  "value": 26,
+  "display": "26",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "s5_free_clusters_batch_or_diagnosis": {
+  "value": 2,
+  "display": "2",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "s5_panel_medoid": {
+  "value": 15,
+  "display": "15",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "s5_panel_not_medoid": {
+  "value": 7,
+  "display": "7",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "s5_max_medoid_gap": {
+  "value": 0.013000000000000012,
+  "display": "0.01",
+  "source": "output/wp9/nb02_figS5_87_metric_clusters.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__n_samples": {
+  "value": 7174,
+  "display": "7,174",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__pc1": {
+  "value": 81.1,
+  "display": "81",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__pc1_raw": {
+  "value": 81.1,
+  "display": "81",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__L": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__N": {
+  "value": 0.7728504304751308,
+  "display": "0.77",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__N_raw": {
+  "value": 0.7728504304751308,
+  "display": "0.77",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4A__n_genes": {
+  "value": 3447,
+  "display": "3,447",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__n_samples": {
+  "value": 3167,
+  "display": "3,167",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__pc1": {
+  "value": 7.6,
+  "display": "8",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__pc1_raw": {
+  "value": 69.3,
+  "display": "69",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__L": {
+  "value": 0.9468984583250892,
+  "display": "0.95",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__N": {
+  "value": 0.7877252872689523,
+  "display": "0.79",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__N_raw": {
+  "value": 0.6651044669501327,
+  "display": "0.67",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4B__n_genes": {
+  "value": 345,
+  "display": "345",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__n_samples": {
+  "value": 3000,
+  "display": "3,000",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__pc1": {
+  "value": 38.4,
+  "display": "38",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__pc1_raw": {
+  "value": 87.2,
+  "display": "87",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__L": {
+  "value": 0.7055600837387718,
+  "display": "0.71",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__N": {
+  "value": 0.8766447117557372,
+  "display": "0.88",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__N_raw": {
+  "value": 0.498734799912748,
+  "display": "0.50",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4C__n_genes": {
+  "value": 15822,
+  "display": "15,822",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__n_samples": {
+  "value": 2243,
+  "display": "2,243",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__pc1": {
+  "value": 25.1,
+  "display": "25",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__pc1_raw": {
+  "value": 27.1,
+  "display": "27",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__L": {
+  "value": 0.8228991836059991,
+  "display": "0.82",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__N": {
+  "value": 0.7478075186851028,
+  "display": "0.75",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__N_raw": {
+  "value": 0.7412804023994184,
+  "display": "0.74",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__4D__n_genes": {
+  "value": 15885,
+  "display": "15,885",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__n_samples": {
+  "value": 6285,
+  "display": "6,285",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__pc1": {
+  "value": 21.8,
+  "display": "22",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__pc1_raw": {
+  "value": 80.4,
+  "display": "80",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__L": {
+  "value": 0.9999990943473844,
+  "display": "1.00",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__N": {
+  "value": 0.645070700365014,
+  "display": "0.65",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__N_raw": {
+  "value": 0.622484190961074,
+  "display": "0.62",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5A__n_genes": {
+  "value": 15818,
+  "display": "15,818",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__n_samples": {
+  "value": 6285,
+  "display": "6,285",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__pc1": {
+  "value": 35.1,
+  "display": "35",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__pc1_raw": {
+  "value": 82.3,
+  "display": "82",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__L": {
+  "value": 0.9775070314637628,
+  "display": "0.98",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__N": {
+  "value": 0.8032330175303364,
+  "display": "0.80",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__N_raw": {
+  "value": 0.7412866931291527,
+  "display": "0.74",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5B__n_genes": {
+  "value": 3447,
+  "display": "3,447",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__n_samples": {
+  "value": 6803,
+  "display": "6,803",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__pc1": {
+  "value": 50.1,
+  "display": "50",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__pc1_raw": {
+  "value": 81.3,
+  "display": "81",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__L": {
+  "value": 0.9556799096231636,
+  "display": "0.96",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__N": {
+  "value": 0.8683545696207186,
+  "display": "0.87",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__N_raw": {
+  "value": 0.772926936037238,
+  "display": "0.77",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "fig45__5C__n_genes": {
+  "value": 11803,
+  "display": "11,803",
+  "source": "output/wp9/nb08_figure_4_5_panels.tsv",
+  "status": "ready"
+ },
+ "gradient_pct_pass_l0": {
+  "value": 64.28571428571429,
+  "display": "64",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_pct_pass_l1": {
+  "value": 41.66666666666667,
+  "display": "42",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_pct_pass_l05_09_min": {
+  "value": 26.190476190476193,
+  "display": "26",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_pct_pass_l05_09_max": {
+  "value": 28.57142857142857,
+  "display": "29",
+  "source": "output/wp6/gradient_ranks.tsv",
+  "status": "ready"
+ },
+ "gradient_n_failed": {
+  "value": 11,
+  "display": "11",
+  "source": "output/wp6/gradient_failures.tsv",
+  "status": "ready"
+ },
+ "v1_random_top3_pct": {
+  "value": 11.634641928120185,
+  "display": "11.6",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top3_hits__C": {
+  "value": 2,
+  "display": "2",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_mean_rank__C": {
+  "value": 5.5,
+  "display": "5.5",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top3_hits__J": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_mean_rank__J": {
+  "value": 8.2,
+  "display": "8.2",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top3_hits__K": {
+  "value": 0,
+  "display": "0",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_mean_rank__K": {
+  "value": 25.0,
+  "display": "25.0",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_top3_hits__S0": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_mean_rank__S0": {
+  "value": 7.2,
+  "display": "7.2",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_random_rank__C": {
+  "value": 14.1,
+  "display": "14.1",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_random_rank__J": {
+  "value": 13.7,
+  "display": "13.7",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_random_rank__K": {
+  "value": 13.0,
+  "display": "13.0",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_random_rank__S0": {
+  "value": 13.3,
+  "display": "13.3",
+  "source": "output/wp7/v1_fold_results.tsv",
+  "status": "ready"
+ },
+ "v1_regret_fdr__regret_batch_removal": {
+  "value": 0.3774802523649351,
+  "display": "0.38",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_p__regret_batch_removal": {
+  "value": 0.0165298347016529,
+  "display": "0.017",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_q__regret_batch_removal": {
+  "value": 0.0661193388066119,
+  "display": "0.066",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_fdr__regret_biology_retention": {
+  "value": 0.5782425466626435,
+  "display": "0.58",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_p__regret_biology_retention": {
+  "value": 0.979430205697943,
+  "display": "0.98",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_q__regret_biology_retention": {
+  "value": 0.979430205697943,
+  "display": "0.98",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_fdr__regret_L": {
+  "value": 0.9815926601390944,
+  "display": "0.98",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_p__regret_L": {
+  "value": 0.1377886221137788,
+  "display": "0.14",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_q__regret_L": {
+  "value": 0.2755772442275577,
+  "display": "0.28",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_fdr__regret_N": {
+  "value": 0.9678376595484692,
+  "display": "0.97",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_p__regret_N": {
+  "value": 0.4266357336426635,
+  "display": "0.43",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_regret_mc_q__regret_N": {
+  "value": 0.5688476448568848,
+  "display": "0.57",
+  "source": "output/wp9/nb05_v1_regret_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_p__C": {
+  "value": 0.0361496385036149,
+  "display": "0.036",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_q__C": {
+  "value": 0.0722992770072299,
+  "display": "0.072",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_p__K": {
+  "value": 0.980430195698043,
+  "display": "0.98",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_q__K": {
+  "value": 0.980430195698043,
+  "display": "0.98",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_p__J": {
+  "value": 0.0581294187058129,
+  "display": "0.058",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_q__J": {
+  "value": 0.0775058916077506,
+  "display": "0.078",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_p__S0": {
+  "value": 0.0340696593034069,
+  "display": "0.034",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_q__S0": {
+  "value": 0.0722992770072299,
+  "display": "0.072",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_rank_q_min": {
+  "value": 0.0722992770072299,
+  "display": "0.072",
+  "source": "output/wp9/nb05_v1_rank_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__1__C": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__1__C": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__1__C": {
+  "value": 0,
+  "display": "0",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__1__K": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__1__K": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__1__K": {
+  "value": 0,
+  "display": "0",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__1__J": {
+  "value": 1.0000000000000002,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__1__J": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__1__J": {
+  "value": 0,
+  "display": "0",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__1__S0": {
+  "value": 0.0005653845054411,
+  "display": "0.00057",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__1__S0": {
+  "value": 0.005653845054411,
+  "display": "0.0057",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__1__S0": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__1__all": {
+  "value": 0.0405620894562162,
+  "display": "0.041",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__1__all": {
+  "value": 0.1014052236405405,
+  "display": "0.1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__1__all": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__3__C": {
+  "value": 0.0996597353497164,
+  "display": "0.1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__3__C": {
+  "value": 0.1993194706994329,
+  "display": "0.2",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__3__C": {
+  "value": 2,
+  "display": "2",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__3__K": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__3__K": {
+  "value": 1.0,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__3__K": {
+  "value": 0,
+  "display": "0",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__3__J": {
+  "value": 0.4550432477678572,
+  "display": "0.46",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__3__J": {
+  "value": 0.7584054129464287,
+  "display": "0.76",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__3__J": {
+  "value": 1,
+  "display": "1",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__3__S0": {
+  "value": 0.0134842967683204,
+  "display": "0.013",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__3__S0": {
+  "value": 0.0674214838416022,
+  "display": "0.067",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__3__S0": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_p__3__all": {
+  "value": 0.0225621229561547,
+  "display": "0.023",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hit_q__3__all": {
+  "value": 0.0752070765205157,
+  "display": "0.075",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "v1_hits__3__all": {
+  "value": 6,
+  "display": "6",
+  "source": "output/wp9/nb05_v1_hit_tests.tsv",
+  "status": "ready"
+ },
+ "gate_L_pass": {
+  "value": 1975,
+  "display": "1,975",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_N_pass": {
+  "value": 1206,
+  "display": "1,206",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "n_candidates": {
+  "value": 1021,
+  "display": "1,021",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_L_median__10_mnn": {
+  "value": 0.0063164784853136,
+  "display": "0.01",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_L_pass_pct__10_mnn": {
+  "value": 0.0,
+  "display": "0",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_L_median__12_scanorama": {
+  "value": -0.0108562543720194,
+  "display": "-0.01",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_L_pass_pct__12_scanorama": {
+  "value": 0.0,
+  "display": "0",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_L_median__11_harmony": {
+  "value": 0.6312641809572428,
+  "display": "0.63",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "gate_L_pass_pct__11_harmony": {
+  "value": 4.761904761904762,
+  "display": "5",
+  "source": "output/wp4/gates.tsv",
+  "status": "ready"
+ },
+ "leakage_N__04_sva__l0": {
+  "value": 0.754287944526255,
+  "display": "0.75",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "leakage_N__04_sva__l1": {
+  "value": 0.484244047584468,
+  "display": "0.48",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "leakage_N__04_sva_nocov__l0": {
+  "value": 0.3004705993821551,
+  "display": "0.30",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "leakage_N__04_sva_nocov__l1": {
+  "value": 0.3309827080050572,
+  "display": "0.33",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "leakage_N__05_combat__l0": {
+  "value": 0.7083453865115565,
+  "display": "0.71",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "leakage_N__05_combat_nocov__l0": {
+  "value": 0.7775469865395696,
+  "display": "0.78",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "leakage_N__05_combat_nocov__l1": {
+  "value": 0.3315993517202973,
+  "display": "0.33",
+  "source": "output/wp9/nb03_label_leakage.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_n__Cross-platform, good batch mixing": {
+  "value": 651,
+  "display": "651",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_recommended__Cross-platform, good batch mixing": {
+  "value": 14,
+  "display": "14",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_n__Cross-platform, poor batch mixing A": {
+  "value": 800,
+  "display": "800",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_recommended__Cross-platform, poor batch mixing A": {
+  "value": 0,
+  "display": "0",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_n__Cross-platform, poor batch mixing B": {
+  "value": 379,
+  "display": "379",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_recommended__Cross-platform, poor batch mixing B": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_n__Same platform / sample type, good batch mixing": {
+  "value": 404,
+  "display": "404",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_cluster_recommended__Same platform / sample type, good batch mixing": {
+  "value": 3,
+  "display": "3",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_n_metric_clusters": {
+  "value": 5,
+  "display": "5",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "fig3_n_approach_clusters": {
+  "value": 4,
+  "display": "4",
+  "source": "output/wp9/nb02_fig3_clusters.tsv",
+  "status": "ready"
+ },
+ "n_selected_stable_all_variants": {
+  "value": 4,
+  "display": "4",
+  "source": "output/wp5/front_stability.tsv",
+  "status": "ready"
+ },
+ "robustness_median_top3_jaccard": {
+  "value": 0.5,
+  "display": "0.50",
+  "source": "output/wp5/robustness_summary.tsv",
+  "status": "ready"
+ },
+ "robustness_min_tau": {
+  "value": 0.6467417932386085,
+  "display": "0.65",
+  "source": "output/wp5/robustness_summary.tsv",
+  "status": "ready"
+ },
+ "robustness_max_tau": {
+  "value": 1.0,
+  "display": "1.00",
+  "source": "output/wp5/robustness_summary.tsv",
+  "status": "ready"
+ }
+}

@@ -1,0 +1,58 @@
+experiment	subset_id	arm	method_display	status	seconds	n_samples_in	returned_input_unchanged	method_messages	traceback
+gradient	grad_cap150_l0.0_r1	04_sva	SVA	ok	43.7	405	True	"Number of significant surrogate variables is:  7 
+Iteration (out of 5 ):1  SVA: sva() failed (Error in solve.default(t(mod) %*% mod) : 
+  system is computationally singular: reciprocal condition number = 1.13094e-38
+) — returning uncorrected data
+"	
+gradient	grad_cap150_l0.0_r1	04_sva_nocov	SVA without the diagnosis covariate	ok	79.4	405	False	"SVA: only 1 unique level(s) in __no_covariate__ — using intercept-only model
+Number of significant surrogate variables is:  8 
+Iteration (out of 5 ):SVA: sva() failed (Error in density.default(x, adjust = adj) : 'x' contains missing values
+) — returning uncorrected data
+sva_nocov: frozen SVA returned the input; running sva(method='two-step')
+sva_nocov: num.sv = 8
+Number of significant surrogate variables is:  8 
+"	
+gradient	grad_cap150_l0.0_r1	05_combat	ComBat	ok	23.8	405	False	"Found 28 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+"	
+gradient	grad_cap150_l0.0_r1	05_combat_nocov	ComBat without the diagnosis covariate	ok	24.7	405	False	"ComBat: only 1 unique level(s) in __no_covariate__ — running without covariate
+Found 28 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+"	
+gradient	grad_cap150_l1.0_r1	04_sva	SVA	ok	48.9	405	False	"Number of significant surrogate variables is:  10 
+Iteration (out of 5 ):1  2  3  4  5  "	
+gradient	grad_cap150_l1.0_r1	04_sva_nocov	SVA without the diagnosis covariate	ok	81.4	405	False	"SVA: only 1 unique level(s) in __no_covariate__ — using intercept-only model
+Number of significant surrogate variables is:  10 
+Iteration (out of 5 ):SVA: sva() failed (Error in density.default(x, adjust = adj) : 'x' contains missing values
+) — returning uncorrected data
+sva_nocov: frozen SVA returned the input; running sva(method='two-step')
+sva_nocov: num.sv = 10
+Number of significant surrogate variables is:  10 
+"	
+gradient	grad_cap150_l1.0_r1	05_combat	ComBat	failed	15.7	405		"Found 662 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+"	"Traceback (most recent call last):
+  File ""/app/article_1_revision/r19_harmonize_one.py"", line 122, in harmonize_one
+    out = rl.harmonize(arm, exp_df, ann_df)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/app/article_1_revision/revision_lib.py"", line 1149, in harmonize
+    return harmonizer(arm)(exp_df, ann_df, batch_col=BATCH_COL, bio_col=BIO_COL)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/app/harmonization-scripts/bench_shared.py"", line 792, in normalize_combat
+    result    = sva_r.ComBat(dat=r_mat, batch=ro.StrVector(batches), mod=mod)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/site-packages/rpy2/robjects/functions.py"", line 208, in __call__
+    return (super(SignatureTranslatedFunction, self)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/site-packages/rpy2/robjects/functions.py"", line 131, in __call__
+    res = super(Function, self).__call__(*new_args, **new_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/site-packages/rpy2/rinterface_lib/conversion.py"", line 46, in _
+    cdata = function(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/site-packages/rpy2/rinterface/__init__.py"", line 930, in __call__
+    raise embedded.RRuntimeError(_rinterface._geterrmessage())
+rpy2.rinterface_lib.embedded.RRuntimeError: Error in (function (dat, batch, mod = NULL, par.prior = TRUE, prior.plots = FALSE,  : 
+  At least one covariate is confounded with batch! Please remove confounded covariates and rerun ComBat
+
+"
+gradient	grad_cap150_l1.0_r1	05_combat_nocov	ComBat without the diagnosis covariate	ok	24.5	405	False	"ComBat: only 1 unique level(s) in __no_covariate__ — running without covariate
+Found 662 genes with uniform expression within a single batch (all zeros); these will not be adjusted for batch.
+"	

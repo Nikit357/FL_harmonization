@@ -1,0 +1,12 @@
+subset_id	arm	status	kind	lambda	replicate	cap
+L11_single_dx	05_combat	harmonization_failed	single_dx_control			none
+L11_single_dx	29_combat_ref	harmonization_failed	single_dx_control			none
+L11_single_dx	33_amdbnorm	harmonization_failed	single_dx_control			none
+grad_cap150_l1.0_r1	05_combat	harmonization_failed	gradient	1.0	1.0	150
+grad_cap150_l1.0_r1	29_combat_ref	harmonization_failed	gradient	1.0	1.0	150
+grad_cap150_l1.0_r2	05_combat	harmonization_failed	gradient	1.0	2.0	150
+grad_cap150_l1.0_r2	29_combat_ref	harmonization_failed	gradient	1.0	2.0	150
+grad_cap150_l1.0_r3	05_combat	harmonization_failed	gradient	1.0	3.0	150
+grad_cap150_l1.0_r3	29_combat_ref	harmonization_failed	gradient	1.0	3.0	150
+grad_nocap_l1.0_r1	05_combat	harmonization_failed	gradient	1.0	1.0	none
+grad_nocap_l1.0_r1	29_combat_ref	harmonization_failed	gradient	1.0	1.0	none
