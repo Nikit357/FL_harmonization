@@ -8,6 +8,8 @@ This directory contains `Introductory_figures_for_article.ipynb` — the single 
 
 This directory and its notebooks are for the final high quality figures for the FL project articles.
 
+**Article 1 revision (NARGAB-2026-312, from 2026-10-29):** the revision figures, supplementary tables and the tracked-edit script live in `../article_1_revision/` (notebooks `nb01`–`nb06`, `r40`, `r50`), not here. Every label there follows the plain-word naming rule of its plan (§1.1, `revision_lib.PUBLICATION_NAMES`); the files of this folder listed in `../article_1_revision/FROZEN_MD5.txt` must not be edited.
+
 ## Directory layout (reorganized 2026-08-23)
 
 Manuscripts and standalone scripts used to live flat in this directory; they are now split
@@ -241,6 +243,8 @@ python $S validate SRC.docx DST.docx
 | `NAR_review_260802_2nd_iteration.md` | Second manuscript iteration: Tables 3 and 4 moved to Supplementary File 2, table numbering restored to 1–3, a corrupted Supplementary Figure 9 reference fixed, 22 language edits. |
 | `figure_drawing_scripts/build_supp_file2_260802.py` | Rebuilds `supplementary_260802/Supplementary File 2.xlsx` with `Table_S1_methods` and `Table_S2_metrics`, swapping every `(N)` citation for the full bibliographic entry read out of the manuscript's own reference list. |
 | `edit_python_scripts/apply_nar_table_move_edits_260802.py` | Applies that move to the manuscript → `FL_manuscript_versions/FL_harmonization_article_NAR_260802_2nd_iteration.docx`. Reference implementation for **tracked deletion of a whole table**, for **editing your own unaccepted insertion**, and for **reserving revision ids**. |
+| `NAR_review_260912.md` | Fourth pass, on `..._NAR_260802_3rd_iteration.docx`, applying **nar-review + word-rewrite + scientific-review together** (2 critical / 7 major / 31 minor). Its §0 records what now reproduces exactly and its Appendix the recomputation recipe. |
+| `edit_python_scripts/apply_nar_review_edits_260912.py` | Applies that review → `FL_manuscript_versions/FL_harmonization_article_NAR_260912.docx`: 44 tracked edits, 1 tracked paragraph deletion, 10 reviewer notes, page size US Letter → A4. Reference implementation for a **first pass on a clean (all-accepted) document** and for the anchor trap below. |
 | `figure_drawing_scripts/add_LMN_metrics_260824.py` | Adds metric groups L/M/N (marker correlation preservation, cross-batch rank agreement, predictive validation — see `harmonization-metrics/marker_and_predictive_validation_plan_260819.md`) to `supplementary_260824/Supplementary File 2.xlsx`: 5 new `Table_S2_metrics` description rows, 82 new `Metric_polarity` rows (polarity 0), and new `Metric group`/`Metric type` columns classifying all 311 rows. Run again if L/M/N naming ever changes in `compute_batch_metrics.py`. |
 | `figure_drawing_scripts/add_linearity_column_260825.py` | Adds `Linear` + `Linearity justification` columns to `Table_S1_methods` in `supplementary_260824/Supplementary File 2.xlsx`, classifying all 39 `harmonization-scripts/bench_shared.py` methods by the functional form of the *applied* correction (affine vs. not), independent of how its parameters are estimated — e.g. ComBat and SVA are Linear despite non-linear (empirical-Bayes / iterative) parameter estimation, because the correction they apply to the data is affine. `13_fsmvn` (per-gene, per-batch Z-score rescaled to a reference batch) is the pipeline's own designed proxy for plain Z-scaling; no implemented method performs pure per-gene-per-batch division by the batch mean — `02_median_scaling` is the closest analogue (a location-only, no-variance-term shift, matching what batch-mean division becomes on the log2 scale this pipeline works in). |
 | `figure_drawing_scripts/add_narrow_set_and_gene_panel_260906.py` | Follow-on to `add_LMN_metrics_260824.py` for the 2026-09-04 narrow-panel change. Appends the 15 `mk_*_narrow_set` columns that `compute_group_l()` now emits to `Metric_polarity` (polarity 0, group L; 4 coverage counters + 11 rho aggregates, two of which — the `*_PGK1_only_*` pair — exist only in the narrow family), 2 descriptive rows to `Table_S2_metrics`, and builds the new **`Table_S3_gene_panel`** sheet: the 834 (gene, signature) rows of `harmonization-metrics-calculation/marker_gene_annotation.csv` joined on gene to `gene_panel_analysis/`'s `marker_gene_coverage_by_attempt_260828.csv`. Idempotent — re-run it after any change to the narrow panel or the coverage audit. `Table_S3_gene_panel` carries 66 columns: the annotation, the coverage audit, and the **complete gene-level statistics of `marker_gene_deep_analysis.ipynb` (its Table T9)** — per-gene ρ distribution across attempts, the coverage/QC/saturation gate outcomes, the expression QC block (`zero_frac`, `frac_lt_1`, `detection_frac`, mean, SD, CV, between-/within-cohort variance, ICC, geNorm M) computed **twice**, once over the 42 `01_raw` references and once over all 2,407 in-scope attempts, and each gene's within-signature PC1 loading. Those need three S3 tables (~240 MB, cached in `/tmp/fl_gene_panel_cache/`); the 633-row result is committed as `harmonization-metrics/metric_tables/gene_level_stats_260905.csv` and reused on the next run. **Provenance correction:** the narrow set's first gate is *not* the 42-raw-reference gate that `build_marker_gene_annotation.py`'s comment names (193 genes → 171 after the `frac_lt_1` filter); it is `frac_ref_strategy == 1`, full coverage of the 180 `C_rnaseq_only` attempts (61 genes → 56). The script asserts the correct derivation reproduces the committed `in_narrow_set` flag exactly, and repairs the wrong wording if an earlier run wrote it into the metric descriptions. |
@@ -423,3 +427,54 @@ next call lands on the following occurrence.
 Validation to run before declaring done (`scratchpad/validate.py` pattern): reject-all text must
 equal the original exactly; `w:sdt` count and contents must be unchanged; zero `w:t` inside `w:del`;
 zero `w:delText` outside `w:del`; abstract still ≤200 words after accept-all.
+
+### The 260912 pass: what reproduces, and what does not
+
+Run against `supplementary_260824/`. **Supplementary File 3 is now fully reproducible**, which it
+was not in the 260727 pass: `pct_samples_allNA < 5` on its 2,407 rows returns **exactly 2,234**
+and drops **exactly** `34_arsyn` and `38_harman`, leaving 31 methods. Also exact: the four η²
+effect sizes with CIs (0.3629 / 0.2564 / 0.0155 / 0.0020), the 1,354-of-2,234 (60.6 %)
+complete-metric count, and the biology counts (4,466 + 1,697 + 889 + 88 + 34 = 7,174, where 889 is
+the sum of the 11 non-malignant `Diagnosis_cell_type_unified` categories).
+
+**Two things do not reproduce, and both are composite-score constructions.**
+
+- **Method harshness runs backwards.** The manuscript reports medians low 0.479 < medium 0.488 <
+  high 0.493 and a higher maximum for the harsh tier. Every reconstruction returns
+  `high < medium < low` (0.480 / 0.497 / 0.520) with the higher maximum in the **low** tier —
+  under five normalization recipes (flip→min–max on 2,234 and on 2,407, min–max→polarity,
+  rank-percentile, z-score) and four aggregations (all rows, post_rm = 0, complete-87,
+  median-of-per-method-medians). Excluding `01_raw` widens it. Do not "fix" the numbers: the
+  published spread is 0.014 and every recipe spans 0.03–0.04, so the exact construction is not
+  recoverable from the deposited file — it has to come from the notebook.
+- **`01_raw` is a "low harshness" method** in `Table_S1_methods` and contributes 84 rows to that
+  tier at composite 0.445 (overall median 0.489). The no-op control is inside a harmonization tier.
+
+**Metric counts drifted because the workbook grew after the text was written.** `Metric_polarity`
+is now **344** rows = 87 scoring (51 at +1, 36 at −1) + 257 non-scoring, reconstructed as
+229 + 82 (L/M/N) + 15 (narrow set) + 18 (baseline delta). Supplementary File 3 itself holds only
+the **87 scoring metrics + `pct_samples_allNA`** (93 columns), so any sentence citing File 3 for a
+larger metric count is wrong. `Table_S3_gene_panel` holds **633 unique genes** over 834
+gene–signature rows across 63 signatures — the manuscript's "572 biomarker genes" was stale.
+
+### Gotcha: a legend that spans two body paragraphs
+
+The Supplementary Figure 18 legend is split across two `w:p` — the caption head
+(`Supplementary Figure 18. (A) Boxplot comparing mean per-gene Spearman ρ`) and everything from
+`before vs after harmonization…` onwards. Anchoring an edit for panel (I) on the caption head
+returns `not-found`, because `safe_tracked_replace` only sees the paragraph it was given. Anchor on
+text in the same paragraph as the target. The same applies to any legend long enough to have been
+broken by a manual line break.
+
+### Gotcha: the note-filter hides the paragraph you want to delete
+
+A `find_p` that skips `[EDITOR NOTE]` / `[REVIEWER NOTE]` paragraphs — which it must, so sweeps do
+not land inside notes — cannot find the abstract's own `[NAR EDITOR NOTE]` when that note is the
+deletion target. Give the finder a `skip_notes=False` switch for deletions.
+
+### False positive: `analyze` vs `analyse`
+
+`nar_review_tools.py docx` reports `MIXED analyze 4 vs analyse 3`. There is no variant conflict —
+the `analyse` pattern is matching **analysis** (26 occurrences). Verify a reported variant pair with
+`grep -oE "[Aa]nalys[a-z]*"` before editing; the same trap applies to `practise`/`practice` and
+`licence`/`license` stems.
