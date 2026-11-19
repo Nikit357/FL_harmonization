@@ -552,3 +552,15 @@ copy). He chose PCReg: 22 occurrences renamed, and AUC, tSNE, UMAP, PC, PCA, GEO
 iLISI, TPM, DSC, FSQN and QN are now defined at first use. KNN was already defined and needed no
 change. Still open for him: Figure 6 and Extended Figures 2, 3, 6 and 8 print "PCR"/"pcr" in axis
 labels, and every principal-component-regression column of Supplementary File 3 is named `pcr_*`.
+
+## Revisions: never compare with the pre-revision version (Daniil, 2026-11-07)
+
+In a revised manuscript, its figures, tables, supplementary files and the response letter,
+**never compare the new results with the results of the submitted (pre-revision) version**:
+no "submitted decision tree" baseline, no "submitted version" annotation, no "kept / lost / new
+vs the submitted picks" columns, no "(submitted: X)" labels, no sentence "the submitted version
+recommended X, the revision recommends Y". The reader does not care about the earlier, weaker
+result; report only what the revised article finds. When a reviewer asks what changed, the
+letter states what the article now reports. A sensitivity analysis that belongs to the new
+method (e.g. all metrics vs the reduced panel) is allowed, labelled by what it is, never
+"(submitted)". If an edit would introduce such a comparison, delete it instead.

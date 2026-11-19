@@ -450,7 +450,9 @@ def cmd_validate(args):
         for t in body.iter():
             if t.tag == W_T and not any(a.tag == W_INS for a in t.iterancestors()):
                 out.append(t.text or "")
-            elif t.tag == W_DELTEXT:
+            elif t.tag == W_DELTEXT and not any(a.tag == W_INS for a in t.iterancestors()):
+                # deleted text inside an earlier insertion ("inserted, then deleted")
+                # disappears on Reject All together with the insertion
                 out.append(t.text or "")
         return "".join(out)
 

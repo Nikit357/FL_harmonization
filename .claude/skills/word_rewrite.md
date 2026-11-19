@@ -189,3 +189,15 @@ manually (missing data, references, accessions, figures, funding, etc.).
   `tracked_replace` handles this by rebuilding from concatenated text.
 - Shell rule: never use `rm` in Bash here (globally blocked). Use unique output dirs instead.
 - Keep unique `w:id`s across all revisions (the helper's counter does this).
+
+## Revisions: never compare with the pre-revision version (Daniil, 2026-11-07)
+
+In a revised manuscript, its figures, tables, supplementary files and the response letter,
+**never compare the new results with the results of the submitted (pre-revision) version**:
+no "submitted decision tree" baseline, no "submitted version" annotation, no "kept / lost / new
+vs the submitted picks" columns, no "(submitted: X)" labels, no sentence "the submitted version
+recommended X, the revision recommends Y". The reader does not care about the earlier, weaker
+result; report only what the revised article finds. When a reviewer asks what changed, the
+letter states what the article now reports. A sensitivity analysis that belongs to the new
+method (e.g. all metrics vs the reduced panel) is allowed, labelled by what it is, never
+"(submitted)". If an edit would introduce such a comparison, delete it instead.

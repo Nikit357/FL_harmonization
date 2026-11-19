@@ -397,3 +397,15 @@ a count it could not show; two enumerated GO-term counts that disagreed with the
 and by 1; a supplementary figure renumbered in the body but not in its legend; a supplementary
 figure with a legend and no citation anywhere; 28 orphan citation paragraphs; seven editor notes
 left in a document being prepared for submission.
+
+## Revisions: never compare with the pre-revision version (Daniil, 2026-11-07)
+
+In a revised manuscript, its figures, tables, supplementary files and the response letter,
+**never compare the new results with the results of the submitted (pre-revision) version**:
+no "submitted decision tree" baseline, no "submitted version" annotation, no "kept / lost / new
+vs the submitted picks" columns, no "(submitted: X)" labels, no sentence "the submitted version
+recommended X, the revision recommends Y". The reader does not care about the earlier, weaker
+result; report only what the revised article finds. When a reviewer asks what changed, the
+letter states what the article now reports. A sensitivity analysis that belongs to the new
+method (e.g. all metrics vs the reduced panel) is allowed, labelled by what it is, never
+"(submitted)". If an edit would introduce such a comparison, delete it instead.

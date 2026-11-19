@@ -1,0 +1,44 @@
+figure	source files
+Figure 1E (new): batch × diagnosis confounding	fig1E_confounding.pdf
+Figure 2A (re-render, plain-word labels)	fig2A_strategy_sankey.pdf
+Figure 3 (rebuilt on the 22-metric panel; 22 recommended approaches marked)	fig3_reduced_panel_clustermap.pdf
+Figure 4 (rebuilt): unharmonized data and the single-sample-type recommendations, A–D	fig4A_unharmonized_no_removal.pdf
+Figure 4 (rebuilt): unharmonized data and the single-sample-type recommendations, A–D	fig4B_ff_only_angel.pdf
+Figure 4 (rebuilt): unharmonized data and the single-sample-type recommendations, A–D	fig4C_ffpe_only_sva.pdf
+Figure 4 (rebuilt): unharmonized data and the single-sample-type recommendations, A–D	fig4D_rnaseq_only_sva.pdf
+Figure 4 (rebuilt): unharmonized data and the single-sample-type recommendations, A–D	fig4_legend.pdf
+Figure 5 (rebuilt): the RNA-seq + microarrays recommendations, A–C	fig5A_malignant_only_fsqn_r.pdf
+Figure 5 (rebuilt): the RNA-seq + microarrays recommendations, A–C	fig5B_malignant_only_combat.pdf
+Figure 5 (rebuilt): the RNA-seq + microarrays recommendations, A–C	fig5C_rare_batches_removed_mcombat.pdf
+Figure 5 (rebuilt): the RNA-seq + microarrays recommendations, A–C	fig5_legend.pdf
+Figure 6B: η² of the design factors	fig6B_eta_squared.pdf
+Figure 6C/D: four scores of the recommended approaches	fig6CD_four_scores.pdf
+Figure 6 gradient panel (new)	fig6_gradient_panel.pdf
+Figure 6F: decision tree	fig6F_decision_tree.pdf
+Supplementary Figure 1 (unchanged; submitted S1)	submitted page 1
+Supplementary Figure 2 (merges submitted S2–S4)	figS2_merged_distributions.pdf
+Supplementary Figure 3 (unchanged; submitted S5)	submitted page 5
+Supplementary Figure 4 (rebuilt; submitted S6)	figS4_metric_availability.pdf
+Supplementary Figure 5 (rebuilt on the 87 metrics with the 22 panel metrics marked; submitted S7)	figS5_metric_correlation_clusters.pdf
+Supplementary Figure 6 (rebuilt; submitted S9)	figS6_approach_correlation.pdf
+Supplementary Figure 7 (unchanged; submitted S11)	submitted page 11
+Supplementary Figure 8 (unchanged; submitted S12)	submitted page 12
+Supplementary Figure 9 (unchanged; submitted S13)	submitted page 13
+Supplementary Figure 10 (unchanged; submitted S14)	submitted page 14
+Supplementary Figure 11 (unchanged; submitted S15)	submitted page 15
+Supplementary Figure 12 (unchanged; submitted S16)	submitted page 16
+Supplementary Figure 13 (unchanged; submitted S17)	submitted page 17
+Supplementary Figure 14 (gates; replaces submitted S18)	figS14a_marker_correlation_gate.pdf
+Supplementary Figure 14 (gates; replaces submitted S18)	figS14b_prediction_gate.pdf
+Supplementary Figure 14 (gates; replaces submitted S18)	figS14c_label_leakage.pdf
+Supplementary Figure 15 (unchanged; submitted S19)	submitted page 19
+Supplementary Figure 16 (new): robustness of the selection	figS16a_robustness_tau.pdf
+Supplementary Figure 16 (new): robustness of the selection	figS16b_front_stability.pdf
+Supplementary Figure 17 (new): confounding gradient, A–F (two pages: A–C, D–F)	figS17a_gradient_scores.pdf
+Supplementary Figure 17 (new): confounding gradient, A–F (two pages: A–C, D–F)	figS17b_gradient_slopes.pdf
+Supplementary Figure 17 (new): confounding gradient, A–F (two pages: A–C, D–F)	figS17c_observational_strategies.pdf
+Supplementary Figure 17 (new): confounding gradient, A–F (two pages: A–C, D–F)	figS17d_gradient_scatter.pdf
+Supplementary Figure 17 (new): confounding gradient, A–F (two pages: A–C, D–F)	figS17e_gradient_rank_trajectories.pdf
+Supplementary Figure 17 (new): confounding gradient, A–F (two pages: A–C, D–F)	figS17f_selected_methods_scores.pdf
+Supplementary Figure 18 (new): leave-cohort-out validation	figS18a_v1_rank_on_test.pdf
+Supplementary Figure 18 (new): leave-cohort-out validation	figS18b_v1_regret.pdf
