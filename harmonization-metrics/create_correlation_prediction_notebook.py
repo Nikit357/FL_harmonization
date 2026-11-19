@@ -46,6 +46,14 @@ _ap.add_argument(
     help="Metric-table date tag the notebook reads (default: 260824). The narrow "
     "columns only exist in a snapshot produced after the Group L recompute run.",
 )
+_ap.add_argument(
+    "--article2",
+    action="store_true",
+    help="Append the Article 2 cells (§10) and export their panels to "
+    "article_2_extended_comparison/figures/panels_260917 at Figma-native sizes. "
+    "Without it the generator produces exactly the Article 1 notebook, so the "
+    "first article's reproducibility is untouched.",
+)
 _args = _ap.parse_args()
 
 NARROW = _args.narrow_set
@@ -55,7 +63,11 @@ OUTPUT = Path(__file__).parent / f"correlation_prediction_metrics_analysis{SFX}.
 # Dated inputs. Bump --date-tag after a new run_metrics_concat.py, and FIG_DIR when the
 # article's figure folder rolls over.
 DATE_TAG = _args.date_tag
+ARTICLE2 = _args.article2
+# Article 1 panels keep writing to the 260819 folder; Article 2 panels are exported
+# separately so a regeneration for Article 2 can never overwrite a published panel.
 FIG_DIR = "../figures_for_article/current_figures_tables_for_article_260819"
+A2_FIG_DIR = "../article_2_extended_comparison/figures/panels_260917"
 
 CELLS: list[tuple[str, str]] = []
 
@@ -157,10 +169,37 @@ MK_SFX          = "%(sfx)s"       # suffix on every Group L column and figure na
 # ── Input paths. Every file this notebook reads is named here and nowhere else. ──
 DATE_TAG        = "%(date)s"
 METRIC_TABLES   = Path("metric_tables")
+
+
+def dated(stem, tag, ext=".csv"):
+    \"\"\"The table for `tag`, or the file the run actually wrote if that name is absent.
+
+    run_metrics_concat.py writes the three Group L/M/N long tables without a date tag
+    and the metric snapshot with one, so a notebook pinned to a snapshot date finds
+    metrics_comprehensive_<tag>.csv but no marker_gene_correlations_long_<tag>.csv. Read
+    literally, gene_long and cohort_long come back empty and every gene-level section
+    produces nothing -- silently, because each cell tolerates an empty table. Resolution
+    order is: the exact date, then the undated file the last run wrote, then the newest
+    dated copy. Substitutions are printed, so a mixed-snapshot read is visible.
+    \"\"\"
+    exact = METRIC_TABLES / f"{stem}_{tag}{ext}"
+    if exact.exists():
+        return exact
+    undated = METRIC_TABLES / f"{stem}{ext}"
+    if undated.exists():
+        print(f"NOTE: {exact.name} absent; reading {undated.name} instead")
+        return undated
+    others = sorted(METRIC_TABLES.glob(f"{stem}_*{ext}"))
+    if not others:
+        return exact                       # let the reading cell report it as missing
+    print(f"NOTE: {exact.name} absent; reading {others[-1].name} instead")
+    return others[-1]
+
+
 METRICS_CSV     = METRIC_TABLES / f"metrics_comprehensive_{DATE_TAG}.csv"
-GENE_LONG_CSV   = METRIC_TABLES / f"marker_gene_correlations_long_{DATE_TAG}.csv"
-COHORT_LONG_CSV = METRIC_TABLES / f"marker_cohort_correlations_long_{DATE_TAG}.csv"
-FOLDS_LONG_CSV  = METRIC_TABLES / f"prediction_folds_long_{DATE_TAG}.csv"
+GENE_LONG_CSV   = dated("marker_gene_correlations_long", DATE_TAG)
+COHORT_LONG_CSV = dated("marker_cohort_correlations_long", DATE_TAG)
+FOLDS_LONG_CSV  = dated("prediction_folds_long", DATE_TAG)
 MARKER_ANN_CSV  = Path("../harmonization-metrics-calculation/marker_gene_annotation.csv")
 COVERAGE_AUDIT_CSV = Path("marker_gene_coverage_audit_260819.csv")
 SUPP_FILE3_CSV  = Path(
@@ -1173,6 +1212,585 @@ Manuscript writing is deliberately deferred until these results exist — see
 )
 
 
+# ── §10 Article 2 — metric-class cross-election ───────────────────────────────
+#
+# Emitted only under --article2. Every cell imports from
+# article_2_extended_comparison/analysis/article2_generalizability.py; no analysis
+# logic is duplicated here, so the notebook and the manuscript cannot diverge.
+if ARTICLE2:
+    md(
+        """## §10 — Article 2: metric-class cross-election
+
+The panels below are Article 2's own. They are exported to
+`article_2_extended_comparison/figures/panels_260917` at Figma-native widths, so
+nothing here can overwrite an Article 1 panel in the 260819 folder.
+
+Every number comes from `analysis/article2_generalizability.py`. Run it first:
+
+    cd ../article_2_extended_comparison
+    python analysis/article2_generalizability.py --date-tag %(date)s --out-dir tables/
+"""
+        % {"date": DATE_TAG}
+    )
+
+    code(
+        """# ── §10.0 Load the Article 2 analysis set ──────────────────────────────────
+# save_panel lives here rather than in the shared setup cell so that a run without
+# --article2 emits exactly the Article 1 notebook, byte for byte.
+import sys
+
+from scipy.stats import spearmanr
+
+sys.path.insert(0, "../article_2_extended_comparison/analysis")
+import article2_generalizability as a2   # noqa: E402
+
+A2_DIR = Path("../article_2_extended_comparison")
+A2_FIG_DIR = Path("../article_2_extended_comparison/figures/panels_260917")
+
+# Panel geometry for Figma assembly. The Page 2 frames are 739-790 px wide and the
+# convention in this project is 2 px = 1 pt, so a full-width panel is 375 pt =
+# 5.21 in, a half-width panel 2.60 in and a third-width panel 1.72 in. Every
+# Article 2 panel is saved at one of these widths, so panels drop onto the canvas
+# at 1:1 with no rescaling.
+PANEL_W_FULL, PANEL_W_HALF, PANEL_W_THIRD = 5.21, 2.60, 1.72
+
+
+def save_panel(fig, name, width="half", height=None, figures_dir=A2_FIG_DIR):
+    \"\"\"Save one Article 2 subpanel at Figma-native size, PDF + SVG + PNG.
+
+    Artwork is resized, never the font: FONT_SIZE stays at 7.5 pt and the figure is
+    set to the panel width instead, so a panel dropped onto the canvas carries the
+    same type size as every other panel in the figure.
+    \"\"\"
+    w = {"full": PANEL_W_FULL, "half": PANEL_W_HALF, "third": PANEL_W_THIRD}[width]
+    fig.set_size_inches(w, height if height is not None else fig.get_size_inches()[1])
+    figures_dir = Path(figures_dir)
+    figures_dir.mkdir(parents=True, exist_ok=True)
+    for ext, kw in (("pdf", {}), ("svg", {}), ("png", {"dpi": 200})):
+        fig.savefig(figures_dir / f"{name}.{ext}", bbox_inches="tight", **kw)
+
+
+
+# The generator's FOLDS_LONG_CSV is date-tagged, but the L/M/N run wrote an undated
+# prediction_folds_long.csv. Resolve whichever exists so the fold cells work at any
+# --date-tag instead of silently producing empty panels.
+_folds = FOLDS_LONG_CSV if FOLDS_LONG_CSV.exists() else METRIC_TABLES / "prediction_folds_long.csv"
+print(f"folds table: {_folds}  ({'OK' if _folds.exists() else 'MISSING'})")
+
+a2_df = a2.load_analysis_set(SUPP_FILE3_CSV, METRICS_CSV)
+a2_df = a2.add_raw_deltas(a2_df)
+a2_df, a2_fold_comp = a2.add_fold_metrics(a2_df, _folds)
+a2_df["generalizability_index"] = a2.generalizability_index(a2_df)
+a2_matrix, a2_sets = a2.cross_election_matrix(a2_df)
+a2_df["is_prediction_best"] = a2_df.index.isin(a2_sets["N"])
+
+print(f"analysis set: {len(a2_df)} approaches, {a2_df.method.nunique()} methods")
+
+# Canonical palettes, from Finally_assembled_figures_for_article.ipynb cell 4. Article 2
+# uses the same colours as Article 1 so a reader moving between the two papers does not
+# have to relearn what orange means.
+imp_pal = {"strict": "#2979ae", "knn": "#982d22", "softimpute": "#713689"}
+harshness_pal = {"low": "#2DC653", "medium": "#F4A261", "high": "#E63946"}
+post_rm_pal = {False: "#CCCCCC", True: "#333333"}
+strat_pal = {
+    "S0_no_removal": (0.631, 0.788, 0.957), "A_confirmed_bad": (1.000, 0.706, 0.510),
+    "B_extended_bad": (0.553, 0.898, 0.631), "C_rnaseq_only": (1.000, 0.624, 0.608),
+    "D_malignant_only": (0.816, 0.733, 1.000), "E1_iterative_r1": (0.871, 0.733, 0.608),
+    "E2_iterative_r2": (0.980, 0.690, 0.894), "E3_iterative_r3": (0.812, 0.812, 0.812),
+    "F_microarray_only": (1.000, 0.996, 0.639), "G_affymetrix_only": (0.725, 0.949, 0.941),
+    "H_affymetrix_extended": (0.741, 0.718, 0.420), "I_rare_batches_removed": "#b095c5",
+    "J_ff_only": "#7ecbc4", "K_ffpe_only": "#f2c27f",
+}
+GROUP_COLOR = {"clustermap_best": "#E63946", "prediction_best": "#2979ae",
+               "both": "#713689", "rest": "#CCCCCC"}
+
+
+def a2_group(row):
+    if row.is_clustermap_best and row.is_prediction_best:
+        return "both"
+    if row.is_clustermap_best:
+        return "clustermap_best"
+    if row.is_prediction_best:
+        return "prediction_best"
+    return "rest"
+
+
+a2_df["a2_group"] = a2_df.apply(a2_group, axis=1)
+print(a2_df.a2_group.value_counts().to_string())"""
+    )
+
+    md("""### §10.1 — Group L against Group M (`a2_p1`)""")
+    code(
+        """# Group L rho against the Group M margin. The rho = 1 saturation wall and the
+# rho > 0.75 gate are drawn as rules: Group L is a gate, not a ranking, and the panel
+# has to show why.
+if not a2_df.empty:
+    fig, ax = plt.subplots(figsize=(PANEL_W_HALF, 2.3))
+    for grp in ("rest", "clustermap_best", "prediction_best", "both"):
+        d = a2_df[a2_df.a2_group == grp]
+        ax.scatter(d.mk_rho_mean_markers, d.xb_margin, s=4 if grp == "rest" else 14,
+                   c=GROUP_COLOR[grp], alpha=0.35 if grp == "rest" else 0.95,
+                   linewidths=0, label=grp, zorder=1 if grp == "rest" else 3)
+    ax.axvline(a2.RHO_GATE, color="k", lw=0.6, ls="--")
+    ax.axhline(0, color="k", lw=0.6, ls=":")
+    n_gate = int(((a2_df.mk_rho_mean_markers > a2.RHO_GATE) & (a2_df.xb_margin > 0)).sum())
+    ax.set_xlabel(r"Group L  mean marker $\\rho$")
+    ax.set_ylabel("Group M  margin\\n(same $-$ different biology)")
+    ax.set_title(f"{n_gate} of {len(a2_df)} approaches pass both", fontsize=FONT_SIZE)
+    ax.legend(frameon=False, fontsize=FONT_SIZE - 1.5, markerscale=1.2, loc="lower left")
+    sns.despine(fig)
+    save_panel(fig, "a2_p1_rho_vs_margin", width="half")
+    plt.show()"""
+    )
+
+    md("""### §10.2 — Margin ranking, subtracted and not (`a2_p2`)""")
+    code(
+        """# Top 30 by the raw margin and by the gain over the approach's own 01_raw baseline,
+# side by side. The two orderings are different questions and Daniil asked for both.
+if not a2_df.empty:
+    fig, axes = plt.subplots(1, 2, figsize=(PANEL_W_FULL, 3.4), sharey=False)
+    for ax, col, title in zip(
+        axes, ["xb_margin", "xb_margin_delta"],
+        ["margin, unsubtracted", "margin gain over 01_raw"]
+    ):
+        top = a2_df.nlargest(30, col)
+        ax.barh(range(len(top)), top[col],
+                color=[strat_pal.get(s, "#888888") for s in top.strat], height=0.8)
+        ax.set_yticks(range(len(top)))
+        ax.set_yticklabels([f"{r.method} · {r.strat[:12]} · {r.imp[:4]}"
+                            for r in top.itertuples()], fontsize=FONT_SIZE - 2.5)
+        ax.invert_yaxis()
+        ax.set_xlabel(title)
+    sns.despine(fig)
+    fig.tight_layout()
+    save_panel(fig, "a2_p2_margin_ranking", width="full")
+    plt.show()"""
+    )
+
+    md("""### §10.3 — The agreement-specific group (`a2_p3`)""")
+    code(
+        """# Daniil's criterion in one plane: agreement up for same-biology pairs, down for
+# different-biology pairs, both relative to the approach's own raw baseline. The inset
+# carries the unsubtracted form so neither is hidden.
+if not a2_df.empty:
+    spec = a2.agreement_specific(a2_df)
+    fig, ax = plt.subplots(figsize=(PANEL_W_HALF, 2.4))
+    d = a2_df[~a2_df.is_raw]
+    ax.scatter(d.xb_rank_agree_delta, d.xb_rank_disagree_diffbio_delta,
+               s=4, c="#CCCCCC", linewidths=0, zorder=1)
+    ax.scatter(spec.xb_rank_agree_delta, spec.xb_rank_disagree_diffbio_delta,
+               s=16, c=[strat_pal.get(s, "#888888") for s in spec.strat],
+               edgecolors="k", linewidths=0.2, zorder=3)
+    ax.axhline(0, color="k", lw=0.6)
+    ax.axvline(0, color="k", lw=0.6)
+    ax.set_xlabel(r"$\\Delta$ same-biology agreement")
+    ax.set_ylabel(r"$\\Delta$ different-biology agreement")
+    ax.set_title(f"{len(spec)} agreement-specific of {len(d)} "
+                 f"({len(spec) / len(d) * 100:.1f}%)", fontsize=FONT_SIZE)
+
+    ins = ax.inset_axes([0.62, 0.62, 0.36, 0.36])
+    ins.scatter(d.xb_rank_agree, d.xb_rank_disagree_diffbio, s=2, c="#CCCCCC", linewidths=0)
+    ins.scatter(spec.xb_rank_agree, spec.xb_rank_disagree_diffbio, s=5, c="#E63946",
+                linewidths=0)
+    lo = float(min(d.xb_rank_agree.min(), d.xb_rank_disagree_diffbio.min()))
+    hi = float(max(d.xb_rank_agree.max(), d.xb_rank_disagree_diffbio.max()))
+    ins.plot([lo, hi], [lo, hi], color="k", lw=0.5, ls="--")
+    ins.tick_params(labelsize=FONT_SIZE - 3)
+    sns.despine(fig)
+    save_panel(fig, "a2_p3_agreement_specific", width="half")
+    plt.show()"""
+    )
+
+    md("""### §10.4 — LOBO ranking with the permutation null (`a2_p4`)""")
+    code(
+        """# Top 30 by the full 3-class LOBO F1. The permutation mean is drawn as a shaded
+# band, the worst multiclass fold as a whisker, and the multiclass fold count is
+# printed against every bar -- a high mean over two folds is not the same result as a
+# high mean over eleven, and the panel must not let the two look alike.
+if not a2_df.empty:
+    top = a2_df.nlargest(30, "pv_lobo3_f1_macro_mean")
+    fig, ax = plt.subplots(figsize=(PANEL_W_FULL, 3.4))
+    y = range(len(top))
+    ax.barh(y, top.pv_lobo3_f1_macro_mean,
+            color=[harshness_pal.get(h, "#888888") for h in top.harshness_level],
+            height=0.8, zorder=2)
+    if "pv_lobo3_f1_macro_perm_mean" in top.columns:
+        ax.barh(y, top.pv_lobo3_f1_macro_perm_mean, color="#000000", alpha=0.18,
+                height=0.8, zorder=3, label="permutation null")
+    ax.hlines(list(y), top.f1_mc_min, top.pv_lobo3_f1_macro_mean,
+              color="k", lw=0.6, zorder=4)
+    for i, (v, n) in enumerate(zip(top.pv_lobo3_f1_macro_mean, top.n_mc)):
+        ax.text(v + 0.01, i, f"{int(n) if pd.notna(n) else 0}",
+                va="center", fontsize=FONT_SIZE - 2.5)
+    ax.set_yticks(list(y))
+    ax.set_yticklabels([f"{r.method} · {r.strat[:12]} · {r.imp[:4]}"
+                        for r in top.itertuples()], fontsize=FONT_SIZE - 2.5)
+    ax.invert_yaxis()
+    ax.set_xlabel("LOBO 3-class macro F1 (whisker: worst multiclass fold; label: n folds)")
+    ax.legend(frameon=False, fontsize=FONT_SIZE - 1.5, loc="lower right")
+    sns.despine(fig)
+    fig.tight_layout()
+    save_panel(fig, "a2_p4_lobo_ranking", width="full")
+    plt.show()"""
+    )
+
+    md("""### §10.5 — Per-batch prediction detail (`a2_p5`)""")
+    code(
+        """# Per-batch F1 for the two named groups. Single-class folds are drawn apart from
+# multiclass folds rather than averaged into them: both are honest tests, and they
+# measure different things.
+_folds_df = pd.read_csv(_folds) if _folds.exists() else pd.DataFrame()
+if not _folds_df.empty:
+    _folds_df["method"] = _folds_df.run_id.str.split("__").str[2]
+    _folds_df = a2._canonicalize_shambhala(_folds_df)
+    _p = _folds_df.run_id.str.split("__")
+    _folds_df["run_id"] = (_p.str[0] + "__" + _p.str[1] + "__"
+                           + _folds_df.method + "__" + _p.str[3])
+    sel = _folds_df[(_folds_df.target == "3class")
+                    & (_folds_df.run_id.isin(a2_df.index[a2_df.a2_group != "rest"]))].copy()
+    sel["group"] = sel.run_id.map(a2_df.a2_group)
+    sel["fold_kind"] = np.where(sel.n_classes >= 2, "multiclass", "single class")
+
+    fig, ax = plt.subplots(figsize=(PANEL_W_FULL, 2.8))
+    order = sel.groupby("batch")["f1_macro"].median().sort_values().index
+    sns.stripplot(data=sel, x="f1_macro", y="batch", hue="fold_kind", order=order,
+                  dodge=True, size=2, alpha=0.7, ax=ax,
+                  palette={"multiclass": "#2979ae", "single class": "#CCCCCC"})
+    ax.set_xlabel("macro F1 in the held-out batch")
+    ax.set_ylabel("")
+    ax.tick_params(axis="y", labelsize=FONT_SIZE - 2.5)
+    ax.legend(frameon=False, fontsize=FONT_SIZE - 1.5, loc="lower left")
+    sns.despine(fig)
+    save_panel(fig, "a2_p5_per_batch", width="full")
+    plt.show()"""
+    )
+
+    md("""### §10.6 — The two fold cuts against each other (`a2_p6`)""")
+    code(
+        """# The published mean against the multiclass-only mean. Points on the identity line
+# have no single-class folds; the colour is how much of each approach's fold population
+# is single-class. Neither axis corrects the other.
+if not a2_df.empty:
+    d = a2_df.dropna(subset=["pv_lobo3_f1_macro_mean", "f1_mc_mean"])
+    fig, ax = plt.subplots(figsize=(PANEL_W_HALF, 2.3))
+    sc = ax.scatter(d.pv_lobo3_f1_macro_mean, d.f1_mc_mean, c=d.frac_singleclass,
+                    cmap="viridis", s=5, linewidths=0)
+    ax.plot([0, 1], [0, 1], color="k", lw=0.6, ls="--")
+    rho = spearmanr(d.pv_lobo3_f1_macro_mean, d.f1_mc_mean).statistic
+    ax.set_xlabel("full mean F1, all folds")
+    ax.set_ylabel("mean F1, multiclass folds only")
+    ax.set_title(fr"$\\rho$ = {rho:.3f} over {len(d)} approaches", fontsize=FONT_SIZE)
+    cb = fig.colorbar(sc, ax=ax, pad=0.02)
+    cb.set_label("fraction of folds with one class", fontsize=FONT_SIZE - 1)
+    cb.ax.tick_params(labelsize=FONT_SIZE - 2)
+    sns.despine(fig)
+    save_panel(fig, "a2_p6_singleclass_audit", width="half")
+    plt.show()"""
+    )
+
+    md("""### §10.7 — Strategy, imputation and method on L/M/N (`a2_p7`)""")
+    code(
+        """# Bubble grid: methods against strategies, area = approaches, fill = median
+# generalizability index. This is the comparison Article 2 runs -- categories against
+# each other -- and not Article 1's best-versus-rest test.
+if not a2_df.empty:
+    piv = a2_df.groupby(["method", "strat"]).agg(
+        n=("run_id", "size"), idx=("generalizability_index", "median")).reset_index()
+    methods = sorted(a2_df.method.unique())
+    strats = sorted(a2_df.strat.unique())
+    fig, ax = plt.subplots(figsize=(PANEL_W_FULL, 4.2))
+    sc = ax.scatter([strats.index(s) for s in piv.strat],
+                    [methods.index(m) for m in piv.method],
+                    s=piv.n * 6, c=piv.idx, cmap="magma", linewidths=0.2,
+                    edgecolors="k")
+    ax.set_xticks(range(len(strats)))
+    ax.set_xticklabels(strats, rotation=90, fontsize=FONT_SIZE - 2)
+    ax.set_yticks(range(len(methods)))
+    ax.set_yticklabels(methods, fontsize=FONT_SIZE - 2)
+    cb = fig.colorbar(sc, ax=ax, pad=0.02)
+    cb.set_label("median generalizability index", fontsize=FONT_SIZE - 1)
+    cb.ax.tick_params(labelsize=FONT_SIZE - 2)
+    sns.despine(fig)
+    fig.tight_layout()
+    save_panel(fig, "a2_p7_strategy_imputation_method", width="full")
+    plt.show()"""
+    )
+
+    md("""### §10.8 — The generalizability index (`a2_p8`)""")
+    code(
+        """# Top 40 by the index, with the six rank-percentile components stacked so a reader
+# can see which component carried each approach.
+if not a2_df.empty:
+    comp = pd.DataFrame(
+        {c: a2.rank_percentile(a2_df[c], a2.lmn_polarity(c) or 1) for c in a2.INDEX_COLUMNS},
+        index=a2_df.index)
+    top = a2_df.nlargest(40, "generalizability_index").index
+    fig, ax = plt.subplots(figsize=(PANEL_W_FULL, 3.6))
+    bottom = np.zeros(len(top))
+    for c, colr in zip(a2.INDEX_COLUMNS, sns.color_palette("Set2", len(a2.INDEX_COLUMNS))):
+        v = comp.loc[top, c].fillna(0).values / len(a2.INDEX_COLUMNS)
+        ax.bar(range(len(top)), v, bottom=bottom, color=colr, width=0.85, label=c)
+        bottom += v
+    ax.set_xticks(range(len(top)))
+    ax.set_xticklabels([a2_df.loc[i, "method"] + " · " + a2_df.loc[i, "strat"][:10]
+                        for i in top], rotation=90, fontsize=FONT_SIZE - 2.5)
+    ax.set_ylabel("generalizability index")
+    ax.legend(frameon=False, fontsize=FONT_SIZE - 2.5, ncol=2, loc="lower left")
+    sns.despine(fig)
+    fig.tight_layout()
+    save_panel(fig, "a2_p8_generalizability_index", width="full")
+    plt.show()"""
+    )
+
+    md("""### §10.9 — Cross-election structure, chord (`a2_p9`)""")
+    code(
+        """# Metric classes as arcs on a circle, ribbons weighted by how many approaches two
+# classes jointly elect. Drawn with plain matplotlib patches so no package enters the
+# environment for one panel.
+from matplotlib.path import Path as MplPath      # noqa: E402
+from matplotlib.patches import PathPatch, Wedge  # noqa: E402
+
+if not a2_df.empty:
+    classes = a2.ELECTION_CLASSES
+    ang = {c: 2 * np.pi * i / len(classes) for i, c in enumerate(classes)}
+    colr = dict(zip(classes, sns.color_palette("husl", len(classes))))
+    fig, ax = plt.subplots(figsize=(PANEL_W_HALF, PANEL_W_HALF))
+    for c in classes:
+        a0 = np.degrees(ang[c]) - 14
+        ax.add_patch(Wedge((0, 0), 1.0, a0, a0 + 28, width=0.08, color=colr[c]))
+        ax.text(1.16 * np.cos(ang[c]), 1.16 * np.sin(ang[c]), c.replace("_", "\\n"),
+                ha="center", va="center", fontsize=FONT_SIZE - 2)
+    for i, a_cls in enumerate(classes):
+        for b_cls in classes[i + 1:]:
+            shared = len(a2_sets[a_cls] & a2_sets[b_cls])
+            if not shared:
+                continue
+            p0 = (0.92 * np.cos(ang[a_cls]), 0.92 * np.sin(ang[a_cls]))
+            p1 = (0.92 * np.cos(ang[b_cls]), 0.92 * np.sin(ang[b_cls]))
+            path = MplPath([p0, (0, 0), p1], [MplPath.MOVETO, MplPath.CURVE3,
+                                              MplPath.CURVE3])
+            ax.add_patch(PathPatch(path, fill=False, lw=0.3 + shared / 6,
+                                   edgecolor=colr[a_cls], alpha=0.55))
+    ax.set_xlim(-1.35, 1.35)
+    ax.set_ylim(-1.35, 1.35)
+    ax.set_aspect("equal")
+    ax.axis("off")
+    save_panel(fig, "a2_p9_cross_election_circos", width="half")
+    plt.show()
+
+    display(a2_matrix.round(3))"""
+    )
+
+    md("""### §10.10 — Venn and supervenn of the elected sets (`a2_p10`)""")
+    code(
+        """# The bridge panel into the recipe scheme: how little the elected sets intersect,
+# shown so a reader can see it rather than read a Jaccard number.
+try:
+    from matplotlib_venn import venn3
+    from supervenn import supervenn
+    _HAVE_VENN = True
+except ImportError:
+    _HAVE_VENN = False
+    print("pip install matplotlib-venn supervenn to draw a2_p10")
+
+if _HAVE_VENN and not a2_df.empty:
+    fig, axes = plt.subplots(1, 2, figsize=(PANEL_W_FULL, 2.6))
+    venn3([a2_sets["N"], a2_sets["M"], a2_sets["local"]],
+          set_labels=("N prediction", "M rank agreement", "local"), ax=axes[0])
+    five = ["N", "M", "L", "global", "local"]
+    supervenn([a2_sets[c] for c in five], five, ax=axes[1], side_plots=False,
+              chunks_ordering="size", widths_minmax_ratio=0.05)
+    axes[1].tick_params(labelsize=FONT_SIZE - 2)
+    save_panel(fig, "a2_p10_venn_supervenn", width="full")
+    plt.show()"""
+    )
+
+    md("""### §10.11 — Harshness tiers by L/M/N (`a2_p11`)""")
+    code(
+        """# The three method-level harshness tiers across the biology-facing metrics, with
+# the Kruskal-Wallis statistic printed on each facet. The 2-class AUC facet is the
+# point of the panel: it cannot tell the tiers apart.
+if not a2_df.empty:
+    stats = a2.harshness_by_lmn(a2_df)
+    cols = stats.metric.tolist()
+    fig, axes = plt.subplots(1, len(cols), figsize=(PANEL_W_FULL, 2.0))
+    for ax, c in zip(np.atleast_1d(axes), cols):
+        sns.violinplot(data=a2_df, x="harshness_level", y=c,
+                       order=["low", "medium", "high"], palette=harshness_pal,
+                       cut=0, linewidth=0.4, ax=ax)
+        row = stats[stats.metric == c].iloc[0]
+        ax.set_title(f"H={row.kruskal_H:.0f}\\np={row.kruskal_p:.2g}",
+                     fontsize=FONT_SIZE - 2)
+        ax.set_xlabel("")
+        ax.set_ylabel(c, fontsize=FONT_SIZE - 2)
+        ax.tick_params(labelsize=FONT_SIZE - 2.5)
+    sns.despine(fig)
+    fig.tight_layout()
+    save_panel(fig, "a2_p11_harshness_lmn", width="full")
+    plt.show()
+    display(stats.round(4))"""
+    )
+
+    md("""### §10.12 — Raw to harmonized (`a2_p12`)""")
+    code(
+        """# Dumbbell: each named approach's own 01_raw baseline against what it achieved.
+# A slope reads the transition directly, which a paired boxplot hides.
+if not a2_df.empty:
+    named = a2_df[a2_df.a2_group != "rest"].nlargest(25, "generalizability_index")
+    fig, ax = plt.subplots(figsize=(PANEL_W_HALF, 3.0))
+    y = range(len(named))
+    ax.hlines(list(y), named.xb_margin_raw, named.xb_margin, color="#BBBBBB", lw=1.0)
+    ax.scatter(named.xb_margin_raw, list(y), s=10, c="#CCCCCC", label="01_raw", zorder=3)
+    ax.scatter(named.xb_margin, list(y), s=12,
+               c=[GROUP_COLOR[g] for g in named.a2_group], label="harmonized", zorder=4)
+    ax.set_yticks(list(y))
+    ax.set_yticklabels([f"{r.method} · {r.strat[:10]}" for r in named.itertuples()],
+                       fontsize=FONT_SIZE - 2.5)
+    ax.invert_yaxis()
+    ax.set_xlabel("Group M margin")
+    ax.legend(frameon=False, fontsize=FONT_SIZE - 1.5, loc="lower right")
+    sns.despine(fig)
+    save_panel(fig, "a2_p12_raw_to_harmonized", width="half")
+    plt.show()"""
+    )
+
+    md("""### §10.13 — The election funnel, Sankey (`a2_p13`)""")
+    code(
+        """# The funnel Daniil asked for: all approaches, those passing the joint L/M gate,
+# those each class elects, and those elected by more than one class. Drawn with Bezier
+# ribbons in plain matplotlib, so no package enters the environment for it.
+from matplotlib.path import Path as MplPath      # noqa: E402
+from matplotlib.patches import PathPatch         # noqa: E402
+
+if not a2_df.empty:
+    gate = (a2_df.mk_rho_mean_markers > a2.RHO_GATE) & (a2_df.xb_margin > 0)
+    elected = {c: a2_sets[c] for c in ("L", "M", "N")}
+    multi = {i for i in a2_df.index
+             if sum(i in s for s in elected.values()) >= 2}
+    stages = [("all approaches", len(a2_df)), ("pass L and M gate", int(gate.sum())),
+              ("elected by L", len(elected["L"])), ("elected by M", len(elected["M"])),
+              ("elected by N", len(elected["N"])), ("elected by 2+ classes", len(multi))]
+
+    fig, ax = plt.subplots(figsize=(PANEL_W_HALF, 2.4))
+    total = stages[0][1]
+    colours = sns.color_palette("crest", len(stages))
+    for i, (label, n) in enumerate(stages):
+        h = n / total
+        ax.add_patch(plt.Rectangle((i, (1 - h) / 2), 0.28, h, color=colours[i]))
+        ax.text(i + 0.14, (1 - h) / 2 - 0.045, f"{label}\\n{n:,}", ha="center",
+                va="top", fontsize=FONT_SIZE - 2.5, rotation=0)
+        if i + 1 < len(stages):
+            h2 = stages[i + 1][1] / total
+            y0, y1 = (1 - h) / 2, (1 - h2) / 2
+            for ya, yb in (((y0, y1)), ((y0 + h, y1 + h2))):
+                path = MplPath(
+                    [(i + 0.28, ya), (i + 0.64, ya), (i + 0.64, yb), (i + 1.0, yb)],
+                    [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4])
+                ax.add_patch(PathPatch(path, fill=False, lw=0.5, edgecolor="#999999"))
+    ax.set_xlim(-0.1, len(stages))
+    ax.set_ylim(-0.25, 1.05)
+    ax.axis("off")
+    save_panel(fig, "a2_p13_election_sankey", width="half")
+    plt.show()"""
+    )
+
+
+
+# ── Preserved hand-written cells (plan §4.2e step 4) ──────────────────────────
+#
+# Regenerating a notebook overwrites it, which deletes anything typed into it by hand.
+# The cells in preserved_cells_260917.json are re-emitted here so that can no longer
+# happen. They are appended rather than spliced back into their original positions:
+# their positions were relative to an older notebook, and a wrong position is a harder
+# error to see than a section at the end.
+#
+# Only genuinely hand-written cells are in that file. A cell that merely differs from
+# the generator by code formatting, or one where the generator has since moved ahead
+# (the narrow-set variant, for instance), is not preserved -- for those, regenerating
+# IS the fix.
+import textwrap
+
+
+# Objects the preserved cells reference. They were typed into a notebook that already
+# had them in scope, and the generator's own cells build none of them: `method_pal` and
+# its saturation helper came from the v3 notebook's palette cell, and `f3` is the
+# per-fold frame an exploration cell built before plotting it. Rebuilding them here is
+# what lets the preserved section run instead of raising NameError six times.
+PRESERVED_PREAMBLE_MIN = """# Imports the preserved cells below assume.
+import matplotlib.colors as mcolors
+import matplotlib.patches as mpatches
+from scipy.stats import pearsonr, spearmanr"""
+
+PRESERVED_PREAMBLE = PRESERVED_PREAMBLE_MIN + """
+
+
+def _boost_saturation(rgb, delta=0.15):
+    \"\"\"Push a tab20 colour towards saturation so 31 methods stay distinguishable.\"\"\"
+    h, s, v = mcolors.rgb_to_hsv(rgb[:3])
+    return tuple(mcolors.hsv_to_rgb([h, min(1.0, s + delta), v]))
+
+
+ALL_METHODS = sorted(df_lmn.method.unique())
+_raw_method_colors = (sns.color_palette("tab20", n_colors=20)
+                      + sns.color_palette("tab20b", n_colors=20))[
+                          : max(len(ALL_METHODS), 25)]
+method_pal = dict(zip(ALL_METHODS,
+                      [_boost_saturation(c) for c in _raw_method_colors][: len(ALL_METHODS)]))
+
+# The per-fold frame the per-batch exploration cells plot from.
+f3 = pd.DataFrame()
+if not folds_long.empty:
+    _meta = df_lmn[["method", "is_best", "group", "is_raw"]]
+    _f = folds_long.merge(_meta, left_on="run_id", right_index=True, how="left")
+    f3 = _f[(_f["target"] == "3class") & (~_f["is_raw"].fillna(False))]
+print(f"preserved-cell preamble: {len(method_pal)} method colours, f3 = {len(f3)} rows")"""
+
+
+PRESERVED_JSON = Path(__file__).parent / "preserved_cells_260917.json"
+
+
+def emit_preserved(variant: str) -> int:
+    """Append the hand-written cells recorded for one notebook variant."""
+    if not PRESERVED_JSON.exists():
+        return 0
+    import json
+
+    kept = json.loads(PRESERVED_JSON.read_text()).get(variant, [])
+    if not kept:
+        return 0
+    md(
+        "## §11 — Preserved hand-written cells\n\n"
+        f"{len(kept)} cells that were typed into this notebook by hand and are not "
+        "produced by the generator. They are re-emitted from "
+        "`preserved_cells_260917.json` on every regeneration, so regenerating cannot "
+        "delete them. Their original positions are recorded in the comment above each "
+        "one; the companion audit is `diverged_cells_260917.md`.\n\n"
+        "They are exploratory cells, written against an earlier state of this notebook. "
+        "Some reference objects that state defined and this one does not, and those "
+        "raise when run. They are kept for the record, not because they still execute."
+    )
+    code(
+        PRESERVED_PREAMBLE if variant in ("main", "narrow") else PRESERVED_PREAMBLE_MIN
+    )
+    for c in kept:
+        head = (f"# --- preserved from {variant} cell {c['original_index']} "
+                f"(similarity to generator {c['similarity_to_generator']}) ---\n")
+        body = c["source"]
+        # Several of these carry a uniform four-space indent: they were written inside
+        # an if-block and lifted out without dedenting, so they raise IndentationError
+        # as they stand -- in the original notebook too, not only here.
+        lines = [ln for ln in body.splitlines() if ln.strip()]
+        if lines and all(ln.startswith(("    ", "\t")) for ln in lines):
+            body = textwrap.dedent(body)
+        if c["cell_type"] == "markdown":
+            md(c["source"])
+        else:
+            code(head + body)
+    return len(kept)
+
+
+_n_preserved = emit_preserved("narrow" if NARROW else "main")
+
 def main() -> None:
     nb = nbf.v4.new_notebook()
     nb.cells = [
@@ -1191,6 +1809,7 @@ def main() -> None:
     n_code = sum(1 for k, _ in CELLS if k == "code")
     print(f"Wrote {OUTPUT}")
     print(f"  {len(CELLS)} cells ({n_code} code, {len(CELLS) - n_code} markdown)")
+    print(f"  {_n_preserved} preserved hand-written cell(s) re-emitted")
 
 
 if __name__ == "__main__":

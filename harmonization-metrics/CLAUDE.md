@@ -7,6 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Analysis** side of the metrics work: notebooks, figures, and the dated
 `metrics_comprehensive_*.csv` snapshots produced by the compute pipeline.
 
+The Article 1 revision's reduced metric panel (25 metrics) and four scores live in `../article_1_revision/output/wp2/` and `output/wp3/` (scripts `r02`, `r03`); they read Supplementary File 3 for the 87 metrics and `metric_tables/metrics_comprehensive_260905.csv` for L / N only. The notebooks of this folder are frozen for the revision.
+
 The **compute pipeline and everything needed to launch the K8s pod moved to
 `../harmonization-metrics-calculation/`** (2026-08-20) so it can be sparse-checked-out on its own
 — see `../harmonization-metrics-calculation/CLAUDE.md` for the metric group definitions, the S3
@@ -46,7 +48,7 @@ instead of importing `marker_panels`. To point it at a new metrics run, change `
 | `harmonization_metrics_analysis_v3.ipynb` | **Primary analysis notebook** (353 cells): quantitative comparison of 2,234 attempts × 87 metrics; clustermaps, per-group plots, composite scoring, gene set analysis |
 | `create_v3_notebook.py` | Generator for the notebook above |
 | `harmonization_metrics_visual_inspection.ipynb` | **Visual inspection notebook** (338 cells): PCA/UMAP/tSNE grids per strategy; interactive decision tool; uses `plot_embedding_grid()` + S3 expression downloads |
-| `correlation_prediction_metrics_analysis.ipynb` | **Blind-check notebook**: groups L/M/N, best-vs-rest comparison, per-gene and per-cell-type views, permutation control, Supplementary File 5 export. **The committed file (40 cells) has diverged from its generator (32 cells)** — it carries 8 hand-added cells, hand-written working notes among them. Port those into the generator before ever regenerating this file |
+| `correlation_prediction_metrics_analysis.ipynb` | **Blind-check notebook**: groups L/M/N, best-vs-rest comparison, per-gene and per-cell-type views, permutation control, Supplementary File 5 export. **The committed file (40 cells) has diverged from its generator (32 cells)** — it carries 8 hand-added cells, Daniil's Russian working notes among them. Port those into the generator before ever regenerating this file |
 | `correlation_prediction_metrics_analysis_narrow_set.ipynb` | **Narrow-panel variant** (32 cells, generated 2026-09-04): identical analysis with Group L read from the `mk_*_narrow_set` columns and every gene-level view restricted to the 56 `in_narrow_set` genes. Adds §3b, the housekeeping-control noise comparison (`fig5f_hk_control_comparison_narrow_set`, `T5f_hk_control_noise_comparison_narrow_set.csv`), and writes its own `supplementary_file_5_narrow_set/` folder |
 | `create_correlation_prediction_notebook.py` | Generator for both notebooks above; `--narrow-set` selects the variant and `--date-tag` picks the metric-table snapshot. Regenerate rather than hand-edit |
 | `marker_gene_deep_analysis.ipynb` | **Marker panel deep-dive notebook**: gene-set overlap (Venn/supervenn), raw-coverage and expression-quality gates, saturation split, gene × gene consensus correlation, minimal orthogonal panel selection, noise/coherence analysis |

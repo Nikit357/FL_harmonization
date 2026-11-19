@@ -30,9 +30,24 @@ Plan: marker_gene_deep_analysis_plan_260827.md
 
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 import nbformat as nbf
+
+# Cell bodies are declared at import time by the md()/code() calls below, so the
+# variant has to be known before them.
+_ap = argparse.ArgumentParser(description=__doc__)
+_ap.add_argument(
+    "--article2",
+    action="store_true",
+    help="Re-export the four panels Article 2 needs to "
+    "article_2_extended_comparison/figures/panels_260917 at Figma-native sizes, and "
+    "append the gene expression scatter panel (a2_p14). Without it the generator "
+    "produces exactly the Article 1 notebook.",
+)
+_args = _ap.parse_args()
+ARTICLE2 = _args.article2
 
 OUTPUT = Path(__file__).parent / "marker_gene_deep_analysis.ipynb"
 
@@ -41,6 +56,63 @@ OUTPUT = Path(__file__).parent / "marker_gene_deep_analysis.ipynb"
 DATE_TAG = "260826"
 PANEL_TAG = "260827"
 FIG_DIR = "../figures_for_article/current_figures_tables_for_article_260819"
+# Article 1 panels keep writing to the 260819 folder; Article 2 panels are exported
+# separately so a regeneration for Article 2 can never overwrite a published panel.
+A2_FIG_DIR = "../article_2_extended_comparison/figures/panels_260917"
+
+A2_HOOK = """
+
+# ── Article 2 re-export ───────────────────────────────────────────────────────
+A2_FIG_DIR = Path("../article_2_extended_comparison/figures/panels_260917")
+
+# Panel geometry for Figma assembly: the Page 2 frames are 739-790 px wide and the
+# convention in this project is 2 px = 1 pt, so a full-width panel is 375 pt = 5.21 in,
+# a half-width panel 2.60 in and a third-width panel 1.72 in.
+PANEL_W_FULL, PANEL_W_HALF, PANEL_W_THIRD = 5.21, 2.60, 1.72
+
+# Which Article 1 panel becomes which Article 2 panel, and at what width. Re-export
+# only: the figure is the one this notebook already draws, saved a second time at the
+# Figma size. Nothing is recomputed, so the two articles cannot show different numbers
+# in the same picture.
+A2_REEXPORT = {
+    "l1_coverage_raw_vs_attempts":        ("a2_p15_panel_coverage", "half"),
+    "l2_qc_gate_sweep":                   ("a2_p16_qc_gate", "half"),
+    "l4_rho_by_gene_set":                 ("a2_p17_rho_by_signature", "full"),
+    "l5_clustermap_genes_by_method_median": ("a2_p18_gene_method_clustermap", "full"),
+}
+
+_save_figure_article1 = save_figure
+
+
+def save_panel(fig, name, width="half", height=None, figures_dir=A2_FIG_DIR):
+    \"\"\"Save one Article 2 subpanel at Figma-native size, PDF + SVG + PNG.
+
+    Artwork is resized, never the font.
+    \"\"\"
+    w = {"full": PANEL_W_FULL, "half": PANEL_W_HALF, "third": PANEL_W_THIRD}[width]
+    figures_dir = Path(figures_dir)
+    figures_dir.mkdir(parents=True, exist_ok=True)
+    before = tuple(fig.get_size_inches())
+    fig.set_size_inches(w, height if height is not None else before[1])
+    for ext, kw in (("pdf", {}), ("svg", {}), ("png", {"dpi": 200})):
+        fig.savefig(figures_dir / f"{name}.{ext}", bbox_inches="tight", **kw)
+    fig.set_size_inches(*before)
+    print(f"saved: {figures_dir / name}.{{pdf,svg,png}}")
+
+
+def save_figure(fig, name, figures_dir=FIG_DIR):
+    \"\"\"Article 1 export, then the Article 2 re-export where one is registered.
+
+    Article 1's file is written FIRST and at its own size, so the re-export cannot
+    change a published panel even if the resize below were to go wrong.
+    \"\"\"
+    _save_figure_article1(fig, name, figures_dir)
+    if name in A2_REEXPORT:
+        a2_name, a2_width = A2_REEXPORT[name]
+        save_panel(fig, a2_name, width=a2_width)
+
+
+"""
 
 CELLS: list[tuple[str, str]] = []
 
@@ -110,7 +182,6 @@ hand-edit. Plan: `marker_gene_deep_analysis_plan_260827.md`.""")
 md("""## §1 — Setup, paths and palettes""")
 
 code('''import json
-import os
 import warnings
 from pathlib import Path
 
@@ -146,20 +217,50 @@ DATE_TAG   = "%(date)s"     # metrics + Group L long tables (run_metrics_concat.
 PANEL_TAG  = "%(panel)s"    # gene_panel_analysis outputs (run_gene_corr_concat.py)
 
 METRIC_TABLES        = Path("metric_tables")
-METRICS_CSV          = METRIC_TABLES / f"metrics_comprehensive_{DATE_TAG}.csv"
-GENE_LONG_CSV        = METRIC_TABLES / f"marker_gene_correlations_long_{DATE_TAG}.csv"
-COHORT_LONG_CSV      = METRIC_TABLES / f"marker_cohort_correlations_long_{DATE_TAG}.csv"
+
+
+def dated(stem, tag, ext=".csv"):
+    """The dated table for `tag`, or the newest other date if that one is absent.
+
+    DATE_TAG and PANEL_TAG drift away from what is on disk: a concat run writes a new
+    date, an old file gets cleaned up, and the tag in this generator is not updated.
+    Without a fallback the notebook then dies on its first read and every later cell
+    raises NameError on an object that was never built -- 40 cells deep, which is what
+    happened on 2026-09-19. Substitutions are printed, so a mixed-snapshot read is
+    visible rather than silent.
+    """
+    exact = METRIC_TABLES / f"{stem}_{tag}{ext}"
+    if exact.exists():
+        return exact
+    undated = METRIC_TABLES / f"{stem}{ext}"
+    if undated.exists():
+        # run_metrics_concat.py writes the Group L long tables with no date tag at all.
+        # That file is what the last run produced, so prefer it over an older dated copy.
+        print(f"NOTE: {exact.name} absent; reading {undated.name} instead")
+        return undated
+    others = sorted(METRIC_TABLES.glob(f"{stem}_*{ext}"))
+    if not others:
+        return exact                       # let the reading cell report it as missing
+    newest = others[-1]
+    print(f"NOTE: {exact.name} absent; reading {newest.name} instead")
+    return newest
+
+
+METRICS_CSV          = dated("metrics_comprehensive", DATE_TAG)
+GENE_LONG_CSV        = dated("marker_gene_correlations_long", DATE_TAG)
+COHORT_LONG_CSV      = dated("marker_cohort_correlations_long", DATE_TAG)
 MARKER_ANN_CSV       = Path("../harmonization-metrics-calculation/marker_gene_annotation.csv")
-COVERAGE_CSV         = METRIC_TABLES / f"marker_gene_coverage_by_attempt_{PANEL_TAG}.csv"
-GENE_QC_CSV          = METRIC_TABLES / f"gene_qc_long_{PANEL_TAG}.csv.gz"
-CONSENSUS_WITHIN_CSV = METRIC_TABLES / f"gene_gene_consensus_within_{PANEL_TAG}.csv.gz"
-CONSENSUS_GLOBAL_CSV = METRIC_TABLES / f"gene_gene_consensus_global_{PANEL_TAG}.csv.gz"
-CONSENSUS_SD_CSV     = METRIC_TABLES / f"gene_gene_consensus_sd_{PANEL_TAG}.csv.gz"
-CONSENSUS_N_CSV      = METRIC_TABLES / f"gene_gene_consensus_n_{PANEL_TAG}.csv.gz"
+COVERAGE_CSV         = dated("marker_gene_coverage_by_attempt", PANEL_TAG)
+GENE_QC_CSV          = dated("gene_qc_long", PANEL_TAG, ".csv.gz")
+CONSENSUS_WITHIN_CSV = dated("gene_gene_consensus_within", PANEL_TAG, ".csv.gz")
+CONSENSUS_GLOBAL_CSV = dated("gene_gene_consensus_global", PANEL_TAG, ".csv.gz")
+CONSENSUS_SD_CSV     = dated("gene_gene_consensus_sd", PANEL_TAG, ".csv.gz")
+CONSENSUS_N_CSV      = dated("gene_gene_consensus_n", PANEL_TAG, ".csv.gz")
 
 # §8b downloads a handful of expression matrices straight from S3.
-S3_BUCKET     = os.environ["FL_S3_BUCKET"]
-S3_PREFIX     = os.environ.get("FL_S3_PREFIX", "FL_batch_correction")
+import os
+S3_BUCKET     = os.environ.get("FL_S3_BUCKET", "")
+S3_PREFIX     = "FL_batch_correction"
 EXP_CACHE_DIR = Path("/tmp/fl_exp_cache")
 
 FIG_DIR = Path("%(figdir)s")
@@ -180,7 +281,7 @@ def save_figure(fig, name, figures_dir=FIG_DIR):
     print(f"saved: {figures_dir / name}.{{pdf,svg,png}}")
 
 
-def load_optional_csv(path, **kwargs):
+%(a2block)sdef load_optional_csv(path, **kwargs):
     """
     Read a table that may not exist yet.
 
@@ -196,7 +297,8 @@ def load_optional_csv(path, **kwargs):
     return df
 
 
-print("Setup done.")''' % {"date": DATE_TAG, "panel": PANEL_TAG, "figdir": FIG_DIR})
+print("Setup done.")''' % {"date": DATE_TAG, "panel": PANEL_TAG, "figdir": FIG_DIR,
+                          "a2block": A2_HOOK if ARTICLE2 else ""})
 
 md("""### §1.1 — Attempt palettes
 
@@ -2446,6 +2548,191 @@ if PANELS and PRIMARY_SELECTOR in PANELS:
 else:
     print("skipped")""")
 
+# ── Article 2 — gene expression scatters (a2_p14) ─────────────────────────────
+#
+# Ported from the hand-run cells 88-90 of marker_gene_deep_analysis.ipynb, where the
+# same grid was drawn three times by editing the run_id by hand. Here it loops over one
+# representative per best-approach group plus 01_raw, so a reader can see what
+# harmonization does to an expression profile instead of reading a correlation
+# coefficient for it.
+if ARTICLE2:
+    md("""## Article 2 — §A2.1 Expression scatters for the named best approaches
+
+Raw against harmonized expression, per sample, for the working gene set and the four
+largest cohorts. One representative per best-approach group plus the `01_raw` control.
+Requires `RUN_SCATTER_SECTION = True` and S3 access.""")
+
+    code(
+        '# Representatives: derived from the Article 2 analysis set where it is available,\n'
+        '# so the panel follows the data rather than a list that goes stale. The fallback is\n'
+        '# the approaches these scatters were originally hand-drawn for.\n'
+        'A2_SCATTER_FALLBACK = [\n'
+        '    "S0_no_removal__knn__01_raw__post0",\n'
+        '    "S0_no_removal__knn__16_fsqn_r__post0",\n'
+        '    "S0_no_removal__knn__04_sva__post0",\n'
+        '    "S0_no_removal__knn__03_limma__post0",\n'
+        ']\n'
+        '\n'
+        'try:\n'
+        '    import sys\n'
+        '\n'
+        '    sys.path.insert(0, "../article_2_extended_comparison/analysis")\n'
+        '    import article2_generalizability as a2\n'
+        '\n'
+        '    _a2 = a2.load_analysis_set(\n'
+        '        Path("../figures_for_article/supplementary_260824/Supplementary File 3.csv.gz"),\n'
+        '        METRIC_TABLES / f"metrics_comprehensive_{DATE_TAG}.csv")\n'
+        '    _a2 = a2.add_raw_deltas(_a2)\n'
+        '    _a2, _ = a2.add_fold_metrics(_a2, METRIC_TABLES / "prediction_folds_long.csv")\n'
+        '    A2_SCATTER_RUNS = [\n'
+        '        _a2[_a2.method == "01_raw"].index[0],\n'
+        '        _a2.loc[list(a2.elect(_a2, "L"))].nlargest(1, "mk_rho_mean_markers").index[0],\n'
+        '        _a2.loc[list(a2.elect(_a2, "M"))].nlargest(1, "xb_margin").index[0],\n'
+        '        _a2.loc[list(a2.elect(_a2, "N"))].nlargest(1, "f1_mc_mean").index[0],\n'
+        '        _a2[_a2.is_clustermap_best].nlargest(1, "mk_rho_mean_markers").index[0],\n'
+        '    ]\n'
+        '    A2_SCATTER_LABELS = ["01_raw control", "Group L best", "Group M best",\n'
+        '                         "Group N best", "clustermap best"]\n'
+        'except Exception as exc:                     # noqa: BLE001\n'
+        '    print(f"article2_generalizability unavailable ({exc}); using the hand-drawn list")\n'
+        '    A2_SCATTER_RUNS = A2_SCATTER_FALLBACK\n'
+        '    A2_SCATTER_LABELS = [r.split("__")[2] for r in A2_SCATTER_RUNS]\n'
+        '\n'
+        'print("scatter representatives:")\n'
+        'for lbl, rid in zip(A2_SCATTER_LABELS, A2_SCATTER_RUNS):\n'
+        '    print(f"  {lbl:18s} {rid}")'
+    )
+
+    code(
+        '# One gene x cohort grid per representative, with the identity line and the\n'
+        '# per-facet Spearman rho on each panel, exactly as the hand-run cells drew them.\n'
+        'if RUN_SCATTER_SECTION and SCATTER_GENES:\n'
+        '    for lbl, run_id in zip(A2_SCATTER_LABELS, A2_SCATTER_RUNS):\n'
+        '        pf = paired_frame(run_id, SCATTER_GENES)\n'
+        '        if pf.empty:\n'
+        '            print(f"no expression for {run_id}")\n'
+        '            continue\n'
+        '        big_cohorts = pf["cohort"].value_counts().head(4).index.tolist()\n'
+        '        sub = pf[pf["cohort"].isin(big_cohorts)]\n'
+        '\n'
+        '        g = sns.relplot(\n'
+        '            data=sub, x="raw", y="harmonized", col="cohort", row="gene",\n'
+        '            kind="scatter", s=5, alpha=0.5, color="#457B9D",\n'
+        '            height=1.5, aspect=1.0,\n'
+        '            facet_kws={"sharex": False, "sharey": False},\n'
+        '        )\n'
+        '        for (gene, cohort), ax in g.axes_dict.items():\n'
+        '            d = sub[(sub["gene"] == gene) & (sub["cohort"] == cohort)]\n'
+        '            if len(d) > 2:\n'
+        '                rho = spearmanr(d["raw"], d["harmonized"]).statistic\n'
+        '                ax.set_title(f"{gene} \\u00b7 {cohort[:14]}\\n$\\\\rho$ = {rho:.3f}", fontsize=5)\n'
+        '            lo = min(d["raw"].min(), d["harmonized"].min())\n'
+        '            hi = max(d["raw"].max(), d["harmonized"].max())\n'
+        '            ax.plot([lo, hi], [lo, hi], color="k", lw=0.6, ls="--")\n'
+        '        g.figure.suptitle(f"{lbl} \\u2014 {run_id.split(chr(95)*2)[2]}", fontsize=7, y=1.01)\n'
+        '        save_panel(g.figure, f"a2_p14_expression_scatter_{run_id.split(chr(95)*2)[2]}",\n'
+        '                   width="full")\n'
+        '        plt.show()\n'
+        'else:\n'
+        '    print("scatter section disabled or no SCATTER_GENES")'
+    )
+
+
+
+# ── Preserved hand-written cells (plan §4.2e step 4) ──────────────────────────
+#
+# Regenerating a notebook overwrites it, which deletes anything typed into it by hand.
+# The cells in preserved_cells_260917.json are re-emitted here so that can no longer
+# happen. They are appended rather than spliced back into their original positions:
+# their positions were relative to an older notebook, and a wrong position is a harder
+# error to see than a section at the end.
+#
+# Only genuinely hand-written cells are in that file. A cell that merely differs from
+# the generator by code formatting, or one where the generator has since moved ahead
+# (the narrow-set variant, for instance), is not preserved -- for those, regenerating
+# IS the fix.
+import textwrap
+
+
+# Objects the preserved cells reference. They were typed into a notebook that already
+# had them in scope, and the generator's own cells build none of them: `method_pal` and
+# its saturation helper came from the v3 notebook's palette cell, and `f3` is the
+# per-fold frame an exploration cell built before plotting it. Rebuilding them here is
+# what lets the preserved section run instead of raising NameError six times.
+PRESERVED_PREAMBLE_MIN = """# Imports the preserved cells below assume.
+import matplotlib.colors as mcolors
+from scipy.stats import pearsonr, spearmanr"""
+
+PRESERVED_PREAMBLE = PRESERVED_PREAMBLE_MIN + """
+
+
+def _boost_saturation(rgb, delta=0.15):
+    \"\"\"Push a tab20 colour towards saturation so 31 methods stay distinguishable.\"\"\"
+    h, s, v = mcolors.rgb_to_hsv(rgb[:3])
+    return tuple(mcolors.hsv_to_rgb([h, min(1.0, s + delta), v]))
+
+
+ALL_METHODS = sorted(df_lmn.method.unique())
+_raw_method_colors = (sns.color_palette("tab20", n_colors=20)
+                      + sns.color_palette("tab20b", n_colors=20))[
+                          : max(len(ALL_METHODS), 25)]
+method_pal = dict(zip(ALL_METHODS,
+                      [_boost_saturation(c) for c in _raw_method_colors][: len(ALL_METHODS)]))
+
+# The per-fold frame the per-batch exploration cells plot from.
+f3 = pd.DataFrame()
+if not folds_long.empty:
+    _meta = df_lmn[["method", "is_best", "group", "is_raw"]]
+    _f = folds_long.merge(_meta, left_on="run_id", right_index=True, how="left")
+    f3 = _f[(_f["target"] == "3class") & (~_f["is_raw"].fillna(False))]
+print(f"preserved-cell preamble: {len(method_pal)} method colours, f3 = {len(f3)} rows")"""
+
+
+PRESERVED_JSON = Path(__file__).parent / "preserved_cells_260917.json"
+
+
+def emit_preserved(variant: str) -> int:
+    """Append the hand-written cells recorded for one notebook variant."""
+    if not PRESERVED_JSON.exists():
+        return 0
+    import json
+
+    kept = json.loads(PRESERVED_JSON.read_text()).get(variant, [])
+    if not kept:
+        return 0
+    md(
+        "## §11 — Preserved hand-written cells\n\n"
+        f"{len(kept)} cells that were typed into this notebook by hand and are not "
+        "produced by the generator. They are re-emitted from "
+        "`preserved_cells_260917.json` on every regeneration, so regenerating cannot "
+        "delete them. Their original positions are recorded in the comment above each "
+        "one; the companion audit is `diverged_cells_260917.md`.\n\n"
+        "They are exploratory cells, written against an earlier state of this notebook. "
+        "Some reference objects that state defined and this one does not, and those "
+        "raise when run. They are kept for the record, not because they still execute."
+    )
+    code(
+        PRESERVED_PREAMBLE if variant in ("main", "narrow") else PRESERVED_PREAMBLE_MIN
+    )
+    for c in kept:
+        head = (f"# --- preserved from {variant} cell {c['original_index']} "
+                f"(similarity to generator {c['similarity_to_generator']}) ---\n")
+        body = c["source"]
+        # Several of these carry a uniform four-space indent: they were written inside
+        # an if-block and lifted out without dedenting, so they raise IndentationError
+        # as they stand -- in the original notebook too, not only here.
+        lines = [ln for ln in body.splitlines() if ln.strip()]
+        if lines and all(ln.startswith(("    ", "\t")) for ln in lines):
+            body = textwrap.dedent(body)
+        if c["cell_type"] == "markdown":
+            md(c["source"])
+        else:
+            code(head + body)
+    return len(kept)
+
+
+_n_preserved = emit_preserved("deep")
+
 # ── Writer ────────────────────────────────────────────────────────────────────
 
 
@@ -2471,3 +2758,4 @@ if __name__ == "__main__":
     n_md = sum(1 for k, _ in CELLS if k == "md")
     n_code = len(CELLS) - n_md
     print(f"Wrote {OUTPUT}  ({len(CELLS)} cells: {n_md} markdown, {n_code} code)")
+    print(f"  {_n_preserved} preserved hand-written cell(s) re-emitted")
