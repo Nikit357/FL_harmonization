@@ -13,7 +13,7 @@ appear nowhere.
 
 | What | Count | Why |
 |---|---:|---|
-| Manuscript Word and PDF files (`manuscript/*.docx`, `manuscript/*.pdf`) | 9 | Drafts with tracked changes and reviewer comments. The published article is the text of record; the Markdown twins of the drafts are here |
+| Manuscript Word and PDF files (`manuscript/*.docx`, `manuscript/*.pdf`) | 11 | Drafts with tracked changes and reviewer comments. The published article is the text of record; the Markdown twins of the drafts are here |
 | Extended-document Word snapshots (`manuscript_versions/*.docx`) | 4 | Same reason. The audit of these snapshots (`manuscript_versions/*.md`) is here |
 | Vector versions of the per-sample expression scatters (`figures/panels_260917/a2_p14_expression_scatter_*.{svg,pdf}` and their `editable_260920/*_artwork.svg`) | 12 | Their point coordinates are per-sample expression values, including proprietary cohorts. The `.png` renders of the same panels are here |
 | The literature cache (`tools/cache/`) | 93 | Third-party full texts. `tools/fetch_literature.py` rebuilds it |
