@@ -1,0 +1,17 @@
+tree_leaf_name	front_rank	approach_label	method	strat	imp	post_rm	L	N_gate	N_raw	gate_N_classes	local_batch	local_biology
+FF only	1	Angel, J · FF only, softImpute	25_angel	J_ff_only	softimpute	False	0.9468984583250892	0.7877252872689523	0.6651044669501327	3	0.060126582278481	0.9102564102564104
+FF only	2	Angel, J · FF only, softImpute, post-removal	25_angel	J_ff_only	softimpute	True	0.9471044944394524	0.7708535021860256	0.7206330550539087	3	0.0519480519480519	0.9230769230769232
+FF only	3	Angel, J · FF only, KNN	25_angel	J_ff_only	knn	False	0.9476622512539202	0.8186740179244386	0.6563082147225073	3	0.0474683544303797	0.9230769230769232
+FF only	4	Angel, J · FF only, no imputation, post-removal	25_angel	J_ff_only	strict	True	0.946376346771911	0.8198364466643258	0.7176443455062408	3	0.0454545454545454	0.9230769230769232
+FF only	5	Angel, J · FF only, KNN, post-removal	25_angel	J_ff_only	knn	True	0.9480087056472016	0.7928733465737025	0.7134157865489275	3	0.0384615384615384	0.9230769230769232
+FFPE only	1	SVA, K · FFPE only, softImpute	04_sva	K_ffpe_only	softimpute	False	0.7055600837387718	0.8766447117557372	0.498734799912748	3	0.1666666666666666	1.0
+RNA-seq only	10	SVA, C · RNA-seq only, KNN	04_sva	C_rnaseq_only	knn	False	0.8228991836059991	0.7478075186851028	0.7412804023994184	3	0.3794642857142857	1.0
+RNA-seq only	11	SVA, C · RNA-seq only, softImpute	04_sva	C_rnaseq_only	softimpute	False	0.8513666081218332	0.814414257049665	0.7494243821977556	3	0.2633928571428571	1.0
+RNA-seq only	12	ComBat, C · RNA-seq only, no imputation	05_combat	C_rnaseq_only	strict	False	0.992060326803038	0.8362609749147425	0.8230148344056015	3	0.1160714285714286	1.0
+RNA-seq + microarrays	1	FSQN R, D · Malignant samples only, KNN	16_fsqn_r	D_malignant_only	knn	False	0.9999990943473844	0.645070700365014	0.622484190961074	2	0.0015923566878981	0.8333333333333333
+RNA-seq + microarrays	2	ComBat, D · Malignant samples only, no imputation	05_combat	D_malignant_only	strict	False	0.9775070314637628	0.8032330175303364	0.7412866931291527	2	0.0015923566878981	0.8333333333333333
+RNA-seq + microarrays	4	FSMVN, D · Malignant samples only, KNN	13_fsmvn	D_malignant_only	knn	False	0.9999994007518248	0.6511658186585975	0.622484190961074	2	0.0	0.8125
+RNA-seq + microarrays	5	ComBat, D · Malignant samples only, no imputation, post-removal	05_combat	D_malignant_only	strict	True	0.9769151112391248	0.7895581923433193	0.8002205177524824	2	0.0	0.8333333333333333
+RNA-seq + microarrays	6	M-ComBat, I · Rare batches removed, KNN	29_combat_ref	I_rare_batches_removed	knn	False	0.9556799096231636	0.8683545696207186	0.772926936037238	3	0.0	0.9166666666666666
+RNA-seq + microarrays	7	M-ComBat, I · Rare batches removed, KNN, post-removal	29_combat_ref	I_rare_batches_removed	knn	True	0.9579919918431572	0.8593833641438123	0.7652366106515112	3	0.0	0.9166666666666666
+RNA-seq + microarrays	8	M-ComBat, I · Rare batches removed, no imputation, post-removal	29_combat_ref	I_rare_batches_removed	strict	True	0.9579908656302556	0.8894957965809186	0.8341629932737806	3	0.0	0.9222222222222222

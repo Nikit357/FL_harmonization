@@ -1,0 +1,88 @@
+metric	cluster	cluster_size	in_panel	is_medoid	medoid	mean_abs_rho_to_cluster	medoid_mean_abs_rho	panel_metrics_in_cluster
+cms_fraction_mixed_COHORT_LABEL	1	1	False	True	cms_fraction_mixed_COHORT_LABEL			0
+cms_fraction_mixed_RNA_BATCH	2	1	True	True	cms_fraction_mixed_RNA_BATCH			1
+cms_fraction_mixed_RNASEQ_SOURCE	3	1	False	True	cms_fraction_mixed_RNASEQ_SOURCE			0
+dsc_RNASEQ_SOURCE	4	2	False	True	dsc_RNASEQ_SOURCE	0.959	0.959	0
+PCReg_RNASEQ_SOURCE	4	2	False	False	dsc_RNASEQ_SOURCE	0.959	0.959	0
+asw_batch_norm_RNASEQ_SOURCE	5	2	False	True	asw_batch_norm_RNASEQ_SOURCE	0.834	0.834	0
+dist_ratio_RNASEQ_SOURCE	5	2	False	False	asw_batch_norm_RNASEQ_SOURCE	0.834	0.834	0
+tsne_centroid_disp_RNASEQ_SOURCE	6	1	False	True	tsne_centroid_disp_RNASEQ_SOURCE			0
+umap_centroid_disp_RNASEQ_SOURCE	7	1	False	True	umap_centroid_disp_RNASEQ_SOURCE			0
+pct_samples_allNA	8	1	True	True	pct_samples_allNA			1
+ks_frac_sig_COHORT_LABEL	9	2	False	True	ks_frac_sig_COHORT_LABEL	0.913	0.913	0
+ks_mean_D_COHORT_LABEL	9	2	False	False	ks_frac_sig_COHORT_LABEL	0.913	0.913	0
+ks_cohort_within_batch_frac_sig	10	2	True	True	ks_cohort_within_batch_frac_sig	0.888	0.888	1
+ks_cohort_within_batch_mean_D	10	2	False	False	ks_cohort_within_batch_frac_sig	0.888	0.888	1
+umap_centroid_disp_COHORT_LABEL	11	1	False	True	umap_centroid_disp_COHORT_LABEL			0
+clisi_mean_Diagnosis_cell_type_unified	12	1	True	True	clisi_mean_Diagnosis_cell_type_unified			1
+clisi_mean_TUMOR_NORMAL	13	1	False	True	clisi_mean_TUMOR_NORMAL			0
+wm_RNA_BATCH	14	2	True	True	wm_RNA_BATCH	0.918	0.918	1
+wm_mean_batch	14	2	False	False	wm_RNA_BATCH	0.918	0.918	1
+wm_COHORT_LABEL	15	1	False	True	wm_COHORT_LABEL			0
+wm_ratio_bio_batch	16	1	True	True	wm_ratio_bio_batch			1
+asw_batch_norm_PLATFORM_RNA	17	1	False	True	asw_batch_norm_PLATFORM_RNA			0
+asw_batch_norm_RNA_BATCH	18	1	True	True	asw_batch_norm_RNA_BATCH			1
+fraction_cohorts_bimodal	19	1	True	True	fraction_cohorts_bimodal			1
+fraction_cohorts_zero_inflated_bimodal	20	1	True	True	fraction_cohorts_zero_inflated_bimodal			1
+pct_na_cells	21	3	True	True	pct_na_cells	0.997	0.997	1
+pct_genes_noNA	21	3	False	False	pct_na_cells	0.993	0.997	1
+pct_samples_noNA	21	3	False	False	pct_na_cells	0.994	0.997	1
+pct_genes_allNA	22	1	True	True	pct_genes_allNA			1
+asw_bio_norm_Diagnosis_cell_type_unified	23	2	True	True	asw_bio_norm_Diagnosis_cell_type_unified	0.869	0.869	1
+asw_bio_norm_Major_group	23	2	False	False	asw_bio_norm_Diagnosis_cell_type_unified	0.869	0.869	1
+asw_bio_norm_TUMOR_NORMAL	24	3	False	True	asw_bio_norm_TUMOR_NORMAL	0.874	0.874	0
+dist_ratio_TUMOR_NORMAL	24	3	False	False	asw_bio_norm_TUMOR_NORMAL	0.862	0.874	0
+PCReg_TUMOR_NORMAL	24	3	False	False	asw_bio_norm_TUMOR_NORMAL	0.814	0.874	0
+dist_ratio_Major_group	25	4	False	True	dist_ratio_Major_group	0.89	0.89	1
+dist_ratio_Diagnosis_cell_type_unified	25	4	False	False	dist_ratio_Major_group	0.879	0.89	1
+PCReg_Diagnosis_cell_type_unified	25	4	True	False	dist_ratio_Major_group	0.883	0.89	1
+PCReg_Major_group	25	4	False	False	dist_ratio_Major_group	0.881	0.89	1
+wm_Major_group	26	2	False	True	wm_Major_group	0.856	0.856	1
+wm_mean_bio	26	2	True	False	wm_Major_group	0.856	0.856	1
+wm_TUMOR_NORMAL	27	1	False	True	wm_TUMOR_NORMAL			0
+umap_entropy_norm_RNASEQ_SOURCE	28	5	False	True	umap_entropy_norm_RNASEQ_SOURCE	0.886	0.886	0
+ilisi_norm_RNASEQ_SOURCE	28	5	False	False	umap_entropy_norm_RNASEQ_SOURCE	0.869	0.886	0
+kbet_acceptance_rate_RNASEQ_SOURCE	28	5	False	False	umap_entropy_norm_RNASEQ_SOURCE	0.836	0.886	0
+tsne_entropy_norm_RNASEQ_SOURCE	28	5	False	False	umap_entropy_norm_RNASEQ_SOURCE	0.885	0.886	0
+wm_RNASEQ_SOURCE	28	5	False	False	umap_entropy_norm_RNASEQ_SOURCE	0.825	0.886	0
+umap_entropy_norm_COHORT_LABEL	29	4	False	True	umap_entropy_norm_COHORT_LABEL	0.914	0.914	0
+asw_batch_norm_COHORT_LABEL	29	4	False	False	umap_entropy_norm_COHORT_LABEL	0.865	0.914	0
+ilisi_norm_COHORT_LABEL	29	4	False	False	umap_entropy_norm_COHORT_LABEL	0.835	0.914	0
+tsne_entropy_norm_COHORT_LABEL	29	4	False	False	umap_entropy_norm_COHORT_LABEL	0.907	0.914	0
+tsne_entropy_norm_PLATFORM_RNA	30	6	False	True	tsne_entropy_norm_PLATFORM_RNA	0.931	0.931	1
+ilisi_norm_PLATFORM_RNA	30	6	False	False	tsne_entropy_norm_PLATFORM_RNA	0.917	0.931	1
+ilisi_norm_RNA_BATCH	30	6	False	False	tsne_entropy_norm_PLATFORM_RNA	0.911	0.931	1
+tsne_entropy_norm_RNA_BATCH	30	6	False	False	tsne_entropy_norm_PLATFORM_RNA	0.911	0.931	1
+umap_entropy_norm_PLATFORM_RNA	30	6	False	False	tsne_entropy_norm_PLATFORM_RNA	0.929	0.931	1
+umap_entropy_norm_RNA_BATCH	30	6	True	False	tsne_entropy_norm_PLATFORM_RNA	0.918	0.931	1
+cms_fraction_mixed_PLATFORM_RNA	31	1	False	True	cms_fraction_mixed_PLATFORM_RNA			0
+kbet_acceptance_rate_COHORT_LABEL	32	1	False	True	kbet_acceptance_rate_COHORT_LABEL			0
+umap_centroid_disp_PLATFORM_RNA	33	2	False	True	umap_centroid_disp_PLATFORM_RNA	0.972	0.972	1
+umap_centroid_disp_RNA_BATCH	33	2	True	False	umap_centroid_disp_PLATFORM_RNA	0.972	0.972	1
+tsne_centroid_disp_PLATFORM_RNA	34	2	False	True	tsne_centroid_disp_PLATFORM_RNA	0.88	0.88	0
+tsne_centroid_disp_RNA_BATCH	34	2	False	False	tsne_centroid_disp_PLATFORM_RNA	0.88	0.88	0
+clisi_mean_Major_group	35	1	False	True	clisi_mean_Major_group			0
+PCReg_PLATFORM_RNA	36	6	False	True	PCReg_PLATFORM_RNA	0.945	0.945	1
+dist_ratio_PLATFORM_RNA	36	6	False	False	PCReg_PLATFORM_RNA	0.862	0.945	1
+dist_ratio_RNA_BATCH	36	6	False	False	PCReg_PLATFORM_RNA	0.917	0.945	1
+dsc_PLATFORM_RNA	36	6	False	False	PCReg_PLATFORM_RNA	0.937	0.945	1
+dsc_RNA_BATCH	36	6	False	False	PCReg_PLATFORM_RNA	0.919	0.945	1
+PCReg_RNA_BATCH	36	6	True	False	PCReg_PLATFORM_RNA	0.935	0.945	1
+ks_mean_D_PLATFORM_RNA	37	2	False	True	ks_mean_D_PLATFORM_RNA	0.986	0.986	0
+ks_mean_D_RNA_BATCH	37	2	False	False	ks_mean_D_PLATFORM_RNA	0.986	0.986	0
+ks_frac_sig_PLATFORM_RNA	38	2	False	True	ks_frac_sig_PLATFORM_RNA	0.978	0.978	1
+ks_frac_sig_RNA_BATCH	38	2	True	False	ks_frac_sig_PLATFORM_RNA	0.978	0.978	1
+PCReg_COHORT_LABEL	39	3	False	True	PCReg_COHORT_LABEL	0.915	0.915	0
+dist_ratio_COHORT_LABEL	39	3	False	False	PCReg_COHORT_LABEL	0.878	0.915	0
+dsc_COHORT_LABEL	39	3	False	False	PCReg_COHORT_LABEL	0.862	0.915	0
+graph_connectivity_Major_group	40	2	False	True	graph_connectivity_Major_group	0.814	0.814	0
+graph_connectivity_TUMOR_NORMAL	40	2	False	False	graph_connectivity_Major_group	0.814	0.814	0
+graph_connectivity_Diagnosis_cell_type_unified	41	1	True	True	graph_connectivity_Diagnosis_cell_type_unified			1
+tsne_centroid_disp_COHORT_LABEL	42	1	False	True	tsne_centroid_disp_COHORT_LABEL			0
+per_gene_batch_mean_cv_PLATFORM_RNA	43	2	False	True	per_gene_batch_mean_cv_PLATFORM_RNA	0.974	0.974	1
+per_gene_batch_mean_cv_RNA_BATCH	43	2	True	False	per_gene_batch_mean_cv_PLATFORM_RNA	0.974	0.974	1
+per_gene_batch_mean_cv_COHORT_LABEL	44	1	False	True	per_gene_batch_mean_cv_COHORT_LABEL			0
+kbet_acceptance_rate_PLATFORM_RNA	45	1	False	True	kbet_acceptance_rate_PLATFORM_RNA			0
+kbet_acceptance_rate_RNA_BATCH	46	1	True	True	kbet_acceptance_rate_RNA_BATCH			1
+wm_PLATFORM_RNA	47	1	False	True	wm_PLATFORM_RNA			0
+wm_Diagnosis_cell_type_unified	48	1	True	True	wm_Diagnosis_cell_type_unified			1

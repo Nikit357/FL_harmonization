@@ -1,0 +1,10 @@
+strat	imp	method	n_samples_before	n_removed	n_removed_batches	whole_batches	removed_batches
+J_ff_only	softimpute	25_angel	3167	79	1	True	RNASeq_FF_Unknown (79)
+J_ff_only	strict	25_angel	3167	79	1	True	RNASeq_FF_Unknown (79)
+J_ff_only	knn	25_angel	3167	40	1	True	GPL17586_FF_Unknown (40)
+H_affymetrix_extended	softimpute	25_angel	3727	40	1	True	GPL13158_FF_Unknown (40)
+D_malignant_only	strict	05_combat	6285	167	1	True	GPL13938_FFPE_Unknown (167)
+I_rare_batches_removed	knn	29_combat_ref	6803	68	1	True	GPL20188_FF_Unknown (68)
+I_rare_batches_removed	strict	29_combat_ref	6803	68	1	True	GPL20188_FF_Unknown (68)
+S0_no_removal	strict	25_angel	7174	40	1	True	GPL17586_FF_Unknown (40)
+S0_no_removal	softimpute	25_angel	7174	40	1	True	GPL13158_FF_Unknown (40)

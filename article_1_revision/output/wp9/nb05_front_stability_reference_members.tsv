@@ -1,0 +1,23 @@
+strat	imp	method	post_rm	scenario	reference	panel_cut0.1	panel_cut0.3	all_87_metrics	axis_mean	group_balanced	local_runner_up	bridging_biology	front_stability	method_display	selected_after_visual_check	approach_label
+J_ff_only	softimpute	25_angel	False	FF only	True	True	True	True	True	True	True	True	1.0	Angel	True	Angel, J · FF only, softImpute
+J_ff_only	knn	25_angel	False	FF only	True	True	True	True	True	True	False	True	0.875	Angel	True	Angel, J · FF only, KNN
+J_ff_only	knn	25_angel	True	FF only	True	True	False	False	True	True	True	False	0.625	Angel	True	Angel, J · FF only, KNN, post-removal
+J_ff_only	softimpute	25_angel	True	FF only	True	True	True	True	False	False	False	False	0.5	Angel	True	Angel, J · FF only, softImpute, post-removal
+J_ff_only	strict	25_angel	True	FF only	True	True	False	True	False	False	False	True	0.5	Angel	True	Angel, J · FF only, no imputation, post-removal
+K_ffpe_only	softimpute	04_sva	False	FFPE only	True	True	True	True	True	True	True	False	0.875	SVA	True	SVA, K · FFPE only, softImpute
+H_affymetrix_extended	softimpute	25_angel	True	Microarrays only	True	True	True	True	True	True	True	True	1.0	Angel	True	Angel, H · Affymetrix extended, softImpute, post-removal
+D_malignant_only	knn	16_fsqn_r	False	RNA-seq + microarrays	True	True	True	True	True	True	True	True	1.0	FSQN R	True	FSQN R, D · Malignant samples only, KNN
+D_malignant_only	knn	13_fsmvn	False	RNA-seq + microarrays	True	True	True	True	False	False	True	True	0.75	FSMVN	True	FSMVN, D · Malignant samples only, KNN
+I_rare_batches_removed	strict	29_combat_ref	True	RNA-seq + microarrays	True	True	True	True	False	False	True	True	0.75	M-ComBat	True	M-ComBat, I · Rare batches removed, no imputation, post-removal
+D_malignant_only	strict	05_combat	True	RNA-seq + microarrays	True	True	True	True	False	False	False	False	0.5	ComBat	True	ComBat, D · Malignant samples only, no imputation, post-removal
+D_malignant_only	strict	05_combat	False	RNA-seq + microarrays	True	True	True	False	False	False	False	False	0.375	ComBat	True	ComBat, D · Malignant samples only, no imputation
+I_rare_batches_removed	knn	29_combat_ref	False	RNA-seq + microarrays	True	True	False	False	False	False	False	False	0.25	M-ComBat	True	M-ComBat, I · Rare batches removed, KNN
+I_rare_batches_removed	knn	29_combat_ref	True	RNA-seq + microarrays	True	True	False	False	False	False	False	False	0.25	M-ComBat	True	M-ComBat, I · Rare batches removed, KNN, post-removal
+C_rnaseq_only	knn	04_sva	False	RNA-seq only	True	True	False	False	False	False	True	True	0.5	SVA	True	SVA, C · RNA-seq only, KNN
+C_rnaseq_only	softimpute	04_sva	False	RNA-seq only	True	True	False	False	False	False	False	True	0.375	SVA	True	SVA, C · RNA-seq only, softImpute
+C_rnaseq_only	strict	05_combat	False	RNA-seq only	True	True	False	False	False	False	False	True	0.375	ComBat	True	ComBat, C · RNA-seq only, no imputation
+S0_no_removal	strict	25_angel	True	S0 · No removal	True	True	True	True	True	True	True	True	1.0	Angel	True	Angel, S0 · No removal, no imputation, post-removal
+S0_no_removal	knn	25_angel	False	S0 · No removal	True	True	False	True	True	True	False	True	0.75	Angel	True	Angel, S0 · No removal, KNN
+S0_no_removal	softimpute	25_angel	False	S0 · No removal	True	True	False	False	False	False	True	True	0.5	Angel	True	Angel, S0 · No removal, softImpute
+S0_no_removal	softimpute	25_angel	True	S0 · No removal	True	True	False	True	False	False	True	False	0.5	Angel	True	Angel, S0 · No removal, softImpute, post-removal
+S0_no_removal	strict	25_angel	False	S0 · No removal	True	True	False	False	False	False	False	True	0.375	Angel	True	Angel, S0 · No removal, no imputation

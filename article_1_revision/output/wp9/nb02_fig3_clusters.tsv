@@ -1,0 +1,10 @@
+cluster	n	recommended	axis	metrics
+Cross-platform, good batch mixing	651	14.0	approaches	
+Cross-platform, poor batch mixing A	800	0.0	approaches	
+Cross-platform, poor batch mixing B	379	5.0	approaches	
+Same platform / sample type, good batch mixing	404	3.0	approaches	
+Bimodality and zero fraction	2		metrics	fraction_cohorts_bimodal;fraction_cohorts_zero_inflated_bimodal
+Global metrics	5		metrics	PCReg_Diagnosis_cell_type_unified;clisi_mean_Diagnosis_cell_type_unified;ks_cohort_within_batch_frac_sig;wm_RNA_BATCH;wm_ratio_bio_batch
+Local metrics A	3		metrics	kbet_acceptance_rate_RNA_BATCH;umap_entropy_norm_RNA_BATCH;ks_frac_sig_RNA_BATCH
+Local metrics B	8		metrics	PCReg_RNA_BATCH;asw_batch_norm_RNA_BATCH;asw_bio_norm_Diagnosis_cell_type_unified;cms_fraction_mixed_RNA_BATCH;umap_centroid_disp_RNA_BATCH;graph_connectivity_Diagnosis_cell_type_unified;wm_Diagnosis_cell_type_unified;wm_mean_bio
+Missing values	4		metrics	per_gene_batch_mean_cv_RNA_BATCH;pct_genes_allNA;pct_na_cells;pct_samples_allNA

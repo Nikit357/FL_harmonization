@@ -1,0 +1,9 @@
+factor	eta2_mean	n_metrics	metric_set	factor_name	metric_set_name
+Strategy	0.2765884958329501	22	reduced panel	Sample-removal strategy	Reduced panel (22 metrics)
+Method	0.3332411463559142	22	reduced panel	Harmonization method	Reduced panel (22 metrics)
+Imputation	0.0103806304763828	22	reduced panel	Missing-value imputation	Reduced panel (22 metrics)
+Post-removal	0.0018549694576126	22	reduced panel	Post-removal of batches	Reduced panel (22 metrics)
+Strategy	0.2564166404848544	87	87 metrics (check)	Sample-removal strategy	All 87 metrics
+Method	0.3629135255559775	87	87 metrics (check)	Harmonization method	All 87 metrics
+Imputation	0.0155038162381352	87	87 metrics (check)	Missing-value imputation	All 87 metrics
+Post-removal	0.0020355880780086	87	87 metrics (check)	Post-removal of batches	All 87 metrics

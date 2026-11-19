@@ -1,0 +1,19 @@
+scenario	embedding	pages	approaches	file	size_mb
+FF only	pca	3	8	ff_only_pca.pdf	1.47
+FF only	umap	3	8	ff_only_umap.pdf	0.61
+FF only	tsne	3	8	ff_only_tsne.pdf	1.1
+FFPE only	pca	2	5	ffpe_only_pca.pdf	0.51
+FFPE only	umap	2	5	ffpe_only_umap.pdf	0.38
+FFPE only	tsne	2	5	ffpe_only_tsne.pdf	0.87
+Microarrays only (not a tree leaf)	pca	5	13	microarrays_only_not_a_tree_leaf_pca.pdf	1.79
+Microarrays only (not a tree leaf)	umap	5	13	microarrays_only_not_a_tree_leaf_umap.pdf	1.09
+Microarrays only (not a tree leaf)	tsne	5	13	microarrays_only_not_a_tree_leaf_tsne.pdf	2.47
+Multi-platform (RNA-seq + microarrays)	pca	4	12	multi_platform_rna_seq_microarrays_pca.pdf	2.93
+Multi-platform (RNA-seq + microarrays)	umap	4	12	multi_platform_rna_seq_microarrays_umap.pdf	1.29
+Multi-platform (RNA-seq + microarrays)	tsne	4	12	multi_platform_rna_seq_microarrays_tsne.pdf	3.02
+No batch removal (S0 only)	pca	3	7	no_batch_removal_s0_only_pca.pdf	2.4
+No batch removal (S0 only)	umap	3	7	no_batch_removal_s0_only_umap.pdf	0.95
+No batch removal (S0 only)	tsne	3	7	no_batch_removal_s0_only_tsne.pdf	2.02
+RNA-seq only	pca	3	8	rna_seq_only_pca.pdf	1.43
+RNA-seq only	umap	3	8	rna_seq_only_umap.pdf	0.81
+RNA-seq only	tsne	3	8	rna_seq_only_tsne.pdf	1.44

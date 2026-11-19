@@ -1,0 +1,54 @@
+scenario	front_rank	strat	imp	method	post_rm	rule_md5
+FF only	1	J_ff_only	softimpute	25_angel	False	17d4fe01454d3485a72434f7cec17bb6
+FF only	2	J_ff_only	strict	25_angel	False	17d4fe01454d3485a72434f7cec17bb6
+FF only	3	J_ff_only	knn	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+FF only	4	J_ff_only	knn	05_combat	False	17d4fe01454d3485a72434f7cec17bb6
+FF only	5	J_ff_only	knn	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+FF only	6	J_ff_only	softimpute	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+FF only	7	J_ff_only	strict	29_combat_ref	False	17d4fe01454d3485a72434f7cec17bb6
+FF only	8	J_ff_only	strict	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+FFPE only	1	K_ffpe_only	softimpute	04_sva	False	17d4fe01454d3485a72434f7cec17bb6
+FFPE only	2	K_ffpe_only	strict	02_median_scaling	True	17d4fe01454d3485a72434f7cec17bb6
+FFPE only	3	K_ffpe_only	knn	02_median_scaling	True	17d4fe01454d3485a72434f7cec17bb6
+FFPE only	4	K_ffpe_only	knn	13_fsmvn	False	17d4fe01454d3485a72434f7cec17bb6
+FFPE only	5	K_ffpe_only	strict	13_fsmvn	True	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	1	H_affymetrix_extended	softimpute	25_angel	True	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	2	G_affymetrix_only	knn	25_angel	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	3	H_affymetrix_extended	softimpute	31_ruv3prps	True	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	4	F_microarray_only	knn	05_combat	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	5	F_microarray_only	knn	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	6	F_microarray_only	softimpute	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	7	G_affymetrix_only	strict	07_pycombat	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	8	G_affymetrix_only	strict	13_fsmvn	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	9	G_affymetrix_only	strict	21_harmonizr	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	10	G_affymetrix_only	strict	28_npn	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	11	H_affymetrix_extended	knn	05_combat	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	12	H_affymetrix_extended	knn	29_combat_ref	False	17d4fe01454d3485a72434f7cec17bb6
+Microarrays only (not a tree leaf)	13	H_affymetrix_extended	softimpute	29_combat_ref	False	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	1	A_confirmed_bad	strict	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	2	D_malignant_only	knn	16_fsqn_r	False	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	3	B_extended_bad	softimpute	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	4	D_malignant_only	knn	13_fsmvn	False	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	5	D_malignant_only	strict	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	6	E2_iterative_r2	softimpute	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	7	E3_iterative_r3	softimpute	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	8	I_rare_batches_removed	knn	05_combat	False	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	9	I_rare_batches_removed	knn	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	10	I_rare_batches_removed	knn	29_combat_ref	False	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	11	I_rare_batches_removed	knn	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+Multi-platform (RNA-seq + microarrays)	12	I_rare_batches_removed	strict	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	1	S0_no_removal	strict	25_angel	True	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	2	S0_no_removal	softimpute	25_angel	False	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	3	S0_no_removal	strict	25_angel	False	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	4	S0_no_removal	knn	25_angel	False	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	5	S0_no_removal	softimpute	25_angel	True	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	6	S0_no_removal	softimpute	05_combat	True	17d4fe01454d3485a72434f7cec17bb6
+No batch removal (S0 only)	7	S0_no_removal	strict	29_combat_ref	True	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	1	C_rnaseq_only	strict	20_shambhala	True	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	2	C_rnaseq_only	knn	20_shambhala	True	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	3	C_rnaseq_only	softimpute	20_shambhala	True	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	4	C_rnaseq_only	knn	04_sva	False	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	5	C_rnaseq_only	softimpute	04_sva	False	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	6	C_rnaseq_only	strict	05_combat	False	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	7	C_rnaseq_only	strict	06_combat_seq	False	17d4fe01454d3485a72434f7cec17bb6
+RNA-seq only	8	C_rnaseq_only	strict	08_inmoose_combatseq	False	17d4fe01454d3485a72434f7cec17bb6

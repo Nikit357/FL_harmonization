@@ -1,0 +1,11 @@
+scenario_name	role_name	top1_hit	top3_hit
+C · RNA-seq only	Chosen on the training part	0.0	0.4
+C · RNA-seq only	Random method (expected value)	0.03739130434782606	0.11217391304347823
+J · FF only	Chosen on the training part	0.0	0.2
+J · FF only	Random method (expected value)	0.03809523809523806	0.11428571428571425
+K · FFPE only	Chosen on the training part	0.0	0.0
+K · FFPE only	Random method (expected value)	0.04046203394029478	0.12138610182088438
+S0 · No removal	Chosen on the training part	0.6	0.6
+S0 · No removal	Random method (expected value)	0.03917998265824348	0.11753994797473051
+All scenarios	Chosen on the training part	0.15	0.3
+All scenarios	Random method (expected value)	0.0387821397604006	0.11634641928120185
