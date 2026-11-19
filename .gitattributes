@@ -1,3 +1,10 @@
 # Strip notebook outputs on commit. Enable once per clone with:
 #   pip install nbstripout && nbstripout --install --attributes .gitattributes
 *.ipynb filter=nbstripout diff=ipynb
+
+# Binary office/data files: never attempt a text merge or a text diff.
+*.docx    binary
+*.xlsx    binary
+*.pptx    binary
+*.pdf     binary
+*.parquet binary

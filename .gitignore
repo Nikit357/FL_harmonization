@@ -29,6 +29,20 @@ harmonization-metrics/metric_tables/marker_gene_correlations_long_260826.csv
 harmonization-metrics/metric_tables/gene_qc_long_260828.csv.gz
 figures_for_article/current_figures_tables_for_article_260819/fig5c_group_l_by_gene.svg
 figures_for_article/current_figures_tables_for_article_260819/supplementary_file_5/S5_2_marker_gene_correlations_long.csv
+figures_for_article/current_figures_tables_for_article_260819/supplementary_file_5_narrow_set/S5_2_marker_gene_correlations_long.csv
+# Over 50 MB each as SVG; the PDF and PNG renders of the same panels are tracked.
+figures_for_article/current_figures_tables_for_article_260819/l5_clustermap_genes_by_attempts.svg
+figures_for_article/current_figures_tables_for_article_260819/l5_clustermap_reference_set.svg
+figures_for_article/current_figures_tables_for_article_260819/l7_consensus_clustermap_global.svg
+figures_for_article/current_figures_tables_for_article_260819/l7_consensus_clustermap_within.svg
+figures_for_article/current_figures_tables_for_article_260819/l7_consensus_sd_clustermap.svg
+
+# ── Article 1 revision: caches and per-run scratch ────────────────────────────
+# cache/ holds per-sample matrices downloaded by the notebooks and scripts.
+article_1_revision/cache/
+article_1_revision/.brainstorm/
+article_1_revision/output/wp8/*.parquet
+article_1_revision/figures_svg/picks_*.png
 
 # ── R ─────────────────────────────────────────────────────────────────────────
 .RData

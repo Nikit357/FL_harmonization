@@ -15,6 +15,7 @@ Subsystem-specific CLAUDE.md files (read before editing those directories):
 - `harmonization-metrics/CLAUDE.md` — metrics analysis notebooks and figures
 - `harmonization-scripts/k8s/CLAUDE.md` — K8s manifest guide for the benchmark pod
 - `slides_for_project/CLAUDE.md` — supervisor slide generation with python-pptx
+- `article_1_revision/CLAUDE.md` — NARGAB-2026-312 major revision of Article 1: frozen-baseline rule, blind selection rule, plain-word naming, gates; pod steps in `article_1_revision/RUNBOOK.md`
 
 For full research context, dataset details, analytical pipeline, and literature anchors see `project_overview.md`.
 
@@ -69,6 +70,18 @@ python run_metrics_concat.py   # → metrics_comprehensive.csv + 3 long-format t
 cd shambhala_adoption/Shambhala_containerized
 python run_shambhala.py --help
 
+# ── Article 1 revision (article_1_revision/; WITHHELD.md lists what this public copy omits) ──
+cd article_1_revision
+python -m pytest tests/ -q                                        # toy checks
+python python_scripts/r01_confounding_diagnostics.py && python python_scripts/r02_reduced_panel.py \
+    && python python_scripts/r03_four_scores.py
+python python_scripts/r10_build_gradient_designs.py && python python_scripts/r20_build_cohort_folds.py
+# pod steps (r11 / r12 / r21; need the harmonized matrices on $FL_S3_BUCKET): RUNBOOK.md
+python python_scripts/r12_revision_metrics.py --experiment gradient --concat
+python python_scripts/r13_gradient_stats.py && python python_scripts/r22_v1_evaluate.py \
+    && python python_scripts/r05_robustness.py
+cd ..
+
 jupyter lab
 ```
 
@@ -120,6 +133,10 @@ Hierarchy: **strategy > method > post-removal > imputation**. Full details in `p
 | `harmonization-metrics/marker_gene_deep_analysis.ipynb` | Marker panel deep-dive: gene-level correlation structure, coverage/QC/saturation gates, minimal orthogonal panel selection |
 | `harmonization-metrics-calculation/gene_panel_analysis/` | Sub-pipeline for the above: gene × gene correlation + per-gene QC (1,204 jobs); own README |
 | `article_2_extended_comparison/` | Article 2 (F1000Research) external material: `A2_*` tables, figures, supplementary workbooks, analysis code. A one-way sanitized copy of the private working folder — never edit it here; `WITHHELD.md` lists what it omits |
+| `article_1_revision/` | NARGAB-2026-312 major revision of Article 1: confounding diagnostics, the reduced 25-metric panel, the four scores, the blind selection rule (`adjudication_rule_261029.md`), confounding-gradient and leave-cohort-out experiments, figures (`figures_svg/`) and the revised supplementary files (`output/wp10/`). A one-way sanitized copy of the private working folder — never edit it here; `WITHHELD.md` lists what it omits |
+| `article_1_revision/revision_lib.py` | Shared library of the revision: wrappers around the frozen benchmark code, λ designs, panel rule, four scores, `PUBLICATION_NAMES` |
+| `article_1_revision/final_notebooks/` | `nb01`–`nb08`: confounding, reduced-panel clustermap, four scores and tree, confounding gradient, robustness and leave-cohort-out, merged distributions, embeddings of the selected approaches, Figures 4–5 |
+| `figures_for_article/current_figures_tables_for_article_260915/` | The NAR submission package of 2026-09-15: main, extended and supplementary figures (`.jpg`) and Supplementary Files 1–4 (per-sample rows of the proprietary cohorts removed) |
 | `harmonization-metrics/harmonization_metrics_analysis.ipynb` | Loads `metrics_comprehensive.csv`, visualizes rankings |
 | `shambhala_adoption/Shambhala_containerized/run_shambhala.py` | Shambhala CLI entry point (pure Python, no R/rpy2) |
 | `shambhala_adoption/Shambhala_containerized/harmonization_scripts/` | Cross-product benchmark: 18 P/Q × 3 imp = 54 jobs |
@@ -190,6 +207,8 @@ sns.set_style("ticks")
 - [x] **Introductory figures done**: pipeline scheme, bubble charts, barplots, Circos-Sankey strategies
 
 ### Next steps — Article 1 (short timeline)
+
+- [ ] **NARGAB major revision** (`article_1_revision/`): confounding diagnostics, the reduced 25-metric panel, the four scores and the blind selection rule are done; the confounding-gradient and leave-cohort-out pod runs are done and analysed (`r13`, `r22`, `r05`), and the revised figures, supplementary files and results numbers (`r40`, `r45`) are built. Remaining: the last figure review and the resubmission
 
 - [ ] **Blind final check compute run**: metric groups L/M/N over the 2,323 non-Shambhala attempts (plan: `harmonization-metrics/marker_and_predictive_validation_plan_260819.md`)
 - [ ] **Blind check figures**: run `correlation_prediction_metrics_analysis.ipynb` once the metrics land; export Supplementary File 5

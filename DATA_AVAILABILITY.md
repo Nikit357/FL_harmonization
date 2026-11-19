@@ -29,6 +29,9 @@ readers know where to apply for the underlying data.
 | Marker gene panel, with per-gene statistics | `…/Supplementary File 2.xlsx`, sheet `Table_S3_gene_panel` | complete; 834 (gene, signature) rows × 66 columns — the panel joined to its coverage audit and per-gene ρ/QC statistics |
 | Article 2 tables and supplementary workbooks | `article_2_extended_comparison/tables/`, `…/supplementary/` | **complete** — per approach and per held-out batch, over the same 2,234 attempts; no sample column |
 | Article 2 expression scatter data | `article_2_extended_comparison/figures/panels_260925/data/sfig_expression_long_260925.csv.gz` | open cohorts only — 3 genes × 8 methods, raw against harmonized, 124,272 of 172,176 rows |
+| NAR submission package (2026-09-15) | `figures_for_article/current_figures_tables_for_article_260915/Supplementary File {1,2}.csv` | open cohorts only — 5,178 of 7,174 annotation rows; 5,202 of 7,238 genes-per-sample rows |
+| Article 1 revision: experiment sample lists | `article_1_revision/output/wp6/designs/*.tsv` (confounding-gradient designs), `…/output/wp7/fold_samples.tsv` (leave-cohort-out folds) | open-cohort rows only — 71,386 of 98,908 rows. The runs drew from all 7,174 samples, so re-running the design scripts on the open annotation gives different designs; `article_1_revision/WITHHELD.md` says what follows |
+| Article 1 revision: metrics, scores, rule outputs | `article_1_revision/output/` | **complete** — per approach, per batch or per cohort; no sample column |
 
 Expression matrices are **not** in this repository for any cohort, open or withheld —
 they are large, and for the open cohorts they are already available from their public

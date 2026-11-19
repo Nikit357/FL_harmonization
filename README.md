@@ -66,7 +66,13 @@ harmonization-metrics/            analysis and figures
   marker_gene_deep_analysis.ipynb          minimal orthogonal panel selection
   metric_tables/                  the published per-run metric tables
 
-figures_for_article/              manuscript, figures, supplementary tables
+figures_for_article/              manuscript, figures, supplementary tables;
+                                  current_figures_tables_for_article_260915/ is the
+                                  NAR submission package of 2026-09-15
+article_1_revision/               the NARGAB major revision of Article 1: reanalysis code,
+                                  outputs, figures and revised supplementary files; the
+                                  manuscript and review correspondence are withheld,
+                                  WITHHELD.md lists what the public copy omits
 article_2_extended_comparison/    Article 2 (F1000Research): metric-class cross-election —
                                   tables, figures, supplementary workbooks, analysis code;
                                   WITHHELD.md lists what the public copy omits
